@@ -2,11 +2,13 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Chồi Ơi">
 <meta name="theme-color" content="#F3F8F5">
+<link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.png">
 <link rel="apple-touch-icon" href="icon.png">
 <style>html,body{margin:0;height:100%}</style>
@@ -300,7 +302,7 @@ button.basket{cursor:pointer;font:inherit}
 .drumbtn svg{width:100%;height:100%}
 .feedscene{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%;max-width:calc(380px*var(--k,1))}
 .eater{position:relative;width:min(40cqw,30cqh,calc(150px*var(--k,1)))}
-.eater>svg{width:100%;height:auto;display:block}
+.eater>svg{width:100%;height:auto;display:block;overflow:visible}
 .plate{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);width:120%;min-height:30px;display:flex;justify-content:center;flex-wrap:wrap;gap:0;background:#fff;border:3px solid #D3E3DB;border-radius:50%;padding:2px 10px}
 .onplate{width:28px;height:28px;display:inline-block}
 .onplate svg{width:100%;height:100%}
@@ -468,7 +470,7 @@ button.basket{cursor:pointer;font:inherit}
 .wcan{position:absolute;transform-origin:20% 80%;cursor:pointer;z-index:5}
 .wcan.pour{animation:wpour 1s ease}
 @keyframes wpour{30%,70%{transform:rotate(30deg)}}
-.foods{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:4%;z-index:4}
+.cfoods{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:4%;z-index:4}
 .foodbtn{width:min(22cqw,26cqh,calc(120px*var(--k,1)));aspect-ratio:1;border:0;border-radius:24px;background:#fff;box-shadow:0 6px 0 #E6CF96,0 10px 22px rgba(54,29,70,.18);padding:14px;animation:giftIn .45s cubic-bezier(.3,1.5,.5,1) backwards}
 .foodbtn img{width:100%;height:100%;object-fit:contain}
 .foodbtn.no{animation:shake .35s}
@@ -500,6 +502,46 @@ button.basket{cursor:pointer;font:inherit}
   .wrap-kid:not(.map) .dock .caption .vi{font-size:clamp(12px,1.3vw,calc(15px*var(--k,1)))}
   .wrap-kid:not(.map) .askagain{grid-area:ear;justify-self:center;align-self:end;width:clamp(44px,5vw,calc(60px*var(--k,1)));height:clamp(44px,5vw,calc(60px*var(--k,1)))}
   .wrap-kid:not(.map) .devbar{grid-column:1/-1}
+}
+/* short landscape screens (a phone on its side, in the browser): no top bar, the card gets almost the whole height */
+@media (min-aspect-ratio:5/4) and (min-width:640px) and (max-height:520px){
+  .wrap-kid:not(.map){grid-template-columns:clamp(62px,10vw,92px) minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto auto;grid-template-areas:"stop card" "choi card" "choi pads" "ear cap";column-gap:10px;
+    padding-top:max(6px,env(safe-area-inset-top));padding-bottom:max(6px,env(safe-area-inset-bottom));padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right))}
+  .wrap-kid:not(.map) .topbar{display:contents}
+  .wrap-kid:not(.map) .topbar>.turns{display:none}
+  .wrap-kid:not(.map) .topbar>#stopBtn{grid-area:stop;justify-self:center;align-self:start;position:relative;z-index:6;padding:6px 10px;font-size:13px}
+  .wrap-kid:not(.map) .topbar>.homebtn{width:50px;height:50px}
+  .wrap-kid:not(.map) .topbar>#gate{position:absolute;top:max(4px,env(safe-area-inset-top));right:max(4px,env(safe-area-inset-right));z-index:6}
+  .wrap-kid:not(.map) .dock .mascot{align-self:center}
+  .wrap-kid:not(.map) .dock .caption{margin-top:5px;padding:5px 14px;gap:10px}
+  .wrap-kid:not(.map) .dock .caption .en{font-size:clamp(15px,2vw,19px)}
+  .wrap-kid:not(.map) .dock .caption .vi{font-size:12px}
+  .wrap-kid:not(.map) .askagain{width:42px;height:42px}
+  .wrap-kid:not(.map) #card{border-radius:20px;padding:10px;gap:10px}
+  /* things that stack up too tall in a short card */
+  #card .speaker{width:min(34cqw,48cqh,160px)}
+  .site{max-width:calc(100cqh - 112px)}
+  #card:has(>.site) .tray .opt{width:min(25cqh,88px)}
+  .daystrip{max-width:calc((100cqh - 128px)*1.6)} .skyb{height:28px}
+  #card:has(>.daystrip) .opt{width:min(30cqh,104px)}
+  .bignum{font-size:min(20cqw,24cqh)}
+  .mic{width:min(110px,26cqh);height:min(110px,26cqh)}
+  #card:has(>.fscene.withq){flex-direction:row}
+  #card .fscene.withq{width:min(64%,calc((100cqh - 24px)*200/140))}
+  #card:has(>.shelf){flex-direction:row;gap:4cqw}
+  #card:has(>.shelf)>.shelf{max-width:min(52cqw,calc(340px*var(--k,1)))}
+  #card:has(>.fscene.withq)>.opts{width:auto;flex-direction:column;flex-wrap:nowrap}
+  #card:has(>.fscene.withq) .opt{width:min(28cqh,96px)}
+}
+/* feeding: animal on the left, food on the right when the card is wide */
+.food{width:min(17cqw,13cqh,calc(76px*var(--k,1)));height:auto;aspect-ratio:1}
+.onplate{width:min(8cqw,7cqh,calc(36px*var(--k,1)));height:auto;aspect-ratio:1}
+@container (min-aspect-ratio:13/10){
+  .feedscene{flex-direction:row;justify-content:center;align-items:center;gap:6cqw;max-width:none;height:100%}
+  .eater{width:min(34cqw,58cqh,calc(240px*var(--k,1)));margin-bottom:6cqh}
+  .feedscene .foods{max-width:min(48cqw,calc(380px*var(--k,1)));margin-top:0}
+  .food{width:min(13cqw,26cqh,calc(84px*var(--k,1)))}
+  .onplate{width:min(7cqw,12cqh,calc(40px*var(--k,1)))}
 }
 /* big cards (laptop, iPad, TV): everything inside grows so it reads from the sofa */
 @container (min-width:720px) and (min-height:440px){ #card>*{--k:1.3} }
@@ -731,6 +773,10 @@ html.tv .wrap-kid:not(.map) .ptip{display:none}
 .missioncard .eyebrow{color:#CDBEDD}
 .switch{display:flex;align-items:center;gap:10px;font-weight:800}
 .switch input{width:22px;height:22px;accent-color:var(--green)}
+.tipmodal{z-index:80}
+.tipbox{max-width:520px;max-height:90vh;overflow:auto}
+.tipsteps{margin:8px 0 10px;padding-left:22px;line-height:1.55}
+.tipsteps li{margin-bottom:6px}
 .modal{position:fixed;inset:0;background:rgba(54,29,70,.55);display:grid;place-items:center;padding:16px;z-index:50}
 .modal .panel{width:min(100%,calc(360px*var(--k,1)))}
 .err{color:#B8405C;font-size:13.5px;min-height:18px;font-weight:700}
@@ -2569,7 +2615,7 @@ async function feedTime(api,k){
   const it=C().items[k], D=CITEM[it.t], want=EATS[it.t]; if(!want) return;
   await say(`The ${D.en} is hungry! What does it eat?`,`${cap(D.vi)} đói rồi! Bạn ấy ăn gì nhỉ?`);
   const opts=shuffle([want,...shuffle(Object.keys(FOODS).filter(f=>f!==want)).slice(0,2)]);
-  const row=el(`<div class="foods"></div>`); const bs=opts.map((f,i)=>{ const b=el(`<button class="foodbtn" style="animation-delay:${i*120}ms" aria-label="${FOODS[f][1]}"><img src="${sprURL('f_'+f)}" alt=""></button>`); row.append(b); return b }); api.v.parentElement.append(row);
+  const row=el(`<div class="cfoods"></div>`); const bs=opts.map((f,i)=>{ const b=el(`<button class="foodbtn" style="animation-delay:${i*120}ms" aria-label="${FOODS[f][1]}"><img src="${sprURL('f_'+f)}" alt=""></button>`); row.append(b); return b }); api.v.parentElement.append(row);
   bs[opts.indexOf(want)].dataset.ok='1'; let early=null; const pr=tapOnce(bs).then(i=>{ early=i; return i }); pr.catch(()=>{});
   await sleep(450); for(const [i,f] of opts.entries()){ if(early!==null) break; bs[i].classList.add('lit'); await say(cap(FOODS[f][0])+'?',cap(FOODS[f][1])+'?',{gap:200,q:false}); bs[i].classList.remove('lit') }
   let first=true;
@@ -2936,9 +2982,18 @@ function wireHold(g,fn){ if(!g) return; let t=null;
   const start=e=>{ e.preventDefault(); g.classList.add('holding'); t=setTimeout(()=>{ g.classList.remove('holding'); fn() },1000) };
   const end=()=>{ clearTimeout(t); g.classList.remove('holding') };
   g.addEventListener('pointerdown',start); ['pointerup','pointerleave','pointercancel'].forEach(ev=>g.addEventListener(ev,end)); g.addEventListener('contextmenu',e=>e.preventDefault()) }
-function goFull(){ try{ const d=document.documentElement; if(!document.fullscreenElement&&d.requestFullscreen) d.requestFullscreen({navigationUI:'hide'}).then(()=>{ try{ screen.orientation&&screen.orientation.lock&&screen.orientation.lock('landscape').catch(()=>{}) }catch(e){} }).catch(()=>{}) }catch(e){} }
+function goFull(){ try{ const d=document.documentElement; if(document.fullscreenElement||document.webkitFullscreenElement) return;
+  const lock=()=>{ try{ screen.orientation&&screen.orientation.lock&&screen.orientation.lock('landscape').catch(()=>{}) }catch(e){} };
+  if(d.requestFullscreen) d.requestFullscreen({navigationUI:'hide'}).then(lock).catch(()=>{}); else if(d.webkitRequestFullscreen) d.webkitRequestFullscreen() }catch(e){} }
+/** iPhone Safari can't go full screen: the way is "Add to Home Screen" */
+const isStandalone=()=>navigator.standalone===true||matchMedia('(display-mode: standalone)').matches||matchMedia('(display-mode: fullscreen)').matches;
+const noFullscreen=()=>{ const d=document.documentElement; return !d.requestFullscreen&&!d.webkitRequestFullscreen };
+const HOME_TIP=`<ol class="tipsteps"><li>Mở trang này bằng <b>Safari</b> (không mở trong Messenger/Zalo).</li><li>Bấm nút <b>Chia sẻ</b> <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#2F7DD1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg> rồi chọn <b>Thêm vào MH chính</b> (Add to Home Screen).</li><li>Mở <b>Chồi Ơi</b> từ biểu tượng trên màn hình chính, xoay ngang máy: app chiếm trọn màn hình, không còn thanh địa chỉ.</li><li>Chiếu lên TV: vuốt mở <b>Trung tâm điều khiển</b> → <b>Phản chiếu màn hình</b> → chọn Apple TV.</li></ol><p class="note">Lưu ý: trên iPhone, ứng dụng ở màn hình chính lưu tiến độ riêng với Safari, nên ba mẹ thêm vào màn hình chính ngay từ đầu rồi cho bé chơi ở đó.</p>`;
+function homeScreenTip(force){ if(!force&&(isStandalone()||!noFullscreen()||homeScreenTip.shown)) return; homeScreenTip.shown=true;
+  const m=el(`<div class="modal tipmodal"><div class="panel tipbox"><h2>Chơi toàn màn hình trên iPhone</h2>${HOME_TIP}<div class="row"><button class="btn" type="button">Đã hiểu</button></div></div></div>`);
+  document.body.append(m); m.querySelector('button').onclick=()=>m.remove() }
 function setTV(on){ S.tv=on; save(); document.documentElement.classList.toggle('tv',on);
-  if(on) goFull(); else { try{ if(document.fullscreenElement) document.exitFullscreen() }catch(e){} } }
+  if(on){ goFull(); homeScreenTip() } else { try{ if(document.fullscreenElement) document.exitFullscreen() }catch(e){} } }
 function wireTV(){ const b=$('#tvBtn'); if(!b) return; wireHold(b,()=>{ setTV(!S.tv); SFX.chime(); renderHome();
     const c=$('#caption'); if(c){ c.style.visibility=''; setCaption(S.tv?'TV mode is on.':'TV mode is off.',S.tv?'Đã bật chế độ TV: xoay ngang điện thoại, chiếu lên TV, bé chạm các ô màu to ở dưới.':'Đã tắt chế độ TV.') } }) }
 function wireGate(){
@@ -3053,6 +3108,7 @@ function renderParent(){
    ${lm?`<div class="missioncard"><div class="eyebrow">${S.lastMission.d===today()?'Nhiệm vụ tối nay':'Nhiệm vụ gần nhất'} · bé sẽ nói với ba mẹ</div><h2>${esc(lm.short)}</h2><p>${esc(lm.parent)}</p><p class="en">${esc(lm.parentEn)}</p></div>`:''}
    <div class="panel"><h2>Lộ trình Chủ đề 1</h2><p class="note">Bé đi trên bản đồ theo đúng thứ tự trong Hướng dẫn chi tiết cho phụ huynh. Mỗi màn có 2 nội dung và 1 việc cho buổi tối. Chơi xong một màn thì màn tiếp theo mở; bé có thể quay lại chơi bất kỳ màn nào đã mở. Cứ hoạt động thứ 4 là một lượt <b>Trộn</b> ôn nhanh các nội dung đã học, ưu tiên phần bé còn yếu. Nếu bé nghỉ giữa chừng, lần sau màn đó chơi tiếp từ chỗ dừng.</p>
      <ol class="lessons">${[...LESSONS,null].map((L,i)=>{ const n=(S.done||{})[i]||0; return `<li class="${n?'done':i===S.lesson?'cur':''}"><b>${i===0?'Khởi động (ôn lớp Mầm)':L?'Bài '+i:'Ôn tập'}${i>S.lesson?' · chưa mở':n?` · đã chơi ${n} lần`:' · đang chờ'}</b><br>${L?L.items.map(id=>esc(SK[id].vi)).join(' · ')+`<br><span class="note">Việc buổi tối: ${esc(MISSIONS[L.job].short)}</span>`:'<span class="note">Ôn những nội dung bé chưa vững.</span>'}</li>` }).join('')}</ol></div>
+   <div class="panel"><h2>Chơi toàn màn hình và chiếu lên TV</h2>${HOME_TIP}<p class="note">Máy tính/iPad: nhấn giữ nút TV ở góc trái bản đồ 1 giây để bật chế độ TV (toàn màn hình, nút màu to ở dưới).</p></div>
    ${['M','W','E'].map(area).join('')}
    <div class="panel"><h2>Nghe ${esc(S.child.name)} nói</h2>
      ${clips.length?`<div>${clips.map(c=>`<div class="clip"><button class="pb" data-clip="${c.clip||''}" ${c.clip?'':'disabled'} aria-label="Phát">${ICON.playsm}</button><div><div class="say">${esc(c.text)}</div><div class="note">${esc(c.d)} · ${c.matched===true?'máy nghe ra gần đúng':c.matched===false?`máy nghe được: “${esc(c.heard||'')}”`:c.voiced===false?'bé nói nhỏ quá':c.clip?'đã ghi âm':'không có micro'}</div></div></div>`).join('')}</div>`:'<p class="note">Khi bé luyện nói theo Chồi, giọng bé sẽ hiện ở đây.</p>'}</div>
@@ -3164,7 +3220,7 @@ window.__choi={get state(){return S},SKILLS,status,planSession,
   mission(id){ RUN={aborted:false,start:Date.now()}; renderPlay(); return giveMission(SK[id]).catch(()=>{}) }};
 document.documentElement.classList.toggle('tv',!!S.tv);
 if(!FAST&&HASH!=='dev') setTimeout(()=>voiceInit(S.lang==='vi'?'vi':'en'),200);   // load the recorded voice early
-document.body.append(el(`<div class="rotate" aria-live="polite"><svg viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"><rect x="22" y="6" width="20" height="34" rx="4"/><rect x="8" y="38" width="40" height="20" rx="4" opacity=".6"/><path d="M50 20 a14 14 0 0 1 2 22 l4-1 M52 42 l-1-5" stroke-linecap="round"/></svg><b>Xoay ngang điện thoại</b><span>Chế độ TV chơi theo chiều ngang. Ba mẹ có thể tắt chế độ TV bằng cách nhấn giữ nút TV ở bản đồ.</span></div>`));
+document.body.append(el(`<div class="rotate" aria-live="polite"><svg viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"><rect x="22" y="6" width="20" height="34" rx="4"/><rect x="8" y="38" width="40" height="20" rx="4" opacity=".6"/><path d="M50 20 a14 14 0 0 1 2 22 l4-1 M52 42 l-1-5" stroke-linecap="round"/></svg><b>Xoay ngang điện thoại</b><span>Chế độ TV chơi theo chiều ngang. Ba mẹ có thể tắt chế độ TV bằng cách nhấn giữ nút TV ở bản đồ.</span><button class="btn ghost sm" type="button" id="rotTip" style="color:#fff;border-color:#fff">Cách chơi toàn màn hình</button></div>`)); $('#rotTip').onclick=()=>homeScreenTip(true);
 if(HASH==='new'){ try{localStorage.removeItem(KEY)}catch(e){} clearClips(); S=fresh(); renderSetup() } else if(HASH==='dev'){ if(!S.child){ S.child={name:'Bin',birthYear:new Date().getFullYear()-5}; save() } renderDev() } else if(!S.child) renderSetup(); else renderHome();
 </script>
 
