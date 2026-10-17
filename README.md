@@ -1,13 +1,23 @@
 # Chồi Ơi — app đồng hành lớp Chồi (bản thử)
 
-App chơi tại nhà cho bé 4–5 tuổi, Chương 1 "Me and My Feelings" (Fun Academy).
+App chơi tại nhà cho bé 4–5 tuổi, Chương 1 "Me and My Feelings" (Fun Academy), theo giáo trình lớp Chồi (Toán, Khám phá thế giới, Tiếng Anh).
 
-- Mở `index.html` qua GitHub Pages (hoặc bất kỳ máy chủ web tĩnh nào). Không cần cài đặt, không có máy chủ riêng.
-- Dữ liệu của bé chỉ lưu trên máy của phụ huynh (trình duyệt), không gửi đi đâu.
+- Mở `index.html` qua GitHub Pages (hoặc bất kỳ máy chủ web tĩnh nào). Không cần cài đặt.
 - `voice/`: giọng Chồi ghi âm sẵn (tiếng Anh: Kokoro "sky"; tiếng Việt: Piper "vais1000"). Thiếu file thì app tự dùng giọng của máy.
-- Trang ba mẹ: nhấn giữ biểu tượng ba mẹ 1 giây, nhập năm sinh của bé.
+- `music/`: nhạc cho trò nghe nhạc đoán cảm xúc.
+- Trang ba mẹ: nhấn giữ nút Progress hoặc Settings 1 giây.
+
+## Tài khoản và lưu tiến độ
+- Lần đầu mở app: Đăng ký (tên bé, năm sinh, tên đăng nhập, mã PIN 4 số, email ba mẹ), Đăng nhập, hoặc Chơi thử (chỉ lưu trên máy).
+- Tiến độ luôn lưu trên máy, và được gửi lên Google Sheet nếu app có địa chỉ máy chủ (Apps Script). Đăng nhập ở máy khác thì tiến độ được tải về.
+- Mã PIN không được gửi đi: app chỉ gửi mã băm SHA-256. Sai PIN 10 lần thì tài khoản bị khoá 15 phút.
+
+### Cài Google Sheet (làm một lần)
+1. Tạo một Google Sheet mới → Tiện ích mở rộng → Apps Script, dán toàn bộ `apps-script/Code.gs`.
+2. Triển khai → Tùy chọn triển khai mới → loại "Ứng dụng web"; Thực thi với tư cách: Tôi; Người có quyền truy cập: Bất kỳ ai → Triển khai.
+3. Lấy địa chỉ kết thúc bằng `/exec`, nhập vào app ở Settings → Tài khoản (hoặc mục "Máy chủ" trên trang đăng ký). Có thể đặt sẵn trong `index.html` ở dòng `const SYNC_URL_DEFAULT=''`.
+4. Sheet tự tạo hai bảng: **Accounts** (mỗi bé một dòng, kèm toàn bộ tiến độ) và **Progress** (mỗi kỹ năng một dòng: trạng thái, số lượt, số đúng, ngày ôn tiếp theo).
 
 ## Đưa lên GitHub Pages
-1. Tạo repository mới (Public), tải toàn bộ các file trong thư mục này lên (giữ nguyên thư mục `voice`).
-2. Settings → Pages → Build and deployment → Source: "Deploy from a branch" → Branch: `main`, thư mục `/ (root)` → Save.
-3. Sau 1–2 phút, link sẽ là `https://<tên-tài-khoản>.github.io/<tên-repo>/`.
+1. Settings → Pages → Build and deployment → Source: "Deploy from a branch" → Branch: `main`, thư mục `/ (root)` → Save.
+2. Sau 1–2 phút, link sẽ là `https://<tên-tài-khoản>.github.io/<tên-repo>/`.
