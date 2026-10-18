@@ -5892,7 +5892,12 @@ function syncState(){ const st=JSON.parse(JSON.stringify(S)); delete st.acct; de
 /* one line per skill, for the parent to read in the sheet */
 function progressSummary(){ return SKILLS.map(sk=>{ const at=S.attempts.filter(a=>a.s===sk.id), last=at.length?at[at.length-1].d:(S.speaks.filter(x=>x.s===sk.id).slice(-1)[0]||{}).d||'';
   return {id:sk.id,name:sk.vi,status:status(sk),tries:at.length,correct:at.filter(a=>a.ok).length,last,review:(S.rev&&S.rev[sk.id]&&S.rev[sk.id].due)||''} }) }
-function syncMeta(){ return {lesson:S.lesson||0,pieces:S.pieces||0,done:Object.keys(S.done||{}).length,last:today()} }
+const LEVEL_VI=['Khởi động','Bài 1 · Công viên','Bài 2 · Khu vườn','Bài 3 · Nhà Na','Bài 4 · Cửa hàng','Bài 5 · Công trường','Bài 6 · Đồi nắng','Đảo Kho Báu'];
+/* numbers for the Report sheet: where the child is, how often they play, what is due for review */
+function syncMeta(){ const days=new Set([...(S.attempts||[]).map(a=>a.d),...Object.keys(S.playMs||{})]); const last=[...days].sort().pop()||'';
+  const wk=[...Array(7)].map((_,i)=>localDate(S.dayOffset-i)); const min7=Math.round(wk.reduce((a,d)=>a+((S.playMs||{})[d]||0),0)/60000);
+  const due=Object.values(S.rev||{}).filter(r=>r.due<=today()).length; const lv=Math.min(S.lesson||0,LEVEL_VI.length-1);
+  return {lesson:S.lesson||0,level:Object.keys(S.done||{}).length>=8?'Xong Chương 1':LEVEL_VI[lv],pieces:S.pieces||0,done:Object.keys(S.done||{}).length,last,days:days.size,min7,due,mix:(S.sessions||[]).filter(x=>x.mix).length,chapter:1} }
 
 let _syncT=null, _syncBusy=false;
 function syncSoon(ms=6000){ if(!S.acct||!syncUrl()) return; clearTimeout(_syncT); _syncT=setTimeout(()=>syncPush().catch(()=>{}),ms) }
