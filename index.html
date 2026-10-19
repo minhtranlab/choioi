@@ -908,8 +908,8 @@ html.tv .wrap-kid:not(.map) .ptip{display:none}
 .node .num{background:var(--pl);box-shadow:0 0 0 3px #fff}
 .node .mpiece{position:absolute;right:-22%;bottom:-18%;width:58%;animation:pop .5s}
 .node .mpiece svg{width:100%;height:auto;display:block}
-.citybtn,.gamesbtn,.mapbtn,.mixbtn{flex:none;width:96px;height:96px;border:4px solid var(--pl);padding:0;border-radius:26px;background:#fff;box-shadow:5px 6px 0 var(--pl);position:relative;overflow:visible}
-.citybtn>svg,.gamesbtn>svg,.mixbtn>svg{width:100%;height:100%;display:block;border-radius:22px}
+.citybtn,.gamesbtn,.mapbtn,.mixbtn,.musicbtn{flex:none;width:96px;height:96px;border:4px solid var(--pl);padding:0;border-radius:26px;background:#fff;box-shadow:5px 6px 0 var(--pl);position:relative;overflow:visible}
+.citybtn>svg,.gamesbtn>svg,.mixbtn>svg,.musicbtn>svg{width:100%;height:100%;display:block;border-radius:22px}
 .gamesbtn .cnt,
 .mixbtn .cnt{position:absolute;right:-8px;top:-8px;min-width:30px;height:30px;padding:0 7px;border-radius:15px;background:var(--berry);color:#fff;font-weight:900;font-size:16px;display:grid;place-items:center;box-shadow:0 0 0 3px #fff}
 @media (max-width:520px){ .citybtn,.gamesbtn,.mixbtn{width:78px;height:78px;border-radius:22px} }
@@ -1029,10 +1029,10 @@ html.tv .wrap-kid:not(.map) .ptip{display:none}
 .maptitle{position:absolute;left:22px;top:16px;z-index:2;background:#E8484F;color:#fff;font-weight:900;font-size:clamp(16px,2.2vw,24px);padding:6px 22px;border:4px solid var(--pl);border-radius:12px;box-shadow:4px 5px 0 var(--pl);transform:rotate(-2deg)}
 .mapchoi .mascot{filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(3px 4px 0 rgba(58,27,73,.9))}
 .mapdock{gap:16px;padding-block:10px 16px}
-.citybtn,.gamesbtn,.mapbtn,.mixbtn{width:112px;height:112px;animation:none}
-.citybtn .blabel,.gamesbtn .blabel,.mixbtn .blabel{position:absolute;left:50%;bottom:-12px;translate:-50% 0;white-space:nowrap;background:var(--pl);color:#fff;font-weight:900;font-size:14px;padding:2px 10px;border-radius:10px;border:3px solid #fff}
+.citybtn,.gamesbtn,.mapbtn,.mixbtn,.musicbtn{width:112px;height:112px;animation:none}
+.citybtn .blabel,.gamesbtn .blabel,.mixbtn .blabel,.musicbtn .blabel{position:absolute;left:50%;bottom:-12px;translate:-50% 0;white-space:nowrap;background:var(--pl);color:#fff;font-weight:900;font-size:14px;padding:2px 10px;border-radius:10px;border:3px solid #fff}
 .citybtn:has(.owed){animation:pulse 1.4s infinite}
-@media (max-width:520px){ .citybtn,.gamesbtn,.mixbtn{width:86px;height:86px} .citybtn .blabel,.gamesbtn .blabel,.mixbtn .blabel{font-size:12px} }
+@media (max-width:520px){ .citybtn,.gamesbtn,.mixbtn,.mapbtn,.musicbtn{width:min(86px,calc((100vw - 90px)/5));height:min(86px,calc((100vw - 90px)/5))} .citybtn .blabel,.gamesbtn .blabel,.mixbtn .blabel,.musicbtn .blabel{font-size:11px} }
 
 .langs{background:#fff;border:3px solid var(--pl);box-shadow:3px 4px 0 var(--pl)}
 .langs button.on{background:var(--stk-sun2);color:var(--pl)}
@@ -1100,7 +1100,7 @@ details.help>*:not(summary){margin-top:8px}
 .mymap .mf-map{width:min(86%,calc(170*var(--u)));cursor:pointer}
 .mapbtn>svg{width:100%;height:100%;display:block;border-radius:22px}
 .mapbtn .blabel{position:absolute;left:50%;bottom:-12px;translate:-50% 0;white-space:nowrap;background:var(--pl);color:#fff;font-weight:900;font-size:14px;padding:2px 10px;border-radius:10px;border:3px solid #fff}
-@media (max-width:520px){ .mapbtn{width:86px;height:86px} .mapbtn .blabel{font-size:12px} }
+@media (max-width:520px){ .mapbtn{width:min(86px,calc((100vw - 90px)/5));height:min(86px,calc((100vw - 90px)/5))} .mapbtn .blabel{font-size:11px} .mapdock{gap:8px;justify-content:center} .mapdock .blabel{font-size:10px!important;padding:1px 5px!important;border-width:2px!important} }
 
 /* short landscape phones: the dock goes to the right side so the map keeps its height */
 @media (orientation:landscape) and (max-height:560px){
@@ -1108,7 +1108,7 @@ details.help>*:not(summary){margin-top:8px}
   .wrap-kid.map>.topbar{grid-column:1/-1;min-height:44px;padding-block:6px 2px}
   .wrap-kid.map>.pathmap{grid-column:1;grid-row:2;margin-bottom:10px}
   .wrap-kid.map>.mapdock{grid-column:2;grid-row:2;flex-direction:column;justify-content:center;align-items:center;gap:clamp(12px,3vh,20px);padding:0 6px 16px}
-  .wrap-kid.map .citybtn,.wrap-kid.map .gamesbtn,.wrap-kid.map .mapbtn,.wrap-kid.map .mixbtn{width:clamp(54px,calc((100vh - 100px)/4 - 14px),72px);height:clamp(54px,calc((100vh - 100px)/4 - 14px),72px);border-radius:18px}
+  .wrap-kid.map .citybtn,.wrap-kid.map .gamesbtn,.wrap-kid.map .mapbtn,.wrap-kid.map .mixbtn,.wrap-kid.map .musicbtn{width:clamp(48px,calc((100vh - 100px)/5 - 14px),72px);height:clamp(48px,calc((100vh - 100px)/5 - 14px),72px);border-radius:18px}
   .wrap-kid.map .blabel{font-size:11.5px!important;padding:1px 7px!important}
   .wrap-kid.map .cnt{min-width:24px!important;height:24px!important;font-size:13px!important;right:-6px!important;top:-6px!important}
   .wrap-kid.map .mapdock .caption{position:fixed;left:50%;bottom:8px;translate:-50% 0;max-width:70vw;z-index:9}
@@ -1646,6 +1646,89 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .pk-num{font-size:calc(19*var(--u))}
 @keyframes riseFrom{0%{transform:translate(0,0) scale(.22)}8%{transform:translate(calc(var(--dx,0px)*.18),-3cqh) scale(1)}35%{transform:translate(calc(var(--dx,0px)*.8),-30cqh) scale(1)}100%{transform:translate(var(--dx,0px),calc(-100cqh - 60px)) scale(1)}}
 .skid.walking>svg{animation:hop .5s infinite}
+
+/* ---- 20/10: pictures that act ---- */
+.sthing{position:absolute;translate:-50% 0;z-index:2;pointer-events:none}.sthing>svg{width:100%;height:auto;display:block}
+.tscene>svg.tk{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.tscene>svg.tk-low{z-index:1}.tscene>svg.tk-top{z-index:5}
+.tscene .tk-ms{position:absolute;z-index:6;pointer-events:none}.tscene .tk-ms svg{width:100%;height:100%}
+.tscene{cursor:crosshair}.tscene .skid{z-index:2}
+.tpolly{position:absolute;z-index:6;pointer-events:none;width:11%}.tpolly svg{width:100%;height:auto;display:block}
+.tpolly.hover svg{animation:pHover .45s ease-in-out infinite alternate}
+@keyframes pHover{to{transform:translateY(-4%) rotate(-3deg)}}
+.tkite.flying svg{animation:floatUp 2.6s ease-in-out infinite alternate}
+.tkite.wig svg{animation:kwig .6s ease 3}
+.tbus{z-index:3}.tbus.arrive svg{animation:hop .45s 2}
+.tflower svg{transform-origin:50% 100%;transition:transform .7s cubic-bezier(.3,1.6,.5,1)}.tflower.bud svg{transform:scale(.35)}
+.tdrop{position:absolute;width:4.5%;z-index:3;pointer-events:none}.tdrop svg{width:100%;height:auto;display:block}
+.tben.glad svg,.tben.glad{animation:hop .5s 2}
+.tstream{position:absolute;left:18%;right:20%;bottom:3%;height:18%;background:#7FD0F5;border:3px solid #3A1B49;border-radius:40% 40% 30% 30%/60% 60% 40% 40%;z-index:0}
+.tgate{z-index:1}
+.windfx{position:absolute;inset:0;z-index:7;pointer-events:none;overflow:hidden}.windfx .swoosh{position:absolute;left:0;height:auto}
+.sway{transform-origin:50% 100%}.gusty .sway svg{animation:lean 1.6s ease-in-out}
+@keyframes lean{30%{transform:rotate(4deg)}60%{transform:rotate(-1.5deg)}100%{transform:none}}
+.ttree svg{transform-origin:50% 100%}
+.nopond .pond{display:none}
+.spond{position:absolute;z-index:1}.spond svg{width:100%;height:auto;display:block;aspect-ratio:200/60}
+.redb{position:absolute;width:7%;translate:-50% 0;z-index:4;pointer-events:none}.redb svg{width:100%;height:auto;display:block;transform-origin:50% 99%}
+.redb.small{width:6.5%}.redb.bob svg{animation:rbBob 2.6s ease-in-out infinite}
+@keyframes rbBob{25%{transform:rotate(4deg)}75%{transform:rotate(-4deg)}}
+.coverb{translate:-50% -50%;opacity:1}
+.pk-num{position:absolute;top:auto;bottom:auto;right:auto;translate:-50% 0;z-index:4;min-width:1.25em;text-align:center;font:900 calc(17*var(--u)) Nunito,sans-serif;line-height:1.05;color:#E5762A;-webkit-text-stroke:0;background:#fff;border:3px solid var(--pl);border-radius:16px;box-shadow:3px 4px 0 var(--pl);padding:.04em .18em}
+.pk-num:empty{display:none}
+.pk-sky.counted::after{content:'';position:absolute;left:50%;top:42%;width:150%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;z-index:-1;background:radial-gradient(circle,rgba(255,214,90,.75) 0,rgba(255,214,90,.45) 42%,rgba(255,214,90,0) 70%);box-shadow:0 0 0 3px rgba(252,181,21,.9) inset}
+.bman{width:12%}.bman svg{overflow:visible}
+.bmanq{left:7%;width:15%}.bmanq .bunch{display:none}
+.oneb{translate:-50% 0;width:8%;left:30%;bottom:40%}
+.riser.drift{width:min(19cqh,19cqw,calc(104px*var(--k,1)));animation-duration:var(--dur,11s),1.7s;animation-timing-function:linear,ease-in-out;animation-fill-mode:forwards,none;animation-iteration-count:1,infinite;animation-direction:normal,alternate}
+.riser.drift.d0{animation-name:drift0,sway2}.riser.drift.d1{animation-name:drift1,sway2}.riser.drift.d2{animation-name:drift2,sway2}
+@keyframes drift0{0%{transform:translate(0,0) scale(.22)}6%{transform:translate(calc(var(--dx,0px)*.05),-2cqh) scale(1)}25%{transform:translate(calc(var(--dx,0px)*.24),5cqh) scale(1)}45%{transform:translate(calc(var(--dx,0px)*.44),-6cqh) scale(1)}65%{transform:translate(calc(var(--dx,0px)*.64),1cqh) scale(1)}85%{transform:translate(calc(var(--dx,0px)*.84),-9cqh) scale(1)}100%{transform:translate(var(--dx,0px),-5cqh) scale(1)}}
+@keyframes drift1{0%{transform:translate(0,0) scale(.22)}6%{transform:translate(calc(var(--dx,0px)*.05),-3cqh) scale(1)}30%{transform:translate(calc(var(--dx,0px)*.28),-14cqh) scale(1)}55%{transform:translate(calc(var(--dx,0px)*.52),-9cqh) scale(1)}80%{transform:translate(calc(var(--dx,0px)*.78),-24cqh) scale(1)}100%{transform:translate(var(--dx,0px),-30cqh) scale(1)}}
+@keyframes drift2{0%{transform:translate(0,0) scale(.22)}6%{transform:translate(calc(var(--dx,0px)*.05),0) scale(1)}28%{transform:translate(calc(var(--dx,0px)*.26),8cqh) scale(1)}50%{transform:translate(calc(var(--dx,0px)*.48),2cqh) scale(1)}75%{transform:translate(calc(var(--dx,0px)*.72),-12cqh) scale(1)}100%{transform:translate(var(--dx,0px),-18cqh) scale(1)}}
+.tp-bub{position:absolute;z-index:7;translate:-50% 0;background:#fff;border:3px solid var(--pl);border-radius:14px;padding:.1em .5em;font:900 calc(4.4*var(--u,1cqh)) Nunito,sans-serif;color:var(--pl);white-space:nowrap;box-shadow:2px 3px 0 var(--pl)}
+.tp-bub:empty{display:none}
+.tp-pic{position:absolute;z-index:6;width:12%;translate:-50% 0;background:#fff;border-radius:50%;padding:1%;animation:pop .4s}.tp-pic svg{width:100%;height:auto;display:block}
+.tp-mic{position:absolute;z-index:7;width:clamp(56px,13cqh,88px);height:clamp(56px,13cqh,88px)}
+.popfield{container-type:size;--u:1cqh}
+.isocity.holding,.isocity.holding *{cursor:none!important}.ihold{transform:translate(-50%,-60%) scale(1.15);filter:drop-shadow(0 4px 4px rgba(54,29,70,.3))}
+
+.musicbtn .cnt{position:absolute;right:-8px;top:-8px;min-width:30px;height:30px;padding:0 7px;border-radius:15px;background:var(--berry);color:#fff;font-weight:900;font-size:16px;display:grid;place-items:center;box-shadow:0 0 0 3px #fff}
+.musicbtn.fresh>svg{animation:nextPulse 1.4s ease-in-out infinite}
+.musicroom .gtile small{font-weight:700;font-size:clamp(11px,2.2cqh,14px);color:var(--muted);margin-top:-4px}
+.musicroom .gart svg{border-radius:16px}
+.mtile .mnotes{position:absolute;right:8px;top:6px;font-style:normal;font-weight:900;color:#9B6BD0;opacity:0;font-size:22px}
+.mtile .mnotes i{display:inline-block;font-style:normal}
+.mtile.playing{background:#FFF6D6;border-color:#E5762A}.mtile.playing .mnotes{opacity:1}.mtile.playing .mnotes i{animation:noteUp 1s ease-in-out infinite}.mtile.playing .mnotes i+i{animation-delay:.5s}
+.mtile.playing .gart{animation:hop .6s ease-in-out infinite}
+@keyframes noteUp{50%{transform:translateY(-6px) rotate(-8deg)}}
+
+/* ---- 20/10: Màn 2 · camping in the garden ---- */
+.ctent{z-index:1}.cdrum{z-index:3}
+.lanterns .lstring{position:absolute;left:0;top:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.lantern{position:absolute;width:10%;translate:-50% 0;border:0;background:none;padding:0;z-index:3;transform-origin:50% 0;animation:lsway 3s ease-in-out infinite alternate}
+.lantern:nth-of-type(2n){animation-delay:-1.4s}
+.lantern svg{width:100%;height:auto;display:block;overflow:visible}
+.lantern .lglow{opacity:0;transition:opacity .5s}.lantern .lbody{filter:saturate(.35) brightness(.7);transition:filter .5s}
+.lantern.lit .lglow{opacity:.35}.lantern.lit .lbody{filter:none}
+.lantern.bright .lglow{opacity:.55}.lantern.sing{animation:lsing .5s ease-in-out infinite alternate}
+@keyframes lsway{from{rotate:-4deg}to{rotate:4deg}}
+@keyframes lsing{from{rotate:-7deg;scale:1}to{rotate:7deg;scale:1.08}}
+.lbugbox .lleaf{z-index:1}
+.lbug{position:absolute;left:50%;bottom:20%;width:17%;translate:-50% 0;z-index:3;opacity:0}
+.lbug svg{width:100%;height:auto;display:block}
+.lbug .lwing{opacity:0;transform-origin:50% 30%}
+.lbug.land{animation:lbLand .7s ease-out forwards}
+.lbug.away{animation:lbAway .7s ease-in forwards}.lbug.away .lwing{opacity:1;animation:lbFlap .08s linear infinite alternate}
+@keyframes lbLand{from{opacity:0;transform:translate(60%,-120%) rotate(30deg) scale(.6)}to{opacity:1;transform:none}}
+@keyframes lbAway{from{opacity:1;transform:none}to{opacity:0;transform:translate(120%,-180%) rotate(-25deg) scale(.6)}}
+@keyframes lbFlap{from{transform:scaleX(1)}to{transform:scaleX(.7)}}
+.hidecount .pk-num,.hidecount .boxmic{z-index:8}
+.fs-bed .ftent{left:2%;bottom:8%;width:40%;opacity:0;transition:opacity .6s}.fs-bed.dusk .ftent{opacity:1}
+
+.fs-in-garden.fs-bed .moon{display:none}   /* the night garden already has its moon */
+.fs-in-garden.fs-bed .fs-blanket{background:#58B592;border-radius:16px;left:8%;width:30%;bottom:20%}
+.fs-in-garden .fs-sky,.fs-in-garden .fs-ground{display:none}
+.posintro.night{background:none;overflow:hidden}.posintro.night>.pi-bg{position:absolute;inset:0;border-radius:15px;overflow:hidden}.posintro.night>.pi-bg>svg{width:100%;height:100%;display:block}
+.posintro.night .pi-svg>svg>rect:first-child{fill:#2E6B4F}
 </style>
 
 <div id="root"></div>
@@ -2037,11 +2120,11 @@ function shapeSVG(s,col,v=0){
 }
 function catG(x,y,s=1){ const c='#F4A340'; return `<g transform="translate(${x} ${y}) scale(${s})"><path d="M10 -6 q16 -4 10 -20" fill="none" stroke="${INK}" stroke-width="7" stroke-linecap="round"/><path d="M10 -6 q16 -4 10 -20" fill="none" stroke="${c}" stroke-width="4" stroke-linecap="round"/><ellipse cx="0" cy="-9" rx="12" ry="9" fill="${c}" stroke="${INK}" stroke-width="2"/><path d="M-9 -26 l1 -10 l7 6z M9 -26 l-1 -10 l-7 6z" fill="${c}" stroke="${INK}" stroke-width="2" stroke-linejoin="round"/><circle cx="0" cy="-23" r="9.5" fill="${c}" stroke="${INK}" stroke-width="2"/><circle cx="-3.5" cy="-24" r="1.6" fill="${INK}"/><circle cx="3.5" cy="-24" r="1.6" fill="${INK}"/><path d="M-1.5 -20.5 h3 l-1.5 1.5z" fill="#E8607E"/></g>` }
 function sceneSVG(pos){
-  const cat=pos?{on:[38,40],under:[38,91],in:[95,84]}[pos]:null;
+  const cat=pos?{on:[38,40],under:[38,91],in:[95,84],wet:[72.5,91,.5]}[pos]:null;
   return `<svg viewBox="0 0 120 100" aria-hidden="true"><rect x="0" y="91" width="120" height="9" rx="3" fill="#D3E3DB"/>
    <rect x="80" y="64" width="30" height="27" fill="#C98A5A"/>
    <rect x="8" y="40" width="62" height="7" rx="3" fill="#9B6A45" stroke="${INK}" stroke-width="2"/><rect x="13" y="47" width="6" height="44" fill="#9B6A45" stroke="${INK}" stroke-width="2"/><rect x="59" y="47" width="6" height="44" fill="#9B6A45" stroke="${INK}" stroke-width="2"/>
-   ${cat?catG(cat[0],cat[1],.95):''}
+   ${cat?catG(cat[0],cat[1],cat[2]||.95):''}
    <rect x="78" y="72" width="34" height="20" fill="#E9AE76" stroke="${INK}" stroke-width="2"/><path d="M78 72 L71 63 L84 63 Z M112 72 L119 63 L106 63Z" fill="#C98A5A" stroke="${INK}" stroke-width="2" stroke-linejoin="round"/></svg>`;
 }
 function skySVG(t){
@@ -2173,6 +2256,10 @@ const Hand={ el:null, cur:null,
     const a=h.animate([{transform:this.T(this.cur)+' scale(1)'},{transform:this.T(this.cur)+' scale(.86)'},{transform:this.T(this.cur)+' scale(1)'}],{duration:Math.max(1,300*SPEED)}); await a.finished.catch(()=>{}); h.style.transform=this.T(this.cur) },
   async press(ms=1300){ const h=this.node(); if(!this.cur) return; const r=el(`<div class="ripple" style="left:${this.cur.x}px;top:${this.cur.y}px"></div>`); $('#fx').append(r); setTimeout(()=>r.remove(),700);
     await h.animate([{transform:this.T(this.cur)+' scale(1)'},{transform:this.T(this.cur)+' scale(.84)',offset:.15},{transform:this.T(this.cur)+' scale(.84)',offset:.85},{transform:this.T(this.cur)+' scale(1)'}],{duration:Math.max(1,ms*SPEED)}).finished.catch(()=>{}); h.style.transform=this.T(this.cur) },
+  async chase(target,dur=650){ if(RUN&&RUN.inDemo&&RUN.preQ&&RUN.preQ.length) await flushPre(); const h=this.node(); h.getAnimations().forEach(a=>a.cancel()); h.style.opacity=1;
+    const from=this.cur||{x:innerWidth/2,y:innerHeight+40}, t0=performance.now(), D=Math.max(1,dur*SPEED);
+    await new Promise(res=>{ const step=()=>{ const k=Math.min(1,(performance.now()-t0)/D), e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2, p=center(target); const q={x:from.x+(p.x-from.x)*e,y:from.y+(p.y-from.y)*e};
+      h.style.transform=this.T(q); this.cur=q; if(k<1&&target.isConnected&&!(RUN&&RUN.aborted)) requestAnimationFrame(step); else res() }; step() }) },
   hide(){ if(this.el){ this.el.style.opacity=0 } this.cur=null }
 };
 function center(e){ const r=e.getBoundingClientRect(); return {x:r.left+r.width/2,y:r.top+r.height/2} }
@@ -2521,7 +2608,7 @@ function traceLane(lane,A,B,band,K){
 }
 GAMES.trace=async(sk,rounds,opt={})=>{
   /* the track is laid out in pixels of the box; when the box changes size (a caption wraps to two lines, the phone turns) it is laid out again */
-  const setup=(K)=>{ const c=card(); const box=el(`<div class="trackbox fade"><svg class="tk" preserveAspectRatio="none"></svg></div>`); c.append(box);
+  const setup=(K)=>{ if(K.scene) return traceSceneSetup(K); const c=card(); const box=el(`<div class="trackbox fade"><svg class="tk" preserveAspectRatio="none"></svg></div>`); c.append(box);
     const band=62, pad=56, lane=K.lane||'road', svg=$('svg',box); const T={box,band,cur:0}; let mover=null, line=null;
     const icon=(k,p,cls)=>{ const a=typeof k==='function'?k():k==='flowerS'?flowerSVG():ART[k](k==='star'?'#FCB515':undefined); const e=el(`<div class="tk-ico ${cls}" style="left:${p.x}px;top:${p.y}px">${a}</div>`); box.append(e); return e };
     const layout=()=>{ const r=box.getBoundingClientRect(), Wd=r.width, Ht=r.height; if(!Wd||!Ht) return false;
@@ -2548,8 +2635,8 @@ GAMES.trace=async(sk,rounds,opt={})=>{
     tone(K.v?600:300,.3,'sine',.05,0,K.v?300:500); await say1; await sleep(400) };
   let introLeft=opt.intro||['Let’s draw some lines!','Mình cùng vẽ đường thẳng nhé!']; const intro=async()=>{ if(introLeft){ const l=introLeft; introLeft=null; await say(...l) } };   // said once the first line is on screen
   const kidSkins=opt.skins||TRACE_SKINS.slice(1); let K,T;
-  const shown=await demoOr('trace',async()=>{ K=opt.demo||TRACE_SKINS[0]; T=setup(K); await intro(); await say(K.en,K.vi,{q:true});
-    await Hand.moveTo(page(T,T.A)); for(let i=0;i<=40;i++){ const q=T.setProg(T.len*i/40); Hand.set(page(T,q)); await sleep(32) } SFX.chime(); await say('All the way to the end!','Đến nơi rồi!'); Hand.hide(); await showFx(T,K) });
+  const shown=await demoOr('trace',async()=>{ K=opt.demo||(kidSkins[0]&&kidSkins[0].scene?kidSkins[0]:TRACE_SKINS[0]); T=setup(K); await intro(); await say(K.en,K.vi,{q:true});
+    await Hand.moveTo(page(T,T.A)); for(let i=0;i<=40;i++){ const q=T.setProg(T.len*i/40); Hand.set(page(T,q)); await sleep(32) } SFX.chime(); await say('All the way to the end!','Đến nơi rồi!'); Hand.hide(); await (K.scene&&K.scene.done?K.scene.done(T):showFx(T,K)) });
   if(S.tv) await say('Press and hold the big button to draw the line.','Con nhấn giữ nút to để vẽ đường nhé.',{gap:300}); else if(shown||!RUN.mode) await say('Just move your finger along the line.','Con chỉ cần di ngón tay theo đường kẻ.',{gap:300});
   for(let r=0;r<rounds;r++){
     K=kidSkins[r%kidSkins.length]; T=setup(K); await intro(); await say(K.en,K.vi,{q:true});
@@ -2561,7 +2648,7 @@ GAMES.trace=async(sk,rounds,opt={})=>{
           try{ await say('Let’s draw it together.','Mình cùng vẽ nhé.',{gap:100}); const p0=prog; await Hand.moveTo(page(T,K.v?{x:T.A.x,y:T.A.y+p0}:{x:T.A.x+p0,y:T.A.y}),500); for(let i=0;i<=30;i++){ const q=T.setProg(p0+(T.len-p0)*i/30); Hand.set(page(T,q)); await sleep(40) } Hand.hide() }catch(e){} res(); return }
         try{ await Hand.moveTo(page(T,started?(K.v?{x:T.A.x,y:T.A.y+Math.min(T.len,prog+70)}:{x:T.A.x+Math.min(T.len,prog+70),y:T.A.y}):T.A),600) }catch(e){} try{ await say(started?'Keep going, follow the line!':'Start at the green circle.',started?'Tiếp tục đi theo đường kẻ nào!':'Bắt đầu từ vòng tròn xanh nhé.') }catch(e){} Hand.hide(); nudge() },(nudges===0&&RUN.hintArmed?5500:8000)*SPEED) };
       const mv=e=>{ const b=T.box.getBoundingClientRect(); const p={x:e.clientX-b.left,y:e.clientY-b.top};
-        if(!started){ if(Math.hypot(p.x-T.A.x,p.y-T.A.y)<56){ started=true; SFX.pop() } else return }
+        if(!started){ if(Math.hypot(p.x-T.A.x,p.y-T.A.y)<(T.startR||56)){ started=true; SFX.pop() } else return }
         const d=K.v?Math.abs(p.x-T.A.x):Math.abs(p.y-T.A.y), along=K.v?p.y-T.A.y:p.x-T.A.x;
         if(d<=T.band&&along>prog-40&&along<prog+90){ prog=Math.max(prog,Math.min(T.len,along)); T.setProg(prog); clearTimeout(idle); nudge() }
         if(prog>=T.len*.94){ T.setProg(T.len); clearTimeout(idle); abortFns.delete(ab); T.box.onpointermove=T.box.onpointerdown=null; res() } };
@@ -2570,7 +2657,7 @@ GAMES.trace=async(sk,rounds,opt={})=>{
         const stop=()=>{ clearInterval(iv); iv=null }; p.onpointerdown=e=>{ e.preventDefault(); started=true; clearTimeout(idle); stop(); iv=setInterval(()=>{ prog=Math.min(T.len,prog+T.len/45); T.setProg(prog); if(prog>=T.len){ stop(); bar.innerHTML=''; bar.classList.remove('live'); abortFns.delete(ab); res() } },40) };
         ['pointerup','pointerleave','pointercancel'].forEach(ev=>p.addEventListener(ev,stop)); abortFns.add(()=>{ stop(); bar.innerHTML=''; bar.classList.remove('live') }) }
       if(AUTO){ clearTimeout(idle); abortFns.delete(ab); T.setProg(T.len); setTimeout(res,5) } });
-    SFX.chime(); if(!S.tv) rec(sk,!hinted,performance.now()-t0); await praise(K.v?['You drew a line straight down!','Con vẽ được đường thẳng xuống rồi!']:['You drew a line straight across!','Con vẽ được đường thẳng ngang rồi!']); await showFx(T,K); await sleep(200);
+    SFX.chime(); if(!S.tv) rec(sk,!hinted,performance.now()-t0); await praise(K.v?['You drew a line straight down!','Con vẽ được đường thẳng xuống rồi!']:['You drew a line straight across!','Con vẽ được đường thẳng ngang rồi!']); await (K.scene&&K.scene.done?K.scene.done(T):showFx(T,K)); await sleep(200);
   }
   turn(null);
 };
@@ -3165,7 +3252,7 @@ function tether(box,fromFn,toFn,{col=INK,w=2,sag=.1}={}){ const svg=el('<svg cla
 function handOf(kid,r,towardX){ const s=(kid.querySelector('svg')||kid).getBoundingClientRect(); if(!s.width) return null; const left=towardX==null||towardX<s.left-r.left+s.width/2;
   return {x:s.left-r.left+s.width*(left?.16:.84),y:s.top-r.top+s.height*.62} }
 const kiteMid=(k,r)=>{ const q=k.getBoundingClientRect(); return q.width?{x:q.left-r.left+q.width*.5,y:q.top-r.top+q.height*.42}:null };
-const FS_BACK={school:'school',park:'park'};   // the level's own place behind its feelings
+const FS_BACK={school:'school',park:'park',garden:'night'};   // the level's own place behind its feelings
 function feelScene(f,name,variant){
   name=CAST.includes(name)?name:(FS_WHO[f]||'Na');
   let vArg=null; if(variant&&variant.includes(':')){ [variant,vArg]=variant.split(':') }   // e.g. 'gift:Na' = Na brings the present
@@ -3185,7 +3272,7 @@ function feelScene(f,name,variant){
   props.polly=`<div class="fs-prop cookie">${ART.cookie()}</div><div class="fs-parrot">${pollySVG(false)}</div>`;   // Polly swoops down and takes Lam's cookie
   { const giver=vArg||CAST.find(n=>n!==name); props.gift=`<div class="fs-giver stk">${kidSVG(giver,'happy')}<i class="gbox">${ART.present('#E8607E')}</i></div>`; }
   props.truck=`<div class="fs-prop tower"><i style="--c:#E8607E"></i><i style="--c:#4A9BDB"></i><i style="--c:#FCB515"></i></div><div class="fs-prop ball truck">${ART.car()}</div>`;
-  props.bed=props.tired+`<div class="fs-prop fbed"><svg viewBox="0 0 120 70"><rect x="6" y="14" width="10" height="52" rx="3" fill="#9B6A45" ${OL}/><rect x="104" y="30" width="10" height="36" rx="3" fill="#9B6A45" ${OL}/><rect x="12" y="40" width="98" height="16" rx="4" fill="#C98A52" ${OL}/><rect x="14" y="30" width="94" height="12" rx="5" fill="#fff" ${OL}/><rect x="18" y="22" width="24" height="12" rx="6" fill="#FFE3C2" ${OL}/></svg></div><div class="fs-blanket"></div>`;
+  props.bed=FS_PLACE==='garden'?props.tired+`<div class="fs-prop ftent">${TENT_SVG()}</div><div class="fs-prop fbed"><svg viewBox="0 0 120 70"><rect x="8" y="30" width="104" height="30" rx="15" fill="#58B592" stroke="${INK}" stroke-width="3.5"/><path d="M40 32 V58" stroke="#2A8060" stroke-width="3" stroke-dasharray="3 3"/><rect x="12" y="24" width="26" height="14" rx="7" fill="#FFE3C2" stroke="${INK}" stroke-width="3"/></svg></div><div class="fs-blanket"></div>`:props.tired+`<div class="fs-prop fbed"><svg viewBox="0 0 120 70"><rect x="6" y="14" width="10" height="52" rx="3" fill="#9B6A45" ${OL}/><rect x="104" y="30" width="10" height="36" rx="3" fill="#9B6A45" ${OL}/><rect x="12" y="40" width="98" height="16" rx="4" fill="#C98A52" ${OL}/><rect x="14" y="30" width="94" height="12" rx="5" fill="#fff" ${OL}/><rect x="18" y="22" width="24" height="12" rx="6" fill="#FFE3C2" ${OL}/></svg></div><div class="fs-blanket"></div>`;
   const sc=el(`<div class="fscene fade fs-${f}${variant?' fs-'+variant:''}${night?' night':''}${FS_PLACE?' fs-in-'+FS_PLACE:''}"><div class="fs-sky"></div><div class="fs-ground"></div>${FS_BACK[FS_PLACE]?`<div class="fs-back">${BG[FS_BACK[FS_PLACE]]()}</div>`:''}${props[variant]||props[f]}<div class="fs-kid stk">${kidSVG(name,'neutral')}<b>${name}</b></div></div>`);
   const faceG=()=>sc.querySelector('.fs-face');
   const setFace=k=>setKidFace(sc,name,k);
@@ -3387,7 +3474,7 @@ const TUNES={
   angry:{bpm:120,wave:'sawtooth',notes:[43,43,44,43,43,44,46,43],len:.6,vol:.07,drum:true},
   scared:{bpm:200,wave:'triangle',notes:[76,77,76,77,76,77,76,77,76,77,76,77],len:.5,vol:.05,rumble:true},
 };
-const MUSIC_ADJ={happy:['happy','vui'],sad:['sad','buồn'],angry:['angry','giận dữ'],scared:['scary','đáng sợ'],tired:['sleepy','buồn ngủ'],excited:['exciting','sôi động']};
+const MUSIC_ADJ={happy:['happy','vui'],sad:['sad','buồn'],angry:['angry','giận dữ'],scared:['scary','đáng sợ'],tired:['sleepy','buồn ngủ'],excited:['exciting','sôi động'],surprised:['surprising','bất ngờ']};
 function playTune(f){ const a=ac(); if(!a) return 0; const T=TUNES[f], beat=60/T.bpm; let t=a.currentTime+.05; Music.level(.05);
   T.notes.forEach((m,i)=>{ const fr=440*Math.pow(2,(m-69)/12); tone(fr,beat*T.len*1.6,T.wave,T.vol,t-a.currentTime); if(T.drum&&i%2===0){ tone(90,.2,'sine',.35,t-a.currentTime,40); noise(.06,.2,t-a.currentTime,400) } t+=beat });
   if(T.rumble) noise(beat*T.notes.length,.06,0,180);
@@ -3398,13 +3485,13 @@ async function feelBuf(f){ if(FMUSIC.buf[f]) return FMUSIC.buf[f]; const a=ac();
   try{ const r=await fetch(`music/feel-${f}.mp3`); if(!r.ok) throw 0; const ab=await r.arrayBuffer(); const b=await new Promise((res,rej)=>{ const p=a.decodeAudioData(ab,res,rej); if(p&&p.then) p.then(res,rej) }); return FMUSIC.buf[f]=b }catch(e){ return null } }
 function stopFeelMusic(){ const c=FMUSIC.cur; FMUSIC.cur=null; if(c){ try{ c.g.gain.setTargetAtTime(0,ac().currentTime,.08); c.s.stop(ac().currentTime+.4) }catch(e){} c.done() } }
 async function playFeelMusic(f,maxSec=9){
-  stopFeelMusic(); const a=ac(); const b=await Promise.race([feelBuf(f),rawWait(4000).then(()=>null)]);
+  stopFeelMusic(); if(FAST){ await sleep(20); return } const a=ac(); const b=await Promise.race([feelBuf(f),rawWait(4000).then(()=>null)]);
   if(!b||!a){ await sleep((playTune(f)+200)/SPEED); return }
   Music.level(.05); const s=a.createBufferSource(), g=a.createGain(); s.buffer=b; s.connect(g).connect(a.destination); const t0=a.currentTime; const len=Math.min(b.duration,maxSec);
   g.gain.setValueAtTime(.95,t0); if(b.duration>maxSec){ g.gain.setValueAtTime(.95,t0+len-1.2); g.gain.linearRampToValueAtTime(0,t0+len) }
   s.start(t0); s.stop(t0+len+.05);
   await new Promise(res=>{ const me={s,g,done:res}; FMUSIC.cur=me; const fin=()=>{ if(FMUSIC.cur===me) FMUSIC.cur=null; res() }; s.onended=fin; setTimeout(fin,(len+.3)*1000); abortFns.add(()=>{ stopFeelMusic(); res() }) });
-  Music.level(1) }
+  Music.level(1); if(typeof heardPiece==='function') heardPiece(FEEL_PIECE[f]) }
 addFormat('findFeeling','music',async(sk,rounds,opt={})=>{
   Object.keys(TUNES).forEach(f=>feelBuf(f));
   const avail=Object.keys(TUNES).filter(f=>sk.p.set==='all'||sk.p.set.includes(f)); const pool=avail.length>=2?avail:['happy','sad','angry'];
@@ -4238,11 +4325,12 @@ function renderHome(){
   root.className='kid';
   root.innerHTML=SCENE+`<div class="wrap-kid map">${topbar(false,'<div></div>')}
     <div class="pathmap" id="pathmap"></div>
-    <div class="mapdock"><button class="mapbtn" id="myMapBtn" aria-label="My Map">${MYMAP_ICON()}<span class="blabel">My Map</span></button><button class="citybtn" id="cityBtn" aria-label="Thành phố của bé">${ISO_ICON()}<span class="blabel">My City</span>${Z0().animals.length?`<b class="cnt">${Z0().animals.length}</b>`:''}${S.giftOwed>0?`<i class="owed">${ART.present('#E8607E')}</i>`:''}</button><button class="gamesbtn" id="gamesBtn" aria-label="Trò chơi của con">${GAMES_ICON()}<span class="blabel">My Games</span>${Object.keys(S.done||{}).filter(i=>REWARD[i]).length?`<b class="cnt">${Object.keys(S.done||{}).filter(i=>REWARD[i]).length}</b>`:''}</button>${typeof viewMix==='function'?`<button class="mixbtn${mixReady()?'':' locked'}" id="mixBtn" aria-label="Fun Mix">${MIX_ICON()}<span class="blabel">Fun Mix</span>${mixReady()?'':`<span class="glock"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3" fill="#FCB515" stroke="${CK_PL}" stroke-width="2"/><path d="M8 10 V7 a4 4 0 0 1 8 0 V10" fill="none" stroke="${CK_PL}" stroke-width="2.2"/></svg></span>`}</button>`:''}<div class="caption" id="caption" style="visibility:hidden"></div></div></div><div id="fx"></div>`;
+    <div class="mapdock"><button class="mapbtn" id="myMapBtn" aria-label="My Map">${MYMAP_ICON()}<span class="blabel">My Map</span></button><button class="citybtn" id="cityBtn" aria-label="Thành phố của bé">${ISO_ICON()}<span class="blabel">My City</span>${Z0().animals.length?`<b class="cnt">${Z0().animals.length}</b>`:''}${S.giftOwed>0?`<i class="owed">${ART.present('#E8607E')}</i>`:''}</button><button class="gamesbtn" id="gamesBtn" aria-label="Trò chơi của con">${GAMES_ICON()}<span class="blabel">My Games</span>${Object.keys(S.done||{}).filter(i=>REWARD[i]).length?`<b class="cnt">${Object.keys(S.done||{}).filter(i=>REWARD[i]).length}</b>`:''}</button>${Object.keys(S.heard||{}).length?`<button class="musicbtn${S.heardNew?' fresh':''}" id="musicBtn" aria-label="Music box">${MUSICBOX_ICON()}<span class="blabel">Music box</span><b class="cnt">${Object.keys(S.heard).length}</b></button>`:''}${typeof viewMix==='function'?`<button class="mixbtn${mixReady()?'':' locked'}" id="mixBtn" aria-label="Fun Mix">${MIX_ICON()}<span class="blabel">Fun Mix</span>${mixReady()?'':`<span class="glock"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="3" fill="#FCB515" stroke="${CK_PL}" stroke-width="2"/><path d="M8 10 V7 a4 4 0 0 1 8 0 V10" fill="none" stroke="${CK_PL}" stroke-width="2.2"/></svg></span>`}</button>`:''}<div class="caption" id="caption" style="visibility:hidden"></div></div></div><div id="fx"></div>`;
   wireGate(); wireTV();
   $('#cityBtn').onclick=()=>{ SFX.pop(); viewCity() };
   $('#gamesBtn').onclick=()=>{ SFX.pop(); viewGames() };
   $('#myMapBtn').onclick=()=>{ SFX.pop(); viewMyMap() };
+  if($('#musicBtn')) $('#musicBtn').onclick=()=>{ SFX.pop(); viewMusicBox() };
   if($('#mixBtn')) $('#mixBtn').onclick=()=>{ if(!mixReady()){ const b=$('#mixBtn'); b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); SFX.soft(); return } SFX.pop(); viewMix() };
   requestAnimationFrame(drawMap);
 }
@@ -4468,20 +4556,21 @@ async function demoDrag(item,zone,dur=650){ const f=center(item), t=center(zone)
   item.classList.remove('dragging') }
 
 /* ---- pop games: bubbles (feelings) and balloons (numbers) keep rising; pop all the right ones ---- */
-async function popStream(sk,rounds,{intro,target,make,ask,label,answer,opt={},need=3,countAll=false,noDemo=false,finale=null,bg=null,from=null}){
+async function popStream(sk,rounds,{intro,target,make,ask,label,answer,opt={},need=3,countAll=false,noDemo=false,finale=null,bg=null,from=null,ratio=3,between=null}){
+  let curField=null;
   let introLeft=intro;
   const round=async(t,demo)=>{
-    const c=card(); const field=el(`<div class="popfield fade">${bg?bg():''}</div>`); c.append(field); if(introLeft){ await say(...introLeft); introLeft=null }
+    const c=card(); const field=el(`<div class="popfield fade">${bg?bg():''}</div>`); c.append(field); curField=field; if(introLeft){ await say(...introLeft); introLeft=null }
     let popped=0, wrong=0, alive=true, live=[];
     const others=make.others(t);
     let lastPop=performance.now(), ease=1.12;   // slower with every new one (4%), and 22% slower each time a right one floats away untapped
-    const spawn=(isT)=>{ if(!alive) return; const v=isT?t:pick(others); if(!demo) ease=Math.min(3.6,ease*1.04); const sl=(demo?1:ease)*(from?1.25:1); const b=el(`<button class="riser ${make.cls}${from?' from':''}" style="left:${6+rand(74)}%;--dur:${((demo?7:6.2)+Math.random()*2.4)*sl}s;--sway:${rand(2)?'':'-'}${10+rand(16)}px"><span class="in">${make.art(v)}</span></button>`);
+    const spawn=(isT)=>{ if(!alive) return; const v=isT?t:pick(others); if(!demo) ease=Math.min(3.6,ease*1.04); const sl=(demo?1:ease)*(from?1.6:1); const b=el(`<button class="riser ${make.cls}${from?' from drift d'+rand(3):''}" style="left:${6+rand(74)}%;--dur:${((demo?7:6.2)+Math.random()*2.4)*sl}s;--sway:${rand(2)?'':'-'}${10+rand(16)}px"><span class="in">${make.art(v)}</span></button>`);
       b.dataset.v=v; if(isT||countAll) b.dataset.ok='1'; field.append(b); live.push(b);
-      if(from){ const fr=field.getBoundingClientRect(), p=from(field), bw=b.offsetWidth||80; b.style.left=(p.x-bw/2)+'px'; b.style.bottom=(fr.height-p.y-bw/2)+'px'; b.style.setProperty('--dx',((.3+Math.random()*.6)*fr.width-p.x)+'px') }   // out of the wand, then drifting across
-      b.addEventListener('animationend',e=>{ if(e.animationName!=='rise'&&e.animationName!=='riseFrom') return; if(!demo&&b.dataset.ok&&!b.dataset.used) ease=Math.min(3.6,ease*1.22); b.remove(); live=live.filter(x=>x!==b) }); return b };
+      if(from){ const fr=field.getBoundingClientRect(), p=from(field), bw=b.offsetWidth||80; b.style.left=(p.x-bw/2)+'px'; b.style.bottom=(fr.height-p.y-bw/2)+'px'; b.style.setProperty('--dx',(fr.width-p.x+bw*1.2)+'px') }   // out of the wand, then drifting across to the right, up and down a little
+      b.addEventListener('animationend',e=>{ if(!/^(rise|riseFrom|drift\d)$/.test(e.animationName)) return; if(!demo&&b.dataset.ok&&!b.dataset.used) ease=Math.min(3.6,ease*1.22); b.remove(); live=live.filter(x=>x!==b) }); return b };
     // a steady stream: about one in three is a right one, and there is always one on its way
-    let k=0; const tick=()=>{ if(!alive) return; const rightOnes=live.filter(b=>b.dataset.ok&&!b.dataset.used).length; spawn(rightOnes===0||k%3===0); k++ };
-    for(let i=0;i<3;i++) setTimeout(tick,i*500); const iv=setInterval(tick,demo?1500:1250);
+    let k=0; const tick=()=>{ if(!alive) return; const rightOnes=live.filter(b=>b.dataset.ok&&!b.dataset.used).length; spawn(rightOnes===0||k%ratio===0); k++ };
+    for(let i=0;i<3;i++) setTimeout(tick,i*(from?900:500)); const iv=setInterval(tick,from?1800:demo?1500:1250);
     // the last balloon carries something (the map piece): the stream stops, one big balloon floats up and waits
     const startFinale=()=>{ alive=false; clearInterval(iv); live.forEach(b=>{ if(!b.dataset.used){ b.dataset.used='1'; b.classList.add('away') } });
       setTimeout(()=>{ const sp=el(`<button class="riser special"><span class="in">${ART.balloon('#E8484F')}<span class="tied">${finale}</span></span></button>`); sp.dataset.ok='1'; sp.dataset.v='1'; field.append(sp); live.push(sp);
@@ -4495,7 +4584,7 @@ async function popStream(sk,rounds,{intro,target,make,ask,label,answer,opt={},ne
     await ask(t);
     const pop=b=>{ b.dataset.used=1; lastPop=performance.now(); const p=center(b); b.classList.add('pop'); burst(p,{n:12}); SFX.pop(); tone(900,.08,'triangle',.08); setTimeout(()=>b.remove(),300) };
     if(demo){ for(let i=0;i<3;i++){ let b=null; for(let w=0;w<40&&!b;w++){ b=live.find(x=>x.dataset.ok&&!x.dataset.used&&x.getBoundingClientRect().top>field.getBoundingClientRect().top+20); if(!b) await sleep(150) } if(!b) break;
-        await Hand.moveTo(center(b),450); await Hand.tap(); pop(b); popped++; await say(cap(W[popped])+'!',cap(VI_N[popped])+'!',{gap:100}) } Hand.hide(); stop(); abortFns.delete(stop); field.remove(); return true }
+        await Hand.chase(b,650); await Hand.tap(); pop(b); popped++; await say(cap(W[popped])+'!',cap(VI_N[popped])+'!',{gap:100}) } Hand.hide(); stop(); abortFns.delete(stop); field.remove(); return true }
     const t0=performance.now();
     await new Promise((res,rej)=>{ const ab=()=>{ rej(ABORT) }; abortFns.add(ab);
       field.addEventListener('click',e=>{ const b=e.target.closest('.riser'); if(!b||b.dataset.used) return;
@@ -4510,7 +4599,7 @@ async function popStream(sk,rounds,{intro,target,make,ask,label,answer,opt={},ne
     confetti(); live.forEach(b=>{ if(!b.dataset.used){ b.dataset.used='1'; b.classList.add('away') } }); await say(...answer(t)); return ok };   // the field stays for the praise; the next card replaces it
   if(opt.single||noDemo){ turn('kid'); for(let r=0;r<(opt.single?1:rounds);r++){ const ok=await round(target(),false); if(ok) await praise() } turn(null); return }
   let prev=target(); await demoOr('pop',()=>round(prev,true));
-  for(let r=0;r<rounds;r++){ const t=nextDifferent(prev,target); prev=t; const ok=await round(t,false); if(ok) await reteachPending(); else await kept(false); await sleep(300) }   // the answer line already says what the child did
+  for(let r=0;r<rounds;r++){ const t=nextDifferent(prev,target); prev=t; const ok=await round(t,false); if(ok) await reteachPending(); else await kept(false); if(between) await between(r,curField); await sleep(300) }   // the answer line already says what the child did
   turn(null);
 }
 addFormat('findFeeling','pop',(sk,rounds,opt={})=>{ const pool=sk.p.set==='all'?FEELS:sk.p.set;
@@ -4746,7 +4835,7 @@ const EP={
 /** play one chapter; stopping in the middle resumes at the same page */
 async function runEpisode(sess,li){
   const steps=EP[li]; const from=S.partial&&S.partial.li===li?(S.partial.step||0):0;
-  RUN.lesson=li; FS_PLACE=({0:'school',1:'park',3:'home',5:'site',7:'beach'})[li]||''; RUN.mamFresh=Object.fromEntries((EP_MAM[li]||[]).map(id=>[id,!mamTaught(id)])); RUN.plan={lesson:li,items:[],mission:null}; sess.plan={lesson:li,items:[],episode:true};
+  RUN.lesson=li; FS_PLACE=({0:'school',1:'park',2:'garden',3:'home',5:'site',7:'beach'})[li]||''; RUN.mamFresh=Object.fromEntries((EP_MAM[li]||[]).map(id=>[id,!mamTaught(id)])); RUN.plan={lesson:li,items:[],mission:null}; sess.plan={lesson:li,items:[],episode:true};
   if(from>0) await say('Let’s keep going!','Mình chơi tiếp nhé!');
   for(let i=from;i<steps.length;i++){
     await limitGate();
@@ -4870,7 +4959,8 @@ async function findMapPiece(n,lines){
   const tx=mr.left+(38+cx*48)/220*mr.width, ty=mr.top+(43+cy*58)/150*mr.height, sc=(58/220*mr.width)/pr.width;
   pc.style.animation='none';
   const a=pc.animate([{transform:'translate(-50%,-50%)'},{transform:`translate(calc(-50% + ${(tx-(pr.left+pr.width/2))*.5}px),calc(-50% + ${(ty-(pr.top+pr.height/2))*.5-60}px)) scale(${(1+sc)/2}) rotate(-12deg)`},{transform:`translate(calc(-50% + ${tx-(pr.left+pr.width/2)}px),calc(-50% + ${ty-(pr.top+pr.height/2)}px)) scale(${sc})`}],{duration:Math.max(1,1100*SPEED),easing:'ease-in-out',fill:'forwards'});
-  tone(500,.5,'sine',.08,0,1000); await a.finished.catch(()=>{});
+  const tune=playMusic('map-ode',{gain:.62,under:true,maxSec:9}); heardPiece('ode');   // the map-piece tune: Ode to Joy (no name said; it opens in the Music box)
+  await a.finished.catch(()=>{});
   pc.remove(); map.innerHTML=mapTornSVG(n); map.classList.add('glow'); SFX.chime(); burst({x:tx,y:ty},{n:12});
   await say(`Look! This piece shows ${MAP_PLACE[n-1][0]}.`,`Nhìn này! Mảnh này vẽ ${MAP_PLACE[n-1][1]}.`,{q:false});
   if(n<8) await say(`${cap(W[n])} ${n>1?'pieces are':'piece is'} on the map. ${cap(W[8-n])} more to go, then we’ll see where the treasure is!`,`${cap(VI_N[n])} mảnh đã vào bản đồ. Còn ${VI_N[8-n]} mảnh nữa là mình biết kho báu ở đâu!`,{q:false});
@@ -4878,7 +4968,7 @@ async function findMapPiece(n,lines){
   for(const l of lines.slice(1)) await say(...l,{q:false});
   const nx=el(`<button class="nextbtn" aria-label="Tiếp"><svg viewBox="0 0 24 24"><path d="M9 5 L16.5 12 L9 19" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`);
   pg.append(nx); requestAnimationFrame(()=>nx.classList.add('show')); if(RUN) RUN.qfn=async()=>{ for(const l of lines.slice(1)) await say(...l,{q:false}) };
-  await tapOnce([nx]); SFX.pop(); voiceStop();
+  await tapOnce([nx]); SFX.pop(); voiceStop(); tune.then(t=>t.stop());
   S.pieces=Math.max(S.pieces||0,n); save();
 }
 /** the old map, with the pieces found so far (found = 0..8): found pieces show their part of Treasure Island, missing ones a "?" */
@@ -5125,7 +5215,7 @@ function isoCity(host){
 function isoTap(W,o){
   const [x,y]=isoP(o.i,o.j);
   if(o.ani!=null){ const D=ZA[o.t];
-    if(W.sel){ isoFeed(W,o,W.sel); return }
+    if(W.sel){ isoGive(W,o,W.sel); return }
     W.bubble(o,D.say[isVi()?1:0]);
     if(D.act==='spray'){ tone(260,.5,'sawtooth',.06,0,520); W.anim(o,'ijump',650); for(let k=0;k<7;k++) setTimeout(()=>W.fx(x+30+k*7,y-o.h*.45-k*4,`<circle r="6" fill="#7FC9EE" stroke="${CK_PL}" stroke-width="2.5"/>`,'ifxdrop',900),k*70) }
     else if(D.act==='roar'){ noise(.5,.25,0,500); tone(120,.5,'sawtooth',.08,0,70); W.anim(o,'ishake',550) }
@@ -5175,12 +5265,31 @@ function isoFoods(W){
   tr.addEventListener('pointerdown',e=>{ const b=e.target.closest('.ifood'); if(!b) return; e.preventDefault(); fd={b,f:b.dataset.f,x:e.clientX,y:e.clientY,moved:false}; try{ b.setPointerCapture(e.pointerId) }catch(_){} });
   tr.addEventListener('pointermove',e=>{ if(!fd) return; if(!fd.moved&&Math.hypot(e.clientX-fd.x,e.clientY-fd.y)>8){ fd.moved=true; fd.g=el(`<div class="ighost"><svg viewBox="0 0 64 64">${ZFOOD[fd.f].svg}</svg></div>`); document.body.append(fd.g) } if(fd.g){ fd.g.style.left=e.clientX+'px'; fd.g.style.top=e.clientY+'px' } });
   const up=e=>{ if(!fd) return; const f=fd; fd=null;
-    if(!f.moved){ const on=W.sel!==f.f; tr.querySelectorAll('.ifood').forEach(x=>x.classList.toggle('sel',on&&x===f.b)); W.sel=on?f.f:null; SFX.pop(); if(on){ const F=ZFOOD[f.f]; say(`${cap(F.en)}! Who eats ${F.en}? Tap an animal.`,`${cap(F.vi)}! Bạn nào ăn ${F.vi} nhỉ? Con chạm vào một con vật nhé.`,{gap:0,q:false}).catch(()=>{}) } return }
+    if(!f.moved){ const on=W.sel!==f.f; if(on){ isoHold(W,f.f,f.b,e); f.b.classList.add('sel') } else isoDrop(W); SFX.pop(); if(on){ const F=ZFOOD[f.f]; say(`${cap(F.en)}! Who eats ${F.en}? Tap an animal.`,`${cap(F.vi)}! Bạn nào ăn ${F.vi} nhỉ? Con chạm vào một con vật nhé.`,{gap:0,q:false}).catch(()=>{}) } return }
     f.g.remove(); const t=document.elementFromPoint(e.clientX,e.clientY); const sp=t&&t.closest&&t.closest('.isp'); let o=sp&&W.spr[sp.dataset.id];
     if(!(o&&o.ani!=null)){ const p=W.toWorld(e); const near=Object.values(W.spr).filter(s=>s.ani!=null).map(s=>{ const q=isoP(s.i,s.j); return [Math.hypot(q[0]-p.x,q[1]-40-p.y),s] }).sort((a,b)=>a[0]-b[0])[0]; o=near&&near[0]<90?near[1]:null }
-    if(o) isoFeed(W,o,f.f); else say('Drop the food on an animal!','Thả thức ăn vào con vật nhé!',{gap:0,q:false}).catch(()=>{}) };
+    isoDrop(W); if(o) isoFeed(W,o,f.f); else say('Drop the food on an animal!','Thả thức ăn vào con vật nhé!',{gap:0,q:false}).catch(()=>{}) };
   tr.addEventListener('pointerup',up); tr.addEventListener('pointercancel',()=>{ if(fd&&fd.g) fd.g.remove(); fd=null });
 }
+/** holding a food (20/10): tap a food and the pointer becomes that food; just move it (no dragging) to an animal and tap the animal.
+ *  Eaten: the food goes into the animal's mouth. Not the right food: it bounces off, falls and is gone. Either way the hand comes back;
+ *  to feed again, pick a food from the tray again. On a touch screen the food waits where the finger last touched. */
+function isoHold(W,f,b,e){ isoDrop(W); W.sel=f; const g=el(`<div class="ighost ihold"><svg viewBox="0 0 64 64">${ZFOOD[f].svg}</svg></div>`); document.body.append(g); W.hold=g; W.box.classList.add('holding');
+  const r=b.getBoundingClientRect(); const pt=e&&e.clientX!=null&&e.pointerType==='mouse'?{x:e.clientX,y:e.clientY}:{x:r.left+r.width/2,y:r.top-r.height*.6}; g.style.left=pt.x+'px'; g.style.top=pt.y+'px';
+  if(!W.holdMove){ W.holdMove=ev=>{ if(!W.box.isConnected){ isoDrop(W); window.removeEventListener('pointermove',W.holdMove); window.removeEventListener('pointerdown',W.holdMove,true); W.holdMove=null; return }
+      if(W.hold&&!ev.target.closest('.ifoods')){ W.hold.style.left=ev.clientX+'px'; W.hold.style.top=ev.clientY+'px' } };
+    window.addEventListener('pointermove',W.holdMove); window.addEventListener('pointerdown',W.holdMove,true) } }
+function isoDrop(W){ if(W.hold){ W.hold.remove(); W.hold=null } W.sel=null; if(W.box) W.box.classList.remove('holding'); if(W.foods) W.foods.querySelectorAll('.ifood').forEach(x=>x.classList.remove('sel')) }
+async function isoGive(W,o,f){ const g=W.hold; W.hold=null; W.sel=null; W.box.classList.remove('holding'); W.foods.querySelectorAll('.ifood').forEach(x=>x.classList.remove('sel'));
+  const key=Object.keys(W.spr).find(k=>W.spr[k]===o), node=key&&W.svg.querySelector(`[data-id="${key}"]`), r=node&&node.getBoundingClientRect();
+  const to=r&&r.width?{x:r.left+r.width*.5,y:r.top+r.height*.4}:null;
+  if(g&&to){ const fr={x:parseFloat(g.style.left)||to.x,y:parseFloat(g.style.top)||to.y}; await g.animate([{left:fr.x+'px',top:fr.y+'px'},{left:to.x+'px',top:to.y+'px'}],{duration:380,easing:'ease-in',fill:'forwards'}).finished.catch(()=>{}) }
+  const ok=isoFeed(W,o,f); if(!g) return;
+  if(ok){ await g.animate([{transform:'translate(-50%,-60%) scale(1.15)',opacity:1},{transform:'translate(-50%,-60%) scale(.15)',opacity:0}],{duration:320,fill:'forwards'}).finished.catch(()=>{}); g.remove(); return }
+  // bounced off: a little hop up and away, then it falls (faster and faster) and is gone
+  const x0=to?to.x:parseFloat(g.style.left), y0=to?to.y:parseFloat(g.style.top), dir=x0>innerWidth/2?-1:1, K=[];
+  for(let i=0;i<=10;i++){ const t=i/10; K.push({left:(x0+dir*170*t)+'px',top:(y0-160*t+(innerHeight-y0+260)*t*t)+'px',transform:`translate(-50%,-60%) rotate(${dir*300*t}deg)`,opacity:i>8?.4:1}) }
+  await g.animate(K,{duration:1200,easing:'linear',fill:'forwards'}).finished.catch(()=>{}); g.remove() }
 /** 3 animals to choose from: the ones not in the zoo yet come first */
 function isoGiftOptions(){ const have=new Set(Z0().animals.map(a=>a.t)); const fresh=ZA_ORDER.filter(t=>!have.has(t)); const pool=shuffle(fresh).slice(0,3); while(pool.length<3){ const t=pick(ZA_ORDER); if(!pool.includes(t)) pool.push(t) } return shuffle(pool) }
 /** after a finished level: pick an animal for the zoo, give it a home, then find its food */
@@ -5228,7 +5337,7 @@ async function viewCity(){
   if(S.giftOwed>0){ try{ await say('A present is waiting for you!','Có một món quà đang chờ con!'); await cityGift() }catch(e){ if(e===ABORT){ RUN=null; renderHome(); return } throw e } }
   const host=card(); host.classList.add('citycard'); $('.wrap-kid').classList.add('wide','city'); const W=isoCity(host); isoWire(W); isoFoods(W);
   try{ const n=Z0().animals.length;
-    await say(n?'Here is your zoo! Drag food to an animal, or tap anything you like.':'This is your city. Finish a game to get an animal for the zoo!',n?'Sở thú của con đây! Con kéo thức ăn cho thú, hoặc chạm vào bất cứ đâu nhé.':'Đây là thành phố của con. Chơi xong một màn để nhận một bạn thú cho sở thú nhé!');
+    await say(n?'Here is your zoo! Tap a food, then tap an animal. Or tap anything you like.':'This is your city. Finish a game to get an animal for the zoo!',n?'Sở thú của con đây! Con chạm vào một món ăn, rồi chạm vào con vật. Hoặc chạm vào bất cứ đâu nhé.':'Đây là thành phố của con. Chơi xong một màn để nhận một bạn thú cho sở thú nhé!');
     await new Promise((res,rej)=>{ abortFns.add(()=>rej(ABORT)) }) }catch(e){}
   RUN=null; renderHome();
 }
@@ -5908,6 +6017,7 @@ async function roomShapes(){
 async function friendSays(fr,en,vi){ const yb=el(`<b class="yesbub stk">${esc(isVi()?vi:en)}</b>`); fr.append(yb); fr.classList.add('nod'); try{ await say(en,vi,{kid:true,q:false,gap:250}) } finally { yb.remove(); fr.classList.remove('nod') } }
 async function comfortStep(H,{hint=false}={}){
   const c=card(); const SC=feelScene(H.f,H.name,H.scene); SC.el.dataset.noreplay='1'; c.append(SC.el); const fr=SC.kid();
+  const mus=H.music?await playMusic(H.music,{gain:.42,under:true,maxSec:40}):null;   // a lullaby under the bedtime scene
   if(H.lead) await say(...H.lead);
   await SC.play(); await say(H.en,H.vi); await say(`${H.name} feels ${H.f}.`,`${H.name} thấy ${VI_FEEL[H.f]}.`); if(ECHO[H.f]&&!H.noEcho) await pollyEcho(...ECHO[H.f]);
   await say(`Are you ${H.f}, ${H.name}?`,`${H.name} ơi, bạn ${VI_FEEL[H.f]} à?`); await friendSays(fr,'Yes.','Ừ.');
@@ -5918,7 +6028,7 @@ async function comfortStep(H,{hint=false}={}){
   turn(null); SC.reveal(['happy','excited','proud','surprised'].includes(H.f)?H.f:'happy'); fr.classList.add('glad'); confetti();
   if(H.scene==='bed') await say(`Good night, ${H.name}! When we feel tired, we go to sleep.`,`Chúc ${H.name} ngủ ngon! Khi mệt, mình đi ngủ nhé.`);
   else await say(['happy','excited','proud','surprised'].includes(H.f)?`${H.name} is so happy you’re here!`:`${H.name} feels better now. Thank you!`,['happy','excited','proud','surprised'].includes(H.f)?`${H.name} vui lắm vì có con!`:`${H.name} thấy dễ chịu hơn rồi. Cảm ơn con!`);
-  if(H.after) await H.after(SC) }
+  if(H.after) await H.after(SC); if(mus){ await sleep(600); mus.stop() } }
 
 /* ---- Warm-up: tap the old map to open it ---- */
 async function mapIntro(){
@@ -5942,21 +6052,22 @@ async function parkIntro(){
 
 /* ---- Lesson 2: in, on, under — a kitten looks for a dry spot after the storm. Chồi shows one, the child moves the kitten to the other two (a first look, before any question) ---- */
 async function posIntro(){
-  const c=card(); const pic=el(`<div class="posintro fade"><div class="pi-svg">${sceneSVG(null)}</div><button class="pi-hot" data-p="on" style="left:6%;top:14%;width:54%;height:28%"></button><button class="pi-hot" data-p="under" style="left:11%;top:49%;width:44%;height:42%"></button><button class="pi-hot" data-p="in" style="left:64%;top:52%;width:30%;height:40%"></button><b class="pi-word stk"></b></div>`); c.append(pic);
+  const c=card(); const pic=el(`<div class="posintro fade"><div class="pi-svg">${sceneSVG('wet')}</div><button class="pi-hot" data-p="on" style="left:6%;top:14%;width:54%;height:28%"></button><button class="pi-hot" data-p="under" style="left:11%;top:49%;width:44%;height:42%"></button><button class="pi-hot" data-p="in" style="left:64%;top:52%;width:30%;height:40%"></button><b class="pi-word stk"></b></div>`); c.append(pic);
+  if(FS_PLACE==='garden'){ pic.classList.add('night'); pic.prepend(el(`<div class="pi-bg">${BG.night()}</div>`)) }   // the kitten in Na's garden, at night
   const svg=$('.pi-svg',pic), word=$('.pi-word',pic), hot=p=>pic.querySelector(`.pi-hot[data-p="${p}"]`);
   const NAME={on:['On','Trên','on the table','trên cái bàn'],under:['Under','Dưới','under the table','dưới gầm bàn'],in:['In','Trong','in the box','trong cái hộp']};
   const put=async p=>{ svg.innerHTML=sceneSVG(p); svg.classList.remove('hop'); void svg.offsetWidth; svg.classList.add('hop'); SFX.pop(); word.textContent=NAME[p][0]+'!'; word.classList.add('show') };
-  await say('After the storm, a little kitten wants a dry spot. Let’s help it!','Sau cơn bão, một chú mèo con muốn tìm chỗ khô ráo. Mình giúp mèo nhé!');
-  await watchMe(); await say('I put the kitten on the table.','Chồi đặt mèo lên trên cái bàn.',{gap:150}); await Hand.moveTo(center(hot('on')),600); await Hand.tap(); Hand.hide(); await put('on');
-  await say('The kitten is on the table.','Mèo ở trên cái bàn.'); await pollyEcho('On! On!','Trên! Trên!');
-  await yourTurn();
+  await say('After the storm, Na’s little kitten wants a dry spot. Let’s help her!','Sau cơn bão, chú mèo con của Na muốn tìm chỗ khô ráo. Mình giúp mèo nhé!');
+  if(RUN.mode!=='review'){ await watchMe(); await say('I put the kitten on the table.','Chồi đặt mèo lên trên cái bàn.',{gap:150}); await Hand.moveTo(center(hot('on')),600); await Hand.tap(); Hand.hide(); await put('on');
+    await say('The kitten is on the table.','Mèo ở trên cái bàn.'); await pollyEcho('On! On!','Trên! Trên!');
+    await yourTurn() } else turn('kid');
   for(const p of ['under','in']){ word.classList.remove('show');
     const ask=()=>say(`Now put the kitten ${NAME[p][2]}. Tap ${NAME[p][2]}!`,`Giờ con đặt mèo ${NAME[p][3]} nhé. Con chạm vào ${NAME[p][3]}!`,{q:true});
     await ask(); RUN.qfn=ask;
     for(;;){ const btns=[...pic.querySelectorAll('.pi-hot')]; btns.forEach(b=>b.dataset.ok=b.dataset.p===p?'1':'0'); const i=await tapOnce(btns); const q=btns[i].dataset.p;
       await put(q); if(q===p) break; await say(`That’s ${NAME[q][2]}. Let’s find ${NAME[p][0].toLowerCase()}!`,`Đó là ${NAME[q][3]}. Mình tìm chỗ "${NAME[p][1].toLowerCase()}" nhé!`) }
     SFX.chime(); await say(`Yes! The kitten is ${NAME[p][2]}.`,`Đúng rồi! Mèo ở ${NAME[p][3]}.`); await pollyEcho(`${NAME[p][0]}! ${NAME[p][0]}!`,`${NAME[p][1]}! ${NAME[p][1]}!`) }
-  turn(null); RUN.qfn=null; confetti(); await say('In, on, under! Now let’s play hide and seek.','Trong, trên, dưới! Giờ mình chơi trốn tìm nhé.'); await nextPage(pic) }
+  turn(null); RUN.qfn=null; confetti(); await say('In, on, under! The kitten is warm and dry now.','Trong, trên, dưới! Mèo con khô ráo, ấm áp rồi.'); await nextPage(pic) }
 
 /* ---- Lesson 2: hide and seek before the dark game — count to ten, then: where is everyone? (in, on, under) ---- */
 async function hideIntro(){
@@ -6110,12 +6221,53 @@ const EP0_ANGRY={f:'angry',name:'Lam',scene:'polly',noEcho:true,lead:['Na shares
   after:SC=>pollyReturn(SC)};
 const EP0_HAPPY={variant:'cookies',lines:[['Look! The teacher has a present for Na, because Na helped a friend.','Nhìn kìa! Cô giáo tặng quà cho Na, vì Na đã giúp bạn.'],['It’s a box of cookies!','Đó là một hộp bánh quy!']]};
 
-/* ---- 5 and 7: lines to draw, all in this morning's story ---- */
-const EP0_TRACE_DEMO={v:0,a:'schoolbus',b:'school',en:'Let’s draw a road for the bus. Watch me: I start at the green circle, and go all the way to the end.',vi:'Mình vẽ đường cho xe buýt nhé. Xem Chồi nè: bắt đầu ở vòng tròn xanh, đi một mạch đến cuối.',fx:['Vroom! The bus drives straight along the road.','Brừm! Xe buýt chạy thẳng trên đường.'],fxN:1};
-const EP0_TRACE1=[{v:0,a:'schoolbus',b:'bush',en:'Now you draw the road to the garden.','vi':'Giờ con vẽ đường ra khu vườn nhé.',fx:['Vroom! The bus is at the garden!','Brừm! Xe buýt tới khu vườn rồi!'],fxN:1},
-  {v:1,lane:'dots',bloom:true,a:'can',b:'flowerS',m:'drop',en:'The gardener is watering the flowers. Help the water fall down.','vi':'Bác làm vườn đang tưới hoa. Con giúp nước rơi xuống nhé.',fx:['Look! The water falls straight down. The flowers open up!','Nhìn kìa! Nước rơi thẳng xuống. Hoa nở rồi!']}];
-const EP0_TRACE2=[{v:1,lane:'slide',a:'benhead',b:'sandpit',en:'Ben goes down the slide. Draw a line down for Ben!','vi':'Ben trượt cầu trượt. Con vẽ đường xuống cho Ben nhé!',fx:['Whee! Ben slides straight down.','Vèo! Ben trượt thẳng xuống.'],fxN:1},
-  {v:0,lane:'bridge',a:'benhead',b:'bushX',en:'Now Ben walks over the little bridge to the bush with the X. Draw a line across!','vi':'Giờ Ben đi qua cây cầu nhỏ tới bụi cây có dấu X. Con vẽ đường ngang nhé!',fx:['Ben is at the bush with the X!','Ben tới bụi cây có dấu X rồi!'],fxN:1}];
+/* ---- 5 and 7: lines to draw, all in this morning's story, drawn on the picture itself (20/10): the road for the school bus,
+   the water from the gardener's can, Ben's slide, the little bridge. When a line is done, the picture plays what it made happen. ---- */
+const ROAD_W=H=>Math.max(14,H*.06);
+const busScene=(bg,end,fromX)=>({bg,lane:'dots',col:'#8E99A4',w:ROAD_W,
+  build:T=>{ T.el.gate=sceneThing(GATE_SVG(),88,4,15,'tgate'); T.box.append(T.el.gate); T.el.bus=sceneThing(ART.schoolbus(),fromX,5,20,'tbus'); T.box.append(T.el.bus) },
+  A:[fromX+11,89], B:[end,0],
+  onProg:(T,q)=>{ T.el.bus.style.left=(q.x/T.Wd*100-11)+'%' }});
+const EP0_TRACE_DEMO={v:0,en:'Let’s draw a road for the bus. Watch me: I start at the green circle, and go all the way to the gate.',vi:'Mình vẽ đường cho xe buýt nhé. Xem Chồi nè: bắt đầu ở vòng tròn xanh, đi một mạch tới cổng.',
+  fx:['Vroom! The bus drives along the road, out of the school gate.','Brừm! Xe buýt chạy theo con đường, ra khỏi cổng trường.'],
+  scene:{...busScene(()=>BG.school(),84,12),
+    done:async T=>{ T.clean('line'); const bus=T.el.bus; tone(220,.6,'sawtooth',.03,0,330); bus.style.transition=`left ${1.8*SPEED}s ease-in`; bus.style.left='125%'; await say(...T.K.fx); await sleep(200) }}};
+const EP0_TRACE1=[
+  {v:0,en:'Now you draw the road to the garden.',vi:'Giờ con vẽ đường ra khu vườn nhé.',fx:['Vroom! The bus is at the garden!','Brừm! Xe buýt tới khu vườn rồi!'],
+   scene:{...busScene(()=>BG.sgarden(),82,10),
+    done:async T=>{ T.clean('line'); const bus=T.el.bus; bus.classList.add('arrive'); tone(660,.12,'square',.05,0,0); setTimeout(()=>tone(660,.12,'square',.05,0,0),220*SPEED); await say(...T.K.fx); await sleep(200) }}},
+  {v:1,en:'The gardener is watering the flowers. Help the water fall straight down!',vi:'Bác làm vườn đang tưới hoa. Con giúp nước rơi thẳng xuống nhé!',
+   fx:['Look! The water falls straight down. The flowers open up!','Nhìn kìa! Nước rơi thẳng xuống. Hoa nở rồi!'],
+   scene:{bg:()=>BG.sgarden(),lane:'dots',col:'#4A9BDB',w:H=>Math.max(5,H*.014),mover:'drop',moverSize:.07,
+    build:T=>{ const b=T.box, r=b.getBoundingClientRect(); const g=sceneThing(manSVG({kind:'gardener',arm:'can'}),24,3,22,'tgard'); b.append(g); T.el.g=g;
+      const s=g.querySelector('svg').getBoundingClientRect(); const sx=s.width?(s.left-r.left+s.width*MAN_SPOUT.x)/r.width*100:44;
+      T.el.fl=[-9,-4.5,0,4.5,9].map((dx,i)=>{ const f=sceneThing(flowerSVG(),sx+dx,2,6.5,'tflower bud'); b.append(f); return f }) },
+    A:(T,r)=>{ const s=T.el.g.querySelector('svg').getBoundingClientRect(); return {x:s.left-r.left+s.width*MAN_SPOUT.x,y:s.top-r.top+s.height*MAN_SPOUT.y} },
+    B:[0,88],
+    done:async T=>{ T.clean(); const b=T.box, A=T.A, B=T.B; const said=say(...T.K.fx).catch(()=>{});
+      for(let i=0;i<14;i++){ const d=el(`<div class="tdrop" style="left:${A.x+(Math.random()-.5)*T.Wd*.03}px;top:${A.y}px">${ART.drop()}</div>`); b.append(d);
+        d.animate([{transform:'translate(-50%,-50%) scale(.6)',opacity:1},{transform:`translate(-50%,calc(-50% + ${B.y-A.y}px)) scale(1)`,opacity:.9}],{duration:Math.max(1,700*SPEED),delay:i*120*SPEED,easing:'ease-in',fill:'both'}).finished.then(()=>d.remove()).catch(()=>d.remove()) }
+      tone(600,.3,'sine',.05,0,300); await sleep(900*SPEED);
+      for(const [i,f] of [2,1,3,0,4].map((k,i)=>[i,T.el.fl[k]])) setTimeout(()=>{ f.classList.remove('bud'); SFX.pop() },i*260*SPEED);
+      await said; await sleep(300) }}}];
+/** a tall straight slide in the school garden: a ladder and a little platform; the chute is the line the child draws */
+const SLIDETOP_SVG=()=>`<svg viewBox="0 0 60 260" overflow="visible" aria-hidden="true"><path d="M8 20 V258 M24 20 V258" stroke="${INK}" stroke-width="7" stroke-linecap="round"/><path d="M8 20 V258 M24 20 V258" stroke="#4A9BDB" stroke-width="3.5" stroke-linecap="round"/>${[44,72,100,128,156,184,212,240].map(y=>`<path d="M8 ${y} H24" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>`).join('')}<rect x="3" y="12" width="57" height="10" rx="4" fill="#FCB515" stroke="${INK}" stroke-width="3"/><path d="M6 12 V-6 M30 12 V-6 M6 -4 H30" stroke="${INK}" stroke-width="4" stroke-linecap="round"/></svg>`;
+const EP0_TRACE2=[
+  {v:1,en:'Ben goes down the slide. Draw a line straight down for Ben!',vi:'Ben trượt cầu trượt. Con vẽ đường thẳng xuống cho Ben nhé!',fx:['Whee! Ben slides straight down, into the sand!','Vèo! Ben trượt thẳng xuống, vào hố cát!'],
+   scene:{bg:()=>BG.sgarden(),lane:'slide',col:'#FFE0EA',w:H=>Math.max(6,H*.02),
+    build:T=>{ const b=T.box; b.append(sceneThing(SLIDETOP_SVG(),49.5,3,11,'tslide')); b.append(sceneThing(ART.sandpit(),55,1,22,'tsand'));
+      const ben=sceneThing(kidSVG('Ben','excited'),55,57,10,'tben'); b.append(ben); T.el.ben=ben },
+    A:[55,33], B:[0,84],
+    onProg:(T,q)=>{ const e=T.el.ben, h=e.getBoundingClientRect().height/T.Ht*100; e.style.bottom=(100-q.y/T.Ht*100-h*.55)+'%' },
+    done:async T=>{ T.clean('all'); const r=T.box.getBoundingClientRect(); burst({x:r.left+T.B.x,y:r.top+T.B.y},{n:14}); noise(.25,.12,0,900);
+      const e=T.el.ben; e.classList.add('glad'); await say(...T.K.fx); await sleep(200) }}},
+  {v:0,en:'Now Ben walks over the little bridge to the bush with the X. Draw a line across!',vi:'Giờ Ben đi qua cây cầu nhỏ tới bụi cây có dấu X. Con vẽ đường ngang nhé!',fx:['Ben is at the bush with the X!','Ben tới bụi cây có dấu X rồi!'],
+   scene:{bg:()=>BG.sgarden(),lane:'bridge',col:'#F6D9A8',w:H=>Math.max(6,H*.02),
+    build:T=>{ const b=T.box; b.append(el(`<div class="tstream"></div>`)); b.append(sceneThing(ART.bushX(),89,3,17,'tbush'));
+      const ben=sceneThing(kidSVG('Ben','happy'),16,19,10,'tben'); b.append(ben); T.el.ben=ben },
+    A:[21,80], B:[76,0],
+    onProg:(T,q)=>{ T.el.ben.style.left=(q.x/T.Wd*100-5)+'%' },
+    done:async T=>{ T.clean('all'); const e=T.el.ben; e.style.transition=`left ${.8*SPEED}s ease-out`; e.style.left='79%'; await sleep(800); e.classList.add('glad'); await say(...T.K.fx); await sleep(200) }}}];
 
 /* ---- 6. the flags in the garden ---- */
 async function gardenFlags(){
@@ -6151,36 +6303,177 @@ async function pollyHooray(){
   await pollyEcho('Hooray! Hooray!','Hoan hô! Hoan hô!'); mic.remove() }
 
 /* =========================================================
-   LEVEL 1 · THE WINDY PARK: "the red balloon with the map piece" (spiral version, 19/10)
-   One windy afternoon: the kite field → the bubble man → the pond → the box in the reeds → the balloon man → a big wind.
-   New: counting out loud to ten (start: kites, with Chồi; middle: ducks swim in as the child counts; end: the red balloon comes down).
-   Second new: excited, surprised. Looking back: happy/sad/angry (bubbles), counting things to five (balloons in the way),
-   lines down and across (Na's kite string).
+   PICTURES THAT ACT (20/10): a grown-up in the team's sticker style, a tall tree, the wind you can see,
+   tracing on the story's own picture, and Polly asking the child to say a word after her.
    ========================================================= */
+/** where each friend's hands are, in the 200×260 picture of kidSVG: [viewer's left hand, viewer's right hand] */
+const CK_HANDS={Lam:[[56,194],[144,194]],Na:[[64,196],[162,140]],Ben:[[80,186],[120,186]]};
+/** a hand of a friend standing in a scene (box pixels); side 'l' | 'r' */
+function kidHand(kid,r,side='l'){ const s=(kid.querySelector('svg')||kid).getBoundingClientRect(); if(!s.width) return null;
+  const H=CK_HANDS[kid.dataset.who]||[[40,160],[160,160]], h=H[side==='r'?1:0]; return {x:s.left-r.left+s.width*h[0]/200,y:s.top-r.top+s.height*h[1]/260} }
+
+/** a grown-up drawn like the team: big friendly head, round cheeks, thick soft outlines.
+ *  kind: 'balloon' (straw hat, striped shirt, blue overalls, moustache) | 'gardener' (sun hat, green overalls)
+ *  arm (the right arm, on the viewer's right): 'wave' | 'hold' | 'wand' (a bubble wand) | 'can' (a watering can)
+ *  bunch: the balloon man holds a bunch of balloons in his other hand */
+function manSVG({kind='balloon',arm='hold',face='happy',bunch=false}={}){
+  const P=CK_PL, G=kind==='gardener';
+  const C=G?{skin:'#E9B48A',shirt:'#FFF4DC',stripe:'#F28C3C',over:'#6FA84A',hat:'#F0D594',band:'#58B592',hair:'#7A5236'}
+           :{skin:'#F2C29C',shirt:'#FFFFFF',stripe:'#E8484F',over:'#3E98DE',hat:'#F6E3B4',band:'#E8484F',hair:'#6B4A2E'};
+  const limb=(d,col,w=20)=>`<path d="${d}" stroke="${P}" stroke-width="${w}" fill="none" stroke-linecap="round"/><path d="${d}" stroke="${col}" stroke-width="${w-7}" fill="none" stroke-linecap="round"/>`;
+  const RA={wave:['M138 178 Q162 150 166 116',[166,112]],hold:['M138 178 Q158 200 160 222',[160,226]],wand:['M138 178 Q164 152 168 120',[168,116]],can:['M138 178 Q172 148 180 50',[182,46]]}[arm]||['M138 178 Q158 200 160 222',[160,226]];
+  const LH=[42,226];
+  const balloons=bunch?(()=>{ const B=[[14,-52,'#FCB515'],[44,-70,'#4A9BDB'],[74,-54,'#58B592'],[26,-16,'#9B6BD0'],[60,-22,'#F28C3C']];
+    return B.map(([x,y])=>`<path d="M${x} ${y+22} Q${(x+LH[0])/2+6} ${(y+LH[1])/2} ${LH[0]} ${LH[1]-6}" stroke="${P}" stroke-width="1.8" fill="none"/>`).join('')
+      +B.map(([x,y,c])=>`<ellipse cx="${x}" cy="${y}" rx="16" ry="20" fill="${c}" stroke="${P}" stroke-width="3.5"/><path d="M${x-6} ${y-9} q4 -5 9 -4" stroke="#fff" stroke-width="3" fill="none" opacity=".7" stroke-linecap="round"/><path d="M${x-3} ${y+20} l3 4 l3 -4z" fill="${c}" stroke="${P}" stroke-width="2" stroke-linejoin="round"/>`).join('') })():'';
+  const hand=([x,y])=>`<circle cx="${x}" cy="${y}" r="10" fill="${C.skin}" stroke="${P}" stroke-width="3.5"/>`;
+  const extra=arm==='wand'?`<path d="M170 112 L182 62" stroke="#9B6A45" stroke-width="5" stroke-linecap="round"/><circle cx="185" cy="50" r="13" fill="#DDF1F8" fill-opacity=".75" stroke="${P}" stroke-width="3.5"/><circle cx="181" cy="46" r="3" fill="#fff"/>`
+    :arm==='can'?`<g><path d="M168 52 h44 v26 q0 8 -8 8 h-28 q-8 0 -8 -8z" fill="#4A9BDB" stroke="${P}" stroke-width="3.5" stroke-linejoin="round"/><path d="M174 52 q8 -18 30 0" stroke="${P}" stroke-width="4" fill="none"/><path d="M210 62 L240 74" stroke="${P}" stroke-width="9" stroke-linecap="round"/><path d="M210 62 L240 74" stroke="#4A9BDB" stroke-width="4" stroke-linecap="round"/><ellipse cx="243" cy="76" rx="5" ry="7" transform="rotate(-25 243 76)" fill="#2F7FC0" stroke="${P}" stroke-width="2.5"/></g>`:'';
+  const tache=G?'':`<path d="M78 120 q10 -10 22 -3 q12 -7 22 3 q-3 9 -12 8 q-6 -1 -10 -5 q-4 4 -10 5 q-9 1 -12 -8z" fill="${C.hair}" stroke="${P}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  const mouth=face==='surprised'?`<ellipse cx="100" cy="${G?124:134}" rx="7" ry="9" fill="${P}"/>`
+    :G?`<path d="M86 118 Q100 136 114 118 Q100 124 86 118Z" fill="${P}" stroke="${P}" stroke-width="3" stroke-linejoin="round"/>`:`<path d="M90 130 Q100 140 110 130" stroke="${P}" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+  const hat=G?`<ellipse cx="100" cy="52" rx="78" ry="14" fill="${C.hat}" stroke="${P}" stroke-width="3.5"/><path d="M58 50 Q60 14 100 12 Q140 14 142 50Z" fill="${C.hat}" stroke="${P}" stroke-width="3.5" stroke-linejoin="round"/><path d="M59 40 Q100 33 141 40 L142 50 Q100 44 58 50Z" fill="${C.band}" stroke="${P}" stroke-width="2.5"/><path d="M70 30 l6 -4 M86 22 l4 -5 M116 22 l-4 -5 M130 30 l-6 -4" stroke="#C9A866" stroke-width="2.5" stroke-linecap="round"/>`
+    :`<ellipse cx="100" cy="52" rx="66" ry="12" fill="${C.hat}" stroke="${P}" stroke-width="3.5"/><path d="M60 50 L64 18 Q100 10 136 18 L140 50Z" fill="${C.hat}" stroke="${P}" stroke-width="3.5" stroke-linejoin="round"/><path d="M61.5 38 Q100 32 138.5 38 L140 49 Q100 43 60 49Z" fill="${C.band}" stroke="${P}" stroke-width="2.5"/>`;
+  return `<svg viewBox="0 0 200 340" overflow="visible" class="mansvg" aria-hidden="true">
+${balloons}
+<rect x="77" y="262" width="21" height="62" rx="9" fill="${G?'#5B6E8C':'#2F4C7A'}" stroke="${P}" stroke-width="3.5"/><rect x="102" y="262" width="21" height="62" rx="9" fill="${G?'#5B6E8C':'#2F4C7A'}" stroke="${P}" stroke-width="3.5"/>
+<ellipse cx="84" cy="328" rx="16" ry="8" fill="${G?'#6B4A2E':P}" stroke="${P}" stroke-width="3"/><ellipse cx="116" cy="328" rx="16" ry="8" fill="${G?'#6B4A2E':P}" stroke="${P}" stroke-width="3"/>
+${limb('M62 178 Q42 198 42 222',C.skin)}<path d="M64 172 Q50 180 48 194" stroke="${P}" stroke-width="22" stroke-linecap="round" fill="none"/><path d="M64 172 Q50 180 48 194" stroke="${C.shirt}" stroke-width="15" stroke-linecap="round" fill="none"/>
+<path d="M62 168 Q100 150 138 168 L142 272 H58Z" fill="${C.shirt}" stroke="${P}" stroke-width="3.5" stroke-linejoin="round"/>
+${[188,208,228,248].map(y=>`<path d="M63 ${y} H137" stroke="${C.stripe}" stroke-width="7"/>`).join('')}
+<path d="M72 202 H128 V272 H72Z" fill="${C.over}" stroke="${P}" stroke-width="3.5" stroke-linejoin="round"/><path d="M76 202 L70 170 M124 202 L130 170" stroke="${C.over}" stroke-width="9" stroke-linecap="round"/><path d="M76 202 L70 170 M124 202 L130 170" stroke="${P}" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+<circle cx="77" cy="207" r="4.5" fill="#FCB515" stroke="${P}" stroke-width="2"/><circle cx="123" cy="207" r="4.5" fill="#FCB515" stroke="${P}" stroke-width="2"/>
+<path d="M88 224 h24 v16 q-12 7 -24 0z" fill="${G?'#5E9440':'#2F7FC0'}" stroke="${P}" stroke-width="2.5" stroke-linejoin="round"/>${G?`<path d="M106 224 l4 -14" stroke="#58B592" stroke-width="3"/><circle cx="110" cy="208" r="5" fill="#E8607E" stroke="${P}" stroke-width="2"/>`:''}
+${limb(RA[0],C.skin)}<path d="M136 172 Q150 178 152 192" stroke="${P}" stroke-width="22" stroke-linecap="round" fill="none"/><path d="M136 172 Q150 178 152 192" stroke="${C.shirt}" stroke-width="15" stroke-linecap="round" fill="none"/>
+${hand(LH)}${extra}${hand(RA[1])}
+<rect x="90" y="140" width="20" height="20" fill="${C.skin}" stroke="${P}" stroke-width="3.5"/>
+<circle cx="47" cy="98" r="11" fill="${C.skin}" stroke="${P}" stroke-width="3.5"/><circle cx="153" cy="98" r="11" fill="${C.skin}" stroke="${P}" stroke-width="3.5"/>
+<circle cx="100" cy="94" r="54" fill="${C.skin}" stroke="${P}" stroke-width="3.5"/>
+<path d="M47 72 Q44 96 54 112 L60 104 Q56 88 60 72Z M153 72 Q156 96 146 112 L140 104 Q144 88 140 72Z" fill="${C.hair}" stroke="${P}" stroke-width="2.5" stroke-linejoin="round"/>
+${hat}
+<path d="M70 82 q10 -6 20 -1 M110 81 q10 -5 20 1" stroke="${P}" stroke-width="4" fill="none" stroke-linecap="round"/>
+${ckEyes(98).replace(/cx="80"/g,'cx="80"')}
+<ellipse cx="64" cy="116" rx="9" ry="5.5" fill="#F28A9A" opacity=".6"/><ellipse cx="136" cy="116" rx="9" ry="5.5" fill="#F28A9A" opacity=".6"/>
+<ellipse cx="100" cy="112" rx="6" ry="5" fill="${C.skin}" stroke="${P}" stroke-width="2.5"/>
+${tache}${mouth}
+</svg>` }
+/** the bubble wand's ring and the watering can's spout, as parts of manSVG's 200×340 picture */
+const MAN_WAND={x:185/200,y:50/340}, MAN_SPOUT={x:244/200,y:80/340}, MAN_HAND={x:160/200,y:226/340};
+
+/** a tall tree for the park (things can get stuck in it); its crown top is at (50, 20) of 100×200 */
+const TALLTREE_SVG=()=>`<svg viewBox="0 0 100 200" overflow="visible" aria-hidden="true"><path d="M44 200 L46 96 L54 96 L56 200Z" fill="#9B6A45" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M50 128 L70 104 M50 140 L32 118" stroke="#9B6A45" stroke-width="6" stroke-linecap="round"/><path d="M50 128 L70 104 M50 140 L32 118" stroke="${INK}" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+<circle cx="28" cy="74" r="24" fill="#2FA877" stroke="${INK}" stroke-width="3"/><circle cx="72" cy="72" r="26" fill="#2FA877" stroke="${INK}" stroke-width="3"/><circle cx="50" cy="44" r="30" fill="#3DB884" stroke="${INK}" stroke-width="3"/><circle cx="50" cy="86" r="24" fill="#2FA877" stroke="${INK}" stroke-width="3"/><path d="M34 34 q8 -10 20 -10" stroke="#8EE3B8" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/></svg>`;
+const TREE_TOP={x:.5,y:.12};   // where a string gets caught: the top of the crown (part of the tree picture)
+
+/** the red balloon in one piece: balloon, knot, string, the map piece tied on, and the end of the string (60×190) */
+const REDB_SVG=(piece=2)=>`<svg viewBox="0 0 60 190" overflow="visible" aria-hidden="true"><path d="M30 60 C26 76 34 92 30 108" stroke="${INK}" stroke-width="2.2" fill="none"/><path d="M30 150 C26 162 34 176 30 188" stroke="${INK}" stroke-width="2.2" fill="none" class="rb-low"/>
+<g class="rb-p">${mapPieceSVG(piece).replace('<svg ','<svg x="9" y="104" width="42" height="48" ')}</g>
+<ellipse cx="30" cy="28" rx="22" ry="27" fill="#E8484F" stroke="${INK}" stroke-width="3.5"/><path d="M20 14 q6 -8 14 -7" stroke="#fff" stroke-width="4" fill="none" opacity=".7" stroke-linecap="round"/><path d="M26 54 l4 6 l4 -6z" fill="#E8484F" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/></svg>`;
+const REDB_END={x:.5,y:188/190}, REDB_PIECE={x:9/60,y:104/190,w:42/60,h:48/190};
+/** put the red balloon so the end of its string is at point p (box pixels) */
+function placeRedB(rb,box,p,ms=0){ const r=box.getBoundingClientRect(), w=rb.getBoundingClientRect().width||r.width*.08, h=w*190/60;
+  rb.style.transition=ms?`left ${ms*SPEED}ms ease-in-out, bottom ${ms*SPEED}ms ease-in-out`:'none';
+  rb.style.left=((p.x)/r.width*100)+'%'; rb.style.bottom=((r.height-p.y-h*(1-REDB_END.y))/r.height*100)+'%' }
+const redbEnd=(rb,box)=>{ const r=box.getBoundingClientRect(), q=rb.getBoundingClientRect(); return {x:q.left-r.left+q.width*REDB_END.x,y:q.top-r.top+q.height*REDB_END.y} };
+
+/** the wind you can see: white swooshes sweep across the picture from the left; things marked .sway lean with it */
+function windGust(box,{ms=1600,n=5}={}){ noise(ms/1000,.2,0,500);
+  const g=el(`<div class="windfx" aria-hidden="true"></div>`); box.append(g);
+  for(let i=0;i<n;i++){ const y=12+i*(70/n)+rand(8), w=26+rand(18);
+    const s=el(`<svg class="swoosh" viewBox="0 0 120 30" style="top:${y}%;width:${w}%"><path d="M2 18 Q40 6 78 16 T112 12 q6 -6 0 -10 q-6 -2 -6 4" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" opacity=".95"/></svg>`); g.append(s);
+    s.animate([{transform:'translateX(-120%)',opacity:0},{opacity:1,offset:.25},{opacity:1,offset:.7},{transform:`translateX(${100/w*100+20}%)`,opacity:0}],{duration:Math.max(1,ms*SPEED),delay:i*120*SPEED,easing:'ease-in-out',fill:'both'}) }
+  box.classList.add('gusty'); setTimeout(()=>{ box.classList.remove('gusty'); g.remove() },(ms+n*120+100)*SPEED);
+  return sleep(ms*.7) }
+
+/* ---- tracing on the story's own picture (20/10): the line is drawn where it happens (the string down to Na's hand, the road for the bus),
+   and when it is done the picture plays what the line made happen. K.scene = {bg, build(T), A, B (in % of the picture, or functions),
+   lane, col, w(H), mover, moverSize, onProg(T,q,f), done(T)} ---- */
+function traceSceneSetup(K){
+  const SC=K.scene; const box=sbox('tscene'+(SC.cls?' '+SC.cls:''),SC.bg());
+  // two layers: the lane and the drawn line lie under the people and things (a road under the bus); the green circle stays on top
+  const svg=el('<svg class="tk tk-low" preserveAspectRatio="none" aria-hidden="true"></svg>'), top=el('<svg class="tk tk-top" preserveAspectRatio="none" aria-hidden="true"></svg>'); box.prepend(svg); box.append(top);
+  const T={box,svg,cur:0,band:56,startR:56,K,el:{}}; let line=null, mover=null;
+  if(SC.build) SC.build(T);
+  if(SC.mover){ mover=el(`<div class="tk-ico mover tk-ms">${typeof SC.mover==='function'?SC.mover():ART[SC.mover]()}</div>`); box.append(mover) }
+  const layout=()=>{ const r=box.getBoundingClientRect(), Wd=r.width, Ht=r.height; if(!Wd||!Ht) return false;
+    const at=v=>typeof v==='function'?v(T,r):{x:v[0]*Wd/100,y:v[1]*Ht/100};
+    let A=at(SC.A), B=at(SC.B); if(!A||!B) return false; B=K.v?{x:A.x,y:B.y}:{x:B.x,y:A.y};   // always a straight line, down or across
+    const vb=Math.max(22,Ht*.07), ring=Math.max(24,Ht*.065); T.band=Math.max(52,Ht*.12); T.startR=Math.max(46,ring*1.5);
+    svg.setAttribute('viewBox',`0 0 ${Wd} ${Ht}`); top.setAttribute('viewBox',`0 0 ${Wd} ${Ht}`);
+    svg.innerHTML=traceLane(SC.lane||'dots',A,B,vb,K)+`<line class="done" x1="${A.x}" y1="${A.y}" x2="${A.x}" y2="${A.y}" stroke="${SC.col||INK}" stroke-width="${SC.w?SC.w(Ht):4}" stroke-linecap="round"/>`;
+    top.innerHTML=`<circle cx="${A.x}" cy="${A.y}" r="${ring}" fill="#58B592" fill-opacity=".2" stroke="#58B592" stroke-width="5"/><circle cx="${A.x}" cy="${A.y}" r="${ring*.3}" fill="#58B592" stroke="${INK}" stroke-width="3"/>`;
+    line=$('line.done',svg);
+    if(mover){ const s=Math.max(28,Ht*(SC.moverSize||.1)); Object.assign(mover.style,{width:s+'px',height:s+'px',margin:`${-s/2}px 0 0 ${-s/2}px`}) }
+    Object.assign(T,{A,B,len:K.v?B.y-A.y:B.x-A.x,Wd,Ht}); return true };
+  T.setProg=p=>{ const A=T.A; T.cur=T.len?p/T.len:0; const q=K.v?{x:A.x,y:A.y+p}:{x:A.x+p,y:A.y}; if(line){ line.setAttribute('x2',q.x); line.setAttribute('y2',q.y) }
+    if(mover){ mover.style.left=q.x+'px'; mover.style.top=q.y+'px' } if(SC.onProg) SC.onProg(T,q,T.cur); return q };
+  /** the guides go; the picture stays. keep: false → everything drawn goes · 'line' → the drawn line stays (a road) · 'all' → the lane stays too (a slide, a bridge) */
+  T.clean=(keep=false)=>{ const fade=e=>e.animate([{opacity:1},{opacity:0}],{duration:400,fill:'forwards'}); fade(top); if(!keep) fade(svg); else if(keep!=='all') [...svg.children].forEach(c=>{ if(c!==line) fade(c) }); if(mover) mover.remove() };
+  layout(); T.setProg(0);
+  let lw=box.getBoundingClientRect().width, lh=box.getBoundingClientRect().height;
+  if(window.ResizeObserver){ const ro=new ResizeObserver(()=>{ if(!box.isConnected){ ro.disconnect(); return } const r=box.getBoundingClientRect(); if(Math.abs(r.width-lw)<2&&Math.abs(r.height-lh)<2) return; lw=r.width; lh=r.height;
+    const f=T.cur, old=T.len; if(!layout()) return; T.setProg(f*T.len); if(T.onScale&&old) T.onScale(T.len/old) }); ro.observe(box) }
+  return T }
+/** a thing in a picture, placed in % (left = its middle, bottom = its feet) */
+const sceneThing=(art,x,b,w,cls='')=>el(`<div class="sthing ${cls}" style="left:${x}%;bottom:${b}%;width:${w}%">${art}</div>`);
+
+/* ---- "Say it like Polly": Polly flies into the picture and says a word twice; the child says it into the microphone,
+   Polly says it back in a parrot voice. No microphone: Chồi and the child say it together. Not scored (kept with the child's voice clips). ---- */
+async function sayLikePolly(field,word,vi,{sk=null,spot={x:62,b:34},art=null}={}){
+  const p=el(`<div class="tpolly stk" style="left:112%;bottom:70%">${pollySVG(true)}</div>`); field.append(p);
+  const bub=el(`<div class="tp-bub" style="left:${spot.x}%;bottom:${spot.b+30}%"></div>`);
+  tone(900,.1,'square',.04,0,1400); await parrotFly(p,{left:'112%',bottom:'70%'},{left:spot.x+'%',bottom:spot.b+'%'},1200);
+  let pic=null; if(art){ pic=el(`<div class="tp-pic stk" style="left:${spot.x-14}%;bottom:${spot.b+6}%">${art}</div>`); field.append(pic) }
+  field.append(bub); const W2=cap(word)+'!';
+  for(let i=0;i<2;i++){ bub.textContent=Array(i+1).fill(W2).join(' '); await say(W2,cap(vi)+'!',{polly:true,q:false,gap:i?150:520}) }
+  await say(`Now you say it like Polly: ${W2}`,`Giờ con nói giống Polly nhé: ${cap(vi)}!`,{q:true});
+  let T={};
+  if(micState!=='denied'&&micState!=='none'){ const mic=el(`<button class="mic tp-mic" style="left:${spot.x+16}%;bottom:${spot.b+2}%" aria-label="Micro">${ICON.mic}</button>`); field.append(mic);
+    turn('kid'); T=await micTurn(mic,2600); turn(null); mic.remove() }
+  const voice=T.r&&T.r.blob&&T.r.voiced?T.r.blob:null;
+  if(voice){ const heard=(T.heard||[]).some(h=>norm(h).includes(norm(word)));
+    const id='p'+Date.now(); S.speaks.push({s:(sk&&sk.id)||'L2.W.FEEL.02',d:today(),lang:S.lang,text:word,voiced:true,heard:T.heard?T.heard[0]:null,matched:T.heard?heard:null,clip:id}); save(); putClip(id,voice);
+    bub.textContent='♪ ♪'; await playVoiceAs(voice,1.32);
+    await say(heard?`You said “${word}”, just like Polly!`:'That’s you! Polly says it just like you.',heard?`Con nói “${vi}”, giống hệt Polly!`:'Đó là con đấy! Polly nói giống hệt con.') }
+  else await say(`Let’s say it together: ${W2}`,`Mình cùng nói nhé: ${cap(vi)}!`);
+  bub.remove(); if(pic) pic.remove(); await parrotFly(p,{left:spot.x+'%',bottom:spot.b+'%'},{left:'112%',bottom:'80%'},900); p.remove() }
+
+/* =========================================================
+   LEVEL 1 · THE WINDY PARK: "the red balloon with the map piece" (spiral version, 19/10; after the play-test, 20/10)
+   One windy afternoon: the kite field → Na's kite → the bubble man → the pond → the box in the reeds (the wind takes the balloon
+   into the tall tree) → the balloon man → more wind, balloons stuck in front → Polly pulls the red balloon down, Ben gets the piece.
+   New: counting out loud to ten (start: kites, with Chồi; middle: ducks swim in as the child counts; end: Polly pulls the balloon down).
+   Second new: excited, surprised (and saying the words, like Polly). Looking back: happy/sad/angry (bubbles), counting things to five
+   (balloons in the way), lines down and across (Na's kite).
+   ========================================================= */
+const TREE_X=74, TREE_W=19;   // where the tall tree stands in the park (the red balloon gets stuck in it)
 const KITE_COLS=['#E8607E','#4A9BDB','#FCB515','#58B592','#9B6BD0','#F28C3C','#E8484F','#4A9BDB','#FCB515','#58B592'];
 const KITE_SPOTS=[[14,52],[24,72],[34,56],[44,76],[54,60],[64,78],[74,58],[84,74],[92,52],[60,42]];   // left %, bottom % in the 200×140 picture
 const kiteArt=c=>ART.kite().split('#E8607E').join(c);
 const REEDS_SVG=()=>`<svg viewBox="0 0 100 60" aria-hidden="true">${[8,18,30,44,58,70,82,92].map((x,i)=>`<path d="M${x} 60 Q${x+(i%2?6:-6)} 30 ${x+(i%2?10:-4)} ${6+(i%3)*6}" stroke="#2A8060" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M${x} 60 Q${x+(i%2?6:-6)} 30 ${x+(i%2?10:-4)} ${6+(i%3)*6}" stroke="#58B592" stroke-width="2.5" fill="none" stroke-linecap="round"/>`).join('')}${[30,70].map(x=>`<ellipse cx="${x+4}" cy="14" rx="3.5" ry="9" fill="#9B6A45" stroke="${INK}" stroke-width="1.5"/>`).join('')}</svg>`;
-const BUNCH_SVG=(cols=['#FCB515','#4A9BDB','#E8607E','#58B592','#9B6BD0'])=>`<svg viewBox="0 0 100 130" aria-hidden="true">${[[30,30],[52,22],[72,34],[40,50],[64,54]].map(([x,y],i)=>`<path d="M${x} ${y+16} Q${(x+50)/2} ${(y+120)/2} 50 124" stroke="${INK}" stroke-width="1.6" fill="none"/>`).join('')}${[[30,30],[52,22],[72,34],[40,50],[64,54]].map(([x,y],i)=>`<ellipse cx="${x}" cy="${y}" rx="13" ry="16" fill="${cols[i%cols.length]}" stroke="${INK}" stroke-width="3"/><path d="M${x-5} ${y-7} q3 -4 7 -3" stroke="#fff" stroke-width="2.5" fill="none" opacity=".7"/>`).join('')}</svg>`;
+const POND_SVG=()=>`<svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="100" cy="30" rx="97" ry="27" fill="#7FD0F5" stroke="${INK}" stroke-width="3"/><path d="M40 26 q10 -5 20 0 M120 34 q10 -5 20 0 M80 42 q8 -4 16 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg>`;
 const DUCK_ROWS=[[34,16],[44,13],[54,16],[64,13],[74,16],[39,6],[49,4],[59,6],[69,4],[79,6]];   // where each duck swims to (left %, bottom %)
 const DUCK_BANK=[[5,26],[10,27],[15,26],[20,27],[25,25],[6,14],[11,15],[16,14],[21,15],[26,13]];   // where they wait on the grass
 Object.assign(ART,{
   knot:()=>`<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="11" fill="#F6E3B4" stroke="${INK}" stroke-width="3"/><path d="M12 15 q8 4 16 0 M10 21 q10 5 20 0 M12 27 q8 3 16 0" stroke="#C9A46A" stroke-width="2" fill="none"/></svg>`,   // a ball of kite string
-  nahead:()=>kidHead('Na','happy'),
   wind:()=>`<svg viewBox="0 0 100 70" aria-hidden="true"><path d="M14 44 h50 a12 12 0 0 0 -4 -23 a16 16 0 0 0 -30 -2 a11 11 0 0 0 -16 25z" fill="#fff" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/><path d="M60 50 q16 0 22 -6 M54 58 q20 2 32 -2" stroke="#7FB8D8" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="34" cy="32" r="2.4" fill="${INK}"/><circle cx="46" cy="32" r="2.4" fill="${INK}"/><ellipse cx="54" cy="38" rx="4" ry="3" fill="${INK}"/></svg>`,
   tree:()=>`<svg viewBox="-24 -52 48 56" aria-hidden="true">${treeG(0,0,1)}</svg>`,
-  duck2:()=>ART.duck(),
 });
+const kiteMidAt=(x,b,w)=>[x,100-(b+w*200/140*.6)];   // the middle of a kite placed at left x%, bottom b%, width w% (in % of the 200×140 picture)
+const placePolly=(p,box,pt,ms=0)=>{ const r=box.getBoundingClientRect(), q=p.getBoundingClientRect(); const w=q.width||r.width*.09, h=w*260/200;
+  const to={left:((pt.x-BEAK.x*w)/r.width*100)+'%',bottom:((r.height-(pt.y-BEAK.y*h)-h)/r.height*100)+'%'};
+  if(!ms){ p.getAnimations().forEach(a=>a.cancel()); Object.assign(p.style,to); return Promise.resolve() }
+  const from={left:p.style.left,bottom:p.style.bottom}; return parrotFly(p,from,to,ms).then(()=>{ p.getAnimations().forEach(a=>a.cancel()); Object.assign(p.style,to) }) };
 
-/* ---- 1. the kites: tap Lam's kite; ten kites go up; Chồi counts to ten, then the child counts with Chồi (no tapping) ---- */
+/* ---- 1. the kites: tap Lam's kite; more kites go up; Chồi counts to ten (each counted kite glows gold), then the child counts with Chồi ---- */
 async function parkKites(){
   const box=sbox('parkkites',BG.park()); const lam=kidAt('Lam','happy',24,5,12); box.append(lam); let held=null;
   const kites=KITE_SPOTS.map(([x,b],i)=>{ const k=el(`<div class="pk-sky" style="left:${x}%;bottom:${b}%">${kiteArt(KITE_COLS[i])}</div>`); box.append(k); return k });
   const k0=el(`<button class="pkite" style="left:31%;bottom:20%;width:9%">${kiteArt(KITE_COLS[0])}</button>`); box.append(k0);
-  const big=el(`<b class="pk-num">&nbsp;</b>`); box.append(big); held=k0;
+  const big=el(`<b class="pk-num" style="left:52%;bottom:5%"></b>`); box.append(big); held=k0;
   tether(box,r=>{ const m=kiteMid(held,r); return handOf(lam,r,m&&m.x) },r=>kiteMid(held,r));   // Lam holds the kite string
   const num=i=>{ big.textContent=i; big.classList.remove('bump'); void big.offsetWidth; big.classList.add('bump') };
-  const tag=(k,i)=>{ k.querySelectorAll('.cnum').forEach(x=>x.remove()); k.append(el(`<i class="cnum">${i}</i>`)) };
+  const glow=k=>{ k.classList.remove('wig','counted'); void k.offsetWidth; k.classList.add('wig','counted') };
   await say('Here we are at the park! It’s so windy today.','Mình tới công viên rồi! Hôm nay gió to quá.');
   await say('Tap Lam’s kite to fly it!','Con chạm vào diều của Lam để thả nhé!',{q:true});
   turn('kid'); k0.dataset.ok='1'; await tapOnce([k0]); turn(null);
@@ -6191,34 +6484,67 @@ async function parkKites(){
   for(let i=1;i<10;i++){ kites[i].classList.add('on'); tone(500+i*40,.1,'sine',.04,0,900); await sleep(380) } await more;
   await say('Let’s count the kites, all the way to ten. Listen to me first.','Mình đếm diều đến mười nhé. Con nghe Chồi đếm trước.');
   turn('choi');
-  for(let i=0;i<10;i++){ const k=kites[i]; k.classList.remove('wig'); void k.offsetWidth; k.classList.add('wig'); tag(k,i+1); num(i+1); await say(cap(W[i+1])+'.',cap(VI_N[i+1])+'.',{gap:260,rate:.85,q:false}) }
+  for(let i=0;i<10;i++){ glow(kites[i]); num(i+1); await say(cap(W[i+1])+'.',cap(VI_N[i+1])+'.',{gap:260,rate:.85,q:false}) }
   await say('Ten kites in the sky!','Mười con diều trên trời!');
-  kites.forEach(k=>k.querySelectorAll('.cnum').forEach(x=>x.remove())); big.innerHTML='&nbsp;'; big.classList.remove('bump');
+  kites.forEach(k=>k.classList.remove('counted')); big.textContent=''; big.classList.remove('bump');
   await say('Now count with me! Say the numbers out loud.','Giờ con đếm cùng Chồi nhé! Con nói to các số lên.');
   turn('kid'); SFX.ding();
-  for(let i=0;i<10;i++){ const k=kites[i]; k.classList.remove('wig'); void k.offsetWidth; k.classList.add('wig'); tag(k,i+1); num(i+1); await say(cap(W[i+1])+'.',cap(VI_N[i+1])+'.',{gap:650,rate:.85,q:false}) }
+  for(let i=0;i<10;i++){ glow(kites[i]); num(i+1); await say(cap(W[i+1])+'.',cap(VI_N[i+1])+'.',{gap:650,rate:.85,q:false}) }
   turn(null); confetti(); await say('Ten kites! You counted all the way to ten.','Mười con diều! Con đã đếm đến mười rồi.');
   await nextPage(box) }
 
 /* ---- 2. Lam is excited about his kite: cheer for him ---- */
 const EP1_EXCITED={f:'excited',variant:null,lines:[['Look at Lam’s kite, flying up, up, up!','Nhìn diều của Lam kìa, bay cao, cao mãi!']]};
 
-/* ---- 3. Na's kite string, then the wind (looking back at drawing lines down and across) ---- */
-const EP1_TRACE=[{v:1,lane:'string',a:'kite',m:'knot',b:'nahead',en:'Na’s kite needs a string. Draw the string straight down to Na!','vi':'Diều của Na cần dây. Con vẽ dây diều thẳng xuống tay Na nhé!',fx:['Now the string is straight. Na can hold her kite!','Giờ dây diều thẳng rồi. Na cầm được diều!'],fxN:1},
-  {v:0,lane:'dots',a:'wind',m:'kite',b:'tree',en:'Whoosh! The wind blows Na’s kite across the park. Draw a line across!','vi':'Vù! Gió thổi diều của Na bay ngang qua công viên. Con vẽ đường ngang nhé!',fx:['The kite flies straight across, all the way to the tree!','Diều bay thẳng sang ngang, tới tận cái cây!'],fxN:1}];
+/* ---- 3. Na's kite (looking back at lines down and across), drawn on the park itself:
+   Polly holds Na's kite up high → the child draws the string down to Na's hand → Polly lets go and the kite flies up.
+   Then the wind blows the kite across the park → the child draws the way across → Na runs along under it to the tall tree. ---- */
+const EP1_TRACE=[
+  {v:1,en:'Polly is holding Na’s kite up high. Draw the string straight down to Na’s hand!',vi:'Polly đang giữ diều của Na trên cao. Con vẽ dây diều thẳng xuống tay Na nhé!',
+   fx:['Polly lets go, and up goes Na’s kite! Na is holding the string.','Polly thả ra, và diều của Na bay lên! Na đang cầm dây diều.'],
+   scene:{bg:()=>BG.park(),lane:'string',col:INK,w:H=>Math.max(3,H*.006),mover:'knot',moverSize:.075,
+    build:T=>{ const b=T.box, r=b.getBoundingClientRect(); const na=kidAt('Na','happy',50,4,13); b.append(na); T.el.na=na;
+      const h=kidHand(na,r,'l'); const x=h?h.x/r.width*100:47.7;
+      const kite=sceneThing(kiteArt('#9B6BD0'),x,60,9,'tkite'); b.append(kite); T.el.kite=kite;
+      const p=el(`<div class="tpolly hover stk" style="left:${x}%;bottom:70%;width:9%;translate:-50% 0">${pollySVG(false)}</div>`); b.append(p); T.el.polly=p },
+    A:(T,r)=>kiteMid(T.el.kite,r), B:(T,r)=>kidHand(T.el.na,r,'l'),
+    done:async T=>{ T.clean(); const b=T.box, na=T.el.na, kite=T.el.kite, p=T.el.polly;
+      tether(b,r=>kidHand(na,r,'l'),r=>kiteMid(kite,r));
+      p.classList.remove('hover'); parrotFly(p,{left:p.style.left,bottom:'70%'},{left:'112%',bottom:'96%'},1300).then(()=>p.remove());
+      noise(.7,.12,0,600); kite.style.transition=`bottom ${1.8*SPEED}s cubic-bezier(.3,.8,.4,1), left ${1.8*SPEED}s ease-out`; kite.classList.add('flying');
+      kite.style.bottom='76%'; kite.style.left=(parseFloat(kite.style.left)+9)+'%'; setKidFace(na,'Na','excited');
+      await say(...T.K.fx); await sleep(500) }}},
+  {v:0,en:'Whoosh! The wind blows Na’s kite across the park. Draw a line across, all the way to the tall tree!',vi:'Vù! Gió thổi diều của Na bay ngang qua công viên. Con vẽ đường ngang, tới tận cây cao nhé!',
+   fx:['The wind blew Na’s kite all the way to the tall tree! Na ran with it.','Gió thổi diều của Na tới tận cây cao! Na chạy theo diều.'],
+   scene:{bg:()=>BG.park(),cls:'nopond',lane:'dots',col:'#FFFFFF',w:H=>Math.max(4,H*.012),
+    build:T=>{ const b=T.box; const tr=sceneThing(TALLTREE_SVG(),TREE_X,2,TREE_W,'ttree sway'); b.append(tr); T.el.tree=tr;
+      const na=kidAt('Na','excited',13,4,12); b.append(na); T.el.na=na;
+      const w=sceneThing(ART.wind(),9,68,11,'twind'); b.append(w);
+      const kite=sceneThing(kiteArt('#9B6BD0'),24,60,8,'tkite'); b.append(kite); T.el.kite=kite;
+      tether(b,r=>kidHand(T.el.na,r,'r'),r=>kiteMid(T.el.kite,r)) },
+    A:kiteMidAt(24,60,8), B:[TREE_X-9,0],
+    onProg:(T,q,f)=>{ const W=T.Wd||1; T.el.kite.style.left=(q.x/W*100)+'%'; T.el.na.style.transition='none'; T.el.na.style.left=Math.max(13,q.x/W*100-11)+'%' },
+    done:async T=>{ T.clean(); const na=T.el.na, kite=T.el.kite; windGust(T.box,{ms:1400,n:4}); kite.classList.add('wig');
+      na.classList.remove('glad'); void na.offsetWidth; na.classList.add('glad'); await say(...T.K.fx); await sleep(400) }}}];
 
-/* ---- 4. the bubble man: pop the happy / sad / angry faces (looking back at Mầm feelings; the popping game is new) ---- */
-async function bubbleFaces(){ const sk=SK['L2.W.FEEL.01'], base=['happy','sad','angry'];
-  const m=mostMissed('feel',base)||'sad'; const rest=shuffle(base.filter(f=>f!==m)); const kidT=[m,...rest], demoT=rest[0]; const q=[demoT,...kidT]; let qi=0;   // the first is the demo's (or skipped when there is no demo)
-  await popStream(sk,3,{intro:['Look! The bubble man is making bubbles, and they have faces!','Nhìn kìa! Chú thổi bong bóng đang thổi bong bóng, bong bóng có vẽ mặt!'],target:()=>q[Math.min(qi++,q.length-1)],
-    make:{cls:'bubble',art:f=>faceSVG(f),others:t=>base.filter(f=>f!==t)},bg:()=>BG.park()+`<div class="bman stk">${adultSVG('man','wand')}</div>`,from:fd=>{ const m=fd.querySelector('.bman svg'), r=fd.getBoundingClientRect(), q=m.getBoundingClientRect(); return {x:q.left-r.left+q.width*.925,y:q.top-r.top+q.height*.08} },
+/* ---- 4. the bubble man (the same man who sells balloons later): pop the happy / sad / angry faces.
+   The popping game is new, so Chồi shows it once; then two turns for the child, and after each one Polly flies in:
+   "Excited! Excited!" … "Now you say it like Polly" (the new words of this level, said out loud). ---- */
+const BMAN_FROM=fd=>{ const m=fd.querySelector('.bman svg'), r=fd.getBoundingClientRect(), q=m.getBoundingClientRect(); return {x:q.left-r.left+q.width*MAN_WAND.x,y:q.top-r.top+q.height*MAN_WAND.y} };
+async function bubbleFaces({rounds=2,polly=true}={}){ const sk=SK['L2.W.FEEL.01'], base=['happy','sad','angry'];
+  const m=mostMissed('feel',base)||'sad'; const rest=shuffle(base.filter(f=>f!==m)); const q=[rest[0],m,rest[1]]; let qi=0;   // the first is the demo's (skipped when there is no demo)
+  const SAY=[['excited','háo hức','Lam'],['surprised','ngạc nhiên','Ben']];
+  await popStream(sk,rounds,{intro:['Look! The balloon man is blowing bubbles, and they have faces!','Nhìn kìa! Chú bán bóng bay đang thổi bong bóng, bong bóng có vẽ mặt!'],target:()=>q[Math.min(qi++,q.length-1)],ratio:2,
+    make:{cls:'bubble',art:f=>faceSVG(f),others:t=>base.filter(f=>f!==t)},bg:()=>BG.park()+`<div class="bman stk">${manSVG({arm:'wand',bunch:true})}</div>`,from:BMAN_FROM,
     ask:t=>say(`Pop the ${t} faces! Find three!`,`Chọc vỡ các mặt ${VI_FEEL[t]} nhé! Tìm ba cái!`),label:(v,vi)=>vi?`mặt đó đang ${VI_FEEL[v]}`:`that face looks ${v}`,
-    answer:t=>[`You found three ${t} faces!`,`Con tìm được ba mặt ${VI_FEEL[t]}!`]}) }
+    answer:t=>[`You found three ${t} faces!`,`Con tìm được ba mặt ${VI_FEEL[t]}!`],
+    between:polly?async(r,field)=>{ const [w,vi,who]=SAY[r%2]; await sayLikePolly(field,w,vi,{sk:SK['L2.W.FEEL.02'],art:kidHead(who,w)}) }:null}) }
 
-/* ---- 5 and 9: count to ten out loud. Each number the child says (a burst of voice) moves something: a duck swims in, the balloon comes down.
-   No microphone, or nothing heard: Chồi counts with the child. Nothing to tap, no "How many?" ---- */
-async function countOutLoud({sk,box,n=10,ask,askMic,onBeat,together,done,doneTogether}){
-  const big=el(`<b class="pk-num">&nbsp;</b>`); box.append(big);
+/* ---- 5 and 9: count to ten out loud. Each number the child says (a burst of voice) moves something: a duck swims in, Polly pulls the balloon down.
+   At least 0.6 s between two (a two-part word like "se-ven" moves one duck, not two). No microphone, or nothing heard: Chồi counts
+   with the child. Nothing to tap, no "How many?" ---- */
+async function countOutLoud({sk,box,n=10,ask,askMic,onBeat,together,done,doneTogether,numAt='left:50%;bottom:5%'}){
+  const big=el(`<b class="pk-num" style="${numAt}"></b>`); box.append(big);
   let k=0; const show=i=>{ big.textContent=i; big.classList.remove('bump'); void big.offsetWidth; big.classList.add('bump') };
   const beat=()=>{ if(k>=n) return; k++; show(k); onBeat(k); if(k>=n) MICSTOP.at=performance.now()+1200 };
   const sayTogether=async()=>{ await say(...together); for(let i=1;i<=n;i++){ if(i>k) beat(); else show(i); await say(cap(W[i])+'.',cap(VI_N[i])+'.',{gap:500,rate:.85,q:false}) } confetti(); await say(...doneTogether); return null };
@@ -6226,11 +6552,11 @@ async function countOutLoud({sk,box,n=10,ask,askMic,onBeat,together,done,doneTog
   const mic=el(`<button class="mic boxmic" aria-label="Micro">${ICON.mic}</button>`); box.append(mic);
   await say(...ask,{q:true}); await say(...askMic,{q:true}); RUN.qfn=async()=>{ await say(...ask,{replay:true}); await say(...askMic,{replay:true}) };
   turn('kid');
-  let loud=false, last=0, floor=null, t0=0, fb=null;
-  const arm=()=>{ clearTimeout(fb); fb=setTimeout(()=>{ if(k<n){ beat(); last=performance.now(); arm() } },1700) };   // a quiet child still sees things move
-  const T=await micTurn(mic,15000,{onStart:()=>{ t0=performance.now(); arm() },
+  let loud=false, last=0, quiet=0, floor=null, t0=0, fb=null;
+  const arm=()=>{ clearTimeout(fb); fb=setTimeout(()=>{ if(k<n){ beat(); last=performance.now(); arm() } },2200) };   // a quiet child still sees things move, slowly
+  const T=await micTurn(mic,16000,{onStart:()=>{ t0=performance.now(); arm() },
     onLevel:l=>{ const now=performance.now(); if(floor===null&&now-t0>250) floor=l; const th=Math.max(.16,(floor||0)*2.6);
-      if(!loud&&l>th&&now-last>330){ loud=true; last=now; beat(); arm() } else if(loud&&l<th*.55) loud=false }});
+      if(!loud&&l>th&&now-last>600&&now-quiet>110){ loud=true; last=now; beat(); arm() } else if(loud&&l<th*.55){ loud=false; quiet=now } }});
   clearTimeout(fb); mic.remove(); turn(null);
   const r=T.r||null, heard=T.heard||null, voiced=!!(r&&r.voiced);
   if(!voiced) return sayTogether();
@@ -6241,60 +6567,80 @@ async function countOutLoud({sk,box,n=10,ask,askMic,onBeat,together,done,doneTog
   if(r.blob){ await say('Listen! That’s you counting!','Nghe này, con đếm đấy!',{gap:200}); Music.level(.15); await playBlob(r.blob); Music.level(1) }
   return r }
 async function duckCount(){ const sk=SK['L2.M.NUM.04'];
-  const box=sbox('ducks',BG.park()); box.append(el(`<div class="dpond"><svg viewBox="0 0 200 60" preserveAspectRatio="none"><ellipse cx="100" cy="30" rx="97" ry="27" fill="#7FD0F5" stroke="${INK}" stroke-width="3"/><path d="M40 26 q10 -5 20 0 M120 34 q10 -5 20 0 M80 42 q8 -4 16 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg></div>`));
+  const box=sbox('ducks',BG.park()); box.append(el(`<div class="dpond">${POND_SVG()}</div>`));
   const ducks=DUCK_BANK.map(([x,b])=>{ const d=el(`<div class="pduck" style="left:${x}%;bottom:${b}%">${ART.duck()}</div>`); box.append(d); return d });
   await say('Here’s the pond. Ten little ducks are waiting on the grass. They want to swim!','Đây là cái ao. Mười bạn vịt đang đứng chờ trên cỏ. Các bạn ấy muốn bơi!');
-  await countOutLoud({sk,box,ask:['Count to ten, and the ducks will swim in, one by one!','Con đếm đến mười, các bạn vịt sẽ lần lượt bơi xuống ao!'],askMic:['Tap the microphone, and count out loud!','Con chạm micro rồi đếm thật to nhé!'],
+  await countOutLoud({sk,box,numAt:'left:50%;top:4%',ask:['Count to ten, and the ducks will swim in, one by one!','Con đếm đến mười, các bạn vịt sẽ lần lượt bơi xuống ao!'],askMic:['Tap the microphone, and count out loud!','Con chạm micro rồi đếm thật to nhé!'],
     onBeat:k=>{ const d=ducks[k-1]; d.classList.add('in'); d.style.left=DUCK_ROWS[k-1][0]+'%'; d.style.bottom=DUCK_ROWS[k-1][1]+'%'; tone(520+k*40,.12,'triangle',.06,0,700); setTimeout(()=>d.classList.add('swim'),800*SPEED) },
     together:['Let’s count them in together!','Mình cùng đếm cho các bạn vịt vào ao nhé!'],
     done:['You counted ten ducks into the pond!','Con đã đếm mười bạn vịt xuống ao!'],doneTogether:['Ten ducks are swimming in the pond!','Mười bạn vịt đã bơi trong ao!']}) }
 
-/* ---- 6. the box in the reeds: tap it, pop! a red balloon with the map piece; Ben is surprised ---- */
-const BEN_HOLD=[30.5,16];   // the end of the red balloon's string, in Ben's hand (Ben stands at 26%)
-const RBALLOON=()=>`<div class="rballoon"><span class="rb-b">${ART.balloon('#E8484F')}</span><i class="rb-s"></i><span class="rb-p stk">${mapPieceSVG(2)}</span><i class="rb-s rb-end"></i></div>`;
+/* ---- the park with the tall tree (the red balloon gets stuck in it) ---- */
+function parkTreeScene(cls,{stuck=true}={}){ const box=sbox(cls+' nopond',BG.park());
+  const tr=sceneThing(TALLTREE_SVG(),TREE_X,2,TREE_W,'ttree sway'); box.append(tr);
+  const rb=el(`<div class="redb">${REDB_SVG(2)}</div>`); box.append(rb);
+  const snag=()=>{ const r=box.getBoundingClientRect(), q=tr.querySelector('svg').getBoundingClientRect(); return {x:q.left-r.left+q.width*TREE_TOP.x,y:q.top-r.top+q.height*TREE_TOP.y} };
+  if(stuck){ placeRedB(rb,box,snag()); rb.classList.add('bob') }
+  return {box,tr,rb,snag} }
+
+/* ---- 6. the box in the reeds: tap it, pop! a red balloon with a map piece tied to its string floats up out of the box; Ben is surprised;
+   Ben runs to catch the string, but a gust blows the balloon away, and its string gets caught in the top of the tall tree ---- */
 async function reedBox(){
-  const box=sbox('reedbox',BG.park()); const ben=kidAt('Ben','happy',26,5,13); box.append(ben);
-  box.append(el(`<div class="reeds" style="left:49%;bottom:3%;width:22%">${REEDS_SVG()}</div>`));
-  const bx=el(`<button class="rbox stk jiggle" style="left:60%;bottom:5%;width:12%">${ART.present('#58B592')}</button>`); box.append(bx);
-  const rb=el(RBALLOON()); rb.style.left='60%'; rb.style.bottom='12%'; rb.style.visibility='hidden'; box.append(rb);
+  const P=parkTreeScene('reedbox',{stuck:false}), box=P.box, rb=P.rb; rb.style.visibility='hidden';
+  const ben=kidAt('Ben','happy',22,5,13); box.append(ben);
+  box.append(el(`<div class="spond" style="left:40%;bottom:3%;width:26%">${POND_SVG()}</div>`));
+  box.append(el(`<div class="reeds" style="left:52%;bottom:3%;width:14%">${REEDS_SVG()}</div>`));
+  const bx=el(`<button class="rbox stk jiggle" style="left:55%;bottom:4%;width:9%">${ART.present('#58B592')}</button>`); box.append(bx);
   await say('Ben sees something in the reeds by the pond. It’s a box, and it’s wiggling!','Ben thấy có gì đó trong bụi lau cạnh ao. Một cái hộp, và nó đang động đậy!');
   await say('Tap the box to open it!','Con chạm để mở hộp nhé!',{q:true}); turn('kid'); bx.dataset.ok='1'; await tapOnce([bx]); turn(null);
   bx.classList.remove('jiggle'); bx.classList.add('opened'); SFX.pop(); tone(300,.12,'square',.06,0,900); burst(center(bx),{n:12});
-  rb.style.visibility='visible'; rb.style.transition=`bottom ${.9*SPEED}s cubic-bezier(.3,1.4,.5,1)`; void rb.offsetWidth; rb.style.bottom='20%';
-  setKidFace(ben,'Ben','surprised'); await sleep(900);
-  await say('Pop! A red balloon jumped out, with a map piece tied to it!','Bụp! Một quả bóng đỏ bật ra, có buộc một mảnh bản đồ!');
+  // out of the box: the end of the string leaves the box and the balloon floats up, slowly (a balloon always goes up)
+  const r0=box.getBoundingClientRect(), b0=bx.getBoundingClientRect(); const start={x:b0.left-r0.left+b0.width/2,y:b0.top-r0.top+b0.height*.4};
+  placeRedB(rb,box,start); rb.style.visibility='visible'; void rb.offsetWidth; placeRedB(rb,box,{x:start.x,y:r0.height*.62},1400);
+  setKidFace(ben,'Ben','surprised'); await sleep(1300); placeRedB(rb,box,{x:start.x-r0.width*.02,y:r0.height*.5},9000);   // still drifting up while we talk
+  await say('Pop! A red balloon jumped out of the box, with a map piece tied to its string!','Bụp! Một quả bóng đỏ bật ra khỏi hộp, trên dây có buộc một mảnh bản đồ!');
   await say('Ben feels surprised.','Ben thấy ngạc nhiên.'); await pollyEcho(...ECHO.surprised);
   await say('Are you surprised, Ben?','Ben ơi, bạn ngạc nhiên à?'); await friendSays(ben,'Yes!','Ừ!');
-  rb.style.transition=`left ${1*SPEED}s ease-in-out, bottom ${1*SPEED}s ease-in-out`; rb.style.left=BEN_HOLD[0]+'%'; rb.style.bottom=BEN_HOLD[1]+'%'; await sleep(1000); ben.classList.add('holdup');
-  setKidFace(ben,'Ben','happy'); await say('Ben holds the red balloon tight.','Ben cầm chặt quả bóng đỏ.'); await nextPage(box) }
+  // Ben runs to catch the string… a gust
+  ben.style.transition=`left ${1.4*SPEED}s ease-in-out`; ben.classList.add('walking'); ben.style.left='34%';
+  await say('Ben runs to catch the string…','Ben chạy tới nắm dây…'); ben.classList.remove('walking');
+  windGust(box,{ms:1800}); placeRedB(rb,box,P.snag(),1700); await sleep(1800); rb.classList.add('bob'); setKidFace(ben,'Ben','sad');
+  await say('Oh no! The wind blew the red balloon away. Its string is stuck in the tall tree!','Ôi không! Gió thổi quả bóng đỏ bay đi. Dây bóng mắc trên ngọn cây cao rồi!');
+  await nextPage(box) }
 
-/* ---- 7. the balloon man: a balloon for the friend who looks excited, then surprised (faces of people, not of things) ---- */
-function balloonMan(sk){
+/* ---- 7. the balloon man (the bubble man, with his bunch of balloons): a balloon for the friend who looks excited, then surprised.
+   The red balloon is still stuck in the tall tree behind him. Two turns. ---- */
+function balloonMan(sk,rounds=2){
   const R=[{t:'excited',set:['excited','surprised','sad'],col:'#FCB515',cen:'yellow',cvi:'vàng'},{t:'surprised',set:['surprised','excited','angry'],col:'#4A9BDB',cen:'blue',cvi:'xanh'}];   // the demo uses the first
-  return choiceActivity(sk,3,['The balloon man has balloons for everyone!','Chú bán bóng có bóng bay cho tất cả các bạn!'],r=>{
-    const Q=r===2?{...(mostMissed('feel',['excited','surprised'])==='excited'?R[0]:R[1]),col:'#E8607E',cen:'pink',cvi:'hồng'}:R[r<0?0:r], who=shuffle(CAST.slice()), feels=shuffle(Q.set), k=feels.indexOf(Q.t), n=who[k];
-    const c=card(); const sc=el(`<div class="sbox qbox">${BG.park()}<div class="bmanq stk">${adultSVG('man','hold')}<i class="bunch">${BUNCH_SVG()}</i></div><div class="oneb stk" style="--c:${Q.col}">${ART.balloon(Q.col)}</div></div>`);
+  return choiceActivity(sk,rounds,['The balloon man has balloons for everyone!','Chú bán bóng có bóng bay cho tất cả các bạn!'],r=>{
+    const Q=R[r<0?0:r%2], who=shuffle(CAST.slice()), feels=shuffle(Q.set), k=feels.indexOf(Q.t), n=who[k];
+    const c=card(); const sc=el(`<div class="sbox qbox nopond">${BG.park()}<div class="sthing ttree" style="left:${TREE_X}%;bottom:2%;width:${TREE_W}%">${TALLTREE_SVG()}</div><div class="redb small bob">${REDB_SVG(2)}</div><div class="bmanq stk">${manSVG({arm:'hold',bunch:true})}</div><div class="oneb stk">${ART.balloon(Q.col)}</div></div>`);
     const [row,opts]=optRow(who.map((w,i)=>kidHead(w,feels[i])),'small kidhead'); c.append(sc,row);
+    requestAnimationFrame(()=>{ const rb=$('.redb',sc), tr=$('.ttree svg',sc), r0=sc.getBoundingClientRect(), q=tr.getBoundingClientRect(); if(q.width) placeRedB(rb,sc,{x:q.left-r0.left+q.width*TREE_TOP.x,y:q.top-r0.top+q.height*TREE_TOP.y});
+      const m=$('.bmanq svg',sc).getBoundingClientRect(), b=$('.oneb',sc); if(m.width){ b.style.left=((m.left-r0.left+m.width*MAN_HAND.x)/r0.width*100)+'%'; b.style.bottom=((r0.height-(m.top-r0.top+m.height*MAN_HAND.y))/r0.height*100)+'%' } });
     return {opts,correct:k,concept:'feel:'+Q.t,labels:who.map((w,i)=>[`that’s ${w}. ${CAST_INFO[w].he} looks ${feels[i]}`,`đó là ${w}, bạn ấy đang ${VI_FEEL[feels[i]]}`]),
       ask:()=>say(`This ${Q.cen} balloon is for the friend who looks ${Q.t}. Who looks ${Q.t}?`,`Quả bóng ${Q.cvi} này dành cho bạn đang ${VI_FEEL[Q.t]}. Bạn nào đang ${VI_FEEL[Q.t]}?`),
       praise:[`You found the friend who looks ${Q.t}!`,`Con tìm ra bạn đang ${VI_FEEL[Q.t]} rồi!`],
       onRight:async()=>{ const b=$('.oneb',sc); if(b) await flyTo(b,opts[k],{ms:800,scale:.5,arc:80}).catch(()=>{}); if(b) b.remove() },
       answer:[`${n} looks ${Q.t}. Here’s your balloon, ${n}!`,`${n} đang ${VI_FEEL[Q.t]}. Bóng của ${n} đây!`]} }) }
 
-/* ---- 8. a big wind: the red balloon flies up behind five balloons; pop them and count (looking back at counting to five) ---- */
-const COVER=[[62,76],[73,75],[66,62],[75,60],[69,48]], COVER2=[[64,72],[74,68],[66,56],[75,52]];
-async function popCover(){ const sk=SK['L2.M.NUM.02'];
-  const box=sbox('windy',BG.park()); const ben=kidAt('Ben','happy',26,5,13,'holdup'); box.append(ben);
-  const rb=el(RBALLOON()); rb.style.left=BEN_HOLD[0]+'%'; rb.style.bottom=BEN_HOLD[1]+'%'; box.append(rb);
+/* ---- 8. more wind: balloons blow in from the left and get stuck in the tree, right in front of the red balloon.
+   Pop them and count (looking back at counting things to five): five (the number is said), then a few more (count to find out). ---- */
+const COVER=[[-8,-2],[7,0],[-3,10],[8,13],[0,-10]], COVER2=[[-7,4],[7,6],[-1,14],[3,-8]];   // around the red balloon, in % of the picture
+async function popCover({gusts=2}={}){ const sk=SK['L2.M.NUM.02'];
+  const P=parkTreeScene('windy'), box=P.box, rb=P.rb; const ben=kidAt('Ben','sad',26,5,13); box.append(ben);
   const COLS=['#FCB515','#4A9BDB','#58B592','#9B6BD0','#F28C3C'];
-  const blow=(pos,off)=>{ const bs=pos.map(([x,b],i)=>{ const e=el(`<button class="coverb stk" style="left:${x}%;bottom:${b}%">${ART.balloon(COLS[(i+off)%COLS.length])}</button>`); e.style.visibility='hidden'; box.append(e); return e });
-    bs.forEach((b,i)=>setTimeout(()=>{ b.style.visibility='visible'; b.classList.add('blowin') },i*140*SPEED)); return bs };
-  await sleep(600); noise(1.1,.22,0,500); const wl=say('Whoosh! A big wind! Ben lets go of the red balloon. It flies away!','Vù! Gió to quá! Ben tuột tay quả bóng đỏ. Bóng bay đi mất rồi!');
-  await sleep(1500); ben.classList.remove('holdup'); setKidFace(ben,'Ben','surprised'); rb.style.transition=`left ${1.6*SPEED}s ease-in, bottom ${1.6*SPEED}s ease-in`; rb.style.left='68%'; rb.style.bottom='36%'; await wl; await sleep(300);
-  // two gusts: five balloons (the number is said), then more (the child finds out how many by counting)
-  for(const [ri,pos] of [COVER,COVER2].entries()){ const n=pos.length;
-    if(ri) noise(1,.2,0,500); const bs=blow(pos,ri*2); await sleep(1100);
-    await say(...(ri?['Whoosh! The wind blows more balloons in the way! Pop them all, and count!','Vù! Gió thổi thêm bóng chắn đường! Con chọc vỡ hết và đếm nhé!']:['Five balloons are in the way. Pop them, and count!','Có năm quả bóng chắn trước mặt. Con chọc vỡ và đếm nhé!']),{q:true});
+  const blow=async(pos,off)=>{ const r=box.getBoundingClientRect(), q=rb.getBoundingClientRect(); const cx=(q.left-r.left+q.width/2)/r.width*100, cy=(q.top-r.top+q.height*.3)/r.height*100;
+    windGust(box,{ms:2000});
+    const bs=pos.map(([dx,dy],i)=>{ const e=el(`<button class="coverb stk" style="left:${cx+dx}%;top:${cy+dy}%">${ART.balloon(COLS[(i+off)%COLS.length])}</button>`); box.append(e);
+      const fx=-(cx+dx+12)/100*r.width, fy=(18+rand(20))/100*r.height;   // from off the left edge, a little lower, in a wavy line
+      e.animate([{transform:`translate(${fx}px,${fy}px) rotate(-20deg)`},{transform:`translate(${fx*.55}px,${fy*.3}px) rotate(12deg)`,offset:.45},{transform:`translate(${fx*.18}px,${-fy*.15}px) rotate(-6deg)`,offset:.8},{transform:'none'}],{duration:Math.max(1,1500*SPEED),delay:i*170*SPEED,easing:'ease-out',fill:'backwards'});
+      return e });
+    await sleep((1500+pos.length*170)*SPEED); return bs };
+  await say('The wind is still blowing!','Gió vẫn đang thổi!');
+  for(const [ri,pos] of (gusts<2?[pick([COVER,COVER2])]:[COVER,COVER2]).entries()){ const n=pos.length;
+    const bs=await blow(pos,ri*2);
+    await say(...(ri?['Whoosh! The wind blows more balloons in the way! Pop them all, and count!','Vù! Gió thổi thêm bóng chắn đường! Con chọc vỡ hết và đếm nhé!']:['Oh no! Five balloons are stuck in front of the red balloon. Pop them, and count!','Ôi! Năm quả bóng mắc ngay trước quả bóng đỏ. Con chọc vỡ và đếm nhé!']),{q:true});
     turn('kid');
     const pop=(k,b)=>{ b.dataset.used=1; b.classList.add('popped'); burst(center(b),{n:10}); SFX.pop(); say(cap(W[k])+'!',cap(VI_N[k])+'!',{gap:0,q:false}).catch(()=>{}) };
     const unpop=()=>bs.forEach(b=>{ delete b.dataset.used; b.classList.remove('popped') });
@@ -6303,27 +6649,195 @@ async function popCover(){ const sk=SK['L2.M.NUM.02'];
       answer:async()=>{ unpop(); for(let k=1;k<=n;k++){ const b=bs[k-1]; await Hand.moveTo(center(b),450); await Hand.tap(); pop(k,b); await sleep(450) } Hand.hide() }});
     turn(null); setTimeout(()=>bs.forEach(b=>b.remove()),400);
     if(r.ok) await kept(true,{line:[`You popped ${W[n]} balloons, and counted them all!`,`Con chọc vỡ ${VI_N[n]} quả bóng và đếm hết rồi!`]}); else if(r.second) await kept(false); else await reteachPending();
-    if(!ri){ rb.classList.add('wig'); await say('There’s the red balloon! Oh no, here comes more wind!','Quả bóng đỏ kia rồi! Ơ, lại có gió nữa!'); rb.classList.remove('wig') } }
-  rb.classList.add('wig'); await say('Now we can see the red balloon. But it’s way up high!','Giờ mình thấy quả bóng đỏ rồi. Nhưng nó ở trên cao quá!') }
+    if(!ri&&gusts>1) await say('There’s the red balloon! Oh no, here comes more wind!','Quả bóng đỏ kia rồi! Ơ, lại có gió nữa!') }
+  setKidFace(ben,'Ben','happy'); await say('Now we can see the red balloon again. But it’s stuck way up high!','Giờ mình lại thấy quả bóng đỏ. Nhưng nó mắc trên cao quá!') }
 
-/* ---- 9. count to ten, loud, and the red balloon comes down to Ben, step by step ---- */
+/* ---- 9. Polly flies up, takes the end of the string in her beak and pulls the balloon down, a little with each number the child says;
+   at ten she gives the string to Ben. Ben unties the map piece. ---- */
 async function balloonDown(){ const sk=SK['L2.M.NUM.04'];
-  const box=sbox('windy',BG.park()); const ben=kidAt('Ben','surprised',26,5,13); box.append(ben);   // the same place as the wind: Ben, and the balloon up high
-  const rb=el(RBALLOON()); rb.style.left='68%'; rb.style.bottom='36%'; rb.style.transition=`bottom ${.5*SPEED}s ease-out`; box.append(rb);
-  await sleep(300); ben.style.transition=`left ${2*SPEED}s ease-in-out`; ben.classList.add('walking'); ben.style.left='63.5%';
-  await say('Ben runs under the red balloon.','Ben chạy tới dưới quả bóng đỏ.'); await sleep(400); ben.classList.remove('walking'); setKidFace(ben,'Ben','happy');
-  await say('Let’s count to ten, loud and clear, so the wind can hear us. Then the red balloon will come down!','Mình đếm thật to đến mười để gió nghe thấy nhé. Rồi quả bóng đỏ sẽ xuống!');
-  await countOutLoud({sk,box,ask:['Count to ten, and the balloon will come down, step by step!','Con đếm đến mười, quả bóng sẽ xuống dần từng chút!'],askMic:['Tap the microphone, and count out loud!','Con chạm micro rồi đếm thật to nhé!'],
-    onBeat:k=>{ rb.style.bottom=(36-k*2)+'%'; if(k===10) ben.classList.add('holdup'); tone(700-k*30,.14,'sine',.06,0,500) },
+  const P=parkTreeScene('windy'), box=P.box, rb=P.rb; rb.classList.remove('bob'); const ben=kidAt('Ben','happy',30,5,13); box.append(ben);
+  const p=el(`<div class="tpolly stk" style="left:-14%;bottom:60%;width:9%">${pollySVG(false)}</div>`); box.append(p);
+  await say('Polly can fly! She can pull the balloon down.','Polly biết bay! Polly kéo quả bóng xuống được.');
+  tone(900,.1,'square',.04,0,1400); const top=P.snag(); await placePolly(p,box,top,1500); p.classList.add('hover');
+  await say('Polly holds the end of the string in her beak.','Polly ngậm đầu dây bóng.');
+  const r0=box.getBoundingClientRect(); const hand=()=>kidHand(ben,box.getBoundingClientRect(),'r')||{x:r0.width*.33,y:r0.height*.8};
+  await countOutLoud({sk,box,numAt:'left:11%;bottom:6%',ask:['Count to ten, and Polly will pull the balloon down, a little with each number!','Con đếm đến mười, mỗi số Polly sẽ kéo quả bóng xuống một chút!'],askMic:['Tap the microphone, and count out loud!','Con chạm micro rồi đếm thật to nhé!'],
+    onBeat:k=>{ const h=hand(), f=k/10, q={x:top.x+(h.x-top.x)*f,y:top.y+(h.y-top.y)*f}; placeRedB(rb,box,q,450); placePolly(p,box,q,450); tone(700-k*30,.14,'sine',.06,0,500) },
     together:['Let’s count together, nice and loud!','Mình cùng đếm thật to nhé!'],
-    done:['You counted to ten, and the balloon came down!','Con đếm đến mười, và quả bóng đã xuống rồi!'],doneTogether:['Ten! The balloon came down!','Mười! Quả bóng xuống rồi!']});
-  setKidFace(ben,'Ben','excited'); SFX.chime();
-  await say('Ben caught the red balloon! And here’s the map piece.','Ben bắt được quả bóng đỏ rồi! Và đây là mảnh bản đồ.');
-  const pp=$('.rb-p',rb), pr=box.getBoundingClientRect(), hr=pp.getBoundingClientRect(); pp.style.visibility='hidden';
-  const pc=el(`<div class="dropiece stk" style="left:${hr.left-pr.left+hr.width/2}px;top:${hr.top-pr.top+hr.height/2}px">${mapPieceSVG(2)}</div>`); box.append(pc);
-  const dx=pr.width/2-(hr.left-pr.left+hr.width/2), dy=pr.height*.45-(hr.top-pr.top+hr.height/2); tone(600,.5,'sine',.07,0,1300);
+    done:['You counted to ten, and Polly pulled the balloon down!','Con đếm đến mười, và Polly đã kéo quả bóng xuống!'],doneTogether:['Ten! Polly pulled the balloon down!','Mười! Polly kéo quả bóng xuống rồi!']});
+  await sleep(500); ben.classList.add('holdup'); setKidFace(ben,'Ben','excited'); SFX.chime();
+  p.classList.remove('hover'); placePolly(p,box,{x:r0.width*.86,y:r0.height*.3},1200);
+  await say('Polly gives the string to Ben. Ben has the red balloon!','Polly đưa dây cho Ben. Ben cầm được quả bóng đỏ rồi!');
+  await say('Ben unties the map piece.','Ben tháo mảnh bản đồ ra.');
+  const pr=box.getBoundingClientRect(), q=rb.getBoundingClientRect(); const pc0={x:q.left-pr.left+q.width*(REDB_PIECE.x+REDB_PIECE.w/2),y:q.top-pr.top+q.height*(REDB_PIECE.y+REDB_PIECE.h/2)};
+  rb.querySelector('.rb-p').style.visibility='hidden';
+  const pc=el(`<div class="dropiece stk" style="left:${pc0.x}px;top:${pc0.y}px">${mapPieceSVG(2)}</div>`); box.append(pc);
+  const dx=pr.width/2-pc0.x, dy=pr.height*.42-pc0.y; tone(600,.5,'sine',.07,0,1300);
   await pc.animate([{transform:'translate(-50%,-50%) scale(.6)'},{transform:`translate(calc(-50% + ${dx}px),calc(-50% + ${dy}px)) scale(1.8) rotate(360deg)`}],{duration:Math.max(1,1100*SPEED),easing:'ease-out',fill:'forwards'}).finished.catch(()=>{});
   pc.classList.add('glow'); SFX.chime(); burst(center(pc),{n:14}); await sleep(700) }
+
+/* =========================================================
+   LEVEL 2 · THE GARDEN AT NIGHT: "camping in the garden" (spiral version, 20/10)
+   One evening in the garden behind Na's house: the sun goes down → fireflies → the lanterns play music → a storm, Lam is scared →
+   ladybugs after the rain → Na's kitten looks for a dry spot → Na's drum → hide and seek (count to ten) → the flashlight finds
+   everyone, and the map piece → Ben is tired, into his sleeping bag (a lullaby).
+   New: seeing 1–3 at a glance (start: fireflies; middle: ladybugs, answers are dot cards; end: Na's drum).
+   Second new: scared, tired. Mầm: in, on, under (the kitten; asked again with the flashlight: Where? Who?).
+   Looking back: excited and surprised (in music), counting to ten out loud (hide and seek).
+   ========================================================= */
+const TENT_SVG=()=>`<svg viewBox="0 0 120 90" aria-hidden="true"><path d="M8 86 L60 8 L112 86Z" fill="#F28C3C" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/><path d="M60 8 L44 86 H76Z" fill="#B85F1F" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M60 8 L52 86 M60 8 L68 86" stroke="#7A3E14" stroke-width="2"/><path d="M60 8 v-6" stroke="${INK}" stroke-width="3"/><path d="M60 2 l10 3 -10 3z" fill="#58B592" stroke="${INK}" stroke-width="2"/><path d="M4 86 H116" stroke="${INK}" stroke-width="4" stroke-linecap="round"/></svg>`;
+const LANTERN_SVG=(col)=>`<svg viewBox="0 0 60 90" overflow="visible" aria-hidden="true"><circle class="lglow" cx="30" cy="48" r="34" fill="${col}"/><path d="M30 0 v10" stroke="${INK}" stroke-width="2.5"/><rect x="20" y="9" width="20" height="7" rx="2" fill="#5B3A2E" stroke="${INK}" stroke-width="2.5"/><ellipse class="lbody" cx="30" cy="46" rx="22" ry="27" fill="${col}" stroke="${INK}" stroke-width="3.5"/><path d="M30 19 q-12 27 0 54 M30 19 q12 27 0 54 M8 46 h44" stroke="${INK}" stroke-width="1.5" fill="none" opacity=".4"/><ellipse cx="23" cy="37" rx="5" ry="9" fill="#fff" opacity=".45"/><rect x="20" y="72" width="20" height="6" rx="2" fill="#5B3A2E" stroke="${INK}" stroke-width="2.5"/><path d="M30 78 v9" stroke="#E8484F" stroke-width="3"/></svg>`;
+
+/* ---- 1. the sun goes down; fireflies come out in little groups. Chồi shows how one look is enough (no counting), then the child taps the others ---- */
+async function campIntro(){
+  const box=sbox('sunset',BG.dusk()); box.append(el(`<div class="nightveil"></div>`));
+  const stars=el(`<div class="stars">${Array.from({length:14},(_,i)=>`<i style="left:${(i*37+11)%96}%;top:${(i*53+7)%46}%;animation-delay:${i*90}ms"></i>`).join('')}</div>`); box.append(stars);
+  const sun=el(`<button class="bigsun" aria-label="Sun"><svg viewBox="0 0 40 40">${sunG(20,20,11,'#FF8A3D').replace('class="tp tp-sun"','')}</svg></button>`); box.append(sun);
+  box.append(sceneThing(TENT_SVG(),62,4,24,'ctent'));
+  box.append(kidAt('Na','happy',20,4,13),kidAt('Ben','happy',36,4,13),kidAt('Lam','happy',86,4,13)); const mapA=el(`<div class="smap stk bob">${mapTornSVG(2)}</div>`); box.append(mapA);
+  await say('The map shows a garden. Tonight, we’re camping in Na’s garden!','Bản đồ vẽ một khu vườn. Tối nay mình cắm trại trong vườn nhà Na!'); mapA.classList.add('away');
+  await say('Look, the sun is going down. Tap the sun to help it go to sleep!','Nhìn kìa, mặt trời đang lặn. Con chạm vào mặt trời để giúp nó đi ngủ nhé!',{q:true});
+  turn('kid'); sun.dataset.ok='1'; await tapOnce([sun]); turn(null);
+  sun.classList.add('down'); box.classList.add('night'); tone(600,1.2,'sine',.06,0,250); await sleep(1600);
+  box.querySelectorAll('.skid').forEach(k=>setKidFace(k,k.dataset.who,'surprised'));
+  await say('Good night, sun! Now it’s dark in the garden. Look at the stars!','Chúc mặt trời ngủ ngon! Giờ khu vườn tối rồi. Nhìn những ngôi sao kìa!');
+  // fireflies in little groups: one look is enough to know how many
+  const G=[2,...shuffle([1,3])], at=[[30,40],[52,58],[78,40]];
+  const groups=G.map((n,i)=>{ const g=el(`<button class="ffly" style="left:${at[i][0]}%;bottom:${at[i][1]}%">${[[50,50],[30,30,70,70],[25,30,72,32,50,72]][n-1].reduce((h,v,j,a)=>j%2?h:h+`<i style="left:${a[j]}%;top:${a[j+1]}%"></i>`,'')}</button>`); g.dataset.n=n; box.append(g); return g });
+  const light=async(g,line)=>{ g.classList.add('lit'); SFX.chime(); const n=+g.dataset.n; await say(...(line||[`${cap(W[n])}! I can see ${W[n]} without counting.`,`${cap(VI_N[n])}! Nhìn là biết ${VI_N[n]}, không cần đếm.`])) };
+  await say('Fireflies! They fly in little groups.','Đom đóm kìa! Chúng bay thành từng nhóm nhỏ.');
+  const left=groups.slice();
+  if(wantDemo('glance')){ turn('choi'); await say('Watch me. I just look… and I know!','Xem Chồi nhé. Chồi chỉ nhìn một cái… là biết!');
+    await Hand.moveTo(center(left[0]),600); await Hand.tap(); Hand.hide(); await light(left.shift(),['Two! I see two fireflies. I don’t need to count!','Hai! Chồi thấy hai con đom đóm. Không cần đếm!']) }
+  await say('Now you! Tap a group, and look quickly. How many fireflies?','Giờ đến con! Con chạm vào một nhóm rồi nhìn thật nhanh. Có mấy con đom đóm?',{q:true});
+  turn('kid');
+  while(left.length){ left.forEach(g=>g.dataset.ok='1'); const k=await tapOnce(left); const g=left.splice(k,1)[0]; await light(g) }
+  turn(null); await nextPage(box) }
+
+/* ---- 2. the lanterns play music (looking back at excited and surprised, in a new way: by ear).
+   Two lanterns light up one at a time, each with its music; which one sounds excited? Then two more: which one has a surprise? ---- */
+const LANTERNS=[[16,'#FCB515',30],[38,'#E8484F',22],[62,'#58B592',22],[84,'#9B6BD0',30]];   // left %, colour, top %
+async function lanternMusic({rounds=2}={}){ const sk=SK['L2.W.FEEL.02'];
+  const box=sbox('lanterns',BG.night()); box.append(sceneThing(TENT_SVG(),56,4,22,'ctent'));
+  box.append(kidAt('Lam','happy',22,4,12),kidAt('Na','happy',80,4,12));
+  box.append(el(`<svg class="lstring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 Q16 32 27 28 T50 22 T73 28 T100 18" stroke="${INK}" stroke-width=".5" fill="none" vector-effect="non-scaling-stroke"/></svg>`));
+  const L=LANTERNS.map(([x,c,t])=>{ const b=el(`<button class="lantern" style="left:${x}%;top:${t}%">${LANTERN_SVG(c)}</button>`); box.append(b); return b });
+  await say('Na’s lanterns are magic. When a lantern lights up, it plays music!','Đèn lồng của Na có phép. Đèn nào sáng lên là phát ra nhạc!');
+  const RR=shuffle([['excited','háo hức','sounds excited'],['surprised','ngạc nhiên','has a surprise in it']]).sort((a,b)=>a[0]==='excited'?-1:1);
+  if(rounds<2) RR.sort(()=>Math.random()-.5);
+  for(let r=0;r<rounds;r++){ const [t,tvi,phrase]=RR[r], other=t==='excited'?'surprised':'excited', pair=[L[r*2],L[r*2+1]], k=rand(2), feels=k?[other,t]:[t,other];
+    const play=async(i)=>{ const b=pair[i]; b.classList.add('lit','sing'); try{ await playFeelMusic(feels[i],7.5) }finally{ b.classList.remove('sing'); if(!b.classList.contains('bright')) b.classList.remove('lit') } };
+    const listen=async()=>{ await say(r?'Two new lanterns. Listen to this one…':'Listen to this lantern…',r?'Hai đèn lồng mới. Nghe đèn này nhé…':'Nghe đèn lồng này nhé…',{gap:150,q:false}); await play(0); await say('…and this one.','…và đèn này.',{gap:150,q:false}); await play(1) };
+    const ask=()=>say(`Which lantern’s music ${phrase}? Tap that lantern!`,`Nhạc của đèn lồng nào nghe ${tvi}? Con chạm vào đèn đó nhé!`);
+    turn('kid'); await listen();
+    const hh=r===0?hintHand(()=>pair[k]):()=>{}; abortFns.add(hh);
+    await stepPick(sk,pair,k,{ask,concept:'feel:'+t,labels:feels.map(f=>[`that music sounds ${f}`,`nhạc đó nghe ${VI_FEEL[f]}`]),
+      onRight:async()=>{ hh(); pair[k].classList.add('lit','bright') }});
+    hh(); RUN.qfn=async()=>{ await listen(); await ask() }; turn(null);
+    await say(...(t==='excited'?['Yes! That music sounds excited. Bouncy and quick!','Đúng rồi! Nhạc đó nghe háo hức. Nhảy nhót và nhanh!']:['Yes! That music has a surprise in it. Quiet, quiet… boom!','Đúng rồi! Nhạc đó có một điều bất ngờ. Nhẹ, nhẹ… bùm!'])); await reteachPending() }
+  L.forEach((b,i)=>setTimeout(()=>b.classList.add('lit','bright'),i*200*SPEED)); SFX.chime(); await sleep(900);
+  await say('Now all the lanterns are glowing!','Giờ tất cả đèn lồng đều sáng rồi!'); await nextPage(box) }
+
+/* ---- 3. a storm: Lam is scared; hug him (the new feeling: scared) ---- */
+const LAM_STORM={...{f:'scared',name:'Lam',act:'hold'},lead:['Oh! Dark clouds are coming. The wind blows out the lanterns…','Ơ! Mây đen kéo đến. Gió thổi tắt hết đèn lồng…'],
+  en:'Boom! Thunder! Lam is scared.',vi:'Ầm! Sấm nổ! Lam thấy sợ.',hen:'Let’s give Lam a big hug. Press and hold Lam!',hvi:'Mình ôm Lam thật chặt nhé. Con nhấn giữ vào Lam!'};
+
+/* ---- 4. ladybugs after the rain: a ladybug lands on a leaf for a moment, then flies away. Which card has the same number of dots? ---- */
+const LADYBUG_SVG=lay=>dotsSVG('ladybug',lay).replace('<svg viewBox="0 0 100 100">','<svg viewBox="0 0 100 100" overflow="visible"><g class="lwing l"><ellipse cx="34" cy="56" rx="20" ry="34" fill="#DDF1F8" opacity=".75" stroke="'+INK+'" stroke-width="2"/></g><g class="lwing r"><ellipse cx="66" cy="56" rx="20" ry="34" fill="#DDF1F8" opacity=".75" stroke="'+INK+'" stroke-width="2"/></g>');
+const LEAF_SVG=()=>`<svg viewBox="0 0 120 80" aria-hidden="true"><path d="M6 60 Q30 4 110 10 Q100 70 20 70Z" fill="#58B592" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/><path d="M14 64 Q60 36 104 14" stroke="#2A8060" stroke-width="3" fill="none"/><circle cx="70" cy="30" r="3" fill="#BFE3F7"/><circle cx="44" cy="48" r="2.5" fill="#BFE3F7"/></svg>`;
+function ladybugDots(sk,rounds=2){ const st={};
+  return choiceActivity(sk,rounds,['The rain stops. Look, the ladybugs come out!','Mưa tạnh rồi. Nhìn kìa, các bạn bọ rùa bò ra!'],r=>{
+    const n=nextDifferent(st.n,()=>1+rand(3)); st.n=n; const lay=pick(LAY[n]); const lays=[1,2,3].map(k=>k===n&&LAY[n].length>1?pick(LAY[n].filter(x=>x!==lay)):pick(LAY[k]));
+    const c=card(); const sc=el(`<div class="sbox qbox lbugbox">${BG.night()}<div class="sthing lleaf" style="left:50%;bottom:6%;width:44%">${LEAF_SVG()}</div><div class="lbug">${LADYBUG_SVG(lay)}</div></div>`);
+    const [row,opts]=optRow([1,2,3].map(k=>dotsSVG('card',lays[k-1])),'small'); c.append(sc,row);
+    const bug=$('.lbug',sc);
+    const show=async()=>{ bug.classList.remove('away','land'); void bug.offsetWidth; bug.classList.add('land'); tone(900,.15,'sine',.04,0,1200); await sleep(2100); bug.classList.add('away'); tone(1000,.3,'triangle',.03,0,1600); await sleep(700) };
+    const q=()=>say('How many spots did the ladybug have? Find the card with the same number of dots!','Bạn bọ rùa có mấy chấm? Con tìm thẻ có số chấm giống vậy nhé!');
+    return {opts,correct:n-1,concept:'flash:'+n,labels:[1,2,3].map(k=>[`that card has ${W[k]} ${k>1?'dots':'dot'}`,`thẻ đó có ${VI_N[k]} chấm`]),
+      pre:async()=>{ await say('A ladybug is landing on the leaf. Look quickly!','Một bạn bọ rùa đậu xuống chiếc lá. Nhìn nhanh nào!',{gap:200}); await show() },
+      ask:q, replay:async()=>{ await say('Here it comes again. Look!','Bọ rùa bay lại kìa. Nhìn nhé!',{gap:200}); await show(); await q() },
+      explain:async()=>{ bug.classList.remove('away'); bug.classList.add('land'); await sleep(400); await say(`${cap(W[n])} ${n>1?'spots':'spot'}, and ${W[n]} ${n>1?'dots':'dot'}. The same!`,`${cap(VI_N[n])} chấm trên lưng, ${VI_N[n]} chấm trên thẻ. Giống nhau!`) },
+      praise:[`You saw ${W[n]} ${n>1?'spots':'spot'}, quick as a wink!`,`Con nhìn ra ${VI_N[n]} chấm thật nhanh!`],
+      answer:[`${cap(W[n])} ${n>1?'spots':'spot'}, ${W[n]} ${n>1?'dots':'dot'}!`,`${cap(VI_N[n])} chấm trên lưng, ${VI_N[n]} chấm trên thẻ!`]} }) }
+
+/* ---- 6. Na found her drum in the tent: look at the dots, then bang the drum (seeing at a glance, at the end of the level) ---- */
+async function naDrum(){ const box=sbox('ndrum',BG.night()); box.append(sceneThing(TENT_SVG(),60,4,26,'ctent')); const na=kidAt('Na','excited',40,4,14); box.append(na); box.append(sceneThing(ART.drum(),48,4,9,'cdrum'));
+  await say('Boom, boom! Na found her drum in the tent.','Bùm, bùm! Na tìm thấy cái trống trong lều.'); tone(150,.3,'sine',.45,0,50); await sleep(300); tone(150,.3,'sine',.45,0,50);
+  await friendSays(na,'Let’s play a drum game!','Mình chơi trò gõ trống nhé!'); await nextPage(box) }
+
+/* ---- 7. hide and seek: close our eyes and count to ten out loud while Lam, Na and Ben hide (looking back at counting to ten) ---- */
+async function hideCount(){ const sk=SK['L2.M.NUM.04'];
+  const box=sbox('hidecount',BG.night()); box.append(sceneThing(TENT_SVG(),60,4,24,'ctent'));
+  const kids=['Lam','Na','Ben'].map((n,i)=>{ const k=kidAt(n,'happy',22+i*14,4,12); box.append(k); return k });
+  await say('Now let’s play hide and seek! Lam, Na and Ben will hide.','Giờ mình chơi trốn tìm nhé! Lam, Na và Ben sẽ đi trốn.');
+  const eyes=el(`<div class="eyesshut"></div>`); box.append(eyes);
+  await say('We close our eyes, and count to ten, nice and loud.','Mình nhắm mắt lại, và đếm thật to đến mười.'); eyes.classList.add('on');
+  await countOutLoud({sk,box,numAt:'left:50%;top:30%',ask:['Count to ten while they hide!','Con đếm đến mười trong lúc các bạn đi trốn nhé!'],askMic:['Tap the microphone, and count out loud!','Con chạm micro rồi đếm thật to nhé!'],
+    onBeat:k=>{ if(k===3||k===6||k===9){ const kid=kids[k/3-1]; kid.style.transition=`left ${.9*SPEED}s ease-in,opacity ${.9*SPEED}s`; kid.style.left=(k===3?-10:k===6?110:-10)+'%'; kid.style.opacity=0; tone(400,.08,'square',.03,0,600) } },
+    together:['Let’s count together!','Mình cùng đếm nhé!'],
+    done:['You counted to ten! Ready or not, here we come!','Con đếm đến mười rồi! Xong chưa? Mình đi tìm đây!'],doneTogether:['Ten! Ready or not, here we come!','Mười! Xong chưa? Mình đi tìm đây!']});
+  eyes.classList.remove('on'); await sleep(400);
+  await say('Oh! It’s so dark. We need a flashlight!','Ơ! Tối quá. Mình cần đèn pin!'); await nextPage(box) }
+
+/* ---- 9. Ben is tired: help him into his sleeping bag, with a lullaby ---- */
+const BEN_BAG={f:'tired',name:'Ben',scene:'bed',act:'hold',music:'lullaby-box',
+  en:'It’s late. Ben played all evening. Now he is yawning.',vi:'Khuya rồi. Ben chơi cả buổi tối. Giờ Ben ngáp rồi.',
+  hen:'Let’s help Ben into his sleeping bag. Press and hold Ben!',hvi:'Mình giúp Ben chui vào túi ngủ nhé. Con nhấn giữ vào Ben!'};
+
+/* =========================================================
+   MUSIC (20/10): famous classical pieces, in our own recordings (tools/music/compose.py: the notes written by hand,
+   played with the FluidR3 instruments, MIT licence; the music itself is public domain).
+   In the levels the child meets a short part (6–9 s): the map-piece tune, a lantern, a music box, a bedtime.
+   Every piece met opens in the Music box (home screen): a picture, the name and the composer, and the best-known part (~20–35 s).
+   ========================================================= */
+const PIECES={
+  ode:{en:'Ode to Joy',who:'Beethoven',vi:'Khúc hoan ca',art:()=>`<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#FFF3D1"/>${mapTornSVG(Math.max(1,S.pieces||1)).replace('<svg ','<svg x="4" y="30" width="92" height="63" ')}<path d="M66 6 v20 a6 5 0 1 1 -3 -4 v-12 l12 -3 v14 a6 5 0 1 1 -3 -4 v-8z" fill="${CK_PL}"/></svg>`},
+  nacht:{en:'A Little Night Music',who:'Mozart',vi:'Tiểu dạ khúc',art:()=>LANTERN_ART('#FCB515')},
+  surprise:{en:'The Surprise Symphony',who:'Haydn',vi:'Giao hưởng Bất ngờ',art:()=>LANTERN_ART('#E8484F',true)},
+  lullaby:{en:'Lullaby',who:'Brahms',vi:'Bài hát ru',art:()=>`<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#2E3A6E"/>${[[16,18],[84,26],[28,40],[70,12],[90,58]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="1.8" fill="#FFE9A8"/>`).join('')}<path d="M62 14 a20 20 0 1 0 14 34 a16 16 0 1 1 -14 -34z" fill="#FFE9A8" stroke="${CK_PL}" stroke-width="3"/><path d="M12 84 q10 -22 40 -22 q30 0 38 14 q-2 12 -40 12 q-30 0 -38 -4z" fill="#58B592" stroke="${CK_PL}" stroke-width="3" stroke-linejoin="round"/><circle cx="30" cy="68" r="10" fill="#9E6A42" stroke="${CK_PL}" stroke-width="3"/><path d="M25 68 q3 3 6 0 M31 68 q3 3 6 0" stroke="${CK_PL}" stroke-width="1.8" fill="none"/><text x="44" y="50" font-family="Nunito,sans-serif" font-weight="900" font-size="12" fill="#D9C7F2">z z</text></svg>`},
+  mountain:{en:'In the Hall of the Mountain King',who:'Grieg',vi:'Trong cung điện vua núi',art:()=>`<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#CFEAF7"/><path d="M6 92 L38 30 L52 50 L64 34 L96 92Z" fill="#9B6BD0" stroke="${CK_PL}" stroke-width="3.5" stroke-linejoin="round"/><path d="M32 42 L38 30 L44 42 l-3 3 l-3 -4 l-3 4z M60 42 L64 34 L69 43 l-3 2 l-2 -3 l-3 2z" fill="#fff"/><circle cx="42" cy="66" r="6.5" fill="#fff" stroke="${CK_PL}" stroke-width="2.5"/><circle cx="58" cy="66" r="6.5" fill="#fff" stroke="${CK_PL}" stroke-width="2.5"/><circle cx="43" cy="67" r="2.6" fill="${CK_PL}"/><circle cx="59" cy="67" r="2.6" fill="${CK_PL}"/><path d="M42 80 q4 -4 8 0 q4 4 8 0" stroke="${CK_PL}" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M18 26 q4 -6 9 -2 M78 20 q4 -6 9 -2" stroke="${CK_PL}" stroke-width="2.5" fill="none"/><path d="M70 72 l2 -5 l2 5 l5 1 l-5 2 l-2 5 l-2 -5 l-5 -2z" fill="#FFD21F"/></svg>`},
+  fifth:{en:'Symphony No. 5',who:'Beethoven',vi:'Giao hưởng số 5',art:()=>`<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#DDE6F2"/><path d="M20 46 h46 a12 12 0 0 0 -4 -23 a16 16 0 0 0 -30 -2 a11 11 0 0 0 -12 25z" fill="#8E99A4" stroke="${CK_PL}" stroke-width="3.5" stroke-linejoin="round"/><path d="M46 50 L36 70 H48 L40 90 L62 62 H50 L58 50Z" fill="#FCB515" stroke="${CK_PL}" stroke-width="3" stroke-linejoin="round"/><circle cx="74" cy="66" r="12" fill="#E8484F" stroke="${CK_PL}" stroke-width="3"/><path d="M70 62 l-4 -4 M80 62 l4 -4 M68 72 q6 -4 12 0" stroke="${CK_PL}" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>`},
+  moonlight:{en:'Moonlight Sonata',who:'Beethoven',vi:'Sonata Ánh trăng',art:()=>`<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#3A4A7E"/><circle cx="66" cy="28" r="14" fill="#FFF3C4" stroke="${CK_PL}" stroke-width="3"/><path d="M0 70 q25 -8 50 0 t50 0 V100 H0Z" fill="#2E6E9E" stroke="${CK_PL}" stroke-width="3"/><path d="M58 76 q8 -2 16 0 M54 86 q12 -3 24 0" stroke="#FFF3C4" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8"/><path d="M14 56 L14 74 M10 62 h8" stroke="${CK_PL}" stroke-width="2"/><rect x="12" y="44" width="30" height="6" rx="2" fill="#1E2240"/><path d="M14 44 v-14 a13 13 0 0 1 26 0 v14" fill="none" stroke="#1E2240" stroke-width="3"/></svg>`},
+};
+/** a paper lantern, glowing (the picture for the lantern tunes; also used in Màn 2) */
+const LANTERN_ART=(col,pop=false)=>`<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#3B3F72"/><circle cx="50" cy="56" r="36" fill="${col}" opacity=".25"/><path d="M50 6 v12" stroke="${CK_PL}" stroke-width="3"/><rect x="38" y="16" width="24" height="8" rx="2" fill="#5B3A2E" stroke="${CK_PL}" stroke-width="2.5"/><ellipse cx="50" cy="54" rx="26" ry="30" fill="${col}" stroke="${CK_PL}" stroke-width="3.5"/><path d="M50 24 q-14 30 0 60 M50 24 q14 30 0 60 M26 54 h48" stroke="${CK_PL}" stroke-width="1.6" fill="none" opacity=".45"/><ellipse cx="42" cy="44" rx="6" ry="10" fill="#fff" opacity=".45"/><rect x="38" y="82" width="24" height="7" rx="2" fill="#5B3A2E" stroke="${CK_PL}" stroke-width="2.5"/><path d="M50 89 v8" stroke="#E8484F" stroke-width="3"/>${pop?`<path d="M82 22 l3 -8 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3z" fill="#FFD21F" stroke="${CK_PL}" stroke-width="2"/><path d="M14 30 l2 -5 l2 5 l5 2 l-5 2 l-2 5 l-2 -5 l-5 -2z" fill="#FFD21F"/>`:''}</svg>`;
+const FEEL_PIECE={happy:'ode',excited:'nacht',surprised:'surprise',tired:'lullaby',scared:'mountain',angry:'fifth',sad:'moonlight'};
+const MUSIC_ORDER=['ode','nacht','surprise','lullaby','mountain','fifth','moonlight'];
+/** the child has met this piece: it opens in the Music box (and the home button sparkles once) */
+function heardPiece(id){ if(!PIECES[id]) return; S.heard=S.heard||{}; if(!S.heard[id]){ S.heard[id]=today(); S.heardNew=1; save() } }
+const MBUF={}; async function musicBuf(file){ if(MBUF[file]) return MBUF[file]; const a=ac(); if(!a) return null;
+  try{ const r=await fetch(`music/${file}.mp3`); if(!r.ok) throw 0; const ab=await r.arrayBuffer(); return MBUF[file]=await new Promise((res,rej)=>{ const p=a.decodeAudioData(ab,res,rej); if(p&&p.then) p.then(res,rej) }) }catch(e){ return null } }
+/** play a music file. under: Chồi may talk over it (it is quieter and does not wait). Returns {stop, done} */
+async function playMusic(file,{gain=.95,maxSec=60,under=false}={}){
+  const a=ac(), b=await Promise.race([musicBuf(file),rawWait(4000).then(()=>null)]); if(!a||!b||FAST) return {stop(){},done:Promise.resolve()};
+  if(!under) Music.level(.05);
+  const s=a.createBufferSource(), g=a.createGain(); s.buffer=b; s.connect(g).connect(a.destination); const t0=a.currentTime, len=Math.min(b.duration,maxSec);
+  g.gain.setValueAtTime(gain,t0); if(b.duration>maxSec){ g.gain.setValueAtTime(gain,t0+len-1.2); g.gain.linearRampToValueAtTime(0,t0+len) }
+  s.start(t0); s.stop(t0+len+.05);
+  let fin; const done=new Promise(res=>{ fin=res }); let over=false;
+  const end=()=>{ if(over) return; over=true; if(!under) Music.level(1); fin() };
+  s.onended=end; setTimeout(end,(len+.4)*1000);
+  const stop=()=>{ try{ g.gain.setTargetAtTime(0,a.currentTime,.08); s.stop(a.currentTime+.4) }catch(e){} end() };
+  abortFns.add(stop); return {stop,done} }
+
+/* ---- the Music box: a shelf of pictures; tap one to hear the famous part (and its name, for the grown-ups) ---- */
+const MUSICBOX_ICON=()=>`<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#D6F0E4"/><g stroke="${CK_PL}" stroke-width="4" stroke-linejoin="round"><path d="M18 50 H82 V84 H18Z" fill="#E8607E"/><path d="M14 40 H86 V52 H14Z" fill="#F7A9B8"/><path d="M82 62 h8 v8 h-8" fill="#FCB515"/></g><path d="M30 64 h40 M30 72 h40" stroke="#fff" stroke-width="3" opacity=".6"/><path d="M38 12 v18 a6 5 0 1 1 -3 -4 v-11 l16 -4 v13 a6 5 0 1 1 -3 -4 v-8z" fill="${CK_PL}"/></svg>`;
+async function viewMusicBox(){
+  ac(); RUN={aborted:false,start:Date.now()}; abortFns.clear(); renderPlay(); S.heardNew=0; save();
+  const back=$('#stopBtn'); back.className='homebtn'; back.innerHTML=ICON.home; back.setAttribute('aria-label','Về bản đồ'); back.onclick=()=>{ SFX.pop(); if(cur) cur.stop(); stopSession() };
+  const heard=S.heard||{}; let cur=null, curB=null;
+  const c=card(); const grid=el(`<div class="gamesroom musicroom fade"></div>`); c.append(grid);
+  const tiles=MUSIC_ORDER.map(id=>{ const P=PIECES[id], open=!!heard[id];
+    const b=el(`<button class="gtile mtile ${open?'open':'locked'}" aria-label="${open?esc(P.en):'?'}"><span class="gart stk">${open?P.art():`<svg viewBox="0 0 100 100"><rect width="100" height="100" rx="14" fill="#EEE6D2"/><text x="50" y="68" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="900" font-size="54" fill="#B48A62">?</text></svg>`}</span>${open?`<b>${esc(P.en)}</b><small>${esc(P.who)}</small>`:'<b>&nbsp;</b>'}<i class="mnotes"><i>♪</i><i>♫</i></i></button>`); grid.append(b);
+    b.onclick=async()=>{ if(!open){ b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); SFX.soft(); say('Play the levels to find more music!','Chơi các màn để tìm thêm nhạc nhé!',{gap:0,q:false}).catch(()=>{}); return }
+      const again=curB===b; if(cur){ cur.stop(); cur=null } if(curB){ curB.classList.remove('playing'); curB=null } if(again) return;
+      SFX.pop(); b.classList.add('playing'); curB=b; setCaption(`${P.en} · ${P.who}`,`${P.vi} · ${P.who}`);
+      const me=await playMusic(id+'-box',{maxSec:40}); if(curB!==b){ me.stop(); return } cur=me; me.done.then(()=>{ if(curB===b){ b.classList.remove('playing'); curB=null; cur=null } }) };
+    return b });
+  const n=MUSIC_ORDER.filter(id=>heard[id]).length;
+  try{ await say(n?'Your music box! Tap a picture to listen.':'Play the levels to find music for your music box!',n?'Hộp nhạc của con đây! Chạm vào một bức tranh để nghe nhé.':'Chơi các màn để tìm nhạc cho hộp nhạc nhé!');
+    await new Promise((res,rej)=>abortFns.add(()=>rej(ABORT))) }catch(e){}
+  if(cur) cur.stop(); RUN=null; renderHome() }
 
 /* =========================================================
    THE WHOLE CHAPTER, IN ORDER. Each level: a first page to touch and learn the new idea → the story with things to do
@@ -6364,21 +6878,17 @@ Object.assign(EP,{
     async()=>findMapPiece(2,[['The second map piece was tied to the red balloon!','Mảnh bản đồ thứ hai được buộc vào quả bóng đỏ!'],['Next time, let’s look in a garden, at night!','Lần sau mình tìm trong một khu vườn, vào ban đêm nhé!']]),
   ],
   2:[
-    async()=>sunsetTap(),
-    async()=>story('night',[{who:'Lam',f:'surprised',x:24,b:4,h:46},{who:'Na',f:'scared',x:50,b:4,h:46},{who:'Ben',f:'surprised',x:76,b:4,h:46}],[['Oh! Dark clouds are coming. Boom! A storm!','Ơ! Mây đen kéo đến. Ầm! Có bão!']]),
-    async()=>comfortStep(HELP[1],{hint:true}),
-    async()=>comfortStep(LAM_SCARED),
-    async()=>posIntro(),
-    async()=>hideIntro(),
-    async()=>story('night',[{who:'Na',f:'happy',x:30,b:4,h:48},{art:ART.drum(),x:56,b:4,h:18}],[['Na found a drum! Let’s play a quick-look game with the drum.','Na tìm thấy một cái trống! Mình chơi trò nhìn nhanh với trống nhé.']]),
-    async()=>EXTRA.flash.drum(SK['L2.M.NUM.05'],2),
-    async()=>story('night',[{who:'Ben',f:'happy',x:30,b:4,h:48},{art:ART.butterfly(),x:56,b:58,h:10,cls:'float'},{art:ART.butterfly(),x:72,b:64,h:9,cls:'float'}],[['Ben found ladybugs and friends in the garden. Let’s answer some questions!','Ben tìm thấy bọ rùa và các bạn trong vườn. Mình trả lời vài câu hỏi nhé!']]),
-    async()=>playFmt('flash','ladybug','L2.M.NUM.05',2),
-    async()=>playFmt('question','mixed','L2.E.LS.02',2),
-    async()=>story('night',[{choi:true,mood:'happy',x:50,b:6,h:38}],[['The map piece is hiding in the dark garden.','Mảnh bản đồ đang trốn trong khu vườn tối.'],['Let’s use a flashlight to find it!','Mình dùng đèn pin để tìm nhé!']]),
-    async()=>flashlightGame({piece:3}),
-    async()=>comfortStep(BED_BEN),
-    async()=>findMapPiece(3,[['We found the third piece in the dark garden!','Mình tìm được mảnh thứ ba trong khu vườn tối!'],['Next time, let’s visit Na’s house!','Lần sau, mình đến nhà Na nhé!']]),
+    async()=>teachIt(()=>campIntro()),
+    async()=>reviewIt(null,()=>{ RUN.remindQ=['Remember: excited music is quick and bouncy. A surprise goes boom!','Nhớ nhé: nhạc háo hức thì nhanh và nhảy nhót. Nhạc bất ngờ thì có tiếng bùm!']; return lanternMusic() }),
+    async()=>teachIt(()=>comfortStep(LAM_STORM,{hint:true})),
+    async()=>practise(()=>ladybugDots(SK['L2.M.NUM.05'])),
+    async()=>inStep(mamMode('L2.M.POS.01'),()=>posIntro(),'L2.M.POS.01'),
+    async()=>practise(()=>naDrum()),
+    async()=>practise(()=>EXTRA.flash.drum(SK['L2.M.NUM.05'],2)),
+    async()=>reviewIt('L2.M.NUM.04',()=>hideCount()),
+    async()=>inStep(askMode('L2.M.POS.01'),()=>flashlightGame({piece:3}),'L2.M.POS.01'),
+    async()=>teachIt(()=>comfortStep(BEN_BAG)),
+    async()=>findMapPiece(3,[['We found the third piece, in the dark garden!','Mình tìm được mảnh thứ ba, trong khu vườn tối!'],['Next time, let’s visit Na’s house!','Lần sau, mình đến nhà Na nhé!']]),
   ],
   3:[
     async()=>tidyUp(),
@@ -6627,11 +7137,27 @@ function revNote(id,ok){ S.rev=S.rev||{}; const r=S.rev[id]||(S.rev[id]={box:0,d
   if(!ok){ r.box=0; r.due=d; r.miss=d; return }
   if(r.due<=d){ r.box=Math.min(3,r.box+1); r.due=addDays(d,REV_DAYS[r.box]); r.ok=d } }
 
+/* FUN MIX CATALOGUE (20/10): every level registers short review turns that use its own scene, friends and way of playing
+   (the same pictures the child met there). Fun Mix only uses turns from levels the child has finished; a skill with no turn
+   here falls back to the general quick questions below. Add the turns of each new level here. */
+const MIXQ=[]; const mixQ=(level,skill,what,run)=>MIXQ.push({level,skill,what,run});
+mixQ(0,'L2.W.FEEL.01','school: friends hiding in the bushes, find the face',()=>bushFaces(SK['L2.W.FEEL.01'],1));
+mixQ(0,'L2.M.NUM.02','school garden: count the flags',()=>gardenFlags());
+mixQ(0,'L2.E.WR.02','school: draw the road, the water, the slide or the bridge',()=>GAMES.trace(SK['L2.E.WR.02'],1,{skins:[pick([...EP0_TRACE1,...EP0_TRACE2])],intro:['Let’s draw a line, like at school!','Mình vẽ một đường, như ở trường nhé!']}));
+mixQ(1,'L2.W.FEEL.01','park: pop the bubbles with the right face',()=>bubbleFaces({rounds:1,polly:false}));
+mixQ(1,'L2.W.FEEL.02','park: the balloon man’s balloon for the excited / surprised friend',()=>balloonMan(SK['L2.W.FEEL.02'],1));
+mixQ(1,'L2.M.NUM.02','park: pop the balloons stuck in the tree, and count',()=>popCover({gusts:1}));
+mixQ(1,'L2.E.WR.02','park: Na’s kite string, down or across',()=>GAMES.trace(SK['L2.E.WR.02'],1,{skins:[pick(EP1_TRACE)],intro:['Na wants to fly her kite!','Na muốn thả diều!']}));
+mixQ(2,'L2.W.FEEL.02','garden at night: which lantern’s music sounds excited / has a surprise',()=>lanternMusic({rounds:1}));
+mixQ(2,'L2.M.NUM.05','garden at night: a ladybug lands for a moment; the card with the same dots',()=>ladybugDots(SK['L2.M.NUM.05'],1));
+mixQ(2,'L2.M.NUM.05','garden at night: Na’s drum, one beat for each dot',()=>EXTRA.flash.drum(SK['L2.M.NUM.05'],1));
 /* the skills a quick question can be made for, and how to make one */
 const MIX_FMT={findNumeral:['tap'],flash:['card','ladybug','dice'],findFeeling:['tap','story'],question:['mixed'],routine:['when'],sounds:['hear'],clap:['count'],position:['find']};
-function mixMakers(){ const played=new Set(S.attempts.map(a=>a.s)); const out=[];
+function mixMakers(){ const played=new Set(S.attempts.map(a=>a.s)); const out=[]; const done=S.done||{};
   for(const sk of SKILLS){ if(!played.has(sk.id)) continue;
-    if(sk.id==='L2.M.NUM.02') out.push({sk,run:()=>mixCount(sk)});
+    const own=MIXQ.filter(q=>q.skill===sk.id&&done[q.level]);
+    if(own.length) out.push({sk,run:()=>inMode('review',()=>pick(own).run(),sk.id)});
+    else if(sk.id==='L2.M.NUM.02') out.push({sk,run:()=>mixCount(sk)});
     else if(MAKE[sk.game]&&MIX_FMT[sk.game]){ const F=MIX_FMT[sk.game].filter(f=>choiceFmts(sk.game).includes(f)); if(F.length) out.push({sk,run:()=>kidRound(sk,MAKE[sk.game](sk,1,pick(F),{}))}) } }
   return out }
 const accOf=id=>{ const a=S.attempts.filter(x=>x.s===id).slice(-8); return a.length?a.filter(x=>x.ok).length/a.length:1 };
