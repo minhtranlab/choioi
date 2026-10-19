@@ -1528,6 +1528,20 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .sndtoy.beat{animation:pop .4s}
 .actor.walkon{transition:left 2s ease-in-out;left:96%!important}
 .actor.walkon>svg{animation:hop .5s 4}
+.reteach{position:absolute;inset:0;z-index:7;background:var(--card);display:flex;align-items:center;justify-content:center;padding:12px;animation:fadein .35s ease both;border-radius:inherit}
+.reteach.bye{opacity:0;transition:opacity .3s}
+.rt-in{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;container-type:size}
+.rt-in>.fscene{max-width:100%;max-height:68%;flex:0 1 auto}
+.rt-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:100%}
+.rt-it{width:min(19cqw,26cqh,128px);transition:transform .2s}.rt-it svg{width:100%;height:auto;display:block}
+.rt-it.on{transform:scale(1.18)}
+.rt-num{font-size:min(34cqh,150px);line-height:1;font-weight:900;color:var(--pl,#3A1B49)}
+.rt-pic{width:min(92cqw,120cqh)}.rt-pic svg{width:100%;height:auto;display:block}
+.rt-face,.rt-shape{width:min(40cqh,40cqw,210px)}.rt-face svg,.rt-shape svg{width:100%;height:auto;display:block}
+.rt-pair{display:flex;gap:6%;align-items:flex-end;justify-content:center;width:100%}
+.rt-pair>div{width:min(36cqw,52cqh)}.rt-pair svg{width:100%;height:auto;display:block}
+.rt-pair>.hl{outline:5px dashed #FCB515;outline-offset:6px;border-radius:14px}
+.rt-size{display:flex;align-items:flex-end;gap:8%;justify-content:center}.rt-size .big{width:min(40cqw,52cqh)}.rt-size .small{width:min(18cqw,24cqh)}.rt-size svg{width:100%;height:auto;display:block}
 </style>
 
 <div id="root"></div>
@@ -1659,7 +1673,7 @@ function status(sk){
 }
 function satisfied(pid){ const p=SK[pid]; if(!p||p.kind!=='tap') return true; return passDays(pid).length>=1 }
 const unlocked=sk=>sk.prereqs.every(satisfied);
-function rec(sk,ok,rt){ if(RUN&&RUN.noRec) return; S.attempts.push({s:sk.id,ok:!!ok,rt:Math.round(rt||0),d:today(),lang:S.lang}); if(typeof revNote==='function') revNote(sk.id,ok); save() }
+function rec(sk,ok,rt,c){ if(RUN&&RUN.noRec) return; c=c===undefined?(RUN&&RUN.concept)||null:c; const a={s:sk.id,ok:!!ok,rt:Math.round(rt||0),d:today(),lang:S.lang}; if(c) a.c=c; S.attempts.push(a); if(typeof revNote==='function') revNote(sk.id,ok); if(c&&typeof missNote==='function') missNote(c,ok); save() }
 
 /* ---------------- planner ---------------- */
 function planSession(){
@@ -2087,13 +2101,14 @@ async function yourTurn(){ Hand.hide(); await sleep(300); turn('kid'); SFX.ding(
 /* ---------------- choice rounds ---------------- */
 /** One child round: pictures appear first, then Chồi asks. First tap is what counts. */
 async function kidRound(sk,R){
+  if(RUN) RUN.concept=R.concept||null;
   if(R.pre) await R.pre(); await reveal(R.opts); await sleep(300); await R.ask();
   const again=R.replay||R.ask; RUN.qfn=again;
   R.opts.forEach((o,i)=>{ if(i===R.correct) o.dataset.ok='1' });
   const t0=performance.now(); let first=true;
   for(;;){
     const i=await tapOnce(R.opts);
-    if(i===R.correct){ R.opts[i].classList.add('right'); SFX.chime(); burst(center(R.opts[i])); if(first) rec(sk,true,performance.now()-t0); if(R.onRight) await R.onRight(); await kept(first); if(R.answer) await say(...R.answer,{gap:300}); return }
+    if(i===R.correct){ R.opts[i].classList.add('right'); SFX.chime(); burst(center(R.opts[i])); if(first) rec(sk,true,performance.now()-t0); if(R.onRight) await R.onRight(); await kept(first,{later:true}); if(R.answer) await say(...R.answer,{gap:300}); await reteachPending(); return }
     R.opts[i].classList.remove('nope'); void R.opts[i].offsetWidth; R.opts[i].classList.add('nope'); boing();
     const Lb=R.labels&&R.labels[i]; if(Lb) await say(`Oops, ${Lb[0]}.`,`Ơ, ${Lb[1]}.`,{gap:300});
     if(first){ rec(sk,false,performance.now()-t0); first=false; await say('Try again!','Thử lại nào!'); await again() }
@@ -2105,7 +2120,8 @@ async function kidRound(sk,R){
 function seenDemo(key){ S.seenDemo=S.seenDemo||{}; const was=!!S.seenDemo[key]; S.seenDemo[key]=1; save(); return was&&!(RUN&&RUN.dev&&RUN.forceDemo) }
 async function choiceActivity(sk,rounds,intro,make){
   await say(...intro);
-  if(seenDemo('choice:'+sk.id+':'+intro[0])){ turn('kid'); for(let r=0;r<rounds;r++){ const R=make(r); await kidRound(sk,R); await sleep(500) } turn(null); return }
+  const noShow=RUN&&RUN.mode?!wantDemo('choice'):(typeSeen('choice'),seenDemo('choice:'+sk.id+':'+intro[0]));
+  if(noShow){ turn('kid'); for(let r=0;r<rounds;r++){ const R=make(r); await kidRound(sk,R); await sleep(500) } turn(null); return }
   await watchMe();
   let R=make(-1); if(R.pre) await R.pre(); await reveal(R.opts); await sleep(300); await R.ask(); await sleep(300);
   if(R.explain) await R.explain();
@@ -2134,7 +2150,7 @@ MAKE.findNumeral=(sk,r,fmt,st)=>{
   if(fmt==='balloons'){ const [f,o]=floaters(ch.map((n,i)=>`${ART.balloon(PAL[i%PAL.length])}<b class="bn">${n}</b>`)); c.append(f); opts=o }
   else { const [row,o]=optRow(ch.map(n=>`<span class="num">${n}</span>`)); c.append(row); opts=o }
   const k=ch.indexOf(t);
-  return {opts,correct:k,labels:ch.map(n=>[`that’s ${W[n]}`,`đó là số ${VI_N[n]}`]),
+  return {opts,correct:k,concept:'numeral:'+t,labels:ch.map(n=>[`that’s ${W[n]}`,`đó là số ${VI_N[n]}`]),
     ask:fmt==='balloons'?()=>say(`Pop the balloon with the number ${W[t]}!`,`Chọc vỡ quả bóng có số ${VI_N[t]} nào!`):()=>say(`Can you find the number ${W[t]}?`,`Số ${VI_N[t]} đâu nhỉ?`),
     onRight:fmt==='balloons'?popIt(opts[k]):null, answer:[`That’s ${W[t]}!`,`Đây là số ${VI_N[t]}!`]} };
 choiceGame('findNumeral');
@@ -2159,7 +2175,7 @@ MAKE.flash=(sk,r,fmt,st)=>{
   const [row,opts]=optRow([1,2,3].map(k=>`<span class="num">${k}</span>`)); c.append(fc,row);
   const show=async()=>{ $('.cover',fc).style.opacity=0; await sleep(2000); $('.cover',fc).style.opacity=1 };
   const q=()=>say(`How many ${what[0]} did you see?`,`Con thấy mấy ${what[1]}?`);
-  return {opts,correct:n-1,labels:[1,2,3].map(k=>[`that’s ${W[k]}`,`đó là ${VI_N[k]}`]),
+  return {opts,correct:n-1,concept:'flash:'+n,labels:[1,2,3].map(k=>[`that’s ${W[k]}`,`đó là ${VI_N[k]}`]),
     pre:async()=>{ await say('Look quickly!','Nhìn nhanh nào!',{gap:200}); await show() }, ask:q, explain:()=>countDots(fc,fmt,lay,what),
     replay:async()=>{ await say('Let’s look again.','Mình nhìn lại nhé.',{gap:200}); await show(); await q() },
     answer:[`${cap(W[n])} ${n>1?what[0]:what[0].slice(0,-1)}!`,`${cap(VI_N[n])} ${what[1]}!`]} };
@@ -2174,10 +2190,10 @@ MAKE.findShape=(sk,r,fmt,st)=>{
   let set=[...new Set([...sk.p.set,...(sk.p.extra?[pick(sk.p.extra)]:[])])]; if(r>=2&&sk.p.extra) set=[...new Set([...set,...sk.p.extra])].slice(0,4);
   set=shuffle(set); const c=card(); const k=set.indexOf(t);
   if(fmt==='objects'){ const ob=set.map(s=>pick(SHAPE_OBJ[s])); const [row,opts]=optRow(ob.map(o=>ART[o[0]]())); c.append(row);
-    return {opts,correct:k,labels:set.map((s,i)=>[`that’s ${ob[i][1]}, it’s a ${s}`,`đó là ${ob[i][2]}, hình ${VI_SHAPE[s]}`]),
+    return {opts,correct:k,concept:'shape:'+t,labels:set.map((s,i)=>[`that’s ${ob[i][1]}, it’s a ${s}`,`đó là ${ob[i][2]}, hình ${VI_SHAPE[s]}`]),
       ask:()=>say(`Which one is a ${t}?`,`Cái nào có hình ${VI_SHAPE[t]}?`),answer:[`Yes! ${cap(ob[k][1])} is a ${t}.`,`Đúng rồi! ${cap(ob[k][2])} có hình ${VI_SHAPE[t]}.`]} }
   const cols=shuffle(SHAPE_COL); const [row,opts]=optRow(set.map((s,i)=>shapeSVG(s,cols[i],rand(2)))); c.append(row);
-  return {opts,correct:k,labels:set.map(x=>[`that’s the ${x}`,`đó là hình ${VI_SHAPE[x]}`]),ask:()=>say(`Can you find the ${t}?`,`Hình ${VI_SHAPE[t]} đâu nhỉ?`),answer:[`That’s the ${t}!`,`Đây là hình ${VI_SHAPE[t]}!`]} };
+  return {opts,correct:k,concept:'shape:'+t,labels:set.map(x=>[`that’s the ${x}`,`đó là hình ${VI_SHAPE[x]}`]),ask:()=>say(`Can you find the ${t}?`,`Hình ${VI_SHAPE[t]} đâu nhỉ?`),answer:[`That’s the ${t}!`,`Đây là hình ${VI_SHAPE[t]}!`]} };
 choiceGame('findShape');
 
 /* feelings: tap the face / what happened → how does she feel / pop the bubble */
@@ -2190,11 +2206,11 @@ MAKE.findFeeling=(sk,r,fmt,st)=>{
   const set=all?shuffle([t,...shuffle(FEELS.filter(f=>f!==t)).slice(0,r<1?2:3)]):shuffle(sk.p.set);
   const c=card(); const k=set.indexOf(t); const labels=set.map(f=>[`that one looks ${f}`,`bạn này đang ${VI_FEEL[f]}`]);
   if(fmt==='story'){ const [art,en,vi,pr]=SIT[t]; c.append(el(`<div class="pic fade">${ART[art]()}</div>`)); const [row,opts]=optRow(set.map(faceSVG)); c.append(row);
-    return {opts,correct:k,labels,ask:async()=>{ await say(en,vi); await say(`How does ${pr} feel?`,'Bạn ấy cảm thấy thế nào?') },replay:()=>say(`${en} How does ${pr} feel?`,`${vi} Bạn ấy cảm thấy thế nào?`),answer:[`${cap(pr)} feels ${t}!`,`Bạn ấy thấy ${VI_FEEL[t]}!`]} }
+    return {opts,correct:k,concept:'feel:'+t,labels,ask:async()=>{ await say(en,vi); await say(`How does ${pr} feel?`,'Bạn ấy cảm thấy thế nào?') },replay:()=>say(`${en} How does ${pr} feel?`,`${vi} Bạn ấy cảm thấy thế nào?`),answer:[`${cap(pr)} feels ${t}!`,`Bạn ấy thấy ${VI_FEEL[t]}!`]} }
   if(fmt==='bubbles'){ const [f,opts]=floaters(set.map(faceSVG),'bubble'); c.append(f);
-    return {opts,correct:k,labels,ask:()=>say(`Pop the bubble with the ${t} face!`,`Chọc vỡ bong bóng có mặt ${VI_FEEL[t]} nào!`),onRight:popIt(opts[k]),answer:[`That face looks ${t}!`,`Đây là khuôn mặt ${VI_FEEL[t]}!`]} }
+    return {opts,correct:k,concept:'feel:'+t,labels,ask:()=>say(`Pop the bubble with the ${t} face!`,`Chọc vỡ bong bóng có mặt ${VI_FEEL[t]} nào!`),onRight:popIt(opts[k]),answer:[`That face looks ${t}!`,`Đây là khuôn mặt ${VI_FEEL[t]}!`]} }
   const [row,opts]=optRow(set.map(faceSVG)); c.append(row);
-  return {opts,correct:k,labels,ask:()=>say(`Who looks ${t}?`,`Bạn nào đang ${VI_FEEL[t]}?`),answer:[`This one looks ${t}!`,`Bạn này đang ${VI_FEEL[t]}!`]} };
+  return {opts,correct:k,concept:'feel:'+t,labels,ask:()=>say(`Who looks ${t}?`,`Bạn nào đang ${VI_FEEL[t]}?`),answer:[`This one looks ${t}!`,`Bạn này đang ${VI_FEEL[t]}!`]} };
 choiceGame('findFeeling');
 
 /* in / on / under: find the cat / put the cat there */
@@ -2207,16 +2223,17 @@ MAKE.position=(sk,r,fmt,st)=>{
   const c=card();
   if(fmt==='put'){ const box=el(`<div class="scenebox fade">${sceneSVG(null)}<div class="waitcat"><svg viewBox="-16 -40 32 42">${catG(0,0,1)}</svg></div></div>`); c.append(box);
     const opts=set.map(p=>{ const b=el(`<button class="spot pre" style="left:${SPOT[p][0]}%;top:${SPOT[p][1]}%" aria-label="${p}"></button>`); box.append(b); return b });
-    return {opts,correct:k,labels:set.map(q=>[`that’s ${POS_EN[q]}`,`đó là ${POS_VI[q]}`]),ask:()=>say(`Put the cat ${POS_EN[t]}.`,`Đặt con mèo ${POS_VI[t]} nhé.`),
+    return {opts,correct:k,concept:'pos:'+t,labels:set.map(q=>[`that’s ${POS_EN[q]}`,`đó là ${POS_VI[q]}`]),ask:()=>say(`Put the cat ${POS_EN[t]}.`,`Đặt con mèo ${POS_VI[t]} nhé.`),
       onRight:async()=>{ $('.waitcat',box).classList.add('gone'); opts[k].classList.add('filled'); opts[k].innerHTML=`<svg viewBox="-16 -40 32 42">${catG(0,0,1)}</svg>`; SFX.pop(); await sleep(300) },
       answer:[`Now the cat is ${POS_EN[t]}!`,`Giờ con mèo ở ${POS_VI[t]} rồi!`]} }
   const [row,opts]=optRow(set.map(sceneSVG),'wide'); c.append(row);
-  return {opts,correct:k,labels:set.map(q=>[`that cat is ${POS_EN[q]}`,`con mèo này ở ${POS_VI[q]}`]),ask:()=>say(`Can you find the cat ${POS_EN[t]}?`,`Con mèo ${POS_VI[t]} đâu nhỉ?`),answer:[`There it is! The cat is ${POS_EN[t]}.`,`Đây rồi! Con mèo ở ${POS_VI[t]}.`]} };
+  return {opts,correct:k,concept:'pos:'+t,labels:set.map(q=>[`that cat is ${POS_EN[q]}`,`con mèo này ở ${POS_VI[q]}`]),ask:()=>say(`Can you find the cat ${POS_EN[t]}?`,`Con mèo ${POS_VI[t]} đâu nhỉ?`),answer:[`There it is! The cat is ${POS_EN[t]}.`,`Đây rồi! Con mèo ở ${POS_VI[t]}.`]} };
 choiceGame('position');
 
 /* routine: when do we...? / what do we do at...? */
 const ACTS=[['bowl','When do we eat breakfast?','Mình ăn sáng vào lúc nào?',0,'We eat breakfast in the morning.','Mình ăn sáng vào buổi sáng.'],['school','When do we go to school?','Mình đi học vào lúc nào?',0,'We go to school in the morning.','Mình đi học vào buổi sáng.'],['playout','When do we play outside?','Mình chơi ngoài trời vào lúc nào?',1,'We play outside in the afternoon.','Mình chơi ngoài trời vào buổi chiều.'],['kite','When do we fly a kite?','Mình thả diều vào lúc nào?',1,'We fly a kite in the afternoon.','Mình thả diều vào buổi chiều.'],['bed','When do we go to sleep?','Mình đi ngủ vào lúc nào?',2,'We go to sleep at night.','Mình đi ngủ vào buổi tối.'],['book','When do we read a bedtime story?','Mình đọc truyện trước khi ngủ vào lúc nào?',2,'We read a bedtime story at night.','Mình đọc truyện vào buổi tối.']];
 const TIME=[['in the morning','buổi sáng'],['in the afternoon','buổi chiều'],['at night','buổi tối']];
+const TIME_KEY=['morning','afternoon','night'];
 FMTS.routine=['when','which'];
 INTROS.routine={when:['Let’s talk about our day!','Mình cùng nói về một ngày của mình nhé!'],which:['What do we do in the morning, in the afternoon and at night?','Sáng, chiều, tối, mình làm gì nhỉ?']};
 MAKE.routine=(sk,r,fmt,st)=>{
@@ -2224,10 +2241,10 @@ MAKE.routine=(sk,r,fmt,st)=>{
   if(fmt==='which'){ const t=nextDifferent(st.prev,()=>rand(3)); st.prev=t;
     const acts=[0,1,2].map(tt=>pick(ACTS.filter(a=>a[3]===tt))); const order=shuffle([0,1,2]); const k=order.indexOf(t);
     c.append(el(`<div class="pic small fade">${skySVG(t)}</div>`)); const [row,opts]=optRow(order.map(i=>ART[acts[i][0]]())); c.append(row);
-    return {opts,correct:k,labels:order.map(i=>[`we do that ${TIME[i][0]}`,`việc đó mình làm vào ${TIME[i][1]}`]),ask:()=>say(`What do we do ${TIME[t][0]}?`,`Mình làm gì vào ${TIME[t][1]}?`),answer:[acts[t][4],acts[t][5]]} }
+    return {opts,correct:k,concept:'time:'+TIME_KEY[t],labels:order.map(i=>[`we do that ${TIME[i][0]}`,`việc đó mình làm vào ${TIME[i][1]}`]),ask:()=>say(`What do we do ${TIME[t][0]}?`,`Mình làm gì vào ${TIME[t][1]}?`),answer:[acts[t][4],acts[t][5]]} }
   const [art,en,vi,t,s1,s2]=st.list[(r+1+st.list.length)%st.list.length];
   c.append(el(`<div class="pic fade">${ART[art]()}</div>`)); const [row,opts]=optRow([0,1,2].map(skySVG),'sky3'); c.append(row);
-  return {opts,correct:t,labels:[['that’s the morning','đó là buổi sáng'],['that’s the afternoon','đó là buổi chiều'],['that’s night time','đó là buổi tối']],
+  return {opts,correct:t,concept:'time:'+TIME_KEY[t],labels:[['that’s the morning','đó là buổi sáng'],['that’s the afternoon','đó là buổi chiều'],['that’s night time','đó là buổi tối']],
     ask:async()=>{ await say(en,vi); await say('In the morning, in the afternoon, or at night?','Buổi sáng, buổi chiều hay buổi tối?') },replay:()=>say(en,vi),answer:[s1,s2]} };
 choiceGame('routine');
 
@@ -2235,9 +2252,9 @@ choiceGame('routine');
 FMTS.question=['mixed']; INTROS.question={mixed:['Listen and find!','Nghe rồi tìm nhé!']};
 MAKE.question=(sk,r,fmt,st)=>{ const c=card();
   if(r%2!==0){ const set=shuffle(['happy','sad','angry']); const t=pick(set); const [row,opts]=optRow(set.map(faceSVG)); c.append(row);
-    return {opts,correct:set.indexOf(t),labels:set.map(f=>[`that one looks ${f}`,`bạn này đang ${VI_FEEL[f]}`]),ask:()=>say(`Who looks ${t}?`,`Bạn nào đang ${VI_FEEL[t]}?`),answer:[`This one looks ${t}!`,`Bạn này đang ${VI_FEEL[t]}!`]} }
+    return {opts,correct:set.indexOf(t),concept:'feel:'+t,labels:set.map(f=>[`that one looks ${f}`,`bạn này đang ${VI_FEEL[f]}`]),ask:()=>say(`Who looks ${t}?`,`Bạn nào đang ${VI_FEEL[t]}?`),answer:[`This one looks ${t}!`,`Bạn này đang ${VI_FEEL[t]}!`]} }
   const t=pick(['in','on','under']); const set=shuffle(['in','on','under']); const [row,opts]=optRow(set.map(sceneSVG),'wide'); c.append(row);
-  return {opts,correct:set.indexOf(t),labels:set.map(q=>[`that cat is ${POS_EN[q]}`,`con mèo này ở ${POS_VI[q]}`]),ask:async()=>{ await say('Where’s the cat?','Con mèo đâu rồi?'); await say(`It’s ${POS_EN[t]}. Can you find it?`,`Bạn mèo ở ${POS_VI[t]}. Con tìm xem nào!`) },answer:[`There it is!`,`Đây rồi!`]} };
+  return {opts,correct:set.indexOf(t),concept:'pos:'+t,labels:set.map(q=>[`that cat is ${POS_EN[q]}`,`con mèo này ở ${POS_VI[q]}`]),ask:async()=>{ await say('Where’s the cat?','Con mèo đâu rồi?'); await say(`It’s ${POS_EN[t]}. Can you find it?`,`Bạn mèo ở ${POS_VI[t]}. Con tìm xem nào!`) },answer:[`There it is!`,`Đây rồi!`]} };
 choiceGame('question');
 
 /* sounds: hear it, tap the picture */
@@ -2246,7 +2263,7 @@ MAKE.sounds=(sk,r,fmt,st)=>{ const keys=Object.keys(SOUNDS), ARTK={clap:'hands',
   const t=nextDifferent(st.prev,()=>pick(keys)); st.prev=t; const set=shuffle([t,...shuffle(keys.filter(k=>k!==t)).slice(0,2)]);
   const c=card(); const [row,opts]=optRow(set.map(k=>ART[ARTK[k]]())); c.append(row);
   const playIt=async()=>{ Music.level(.1); SOUNDS[t].play(); await sleep(1900); Music.level(1) };
-  return {opts,correct:set.indexOf(t),labels:set.map(k=>({clap:['that’s clapping','đó là tiếng vỗ tay'],bell:['that’s a bell','đó là cái chuông'],drum:['that’s a drum','đó là cái trống'],car:['that’s a car','đó là xe ô tô']})[k]),
+  return {opts,correct:set.indexOf(t),concept:'sound:'+t,labels:set.map(k=>({clap:['that’s clapping','đó là tiếng vỗ tay'],bell:['that’s a bell','đó là cái chuông'],drum:['that’s a drum','đó là cái trống'],car:['that’s a car','đó là xe ô tô']})[k]),
     ask:async()=>{ await say('Listen carefully!','Nghe kỹ nhé!',{gap:300}); await playIt(); await say('What’s that sound?','Tiếng gì thế nhỉ?') },replay:playIt,answer:[SOUNDS[t].en,SOUNDS[t].vi]} };
 choiceGame('sounds');
 
@@ -2263,7 +2280,7 @@ MAKE.clap=(sk,r,fmt,st)=>{  // count format (also used by the Mix)
   st.list=st.list||shuffle(clapWords()); const w=st.list[(r+1+st.list.length)%st.list.length]; const n=w.syl.length;
   const c=card(); c.append(el(`<div class="pic fade">${clapPic(w)}</div>`)); const [row,opts]=optRow([1,2,3].map(k=>`<span class="num">${k}</span>`)); c.append(row);
   const listen=async()=>{ for(const x of w.syl){ clapHit(); await syl(x) } };
-  return {opts,correct:n-1,labels:[1,2,3].map(k=>[`that’s ${W[k]}`,`đó là ${VI_N[k]}`]),
+  return {opts,correct:n-1,concept:'syl:'+w.w,labels:[1,2,3].map(k=>[`that’s ${W[k]}`,`đó là ${VI_N[k]}`]),
     ask:async()=>{ await sayWord(w); await say('Listen to the claps.','Nghe tiếng vỗ tay nhé.',{gap:200}); await listen(); await say('How many claps did you hear?','Con nghe thấy mấy tiếng vỗ tay?') },
     replay:async()=>{ await listen(); await say('How many claps did you hear?','Con nghe thấy mấy tiếng vỗ tay?') },
     answer:[`${cap(W[n])} ${n>1?'claps':'clap'}! ${w.syl.join('-')}.`,`${cap(VI_N[n])} tiếng! ${w.syl.join(' - ')}.`]} };
@@ -2284,7 +2301,7 @@ GAMES.clap=async(sk,rounds)=>{
       const done=()=>{ abortFns.delete(ab); U.btn.disabled=true; res(c) };
       U.btn.addEventListener('click',()=>{ c++; beat(U); clearTimeout(timer); timer=setTimeout(done,1900*SPEED) });
       if(AUTO) for(let i=0;i<n;i++) setTimeout(()=>U.btn.click(),3+i*3) });
-    const ok=k===n; rec(sk,ok,performance.now()-t0);
+    const ok=k===n; rec(sk,ok,performance.now()-t0,'syl:'+w.w);
     if(ok){ SFX.chime(); await praise() } else { U.beats.innerHTML=''; await say('Listen.','Nghe nhé.'); for(const x of w.syl){ beat(U); await syl(x) } await say(`${cap(W[n])} ${n>1?'claps':'clap'}!`,`${cap(VI_N[n])} tiếng!`) }
     await sleep(400);
   }
@@ -2297,7 +2314,7 @@ GAMES.simon=async(sk,rounds)=>{
   await say('Listen and touch!','Nghe rồi chạm nhé!');
   const c=card(); const box=el(`<div class="fade" style="width:min(70vw,280px)">${kidFaceSVG()}</div>`); c.append(box);
   const els=parts.map(p=>box.querySelector(`[data-part="${p}"]`)); els.forEach(e=>e.style.cursor='pointer');
-  await watchMe(); await say('Touch the nose!','Chạm vào mũi nào!'); await Hand.moveTo(center(els[0])); await Hand.tap(); SFX.chime(); await say('That’s the nose!','Đây là cái mũi!'); await yourTurn();
+  await demoOr('simon',async()=>{ await say('Touch the nose!','Chạm vào mũi nào!'); await Hand.moveTo(center(els[0])); await Hand.tap(); SFX.chime(); await say('That’s the nose!','Đây là cái mũi!') });
   const order=shuffle(parts.slice(1)).concat(['nose']);
   for(let r=0;r<rounds;r++){
     const t=order[r%order.length]; const ask=()=>say(`Can you touch the ${t}?`,`Con chạm vào ${VIP[t]} nhé!`);
@@ -2340,8 +2357,8 @@ GAMES.countTap=async(sk,rounds)=>{
     N.opts.forEach((o,i)=>{ if(i===N.correct) o.dataset.ok='1' });
     const t0=performance.now(); let first=true;
     for(;;){ const i=await tapOnce(N.opts);
-      if(i===N.correct){ N.opts[i].classList.add('right'); SFX.chime(); if(first) rec(sk,true,performance.now()-t0); await say(`There are ${W[R.n]} ${R.pl}!`,`Có ${VI_N[R.n]} ${R.vi}!`); await praise(); break }
-      SFX.soft(); N.opts[i].classList.add('nope'); await say(`Oops, that’s ${W[N.ch[i]]}.`,`Ơ, đó là số ${VI_N[N.ch[i]]}.`,{gap:300}); if(first){ rec(sk,false,performance.now()-t0); first=false; await say('Let’s count them again together.','Mình cùng đếm lại nhé.') } else { N.opts[N.correct].classList.add('hint') }
+      if(i===N.correct){ N.opts[i].classList.add('right'); SFX.chime(); if(first) rec(sk,true,performance.now()-t0,'count:'+R.n); await say(`There are ${W[R.n]} ${R.pl}!`,`Có ${VI_N[R.n]} ${R.vi}!`); await praise(); break }
+      SFX.soft(); N.opts[i].classList.add('nope'); await say(`Oops, that’s ${W[N.ch[i]]}.`,`Ơ, đó là số ${VI_N[N.ch[i]]}.`,{gap:300}); if(first){ rec(sk,false,performance.now()-t0,'count:'+R.n); first=false; await say('Let’s count them again together.','Mình cùng đếm lại nhé.') } else { N.opts[N.correct].classList.add('hint') }
       for(const [j,b] of R.things.entries()){ await Hand.moveTo(center(b),450); await say(cap(W[j+1])+'.',VI_N[j+1],{gap:80,rate:.85}) } Hand.hide(); await say(`How many ${R.pl} are there?`,`Có bao nhiêu ${R.vi}?`) }
     await sleep(500);
   }
@@ -2541,7 +2558,8 @@ const choiceFmts=game=>(FMTS[game]||[]).filter(f=>!(EXTRA[game]&&EXTRA[game][f])
 const kidTapDelay=()=>HASH==='auto'?3:450*SPEED;
 
 /** pick among visible options; returns true if right on the first tap */
-async function stepPick(sk,opts,correct,{ask,labels,onRight,record=true}={}){
+async function stepPick(sk,opts,correct,{ask,labels,onRight,record=true,concept}={}){
+  if(concept&&RUN) RUN.concept=concept;
   opts.forEach((o,i)=>{ delete o.dataset.ok; o.classList.remove('hint'); if(i===correct) o.dataset.ok='1' });
   // the child may answer while Chồi is still asking: the options listen straight away
   const hush=()=>{ voiceStop(); try{ speechSynthesis.cancel() }catch(e){} stopFeelMusic() };
@@ -2581,7 +2599,8 @@ function idleNudge(els,still=()=>true,{point=false}={}){
   t=setTimeout(tick,12000); return ()=>{ clearTimeout(t); n=99; if(host) host.removeEventListener('pointerdown',onMiss,true) } }
 /** one counting turn with a limit on taps. Wrong → look again and try once more; wrong again → show the answer and move on.
  *  Only the first try is recorded. */
-async function countTurn(sk,{n,btns,onTap,idle=2000,cap,before,reset,retry,answer,fastAt=0}){
+async function countTurn(sk,{n,btns,onTap,idle=2000,cap,before,reset,retry,answer,fastAt=0,concept}){
+  if(RUN) RUN.concept=concept!==undefined?concept:(sk.id==='L2.M.NUM.05'?'flash:':'count:')+n;
   const t0=performance.now(); let k=await countTaps(btns,onTap,{idle,auto:n,cap:cap||n+2,fastAt}); await sleep(350);
   const ok=k===n; rec(sk,ok,performance.now()-t0); if(ok) return {ok:true,k};
   if(before) await before(k);
@@ -2590,7 +2609,96 @@ async function countTurn(sk,{n,btns,onTap,idle=2000,cap,before,reset,retry,answe
   if(k===n){ SFX.chime(); return {ok:false,k,second:true} }
   await answer(k); return {ok:false,k} }
 async function demoTaps(btns,n,onEach){ for(let i=0;i<n;i++){ const b=btns.find(x=>!x.dataset.used)||btns[0]; await Hand.moveTo(center(b),520); await Hand.tap(); await onEach(i+1,b) } Hand.hide() }
-async function kept(first){ if(first) await praise(); else { mood('happy'); await say('You kept trying, and you got it!','Con cố gắng mãi và đã làm được!',{keepMood:true}); mood('idle') } }
+async function kept(first,{later=false}={}){ if(first) await praise(); else { mood('happy'); await say('You kept trying, and you got it!','Con cố gắng mãi và đã làm được!',{keepMood:true}); mood('idle') } if(!later) await reteachPending() }
+
+/* =========================================================
+   SPIRAL LESSONS (19/10): teach → practise → review; teach a concept again after two misses in a row.
+   RUN.mode for one activity:
+     'teach'    first look at a new idea (or a Mầm idea, once per school year): Chồi shows how
+     'practice' the idea again later in the level: no demo once the child knows that way of playing
+     'review'   an idea from an earlier level: a ~3-second reminder, no demo once the way of playing is known
+     (unset)    the old behaviour
+   A replayed level keeps its pictures but skips Chồi's demo of any way of playing the child has already seen.
+   ========================================================= */
+function typeSeen(key){ S.seenType=S.seenType||{}; const was=!!S.seenType[key]; if(!was){ S.seenType[key]=1; save() } return was }
+function wantDemo(key){ const seen=typeSeen(key); if(RUN&&RUN.dev&&RUN.forceDemo) return true; const m=RUN&&RUN.mode; if(!m) return true; if(RUN.replay||m!=='teach') return !seen; return true }
+/** Chồi's demo round, when it is wanted; otherwise straight to the child's turn */
+async function demoOr(key,fn){ if(wantDemo(key)){ await watchMe(); await fn(); await yourTurn(); return true } turn('kid'); return false }
+const REMIND={
+ 'L2.M.NUM.02':['Remember: touch each one, and count.','Nhớ nhé: chạm từng cái rồi đếm.'],
+ 'L2.M.NUM.03':['Remember: look at the shape of the number.','Nhớ nhé: nhìn kỹ hình con số.'],
+ 'L2.M.NUM.04':['Remember: one, two, three, all the way to ten!','Nhớ nhé: một, hai, ba, đếm tới mười!'],
+ 'L2.M.NUM.05':['Remember: just look. No need to count!','Nhớ nhé: chỉ nhìn thôi, không cần đếm!'],
+ 'L2.M.POS.01':['Remember: in, on, under!','Nhớ nhé: trong, trên, dưới!'],
+ 'L2.M.POS.02':['Remember: morning, afternoon, night.','Nhớ nhé: sáng, chiều, tối.'],
+ 'L2.M.SHAPE.01':['Remember: circle, square, triangle.','Nhớ nhé: tròn, vuông, tam giác.'],
+ 'L2.M.SHAPE.02':['Remember: a rectangle has two long sides.','Nhớ nhé: hình chữ nhật có hai cạnh dài.'],
+ 'L2.M.SORT.01':['Remember: look at the colour.','Nhớ nhé: nhìn màu.'],
+ 'L2.M.SORT.02':['Remember: big or small?','Nhớ nhé: to hay nhỏ?'],
+ 'L2.M.SORT.03':['Remember: They are all…','Nhớ nhé: "They are all…"'],
+ 'L2.W.FEEL.01':['Remember: look at the face.','Nhớ nhé: nhìn kỹ khuôn mặt.'],
+ 'L2.W.FEEL.02':['Remember: look at the face.','Nhớ nhé: nhìn kỹ khuôn mặt.'],
+ 'L2.E.LS.02':['Remember: who is a friend, where is a place.','Nhớ nhé: "who" là ai, "where" là ở đâu.'],
+ 'L2.E.LS.03':['Remember: I feel…','Nhớ nhé: "I feel…"'],
+ 'L2.E.PH.02':['Listen carefully!','Nghe thật kỹ nhé!'],
+ 'L2.E.PH.03':['Remember: one clap for each sound.','Nhớ nhé: mỗi tiếng vỗ một cái.'],
+ 'L2.E.WR.02':['Remember: start at the green dot.','Nhớ nhé: bắt đầu từ chấm xanh.'],
+};
+async function inMode(mode,fn,skill){ const prev=RUN.mode; RUN.mode=mode; try{ if(mode==='review'&&skill&&REMIND[skill]) await say(...REMIND[skill],{gap:200}); return await fn() } finally { if(RUN) RUN.mode=prev } }
+const teachIt=fn=>inMode('teach',fn), practise=fn=>inMode('practice',fn), reviewIt=(skill,fn)=>inMode('review',fn,skill);
+/* Mầm (bridge) ideas: taught like new the first time in a school year (from August), then only asked */
+function schoolYear(){ const d=new Date(); d.setDate(d.getDate()+(S.dayOffset||0)); return String(d.getMonth()>=7?d.getFullYear():d.getFullYear()-1) }
+function mamTaught(id){ return !!(S.taught&&S.taught[id]===schoolYear()) }
+function markTaught(id){ if(RUN&&(RUN.noRec||RUN.dev)) return; S.taught=S.taught||{}; S.taught[id]=schoolYear(); save() }
+async function mamStep(id,teachFn,askFn){ if(mamTaught(id)&&!(RUN&&RUN.dev&&RUN.forceDemo)) return reviewIt(id,askFn||teachFn); await teachIt(teachFn); markTaught(id) }
+
+/* concepts ('feel:angry', 'shape:rectangle', 'pos:under', 'count:4'…): two first-try misses in a row on the same one,
+   in any game, and Chồi shows its picture again before the next question */
+function missNote(c,ok){ S.cmiss=S.cmiss||{}; if(ok){ delete S.cmiss[c]; return } S.cmiss[c]=(S.cmiss[c]||0)+1;
+  if(S.cmiss[c]>=2&&RUN&&!RUN.aborted){ RUN.reteachQ=RUN.reteachQ||[]; if(!RUN.reteachQ.includes(c)) RUN.reteachQ.push(c) } }
+async function reteachPending(){ const q=RUN&&RUN.reteachQ; while(q&&q.length){ const c=q.shift(); if(S.cmiss) delete S.cmiss[c]; save(); await reteach(c) } }
+/** which of these the child has missed most lately (for the feelings review: two from the last level + this one) */
+function mostMissed(kind,pool,{not=[],days=21}={}){ const since=localDate((S.dayOffset||0)-days), n={}, last={};
+  S.attempts.forEach((a,i)=>{ if(!a.c||a.ok||a.d<since) return; const k=a.c.indexOf(':'); if(a.c.slice(0,k)!==kind) return; const v=a.c.slice(k+1); if(!pool.includes(v)||not.includes(v)) return; n[v]=(n[v]||0)+1; last[v]=i });
+  let best=null; for(const v in n) if(!best||n[v]>n[best]||(n[v]===n[best]&&last[v]>last[best])) best=v; return best }
+function reviewFeels(base,pool=FEELS){ const m=mostMissed('feel',pool,{not:base}); return m?[...base,m]:base.slice() }
+async function reteach(c){
+  const k=c.indexOf(':'), kind=c.slice(0,k), v=c.slice(k+1), fn=RETEACH[kind], host=$('#card'); if(!fn||!host) return;
+  Hand.hide(); const ov=el(`<div class="reteach"><div class="rt-in"></div></div>`); host.append(ov); const box=$('.rt-in',ov);
+  turn('choi'); mood('happy');
+  try{ await say('Let’s look at this one again, together.','Mình cùng xem lại cái này nhé.',{gap:200,keepMood:true}); await fn(v,box); await sleep(500) }
+  finally { ov.classList.add('bye'); setTimeout(()=>ov.remove(),350); mood('idle'); turn('kid') }
+}
+const RT_COL={red:['#E8484F','đỏ'],yellow:['#FCB515','vàng'],blue:['#4A9BDB','xanh dương'],green:['#58B592','xanh lá']};
+const RETEACH={
+  feel:async(f,box)=>{ if(!FEELS.includes(f)) return; const SC=feelScene(f); SC.el.dataset.noreplay='1'; box.append(SC.el); await SC.play(); await say(...FS_LINES[f]);
+    const face=el(`<div class="rt-face stk">${faceSVG(f)}</div>`); box.append(face); await say(`Look at the face. This face looks ${f}.`,`Nhìn khuôn mặt này nhé. Mặt này đang ${VI_FEEL[f]}.`); if(ECHO[f]) await pollyEcho(...ECHO[f]) },
+  count:async(v,box)=>{ const n=Math.max(1,Math.min(10,+v||3)); const row=el(`<div class="rt-row"></div>`); const its=[...Array(n)].map((_,i)=>{ const e=el(`<i class="rt-it stk">${ART.star(PAL[i%PAL.length])}</i>`); row.append(e); return e }); box.append(row); await sleep(300);
+    await say('Touch each one, and count.','Chạm từng cái rồi đếm nhé.'); for(let i=0;i<n;i++){ await Hand.moveTo(center(its[i]),420); await Hand.tap(); its[i].classList.add('on'); SFX.pop(); await say(cap(W[i+1])+'.',cap(VI_N[i+1])+'.',{gap:120,rate:.85}) } Hand.hide();
+    await say(`${cap(W[n])}! The last number tells us how many.`,`${cap(VI_N[n])}! Số cuối cùng cho biết có bao nhiêu.`) },
+  flash:async(v,box)=>{ const n=Math.max(1,Math.min(3,+v||2)); const lay=LAY[n][0]; const fc=el(`<div class="flashcard plain">${dotsSVG('card',lay)}</div>`); box.append(fc); await sleep(300);
+    await countDots(fc,'card',lay,['dots','chấm']); await say(`Next time, just look. ${cap(W[n])}!`,`Lần sau con chỉ cần nhìn. ${cap(VI_N[n])}!`) },
+  numeral:async(v,box)=>{ const n=Math.max(1,Math.min(10,+v||1)); box.append(el(`<b class="rt-num">${n}</b>`)); const row=el(`<div class="rt-row"></div>`); for(let i=0;i<n;i++) row.append(el(`<i class="rt-it stk">${ART.apple()}</i>`)); box.append(row);
+    await say(`This is the number ${W[n]}.`,`Đây là số ${VI_N[n]}.`); await say(`${cap(W[n])} ${n>1?'apples':'apple'}.`,`${cap(VI_N[n])} quả táo.`) },
+  pos:async(v,box)=>{ const list=v==='all'?['on','under','in']:[v]; const WD={in:['In','Trong'],on:['On','Trên'],under:['Under','Dưới']};
+    for(const p of list){ if(!POS_EN[p]) continue; box.innerHTML=''; box.append(el(`<div class="rt-pic fade">${sceneSVG(p)}</div>`)); await say(`Look! The cat is ${POS_EN[p]}.`,`Nhìn này! Con mèo ở ${POS_VI[p]}.`); await pollyEcho(`${WD[p][0]}! ${WD[p][0]}!`,`${WD[p][1]}! ${WD[p][1]}!`) } },
+  shape:async(v,box)=>{
+    if(v==='rectangle'||v==='square'){ const pair=el(`<div class="rt-pair"><div class="${v==='square'?'hl':''}">${shapeSVG('square','#4A9BDB')}</div><div class="${v==='rectangle'?'hl':''}">${shapeSVG('rectangle','#E8607E')}</div></div>`); box.append(pair);
+      await say('A square has four sides, all the same.','Hình vuông có bốn cạnh bằng nhau.'); await say('A rectangle has two long sides and two short sides.','Hình chữ nhật có hai cạnh dài và hai cạnh ngắn.');
+      await say(v==='square'?'This one is the square.':'This one is the rectangle.',v==='square'?'Đây là hình vuông.':'Đây là hình chữ nhật.'); return }
+    if(!VI_SHAPE[v]) return; box.append(el(`<div class="rt-shape">${shapeSVG(v,'#58B592')}</div>`)); const ob=SHAPE_OBJ[v]&&SHAPE_OBJ[v][0];
+    await say(`This is a ${v}.`,`Đây là hình ${VI_SHAPE[v]}.`); if(ob&&ART[ob[0]]){ box.append(el(`<div class="rt-face">${ART[ob[0]]()}</div>`)); await say(`${cap(ob[1])} is a ${v}, too.`,`${cap(ob[2])} cũng có hình ${VI_SHAPE[v]}.`) } },
+  size:async(v,box)=>{ const row=el(`<div class="rt-size"><i class="big stk">${ART.duck()}</i><i class="small stk">${ART.duck()}</i></div>`); box.append(row); await sleep(300);
+    await say('This duck is big.','Chú vịt này to.'); await say('This duck is small.','Chú vịt này nhỏ.'); await pollyEcho('Big! Small!','To! Nhỏ!') },
+  colour:async(v,box)=>{ const C=RT_COL[v]||RT_COL.red; const row=el(`<div class="rt-row">${[ART.ball2?ART.ball2(C[0]):ART.balloon(C[0]),ART.balloon(C[0]),ART.star(C[0])].map(a=>`<i class="rt-it stk">${a}</i>`).join('')}</div>`); box.append(row);
+    await say(`Look at the colour. These are all ${v in RT_COL?v:'red'}.`,`Nhìn màu nhé. Tất cả đều màu ${C[1]}.`) },
+  time:async(v,box)=>{ const list=v==='all'?[0,1,2]:[TIME_KEY.indexOf(v)].filter(i=>i>=0);
+    for(const t of list){ box.innerHTML=''; const a=ACTS.find(x=>x[3]===t); box.append(el(`<div class="rt-pair fade"><div>${skySVG(t)}</div>${a&&ART[a[0]]?`<div>${ART[a[0]]()}</div>`:''}</div>`));
+      if(a) await say(a[4],a[5]); else await say(cap(TIME[t][0])+'.',cap(TIME[t][1])+'.') } },
+  sound:async(v,box)=>{ const S0=SOUNDS[v]; if(!S0) return; const ARTK={clap:'hands',bell:'bell',drum:'drum',car:'car'}; box.append(el(`<div class="rt-face">${ART[ARTK[v]]()}</div>`)); await say('Listen.','Nghe nhé.',{gap:200}); Music.level(.1); S0.play(); await sleep(1900); Music.level(1); await say(S0.en,S0.vi) },
+  syl:async(v,box)=>{ const w=clapWords().find(x=>x.w===v)||clapWords().find(x=>x.syl.length===3); box.append(el(`<div class="rt-face">${clapPic(w)}</div>`)); await sayWord(w);
+    for(const x of w.syl){ clapHit(); await syl(x) } const n=w.syl.length; await say(`${cap(W[n])} ${n>1?'claps':'clap'}! One clap for each sound.`,`${cap(VI_N[n])} tiếng! Mỗi tiếng vỗ một cái.`) },
+};
 
 /* ---- 1. build a face (feelings) ---- */
 const BROWS={neutral:'M28 33 h14 M58 33 h14',raised:'M27 28 q8 -7 16 0 M57 28 q8 -7 16 0',angry:'M26 31 L43 39 M74 31 L57 39',sad:'M26 37 L41 30 M74 37 L59 30'};
@@ -2624,10 +2732,10 @@ addFormat('findFeeling','build',async(sk,rounds)=>{
       else ok=(await stepPick(sk,opts,set.indexOf(right),{ask,record:false,onRight:apply,labels:part==='mouth'?set.map(k=>[`that mouth looks ${MOUTH_FEEL[k]}`,`cái miệng đó trông ${VI_FEEL[MOUTH_FEEL[k]]}`]):null}))&&ok;
       row.remove();
     }
-    if(!demo) rec(sk,ok,0);
+    if(!demo) rec(sk,ok,0,'feel:'+t);
     face.classList.add('pop'); await say(`Now this face looks ${t}!`,`Giờ là khuôn mặt ${VI_FEEL[t]} rồi!`);
     return ok };
-  await watchMe(); let prev=pick(pool); await round(prev,true); await yourTurn();
+  let prev=pick(pool); await demoOr('face',()=>round(prev,true));
   for(let r=0;r<rounds;r++){ const t=nextDifferent(prev,()=>pick(pool)); prev=t; const ok=await round(t,false); await kept(ok); await sleep(300) }
   turn(null);
 });
@@ -2685,7 +2793,7 @@ addFormat('flash','drum',async(sk,rounds)=>{
     cov.style.opacity=0;
     if(r.ok||r.second){ if(r.second) await say('You got it!','Đúng rồi!',{gap:150}); await say(`${cap(W[n])} ${n>1?'dots':'dot'}, ${W[n]} ${n>1?'beats':'beat'}!`,`${cap(VI_N[n])} chấm, ${VI_N[n]} tiếng trống!`) }
     return r.ok };
-  await watchMe(); let prev=1+rand(3); await round(prev,true); await yourTurn();
+  let prev=1+rand(3); await demoOr('drum',()=>round(prev,true));
   for(let r=0;r<rounds;r++){ const n=nextDifferent(prev,()=>1+rand(3)); prev=n; const ok=await round(n,false); if(ok) await praise(); await sleep(300) }
   turn(null);
 });
@@ -2716,7 +2824,7 @@ addFormat('countTap','feed',async(sk,rounds,opt={})=>{
     else await say(`${cap(W[n])}! Yum, yum!`,`${cap(VI_N[n])}! Ngon quá!`);
     return r.ok };
   if(opt.single){ turn('kid'); const ok=await round(opt.n||ramp[ramp.length-1],false); if(ok) await praise(); turn(null); return }
-  await watchMe(); await round(2,true); await yourTurn();
+  await demoOr('feed',()=>round(2,true));
   for(let r=0;r<rounds;r++){ const ok=await round(ramp[r],false); if(ok) await praise(); await sleep(300) }
   turn(null);
 });
@@ -2732,7 +2840,7 @@ addFormat('question','hide',async(sk,rounds)=>{
     if(demo){ await ask(); await Hand.moveTo(center(covers[places.indexOf(t)])); await Hand.tap(); await reveal1(places.indexOf(t)); await say('There it is!','Đây rồi!'); return true }
     const ok=await stepPick(sk,covers,places.indexOf(t),{ask,onRight:reveal1,labels:places.map(p=>[`that’s ${POS_EN[p]}`,`đó là ${POS_VI[p]}`])});
     await say(`There it is, ${POS_EN[t]}!`,`Đây rồi, ${POS_VI[t]}!`); return ok };
-  await watchMe(); let prev=pick(['on','under','in']); await round(prev,true); await yourTurn();
+  let prev=pick(['on','under','in']); await demoOr('hidefind',()=>round(prev,true));
   for(let r=0;r<rounds;r++){ const t=nextDifferent(prev,()=>pick(['on','under','in'])); prev=t; const ok=await round(t,false); await kept(ok); await sleep(300) }
   turn(null);
 });
@@ -2768,7 +2876,7 @@ addFormat('sounds','copy',async(sk,rounds)=>{
     rec(sk,ok,0);
     if(!ok){ await say('Almost! Listen again.','Gần đúng rồi! Nghe lại nhé.'); await listen(); }
     return ok };
-  await watchMe(); await round(2,true); await yourTurn(); turn('kid');
+  await demoOr('copy',()=>round(2,true)); turn('kid');
   for(let r=0;r<rounds;r++){ const ok=await round(r<2?2:3,false); if(ok) await praise(); await sleep(300) }
   turn(null);
 });
@@ -2818,14 +2926,14 @@ addFormat('clap','jump',async(sk,rounds)=>{
     await say('Tap the frog for each beat!','Mỗi tiếng con chạm vào ếch một lần nhé!',{gap:150});
     const n=w.syl.length; RUN.qfn=async()=>{ await sayWord(w); await say('Tap the frog for each beat!','Mỗi tiếng con chạm vào ếch một lần nhé!',{replay:true}) };
     const home=()=>{ frog.classList.remove('splash','hop'); frog.style.left=xs[0] };
-    const r=await countTurn(sk,{n,btns:[pond],onTap:k=>{ hop(k); if(k<=n) syl(w.syl[k-1]).catch(()=>{}) },idle:2200,
+    const r=await countTurn(sk,{n,btns:[pond],onTap:k=>{ hop(k); if(k<=n) syl(w.syl[k-1]).catch(()=>{}) },idle:2200,concept:'syl:'+w.w,
       before:async k=>{ if(k>n){ frog.classList.add('splash'); noise(.4,.3,0,700); await say('Splash! Too many jumps!','Tõm! Nhảy nhiều quá rồi!') } else await say('Hmm, not enough jumps.','Ơ, chưa đủ bước rồi.') },
       reset:home, retry:async()=>{ await say('Listen again.','Nghe lại nhé.',{gap:150}); await sayWord(w); await say('Now you. One jump for each beat!','Giờ đến con. Mỗi tiếng một bước nhảy!') },
       answer:async()=>{ home(); await say('Listen.','Nghe nhé.'); for(let j=1;j<=n;j++){ hop(j); await syl(w.syl[j-1]) } }});
     if(r.ok||r.second){ frog.classList.add('happy'); SFX.chime(); await say(`${w.syl.join('-')}. ${cap(W[n])} ${n>1?'jumps':'jump'}!`,`${w.syl.join(' - ')}. ${cap(VI_N[n])} bước!`) }
     else await say(`${cap(W[n])} ${n>1?'jumps':'jump'}!`,`${cap(VI_N[n])} bước nhảy!`);
     return r.ok };
-  await watchMe(); await round(D,true); await yourTurn();
+  await demoOr('jump',()=>round(D,true));
   for(const w of shuffle(WORDS.filter(x=>x!==D)).slice(0,rounds)){ const ok=await round(w,false); if(ok) await praise(); await sleep(300) }
   turn(null);
 });
@@ -2847,7 +2955,7 @@ addFormat('routine','order',async(sk,rounds)=>{
       const ok=await stepPick(sk,liveEls,want,{ask,labels:live.map(i=>[`we do that ${TIME[acts[order[i]][3]][0]}`,`việc đó mình làm vào ${TIME[acts[order[i]][3]][1]}`]),onRight:async()=>{ await put(live[want],t); await say(acts[t][4],acts[t][5]) }});
       allOk=allOk&&ok }
     confetti(); await say('That’s my whole day!','Đó là cả một ngày của Chồi!'); return allOk };
-  await watchMe(); await round(true); await yourTurn();
+  await demoOr('order',()=>round(true));
   for(let r=0;r<Math.max(1,Math.ceil(rounds/2));r++){ const ok=await round(false); await kept(ok); await sleep(300) }
   turn(null);
 });
@@ -3047,7 +3155,7 @@ addFormat('countTap','bus',async(sk,rounds,opt={})=>{
     scene.classList.add('go'); SOUNDS.car.play(); await say(`${cap(W[n])} empty seats, ${W[n]} friends! Off we go!`,`${cap(VI_N[n])} ghế trống, ${VI_N[n]} bạn! Xe chạy thôi!`); await sleep(300);
     return r.ok };
   if(opt.single){ turn('kid'); const ok=await round(opt.n||ramp[ramp.length-1],false); if(ok) await praise(); turn(null); return }
-  await watchMe(); await round(2,true); await yourTurn();
+  await demoOr('bus',()=>round(2,true));
   for(let r=0;r<rounds;r++){ const ok=await round(ramp[r],false); if(ok) await praise(); await sleep(300) }
   turn(null);
 });
@@ -3083,9 +3191,9 @@ addFormat('findFeeling','help',async(sk,rounds,opt={})=>{
     if(H.scene==='bed') await say(`Good night, ${H.name}! When we feel tired, we go to sleep.`,`Chúc ${H.name} ngủ ngon! Khi mệt, mình đi ngủ nhé.`); else
     await say(['happy','excited','proud','surprised'].includes(H.f)?`${H.name} is so happy you’re here!`:`${H.name} feels better now. Thank you!`,['happy','excited','proud','surprised'].includes(H.f)?`${H.name} vui lắm vì có con!`:`${H.name} thấy dễ chịu hơn rồi. Cảm ơn con!`);
     return ok };
-  if(opt.single){ turn('kid'); const ok=await round(deck[0],false); rec(sk,ok,0); if(ok) await praise(); turn(null); return }
-  await watchMe(); await round(deck[0],true); await yourTurn();
-  for(let r=0;r<rounds;r++){ const ok=await round(deck[(r+1)%deck.length],false); rec(sk,ok,0); if(ok) await praise(); await sleep(300) }
+  if(opt.single){ turn('kid'); const ok=await round(deck[0],false); rec(sk,ok,0,'feel:'+deck[0].f); if(ok) await praise(); else await reteachPending(); turn(null); return }
+  await demoOr('help',()=>round(deck[0],true));
+  for(let r=0;r<rounds;r++){ const H=deck[(r+1)%deck.length]; const ok=await round(H,false); rec(sk,ok,0,'feel:'+H.f); if(ok) await praise(); else await reteachPending(); await sleep(300) }
   turn(null);
 });
 
@@ -3136,7 +3244,7 @@ addFormat('findFeeling','music',async(sk,rounds,opt={})=>{
     RUN.qfn=async()=>{ await listen(); await ask() };
     await say(`Yes, it sounds ${MUSIC_ADJ[t][0]}!`,`Đúng rồi, nghe ${MUSIC_ADJ[t][1]} quá!`); return ok };
   if(opt.single){ turn('kid'); await round(pick(pool),false); turn(null); return }
-  if(!again){ await watchMe(); prev=pool.includes('happy')?'happy':pool[0]; await round(prev,true); await yourTurn() } else turn('kid');
+  if(RUN&&RUN.mode?wantDemo('music'):(typeSeen('music'),!again)){ await watchMe(); prev=pool.includes('happy')?'happy':pool[0]; await round(prev,true); await yourTurn() } else turn('kid');
   for(let r=0;r<rounds;r++){ const t=nextDifferent(prev,()=>pick(pool)); prev=t; await round(t,false); await sleep(300) }
   turn(null);
 });
@@ -3772,7 +3880,7 @@ async function afterLevel(sess){
 }
 async function runSession(li){
   ac(); Music.start();
-  RUN={aborted:false,start:Date.now(),lesson:li}; abortFns.clear();
+  RUN={aborted:false,start:Date.now(),lesson:li,replay:!!(S.done&&S.done[li])}; abortFns.clear();
   renderPlay();
   // wait (a little) until Chồi's recorded voice is loaded, so every line plays the same way
   { const ip=!FAST&&!AUTO&&voiceInit(isVi()?'vi':'en'); if(ip&&VOICE.ready[isVi()?'vi':'en']!==null){ mood('sleep'); setCaption('…',''); await Promise.race([ip,rawWait(15000)]); mood('idle') } }
@@ -4149,7 +4257,7 @@ function awardStar(from){ if(!RUN||FAST) { if(RUN) RUN.stars=(RUN.stars||0)+1; r
   a.finished.then(()=>{ s.remove(); $('b',j).textContent=RUN?RUN.stars:0; j.classList.remove('bump'); void j.offsetWidth; j.classList.add('bump'); tone(1320,.12,'sine',.08); tone(1760,.18,'sine',.06,.08);
     const m=$('#dockChoi'); if(m&&m.dataset.mood==='idle'){ m.dataset.mood='happy'; setTimeout(()=>{ if(m.dataset.mood==='happy') m.dataset.mood='idle' },900) } },()=>s.remove()) }
 const _rec=rec;
-rec=function(sk,ok,rt){ _rec(sk,ok,rt) };
+rec=function(sk,ok,rt,c){ _rec(sk,ok,rt,c) };
 /** a cheerful boing for a wrong tap */
 function boing(){ tone(300,.18,'sine',.09,0,180); tone(220,.2,'sine',.05,.1,160) }
 
@@ -4215,10 +4323,10 @@ async function popStream(sk,rounds,{intro,target,make,ask,label,answer,opt={},ne
         else { wrong++; const inn=$('.in',b); inn.classList.remove('nope'); void inn.offsetWidth; inn.classList.add('nope'); boing(); if(wrong===1||wrong%3===0) say(`Oops, ${label(b.dataset.v)}.`,`Ơ, ${label(b.dataset.v,true)}.`,{gap:0,q:false}).catch(()=>{}) } });
       const nudge=idleNudge([field],()=>popped===0); abortFns.add(nudge);
       if(AUTO) (async()=>{ for(let i=0;i<need;i++){ await new Promise(r=>setTimeout(r,kidTapDelay())); const b=live.find(x=>x.dataset.ok&&!x.dataset.used&&(!x.classList.contains('special')||x.dataset.ready)); if(b) b.click(); else i-- } })() });
-    stop(); abortFns.delete(stop); const ok=wrong===0; rec(sk,ok,performance.now()-t0);
+    stop(); abortFns.delete(stop); const ok=wrong===0; rec(sk,ok,performance.now()-t0,FEELS.includes(t)?'feel:'+t:null);
     confetti(); await say(...answer(t)); if(!finale) field.remove(); return ok };
   if(opt.single||noDemo){ turn('kid'); for(let r=0;r<(opt.single?1:rounds);r++){ const ok=await round(target(),false); if(ok) await praise() } turn(null); return }
-  await watchMe(); let prev=target(); await round(prev,true); await yourTurn();
+  let prev=target(); await demoOr('pop',()=>round(prev,true));
   for(let r=0;r<rounds;r++){ const t=nextDifferent(prev,target); prev=t; const ok=await round(t,false); if(ok) await praise(); else await kept(false); await sleep(300) }
   turn(null);
 }
@@ -4363,8 +4471,8 @@ async function peekGame(sk,list,{intro,skipFirst=false,noDemo=false}={}){
         else { wrong++; p.classList.remove('nope'); void p.offsetWidth; p.classList.add('nope'); boing(); if(wrong===1||wrong%3===0) say(`Oops, that friend looks ${p.dataset.f}.`,`Ơ, bạn đó đang ${VI_FEEL[p.dataset.f]}.`,{gap:0,q:false}).catch(()=>{}) } });
       const nudge=idleNudge([field],()=>got===0); abortFns.add(nudge);
       if(AUTO) (async()=>{ while(got<need){ await new Promise(r=>setTimeout(r,kidTapDelay())); const p=holes.map(h=>$('.peeker',h)).find(x=>x.classList.contains('up')&&x.dataset.ok&&!x.dataset.used); if(p) p.click() } })() });
-    stop(); abortFns.delete(stop); rec(sk,wrong===0,performance.now()-t0); confetti(); await say(...R.done); return wrong===0 };
-  if(!noDemo){ await watchMe(); await round(list[0],true); await yourTurn() } else turn('kid');
+    stop(); abortFns.delete(stop); rec(sk,wrong===0,performance.now()-t0,'feel:'+R.f); confetti(); await say(...R.done); return wrong===0 };
+  if(!noDemo) await demoOr('peek',()=>round(list[0],true)); else turn('kid');
   for(const R of (skipFirst&&!noDemo?list.slice(1):list)){ const ok=await round(R,false); if(ok) await praise(); else await kept(false); await sleep(300) }
   turn(null);
 }
@@ -4452,7 +4560,7 @@ async function runEpisode(sess,li){
   for(let i=from;i<steps.length;i++){
     await limitGate();
     if(i>from){ $('#card').classList.add('out'); await sleep(320); $('#card').classList.remove('out') }
-    RUN.step=i; await steps[i](); S.partial={li,step:i+1,done:[]}; sess.skills.push('ep'+li+'.'+i); save() }
+    RUN.step=i; RUN.mode=null; RUN.concept=null; await reteachPending(); await steps[i](); S.partial={li,step:i+1,done:[]}; sess.skills.push('ep'+li+'.'+i); save() }
   S.partial=null; S.done=S.done||{}; S.done[li]=(S.done[li]||0)+1; sess.completed=true; S.giftOwed=(S.giftOwed||0)+1;
   if(li===S.lesson&&S.lesson<LESSONS.length){ S.lesson++; S.hopFrom=li }
   save();
@@ -5163,7 +5271,7 @@ async function flashlightGame({piece=0}={}){
     await g.p; b._pe.classList.remove('glint');
     if(piece){ dark.classList.add('off'); const fr=box.getBoundingClientRect(), r=b._pe.getBoundingClientRect(); b._pe.style.visibility='hidden'; await pieceDropAt(box,r.left-fr.left+r.width/2,r.top-fr.top+r.height/2,piece) }
     else { await reveal1(k); await say(`It’s Polly! Polly is ${SPOTS[k].en}.`,`Là Polly! Polly ở ${SPOTS[k].vi}.`) } }
-  turn(null); rec(sk,wrong===0,performance.now()-t0); dark.classList.add('off'); confetti();
+  turn(null); rec(sk,wrong===0,performance.now()-t0,'pos:all'); dark.classList.add('off'); confetti();
   await say('You found everyone in the dark!','Con tìm thấy mọi người trong bóng tối rồi!');
 }
 
@@ -5205,7 +5313,7 @@ async function toyCatch({piece=0}={}){
     if(piece){ const g3=gate(); g.done=g3.done; await say('Look! Something else is falling. Catch it!','Nhìn kìa! Có gì đang rơi xuống nữa. Con bắt nhé!',{q:true}); phase='piece'; await g3.p; phase=null;
       const fr=f.getBoundingClientRect(), r=bk.getBoundingClientRect(); await pieceDropAt(f,r.left-fr.left+r.width/2,r.top-fr.top,piece) }
   } finally { stop() }
-  turn(null); rec(sk,wrong<=1,performance.now()-t0); confetti();
+  turn(null); rec(sk,wrong<=1,performance.now()-t0,'size:all'); confetti();
 }
 
 /* =========================================================
@@ -5243,7 +5351,7 @@ async function shopCart({piece=0}={}){
     it.addEventListener('animationiteration',()=>{}); it.style.animationIterationCount='infinite';
     await tapOnce([it]); it.style.animationPlayState='paused'; beep(); const fr=f.getBoundingClientRect(), r=it.getBoundingClientRect(); $('.ppc',it).style.visibility='hidden'; it.classList.add('opened');
     await pieceDropAt(f,r.left-fr.left+r.width/2,r.top-fr.top,piece) }
-  turn(null); rec(sk,wrong<=1,performance.now()-t0); confetti();
+  turn(null); rec(sk,wrong<=1,performance.now()-t0,null); confetti();
 }
 
 /* =========================================================
@@ -5290,7 +5398,7 @@ async function craneStack({piece=0}={}){
     else { wrong++; boing(); fb.classList.add('tip'); await say('Oops, it missed! Here’s another one.','Ối, trượt rồi! Thêm một khối nữa nhé.',{gap:0}); setTimeout(()=>fb.remove(),600); i-- }
     await sleep(350);
   }
-  turn(null); rec(sk,wrong<=2,performance.now()-t0); confetti();
+  turn(null); rec(sk,wrong<=2,performance.now()-t0,'shape:rectangle'); confetti();
   await say(`A tall tower! ${cap(W[stack.length])} blocks: squares and rectangles.`,`Tháp cao quá! ${cap(VI_N[stack.length])} khối: hình vuông và hình chữ nhật.`);
 }
 
@@ -5345,7 +5453,7 @@ async function frogRoad({piece=0}={}){
     if(piece){ await say('Look! Something is on the lily pad. Tap it!','Nhìn kìa! Có gì trên lá sen. Con chạm vào nhé!',{q:true}); const lily=$('.lily',box); lily.dataset.ok='1'; await tapOnce([lily]);
       const fr=box.getBoundingClientRect(), r=lily.getBoundingClientRect(); lily.style.visibility='hidden'; await pieceDropAt(box,r.left-fr.left+r.width/2,r.top-fr.top+r.height/2,piece) }
   } finally { stopLoop(); clearTimeout(cyc) }
-  turn(null); rec(sk,wrong===0,performance.now()-t0);
+  turn(null); rec(sk,wrong===0,performance.now()-t0,'time:all');
 }
 
 /* =========================================================
@@ -5452,7 +5560,7 @@ async function tidyUp(){
     await demoDrag(t,bigB,700); t.classList.remove('dragging'); t.style.translate=''; await putIn(t,bigB); Hand.hide(); await say('It goes in the big box!','Nó vào hộp to!') }
   await yourTurn(); await say('Now you! Drag each toy to the right box.','Đến con! Con kéo từng đồ chơi vào đúng hộp nhé.',{q:true});
   if(AUTO) (async()=>{ for(const t of toys){ if(t.dataset.used) continue; await new Promise(r=>setTimeout(r,kidTapDelay())); t.click(); await new Promise(r=>setTimeout(r,200)); (t.dataset.sz==='big'?bigB:smB).click(); await new Promise(r=>setTimeout(r,600)) } })();
-  await g.p; turn(null); rec(sk,wrong<=1,performance.now()-t0); confetti(); setKidFace(box.querySelector('.skid'),'Na','happy');
+  await g.p; turn(null); rec(sk,wrong<=1,performance.now()-t0,'size:all'); confetti(); setKidFace(box.querySelector('.skid'),'Na','happy');
   await say('The room is tidy! Big toys in the big box, small toys in the small box.','Phòng gọn gàng rồi! Đồ to trong hộp to, đồ nhỏ trong hộp nhỏ.'); await nextPage(box) }
 
 /* ---- a friend is sad: share a snack with them (any snack is right) ---- */
@@ -5597,7 +5705,7 @@ async function roomShapes(){
   await teach('rc',['A rectangle has two long sides and two short sides.','Hình chữ nhật có hai cạnh dài và hai cạnh ngắn.']); await findMore('rc');
   turn('kid'); await say('Now find something round. Find a circle!','Giờ tìm một thứ tròn tròn. Con tìm hình tròn nhé!',{q:true});
   for(let i=0;i<2;i++){ const b=await pickOne('ci'); found(b); await say(`${cap(b._it.n[0])} is a circle!`,`${cap(b._it.n[1])} là hình tròn!`); if(!i) await say('There’s one more circle. Find it!','Còn một hình tròn nữa. Con tìm nhé!',{q:true}) }
-  turn(null); rec(sk,wrong<=1,performance.now()-t0); confetti();
+  turn(null); rec(sk,wrong<=1,performance.now()-t0,'shape:rectangle'); confetti();
   await say('You found all the shapes in the house: squares, rectangles and circles!','Con đã tìm hết các hình trong nhà: hình vuông, hình chữ nhật và hình tròn!'); await nextPage(box) }
 
 /* =========================================================
