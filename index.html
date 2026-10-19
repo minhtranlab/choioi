@@ -268,13 +268,13 @@ canvas.trace{width:100%;max-width:calc(380px*var(--k,1));height:min(42vh,calc(30
 .spot svg{width:100%;height:100%}
 .spot.nope{animation:shake .35s}
 .spot.hint{border-color:var(--green);animation:wiggle .8s ease-in-out 3}
-.trackbox{position:relative;width:100%;max-width:calc(380px*var(--k,1));height:min(46cqh,calc(300px*var(--k,1)));background:var(--soft);border-radius:24px;touch-action:none;cursor:crosshair}
+.trackbox{position:relative;width:100%;max-width:calc(540px*var(--k,1));height:min(56cqh,calc(360px*var(--k,1)));background:var(--soft);border-radius:24px;touch-action:none;cursor:crosshair}
 .trackbox svg.tk{position:absolute;inset:0;width:100%;height:100%}
-.tk-ico{position:absolute;width:64px;height:64px;margin:-32px 0 0 -32px;pointer-events:none}
+.tk-ico{position:absolute;width:84px;height:84px;margin:-42px 0 0 -42px;pointer-events:none}
 .tk-ico svg{width:100%;height:100%}
 .tk-ico.end{opacity:.95}
 .tk-ico.mover{z-index:2;filter:drop-shadow(0 3px 3px rgba(54,29,70,.25))}
-.tk-ico.start{width:80px;margin-left:-40px}
+.tk-ico.start{width:96px;margin-left:-48px}
 .item{border:0;background:none;padding:0;cursor:pointer}
 .item.sel{transform:translateY(-10px) scale(1.15);filter:drop-shadow(0 0 0 #FCB515) drop-shadow(0 6px 6px rgba(54,29,70,.25));outline:4px solid var(--yellow);outline-offset:3px;border-radius:50%}
 .item.hint{animation:wiggle .7s ease-in-out 2}
@@ -1542,6 +1542,33 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .rt-pair>div{width:min(36cqw,52cqh)}.rt-pair svg{width:100%;height:auto;display:block}
 .rt-pair>.hl{outline:5px dashed #FCB515;outline-offset:6px;border-radius:14px}
 .rt-size{display:flex;align-items:flex-end;gap:8%;justify-content:center}.rt-size .big{width:min(40cqw,52cqh)}.rt-size .small{width:min(18cqw,24cqh)}.rt-size svg{width:100%;height:auto;display:block}
+.fs-back{position:absolute;inset:0;z-index:0}.fs-back>svg{width:100%;height:100%;display:block}
+.fs-in-school .fs-sky,.fs-in-school .fs-ground{display:none}
+.fs-mum .sgate{left:2%;bottom:6%;width:22%}
+.fs-adult{position:absolute;left:30%;bottom:4%;width:19%;z-index:2}.fs-adult>svg{width:100%;height:auto;display:block}
+.fs-mum.go .fs-adult{animation:fsMumGo 2.6s .3s ease-in forwards}
+.fs-mum.go .fs-adult .ad-arm{animation:fsWave .42s 3 ease-in-out;transform-origin:67px 84px}
+.fs-mum.after .fs-adult{opacity:0}
+@keyframes fsMumGo{0%,48%{transform:none;opacity:1}100%{transform:translateX(-175%);opacity:0}}
+@keyframes fsWave{50%{transform:rotate(-22deg)}}
+.fs-giver.adult{width:21%}.fs-giver.adult .gbox{left:50%;top:48%;width:52%}
+.fs-cookies.go .fs-giver{animation:fsGiveWalk 1.4s ease-out forwards}
+.fs-cookies.go .fs-giver .gbox{animation:fsGiveBox .55s 1.6s ease-in-out forwards}
+.fs-cookies.after .fs-giver{left:36%}.fs-cookies.after .fs-giver .gbox{transform:translate(78%,-6%)}
+.fs-polly .cookie{left:57%;bottom:30%;width:9%;z-index:3}
+.fs-parrot{position:absolute;left:-24%;bottom:70%;width:16%;z-index:4}.fs-parrot>svg{width:100%;height:auto;display:block}
+.fs-polly.go .fs-parrot{animation:fsParrot 2.4s ease-in-out forwards}
+.fs-polly.go .cookie{animation:fsCookieGo 2.4s ease-in-out forwards}
+@keyframes fsParrot{0%{left:-24%;bottom:70%}45%{left:48%;bottom:24%}58%{left:48%;bottom:24%}100%{left:112%;bottom:86%}}
+@keyframes fsCookieGo{0%,52%{left:57%;bottom:30%}100%{left:120%;bottom:84%}}
+.classroom .foldmap.onshelf{left:16%;bottom:73%;width:13%}
+.classroom .foldmap.onshelf.open{left:40%;bottom:20%;width:44%}
+.mapnote{position:absolute;left:80%;bottom:42%;width:22%;translate:-50% 0;z-index:4;animation:noteIn .9s cubic-bezier(.3,1.4,.5,1) both}.mapnote svg{width:100%;height:auto;display:block}
+@keyframes noteIn{0%{transform:translate(-140%,30%) rotate(-30deg) scale(.4);opacity:0}100%{transform:rotate(6deg)}}
+.bushrow .opt{padding:2px;overflow:hidden}
+.bushhead{position:relative;display:block;width:100%;aspect-ratio:1}
+.bushhead .bh-kid{position:absolute;left:20%;top:4%;width:60%}.bushhead .bh-kid svg{width:100%;height:auto;display:block}
+.bushhead .bh-bush{position:absolute;left:-4%;bottom:-4%;width:108%}.bushhead .bh-bush svg{width:100%;height:auto;display:block}
 </style>
 
 <div id="root"></div>
@@ -1560,7 +1587,7 @@ window.setInterval=function(fn,ms,...a){ if(typeof fn!=='function') return _sI(f
    Dữ liệu chỉ lưu trên máy (localStorage + IndexedDB).
    ========================================================= */
 const HASH=(location.hash||'').slice(1);
-const FAST=HASH==='fast'||HASH==='auto'; let AUTO=HASH==='auto';
+const FAST=HASH==='fast'||HASH==='auto'; let AUTO=HASH==='auto'||HASH==='time';   // #time: plays itself at real speed, to measure how long a level takes
 /* developer mode: options are remembered on this device; runs are sandboxed (progress restored afterwards) */
 const DEV=(()=>{ const d={sandbox:true,auto:false,fast:false,mute:false,rounds:1,fmt:null}; try{ Object.assign(d,JSON.parse(localStorage.getItem('choi-oi.dev'))||{}) }catch(e){} return d })();
 function saveDev(){ try{ localStorage.setItem('choi-oi.dev',JSON.stringify({sandbox:DEV.sandbox,auto:DEV.auto,fast:DEV.fast,mute:DEV.mute,rounds:DEV.rounds})) }catch(e){} }
@@ -1639,7 +1666,7 @@ const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rand(i+1);[a
 function el(html){const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstElementChild}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 let SPEED=FAST?0.04:1;
-function applyDev(){ SPEED=FAST?0.04:(inDev()&&DEV.fast?0.33:1); AUTO=HASH==='auto'||(inDev()&&DEV.auto) }
+function applyDev(){ SPEED=FAST?0.04:(inDev()&&DEV.fast?0.33:1); AUTO=HASH==='auto'||HASH==='time'||(inDev()&&DEV.auto) }
 let RUN=null; const abortFns=new Set();
 function chk(){ if(RUN&&RUN.aborted) throw ABORT }
 function sleep(ms){ return new Promise((res,rej)=>{ const f=()=>{clearTimeout(t);rej(ABORT)}; const t=setTimeout(()=>{abortFns.delete(f);res()},ms*SPEED); if(RUN&&RUN.aborted) return f(); abortFns.add(f) }) }
@@ -1791,6 +1818,7 @@ function say(en,vi,opt={}){
     const ab=()=>{ try{speechSynthesis.cancel()}catch(e){} voiceStop(); if(!done) SAYN=Math.max(0,SAYN-1); done=true; rej(ABORT) }; abortFns.add(ab);
     const rate=Math.min(2,(V?Math.min(1,(opt.rate||RATE)+.18):(opt.rate||RATE))*(inDev()&&DEV.fast?1.6:1)), est=(700+text.length*85)/rate;
     if(FAST){ setTimeout(fin,10); return }
+    if(HASH==='time'){ setTimeout(fin,400+String(text).split(/\s+/).filter(Boolean).length*500); return }   // ~120 words a minute
     if(inDev()&&DEV.fast) opt={...opt,gap:(opt.gap??GAP)*.3};
     if(inDev()&&DEV.mute){ setTimeout(fin,Math.min(est,1500)*SPEED); return }   // dev: subtitles only
     if(!opt.polly) mood('talk'); Music.level(.3);
@@ -2092,7 +2120,7 @@ function tapOnce(els,{nudge=true}={}){
     const ab=()=>{ cleanup(); rej(ABORT) };
     els.forEach((e,i)=>{ const f=ev=>{ ev.stopPropagation(); cleanup(); res(i) }; e.addEventListener('click',f); hs.push([e,f]) });
     abortFns.add(ab); if(RUN&&RUN.aborted) return ab();
-    if(AUTO) setTimeout(()=>{ if(!hs.length) return; let i=els.findIndex(e=>e.dataset.ok==='1'); if(window.__autoWrong&&Math.random()<window.__autoWrong) i=Math.floor(Math.random()*els.length); cleanup(); res(i<0?0:i) },HASH==='auto'?15:900*SPEED);
+    if(AUTO) setTimeout(()=>{ if(!hs.length) return; let i=els.findIndex(e=>e.dataset.ok==='1'); if(window.__autoWrong&&Math.random()<window.__autoWrong) i=Math.floor(Math.random()*els.length); cleanup(); res(i<0?0:i) },HASH==='auto'?15:HASH==='time'?2200:900*SPEED);
   });
 }
 async function watchMe(){ turn('choi'); await say('Watch me first!','Xem Chồi làm trước nhé!') }
@@ -2372,32 +2400,33 @@ const TRACE_SKINS=[
  {v:1,a:'star',b:'basket',m:null,en:'Help the star fall into the basket.',vi:'Giúp ngôi sao rơi xuống giỏ nhé.',fx:['Look! Lots of stars fall straight down into the basket!','Nhìn kìa! Thật nhiều ngôi sao rơi thẳng xuống giỏ!']},
  {v:0,a:'duck',b:'pond',m:null,en:'Help the duck swim to the pond.',vi:'Giúp chú vịt bơi tới cái ao nhé.',fx:['Look! Lots of ducks swim straight to the pond!','Nhìn kìa! Thật nhiều chú vịt bơi thẳng tới ao!']},
 ];
-GAMES.trace=async(sk,rounds)=>{
+GAMES.trace=async(sk,rounds,opt={})=>{
   const setup=(K)=>{ const c=card(); const box=el(`<div class="trackbox fade"><svg class="tk" preserveAspectRatio="none"></svg></div>`); c.append(box);
-    const r=box.getBoundingClientRect(), Wd=r.width, Ht=r.height, band=58, pad=46;
-    const A=K.v?{x:Wd/2,y:pad}:{x:pad,y:Ht/2}, B=K.v?{x:Wd/2,y:Ht-pad}:{x:Wd-pad,y:Ht/2};
+    const r=box.getBoundingClientRect(), Wd=r.width, Ht=r.height, band=62, pad=56;
+    const A=K.v?{x:Wd/2,y:K.m?pad+34:pad}:{x:pad,y:Ht/2}, B=K.v?{x:Wd/2,y:Ht-pad}:{x:Wd-pad,y:Ht/2};   // room above the start for the thing it comes from (cloud, can, slide)
     const svg=$('svg',box); svg.setAttribute('viewBox',`0 0 ${Wd} ${Ht}`);
     svg.innerHTML=`<line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="#D3E3DB" stroke-width="${band}" stroke-linecap="round"/><line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="#fff" stroke-width="5" stroke-dasharray="4 14" stroke-linecap="round"/><line class="done" x1="${A.x}" y1="${A.y}" x2="${A.x}" y2="${A.y}" stroke="${K.v?'#4A9BDB':'#E8607E'}" stroke-width="14" stroke-linecap="round"/><circle cx="${A.x}" cy="${A.y}" r="16" fill="#58B592" stroke="${INK}" stroke-width="3"/>`;
-    const icon=(k,p,cls)=>{ const a=k==='flowerS'?flowerSVG():ART[k](k==='star'?'#FCB515':undefined); const e=el(`<div class="tk-ico ${cls}" style="left:${p.x}px;top:${p.y}px">${a}</div>`); box.append(e); return e };
-    icon(K.b,B,'end'); const mover=icon(K.m||K.a,A,'mover'); if(K.m) icon(K.a,{x:A.x,y:A.y-28},'start');
+    const icon=(k,p,cls)=>{ const a=typeof k==='function'?k():k==='flowerS'?flowerSVG():ART[k](k==='star'?'#FCB515':undefined); const e=el(`<div class="tk-ico ${cls}" style="left:${p.x}px;top:${p.y}px">${a}</div>`); box.append(e); return e };
+    icon(K.b,B,'end'); const mover=icon(K.m||K.a,A,'mover'); if(K.m) icon(K.a,{x:A.x,y:A.y-46},'start');
     const line=$('line.done',svg); const len=K.v?B.y-A.y:B.x-A.x;
     const setProg=p=>{ const q=K.v?{x:A.x,y:A.y+p}:{x:A.x+p,y:A.y}; line.setAttribute('x2',q.x); line.setAttribute('y2',q.y); mover.style.left=q.x+'px'; mover.style.top=q.y+'px'; return q };
     return {box,A,B,band,len,setProg} };
   const page=(T,p)=>{ const r=T.box.getBoundingClientRect(); return {x:r.left+p.x,y:r.top+p.y} };
   // what the line did: many more drops / cars / stars go the same straight way (something to watch, not a test)
-  const showFx=async(T,K)=>{ const r=T.box.getBoundingClientRect(), Wd=r.width, Ht=r.height, k=K.m||K.a, n=7;
+  const showFx=async(T,K)=>{ const r=T.box.getBoundingClientRect(), Wd=r.width, Ht=r.height, k=K.m||K.a, n=K.fxN||7;
     if(K.b==='flowerS') T.box.querySelector('.tk-ico.end')?.classList.add('grow');
     const say1=say(K.fx[0],K.fx[1]).catch(()=>{});
     for(let i=0;i<n;i++){ const off=(i+1)/(n+1); const a=k==='flowerS'?flowerSVG():ART[k](k==='star'?'#FCB515':undefined);
       const e=el(`<div class="tk-ico fxmove" style="left:${K.v?off*Wd:-30}px;top:${K.v?-30:off*Ht}px">${a}</div>`); T.box.append(e);
       e.animate([{translate:'0 0'},{translate:K.v?`0 ${Ht+60}px`:`${Wd+60}px 0`}],{duration:Math.max(1,1500*SPEED),delay:(i%4)*220*SPEED+Math.floor(i/4)*120*SPEED,easing:K.v?'ease-in':'linear',fill:'both'}).finished.then(()=>e.remove()).catch(()=>e.remove()) }
     tone(K.v?600:300,.3,'sine',.05,0,K.v?300:500); await say1; await sleep(400) };
-  await say('Let’s draw some lines!','Mình cùng vẽ đường thẳng nhé!');
-  await watchMe(); let K=TRACE_SKINS[0]; let T=setup(K); await say(K.en,K.vi);
-  await Hand.moveTo(page(T,T.A)); for(let i=0;i<=40;i++){ const q=T.setProg(T.len*i/40); Hand.set(page(T,q)); await sleep(32) } SFX.chime(); await say('All the way to the end!','Đến nơi rồi!'); Hand.hide(); await showFx(T,K);
-  await yourTurn(); if(S.tv) await say('Press and hold the big button to draw the line.','Con nhấn giữ nút to để vẽ đường nhé.',{gap:300}); else await say('Just move your finger along the line.','Con chỉ cần di ngón tay theo đường kẻ.',{gap:300});
+  await say(...(opt.intro||['Let’s draw some lines!','Mình cùng vẽ đường thẳng nhé!']));
+  const kidSkins=opt.skins||TRACE_SKINS.slice(1); let K,T;
+  const shown=await demoOr('trace',async()=>{ K=opt.demo||TRACE_SKINS[0]; T=setup(K); await say(K.en,K.vi);
+    await Hand.moveTo(page(T,T.A)); for(let i=0;i<=40;i++){ const q=T.setProg(T.len*i/40); Hand.set(page(T,q)); await sleep(32) } SFX.chime(); await say('All the way to the end!','Đến nơi rồi!'); Hand.hide(); await showFx(T,K) });
+  if(S.tv) await say('Press and hold the big button to draw the line.','Con nhấn giữ nút to để vẽ đường nhé.',{gap:300}); else if(shown||!RUN.mode) await say('Just move your finger along the line.','Con chỉ cần di ngón tay theo đường kẻ.',{gap:300});
   for(let r=0;r<rounds;r++){
-    K=TRACE_SKINS[(r+1)%TRACE_SKINS.length]; T=setup(K); await say(K.en,K.vi);
+    K=kidSkins[r%kidSkins.length]; T=setup(K); await say(K.en,K.vi);
     const t0=performance.now(); let hinted=false;
     await new Promise((res,rej)=>{ let started=false, prog=0, idle=null; const ab=()=>{ clearTimeout(idle); rej(ABORT) }; abortFns.add(ab);
       let nudges=0;
@@ -2555,7 +2584,7 @@ const EXTRA={};
 function addFormat(game,fmt,fn){ FMTS[game]=FMTS[game]||[]; if(!FMTS[game].includes(fmt)) FMTS[game].unshift(fmt); (EXTRA[game]=EXTRA[game]||{})[fmt]=fn }
 function wrapGame(game,baseFmt){ const base=GAMES[game]; FMTS[game]=FMTS[game]||[baseFmt]; GAMES[game]=(sk,rounds)=>{ const fmt=fmtFor(sk,FMTS[game]); return (EXTRA[game]&&EXTRA[game][fmt])?EXTRA[game][fmt](sk,rounds):base(sk,rounds) } }
 const choiceFmts=game=>(FMTS[game]||[]).filter(f=>!(EXTRA[game]&&EXTRA[game][f]));
-const kidTapDelay=()=>HASH==='auto'?3:450*SPEED;
+const kidTapDelay=()=>HASH==='auto'?3:HASH==='time'?700:450*SPEED;
 
 /** pick among visible options; returns true if right on the first tap */
 async function stepPick(sk,opts,correct,{ask,labels,onRight,record=true,concept}={}){
@@ -3011,10 +3040,13 @@ function feelScene(f,name,variant){
     surprised:`<div class="fs-prop box">${ART.present('#58B592')}</div><div class="fs-prop pop">${ART.star('#FCB515')}</div>`,
     proud:`<div class="fs-prop tower build"><i style="--c:#E8607E;--i:0"></i><i style="--c:#4A9BDB;--i:1"></i><i style="--c:#FCB515;--i:2"></i><i style="--c:#58B592;--i:3"></i></div><div class="fs-prop pile"><i style="--c:#58B592"></i><i style="--c:#FCB515"></i><i style="--c:#4A9BDB"></i><i style="--c:#E8607E"></i></div><div class="fs-prop shine">${ART.star('#FCB515')}</div>`};
   props.sadballoon=`<div class="fs-prop flyballoon">${ART.balloon('#E8607E')}</div>`;
+  props.mum=`<div class="fs-prop sgate">${GATE_SVG()}</div><div class="fs-adult stk">${adultSVG('mum','wave')}</div>`;   // Ben's mum waves and goes to work
+  props.cookies=`<div class="fs-giver adult stk">${adultSVG('teacher','hold')}<i class="gbox">${COOKIEBOX_SVG()}</i></div>`;   // the teacher brings Na a box of cookies
+  props.polly=`<div class="fs-prop cookie">${ART.cookie()}</div><div class="fs-parrot">${pollySVG(false)}</div>`;   // Polly swoops down and takes Lam's cookie
   { const giver=vArg||CAST.find(n=>n!==name); props.gift=`<div class="fs-giver stk">${kidSVG(giver,'happy')}<i class="gbox">${ART.present('#E8607E')}</i></div>`; }
   props.truck=`<div class="fs-prop tower"><i style="--c:#E8607E"></i><i style="--c:#4A9BDB"></i><i style="--c:#FCB515"></i></div><div class="fs-prop ball truck">${ART.car()}</div>`;
   props.bed=props.tired+`<div class="fs-prop fbed"><svg viewBox="0 0 120 70"><rect x="6" y="14" width="10" height="52" rx="3" fill="#9B6A45" ${OL}/><rect x="104" y="30" width="10" height="36" rx="3" fill="#9B6A45" ${OL}/><rect x="12" y="40" width="98" height="16" rx="4" fill="#C98A52" ${OL}/><rect x="14" y="30" width="94" height="12" rx="5" fill="#fff" ${OL}/><rect x="18" y="22" width="24" height="12" rx="6" fill="#FFE3C2" ${OL}/></svg></div><div class="fs-blanket"></div>`;
-  const sc=el(`<div class="fscene fade fs-${f}${variant?' fs-'+variant:''}${night?' night':''}${FS_PLACE?' fs-in-'+FS_PLACE:''}"><div class="fs-sky"></div><div class="fs-ground"></div>${props[variant]||props[f]}<div class="fs-kid stk">${kidSVG(name,'neutral')}<b>${name}</b></div></div>`);
+  const sc=el(`<div class="fscene fade fs-${f}${variant?' fs-'+variant:''}${night?' night':''}${FS_PLACE?' fs-in-'+FS_PLACE:''}"><div class="fs-sky"></div><div class="fs-ground"></div>${FS_PLACE==='school'?`<div class="fs-back">${BG.school()}</div>`:''}${props[variant]||props[f]}<div class="fs-kid stk">${kidSVG(name,'neutral')}<b>${name}</b></div></div>`);
   const faceG=()=>sc.querySelector('.fs-face');
   const setFace=k=>setKidFace(sc,name,k);
   let playing=false, hidden=false;
@@ -3039,7 +3071,9 @@ function feelScene(f,name,variant){
         kickNow(); B.onStep=st=>{ if(kicks<4&&st.vx>=0&&st.x>56&&st.y<16&&performance.now()-last>500) kickNow() } }
       await sleep(2900); sc.classList.add('dusk'); if(sc._ball) sc._ball.onStep=null; await sleep(1100) }
     else if(f==='proud') await buildTower();
-    else if(variant==='gift') await sleep(2400);
+    else if(variant==='gift'||variant==='cookies') await sleep(2400);
+    else if(variant==='mum') await sleep(2900);
+    else if(variant==='polly'){ setTimeout(()=>tone(1500,.12,'square',.05,0,1900),1100); await sleep(2600) }
     else await sleep(1300);
     if(hidden) setFace('q'); else setFace(f);
     sc.classList.add('after'); await sleep(900); playing=false };
@@ -3131,14 +3165,14 @@ addFormat('countTap','board',async(sk,rounds,opt={})=>{
 /* ---- school bus: one friend for each empty seat ---- */
 addFormat('countTap','bus',async(sk,rounds,opt={})=>{
   const {min,max}=sk.p; const ramp=[...Array(rounds)].map((_,i)=>Math.max(2,Math.round(min+(max-min)*(i+1)/rounds)));
-  await say('The school bus is here! Let’s help our friends get on.','Xe buýt đến rồi! Mình giúp các bạn lên xe nhé.');
+  await say(...(opt.intro||['The school bus is here! Let’s help our friends get on.','Xe buýt đến rồi! Mình giúp các bạn lên xe nhé.']));
   const HAIR=['#361D46','#9B6A45','#E9AE76','#4A3428','#C2562F'];
   const round=async(n,demo)=>{
     const T=n<=3?5:Math.min(n+2,10), taken=T-n;
     const c=card(); const scene=el(`<div class="busscene fade"><div class="busbody"><div class="seats">${[...Array(T)].map((_,i)=>i<taken?`<i class="seat full">${kidIconSVG(HAIR[(i+2)%HAIR.length],'#F2C8A0')}</i>`:'<i class="seat"></i>').join('')}</div><i class="wheel w1"></i><i class="wheel w2"></i></div><div class="stop"></div></div>`); c.append(scene);
     const seats=[...scene.querySelectorAll('.seat:not(.full)')], stop=$('.stop',scene);
-    const team=shuffle(TEAM_RIDERS.slice()); const kids=[...Array(n+2)].map((_,i)=>{ const b=el(`<button class="rider${i<team.length?' team':''}" aria-label="${i<team.length?team[i][0]:'bạn nhỏ'}">${i<team.length?team[i][1]():kidIconSVG(HAIR[i%HAIR.length],pick(['#FFE0C2','#F2C8A0','#E3B08A']))}</button>`); stop.append(b); return b });   // the team gets on first
-    await say('Put one friend in each empty seat!','Mỗi ghế trống, con đưa một bạn lên nhé!');
+    const team=demo&&opt.demoClass?[]:shuffle(TEAM_RIDERS.slice()); const kids=[...Array(n+2)].map((_,i)=>{ const b=el(`<button class="rider${i<team.length?' team':''}" aria-label="${i<team.length?team[i][0]:'bạn nhỏ'}">${i<team.length?team[i][1]():kidIconSVG(HAIR[i%HAIR.length],pick(['#FFE0C2','#F2C8A0','#E3B08A']))}</button>`); stop.append(b); return b });   // the team gets on first
+    await say(...(demo&&opt.demoLine?opt.demoLine:['Put one friend in each empty seat!','Mỗi ghế trống, con đưa một bạn lên nhé!']));
     let filled=0;
     const board=async(k,b)=>{ b.dataset.used=1; if(filled>=seats.length){ b.style.translate=''; b.classList.add('nope'); SFX.soft(); say('The bus is full!','Xe đầy rồi!',{gap:0,q:false}).catch(()=>{}); return }
       const s=seats[filled++]; const f=center(b), t=center(s); const a=b.animate([{transform:'none'},{transform:`translate(${(t.x-f.x)/2}px,${(t.y-f.y)/2-40}px) scale(.8)`},{transform:`translate(${t.x-f.x}px,${t.y-f.y}px) scale(.55)`}],{duration:Math.max(1,420*SPEED),easing:'ease-in-out'});
@@ -3155,7 +3189,7 @@ addFormat('countTap','bus',async(sk,rounds,opt={})=>{
     scene.classList.add('go'); SOUNDS.car.play(); await say(`${cap(W[n])} empty seats, ${W[n]} friends! Off we go!`,`${cap(VI_N[n])} ghế trống, ${VI_N[n]} bạn! Xe chạy thôi!`); await sleep(300);
     return r.ok };
   if(opt.single){ turn('kid'); const ok=await round(opt.n||ramp[ramp.length-1],false); if(ok) await praise(); turn(null); return }
-  await demoOr('bus',()=>round(2,true));
+  await demoOr('bus',async()=>{ await round(opt.demoN||2,true); if(opt.afterDemo) await say(...opt.afterDemo) });
   for(let r=0;r<rounds;r++){ const ok=await round(ramp[r],false); if(ok) await praise(); await sleep(300) }
   turn(null);
 });
@@ -4442,11 +4476,11 @@ async function kiteCount(sk){
   turn(null);
 }
 /* ---- reward game: peekaboo in the bushes. Friends pop up and hide again; tap the ones Chồi asks for ---- */
-async function peekGame(sk,list,{intro,skipFirst=false,noDemo=false}={}){
+async function peekGame(sk,list,{intro,skipFirst=false,noDemo=false,bg=null}={}){
   if(intro) await say(...intro);
   const need=4;
   const round=async(R,demo)=>{
-    const c=card(); const field=el(`<div class="peekfield fade">${BG.yard()}</div>`); c.append(field);
+    const c=card(); const field=el(`<div class="peekfield fade">${bg?bg():BG.yard()}</div>`); c.append(field);
     const xs=[12,31,50,69,88], holes=xs.map(x=>{ const h=el(`<div class="phole" style="left:${x}%"><button class="peeker"></button><div class="pbush">${ART.bush()}</div></div>`); field.append(h); return h });
     const others=(sk.p.set==='all'?FEELS:sk.p.set).filter(f=>f!==R.f);
     let alive=true, got=0, wrong=0, k=0; const busy=new Set();
@@ -4494,9 +4528,13 @@ async function balloonGame(){ const sk=SK['L2.W.FEEL.02']; const t=pick(['excite
   await popStream(SK['L2.M.NUM.04'],1,{noDemo:true,need:10,countAll:true,target:()=>1,make:{cls:'balloon plain',art:()=>ART.balloon(pick(PAL)),others:()=>[1]},
     ask:()=>say('Now pop ten balloons! Count with me!','Giờ chọc vỡ mười quả bóng nhé! Đếm cùng Chồi nào!'),label:()=>'',answer:()=>['You counted ten balloons!','Con đếm được mười quả bóng!']}) }
 /** the friend got good news: no question this time, just clap three times (each clap shows a hand) */
-async function clapFor(name){
-  const sk=SK['L2.W.FEEL.01']; const c=card(); const SC=feelScene('happy',name,'gift:'+(name==='Na'?'Lam':'Na')); c.append(SC.el); SC.el.dataset.noreplay='1'; const fr=SC.kid();
-  await SC.play(); await say(`Look! ${name==='Na'?'Lam':'Na'} brings ${name} a big present!`,`Nhìn kìa! ${name==='Na'?'Lam':'Na'} mang đến tặng ${name} một hộp quà to!`); await say(`${name} feels happy. Let’s clap for ${name}! Tap three times.`,`${name} đang vui. Mình vỗ tay chúc mừng ${name} nhé! Con chạm ba lần.`,{q:true});
+async function clapFor(name,opt={}){
+  const sk=SK['L2.W.FEEL.01']; const c=card(); const SC=feelScene('happy',name,opt.variant||'gift:'+(name==='Na'?'Lam':'Na')); c.append(SC.el); SC.el.dataset.noreplay='1'; const fr=SC.kid();
+  if(opt.lines){ await say(...opt.lines[0]); await SC.play(); for(const l of opt.lines.slice(1)) await say(...l);
+    await say(`${name} feels happy.`,`${name} thấy vui.`); await pollyEcho(...ECHO.happy);
+    await say(`Are you happy, ${name}?`,`${name} ơi, bạn vui à?`); { const yb=el(`<b class="yesbub stk">Yes!</b>`); fr.append(yb); fr.classList.add('nod'); await sleep(1100); yb.remove(); fr.classList.remove('nod') }
+    await say(`Let’s clap for ${name}! Tap three times.`,`Mình vỗ tay chúc mừng ${name} nhé! Con chạm ba lần.`,{q:true}) }
+  else { await SC.play(); await say(`Look! ${name==='Na'?'Lam':'Na'} brings ${name} a big present!`,`Nhìn kìa! ${name==='Na'?'Lam':'Na'} mang đến tặng ${name} một hộp quà to!`); await say(`${name} feels happy. Let’s clap for ${name}! Tap three times.`,`${name} đang vui. Mình vỗ tay chúc mừng ${name} nhé! Con chạm ba lần.`,{q:true}) }
   turn('kid'); const row=el(`<div class="claprow"></div>`); SC.el.append(row);
   await tapN(fr,3,k=>{ clapHit(); fr.classList.remove('beat'); void fr.offsetWidth; fr.classList.add('beat'); row.append(el(`<i class="clapi stk">${CLAP_SVG}<b>${k}</b></i>`)) });
   turn(null); SC.reveal('happy'); fr.classList.add('glad'); confetti(); await say(`${name} is so happy you’re here!`,`${name} vui lắm vì có con!`);
@@ -4555,13 +4593,14 @@ const EP={
 /** play one chapter; stopping in the middle resumes at the same page */
 async function runEpisode(sess,li){
   const steps=EP[li]; const from=S.partial&&S.partial.li===li?(S.partial.step||0):0;
-  RUN.lesson=li; FS_PLACE=({3:'home',5:'site',7:'beach'})[li]||''; RUN.plan={lesson:li,items:[],mission:null}; sess.plan={lesson:li,items:[],episode:true};
+  RUN.lesson=li; FS_PLACE=({0:'school',3:'home',5:'site',7:'beach'})[li]||''; RUN.mamFresh=Object.fromEntries((EP_MAM[li]||[]).map(id=>[id,!mamTaught(id)])); RUN.plan={lesson:li,items:[],mission:null}; sess.plan={lesson:li,items:[],episode:true};
   if(from>0) await say('Let’s keep going!','Mình chơi tiếp nhé!');
   for(let i=from;i<steps.length;i++){
     await limitGate();
     if(i>from){ $('#card').classList.add('out'); await sleep(320); $('#card').classList.remove('out') }
     RUN.step=i; RUN.mode=null; RUN.concept=null; await reteachPending(); await steps[i](); S.partial={li,step:i+1,done:[]}; sess.skills.push('ep'+li+'.'+i); save() }
   S.partial=null; S.done=S.done||{}; S.done[li]=(S.done[li]||0)+1; sess.completed=true; S.giftOwed=(S.giftOwed||0)+1;
+  (EP_MAM[li]||[]).forEach(markTaught);
   if(li===S.lesson&&S.lesson<LESSONS.length){ S.lesson++; S.hopFrom=li }
   save();
 }
@@ -5713,15 +5752,17 @@ async function roomShapes(){
    ========================================================= */
 async function comfortStep(H,{hint=false}={}){
   const c=card(); const SC=feelScene(H.f,H.name,H.scene); SC.el.dataset.noreplay='1'; c.append(SC.el); const fr=SC.kid();
-  await SC.play(); await say(H.en,H.vi); await say(`${H.name} feels ${H.f}.`,`${H.name} thấy ${VI_FEEL[H.f]}.`); if(ECHO[H.f]) await pollyEcho(...ECHO[H.f]);
+  if(H.lead) await say(...H.lead);
+  await SC.play(); await say(H.en,H.vi); await say(`${H.name} feels ${H.f}.`,`${H.name} thấy ${VI_FEEL[H.f]}.`); if(ECHO[H.f]&&!H.noEcho) await pollyEcho(...ECHO[H.f]);
   await say(`Are you ${H.f}, ${H.name}?`,`${H.name} ơi, bạn ${VI_FEEL[H.f]} à?`); { const yb=el(`<b class="yesbub stk">Yes.</b>`); fr.append(yb); fr.classList.add('nod'); await sleep(1100); yb.remove(); fr.classList.remove('nod') }
   await say(H.hen,H.hvi,{q:true}); turn('kid');
-  if(hint){ await Hand.moveTo(center(fr),500); await Hand.tap(); Hand.hide() }
+  if(hint&&wantDemo('hold')){ await Hand.moveTo(center(fr),500); await Hand.tap(); Hand.hide() }
   if(H.act==='hold'){ const fxs=helpFx(SC,H); await holdOn(fr,1600); await fxs.done() }
   else { const row=el(`<div class="claprow"></div>`); SC.el.append(row); await tapN(fr,3,k=>{ clapHit(); fr.classList.remove('beat'); void fr.offsetWidth; fr.classList.add('beat'); row.append(el(`<i class="clapi stk">${CLAP_SVG}<b>${k}</b></i>`)) }) }
   turn(null); SC.reveal(['happy','excited','proud','surprised'].includes(H.f)?H.f:'happy'); fr.classList.add('glad'); confetti();
   if(H.scene==='bed') await say(`Good night, ${H.name}! When we feel tired, we go to sleep.`,`Chúc ${H.name} ngủ ngon! Khi mệt, mình đi ngủ nhé.`);
-  else await say(['happy','excited','proud','surprised'].includes(H.f)?`${H.name} is so happy you’re here!`:`${H.name} feels better now. Thank you!`,['happy','excited','proud','surprised'].includes(H.f)?`${H.name} vui lắm vì có con!`:`${H.name} thấy dễ chịu hơn rồi. Cảm ơn con!`) }
+  else await say(['happy','excited','proud','surprised'].includes(H.f)?`${H.name} is so happy you’re here!`:`${H.name} feels better now. Thank you!`,['happy','excited','proud','surprised'].includes(H.f)?`${H.name} vui lắm vì có con!`:`${H.name} thấy dễ chịu hơn rồi. Cảm ơn con!`);
+  if(H.after) await H.after() }
 
 /* ---- Warm-up: tap the old map to open it ---- */
 async function mapIntro(){
@@ -5797,6 +5838,128 @@ async function treasureIntro(){
   await say('It’s an island! The X is where the treasure is. Let’s go to Treasure Island!','Đó là một hòn đảo! Dấu X là chỗ có kho báu. Mình đến Đảo Kho Báu nào!'); await nextPage(box) }
 
 /* =========================================================
+   LEVEL 0 · SCHOOL: "the morning we found the map" (spiral version, 19/10)
+   One morning, one place: the classroom → the school yard → the school bus → the garden behind the school.
+   Mầm ideas (taught like new once per school year): happy / sad / angry, counting things to five.
+   New (second idea): drawing lines down and across, which is also the child's first finger-drawing on the app.
+   ========================================================= */
+/** Mầm ideas of each level: taught like new the first time in a school year, only asked after that */
+const EP_MAM={0:['L2.W.FEEL.01','L2.M.NUM.02'],2:['L2.M.POS.01'],3:['L2.M.SORT.01'],4:['L2.M.NUM.03'],5:['L2.M.SHAPE.01']};
+const mamMode=id=>RUN&&RUN.mamFresh&&RUN.mamFresh[id]?'teach':'review';
+/** an activity in its mode (teach / practice / review); a review starts with the 3-second reminder */
+const inStep=(mode,fn,skill)=>inMode(mode,fn,mode==='review'?skill:null);
+/** after a Mầm idea's first look: the question in the same level is practice; in a replay of the level it is review */
+const askMode=id=>mamMode(id)==='teach'?'practice':'review';
+
+/** grown-ups (Ben's mum, the teacher): same sticker style as the team, a head taller */
+function adultSVG(kind='mum',arm='wave'){
+  const P=CK_PL;
+  const C=kind==='mum'?{skin:'#A26A40',hair:'#2B1622',dress:'#FCB515',trim:'#E5762A',shoe:'#E8607E'}:{skin:'#F7CBA8',hair:'#2B1622',dress:'#FF8FB1',trim:'#4A5FA8',shoe:'#3A1B49'};
+  const limb=(d,g='')=>`<g ${g}><path d="${d}" stroke="${P}" stroke-width="13" fill="none" stroke-linecap="round"/><path d="${d}" stroke="${C.skin}" stroke-width="7" fill="none" stroke-linecap="round"/></g>`;
+  const hair=kind==='mum'
+    ?[[33,34,10],[44,26,10],[57,26,10],[67,34,10],[71,46,8],[29,46,8]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${C.hair}" stroke="${P}" stroke-width="3.5"/>`).join('')
+    :`<circle cx="50" cy="20" r="10" fill="${C.hair}" stroke="${P}" stroke-width="3.5"/><path d="M29 48 Q28 24 50 24 Q72 24 71 48 Q64 35 50 35 Q36 35 29 48Z" fill="${C.hair}" stroke="${P}" stroke-width="3.5" stroke-linejoin="round"/>`;
+  const right=arm==='wave'?'M67 84 Q82 68 84 48':'M67 84 Q84 98 76 108';
+  return `<svg viewBox="0 0 100 200" aria-hidden="true">
+${limb('M40 150 V186')}${limb('M60 150 V186')}
+<ellipse cx="38" cy="190" rx="9" ry="5" fill="${C.shoe}" stroke="${P}" stroke-width="3"/><ellipse cx="62" cy="190" rx="9" ry="5" fill="${C.shoe}" stroke="${P}" stroke-width="3"/>
+${limb(arm==='hold'?'M33 84 Q22 100 30 108':'M33 84 Q22 110 24 132')}
+<path d="M34 78 Q50 72 66 78 L78 154 Q50 162 22 154 Z" fill="${C.dress}" stroke="${P}" stroke-width="4" stroke-linejoin="round"/>
+<path d="M27 140 Q50 147 73 140" stroke="${C.trim}" stroke-width="5" fill="none"/>
+${limb(right,'class="ad-arm"')}
+${kind==='mum'?`<path d="M14 120 q8 -2 12 10 l-4 14 h-16 l-2 -14 q2 -10 10 -10z" fill="#E8607E" stroke="${P}" stroke-width="3" stroke-linejoin="round"/>`:''}
+<rect x="45" y="62" width="10" height="16" fill="${C.skin}" stroke="${P}" stroke-width="3"/>
+<circle cx="50" cy="47" r="21" fill="${C.skin}" stroke="${P}" stroke-width="4"/>
+${hair}
+<ellipse cx="43" cy="50" rx="2.6" ry="3.2" fill="${P}"/><ellipse cx="57" cy="50" rx="2.6" ry="3.2" fill="${P}"/>
+<path d="M43 58 Q50 64 57 58" stroke="${P}" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+<circle cx="38" cy="56" r="3" fill="#FF8FA3" opacity=".6"/><circle cx="62" cy="56" r="3" fill="#FF8FA3" opacity=".6"/></svg>` }
+const GATE_SVG=()=>`<svg viewBox="0 0 100 120" aria-hidden="true"><rect x="6" y="26" width="12" height="92" rx="2" fill="#E8607E" stroke="${CK_PL}" stroke-width="3.5"/><rect x="82" y="26" width="12" height="92" rx="2" fill="#E8607E" stroke="${CK_PL}" stroke-width="3.5"/><path d="M8 30 Q50 -2 92 30" stroke="${CK_PL}" stroke-width="11" fill="none" stroke-linecap="round"/><path d="M8 30 Q50 -2 92 30" stroke="#FCB515" stroke-width="5.5" fill="none" stroke-linecap="round"/>${[26,36,46].map(x=>`<path d="M${x} 52 V116" stroke="${CK_PL}" stroke-width="3.5"/>`).join('')}<path d="M20 56 H50 M20 100 H50" stroke="${CK_PL}" stroke-width="3.5"/></svg>`;
+const COOKIEBOX_SVG=()=>`<svg viewBox="0 0 100 80" aria-hidden="true"><path d="M8 30 H92 V70 a6 6 0 0 1 -6 6 H14 a6 6 0 0 1 -6 -6Z" fill="#4A9BDB" stroke="${CK_PL}" stroke-width="4" stroke-linejoin="round"/><path d="M6 30 H94" stroke="${CK_PL}" stroke-width="4"/>${[[28,24],[50,18],[72,24]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="13" fill="#E3B57A" stroke="${CK_PL}" stroke-width="3.5"/><circle cx="${x-4}" cy="${y-3}" r="2.2" fill="#6B3E26"/><circle cx="${x+4}" cy="${y+3}" r="2.2" fill="#6B3E26"/>`).join('')}<path d="M8 46 H92" stroke="#fff" stroke-width="4" opacity=".7"/></svg>`;
+/** the note that falls out of the old map: our school, and an X in the garden behind it */
+const SCHOOLNOTE_SVG=()=>`<svg viewBox="0 0 100 80" aria-hidden="true"><path d="M6 8 L94 4 L92 74 L8 76Z" fill="#FFF7E2" stroke="${CK_PL}" stroke-width="3.5" stroke-linejoin="round"/><path d="M30 46 L44 34 L58 46Z M33 46 h22 v16 h-22z" fill="none" stroke="#4A9BDB" stroke-width="3" stroke-linejoin="round"/><path d="M44 62 v-8" stroke="#4A9BDB" stroke-width="3"/><path d="M50 60 q12 -2 18 -14 t14 -10" stroke="#E8484F" stroke-width="2.6" stroke-dasharray="4 3" fill="none"/><path d="M76 22 l10 10 M86 22 l-10 10" stroke="#E8484F" stroke-width="4" stroke-linecap="round"/><path d="M16 66 q6 -6 12 0 M64 68 q5 -5 10 0" stroke="#58B592" stroke-width="3" fill="none"/></svg>`;
+Object.assign(ART,{
+  schoolbus:()=>`<svg viewBox="0 0 100 96" aria-hidden="true"><rect x="4" y="40" width="90" height="42" rx="9" fill="#FCB515" ${OL}/>${[12,30,48].map(x=>`<rect x="${x}" y="48" width="14" height="14" rx="3" fill="#DDF1F8" stroke="${INK}" stroke-width="2.2"/>`).join('')}<rect x="68" y="48" width="18" height="28" rx="3" fill="#DDF1F8" stroke="${INK}" stroke-width="2.2"/><path d="M4 68 H66" stroke="${INK}" stroke-width="2.5"/>${[22,76].map(x=>`<circle cx="${x}" cy="84" r="9" fill="${INK}"/><circle cx="${x}" cy="84" r="3.5" fill="#D3E3DB"/>`).join('')}</svg>`,
+  slide:()=>`<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M20 30 V96 M40 30 V96" stroke="${INK}" stroke-width="5"/><path d="M20 30 H40" stroke="${INK}" stroke-width="5"/><path d="M24 46 H36 M24 62 H36 M24 78 H36" stroke="${INK}" stroke-width="4"/><path d="M40 30 Q60 34 70 62 Q78 88 96 94" stroke="${INK}" stroke-width="14" fill="none" stroke-linecap="round"/><path d="M40 30 Q60 34 70 62 Q78 88 96 94" stroke="#E8607E" stroke-width="8" fill="none" stroke-linecap="round"/></svg>`,
+  sandpit:()=>`<svg viewBox="0 0 100 60" aria-hidden="true"><path d="M6 54 Q20 18 50 16 Q80 18 94 54Z" fill="#F6D9A8" ${OL}/><path d="M60 22 l14 -16" stroke="${INK}" stroke-width="5" stroke-linecap="round"/><path d="M57 26 l-6 8 l8 4 l6 -8z" fill="#4A9BDB" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/></svg>`,
+  bushX:()=>`<svg viewBox="0 0 100 80" aria-hidden="true">${unwrap(ART.bush())}<path d="M40 18 l20 20 M60 18 l-20 20" stroke="#E8484F" stroke-width="7" stroke-linecap="round"/></svg>`,
+  benhead:()=>kidHead('Ben','happy'),
+});
+/* the classroom where the old map was hiding, and the garden behind the school */
+BG.classroom=()=>`<svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMax meet" overflow="visible"><rect x="-400" y="-300" width="1000" height="600" fill="#FFF1D2"/><rect x="-400" y="102" width="1000" height="300" fill="#E9AE76" ${SO}/>${[-80,-40,0,40,80,120,160,200,240].map(x=>`<path d="M${x} 102 L${x-30} 140" stroke="#C98A52" stroke-width="1.4"/>`).join('')}
+<g ${SO}><rect x="74" y="20" width="64" height="38" rx="3" fill="#fff"/><rect x="70" y="56" width="72" height="4" rx="2" fill="#C98A52"/></g><text x="86" y="40" font-family="Nunito,sans-serif" font-weight="900" font-size="13" fill="#E8607E">A</text><text x="100" y="40" font-family="Nunito,sans-serif" font-weight="900" font-size="13" fill="#4A9BDB">B</text><text x="114" y="40" font-family="Nunito,sans-serif" font-weight="900" font-size="13" fill="#58B592">C</text><text x="92" y="53" font-family="Nunito,sans-serif" font-weight="900" font-size="10" fill="#FCB515">1 2 3</text>
+<g ${SO}><rect x="152" y="22" width="34" height="30" rx="3" fill="#BFE8FA"/><path d="M169 22 V52 M152 37 H186"/></g><circle cx="106" cy="10" r="6" fill="#fff" ${SO}/><path d="M106 7 v3.5 h2.5" stroke="#3A1B49" stroke-width="1.2" fill="none"/>
+<g ${SO}><rect x="10" y="36" width="44" height="66" rx="2" fill="#B5733E"/><rect x="14" y="40" width="36" height="18" fill="#8A5530"/><rect x="14" y="62" width="36" height="18" fill="#8A5530"/><rect x="14" y="84" width="36" height="14" fill="#8A5530"/></g>${[[16,'#E8607E',16],[21,'#4A9BDB',15],[26,'#FCB515',16],[31,'#58B592',14],[16,'#9B6BD0',16,22],[21,'#FF8A3D',15,22],[27,'#4A9BDB',16,22],[38,'#E8607E',15,22],[43,'#58B592',16,22],[16,'#FCB515',12,44],[22,'#E8607E',12,44]].map(([x,c,h,dy=0])=>`<rect x="${x}" y="${58+dy-h}" width="4.4" height="${h}" fill="${c}" stroke="#3A1B49" stroke-width="1"/>`).join('')}
+<g ${SO}><rect x="84" y="84" width="48" height="5" rx="2" fill="#F6C98F"/><path d="M90 89 V102 M126 89 V102"/><rect x="70" y="88" width="12" height="4" rx="1.5" fill="#4A9BDB"/><path d="M72 92 V102 M80 92 V102"/><rect x="136" y="88" width="12" height="4" rx="1.5" fill="#E8607E"/><path d="M138 92 V102 M146 92 V102"/></g></svg>`;
+BG.sgarden=()=>`<svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMax meet" overflow="visible">${SKY('#7FD0F5')}${cloudG(18,10,.8)}${cloudG(132,6,.9)}${cloudG(-110,12,.8)}${cloudG(260,10,.8)}${sunG(176,22,8)}${HILLS('#8FE0A8','#4CC487')}
+${[-90,-70,-50,-30,-10,10,30,50,70,90,110,130,150,170,190,210,230,250,270].map(x=>`<rect x="${x-2}" y="84" width="4" height="14" rx="1.5" fill="#fff" ${SO}/>`).join('')}<path d="M-100 89 H300" stroke="#3A1B49" stroke-width="1.4"/>
+<path d="M-60 140 Q60 112 100 112 Q150 112 260 140Z" fill="#F6E3B4" ${SO}/>
+${[[24,110],[46,104],[150,104],[174,110],[-20,112],[220,112]].map(([x,y],i)=>`<g transform="translate(${x} ${y})">${[-8,0,8].map((d,j)=>`<path d="M${d} 0 v-6" stroke="#2A8060" stroke-width="1.4"/><circle cx="${d}" cy="-8" r="3" fill="${['#E8607E','#FCB515','#9B6BD0'][(i+j)%3]}" stroke="#3A1B49" stroke-width="1"/>`).join('')}</g>`).join('')}
+${treeG(12,98,1)}${treeG(190,98,1.1)}${treeG(-50,100,1.2)}${treeG(250,100,1.1)}</svg>`;
+
+/* ---- 1. the classroom: tap the old map on the bookshelf; a little note falls out ---- */
+async function mapFind(){
+  const box=sbox('mapintro classroom',BG.classroom()); const ch=el(`<div class="skid choi" style="left:82%;bottom:4%;width:14%"><div class="mascot" data-mood="happy">${mascotSVG()}</div></div>`); box.append(ch);
+  const m=el(`<button class="foldmap stk onshelf"><svg viewBox="0 0 100 70"><path d="M6 8 L34 4 L66 10 L94 4 L94 62 L66 68 L34 62 L6 66Z" fill="#E9C98A" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M34 4 V62 M66 10 V68" stroke="${INK}" stroke-width="2" opacity=".5"/><path d="M14 50 q14 -18 26 -6 t28 -14" stroke="#E8484F" stroke-width="3" stroke-dasharray="5 4" fill="none"/><path d="M76 22 l8 8 M84 22 l-8 8" stroke="#E8484F" stroke-width="3.5" stroke-linecap="round"/></svg></button>`); box.append(m);
+  await say('Hello! I’m Chồi. Look, there’s something old on the bookshelf.','Xin chào! Chồi đây. Nhìn kìa, trên tủ sách có một thứ gì cũ cũ.');
+  await say('It’s a map! Tap the map to open it!','Một tấm bản đồ! Con chạm vào bản đồ để mở ra nhé!',{q:true});
+  turn('kid'); m.dataset.ok='1'; await tapOnce([m]); turn(null); SFX.pop();
+  m.classList.add('open'); m.innerHTML=mapTornSVG(0); await sleep(700);
+  await say('Oh no, it’s torn. Eight pieces are missing!','Ôi, bản đồ bị rách rồi. Mất tám mảnh!');
+  const note=el(`<div class="mapnote stk">${SCHOOLNOTE_SVG()}</div>`); box.append(note); tone(700,.25,'sine',.06,0,1100); await sleep(900);
+  await say('A little note fell out! It shows our school, and an X in the garden behind it.','Có một tờ giấy nhỏ rơi ra! Giấy vẽ trường mình, và một dấu X ở khu vườn sau trường.');
+  await say('The first piece must be there! Let’s go and tell my friends.','Chắc mảnh đầu tiên ở đó! Mình đi kể cho các bạn nhé.'); await nextPage(box) }
+
+/* ---- 2. the school yard: meet the team (no microphone yet: the child is still getting to know the app) ---- */
+const meetTeam=()=>storyPage(scenePic('school',[{who:'Lam',x:22,b:4,h:52,name:1},{who:'Na',x:46,b:4,h:52,name:1},{who:'Ben',x:72,b:4,h:52,name:1},{polly:true,x:80,b:40,h:20,cls:'bob'}]),
+  [['Chồi runs out to the school yard. Here’s my team: Lam, Na and Ben!','Chồi chạy ra sân trường. Đây là đội của Chồi: Lam, Na và Ben!'],['And this is Polly, on Ben’s shoulder. Polly likes to say things again!','Còn đây là Polly, đậu trên vai Ben. Polly thích nói lại lời người khác!']],{after:()=>pollyEcho('Hello! Hello!','Xin chào! Xin chào!')});
+
+/* ---- 3. three little things in the yard, one after another: Ben's mum leaves → the teacher's cookies → Polly takes Lam's cookie ---- */
+const EP0_SAD={f:'sad',name:'Ben',scene:'mum',lead:['Oh, look. Ben’s mum is going to work.','Ơ, nhìn kìa. Mẹ Ben đi làm rồi.'],en:'Ben’s mum says bye-bye.',vi:'Mẹ Ben chào tạm biệt.',act:'hold',hen:'Let’s give Ben a big hug. Press and hold Ben!',hvi:'Mình ôm Ben thật chặt nhé. Con nhấn giữ vào Ben!'};
+const EP0_ANGRY={f:'angry',name:'Lam',scene:'polly',noEcho:true,lead:['Na shares her cookies with everyone. Lam has one too.','Na chia bánh cho mọi người. Lam cũng có một cái.'],en:'Oh no! Polly took Lam’s cookie!',vi:'Ôi! Polly giật mất bánh của Lam rồi!',act:'hold',hen:'Let’s breathe slowly with Lam. Press and hold to breathe in.',hvi:'Mình cùng Lam hít thở thật chậm nhé. Con nhấn giữ để hít vào.',
+  after:async()=>{ await say('Polly is sorry. Polly gives the cookie back.','Polly biết lỗi rồi. Polly trả lại bánh cho Lam.'); await pollyEcho('Sorry! Sorry!','Xin lỗi! Xin lỗi!') }};
+const EP0_HAPPY={variant:'cookies',lines:[['Look! The teacher has a present for Na, because Na helped a friend.','Nhìn kìa! Cô giáo tặng quà cho Na, vì Na đã giúp bạn.'],['It’s a box of cookies!','Đó là một hộp bánh quy!']]};
+
+/* ---- 5 and 7: lines to draw, all in this morning's story ---- */
+const EP0_TRACE_DEMO={v:0,a:'schoolbus',b:'school',en:'The bus needs a road. Watch me: I start at the green dot, and go all the way.',vi:'Xe buýt cần một con đường. Xem Chồi nhé: bắt đầu ở chấm xanh, đi một mạch đến cuối.',fx:['Vroom! The bus drives straight along the road.','Brừm! Xe buýt chạy thẳng trên đường.'],fxN:1};
+const EP0_TRACE1=[{v:0,a:'schoolbus',b:'bush',en:'Now draw the road to the garden, for the bus.','vi':'Giờ con vẽ đường cho xe buýt ra khu vườn nhé.',fx:['Vroom! The bus is at the garden!','Brừm! Xe buýt tới khu vườn rồi!'],fxN:1},
+  {v:1,a:'can',b:'flowerS',m:'drop',en:'The gardener is watering the flowers. Help the water fall down.','vi':'Bác làm vườn đang tưới hoa. Con giúp nước rơi xuống nhé.',fx:['Look! The water falls straight down. The flowers grow!','Nhìn kìa! Nước rơi thẳng xuống. Hoa lớn lên!']}];
+const EP0_TRACE2=[{v:1,a:'slide',b:'sandpit',m:'benhead',en:'Ben goes down the slide. Draw a line down for Ben!','vi':'Ben trượt cầu trượt. Con vẽ đường xuống cho Ben nhé!',fx:['Whee! Ben slides straight down.','Vèo! Ben trượt thẳng xuống.'],fxN:1},
+  {v:0,a:'benhead',b:'bushX',en:'Now Ben walks over the little bridge to the bush with the X. Draw a line across!','vi':'Giờ Ben đi qua cây cầu nhỏ tới bụi cây có dấu X. Con vẽ đường ngang nhé!',fx:['Ben is at the bush with the X!','Ben tới bụi cây có dấu X rồi!'],fxN:1}];
+
+/* ---- 6. the flags in the garden ---- */
+async function gardenFlags(){
+  const pic=scenePic('sgarden',[{who:'Ben',f:'happy',x:12,b:4,h:50}]);
+  await countInPic(SK['L2.M.NUM.02'],{pic,n:5,items:[[32,6,20,FLAG('#E8607E')],[46,6,20,FLAG('#4A9BDB')],[60,6,20,FLAG('#FCB515')],[74,6,20,FLAG('#58B592')],[88,6,20,FLAG('#9B6BD0')]],
+    ask:['We’re in the garden! Ben’s map says: follow the flags. Let’s count them. Tap each flag!','Mình tới khu vườn rồi! Bản đồ của Ben ghi: đi theo những lá cờ. Mình đếm nhé. Con chạm vào từng lá cờ!'],answer:['Five flags! This way!','Năm lá cờ! Đi lối này!']});
+  const ben=pic.querySelector('.actor[data-who="Ben"]'); if(ben){ ben.classList.add('walkon'); await say('Ben follows the flags, to the slide and the little bridge.','Ben đi theo những lá cờ, tới cầu trượt và cây cầu nhỏ.'); await sleep(1600) } }
+
+/* ---- 8. the team hides in the bushes and makes faces: find the friend who calls you ---- */
+function bushFaces(sk,rounds){ const st={};
+  return choiceActivity(sk,rounds,['Lam, Na and Ben hide in the bushes. They are making faces!','Lam, Na và Ben trốn trong bụi cây. Các bạn đang làm mặt!'],r=>{
+    const feels=shuffle(['happy','sad','angry']), who=shuffle(CAST.slice()); const k=nextDifferent(st.k,()=>rand(3)); st.k=k; const n=who[k], f=feels[k], I=CAST_INFO;
+    const c=card(); const [row,opts]=optRow(who.map((w,i)=>`<span class="bushhead"><span class="bh-kid">${kidHead(w,feels[i])}</span><span class="bh-bush">${ART.bush()}</span></span>`),'bushrow'); c.append(row);
+    return {opts,correct:k,concept:'feel:'+f,labels:who.map((w,i)=>[`that’s ${w}. ${I[w].he} looks ${feels[i]}`,`đó là ${w}, bạn ấy đang ${VI_FEEL[feels[i]]}`]),
+      ask:()=>say(`${n} says: Find me! I look ${f}!`,`${n} nói: Tìm ${n} đi! ${n} đang ${VI_FEEL[f]}!`),answer:[`There’s ${n}! ${n} looks ${f}.`,`${n} đây rồi! ${n} đang ${VI_FEEL[f]}.`]} }) }
+
+/* ---- after the piece: the child's first time on the microphone. Polly says it back in a parrot voice. No microphone: we say it together ---- */
+async function playVoiceAs(b,rate=1.3){ try{ const a=ac(); if(!a) throw 0; const data=await b.arrayBuffer();
+    const buf=await new Promise((res,rej)=>{ try{ const p=a.decodeAudioData(data,res,rej); if(p&&p.then) p.then(res,rej) }catch(e){ rej(e) } });
+    await new Promise(res=>{ const s=a.createBufferSource(), g=a.createGain(); g.gain.value=1.8; s.buffer=buf; s.playbackRate.value=rate; s.connect(g).connect(a.destination); s.onended=res; s.start(); setTimeout(res,buf.duration/rate*1000+600) }) }
+  catch(e){ await playBlobEl(b) } }
+async function pollyHooray(){
+  const c=card(); const pic=scenePic('sgarden',[{who:'Lam',f:'excited',x:20,b:4,h:46},{who:'Na',f:'happy',x:40,b:4,h:46},{who:'Ben',f:'happy',x:60,b:4,h:46},{polly:true,x:80,b:38,h:22,cls:'bob'}]);
+  const pg=el(`<div class="spage"></div>`); pg.append(pic); c.append(pg);
+  await say('We found the first piece! Polly wants to cheer with you.','Mình tìm được mảnh đầu tiên! Polly muốn reo hò cùng con.');
+  const mic=el(`<button class="mic inpic" aria-label="Micro">${ICON.mic}</button>`); pg.append(mic);
+  await say('Tap the microphone, and say: Hooray!','Con chạm vào micro rồi nói: Hoan hô!',{q:true});
+  turn('kid'); const T=await micTurn(mic,2600); turn(null);
+  const voice=T.r&&T.r.blob&&T.r.voiced?T.r.blob:null;
+  if(voice){ const pp=el(`<div class="polly-pop stk"><div class="pbub">♪ ♪</div>${pollySVG(true)}</div>`); c.append(pp); await playVoiceAs(voice,1.32); pp.classList.add('bye'); setTimeout(()=>pp.remove(),500); await say('That’s you! Polly says it just like you.','Đó là con đấy! Polly nói giống hệt con.') }
+  else await say('Let’s say it together: Hooray!','Mình cùng nói nhé: Hoan hô!');
+  await pollyEcho('Hooray! Hooray!','Hoan hô! Hoan hô!'); mic.remove() }
+
+/* =========================================================
    THE WHOLE CHAPTER, IN ORDER. Each level: a first page to touch and learn the new idea → the story with things to do
    → the questions (pick one) near the end → the level's game → the map piece. One place, one story, step by step.
    ========================================================= */
@@ -5805,24 +5968,22 @@ const BED_BEN={f:'tired',name:'Ben',scene:'bed',en:'It’s late. Ben played hide
 const story=(bg,actors,lines)=>storyPage(scenePic(bg,actors),lines);
 Object.assign(EP,{
   0:[
-    async()=>mapIntro(),
-    async()=>storyPage(scenePic('school',[{who:'Lam',x:24,b:4,h:52,name:1},{who:'Na',x:50,b:4,h:52,name:1},{who:'Ben',x:76,b:4,h:52,name:1},{polly:true,x:90,b:44,h:24,cls:'bob'}]),
-      [['Here’s my team: Lam, Na and Ben!','Đây là đội của Chồi: Lam, Na và Ben!'],['And this is Polly. Polly likes to say things again!','Còn đây là Polly. Polly thích nói lại lời người khác!']],{after:()=>pollyEcho('Hello! Hello!','Xin chào! Xin chào!')}),
-    async()=>story('school',[{who:'Lam',f:'neutral',x:26,b:4,h:50},{who:'Na',f:'neutral',x:50,b:4,h:50},{who:'Ben',f:'neutral',x:74,b:4,h:50}],[['Before we go, let’s see how everyone feels today.','Trước khi đi, mình xem hôm nay các bạn cảm thấy thế nào nhé.']]),
-    async()=>clapFor('Na'),
-    async()=>comfortStep(HELP_EP0[0],{hint:true}),
-    async()=>comfortStep(HELP_EP0[1]),
-    async()=>story('school',[{who:'Lam',f:'happy',x:24,b:4,h:50},{who:'Na',f:'happy',x:50,b:4,h:50},{who:'Ben',f:'happy',x:76,b:4,h:50}],[['Everyone feels better now. Let’s go and find the first map piece!','Giờ mọi người thấy vui rồi. Mình đi tìm mảnh bản đồ đầu tiên nào!']]),
-    async()=>EXTRA.countTap.bus({...SK['L2.M.NUM.02'],p:{min:2,max:4}},2),
-    async()=>{ const pic=scenePic('yard',[{who:'Ben',f:'happy',x:12,b:4,h:50}]);
-      await countInPic(SK['L2.M.NUM.02'],{pic,n:5,items:[[32,6,20,FLAG('#E8607E')],[46,6,20,FLAG('#4A9BDB')],[60,6,20,FLAG('#FCB515')],[74,6,20,FLAG('#58B592')],[88,6,20,FLAG('#9B6BD0')]],
-        ask:['The bus stops at the park. Ben’s map says: count the flags to find the way. Tap each flag!','Xe buýt dừng ở công viên. Bản đồ của Ben ghi: đếm lá cờ để tìm đường. Con chạm vào từng lá cờ nhé!'],answer:['Five flags! This way!','Năm lá cờ! Đi lối này!']});
-      const ben=pic.querySelector('.actor[data-who="Ben"]'); if(ben){ ben.classList.add('walkon'); await say('Off we go! Ben follows the flags.','Đi thôi! Ben đi theo những lá cờ.'); await sleep(1600) } },
-    async()=>story('yard',[{who:'Na',f:'happy',x:26,b:6,h:50},{who:'Lam',f:'happy',x:74,b:6,h:50},{art:ART.bush(),x:50,b:2,h:22}],[['The flags lead Ben to the bushes. Friends are hiding there!','Lá cờ dẫn Ben tới bụi cây. Các bạn đang trốn ở đó!'],['First, let’s look at some faces. How do they feel?','Trước tiên, mình nhìn các khuôn mặt nhé. Các bạn cảm thấy thế nào?']]),
-    async()=>playFmt('findFeeling','tap','L2.W.FEEL.01',2),
-    async()=>peekGame(SK['L2.W.FEEL.01'],[{f:'happy',ask:['Tap the friends who look happy! Find four!','Chạm vào các bạn đang vui nhé! Tìm bốn bạn!'],done:['Four happy friends!','Bốn bạn đang vui!']},{f:'angry',ask:['Now tap the friends who look angry!','Giờ chạm vào các bạn đang giận nhé!'],done:['Four angry friends! Grrr!','Bốn bạn đang giận! Grừ!']}],{intro:['Let’s play peekaboo! Friends pop up from the bushes. Be quick!','Mình chơi ú òa nhé! Các bạn sẽ ló ra từ bụi cây. Nhanh tay nhé!']}),
-    async()=>pieceFrom(1,'yard',ART.bush(),['Look! One bush is shaking. Something is inside! Tap the bush!','Nhìn kìa! Một bụi cây đang rung. Có gì ở trong! Con chạm vào bụi cây nhé!'],[{who:'Na',f:'surprised',x:16,b:6,h:46},{who:'Lam',f:'excited',x:84,b:6,h:46}]),
-    async()=>findMapPiece(1,[['The first map piece was in the bush!','Mảnh bản đồ đầu tiên ở trong bụi cây!'],['Next time, we’ll look for the next piece at the park. See you!','Lần sau mình tìm mảnh tiếp theo ở công viên nhé. Hẹn gặp lại!']]),
+    async()=>mapFind(),
+    async()=>meetTeam(),
+    async()=>inStep(mamMode('L2.W.FEEL.01'),()=>comfortStep(EP0_SAD,{hint:true})),
+    async()=>inStep(mamMode('L2.W.FEEL.01'),()=>clapFor('Na',EP0_HAPPY)),
+    async()=>inStep(mamMode('L2.W.FEEL.01'),()=>comfortStep(EP0_ANGRY)),
+    async()=>inStep(mamMode('L2.M.NUM.02'),()=>EXTRA.countTap.bus({...SK['L2.M.NUM.02'],p:{min:4,max:4}},1,{demoN:3,demoClass:true,
+      intro:['Everyone feels better. Now, let’s find the X! The garden is far behind the school. Here comes the school bus!','Mọi người vui trở lại rồi. Giờ mình đi tìm dấu X nào! Khu vườn ở xa phía sau trường. Xe buýt của trường đến rồi!'],
+      demoLine:['First, three children from the big class get on.','Trước tiên, ba bạn lớp lớn lên xe.'],afterDemo:['That bus is full. Here comes our bus!','Xe đó đầy rồi. Xe của đội mình đến kìa!']}),'L2.M.NUM.02'),
+    async()=>teachIt(()=>GAMES.trace(SK['L2.E.WR.02'],2,{demo:EP0_TRACE_DEMO,skins:EP0_TRACE1,intro:['Let’s draw some lines for our trip!','Mình cùng vẽ đường cho chuyến đi nhé!']})),
+    async()=>inStep(askMode('L2.M.NUM.02'),()=>gardenFlags(),'L2.M.NUM.02'),
+    async()=>practise(()=>GAMES.trace(SK['L2.E.WR.02'],2,{skins:EP0_TRACE2,intro:['There’s a slide and a little bridge on the way.','Trên đường đi có cầu trượt và một cây cầu nhỏ.']})),
+    async()=>inStep(askMode('L2.W.FEEL.01'),()=>bushFaces(SK['L2.W.FEEL.01'],2),'L2.W.FEEL.01'),
+    async()=>inStep(askMode('L2.W.FEEL.01'),()=>peekGame(SK['L2.W.FEEL.01'],[{f:'happy',ask:['Tap the friends who look happy! Find four!','Chạm vào các bạn đang vui nhé! Tìm bốn bạn!'],done:['Four happy friends!','Bốn bạn đang vui!']},{f:'angry',ask:['Now tap the friends who look angry!','Giờ chạm vào các bạn đang giận nhé!'],done:['Four angry friends! Grrr!','Bốn bạn đang giận! Grừ!']}],{intro:['Now let’s play peekaboo! Friends pop up from the bushes. Be quick!','Giờ mình chơi ú òa nhé! Các bạn sẽ ló ra từ bụi cây. Nhanh tay nhé!'],bg:BG.sgarden})),
+    async()=>pieceFrom(1,'sgarden',ART.bushX(),['Look! The bush with the X is shaking. Something is inside! Tap the bush!','Nhìn kìa! Bụi cây có dấu X đang rung. Có gì ở trong! Con chạm vào bụi cây nhé!'],[{who:'Na',f:'surprised',x:16,b:6,h:46},{who:'Lam',f:'excited',x:84,b:6,h:46}]),
+    async()=>pollyHooray(),
+    async()=>findMapPiece(1,[['The first map piece was in the bush with the X!','Mảnh bản đồ đầu tiên ở trong bụi cây có dấu X!'],['Next time, let’s look for the next piece at the park!','Lần sau mình tìm mảnh tiếp theo ở công viên nhé!']]),
   ],
   1:[
     async()=>parkIntro(),
@@ -6146,7 +6307,7 @@ window.__choi={get state(){return S},SKILLS,status,planSession,
   demo(id){ RUN={aborted:false,start:Date.now()}; renderPlay(); const sk=SK[id]; ptip(sk); return GAMES[sk.game](sk,ROUNDS).catch(e=>{ if(e!==ABORT) console.error(e) }) },
   mission(id){ RUN={aborted:false,start:Date.now()}; renderPlay(); return giveMission(SK[id]).catch(()=>{}) }};
 if(S.tv){ S.tv=false; save() } document.documentElement.classList.remove('tv');
-if(!FAST&&HASH!=='dev') setTimeout(()=>voiceInit(S.lang==='vi'?'vi':'en'),200);   // load the recorded voice early
+if(!FAST&&HASH!=='dev'&&HASH!=='time') setTimeout(()=>voiceInit(S.lang==='vi'?'vi':'en'),200);   // load the recorded voice early
 if(HASH==='new'){ try{localStorage.removeItem(KEY)}catch(e){} clearClips(); S=fresh(); renderSetup() } else if(HASH==='dev'){ if(!S.child){ S.child={name:'Bin',birthYear:new Date().getFullYear()-5}; save() } renderDev() } else if(!S.child) renderSetup(); else { renderHome(); if(S.acct){ syncPull().then(ch=>{ if(ch&&!RUN&&$('#pathmap')) renderHome() }); if(S.acct.pending) syncSoon(1500) } }
 </script>
 
