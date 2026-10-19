@@ -1,0 +1,16763 @@
+[
+{
+"lang": "en",
+"key": "Hello, {N}!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chào {N}!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Let’s play!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng chơi nào!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hello! I’m Chồi. Look what I found: an old map! Tap the map to open it!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Xin chào! Chồi đây. Nhìn này, Chồi tìm thấy một tấm bản đồ cũ! Con chạm vào bản đồ để mở ra nhé!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Oh no, it’s torn. Eight pieces are missing!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Ôi, bản đồ bị rách rồi. Mất tám mảnh!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Let’s find them with my explorer friends!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng các bạn thám hiểm đi tìm nhé!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Here’s my team: Lam, Na and Ben!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Đây là đội của Chồi: Lam, Na và Ben!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "And this is Polly. Polly likes to say things again!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Còn đây là Polly. Polly thích nói lại lời người khác!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Before we go, let’s see how everyone feels today.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Trước khi đi, mình xem hôm nay các bạn cảm thấy thế nào nhé.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Look! Lam brings Na a big present!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Lam mang đến tặng Na một hộp quà to!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Na feels happy. Let’s clap for Na! Tap three times.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Na đang vui. Mình vỗ tay chúc mừng Na nhé! Con chạm ba lần.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Na is so happy you’re here!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Na vui lắm vì có con!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Oh no! Ben’s balloon flew away.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Ôi! Bóng bay của Ben bay mất rồi.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Ben feels sad.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Ben thấy buồn.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Are you sad, Ben?",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Ben ơi, bạn buồn à?",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Let’s give Ben a big hug. Press and hold Ben!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Mình ôm Ben thật chặt nhé. Con nhấn giữ vào bạn Ben!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Ben feels better now. Thank you!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Ben thấy dễ chịu hơn rồi. Cảm ơn con!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Oh no! The ball knocked down Lam’s tower.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Ôi! Quả bóng làm đổ tháp của Lam.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Lam feels angry.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Lam thấy giận.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Are you angry, Lam?",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Lam ơi, bạn giận à?",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Let’s breathe slowly with Lam. Press and hold to breathe in.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng Lam hít thở thật chậm nhé. Con nhấn giữ để hít vào.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Lam feels better now. Thank you!",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "vi",
+"key": "Lam thấy dễ chịu hơn rồi. Cảm ơn con!",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "en",
+"key": "Everyone feels better now. Let’s go and find the first map piece!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Giờ mọi người thấy vui rồi. Mình đi tìm mảnh bản đồ đầu tiên nào!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "The school bus is here! Let’s help our friends get on.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Xe buýt đến rồi! Mình giúp các bạn lên xe nhé.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Watch me first!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Xem Chồi làm trước nhé!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Put one friend in each empty seat!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Mỗi ghế trống, con đưa một bạn lên nhé!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "One.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Một.",
+"g": "c",
+"lv": [
+0,
+2,
+7
+]
+},
+{
+"lang": "en",
+"key": "Two.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Hai.",
+"g": "c",
+"lv": [
+0,
+2,
+7
+]
+},
+{
+"lang": "en",
+"key": "Two empty seats, two friends. Now every seat is full!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Hai chỗ trống, hai bạn. Kín chỗ rồi!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Now it’s your turn!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Giờ đến lượt con!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Drag a friend onto the bus.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Con kéo từng bạn lên xe nhé.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Three.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ba.",
+"g": "c",
+"lv": [
+0,
+2,
+7
+]
+},
+{
+"lang": "en",
+"key": "Three empty seats, three friends! Off we go!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Ba ghế trống, ba bạn! Xe chạy thôi!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "You found it!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Con tìm ra rồi!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Four.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Bốn.",
+"g": "c",
+"lv": [
+0,
+7
+]
+},
+{
+"lang": "en",
+"key": "Four empty seats, four friends! Off we go!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Bốn ghế trống, bốn bạn! Xe chạy thôi!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Look, you got it!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa, con làm được rồi!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The bus stops at the park. Ben’s map says: count the flags to find the way. Tap each flag!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Xe buýt dừng ở công viên. Bản đồ của Ben ghi: đếm lá cờ để tìm đường. Con chạm vào từng lá cờ nhé!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "một",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+7
+]
+},
+{
+"lang": "vi",
+"key": "hai",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+7
+]
+},
+{
+"lang": "vi",
+"key": "ba",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+7
+]
+},
+{
+"lang": "vi",
+"key": "bốn",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+7
+]
+},
+{
+"lang": "en",
+"key": "Five.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+7
+]
+},
+{
+"lang": "vi",
+"key": "năm",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+7
+]
+},
+{
+"lang": "en",
+"key": "Five flags! This way!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Năm lá cờ! Đi lối này!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Off we go! Ben follows the flags.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Đi thôi! Ben đi theo những lá cờ.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "The flags lead Ben to the bushes. Friends are hiding there!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Lá cờ dẫn Ben tới bụi cây. Các bạn đang trốn ở đó!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "First, let’s look at some faces. How do they feel?",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Trước tiên, mình nhìn các khuôn mặt nhé. Các bạn cảm thấy thế nào?",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Let’s look at some faces!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng xem các khuôn mặt nhé!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Who looks angry?",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "vi",
+"key": "Bạn nào đang giận?",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "en",
+"key": "This one looks angry!",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "vi",
+"key": "Bạn này đang giận!",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "en",
+"key": "Who looks happy?",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "vi",
+"key": "Bạn nào đang vui?",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "en",
+"key": "That’s it!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi đấy!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "This one looks happy!",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "vi",
+"key": "Bạn này đang vui!",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "en",
+"key": "Who looks sad?",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "vi",
+"key": "Bạn nào đang buồn?",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "en",
+"key": "This one looks sad!",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "vi",
+"key": "Bạn này đang buồn!",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "en",
+"key": "Let’s play peekaboo! Friends pop up from the bushes. Be quick!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Mình chơi ú òa nhé! Các bạn sẽ ló ra từ bụi cây. Nhanh tay nhé!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Tap the friends who look happy! Find four!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Chạm vào các bạn đang vui nhé! Tìm bốn bạn!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "One!",
+"g": "c",
+"lv": [
+0,
+1,
+3,
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Một!",
+"g": "c",
+"lv": [
+0,
+1,
+3,
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "Two!",
+"g": "c",
+"lv": [
+0,
+1,
+3,
+4,
+5,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Hai!",
+"g": "c",
+"lv": [
+0,
+1,
+3,
+4,
+5,
+7
+]
+},
+{
+"lang": "en",
+"key": "Three!",
+"g": "c",
+"lv": [
+0,
+1,
+3,
+4,
+5,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ba!",
+"g": "c",
+"lv": [
+0,
+1,
+3,
+4,
+5,
+7
+]
+},
+{
+"lang": "en",
+"key": "Four!",
+"g": "c",
+"lv": [
+0,
+1,
+3,
+4,
+5
+]
+},
+{
+"lang": "vi",
+"key": "Bốn!",
+"g": "c",
+"lv": [
+0,
+1,
+3,
+4,
+5
+]
+},
+{
+"lang": "en",
+"key": "Four happy friends!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Bốn bạn đang vui!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "You worked it out!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Con tự nghĩ ra rồi!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Now tap the friends who look angry!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Giờ chạm vào các bạn đang giận nhé!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Four angry friends! Grrr!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Bốn bạn đang giận! Grừ!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "You did it!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Con làm được rồi!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Look! One bush is shaking. Something is inside! Tap the bush!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Một bụi cây đang rung. Có gì ở trong! Con chạm vào bụi cây nhé!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "The first map piece was in the bush!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Mảnh bản đồ đầu tiên ở trong bụi cây!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Look! This piece shows the school.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Mảnh này vẽ trường học.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "One piece is on the map. Seven more to go, then we’ll see where the treasure is!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Một mảnh đã vào bản đồ. Còn bảy mảnh nữa là mình biết kho báu ở đâu!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Next time, we’ll look for the next piece at the park. See you!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Lần sau mình tìm mảnh tiếp theo ở công viên nhé. Hẹn gặp lại!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "This is your city! The first place is a zoo.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đây là thành phố của con! Chỗ đầu tiên là sở thú.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Pick an animal for your zoo!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Con chọn một bạn thú cho sở thú nhé!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Where should the giraffe live? Tap a spot!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Bạn hươu cao cổ sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hello, giraffe!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chào bạn hươu cao cổ!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The giraffe is hungry! What does the giraffe eat?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Bạn hươu cao cổ đói rồi! Bạn hươu cao cổ ăn gì nhỉ?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Yum! Giraffes love leaves.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hươu cao cổ thích lá cây.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Look at your zoo!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn sở thú của con này!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Great job, {N}!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Con giỏi lắm, {N}!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The map says the next piece is at the park. It’s so windy today!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Bản đồ chỉ: mảnh tiếp theo ở công viên. Hôm nay gió to quá!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Tap Lam’s kite to fly it!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Con chạm vào diều của Lam để thả nhé!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Whoosh! Up, up, up! Look, lots of kites are flying now!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Vù! Lên cao, cao nữa! Nhìn kìa, nhiều diều bay lên rồi!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Let’s fly our kites! Count with me, all the way to ten.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng thả diều nhé! Đếm cùng Chồi đến mười nào.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Six.",
+"g": "c",
+"lv": [
+1,
+2
+]
+},
+{
+"lang": "vi",
+"key": "sáu",
+"g": "c",
+"lv": [
+1,
+2
+]
+},
+{
+"lang": "en",
+"key": "Seven.",
+"g": "c",
+"lv": [
+1,
+2
+]
+},
+{
+"lang": "vi",
+"key": "bảy",
+"g": "c",
+"lv": [
+1,
+2
+]
+},
+{
+"lang": "en",
+"key": "Eight.",
+"g": "c",
+"lv": [
+1,
+2
+]
+},
+{
+"lang": "vi",
+"key": "tám",
+"g": "c",
+"lv": [
+1,
+2
+]
+},
+{
+"lang": "en",
+"key": "Nine.",
+"g": "c",
+"lv": [
+1,
+2
+]
+},
+{
+"lang": "vi",
+"key": "chín",
+"g": "c",
+"lv": [
+1,
+2
+]
+},
+{
+"lang": "en",
+"key": "Ten.",
+"g": "c",
+"lv": [
+1,
+2
+]
+},
+{
+"lang": "vi",
+"key": "mười",
+"g": "c",
+"lv": [
+1,
+2
+]
+},
+{
+"lang": "en",
+"key": "Ten kites in the sky!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Mười con diều trên trời!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Your turn! Tap the microphone, then count the kites.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Đến lượt con! Con chạm vào micro rồi đếm diều nhé.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Lam’s kite is flying high! He feels excited.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Diều của Lam bay cao quá! Bạn ấy thấy háo hức.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Ben found a box in the park. Pop! Something jumped out! Ben feels surprised.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Ben tìm thấy một cái hộp trong công viên. Bụp! Có gì nhảy ra! Ben thấy ngạc nhiên.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Na builds a tower in the sandpit, all by herself. She feels proud.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Na tự xây một cái tháp ở bãi cát. Bạn ấy thấy tự hào.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Look! The bubble man made feelings bubbles! Let’s pop them!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Chú thổi bong bóng làm ra bong bóng cảm xúc! Mình chọc vỡ nhé!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Pop all the happy faces! Find three!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Chọc vỡ hết các mặt vui nhé! Tìm ba cái!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Pop all the surprised faces! Find three!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Chọc vỡ hết các mặt ngạc nhiên nhé! Tìm ba cái!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "You found three surprised faces!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Con tìm được ba khuôn mặt ngạc nhiên!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Pop all the proud faces! Find three!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Chọc vỡ hết các mặt tự hào nhé! Tìm ba cái!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "You found three proud faces!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Con tìm được ba khuôn mặt tự hào!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "The balloon man gave Ben some balloons! Let’s count them!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Chú bán bóng tặng Ben mấy quả bóng bay! Mình đếm nhé!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Five balloons for Ben!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Năm quả bóng bay của Ben!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Let’s listen to some music! Music can sound happy or sad.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng nghe nhạc nhé! Có bài nghe vui, có bài nghe buồn đấy.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Listen…",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Nghe này…",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "How does the music sound? Tap the speaker to listen again.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Bản nhạc nghe thế nào nhỉ? Chạm vào cái loa để nghe lại nhé.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "It sounds happy!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Nghe vui quá!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Yes, it sounds sleepy!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi, nghe buồn ngủ quá!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Yes, it sounds sad!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi, nghe buồn quá!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Whoosh! A big wind! Look, the map piece was tied to Ben’s red balloon, and it’s flying away!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Vù! Gió to quá! Nhìn kìa, mảnh bản đồ buộc vào quả bóng đỏ của Ben, đang bay mất rồi!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Let’s pop balloons to get it back!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Mình chọc vỡ bóng bay để lấy lại nhé!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Pop five balloons! Count with me! Then the red balloon will come back.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Chọc vỡ năm quả bóng nhé! Đếm cùng Chồi nào! Rồi quả bóng đỏ sẽ quay lại.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Look! The red balloon is back with the map piece! Pop it!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Quả bóng đỏ mang mảnh bản đồ quay lại rồi! Chọc vỡ nó nhé!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Five!",
+"g": "c",
+"lv": [
+1,
+3,
+4,
+5
+]
+},
+{
+"lang": "vi",
+"key": "Năm!",
+"g": "c",
+"lv": [
+1,
+3,
+4,
+5
+]
+},
+{
+"lang": "en",
+"key": "Five balloons! And the map piece fell down!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Năm quả bóng! Mảnh bản đồ rơi xuống rồi!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "We found the second piece!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Mình tìm được mảnh thứ hai!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Look! This piece shows the park.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Mảnh này vẽ công viên.",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Two pieces are on the map. Six more to go, then we’ll see where the treasure is!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Hai mảnh đã vào bản đồ. Còn sáu mảnh nữa là mình biết kho báu ở đâu!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Next time, let’s go to the garden when it gets dark!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Lần sau, mình đến khu vườn lúc trời tối nhé!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Where should the penguin live? Tap a spot!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chú chim cánh cụt sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hello, penguin!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chào chú chim cánh cụt!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The penguin is hungry! What does the penguin eat?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chú chim cánh cụt đói rồi! Chú chim cánh cụt ăn gì nhỉ?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Yum! Penguins love fish.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Chim cánh cụt thích cá.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The map shows a garden. The next piece is there!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Bản đồ vẽ một khu vườn. Mảnh tiếp theo ở đó!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Look, the sun is going down. Tap the sun to help it go to sleep!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa, mặt trời đang lặn. Con chạm vào mặt trời để giúp nó đi ngủ nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Good night, sun! Now it’s dark in the garden. Look at the stars!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Chúc mặt trời ngủ ngon! Giờ khu vườn tối rồi. Nhìn những ngôi sao kìa!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Fireflies! Tap a group. Look quickly. How many?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Đom đóm kìa! Con chạm vào một nhóm. Nhìn nhanh nhé. Có mấy con?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Three! I can see three without counting.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ba! Nhìn là biết ba, không cần đếm.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Two! I can see two without counting.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Hai! Nhìn là biết hai, không cần đếm.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "One! I can see one without counting.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Một! Nhìn là biết một, không cần đếm.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Oh! Dark clouds are coming. Boom! A storm!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ! Mây đen kéo đến. Ầm! Có bão!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Boom! Thunder! Na is hiding.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ầm! Sấm nổ! Na đang trốn.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Na feels scared.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Na thấy sợ.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Are you scared, Na?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Na ơi, bạn sợ à?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Let’s hold Na’s hand. Press and hold Na!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Mình nắm tay Na nhé. Con nhấn giữ vào bạn Na!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Na feels better now. Thank you!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Na thấy dễ chịu hơn rồi. Cảm ơn con!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Boom! Thunder! Lam is scared.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ầm! Sấm nổ! Lam thấy sợ.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Lam feels scared.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Lam thấy sợ.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Are you scared, Lam?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Lam ơi, bạn sợ à?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Let’s give Lam a big hug. Press and hold Lam!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Mình ôm Lam thật chặt nhé. Con nhấn giữ vào Lam!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "After the storm, a little kitten wants a dry spot. Let’s help it!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Sau cơn bão, một chú mèo con muốn tìm chỗ khô ráo. Mình giúp mèo nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "I put the kitten on the table.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Chồi đặt mèo lên trên cái bàn.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "The kitten is on the table.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Mèo ở trên cái bàn.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Now put the kitten under the table. Tap under the table!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Giờ con đặt mèo dưới gầm bàn nhé. Con chạm vào dưới gầm bàn!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Yes! The kitten is under the table.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi! Mèo ở dưới gầm bàn.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Now put the kitten in the box. Tap in the box!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Giờ con đặt mèo trong cái hộp nhé. Con chạm vào trong cái hộp!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Yes! The kitten is in the box.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi! Mèo ở trong cái hộp.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "In, on, under! Now let’s play hide and seek.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Trong, trên, dưới! Giờ mình chơi trốn tìm nhé.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "The storm is over. Let’s play hide and seek in the garden!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Hết mưa bão rồi. Mình chơi trốn tìm trong vườn nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Let’s close our eyes and count to ten, while Lam and Na hide. Count with me!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Mình nhắm mắt đếm đến mười để Lam và Na đi trốn nhé. Đếm cùng Chồi nào!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Ready or not, here we come!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Xong chưa? Mình đi tìm đây!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Where is Lam? Tap Lam!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Lam đâu rồi? Con chạm vào Lam nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "There’s Lam! Lam is under the tree.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Lam đây rồi! Lam ở dưới gốc cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Where is Na? Tap Na!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Na đâu rồi? Con chạm vào Na nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "There’s Na! Na is in the box.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Na đây rồi! Na ở trong cái hộp.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Who will hide next? Let’s keep playing!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ai sẽ trốn tiếp nhỉ? Mình chơi tiếp nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Na found a drum! Let’s play a quick-look game with the drum.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Na tìm thấy một cái trống! Mình chơi trò nhìn nhanh với trống nhé.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Look at the dots, then bang the drum!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn các chấm, rồi gõ trống nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Look quickly!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn nhanh nào!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "One drum beat for each dot!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Mỗi chấm con gõ trống một cái nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Three dots!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ba chấm!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "So I bang the drum three times.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Vậy Chồi gõ trống ba cái.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "One dot, one beat!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Một chấm, một tiếng trống!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Three dots, three beats!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ba chấm, ba tiếng trống!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Ben found ladybugs and friends in the garden. Let’s answer some questions!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ben tìm thấy bọ rùa và các bạn trong vườn. Mình trả lời vài câu hỏi nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Look quickly! How many spots does the ladybug have?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn thật nhanh nhé! Bạn bọ rùa có mấy chấm?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "How many spots did you see?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Con thấy mấy chấm?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "One spot!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Một chấm!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Three spots!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Two spots!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Hai chấm!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Listen and find!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Nghe rồi tìm nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Where’s the cat?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Con mèo đâu rồi?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s under the table. Can you find it?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Bạn mèo ở dưới gầm bàn. Con tìm xem nào!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "There it is!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Đây rồi!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "You knew that one!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Con biết câu này rồi!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The map piece is hiding in the dark garden.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Mảnh bản đồ đang trốn trong khu vườn tối.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Let’s use a flashlight to find it!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Mình dùng đèn pin để tìm nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s so dark in the garden! Move the light with your finger to look around.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Trong vườn tối quá! Con di ngón tay để soi đèn nhìn quanh nhé.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Where is Ben? Find Ben!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ben đâu rồi? Con tìm Ben nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "There’s Ben! Ben is in the bush.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ben đây rồi! Ben ở trong bụi cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Where is Na? Find Na!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Na đâu rồi? Con tìm Na nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "There’s Na! Na is under the tree.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Na đây rồi! Na ở dưới gốc cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Who is in the box?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ai ở trong cái hộp nhỉ?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s Lam! Lam is in the box.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Là Lam! Lam ở trong cái hộp.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Something is shining in the dark! Find it!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Có gì đang lấp lánh trong bóng tối! Con tìm nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "You found everyone in the dark!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Con tìm thấy mọi người trong bóng tối rồi!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s late. Ben played hide and seek all evening.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Khuya rồi. Ben chơi trốn tìm cả buổi tối.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Ben feels tired.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ben thấy mệt.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Are you tired, Ben?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ben ơi, bạn mệt à?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Let’s take Ben to bed. Press and hold Ben!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Mình đưa Ben đi ngủ nhé. Con nhấn giữ vào Ben!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Good night, Ben! When we feel tired, we go to sleep.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Chúc Ben ngủ ngon! Khi mệt, mình đi ngủ nhé.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "We found the third piece in the dark garden!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Mình tìm được mảnh thứ ba trong khu vườn tối!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Look! This piece shows the garden.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Mảnh này vẽ khu vườn.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Three pieces are on the map. Five more to go, then we’ll see where the treasure is!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ba mảnh đã vào bản đồ. Còn năm mảnh nữa là mình biết kho báu ở đâu!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Next time, let’s visit Na’s house!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Lần sau, mình đến nhà Na nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "The map shows a house. It’s Na’s house! Oh no, the toys are everywhere!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Bản đồ vẽ một ngôi nhà. Đó là nhà của Na! Ôi, đồ chơi bừa khắp nơi!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Let’s tidy up. Big toys go in the big box. Small toys go in the small box.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Mình dọn dẹp nhé. Đồ chơi to vào hộp to. Đồ chơi nhỏ vào hộp nhỏ.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "This toy is big.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Đồ chơi này to.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "It goes in the big box!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Nó vào hộp to!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now you! Drag each toy to the right box.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Đến con! Con kéo từng đồ chơi vào đúng hộp nhé.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Six!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Sáu!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "The room is tidy! Big toys in the big box, small toys in the small box.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Phòng gọn gàng rồi! Đồ to trong hộp to, đồ nhỏ trong hộp nhỏ.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Na brings Ben a present, because he helped her tidy up. Ben feels happy.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Na mang quà đến tặng Ben vì Ben đã giúp dọn phòng. Ben thấy vui.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Ben says: I feel happy! Can you say it like Ben?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Ben nói: \"I feel happy!\" Con nói giống Ben nhé?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "I feel happy.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Con thấy vui.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Your turn! Tap the microphone and say it.",
+"g": "c",
+"lv": [
+3,
+4
+]
+},
+{
+"lang": "vi",
+"key": "Đến lượt con! Con chạm vào micro rồi nói nhé.",
+"g": "c",
+"lv": [
+3,
+4
+]
+},
+{
+"lang": "en",
+"key": "Snack time! But Lam dropped his ice cream. He feels sad.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Đến giờ ăn nhẹ! Nhưng Lam làm rơi kem. Bạn ấy thấy buồn.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Lam dropped the ice cream and feels sad. Let’s share a snack with Lam! Pick one.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Lam làm rơi kem nên thấy buồn. Mình chia đồ ăn cho Lam nhé! Con chọn một món.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Thank you for sharing a cookie! Lam feels happy again.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Cảm ơn con đã chia bánh quy! Lam vui trở lại rồi.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Let’s make some faces!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng làm khuôn mặt nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Let’s make an angry face!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Mình làm khuôn mặt giận nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "For an angry face, which eyebrows should we use?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Khuôn mặt đang giận thì lông mày thế nào? Con chọn nhé.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now, which mouth makes the face look angry?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Cái miệng nào làm khuôn mặt trông giận?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now this face looks angry!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Giờ là khuôn mặt giận rồi!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Let’s make a sad face!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Mình làm khuôn mặt buồn nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "For a sad face, which eyebrows should we use?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Khuôn mặt đang buồn thì lông mày thế nào? Con chọn nhé.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now, which mouth makes the face look sad?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Cái miệng nào làm khuôn mặt trông buồn?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now this face looks sad!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Giờ là khuôn mặt buồn rồi!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Let’s make a happy face!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Mình làm khuôn mặt vui nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "For a happy face, which eyebrows should we use?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Khuôn mặt đang vui thì lông mày thế nào? Con chọn nhé.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now, which mouth makes the face look happy?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Cái miệng nào làm khuôn mặt trông vui?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now this face looks happy!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Giờ là khuôn mặt vui rồi!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "How do you feel today? Let’s pick a face!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Hôm nay con thấy thế nào? Con chọn một khuôn mặt nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Me? I feel excited!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Còn Chồi hả? Chồi háo hức lắm!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Your turn! How do you feel? Tap a face.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Đến lượt con! Con thấy thế nào? Chạm vào một khuôn mặt nhé.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "You feel happy. Let’s say it together.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Con thấy vui. Mình cùng nói nhé.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Let’s sort them into baskets!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng phân loại nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "The triangles go in here.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Hình tam giác để vào giỏ này.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "The squares go in here.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Hình vuông để vào giỏ này.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "I pick up a shape.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Chồi cầm hình này lên.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "This one is a triangle.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Đây là hình tam giác.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "So it goes in this basket.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Vậy bỏ vào giỏ này.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Drag each one into the right basket!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Con kéo từng hình vào đúng giỏ nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "All the triangles are together!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Các hình tam giác ở cùng nhau rồi!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Oh! Toys are falling from the shelf!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Ơ! Đồ chơi đang rơi từ trên kệ xuống!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Get the basket. Let’s catch them!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Lấy cái giỏ. Mình bắt nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Toys are falling from the shelf! Move the basket. Catch the big toys!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Đồ chơi rơi từ trên kệ xuống! Con di chuyển cái giỏ. Bắt các đồ chơi to nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Four big toys!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Bốn đồ chơi to!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now catch the small toys!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Giờ bắt các đồ chơi nhỏ nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Five small toys! The room is tidy.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Năm đồ chơi nhỏ! Phòng gọn gàng rồi.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Look! Something else is falling. Catch it!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Có gì đang rơi xuống nữa. Con bắt nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "The fourth piece fell from the shelf!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Mảnh thứ tư rơi từ trên kệ xuống!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Look! This piece shows the house.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Mảnh này vẽ ngôi nhà.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Four pieces are on the map. Four more to go, then we’ll see where the treasure is!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Bốn mảnh đã vào bản đồ. Còn bốn mảnh nữa là mình biết kho báu ở đâu!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Next time, let’s go to the shop!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Lần sau, mình đi cửa hàng nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Where should the lion live? Tap a spot!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chú sư tử sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hello, lion!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chào chú sư tử!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The lion is hungry! What does the lion eat?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chú sư tử đói rồi! Chú sư tử ăn gì nhỉ?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Yum! Lions love meat.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Sư tử thích thịt.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The map shows a shop. Look! Ben found a big box in the shop. It’s moving!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Bản đồ vẽ một cửa hàng. Nhìn kìa! Ben tìm thấy một hộp to trong cửa hàng. Nó đang động đậy!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Tap the box to open it!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Con chạm để mở hộp nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Surprise! Ben feels surprised.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Bất ngờ chưa! Ben thấy ngạc nhiên.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Oh! The map piece jumped out too. It’s somewhere in the shop now. We’ll find it later!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Ơ! Mảnh bản đồ cũng nhảy ra. Giờ nó ở đâu đó trong cửa hàng. Lát nữa mình tìm nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Look at the things from the box. What is the same? They are all red!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn những thứ trong hộp này. Chúng giống nhau ở đâu? Tất cả đều màu đỏ!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Here are the things from Ben’s box. Why are they together?",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Đây là những thứ trong hộp của Ben. Sao chúng ở cùng nhau nhỉ?",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "They are all red.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Tất cả đều màu đỏ.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "The shop has numbers on the baskets! Each number tells how many.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Ở cửa hàng, mỗi giỏ có một con số! Con số cho biết có mấy cái.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Tap the number one!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Con chạm vào số một nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "One. One apple.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Số một. Một quả táo.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Now tap the number two!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Giờ con chạm vào số hai nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Two. Two bananas.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Số hai. Hai quả chuối.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Now tap the number three!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Giờ con chạm vào số ba nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Three. Three cupcakes.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Số ba. Ba cái bánh.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Now tap the number four!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Giờ con chạm vào số bốn nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Four. Four apples.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Số bốn. Bốn quả táo.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Now tap the number five!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Giờ con chạm vào số năm nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Five. Five bananas.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Số năm. Năm quả chuối.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "One, two, three, four, five! You know the numbers to five!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Một, hai, ba, bốn, năm! Con biết các số đến năm rồi!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "The shop sells toys that make sounds! Tap each one to hear it.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Cửa hàng bán đồ chơi có âm thanh! Con chạm vào từng món để nghe nhé.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "That’s a bell!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Đó là cái chuông!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "That’s a drum!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Đó là cái trống!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "That’s a toy car!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Đó là xe ô tô đồ chơi!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "And Lam can clap! Clap, clap! Now let’s play a sound game with these toys.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Còn Lam thì vỗ tay! Bộp, bộp! Giờ mình chơi trò âm thanh với mấy món này nhé.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Listen to my sounds, then copy me!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Nghe Chồi chơi, rồi con chơi lại giống hệt nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Listen!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Nghe nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Now I copy it!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Giờ Chồi chơi lại giống hệt nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Drum, then Car!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "trống, rồi xe!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Your turn. Copy me!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Đến lượt con, chơi lại giống Chồi nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "The map piece is somewhere in the shop. Let’s go shopping by colour, and look for it!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Mảnh bản đồ ở đâu đó trong cửa hàng. Mình đi mua sắm theo màu và tìm nó nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Let’s find numbers!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng tìm số nhé!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "Can you find the number two?",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Số hai đâu nhỉ?",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "That’s two!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đây là số hai!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "Can you find the number three?",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Số ba đâu nhỉ?",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "That’s three!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đây là số ba!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "Look at the number on the cart: four. Put four yellow things in the cart!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn số trên xe đẩy: số bốn. Con bỏ bốn thứ màu vàng vào xe nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Four! Just like the number.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Bốn! Đúng bằng số trên xe.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Why are they all in the cart?",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Sao chúng ở chung một xe nhỉ?",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "They are all yellow!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Tất cả đều màu vàng!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Look at the number on the cart: five. Put five blue things in the cart!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn số trên xe đẩy: số năm. Con bỏ năm thứ màu xanh dương vào xe nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Five! Just like the number.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Năm! Đúng bằng số trên xe.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "They are all blue!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Tất cả đều màu xanh dương!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Look! A box with the map piece is on the belt! Tap it!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Hộp có mảnh bản đồ đang chạy trên băng chuyền! Con chạm vào nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "The fifth piece was in a box at the shop!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Mảnh thứ năm ở trong một cái hộp ở cửa hàng!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Look! This piece shows the shop.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Mảnh này vẽ cửa hàng.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Five pieces are on the map. Three more to go, then we’ll see where the treasure is!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Năm mảnh đã vào bản đồ. Còn ba mảnh nữa là mình biết kho báu ở đâu!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Next time, let’s visit the building site!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Lần sau, mình đến công trường nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Where should the panda live? Tap a spot!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Bạn gấu trúc sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hello, panda!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chào bạn gấu trúc!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The panda is hungry! What does the panda eat?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Bạn gấu trúc đói rồi! Bạn gấu trúc ăn gì nhỉ?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Yum! Pandas love bamboo.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Gấu trúc thích tre.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The map shows a building site. The builders are making a new house!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Bản đồ vẽ một công trường. Các bác thợ đang xây một ngôi nhà mới!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "The house needs a roof. Tap the crane to put the roof on!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ngôi nhà cần mái. Con chạm để cần cẩu đặt mái nhà lên nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Clunk! The new house is finished. Let’s go inside!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Cộp! Ngôi nhà mới xây xong rồi. Mình vào trong xem nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Here we are, inside the new house. It’s full of shapes!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Mình vào trong ngôi nhà mới rồi. Trong nhà có nhiều hình lắm!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look! The window is a square.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Cái cửa sổ là hình vuông.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "A square has four sides, all the same.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Hình vuông có bốn cạnh bằng nhau.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Now you! Find another square.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Đến con! Con tìm một hình vuông khác nhé.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Yes! The picture is a square too!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi! Bức tranh cũng là hình vuông!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Find one more square!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Tìm thêm một hình vuông nữa nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Yes! The present is a square too!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi! Hộp quà cũng là hình vuông!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look! The TV is a rectangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Cái ti vi là hình chữ nhật.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "A rectangle has two long sides and two short sides.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Hình chữ nhật có hai cạnh dài và hai cạnh ngắn.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Now you! Find another rectangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Đến con! Con tìm một hình chữ nhật khác nhé.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Yes! The door is a rectangle too!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi! Cái cửa cũng là hình chữ nhật!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Find one more rectangle!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Tìm thêm một hình chữ nhật nữa nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Yes! The book is a rectangle too!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi! Quyển sách cũng là hình chữ nhật!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Now find something round. Find a circle!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Giờ tìm một thứ tròn tròn. Con tìm hình tròn nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "The clock is a circle!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Cái đồng hồ là hình tròn!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "There’s one more circle. Find it!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Còn một hình tròn nữa. Con tìm nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "The ball is a circle!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Quả bóng là hình tròn!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "You found all the shapes in the house: squares, rectangles and circles!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Con đã tìm hết các hình trong nhà: hình vuông, hình chữ nhật và hình tròn!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Let’s build a house with shapes!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng xây nhà bằng các hình nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "The sun needs a circle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Mặt trời cần hình tròn.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "I’ll find the circle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Chồi tìm hình tròn.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "The roof needs a triangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Mái nhà cần hình tam giác.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Which piece fits here? Find the triangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Miếng nào vừa chỗ này? Con tìm hình tam giác nhé.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "The door needs a rectangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Cửa ra vào cần hình chữ nhật.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Which piece fits here? Find the rectangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Miếng nào vừa chỗ này? Con tìm hình chữ nhật nhé.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "The window needs a square.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Cửa sổ cần hình vuông.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Which piece fits here? Find the square.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Miếng nào vừa chỗ này? Con tìm hình vuông nhé.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look! We built a house!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Mình xây xong ngôi nhà rồi!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "The builders sing while they work. Let’s clap the words with them!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Các bác thợ vừa làm vừa hát. Mình vỗ tay theo các từ nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Let’s clap out the words!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng vỗ tay theo từng tiếng nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look, it’s a banana.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, quả chuối.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~Banana.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~Quả chuối.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~ba",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~ba",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~na",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~na",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Three claps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ba tiếng!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look, it’s a cat.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, con mèo.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~Cat.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~Con mèo.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Let’s clap!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Con vỗ tay theo từng tiếng nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look, it’s a present.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, hộp quà.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~Present.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~Hộp quà.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Oh no! A toy truck crashed into Lam’s tower. He feels angry.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ôi! Xe tải đồ chơi đâm đổ tháp của Lam. Bạn ấy thấy giận.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Lam took a deep breath and built his tower again, all by himself. Now he feels proud.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Lam hít thở thật sâu rồi tự xây lại tháp. Giờ bạn ấy thấy tự hào.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Help the frog jump! One jump for each beat.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Giúp ếch nhảy nhé! Mỗi tiếng một bước nhảy.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Three jumps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ba bước nhảy!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Tap the frog for each beat!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Mỗi tiếng con chạm vào ếch một lần nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~cat",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~cat",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "cat. One jump!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "cat. Một bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look, it’s a balloon.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, bóng bay.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~Balloon.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~Bóng bay.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~buh",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~buh",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~loon",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~loon",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "buh-loon. Two jumps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "buh - loon. Hai bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Let’s find shapes around the house!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng tìm hình trong nhà nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Which one is a square?",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Cái nào có hình vuông?",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Yes! The window is a square.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi! Cái cửa sổ có hình vuông.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Which one is a rectangle?",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Cái nào có hình chữ nhật?",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Yes! The book is a rectangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi! Quyển sách có hình chữ nhật.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look! The map piece is up on the crane!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Mảnh bản đồ ở trên cần cẩu!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Let’s build a tower to get it.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Mình xây tháp để lấy nhé.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Let’s build a tall tower with the crane! Tap to drop the block.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Mình xây tháp cao bằng cần cẩu nhé! Con chạm để thả khối xuống.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "A rectangle!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Hình chữ nhật!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "A square!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Hình vuông!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "The crane has the map piece! Drop it on top!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Cần cẩu mang mảnh bản đồ! Con thả lên đỉnh tháp nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "A tall tower! Five blocks: squares and rectangles.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Tháp cao quá! Năm khối: hình vuông và hình chữ nhật.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "The sixth piece came down from the crane!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Mảnh thứ sáu theo cần cẩu xuống!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look! This piece shows the building site.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Mảnh này vẽ công trường.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Six pieces are on the map. Two more to go, then we’ll see where the treasure is!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Sáu mảnh đã vào bản đồ. Còn hai mảnh nữa là mình biết kho báu ở đâu!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Next time, we’ll play from morning to night!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Lần sau, mình chơi từ sáng đến tối nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Where should the zebra live? Tap a spot!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Bạn ngựa vằn sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hello, zebra!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chào bạn ngựa vằn!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The zebra is hungry! What does the zebra eat?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Bạn ngựa vằn đói rồi! Bạn ngựa vằn ăn gì nhỉ?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Yum! Zebras love hay.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Ngựa vằn thích cỏ khô.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The map shows a sunny hill. Look, the sun is coming up. It’s morning!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Bản đồ vẽ một ngọn đồi đầy nắng. Nhìn kìa, mặt trời đang lên. Buổi sáng rồi!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Na is hungry. Give Na her breakfast! Tap the bowl.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Na đói rồi. Con đưa bữa sáng cho Na nhé! Chạm vào cái bát.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Yum! In the morning, Na eats breakfast.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Buổi sáng, Na ăn sáng.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Now the sun is high in the sky. It’s afternoon!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Giờ mặt trời lên cao rồi. Buổi chiều!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Na wants to play football. Tap the ball to kick it!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Na muốn đá bóng. Con chạm vào quả bóng để sút nhé!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Kick! In the afternoon, Na plays football.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Sút! Buổi chiều, Na chơi đá bóng.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Now the sun goes down and the moon comes up. It’s night! Na feels tired.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Giờ mặt trời lặn, mặt trăng lên. Buổi tối rồi! Na thấy mệt.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "What does Na need? Tap the bed!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Na cần gì nhỉ? Con chạm vào cái giường!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Good night, Na! Morning, afternoon, night. That’s Na’s day!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Chúc Na ngủ ngon! Sáng, chiều, tối. Đó là một ngày của Na!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "The next day, Lam and Ben come to play too. Let’s draw their day!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Hôm sau, Lam và Ben cũng đến chơi. Mình vẽ một ngày của các bạn nhé!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Let’s draw some lines!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng vẽ đường thẳng nhé!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Help the rain fall down to the flower.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Giúp giọt mưa rơi xuống bông hoa nhé.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "All the way to the end!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Đến nơi rồi!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Look! Lots of rain falls straight down. The flower grows!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Mưa rơi thẳng xuống thật nhiều. Bông hoa lớn lên!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Just move your finger along the line.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Con chỉ cần di ngón tay theo đường kẻ.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Drive the car to school.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Lái xe ô tô đến trường nhé.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Vroom! Lots of cars drive straight to school!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Brừm! Thật nhiều ô tô chạy thẳng đến trường!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Help the star fall into the basket.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Giúp ngôi sao rơi xuống giỏ nhé.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Look! Lots of stars fall straight down into the basket!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Thật nhiều ngôi sao rơi thẳng xuống giỏ!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "In the afternoon, Lam flies his kite. He feels excited.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Buổi chiều, Lam thả diều. Bạn ấy thấy háo hức.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Ben played all day long. Now it’s night. He feels tired.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Ben chơi cả ngày. Giờ trời tối rồi. Bạn ấy thấy mệt.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Let’s put my day in order!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng xếp một ngày của Chồi theo thứ tự nhé!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "What do we do first, in the morning?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Buổi sáng mình làm gì trước nhỉ?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "We eat breakfast in the morning.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình ăn sáng vào buổi sáng.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "We go to school in the morning.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình đi học vào buổi sáng.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Then, in the afternoon?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Rồi buổi chiều thì sao?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "We play outside in the afternoon.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình chơi ngoài trời vào buổi chiều.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "And at night?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Còn buổi tối?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "We read a bedtime story at night.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình đọc truyện vào buổi tối.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "That’s my whole day!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Đó là cả một ngày của Chồi!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Let’s talk about our day!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng nói về một ngày của mình nhé!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "When do we eat breakfast?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình ăn sáng vào lúc nào?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "In the morning, in the afternoon, or at night?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Buổi sáng, buổi chiều hay buổi tối?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "When do we play outside?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình chơi ngoài trời vào lúc nào?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "When do we go to sleep?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình đi ngủ vào lúc nào?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "We go to sleep at night.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình đi ngủ vào buổi tối.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Look! A little frog wants to go home to the pond.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Một bạn ếch nhỏ muốn về ao.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Let’s help it cross the roads safely!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình giúp ếch qua đường an toàn nhé!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "The frog wants to go home to the pond. Wait for the green walking light, then tap to cross!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Bạn ếch muốn về ao. Con chờ đèn xanh hình người đi bộ rồi chạm để ếch qua đường nhé!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "It’s morning!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Buổi sáng rồi!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Hop! Now it’s afternoon.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Nhảy! Giờ là buổi chiều.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Hop! One more road!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Nhảy! Còn một con đường nữa!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Hop! Now it’s night.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Nhảy! Giờ là ban đêm.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "The frog is home! Good night, frog!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Ếch về đến nhà rồi! Chúc ếch ngủ ngon!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Look! Something is on the lily pad. Tap it!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Có gì trên lá sen. Con chạm vào nhé!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "The seventh piece was on the lily pad!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mảnh thứ bảy ở trên lá sen!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Look! This piece shows the sunny hill.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Mảnh này vẽ đồi nắng.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Seven pieces are on the map. One more to go, then we’ll see where the treasure is!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Bảy mảnh đã vào bản đồ. Còn một mảnh nữa là mình biết kho báu ở đâu!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "One more piece. It’s in the treasure chest! Next time: Treasure Island!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Còn một mảnh nữa, ở trong rương kho báu! Lần sau: Đảo Kho Báu!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "We have seven pieces! Tap the map to look closely.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình có bảy mảnh rồi! Con chạm vào bản đồ để nhìn kỹ nhé.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "It’s an island! The X is where the treasure is. Let’s go to Treasure Island!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đó là một hòn đảo! Dấu X là chỗ có kho báu. Mình đến Đảo Kho Báu nào!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "We made it to Treasure Island! To find the chest, let’s use everything we learned.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình đến Đảo Kho Báu rồi! Để tìm rương, mình dùng mọi điều đã học nhé.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Starfish on the sand point the way! Let’s count them. Tap each one!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Sao biển trên cát chỉ đường! Mình đếm nhé. Con chạm vào từng con!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Five starfish! This way!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Năm con sao biển! Đi lối này!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "The starfish lead to a path. Roll the dice and walk all the way to the flag!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Sao biển dẫn tới một con đường. Tung xúc xắc rồi đi đến tận lá cờ nhé!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Let’s play a board game! Roll the dice, then move.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình chơi cờ nhé! Tung xúc xắc rồi đi.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "I’ll roll the dice.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chồi tung xúc xắc nhé.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Three! I’ll move three steps.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ba! Chồi đi ba bước.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Tap the dice!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Con chạm vào xúc xắc nào!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "One! Tap your piece to move one step.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Một! Con chạm vào quân cờ để đi một bước nhé.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Two! Tap your piece to move two steps.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Hai! Con chạm vào quân cờ để đi hai bước nhé.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "We made it to the flag!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình về đích rồi!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "There’s the treasure chest! The lock asks some questions.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Rương kho báu kìa! Ổ khoá hỏi mấy câu hỏi.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Yes, it sounds angry!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi, nghe giận dữ quá!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Yes, it sounds happy!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi, nghe vui quá!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Can you find the number one?",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Số một đâu nhỉ?",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "That’s one!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đây là số một!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "One more lock: a picture lock. Find the pairs to open it!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Còn một ổ khoá nữa: khoá hình. Tìm các cặp giống nhau để mở nhé!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Turn two cards. Find two faces that feel the same!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Con lật hai thẻ. Tìm hai khuôn mặt có cùng cảm xúc nhé!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Scared!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Sợ!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Scared and scared!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Sợ và sợ!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Angry!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Giận!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Angry and angry!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Giận và giận!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Happy!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Vui!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Happy and happy!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Vui và vui!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Proud!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Tự hào!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Proud and proud!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Tự hào và tự hào!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "You found all the pairs!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Con tìm được hết các cặp rồi!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "One more lock: a number lock!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Còn một ổ khoá nữa: khoá số!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Match each number to its dots! Turn two cards.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Tìm số và chấm đi cùng nhau nhé! Con lật hai thẻ.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "One and one!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Một và một!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Two and two!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Hai và hai!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Three and three!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ba và ba!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Here is the treasure chest! Tap it to open it!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Rương kho báu đây rồi! Con chạm để mở nhé!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "A golden key! And the last map piece!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Một chiếc chìa khoá vàng! Và mảnh bản đồ cuối cùng!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "We did it! We found all eight pieces!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình làm được rồi! Mình tìm đủ tám mảnh!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Look! This piece shows the treasure.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Mảnh này vẽ kho báu.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "The map is finished! It’s Treasure Island!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Bản đồ đủ rồi! Đó là Đảo Kho Báu!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Now let’s see what the golden key can open!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Giờ mình xem chìa khoá vàng mở được gì nhé!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "The golden key is magic! Let’s open a cloudy island!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chìa khoá vàng có phép màu! Mình cùng mở một hòn đảo trong mây nhé!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Look! A playground!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Một sân chơi!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Next, we’ll learn about our body and our five senses. A new map is waiting for you!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Tiếp theo, mình sẽ học về cơ thể và năm giác quan. Một tấm bản đồ mới đang chờ con!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "The other islands will open later.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Các hòn đảo khác sẽ mở sau nhé.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Where should the monkey live? Tap a spot!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chú khỉ sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hello, monkey!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chào chú khỉ!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The monkey is hungry! What does the monkey eat?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chú khỉ đói rồi! Chú khỉ ăn gì nhỉ?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Yum! Monkeys love bananas.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Khỉ thích chuối.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The bus is full!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Xe đầy rồi!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Oops! There were only three empty seats.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Ơ! Xe chỉ có ba ghế trống thôi.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Let’s try again. One friend for each empty seat!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Mình thử lại nhé. Mỗi ghế trống một bạn!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Let’s count together.",
+"g": "c",
+"lv": [
+0,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình cùng đếm nhé.",
+"g": "c",
+"lv": [
+0,
+7
+]
+},
+{
+"lang": "en",
+"key": "Oops, that one looks happy.",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, bạn này đang vui.",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "en",
+"key": "Try again!",
+"g": "c",
+"lv": [
+0,
+2,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Thử lại nào!",
+"g": "c",
+"lv": [
+0,
+2,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "You kept trying, and you got it!",
+"g": "c",
+"lv": [
+0,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Con cố gắng mãi và đã làm được!",
+"g": "c",
+"lv": [
+0,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Where should the hippo live? Tap a spot!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Bạn hà mã sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hello, hippo!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chào bạn hà mã!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The hippo is hungry! What does the hippo eat?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Bạn hà mã đói rồi! Bạn hà mã ăn gì nhỉ?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hippos don’t eat fish. Try another one!",
+"g": "c",
+"lv": [
+0,
+2,
+4
+]
+},
+{
+"lang": "vi",
+"key": "Hà mã không ăn cá đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+0,
+2,
+4
+]
+},
+{
+"lang": "en",
+"key": "Hippos don’t eat bamboo. Try another one!",
+"g": "c",
+"lv": [
+0,
+2,
+3,
+6
+]
+},
+{
+"lang": "vi",
+"key": "Hà mã không ăn tre đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+0,
+2,
+3,
+6
+]
+},
+{
+"lang": "en",
+"key": "Yum! Hippos love hay.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hà mã thích cỏ khô.",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Pop all the excited faces! Find three!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Chọc vỡ hết các mặt háo hức nhé! Tìm ba cái!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that one looks angry.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, mặt đó trông giận.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that one looks tired.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, mặt đó trông mệt.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that one looks happy.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, mặt đó trông vui.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Yes, it sounds exciting!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi, nghe sôi động quá!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Where should the elephant live? Tap a spot!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chú voi sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hello, elephant!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chào chú voi!",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "The elephant is hungry! What does the elephant eat?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Chú voi đói rồi! Chú voi ăn gì nhỉ?",
+"g": "c",
+"lv": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Elephants don’t eat meat. Try another one!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Voi không ăn thịt đâu. Thử món khác nhé!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Yum! Elephants love hay.",
+"g": "c",
+"lv": [
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Voi thích cỏ khô.",
+"g": "c",
+"lv": [
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Two dots!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "So I bang the drum two times.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Vậy Chồi gõ trống hai cái.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s in the box. Can you find it?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Bạn mèo ở trong cái hộp. Con tìm xem nào!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Oops, that cat is under the table.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, con mèo này ở dưới gầm bàn.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Where is Lam? Find Lam!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Lam đâu rồi? Con tìm Lam nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "There’s Lam! Lam is on the slide.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Lam đây rồi! Lam ở trên cầu trượt.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Who is in the bush?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ai ở trong bụi cây nhỉ?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s Ben! Ben is in the bush.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Là Ben! Ben ở trong bụi cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Elephants don’t eat fish. Try another one!",
+"g": "c",
+"lv": [
+0,
+2,
+3
+]
+},
+{
+"lang": "vi",
+"key": "Voi không ăn cá đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+0,
+2,
+3
+]
+},
+{
+"lang": "en",
+"key": "Let’s make a scared face!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Mình làm khuôn mặt sợ nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "For a scared face, which eyebrows should we use?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Khuôn mặt đang sợ thì lông mày thế nào? Con chọn nhé.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now, which mouth makes the face look scared?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Cái miệng nào làm khuôn mặt trông sợ?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now this face looks scared!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Giờ là khuôn mặt sợ rồi!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Let’s look again.",
+"g": "c",
+"lv": [
+2,
+3
+]
+},
+{
+"lang": "vi",
+"key": "Mình nhìn lại nhé.",
+"g": "c",
+"lv": [
+2,
+3
+]
+},
+{
+"lang": "en",
+"key": "You feel excited. Let’s say it together.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Con thấy háo hức. Mình cùng nói nhé.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "I feel excited.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Con thấy háo hức.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "The circles go in here.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Hình tròn để vào giỏ này.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "All the circles are together!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Các hình tròn ở cùng nhau rồi!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "That one is big!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Cái đó to!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Hippos don’t eat meat. Try another one!",
+"g": "c",
+"lv": [
+2,
+3,
+4,
+6
+]
+},
+{
+"lang": "vi",
+"key": "Hà mã không ăn thịt đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+2,
+3,
+4,
+6
+]
+},
+{
+"lang": "en",
+"key": "Drum, then Clap!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "trống, rồi vỗ tay!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Almost! Listen again.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Gần đúng rồi! Nghe lại nhé.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Can you find the number five?",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Số năm đâu nhỉ?",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "That’s five!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đây là số năm!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "Look at the number on the cart: four. Put four blue things in the cart!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn số trên xe đẩy: số bốn. Con bỏ bốn thứ màu xanh dương vào xe nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Look at the number on the cart: five. Put five red things in the cart!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn số trên xe đẩy: số năm. Con bỏ năm thứ màu đỏ vào xe nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "They are all red!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Tất cả đều màu đỏ!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Lions don’t eat bamboo. Try another one!",
+"g": "c",
+"lv": [
+0,
+4
+]
+},
+{
+"lang": "vi",
+"key": "Sư tử không ăn tre đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+0,
+4
+]
+},
+{
+"lang": "en",
+"key": "Look, it’s a butterfly.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, con bươm bướm.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~Butterfly.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~Con bươm bướm.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~con",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~con",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~bươm",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~bươm",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~bướm",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~bướm",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~Mèo.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look, it’s a fish.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, con cá.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~Fish.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~Cá.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look, it’s a goldfish.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, con cá vàng.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~Goldfish.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~Con cá vàng.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~cá",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~cá",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~vàng",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~vàng",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Splash! Too many jumps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Tõm! Nhảy nhiều quá rồi!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Listen again.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nghe lại nhé.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Now you. One jump for each beat!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Giờ đến con. Mỗi tiếng một bước nhảy!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "con-cá-vàng. Three jumps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "con - cá - vàng. Ba bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, quả bóng bay.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~bóng",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~bóng",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~bay",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~bay",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "bóng-bay. Two jumps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "bóng - bay. Hai bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s the cookie, it’s a circle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là cái bánh quy, hình tròn.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Yes! The door is a rectangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi! Cái cửa có hình chữ nhật.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Yum! Elephants love bananas.",
+"g": "c",
+"lv": [
+0,
+1,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Voi thích chuối.",
+"g": "c",
+"lv": [
+0,
+1,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"lang": "en",
+"key": "Hmm, we do that at night.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, việc đó mình làm vào buổi tối.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "When do we read a bedtime story?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình đọc truyện trước khi ngủ vào lúc nào?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "When do we fly a kite?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình thả diều vào lúc nào?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s the morning.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là buổi sáng.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "We fly a kite in the afternoon.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình thả diều vào buổi chiều.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "One! I’ll move one step.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Một! Chồi đi một bước.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Three! Tap your piece to move three steps.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ba! Con chạm vào quân cờ để đi ba bước nhé.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Hmm, we need three steps.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, mình cần đi ba bước cơ.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Let’s try again. Move three steps.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình thử lại nhé. Đi ba bước.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Yes, it sounds scary!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi, nghe đáng sợ quá!",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Can you find the number four?",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Số bốn đâu nhỉ?",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "That’s four!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đây là số bốn!",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "en",
+"key": "Excited!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Háo hức!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Excited and excited!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Háo hức và háo hức!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Surprised!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngạc nhiên!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Surprised and surprised!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngạc nhiên và ngạc nhiên!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Oops! There were only four empty seats.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Ơ! Xe chỉ có bốn ghế trống thôi.",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Hmm, did we count them all?",
+"g": "c",
+"lv": [
+0,
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, mình đếm hết chưa nhỉ?",
+"g": "c",
+"lv": [
+0,
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Let’s count again. Tap each one!",
+"g": "c",
+"lv": [
+0,
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình đếm lại nhé. Con chạm vào từng cái!",
+"g": "c",
+"lv": [
+0,
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Oops, that one looks sad.",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, bạn này đang buồn.",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "en",
+"key": "Penguins don’t eat bamboo. Try another one!",
+"g": "c",
+"lv": [
+0,
+2,
+5
+]
+},
+{
+"lang": "vi",
+"key": "Chim cánh cụt không ăn tre đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+0,
+2,
+5
+]
+},
+{
+"lang": "en",
+"key": "You found three happy faces!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Con tìm được ba khuôn mặt vui!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "That’s on the table. Let’s find in!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Đó là trên cái bàn. Mình tìm chỗ \"trong\" nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Hmm, not quite!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, chưa đúng rồi!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Let’s look at the dots again.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Mình nhìn lại các chấm nhé.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Now bang the drum. One beat for each dot!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Giờ con gõ trống nhé. Mỗi chấm một cái!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Look, there are two dots. Let’s count: one, two.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, có hai chấm. Mình đếm nhé: một, hai.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s one.",
+"g": "c",
+"lv": [
+2,
+4
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là một.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s three.",
+"g": "c",
+"lv": [
+2,
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là ba.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s on the table. Can you find it?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Bạn mèo ở trên cái bàn. Con tìm xem nào!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Who is under the tree?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ai ở dưới gốc cây nhỉ?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s Ben! Ben is under the tree.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Là Ben! Ben ở dưới gốc cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Thank you for sharing an apple! Lam feels happy again.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Cảm ơn con đã chia táo! Lam vui trở lại rồi.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that mouth looks scared.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, cái miệng đó trông sợ.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that mouth looks angry.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, cái miệng đó trông giận.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Bell, then Clap!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "chuông, rồi vỗ tay!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Look at the number on the cart: four. Put four red things in the cart!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn số trên xe đẩy: số bốn. Con bỏ bốn thứ màu đỏ vào xe nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Look at the number on the cart: five. Put five yellow things in the cart!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn số trên xe đẩy: số năm. Con bỏ năm thứ màu vàng vào xe nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Look, it’s an apple.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, quả táo.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~Apple.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~Quả táo.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~pre",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~pre",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~zent",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~zent",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "pre-zent. Two jumps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "pre - zent. Hai bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~ap",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~ap",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Hmm, not enough jumps.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, chưa đủ bước rồi.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Listen.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nghe nhé.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~pull",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~pull",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Two jumps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Hai bước nhảy!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s the clock, it’s a circle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là cái đồng hồ, hình tròn.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s the book, it’s a rectangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là quyển sách, hình chữ nhật.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Yes! The box is a square.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi! Cái hộp có hình vuông.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Pandas don’t eat leaves. Try another one!",
+"g": "c",
+"lv": [
+2,
+5
+]
+},
+{
+"lang": "vi",
+"key": "Gấu trúc không ăn lá cây đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+2,
+5
+]
+},
+{
+"lang": "en",
+"key": "Oops, that was three steps. We need one.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, con đi ba bước rồi. Mình cần một thôi.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Let’s try again. Move one step.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình thử lại nhé. Đi một bước.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Hmm, we need two steps.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, mình cần đi hai bước cơ.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Let’s try again. Move two steps.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mình thử lại nhé. Đi hai bước.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Sad!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Buồn!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Sad and sad!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Buồn và buồn!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Tired!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mệt!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Tired and tired!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Mệt và mệt!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "There’s Na! Na is on the slide.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Na đây rồi! Na ở trên cầu trượt.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Let’s make a surprised face!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Mình làm khuôn mặt ngạc nhiên nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "For a surprised face, which eyebrows should we use?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Khuôn mặt đang ngạc nhiên thì lông mày thế nào? Con chọn nhé.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now, which mouth makes the face look surprised?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Cái miệng nào làm khuôn mặt trông ngạc nhiên?",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Now this face looks surprised!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Giờ là khuôn mặt ngạc nhiên rồi!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Look, it’s a star.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, ngôi sao.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~Star.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~Ngôi sao.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~ngôi",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~ngôi",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~sao",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~sao",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "ngôi-sao. Two jumps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "ngôi - sao. Hai bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "cá. One jump!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "cá. Một bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "When do we go to school?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Mình đi học vào lúc nào?",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Penguins don’t eat leaves. Try another one!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Chim cánh cụt không ăn lá cây đâu. Thử món khác nhé!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Two dots, two beats!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Hai chấm, hai tiếng trống!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s too many beats!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, con gõ nhiều quá rồi!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Look, there are three dots. Let’s count: one, two, three.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, có ba chấm. Mình đếm nhé: một, hai, ba.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that mouth looks surprised.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, cái miệng đó trông ngạc nhiên.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "This one is a circle.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Đây là hình tròn.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Bell, then Drum!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "chuông, rồi trống!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là số ba.",
+"g": "c",
+"lv": [
+4,
+7
+]
+},
+{
+"lang": "vi",
+"key": "~Con cá.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~fish",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~fish",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "fish. One jump!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "fish. Một bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Two! I’ll move two steps.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Hai! Chồi đi hai bước.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Giraffes don’t eat hay. Try another one!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Hươu cao cổ không ăn cỏ khô đâu. Thử món khác nhé!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Look, there’s still an empty seat!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, xe vẫn còn ghế trống!",
+"g": "0",
+"lv": [
+0
+]
+},
+{
+"lang": "en",
+"key": "Monkeys don’t eat meat. Try another one!",
+"g": "c",
+"lv": [
+0,
+4
+]
+},
+{
+"lang": "vi",
+"key": "Khỉ không ăn thịt đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+0,
+4
+]
+},
+{
+"lang": "en",
+"key": "Monkeys don’t eat bamboo. Try another one!",
+"g": "c",
+"lv": [
+1,
+4
+]
+},
+{
+"lang": "vi",
+"key": "Khỉ không ăn tre đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+1,
+4
+]
+},
+{
+"lang": "en",
+"key": "That’s under the table. Let’s find in!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Đó là dưới gầm bàn. Mình tìm chỗ \"trong\" nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "One dot!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "So I bang the drum once.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Vậy Chồi gõ trống một cái.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s two.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là hai.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "There’s Na! Na is in the bush.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Na đây rồi! Na ở trong bụi cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that’s Lam.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Lam.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s Ben! Ben is in the box.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Là Ben! Ben ở trong cái hộp.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Pandas don’t eat bananas. Try another one!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Gấu trúc không ăn chuối đâu. Thử món khác nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Pandas don’t eat hay. Try another one!",
+"g": "c",
+"lv": [
+0,
+2,
+3,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Gấu trúc không ăn cỏ khô đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+0,
+2,
+3,
+7
+]
+},
+{
+"lang": "en",
+"key": "Clap, then Drum!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "vỗ tay, rồi trống!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that’s a square.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là hình vuông.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~mèo",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~mèo",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "mèo. One jump!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "mèo. Một bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Look, it’s a apple.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~quả",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~quả",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~táo",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~táo",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "quả-táo. Two jumps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "quả - táo. Hai bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s the afternoon.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là buổi chiều.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Năm.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Oops, that was five steps. We need three.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, con đi năm bước rồi. Mình cần ba thôi.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "There’s Lam! Lam is in the box.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Lam đây rồi! Lam ở trong cái hộp.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "There’s Ben! Ben is on the slide.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ben đây rồi! Ben ở trên cầu trượt.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s Na! Na is under the tree.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Là Na! Na ở dưới gốc cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "This one is a square.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Đây là hình vuông.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "That one is small!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Cái đó nhỏ!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, con bướm.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~Con bướm.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~but",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~but",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~ter",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~ter",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~fly",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~fly",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "but-ter-fly. Three jumps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "but - ter - fly. Ba bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Oops, that one looks angry.",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, bạn này đang giận.",
+"g": "c",
+"lv": [
+0,
+2
+]
+},
+{
+"lang": "en",
+"key": "Oops, that cat is in the box.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, con mèo này ở trong cái hộp.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "There’s Lam! Lam is in the bush.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Lam đây rồi! Lam ở trong bụi cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that mouth looks sad.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, cái miệng đó trông buồn.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "All the squares are together!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Các hình vuông ở cùng nhau rồi!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Drum, then Bell!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "trống, rồi chuông!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Lions don’t eat bananas. Try another one!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Sư tử không ăn chuối đâu. Thử món khác nhé!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "One jump!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Một bước nhảy!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Oops, that was four steps. We need two.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, con đi bốn bước rồi. Mình cần hai thôi.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "You got it!",
+"g": "c",
+"lv": [
+2,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Đúng rồi!",
+"g": "c",
+"lv": [
+2,
+7
+]
+},
+{
+"lang": "en",
+"key": "Lions don’t eat hay. Try another one!",
+"g": "c",
+"lv": [
+0,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Sư tử không ăn cỏ khô đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+0,
+7
+]
+},
+{
+"lang": "en",
+"key": "That’s in the box. Let’s find under!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Đó là trong cái hộp. Mình tìm chỗ \"dưới\" nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Oops, that cat is on the table.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, con mèo này ở trên cái bàn.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Pandas don’t eat meat. Try another one!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Gấu trúc không ăn thịt đâu. Thử món khác nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là số một.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that’s a rectangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là hình chữ nhật.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "~star",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "~star",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "star. One jump!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "star. Một bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s the window, it’s a square.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là cái cửa sổ, hình vuông.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Hmm, we do that in the afternoon.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, việc đó mình làm vào buổi chiều.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s night time.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là buổi tối.",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "You found three excited faces!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Con tìm được ba khuôn mặt háo hức!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "ap-pull. Two jumps!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "ap - pull. Hai bước!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Who is on the slide?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ai ở trên cầu trượt nhỉ?",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s Lam! Lam is on the slide.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Là Lam! Lam ở trên cầu trượt.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s the door, it’s a rectangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là cái cửa, hình chữ nhật.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Elephants don’t eat bamboo. Try another one!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Voi không ăn tre đâu. Thử món khác nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that’s Na.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Na.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Giraffes don’t eat fish. Try another one!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Hươu cao cổ không ăn cá đâu. Thử món khác nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Giraffes don’t eat bananas. Try another one!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Hươu cao cổ không ăn chuối đâu. Thử món khác nhé!",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "There’s Ben! Ben is in the box.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ben đây rồi! Ben ở trong cái hộp.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Car, then Drum!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "xe, rồi trống!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that one looks scared.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, mặt đó trông sợ.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "Look, there is one dot. Let’s count: one.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Nhìn này, có một chấm. Mình đếm nhé: một.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "There’s Ben! Ben is under the tree.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ben đây rồi! Ben ở dưới gốc cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s Na! Na is on the slide.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Là Na! Na ở trên cầu trượt.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s five.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là số năm.",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Oops, that’s the flag, it’s a triangle.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là lá cờ, hình tam giác.",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Giraffes don’t eat bamboo. Try another one!",
+"g": "c",
+"lv": [
+2,
+5
+]
+},
+{
+"lang": "vi",
+"key": "Hươu cao cổ không ăn tre đâu. Thử món khác nhé!",
+"g": "c",
+"lv": [
+2,
+5
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that mouth looks happy.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, cái miệng đó trông vui.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "You feel tired. Let’s say it together.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Con thấy mệt. Mình cùng nói nhé.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "I feel tired.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Con thấy mệt.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "Zebras don’t eat leaves. Try another one!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Ngựa vằn không ăn lá cây đâu. Thử món khác nhé!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that one looks sad.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, mặt đó trông buồn.",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that one looks excited.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, mặt đó trông háo hức.",
+"g": "c",
+"lv": [
+1,
+7
+]
+},
+{
+"lang": "en",
+"key": "It’s Lam! Lam is in the bush.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Là Lam! Lam ở trong bụi cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Lions don’t eat leaves. Try another one!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "vi",
+"key": "Sư tử không ăn lá cây đâu. Thử món khác nhé!",
+"g": "1",
+"lv": [
+1
+]
+},
+{
+"lang": "en",
+"key": "Hmm, that’s Ben.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Ben.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Thank you for sharing a banana! Lam feels happy again.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "vi",
+"key": "Cảm ơn con đã chia chuối! Lam vui trở lại rồi.",
+"g": "3",
+"lv": [
+3
+]
+},
+{
+"lang": "en",
+"key": "That’s on the table. Let’s find under!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Đó là trên cái bàn. Mình tìm chỗ \"dưới\" nhé!",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "It’s Na! Na is in the bush.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Là Na! Na ở trong bụi cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Car, then Bell!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "xe, rồi chuông!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "Penguins don’t eat hay. Try another one!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "vi",
+"key": "Chim cánh cụt không ăn cỏ khô đâu. Thử món khác nhé!",
+"g": "6",
+"lv": [
+6
+]
+},
+{
+"lang": "en",
+"key": "Zebras don’t eat meat. Try another one!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngựa vằn không ăn thịt đâu. Thử món khác nhé!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "Zebras don’t eat bananas. Try another one!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "vi",
+"key": "Ngựa vằn không ăn chuối đâu. Thử món khác nhé!",
+"g": "7",
+"lv": [
+7
+]
+},
+{
+"lang": "en",
+"key": "It’s Lam! Lam is under the tree.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "vi",
+"key": "Là Lam! Lam ở dưới gốc cây.",
+"g": "2",
+"lv": [
+2
+]
+},
+{
+"lang": "en",
+"key": "Pandas don’t eat fish. Try another one!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "vi",
+"key": "Gấu trúc không ăn cá đâu. Thử món khác nhé!",
+"g": "5",
+"lv": [
+5
+]
+},
+{
+"lang": "en",
+"key": "Clap, then Car!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "vi",
+"key": "vỗ tay, rồi xe!",
+"g": "4",
+"lv": [
+4
+]
+},
+{
+"lang": "en",
+"key": "A blue balloon!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Quả bóng bay xanh!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A blue block!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Khối màu xanh!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A cupcake!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bánh kem nhỏ!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A heart!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Một trái tim!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A little yellow chimney!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ống khói nhỏ màu vàng!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A new map! New places are coming soon.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Một tấm bản đồ mới! Những nơi mới sắp mở rồi.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A new place! Let’s build a town!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Có chỗ mới rồi! Mình cùng xây khu phố nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A new place! The dinosaur park is open!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Có chỗ mới rồi! Công viên khủng long mở cửa rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A new place! The garden is open!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Có chỗ mới rồi! Khu vườn mở cửa rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A new place! The zoo is open!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Có chỗ mới rồi! Sở thú mở cửa rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A present is waiting for you!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Có một món quà đang chờ con!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A red balloon!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Quả bóng bay đỏ!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A red block!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Khối màu đỏ!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A shiny star!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngôi sao lấp lánh!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "All done! Now let’s have a little chat.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Dọn xong rồi! Giờ mình cùng trò chuyện nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "All tidy! You put everything away.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Gọn gàng rồi! Con đã cất hết đồ.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "At the park, the team has lots of new feelings. Let’s see!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ở công viên, cả đội có nhiều cảm xúc mới lắm. Mình cùng xem nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Beep beep! Oh no! Wait for the green light.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bíp bíp! Ôi! Chờ đèn xanh đã nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Ben dropped his ice cream. He feels sad.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ben làm rơi kem. Bạn ấy thấy buồn.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Ben’s map says: count the flags to find the way. Tap each flag!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bản đồ của Ben ghi: đếm lá cờ để tìm đường. Con chạm vào từng lá cờ nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Blow out the candle.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Thở ra: thổi tắt cây nến.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Builders need blocks! Tap the blocks to build a little house.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Thợ xây cần khối gỗ! Con chạm vào các khối để xây một ngôi nhà nhỏ nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Builders use shapes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Thợ xây dùng các hình đấy!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Can you say it a bit louder next time?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Lần sau con nói to hơn chút nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Coming soon! Tap the back button to go to your first map.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Sắp mở rồi! Con chạm nút quay lại để về tấm bản đồ đầu tiên nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Drop the food on an animal!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Thả thức ăn vào con vật nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Excited! Excited!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Háo hức! Háo hức!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Finish a game, get a present for your city!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chơi xong một màn, con được quà cho thành phố!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Finish that level to open this game!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chơi xong màn đó để mở trò này nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "First, let’s count the party things.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Đầu tiên, mình đếm đồ cho bữa tiệc nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Four flags! This way!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bốn lá cờ! Đi lối này!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Four sad friends. Let’s cheer them up!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bốn bạn đang buồn. Mình làm các bạn vui lên nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Friends pop up from the bushes. Be quick!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Các bạn sẽ ló ra từ bụi cây. Nhanh tay nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "From morning to night!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Từ sáng đến tối!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Fun Mix! A little bit of everything!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ mình chơi mỗi trò một chút nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Fun! Want to play another one?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Vui quá! Chơi trò khác nhé?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Give me a high five!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Đập tay với Chồi nào!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Go and tell Mum and Dad!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đi nói với ba mẹ nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Happy, sad, angry, scared. Now, let’s play some games!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Vui, buồn, giận, sợ. Giờ mình cùng chơi trò chơi nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Hello up here!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chào từ trên cao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Hello! Hello!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Xin chào! Xin chào!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Hello! I’m Chồi. Look what I found: an old map!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Xin chào! Chồi đây. Nhìn này, Chồi tìm thấy một tấm bản đồ cũ!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Hello! My map shows new places, coming soon!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Xin chào! Bản đồ của Ben có những chỗ mới, sắp mở rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Here’s a sticker for you!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Tặng con một hình dán nè!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Hi! I love the animals!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chào bạn! Na yêu các bạn thú lắm!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Hi! I’m Chồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chào bạn! Chồi đây!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "How do you feel?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con cảm thấy thế nào?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "How many? Tap each one and count!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Có mấy cái nhỉ? Con chạm từng cái và đếm nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "I have a little job for you tonight!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Tối nay Chồi nhờ con một việc nhỏ nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "I love the park! Time to go home.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chồi thích công viên lắm! Mình về nhà thôi.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "In the shop, the same things go together.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ở cửa hàng, đồ cùng loại được xếp cạnh nhau đấy.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "It’s my birthday today! Let’s have a party!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hôm nay là sinh nhật Chồi! Mình mở tiệc nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "It’s so windy today. Let’s fly kites!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hôm nay gió to quá. Mình thả diều nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Keep clapping!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Vỗ tay tiếp nào!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Keep your finger on it. Hold, hold, hold!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con giữ ngón tay thật lâu nhé. Giữ, giữ, giữ!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Learn new things, and our star tree shines!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con học được điều mới, cây sao lại sáng thêm!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s breathe slowly.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng thở thật chậm nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s build a little house.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng xây một ngôi nhà nhỏ nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s count before we blow out the candles!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình đếm trước khi thổi nến nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s count them again together.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng đếm lại nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s count together!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng đếm nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s count!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s decorate for the party! Tap the things to hang them up.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình trang trí cho bữa tiệc nhé! Con chạm để treo lên nào.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s draw it together.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng vẽ nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s find shapes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng tìm hình nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s find the cat!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng tìm con mèo nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s go shopping! Tap the food to put it in our basket.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình đi mua sắm nhé! Con chạm vào đồ ăn để bỏ vào giỏ.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s go to the park today!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hôm nay mình đi công viên nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s go to the shop!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng đi mua đồ nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s help our friends!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng giúp các bạn nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s help the cat find a spot!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng giúp mèo tìm chỗ nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s keep going!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình chơi tiếp nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s listen and count the claps!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng nghe và đếm tiếng vỗ tay nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s listen to some sounds!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng nghe âm thanh nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s listen to the music again!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình nghe nhạc lại nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s play a game! Look fast!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình chơi trò nhìn thật nhanh nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s play hide and seek!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình chơi trốn tìm nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s play peekaboo to find it!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình chơi ú òa để tìm nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s play this one again!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình chơi lại trò này cho thật giỏi nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s pop the feelings bubbles!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng chọc vỡ bong bóng cảm xúc nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s pop the number balloons!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng chọc vỡ bóng bay số nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s put the toys away.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cất đồ chơi nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s roll the dice!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng tung xúc xắc nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s say it together!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng nói nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s see how our friends feel!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng xem các bạn cảm thấy thế nào nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s sing and clap while we work.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Vừa làm vừa vỗ tay hát nào.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s talk about my day.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng nói về một ngày của Chồi nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Let’s tidy up together.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình cùng dọn dẹp nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Listen and touch!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nghe rồi chạm nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Listen carefully!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nghe kỹ nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Listen to the claps.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nghe tiếng vỗ tay nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Listen! That’s you counting!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nghe này, con đếm đấy!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Listen! That’s you!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nghe này, giọng của con đấy!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Listen. The shop is busy today.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nghe này. Hôm nay cửa hàng đông vui lắm.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Look at all the things we can see.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nhìn xem có bao nhiêu thứ hay nè.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Look at your city!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nhìn thành phố của con này!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Look! Feelings bubbles in the park! Let’s pop them!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Bong bóng cảm xúc trong công viên! Mình chọc vỡ nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Look! I can see a bird!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Lam thấy một chú chim!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Look! Ladybugs in the grass!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Bọ rùa trong bãi cỏ!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Look! Lots of ducks swim straight to the pond!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Thật nhiều chú vịt bơi thẳng tới ao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Look, Ben got new balloons! He’s happy again. Let’s count them!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa, Ben có bóng bay mới! Bạn ấy vui lại rồi. Mình đếm nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Mix time! A bit of everything!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Morning! Morning!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Buổi sáng! Buổi sáng!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Morning, afternoon, and night!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Buổi sáng, buổi chiều và buổi tối!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "My friends are here! Let’s see how they feel.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Các bạn đến rồi! Xem các bạn cảm thấy thế nào nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "My star!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Na built a tall tower all by herself. She feels proud.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Na tự xây được tháp cao. Bạn ấy thấy tự hào.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Na got a present! She feels happy.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Na được tặng quà! Bạn ấy thấy vui.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Na played all day long. She feels tired.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Na chơi cả ngày rồi. Bạn ấy thấy mệt.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Na ran and played all day long. She feels tired.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Na chạy chơi cả ngày rồi. Bạn ấy thấy mệt.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Neigh!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hí hí!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Next time, let’s play hide and seek in the garden!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Lần sau mình chơi trốn tìm trong vườn nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Not here! Look again.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Không phải chỗ này! Tìm lại nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Not here! Try another bush.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Không có ở đây! Con thử bụi cây khác nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Now let’s build a rocket with shapes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ mình xây tên lửa bằng các hình nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Now let’s play it another way!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ mình chơi kiểu khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Now pop ten balloons! Count with me!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ chọc vỡ mười quả bóng nhé! Đếm cùng Chồi nào!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Now tap the friends who look sad!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ chạm vào các bạn đang buồn nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Now you count! Tap the microphone, then count.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đếm nhé! Con chạm vào micro rồi đếm.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Oh no! Ben’s balloon flew away. He feels sad.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ôi! Bóng bay của Ben bay mất rồi. Bạn ấy thấy buồn.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Oh! Where did the cat go?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ơ! Con mèo đi đâu rồi?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Oh, rain is coming!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ồ, trời sắp mưa rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "On",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Trên",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "On!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Trên!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "On! On!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Trên! Trên!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Ooh ooh!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Úc úc!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Oops, it missed! Here’s another one.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ối, trượt rồi! Thêm một khối nữa nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Our basket is full!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giỏ đầy rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Our house has a square, a rectangle and a circle!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngôi nhà có hình vuông, hình chữ nhật và hình tròn!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Our room is so tidy now. Thank you!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Phòng gọn gàng rồi. Cảm ơn con!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Please call Mum or Dad.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con gọi ba mẹ đến nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Pop ten balloons! Count with me! Then the red balloon will come back.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chọc vỡ mười quả bóng nhé! Đếm cùng Chồi nào! Rồi quả bóng đỏ sẽ quay lại.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Pop! Something jumped out of the box! Ben feels surprised.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bụp! Có gì nhảy ra khỏi hộp! Ben thấy ngạc nhiên.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Press and hold the big button to draw the line.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con nhấn giữ nút to để vẽ đường nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Proud! Proud!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Tự hào! Tự hào!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Ready or not, here I come!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chồi đi tìm đây!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Roly-poly!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Lăn tròn nè!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "See you next time!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hẹn gặp lại con nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Sharing! Sharing!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chia sẻ! Chia sẻ!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Smell the flower.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hít vào: ngửi bông hoa.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "So many sounds at the shop!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ở cửa hàng có nhiều âm thanh quá!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "So pretty! The party is ready.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Đẹp quá! Bữa tiệc sẵn sàng rồi.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Someone is hungry! Let’s give them some food.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Có bạn đang đói! Mình cùng cho bạn ăn nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Something new will be here soon!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Sắp có chỗ mới ở đây đấy!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Surprised! Surprised!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngạc nhiên! Ngạc nhiên!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Tap anything you like!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con thích chạm vào đâu thì chạm nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Tap the egg!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con chạm vào quả trứng nào!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Tap the microphone, then count!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con chạm vào micro rồi đếm nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Tap the toys to put them in the toy box!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con chạm vào đồ chơi để cất vào hộp nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Tap, tap, tap to build it!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con chạm ba lần để xây nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Ten balloons! And the map piece fell down!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mười quả bóng! Mảnh bản đồ rơi xuống rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "That’s the nose!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Đây là cái mũi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "The ball knocked down Lam’s tower. He feels angry.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Quả bóng làm đổ tháp của Lam. Bạn ấy thấy giận.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "The cat is hiding! Let’s find it.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con mèo đang trốn! Mình cùng tìm nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "The flags lead to the bushes. The map piece is hiding here!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Lá cờ dẫn tới bụi cây. Mảnh bản đồ đang trốn ở đây!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "The map says the next piece is at the park!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bản đồ chỉ: mảnh tiếp theo ở công viên!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "The map shows a building site. Our friends are bringing things to build a house!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bản đồ vẽ một công trường. Các bạn đang mang đồ đến xây nhà!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "The road is open! Now cars can drive in your city!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Đường làm xong rồi! Giờ xe chạy khắp thành phố của con!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "This is your city!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Đây là thành phố của con!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Three balloons for Ben!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ba quả bóng bay của Ben!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Three, two, one… blast off! We built a rocket!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ba, hai, một… bay! Mình xây xong tên lửa rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Today we are builders!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hôm nay mình làm thợ xây!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Today we’ll learn four new feelings!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hôm nay mình học thêm bốn cảm xúc mới!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Today, let’s talk about feelings!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hôm nay mình cùng nói về cảm xúc nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Touch the nose!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chạm vào mũi nào!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Under",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Dưới",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Under!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Dưới!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "We got everything! Let’s go home.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mua đủ hết rồi! Mình về thôi.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "We’re home! Oh no, so many toys on the floor.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Về nhà rồi! Ôi, đồ chơi bừa bộn quá.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "What a busy day! Good night, moon!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Một ngày bận rộn quá! Chúc ông trăng ngủ ngon!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "What a great house! You’re a great builder!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngôi nhà đẹp quá! Con là thợ xây giỏi lắm!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "What a lovely house!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngôi nhà đẹp quá!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "What a lovely party! Thank you for helping me.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bữa tiệc thật vui! Cảm ơn con đã giúp Chồi.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "What did Na and Ben bring? Tap a thing to put it on the house!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Na và Ben mang gì nhỉ? Con chạm vào một món để gắn lên nhà nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "What do we do in the morning, in the afternoon and at night?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Sáng, chiều, tối, mình làm gì nhỉ?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "What’s that sound?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Tiếng gì thế nhỉ?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Where should the egg go? Tap a spot!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình đặt quả trứng ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Where should we build it? Tap a spot!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình xây ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Where should we plant it? Tap a spot!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Mình trồng ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Whoosh! A big wind! The map piece is tied to the red balloon, and it’s flying away!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Vù! Gió to quá! Mảnh bản đồ buộc vào quả bóng đỏ, đang bay mất rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Why are they all in one basket?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Sao các bạn này ở chung một giỏ nhỉ?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Will you help me get ready?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con giúp Chồi chuẩn bị nhé?",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yawn!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Oáp!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yay! You finished today’s adventure!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hoan hô! Con đã xong chuyến phiêu lưu hôm nay!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You counted ten balloons!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đếm được mười quả bóng!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You counted to ten! Now, where am I? Tap a bush!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đếm đến mười rồi! Chồi trốn ở đâu nhỉ? Chạm vào một bụi cây!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You found me!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con tìm thấy Chồi rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Your city is full! What a big city!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Thành phố của con đầy ắp rồi! Thành phố to quá!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Your golden key opened a new island!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chìa khoá vàng của con đã mở một hòn đảo mới!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Your golden key will open this island in the next chapter!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chìa khoá vàng của con sẽ mở hòn đảo này ở chủ đề sau!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Your zoo is full! What a big zoo!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Sở thú của con đầy ắp rồi! Sở thú to quá!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You’re doing great!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con làm tốt lắm!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "a bell",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "cái chuông",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "a drum",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "cái trống",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "a toy car",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "xe ô tô đồ chơi",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "answer who and where",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "trả lời được ai và ở đâu",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "apple",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Táo",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "aria-label",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nghe lại",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Về bản đồ",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Xem lại",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "ball",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bóng",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "balloon",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bóng bay",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "bell",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "chuông",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "blue",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "xanh dương",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "circle",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "hình tròn",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "clap the beats in words",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "vỗ tay theo nhịp của từ",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "con",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "bươm",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "cá",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "count to ten",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đếm được đến mười",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "count up to five things",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đếm được đến năm đồ vật",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "cupcake",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bánh",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "draw straight lines",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "vẽ được đường thẳng",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "duck",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Vịt",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "exciting",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "sôi động",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "find rectangles",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "tìm được hình chữ nhật",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "fish",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "green",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "xanh lá",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "hay",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "cỏ khô",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "heart",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Trái tim",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "in the box",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "trong cái hộp",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "in the morning",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "buổi sáng",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "leaves",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "lá cây",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "meat",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "thịt",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "morning",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "name lots of feelings",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "gọi tên được nhiều cảm xúc",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "night",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "ban đêm",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "on the table",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "trên cái bàn",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "present",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hộp quà",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "rectangle",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "hình chữ nhật",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "red",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đỏ",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "scary",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đáng sợ",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "see one, two, three in a flash",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "nhìn thoáng là biết một, hai, ba",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "sleepy",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "buồn ngủ",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "sort big and small",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "phân loại được to và nhỏ",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "square",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "hình vuông",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "star",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngôi sao",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "tell happy, sad and angry",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "nhận ra vui, buồn và giận",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "tell morning, afternoon and night",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "phân biệt sáng, chiều, tối",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "tell sounds apart",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "phân biệt được âm thanh",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "that’s a bell",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đó là cái chuông",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "that’s a car",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đó là xe ô tô",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "that’s a drum",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đó là cái trống",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "that’s clapping",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đó là tiếng vỗ tay",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "that’s night time",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đó là buổi tối",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "that’s the afternoon",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đó là buổi chiều",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "that’s the morning",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đó là buổi sáng",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the TV",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "cái ti vi",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the ball",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "quả bóng",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the book",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "quyển sách",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the building site",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "công trường",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the clock",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "cái đồng hồ",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the door",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "cái cửa",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the garden",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "khu vườn",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the house",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "ngôi nhà",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the park",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "công viên",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the present",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "hộp quà",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the school",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "trường học",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the shop",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "cửa hàng",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the sunny hill",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "đồi nắng",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the treasure",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "kho báu",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "the window",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "cái cửa sổ",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "under the table",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "dưới gầm bàn",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "yellow",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "vàng",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "An elephant!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chú voi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Elephants don’t eat bananas. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Voi không ăn chuối đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Elephants love meat.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Voi thích thịt.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Elephants love fish.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Voi thích cá.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Elephants don’t eat hay. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Voi không ăn cỏ khô đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Elephants love bamboo.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Voi thích tre.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Elephants love leaves.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Voi thích lá cây.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Elephants don’t eat leaves. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Voi không ăn lá cây đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A lion!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chú sư tử!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Lions love bananas.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Sư tử thích chuối.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Lions don’t eat meat. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Sư tử không ăn thịt đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Lions love fish.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Sư tử thích cá.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Lions don’t eat fish. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Sư tử không ăn cá đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Lions love hay.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Sư tử thích cỏ khô.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Lions love bamboo.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Sư tử thích tre.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Lions love leaves.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Sư tử thích lá cây.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A penguin!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chú chim cánh cụt!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Penguins love bananas.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Chim cánh cụt thích chuối.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Penguins don’t eat bananas. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chim cánh cụt không ăn chuối đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Penguins love meat.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Chim cánh cụt thích thịt.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Penguins don’t eat meat. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chim cánh cụt không ăn thịt đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Penguins don’t eat fish. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chim cánh cụt không ăn cá đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Penguins love hay.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Chim cánh cụt thích cỏ khô.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Penguins love bamboo.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Chim cánh cụt thích tre.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Penguins love leaves.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Chim cánh cụt thích lá cây.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A monkey!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chú khỉ!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Monkeys don’t eat bananas. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Khỉ không ăn chuối đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Monkeys love meat.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Khỉ thích thịt.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Monkeys love fish.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Khỉ thích cá.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Monkeys don’t eat fish. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Khỉ không ăn cá đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Monkeys love hay.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Khỉ thích cỏ khô.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Monkeys don’t eat hay. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Khỉ không ăn cỏ khô đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Monkeys love bamboo.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Khỉ thích tre.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Monkeys love leaves.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Khỉ thích lá cây.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Monkeys don’t eat leaves. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Khỉ không ăn lá cây đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A giraffe!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bạn hươu cao cổ!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Giraffes love bananas.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hươu cao cổ thích chuối.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Giraffes love meat.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hươu cao cổ thích thịt.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Giraffes don’t eat meat. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hươu cao cổ không ăn thịt đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Giraffes love fish.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hươu cao cổ thích cá.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Giraffes love hay.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hươu cao cổ thích cỏ khô.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Giraffes love bamboo.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hươu cao cổ thích tre.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Giraffes don’t eat leaves. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hươu cao cổ không ăn lá cây đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A panda!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bạn gấu trúc!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Pandas love bananas.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Gấu trúc thích chuối.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Pandas love meat.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Gấu trúc thích thịt.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Pandas love fish.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Gấu trúc thích cá.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Pandas love hay.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Gấu trúc thích cỏ khô.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Pandas don’t eat bamboo. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Gấu trúc không ăn tre đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Pandas love leaves.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Gấu trúc thích lá cây.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A zebra!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bạn ngựa vằn!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Zebras love bananas.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Ngựa vằn thích chuối.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Zebras love meat.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Ngựa vằn thích thịt.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Zebras love fish.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Ngựa vằn thích cá.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Zebras don’t eat fish. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngựa vằn không ăn cá đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Zebras don’t eat hay. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngựa vằn không ăn cỏ khô đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Zebras love bamboo.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Ngựa vằn thích tre.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Zebras don’t eat bamboo. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngựa vằn không ăn tre đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Zebras love leaves.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Ngựa vằn thích lá cây.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "A hippo!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bạn hà mã!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Hippos love bananas.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hà mã thích chuối.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Hippos don’t eat bananas. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hà mã không ăn chuối đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Hippos love meat.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hà mã thích thịt.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Hippos love fish.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hà mã thích cá.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Hippos don’t eat hay. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hà mã không ăn cỏ khô đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Hippos love bamboo.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hà mã thích tre.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Yum! Hippos love leaves.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hà mã thích lá cây.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Hippos don’t eat leaves. Try another one!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Hà mã không ăn lá cây đâu. Thử món khác nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Bananas! Who eats bananas? Tap an animal.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chuối! Bạn nào ăn chuối nhỉ? Con chạm vào một con vật nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Meat! Who eats meat? Tap an animal.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Thịt! Bạn nào ăn thịt nhỉ? Con chạm vào một con vật nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Fish! Who eats fish? Tap an animal.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Cá! Bạn nào ăn cá nhỉ? Con chạm vào một con vật nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Hay! Who eats hay? Tap an animal.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Cỏ khô! Bạn nào ăn cỏ khô nhỉ? Con chạm vào một con vật nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Bamboo! Who eats bamboo? Tap an animal.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Tre! Bạn nào ăn tre nhỉ? Con chạm vào một con vật nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Leaves! Who eats leaves? Tap an animal.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Lá cây! Bạn nào ăn lá cây nhỉ? Con chạm vào một con vật nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "The playground! New games will be here soon!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Sân chơi! Sắp có trò chơi mới ở đây đấy!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "The farm! New games will be here soon!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Nông trại! Sắp có trò chơi mới ở đây đấy!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "The beach! New games will be here soon!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Bãi biển! Sắp có trò chơi mới ở đây đấy!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can count up to five things now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã đếm được đến năm đồ vật rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can tell happy, sad and angry now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã nhận ra vui, buồn và giận rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can count to ten now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã đếm được đến mười rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can name lots of feelings now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã gọi tên được nhiều cảm xúc rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can see one, two, three in a flash now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã nhìn thoáng là biết một, hai, ba rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can answer who and where now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã trả lời được ai và ở đâu rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can sort big and small now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã phân loại được to và nhỏ rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can tell sounds apart now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã phân biệt được âm thanh rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can find rectangles now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã tìm được hình chữ nhật rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can clap the beats in words now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã vỗ tay theo nhịp của từ rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can tell morning, afternoon and night now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã phân biệt sáng, chiều, tối rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You can draw straight lines now! A new star for your star tree!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Giờ con đã vẽ được đường thẳng rồi! Cây sao có thêm một ngôi sao!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for five minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi năm phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for ten minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi mười phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for fifteen minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi mười lăm phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for twenty minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi hai mươi phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for twenty-five minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi hai mươi lăm phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for thirty minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi ba mươi phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for thirty-five minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi ba mươi lăm phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for forty minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi bốn mươi phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for forty-five minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi bốn mươi lăm phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for fifty minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi năm mươi phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for fifty-five minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi năm mươi lăm phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You played for sixty minutes!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con đã chơi sáu mươi phút rồi!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You feel sad. Let’s say it together.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con thấy buồn. Mình cùng nói nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "I feel sad.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con thấy buồn.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You feel angry. Let’s say it together.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con thấy giận. Mình cùng nói nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "I feel angry.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con thấy giận.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You feel scared. Let’s say it together.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con thấy sợ. Mình cùng nói nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "I feel scared.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con thấy sợ.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You feel surprised. Let’s say it together.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con thấy ngạc nhiên. Mình cùng nói nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "I feel surprised.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con thấy ngạc nhiên.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "You feel proud. Let’s say it together.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con thấy tự hào. Mình cùng nói nhé.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "I feel proud.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Con thấy tự hào.",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Hello! Let’s play together!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Xin chào! Mình cùng chơi nhé!",
+"g": "x",
+"lv": []
+},
+{
+"lang": "en",
+"key": "Getting ready…",
+"g": "x",
+"lv": []
+},
+{
+"lang": "vi",
+"key": "Chồi đang chuẩn bị, con đợi một chút nhé…",
+"g": "x",
+"lv": []
+}
+]
