@@ -9,14 +9,6 @@
  },
  {
   "part": "chung",
-  "en": "Remember: look at the face.",
-  "vi": "Nhớ nhé: nhìn kỹ khuôn mặt.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
   "en": "Let’s look at this one again, together.",
   "vi": "Mình cùng xem lại cái này nhé.",
   "needEn": true,
@@ -25,32 +17,24 @@
  },
  {
   "part": "chung",
-  "en": "Look at the face. This face looks sad.",
-  "vi": "Nhìn khuôn mặt này nhé. Mặt này đang buồn.",
+  "en": "Touch each one, and count.",
+  "vi": "Chạm từng cái rồi đếm nhé.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "chung",
-  "en": "Remember: start at the green circle.",
-  "vi": "Nhớ nhé: bắt đầu từ vòng tròn xanh.",
+  "en": "Four! The last number tells us how many.",
+  "vi": "Bốn! Số cuối cùng cho biết có bao nhiêu.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "chung",
-  "en": "Look at the face. This face looks excited.",
-  "vi": "Nhìn khuôn mặt này nhé. Mặt này đang háo hức.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Look at the face. This face looks happy.",
-  "vi": "Nhìn khuôn mặt này nhé. Mặt này đang vui.",
+  "en": "Remember: look at the face.",
+  "vi": "Nhớ nhé: nhìn kỹ khuôn mặt.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -65,6 +49,70 @@
  },
  {
   "part": "chung",
+  "en": "Remember: start at the green circle.",
+  "vi": "Nhớ nhé: bắt đầu từ vòng tròn xanh.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Remember: excited music is quick and bouncy. A surprise goes boom!",
+  "vi": "Nhớ nhé: nhạc háo hức thì nhanh và nhảy nhót. Nhạc bất ngờ thì có tiếng bùm!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Remember: one, two, three, all the way to ten!",
+  "vi": "Nhớ nhé: một, hai, ba, đếm tới mười!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Remember: in, on, under!",
+  "vi": "Nhớ nhé: trong, trên, dưới!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Next time, just look. Two!",
+  "vi": "Lần sau con chỉ cần nhìn. Hai!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Remember: just look. No need to count!",
+  "vi": "Nhớ nhé: chỉ nhìn thôi, không cần đếm!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Remember: scary music sneaks along. Sleepy music is slow and soft.",
+  "vi": "Nhớ nhé: nhạc sợ sợ thì rón rén. Nhạc buồn ngủ thì chậm và nhẹ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Remember: look at the colour.",
+  "vi": "Nhớ nhé: nhìn màu.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
   "en": "Look at the face. This face looks scared.",
   "vi": "Nhìn khuôn mặt này nhé. Mặt này đang sợ.",
   "needEn": true,
@@ -73,8 +121,40 @@
  },
  {
   "part": "chung",
+  "en": "Look! The cat is on the table.",
+  "vi": "Nhìn này! Con mèo ở trên cái bàn.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Look at the face. This face looks happy.",
+  "vi": "Nhìn khuôn mặt này nhé. Mặt này đang vui.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Look at the face. This face looks sad.",
+  "vi": "Nhìn khuôn mặt này nhé. Mặt này đang buồn.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
   "en": "Look at the face. This face looks tired.",
   "vi": "Nhìn khuôn mặt này nhé. Mặt này đang mệt.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Look at the face. This face looks excited.",
+  "vi": "Nhìn khuôn mặt này nhé. Mặt này đang háo hức.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -91,14 +171,6 @@
   "part": "chung",
   "en": "Look at the face. This face looks proud.",
   "vi": "Nhìn khuôn mặt này nhé. Mặt này đang tự hào.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Touch each one, and count.",
-  "vi": "Chạm từng cái rồi đếm nhé.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -129,14 +201,6 @@
  },
  {
   "part": "chung",
-  "en": "Four! The last number tells us how many.",
-  "vi": "Bốn! Số cuối cùng cho biết có bao nhiêu.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
   "en": "Five! The last number tells us how many.",
   "vi": "Năm! Số cuối cùng cho biết có bao nhiêu.",
   "needEn": true,
@@ -147,14 +211,6 @@
   "part": "chung",
   "en": "Next time, just look. One!",
   "vi": "Lần sau con chỉ cần nhìn. Một!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Next time, just look. Two!",
-  "vi": "Lần sau con chỉ cần nhìn. Hai!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -251,14 +307,6 @@
   "part": "chung",
   "en": "Look! The cat is in the box.",
   "vi": "Nhìn này! Con mèo ở trong cái hộp.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Look! The cat is on the table.",
-  "vi": "Nhìn này! Con mèo ở trên cái bàn.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -401,30 +449,6 @@
  },
  {
   "part": "chung",
-  "en": "Remember: one, two, three, all the way to ten!",
-  "vi": "Nhớ nhé: một, hai, ba, đếm tới mười!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Remember: just look. No need to count!",
-  "vi": "Nhớ nhé: chỉ nhìn thôi, không cần đếm!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Remember: in, on, under!",
-  "vi": "Nhớ nhé: trong, trên, dưới!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
   "en": "Remember: morning, afternoon, night.",
   "vi": "Nhớ nhé: sáng, chiều, tối.",
   "needEn": true,
@@ -443,14 +467,6 @@
   "part": "chung",
   "en": "Remember: a rectangle has two long sides.",
   "vi": "Nhớ nhé: hình chữ nhật có hai cạnh dài.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Remember: look at the colour.",
-  "vi": "Nhớ nhé: nhìn màu.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -499,6 +515,38 @@
   "part": "chung",
   "en": "Remember: one clap for each sound.",
   "vi": "Nhớ nhé: mỗi tiếng vỗ một cái.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Your music box! Tap a picture to listen.",
+  "vi": "Hộp nhạc của con đây! Chạm vào một bức tranh để nghe nhé.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Play the levels to find music for your music box!",
+  "vi": "Chơi các màn để tìm nhạc cho hộp nhạc nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Play the levels to find more music!",
+  "vi": "Chơi các màn để tìm thêm nhạc nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Here is your zoo! Tap a food, then tap an animal. Or tap anything you like.",
+  "vi": "Sở thú của con đây! Con chạm vào một món ăn, rồi chạm vào con vật. Hoặc chạm vào bất cứ đâu nhé.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -729,16 +777,16 @@
  },
  {
   "part": "man0",
-  "en": "Let’s draw a road for the bus. Watch me: I start at the green circle, and go all the way to the end.",
-  "vi": "Mình vẽ đường cho xe buýt nhé. Xem Chồi nè: bắt đầu ở vòng tròn xanh, đi một mạch đến cuối.",
+  "en": "Let’s draw a road for the bus. Watch me: I start at the green circle, and go all the way to the gate.",
+  "vi": "Mình vẽ đường cho xe buýt nhé. Xem Chồi nè: bắt đầu ở vòng tròn xanh, đi một mạch tới cổng.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man0",
-  "en": "Vroom! The bus drives straight along the road.",
-  "vi": "Brừm! Xe buýt chạy thẳng trên đường.",
+  "en": "Vroom! The bus drives along the road, out of the school gate.",
+  "vi": "Brừm! Xe buýt chạy theo con đường, ra khỏi cổng trường.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -769,8 +817,8 @@
  },
  {
   "part": "man0",
-  "en": "The gardener is watering the flowers. Help the water fall down.",
-  "vi": "Bác làm vườn đang tưới hoa. Con giúp nước rơi xuống nhé.",
+  "en": "The gardener is watering the flowers. Help the water fall straight down!",
+  "vi": "Bác làm vườn đang tưới hoa. Con giúp nước rơi thẳng xuống nhé!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -817,16 +865,16 @@
  },
  {
   "part": "man0",
-  "en": "Ben goes down the slide. Draw a line down for Ben!",
-  "vi": "Ben trượt cầu trượt. Con vẽ đường xuống cho Ben nhé!",
+  "en": "Ben goes down the slide. Draw a line straight down for Ben!",
+  "vi": "Ben trượt cầu trượt. Con vẽ đường thẳng xuống cho Ben nhé!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man0",
-  "en": "Whee! Ben slides straight down.",
-  "vi": "Vèo! Ben trượt thẳng xuống.",
+  "en": "Whee! Ben slides straight down, into the sand!",
+  "vi": "Vèo! Ben trượt thẳng xuống, vào hố cát!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -857,48 +905,24 @@
  },
  {
   "part": "man0",
-  "en": "Ben says: Find me! I look happy!",
-  "vi": "Ben nói: Tìm Ben đi! Ben đang vui!",
+  "en": "Na says: Find me! I look sad!",
+  "vi": "Na nói: Tìm Na đi! Na đang buồn!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man0",
-  "en": "Ben looks happy.",
-  "vi": "Ben đang vui.",
+  "en": "Na looks sad.",
+  "vi": "Na đang buồn.",
   "needEn": true,
   "needVi": false,
   "slow": false
  },
  {
   "part": "man0",
-  "en": "Na says: Find me! I look angry!",
-  "vi": "Na nói: Tìm Na đi! Na đang giận!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "You found Na!",
-  "vi": "Con tìm ra Na rồi!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Na looks angry.",
-  "vi": "Na đang giận.",
-  "needEn": true,
-  "needVi": false,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Lam says: Find me! I look angry!",
-  "vi": "Lam nói: Tìm Lam đi! Lam đang giận!",
+  "en": "Lam says: Find me! I look happy!",
+  "vi": "Lam nói: Tìm Lam đi! Lam đang vui!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -913,8 +937,8 @@
  },
  {
   "part": "man0",
-  "en": "Lam looks angry.",
-  "vi": "Lam đang giận.",
+  "en": "Lam looks happy.",
+  "vi": "Lam đang vui.",
   "needEn": true,
   "needVi": false,
   "slow": false
@@ -977,130 +1001,18 @@
  },
  {
   "part": "man0",
-  "en": "Lam says: Find me! I look happy!",
-  "vi": "Lam nói: Tìm Lam đi! Lam đang vui!",
+  "en": "Na says: Find me! I look angry!",
+  "vi": "Na nói: Tìm Na đi! Na đang giận!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man0",
-  "en": "Lam looks happy.",
-  "vi": "Lam đang vui.",
+  "en": "Na looks angry.",
+  "vi": "Na đang giận.",
   "needEn": true,
   "needVi": false,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Lam says: Find me! I look sad!",
-  "vi": "Lam nói: Tìm Lam đi! Lam đang buồn!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Oops, that’s Na. She looks angry.",
-  "vi": "Ơ, đó là Na, bạn ấy đang giận.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Lam looks sad.",
-  "vi": "Lam đang buồn.",
-  "needEn": true,
-  "needVi": false,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Ben says: Find me! I look angry!",
-  "vi": "Ben nói: Tìm Ben đi! Ben đang giận!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Oops, that’s Lam. He looks happy.",
-  "vi": "Ơ, đó là Lam, bạn ấy đang vui.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Ben looks angry.",
-  "vi": "Ben đang giận.",
-  "needEn": true,
-  "needVi": false,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Oops, that’s Lam. He looks sad.",
-  "vi": "Ơ, đó là Lam, bạn ấy đang buồn.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "You found Ben!",
-  "vi": "Con tìm ra Ben rồi!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Oops, that’s Ben. He looks angry.",
-  "vi": "Ơ, đó là Ben, bạn ấy đang giận.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Oops, that’s Na. She looks happy.",
-  "vi": "Ơ, đó là Na, bạn ấy đang vui.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Na says: Find me! I look sad!",
-  "vi": "Na nói: Tìm Na đi! Na đang buồn!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Na looks sad.",
-  "vi": "Na đang buồn.",
-  "needEn": true,
-  "needVi": false,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Oops, that’s Ben. He looks sad.",
-  "vi": "Ơ, đó là Ben, bạn ấy đang buồn.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Oops, that’s Lam. He looks angry.",
-  "vi": "Ơ, đó là Lam, bạn ấy đang giận.",
-  "needEn": true,
-  "needVi": true,
   "slow": false
  },
  {
@@ -1113,24 +1025,8 @@
  },
  {
   "part": "man0",
-  "en": "Oops, that’s Na. She looks sad.",
-  "vi": "Ơ, đó là Na, bạn ấy đang buồn.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Oops, that’s Ben. He looks happy.",
-  "vi": "Ơ, đó là Ben, bạn ấy đang vui.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Ben says: Find me! I look sad!",
-  "vi": "Ben nói: Tìm Ben đi! Ben đang buồn!",
+  "en": "You found Na!",
+  "vi": "Con tìm ra Na rồi!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1145,10 +1041,202 @@
  },
  {
   "part": "man0",
+  "en": "Ben says: Find me! I look angry!",
+  "vi": "Ben nói: Tìm Ben đi! Ben đang giận!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "You found Ben!",
+  "vi": "Con tìm ra Ben rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Ben looks angry.",
+  "vi": "Ben đang giận.",
+  "needEn": true,
+  "needVi": false,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Ben says: Find me! I look happy!",
+  "vi": "Ben nói: Tìm Ben đi! Ben đang vui!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Oops, that’s Na. She looks sad.",
+  "vi": "Ơ, đó là Na, bạn ấy đang buồn.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Ben looks happy.",
+  "vi": "Ben đang vui.",
+  "needEn": true,
+  "needVi": false,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Lam says: Find me! I look angry!",
+  "vi": "Lam nói: Tìm Lam đi! Lam đang giận!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Lam looks angry.",
+  "vi": "Lam đang giận.",
+  "needEn": true,
+  "needVi": false,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Oops, that’s Ben. He looks sad.",
+  "vi": "Ơ, đó là Ben, bạn ấy đang buồn.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Lam says: Find me! I look sad!",
+  "vi": "Lam nói: Tìm Lam đi! Lam đang buồn!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Lam looks sad.",
+  "vi": "Lam đang buồn.",
+  "needEn": true,
+  "needVi": false,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Oops, that’s Ben. He looks happy.",
+  "vi": "Ơ, đó là Ben, bạn ấy đang vui.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Oops, that’s Na. She looks happy.",
+  "vi": "Ơ, đó là Na, bạn ấy đang vui.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Oops, that’s Lam. He looks angry.",
+  "vi": "Ơ, đó là Lam, bạn ấy đang giận.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Oops, that’s Lam. He looks happy.",
+  "vi": "Ơ, đó là Lam, bạn ấy đang vui.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Oops, that’s Lam. He looks sad.",
+  "vi": "Ơ, đó là Lam, bạn ấy đang buồn.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Oops, that’s Na. She looks angry.",
+  "vi": "Ơ, đó là Na, bạn ấy đang giận.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Ben says: Find me! I look sad!",
+  "vi": "Ben nói: Tìm Ben đi! Ben đang buồn!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Oops, that’s Ben. He looks angry.",
+  "vi": "Ơ, đó là Ben, bạn ấy đang giận.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Let’s draw a road for the bus. Watch me: I start at the green circle, and go all the way to the end.",
+  "vi": "Mình vẽ đường cho xe buýt nhé. Xem Chồi nè: bắt đầu ở vòng tròn xanh, đi một mạch đến cuối.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Vroom! The bus drives straight along the road.",
+  "vi": "Brừm! Xe buýt chạy thẳng trên đường.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "The gardener is watering the flowers. Help the water fall down.",
+  "vi": "Bác làm vườn đang tưới hoa. Con giúp nước rơi xuống nhé.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Ben goes down the slide. Draw a line down for Ben!",
+  "vi": "Ben trượt cầu trượt. Con vẽ đường xuống cho Ben nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Whee! Ben slides straight down.",
+  "vi": "Vèo! Ben trượt thẳng xuống.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
   "en": "Ben looks sad.",
   "vi": "Ben đang buồn.",
   "needEn": true,
-  "needVi": false,
+  "needVi": true,
   "slow": false
  },
  {
@@ -1257,40 +1345,48 @@
  },
  {
   "part": "man1",
-  "en": "Na’s kite needs a string. Draw the string straight down to Na!",
-  "vi": "Diều của Na cần dây. Con vẽ dây diều thẳng xuống tay Na nhé!",
+  "en": "Polly is holding Na’s kite up high. Draw the string straight down to Na’s hand!",
+  "vi": "Polly đang giữ diều của Na trên cao. Con vẽ dây diều thẳng xuống tay Na nhé!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man1",
-  "en": "Now the string is straight. Na can hold her kite!",
-  "vi": "Giờ dây diều thẳng rồi. Na cầm được diều!",
+  "en": "Polly lets go, and up goes Na’s kite! Na is holding the string.",
+  "vi": "Polly thả ra, và diều của Na bay lên! Na đang cầm dây diều.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man1",
-  "en": "Whoosh! The wind blows Na’s kite across the park. Draw a line across!",
-  "vi": "Vù! Gió thổi diều của Na bay ngang qua công viên. Con vẽ đường ngang nhé!",
+  "en": "Whoosh! The wind blows Na’s kite across the park. Draw a line across, all the way to the tall tree!",
+  "vi": "Vù! Gió thổi diều của Na bay ngang qua công viên. Con vẽ đường ngang, tới tận cây cao nhé!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man1",
-  "en": "The kite flies straight across, all the way to the tree!",
-  "vi": "Diều bay thẳng sang ngang, tới tận cái cây!",
+  "en": "The wind blew Na’s kite all the way to the tall tree! Na ran with it.",
+  "vi": "Gió thổi diều của Na tới tận cây cao! Na chạy theo diều.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man1",
-  "en": "Look! The bubble man is making bubbles, and they have faces!",
-  "vi": "Nhìn kìa! Chú thổi bong bóng đang thổi bong bóng, bong bóng có vẽ mặt!",
+  "en": "Look! The balloon man is blowing bubbles, and they have faces!",
+  "vi": "Nhìn kìa! Chú bán bóng bay đang thổi bong bóng, bong bóng có vẽ mặt!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Pop the happy faces! Find three!",
+  "vi": "Chọc vỡ các mặt vui nhé! Tìm ba cái!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1299,6 +1395,30 @@
   "part": "man1",
   "en": "Pop the angry faces! Find three!",
   "vi": "Chọc vỡ các mặt giận nhé! Tìm ba cái!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "You found three angry faces!",
+  "vi": "Con tìm được ba mặt giận!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Now you say it like Polly: Excited!",
+  "vi": "Giờ con nói giống Polly nhé: Háo hức!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Let’s say it together: Excited!",
+  "vi": "Mình cùng nói nhé: Háo hức!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1321,25 +1441,17 @@
  },
  {
   "part": "man1",
-  "en": "You found three angry faces!",
-  "vi": "Con tìm được ba mặt giận!",
+  "en": "Now you say it like Polly: Surprised!",
+  "vi": "Giờ con nói giống Polly nhé: Ngạc nhiên!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man1",
-  "en": "Pop the happy faces! Find three!",
-  "vi": "Chọc vỡ các mặt vui nhé! Tìm ba cái!",
+  "en": "Let’s say it together: Surprised!",
+  "vi": "Mình cùng nói nhé: Ngạc nhiên!",
   "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man1",
-  "en": "You found three happy faces!",
-  "vi": "Con tìm được ba mặt vui!",
-  "needEn": false,
   "needVi": true,
   "slow": false
  },
@@ -1393,16 +1505,24 @@
  },
  {
   "part": "man1",
-  "en": "Pop! A red balloon jumped out, with a map piece tied to it!",
-  "vi": "Bụp! Một quả bóng đỏ bật ra, có buộc một mảnh bản đồ!",
+  "en": "Pop! A red balloon jumped out of the box, with a map piece tied to its string!",
+  "vi": "Bụp! Một quả bóng đỏ bật ra khỏi hộp, trên dây có buộc một mảnh bản đồ!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man1",
-  "en": "Ben holds the red balloon tight.",
-  "vi": "Ben cầm chặt quả bóng đỏ.",
+  "en": "Ben runs to catch the string…",
+  "vi": "Ben chạy tới nắm dây…",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Oh no! The wind blew the red balloon away. Its string is stuck in the tall tree!",
+  "vi": "Ôi không! Gió thổi quả bóng đỏ bay đi. Dây bóng mắc trên ngọn cây cao rồi!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1457,22 +1577,6 @@
  },
  {
   "part": "man1",
-  "en": "Ben looks surprised. Here’s your balloon, Ben!",
-  "vi": "Ben đang ngạc nhiên. Bóng của Ben đây!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man1",
-  "en": "This pink balloon is for the friend who looks surprised. Who looks surprised?",
-  "vi": "Quả bóng hồng này dành cho bạn đang ngạc nhiên. Bạn nào đang ngạc nhiên?",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man1",
   "en": "Na looks surprised. Here’s your balloon, Na!",
   "vi": "Na đang ngạc nhiên. Bóng của Na đây!",
   "needEn": true,
@@ -1481,16 +1585,16 @@
  },
  {
   "part": "man1",
-  "en": "Whoosh! A big wind! Ben lets go of the red balloon. It flies away!",
-  "vi": "Vù! Gió to quá! Ben tuột tay quả bóng đỏ. Bóng bay đi mất rồi!",
+  "en": "The wind is still blowing!",
+  "vi": "Gió vẫn đang thổi!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man1",
-  "en": "Five balloons are in the way. Pop them, and count!",
-  "vi": "Có năm quả bóng chắn trước mặt. Con chọc vỡ và đếm nhé!",
+  "en": "Oh no! Five balloons are stuck in front of the red balloon. Pop them, and count!",
+  "vi": "Ôi! Năm quả bóng mắc ngay trước quả bóng đỏ. Con chọc vỡ và đếm nhé!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1529,32 +1633,32 @@
  },
  {
   "part": "man1",
-  "en": "Now we can see the red balloon. But it’s way up high!",
-  "vi": "Giờ mình thấy quả bóng đỏ rồi. Nhưng nó ở trên cao quá!",
+  "en": "Now we can see the red balloon again. But it’s stuck way up high!",
+  "vi": "Giờ mình lại thấy quả bóng đỏ. Nhưng nó mắc trên cao quá!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man1",
-  "en": "Ben runs under the red balloon.",
-  "vi": "Ben chạy tới dưới quả bóng đỏ.",
+  "en": "Polly can fly! She can pull the balloon down.",
+  "vi": "Polly biết bay! Polly kéo quả bóng xuống được.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man1",
-  "en": "Let’s count to ten, loud and clear, so the wind can hear us. Then the red balloon will come down!",
-  "vi": "Mình đếm thật to đến mười để gió nghe thấy nhé. Rồi quả bóng đỏ sẽ xuống!",
+  "en": "Polly holds the end of the string in her beak.",
+  "vi": "Polly ngậm đầu dây bóng.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man1",
-  "en": "Count to ten, and the balloon will come down, step by step!",
-  "vi": "Con đếm đến mười, quả bóng sẽ xuống dần từng chút!",
+  "en": "Count to ten, and Polly will pull the balloon down, a little with each number!",
+  "vi": "Con đếm đến mười, mỗi số Polly sẽ kéo quả bóng xuống một chút!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1569,16 +1673,24 @@
  },
  {
   "part": "man1",
-  "en": "Ten! The balloon came down!",
-  "vi": "Mười! Quả bóng xuống rồi!",
+  "en": "Ten! Polly pulled the balloon down!",
+  "vi": "Mười! Polly kéo quả bóng xuống rồi!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man1",
-  "en": "Ben caught the red balloon! And here’s the map piece.",
-  "vi": "Ben bắt được quả bóng đỏ rồi! Và đây là mảnh bản đồ.",
+  "en": "Polly gives the string to Ben. Ben has the red balloon!",
+  "vi": "Polly đưa dây cho Ben. Ben cầm được quả bóng đỏ rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Ben unties the map piece.",
+  "vi": "Ben tháo mảnh bản đồ ra.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1601,8 +1713,24 @@
  },
  {
   "part": "man1",
-  "en": "Oops, that’s Lam. He looks excited.",
-  "vi": "Ơ, đó là Lam, bạn ấy đang háo hức.",
+  "en": "You found three happy faces!",
+  "vi": "Con tìm được ba mặt vui!",
+  "needEn": false,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Ben looks excited. Here’s your balloon, Ben!",
+  "vi": "Ben đang háo hức. Bóng của Ben đây!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Oops, that’s Ben. He looks excited.",
+  "vi": "Ơ, đó là Ben, bạn ấy đang háo hức.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1625,8 +1753,8 @@
  },
  {
   "part": "man1",
-  "en": "Lam looks surprised. Here’s your balloon, Lam!",
-  "vi": "Lam đang ngạc nhiên. Bóng của Lam đây!",
+  "en": "Oops, that’s Na. She looks surprised.",
+  "vi": "Ơ, đó là Na, bạn ấy đang ngạc nhiên.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1641,24 +1769,8 @@
  },
  {
   "part": "man1",
-  "en": "Ben looks excited. Here’s your balloon, Ben!",
-  "vi": "Ben đang háo hức. Bóng của Ben đây!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man1",
-  "en": "Oops, that’s Lam. He looks surprised.",
-  "vi": "Ơ, đó là Lam, bạn ấy đang ngạc nhiên.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man1",
-  "en": "This pink balloon is for the friend who looks excited. Who looks excited?",
-  "vi": "Quả bóng hồng này dành cho bạn đang háo hức. Bạn nào đang háo hức?",
+  "en": "Lam looks surprised. Here’s your balloon, Lam!",
+  "vi": "Lam đang ngạc nhiên. Bóng của Lam đây!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1681,6 +1793,14 @@
  },
  {
   "part": "man1",
+  "en": "Ben looks surprised. Here’s your balloon, Ben!",
+  "vi": "Ben đang ngạc nhiên. Bóng của Ben đây!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
   "en": "This yellow balloon is for the friend who looks surprised. Who looks surprised?",
   "vi": "Quả bóng vàng này dành cho bạn đang ngạc nhiên. Bạn nào đang ngạc nhiên?",
   "needEn": true,
@@ -1691,6 +1811,22 @@
   "part": "man1",
   "en": "This blue balloon is for the friend who looks excited. Who looks excited?",
   "vi": "Quả bóng xanh này dành cho bạn đang háo hức. Bạn nào đang háo hức?",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "This pink balloon is for the friend who looks excited. Who looks excited?",
+  "vi": "Quả bóng hồng này dành cho bạn đang háo hức. Bạn nào đang háo hức?",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "This pink balloon is for the friend who looks surprised. Who looks surprised?",
+  "vi": "Quả bóng hồng này dành cho bạn đang ngạc nhiên. Bạn nào đang ngạc nhiên?",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1721,6 +1857,14 @@
  },
  {
   "part": "man1",
+  "en": "Oops, that’s Lam. He looks excited.",
+  "vi": "Ơ, đó là Lam, bạn ấy đang háo hức.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
   "en": "Oops, that’s Na. She looks excited.",
   "vi": "Ơ, đó là Na, bạn ấy đang háo hức.",
   "needEn": true,
@@ -1729,16 +1873,8 @@
  },
  {
   "part": "man1",
-  "en": "Oops, that’s Ben. He looks excited.",
-  "vi": "Ơ, đó là Ben, bạn ấy đang háo hức.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man1",
-  "en": "Oops, that’s Na. She looks surprised.",
-  "vi": "Ơ, đó là Na, bạn ấy đang ngạc nhiên.",
+  "en": "Oops, that’s Lam. He looks surprised.",
+  "vi": "Ơ, đó là Lam, bạn ấy đang ngạc nhiên.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -1747,6 +1883,1342 @@
   "part": "man1",
   "en": "Oops, that’s Ben. He looks surprised.",
   "vi": "Ơ, đó là Ben, bạn ấy đang ngạc nhiên.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "You said “excited”, just like Polly!",
+  "vi": "Con nói “háo hức”, giống hệt Polly!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "You said “surprised”, just like Polly!",
+  "vi": "Con nói “ngạc nhiên”, giống hệt Polly!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "That’s you! Polly says it just like you.",
+  "vi": "Đó là con đấy! Polly nói giống hệt con.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "You counted to ten, and Polly pulled the balloon down!",
+  "vi": "Con đếm đến mười, và Polly đã kéo quả bóng xuống!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Whoosh! The wind blows Na’s kite across the park. Draw a line across!",
+  "vi": "Vù! Gió thổi diều của Na bay ngang qua công viên. Con vẽ đường ngang nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Pop! A red balloon jumped out, with a map piece tied to it!",
+  "vi": "Bụp! Một quả bóng đỏ bật ra, có buộc một mảnh bản đồ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Whoosh! A big wind! Ben lets go of the red balloon. It flies away!",
+  "vi": "Vù! Gió to quá! Ben tuột tay quả bóng đỏ. Bóng bay đi mất rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Five balloons are in the way. Pop them, and count!",
+  "vi": "Có năm quả bóng chắn trước mặt. Con chọc vỡ và đếm nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Now we can see the red balloon. But it’s way up high!",
+  "vi": "Giờ mình thấy quả bóng đỏ rồi. Nhưng nó ở trên cao quá!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "Count to ten, and the balloon will come down, step by step!",
+  "vi": "Con đếm đến mười, quả bóng sẽ xuống dần từng chút!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "The map shows a garden. Tonight, we’re camping in Na’s garden!",
+  "vi": "Bản đồ vẽ một khu vườn. Tối nay mình cắm trại trong vườn nhà Na!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Fireflies! They fly in little groups.",
+  "vi": "Đom đóm kìa! Chúng bay thành từng nhóm nhỏ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Watch me. I just look… and I know!",
+  "vi": "Xem Chồi nhé. Chồi chỉ nhìn một cái… là biết!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Two! I see two fireflies. I don’t need to count!",
+  "vi": "Hai! Chồi thấy hai con đom đóm. Không cần đếm!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Now you! Tap a group, and look quickly. How many fireflies?",
+  "vi": "Giờ đến con! Con chạm vào một nhóm rồi nhìn thật nhanh. Có mấy con đom đóm?",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Na’s lanterns are magic. When a lantern lights up, it plays music!",
+  "vi": "Đèn lồng của Na có phép. Đèn nào sáng lên là phát ra nhạc!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Listen to this lantern…",
+  "vi": "Nghe đèn lồng này nhé…",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "…and this one.",
+  "vi": "…và đèn này.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Which lantern’s music sounds excited? Tap that lantern!",
+  "vi": "Nhạc của đèn lồng nào nghe háo hức? Con chạm vào đèn đó nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Yes! That music sounds excited. Bouncy and quick!",
+  "vi": "Đúng rồi! Nhạc đó nghe háo hức. Nhảy nhót và nhanh!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Two new lanterns. Listen to this one…",
+  "vi": "Hai đèn lồng mới. Nghe đèn này nhé…",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Which lantern’s music has a surprise in it? Tap that lantern!",
+  "vi": "Nhạc của đèn lồng nào nghe ngạc nhiên? Con chạm vào đèn đó nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Yes! That music has a surprise in it. Quiet, quiet… boom!",
+  "vi": "Đúng rồi! Nhạc đó có một điều bất ngờ. Nhẹ, nhẹ… bùm!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Now all the lanterns are glowing!",
+  "vi": "Giờ tất cả đèn lồng đều sáng rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Oh! Dark clouds are coming. The wind blows out the lanterns…",
+  "vi": "Ơ! Mây đen kéo đến. Gió thổi tắt hết đèn lồng…",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "The rain stops. Look, the ladybugs come out!",
+  "vi": "Mưa tạnh rồi. Nhìn kìa, các bạn bọ rùa bò ra!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "A ladybug is landing on the leaf. Look quickly!",
+  "vi": "Một bạn bọ rùa đậu xuống chiếc lá. Nhìn nhanh nào!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "How many spots did the ladybug have? Find the card with the same number of dots!",
+  "vi": "Bạn bọ rùa có mấy chấm? Con tìm thẻ có số chấm giống vậy nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "You saw two spots, quick as a wink!",
+  "vi": "Con nhìn ra hai chấm thật nhanh!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Two spots, two dots!",
+  "vi": "Hai chấm trên lưng, hai chấm trên thẻ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "You saw one spot, quick as a wink!",
+  "vi": "Con nhìn ra một chấm thật nhanh!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "One spot, one dot!",
+  "vi": "Một chấm trên lưng, một chấm trên thẻ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "After the storm, Na’s little kitten wants a dry spot. Let’s help her!",
+  "vi": "Sau cơn bão, chú mèo con của Na muốn tìm chỗ khô ráo. Mình giúp mèo nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "In, on, under! The kitten is warm and dry now.",
+  "vi": "Trong, trên, dưới! Mèo con khô ráo, ấm áp rồi.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Boom, boom! Na found her drum in the tent.",
+  "vi": "Bùm, bùm! Na tìm thấy cái trống trong lều.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Let’s play a drum game!",
+  "vi": "Mình chơi trò gõ trống nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Now let’s play hide and seek! Lam, Na and Ben will hide.",
+  "vi": "Giờ mình chơi trốn tìm nhé! Lam, Na và Ben sẽ đi trốn.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "We close our eyes, and count to ten, nice and loud.",
+  "vi": "Mình nhắm mắt lại, và đếm thật to đến mười.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Count to ten while they hide!",
+  "vi": "Con đếm đến mười trong lúc các bạn đi trốn nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Ten! Ready or not, here we come!",
+  "vi": "Mười! Xong chưa? Mình đi tìm đây!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Oh! It’s so dark. We need a flashlight!",
+  "vi": "Ơ! Tối quá. Mình cần đèn pin!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "It’s late. Ben played all evening. Now he is yawning.",
+  "vi": "Khuya rồi. Ben chơi cả buổi tối. Giờ Ben ngáp rồi.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Let’s help Ben into his sleeping bag. Press and hold Ben!",
+  "vi": "Mình giúp Ben chui vào túi ngủ nhé. Con nhấn giữ vào Ben!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "We found the third piece, in the dark garden!",
+  "vi": "Mình tìm được mảnh thứ ba, trong khu vườn tối!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Three spots, and three dots. The same!",
+  "vi": "Ba chấm trên lưng, ba chấm trên thẻ. Giống nhau!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Three spots, three dots!",
+  "vi": "Ba chấm trên lưng, ba chấm trên thẻ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "You saw three spots, quick as a wink!",
+  "vi": "Con nhìn ra ba chấm thật nhanh!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Look, there are three dots. Let’s count: one, two, three.",
+  "vi": "Nhìn này, có ba chấm. Mình đếm nhé: một, hai, ba.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Oops, that card has three dots.",
+  "vi": "Ơ, thẻ đó có ba chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Here it comes again. Look!",
+  "vi": "Bọ rùa bay lại kìa. Nhìn nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Oops, that card has one dot.",
+  "vi": "Ơ, thẻ đó có một chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "That’s in the box. Let’s find under!",
+  "vi": "Đó là trong cái hộp. Mình tìm chỗ \"dưới\" nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Two spots, and two dots. The same!",
+  "vi": "Hai chấm trên lưng, hai chấm trên thẻ. Giống nhau!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Hmm, that music sounds surprised.",
+  "vi": "Ơ, nhạc đó nghe ngạc nhiên.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Oops, that card has two dots.",
+  "vi": "Ơ, thẻ đó có hai chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Hmm, that music sounds excited.",
+  "vi": "Ơ, nhạc đó nghe háo hức.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "That’s on the table. Let’s find under!",
+  "vi": "Đó là trên cái bàn. Mình tìm chỗ \"dưới\" nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "That’s under the table. Let’s find in!",
+  "vi": "Đó là dưới gầm bàn. Mình tìm chỗ \"trong\" nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Hmm, that card has one dot.",
+  "vi": "Ơ, thẻ đó có một chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Hmm, that card has two dots.",
+  "vi": "Ơ, thẻ đó có hai chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "Hmm, that card has three dots.",
+  "vi": "Ơ, thẻ đó có ba chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "You counted to ten! Ready or not, here we come!",
+  "vi": "Con đếm đến mười rồi! Xong chưa? Mình đi tìm đây!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "The map shows a house. It’s Na’s house! Na shows us her room.",
+  "vi": "Bản đồ vẽ một ngôi nhà. Đó là nhà của Na! Na cho mình xem phòng của bạn ấy.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Na has two teddy bears.",
+  "vi": "Na có hai chú gấu bông.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "This bear is big.",
+  "vi": "Chú gấu này to.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "This bear is small.",
+  "vi": "Chú gấu này nhỏ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Tap the small bear!",
+  "vi": "Con chạm vào chú gấu nhỏ nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Yes! That bear is small.",
+  "vi": "Đúng rồi! Chú gấu đó nhỏ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Now tap the big bear!",
+  "vi": "Giờ con chạm vào chú gấu to nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Yes! That bear is big. Big bear, small bear!",
+  "vi": "Đúng rồi! Chú gấu đó to. Gấu to, gấu nhỏ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Na wants to draw. Oh, her crayons are all mixed up!",
+  "vi": "Na muốn vẽ. Ôi, bút màu của Na lẫn lộn hết rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The red crayons go in the red cup. The blue crayons go in the blue cup.",
+  "vi": "Mình xếp theo màu nhé. Bút đỏ vào cốc đỏ. Bút xanh dương vào cốc xanh dương.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "This crayon is red.",
+  "vi": "Bút này màu đỏ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "It goes in the red cup!",
+  "vi": "Nó vào cốc đỏ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Now you! Put each crayon in the cup of the same colour.",
+  "vi": "Đến con! Con cho từng cây bút vào cốc cùng màu nhé.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The red crayons are together, and the blue crayons are together.",
+  "vi": "Xếp xong rồi! Bút đỏ ở cùng nhau, bút xanh dương ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Knock, knock! It’s Ben, with a present for Na.",
+  "vi": "Cốc, cốc! Ben đến, mang quà cho Na.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Na opens it. It’s a new drawing book!",
+  "vi": "Na mở ra. Đó là một cuốn vở vẽ mới!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "I feel happy!",
+  "vi": "Tớ thấy vui!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Na says: I feel happy.",
+  "vi": "Na nói: Tớ thấy vui.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Can you say it like Na?",
+  "vi": "Con nói giống Na được không?",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Tap the microphone, and say it!",
+  "vi": "Con chạm vào micro rồi nói nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Na is so happy!",
+  "vi": "Na vui quá!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Lam brings his dominoes. Let’s play!",
+  "vi": "Lam mang đô-mi-nô đến. Mình chơi nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Lam turns a domino over. Look quickly!",
+  "vi": "Lam lật một quân đô-mi-nô. Nhìn nhanh nào!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "How many dots were on the end of the domino? Find the one with the same dots!",
+  "vi": "Đầu bên phải của quân đô-mi-nô có mấy chấm? Con tìm quân có số chấm giống vậy nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "You saw two dots in a flash!",
+  "vi": "Con nhìn ra hai chấm thật nhanh!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Two and two. They match!",
+  "vi": "Hai với hai. Khớp rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "You saw three dots in a flash!",
+  "vi": "Con nhìn ra ba chấm thật nhanh!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Three and three. They match!",
+  "vi": "Ba với ba. Khớp rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "After all that playing, the toys are everywhere!",
+  "vi": "Chơi xong, đồ chơi bừa khắp nơi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Put each toy in the right box. Big toys in the big box, small toys in the small box!",
+  "vi": "Con cho từng đồ chơi vào đúng hộp nhé. Đồ to vào hộp to, đồ nhỏ vào hộp nhỏ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Na has a music box. When you wind it up, it plays music!",
+  "vi": "Na có một hộp nhạc. Lên dây cót là hộp nhạc phát nhạc!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Na winds it up. Listen…",
+  "vi": "Na lên dây cót. Nghe nhé…",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "How does the music sound? Tap the face!",
+  "vi": "Bản nhạc nghe thế nào? Con chạm vào khuôn mặt nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Yes! That music sounds scary, a sneaky, creepy tune!",
+  "vi": "Đúng rồi! Nhạc đó nghe sợ sợ, rón ra rón rén!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Na winds it up again. A new tune!",
+  "vi": "Na lên dây cót lần nữa. Một bản nhạc mới!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Yes! That music sounds sleepy. Time for a rest!",
+  "vi": "Đúng rồi! Nhạc đó nghe buồn ngủ. Đến giờ nghỉ rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Snack time! Lam has an ice cream.",
+  "vi": "Đến giờ ăn nhẹ! Lam có một cây kem.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Oh no! Lam dropped his ice cream.",
+  "vi": "Ôi! Lam làm rơi kem rồi.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "I feel sad.",
+  "vi": "Tớ thấy buồn.",
+  "needEn": false,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Lam says: I feel sad.",
+  "vi": "Lam nói: Tớ thấy buồn.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Can you say it like Lam?",
+  "vi": "Con nói giống Lam được không?",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Now Lam says: I feel happy!",
+  "vi": "Giờ Lam nói: Tớ thấy vui!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Na’s kitten wants to play hide and seek!",
+  "vi": "Mèo con của Na muốn chơi trốn tìm!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "The kitten is on the bed. Tap on the bed!",
+  "vi": "Mèo con ở trên giường. Con chạm vào trên giường nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Peekaboo! The kitten is on the bed.",
+  "vi": "Ú òa! Mèo con ở trên giường.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "The kitten is in the basket. Tap in the basket!",
+  "vi": "Mèo con ở trong cái giỏ. Con chạm vào trong cái giỏ nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Peekaboo! The kitten is in the basket.",
+  "vi": "Ú òa! Mèo con ở trong cái giỏ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Oops! The kitten jumped up onto the shelf…",
+  "vi": "Ơ! Mèo con nhảy lên kệ…",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Oops! The kitten knocked the toys off the shelf!",
+  "vi": "Ơ! Mèo con làm đồ chơi trên kệ rơi xuống!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "The fourth piece fell from Na’s shelf!",
+  "vi": "Mảnh thứ tư rơi từ trên kệ của Na!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Hmm, that bear is small.",
+  "vi": "Ơ, chú gấu đó nhỏ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "One dot at the end. One goes next to one!",
+  "vi": "Đầu bên phải có một chấm. Một nối với một!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "One and one. They match!",
+  "vi": "Một với một. Khớp rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "You saw one dot in a flash!",
+  "vi": "Con nhìn ra một chấm thật nhanh!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Hmm, that face looks tired.",
+  "vi": "Ơ, mặt đó đang mệt.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Hmm, that bear is big.",
+  "vi": "Ơ, chú gấu đó to.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The green crayons go in the green cup. The red crayons go in the red cup.",
+  "vi": "Mình xếp theo màu nhé. Bút xanh lá vào cốc xanh lá. Bút đỏ vào cốc đỏ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The green crayons are together, and the red crayons are together.",
+  "vi": "Xếp xong rồi! Bút xanh lá ở cùng nhau, bút đỏ ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Hmm, that face looks happy.",
+  "vi": "Ơ, mặt đó đang vui.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Hmm, that’s in the basket.",
+  "vi": "Ơ, đó là trong cái giỏ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "The kitten is under the bed. Tap under the bed!",
+  "vi": "Mèo con ở dưới gầm giường. Con chạm vào dưới gầm giường nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Peekaboo! The kitten is under the bed.",
+  "vi": "Ú òa! Mèo con ở dưới gầm giường.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Three dots at the end. Three goes next to three!",
+  "vi": "Đầu bên phải có ba chấm. Ba nối với ba!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The yellow crayons go in the yellow cup. The green crayons go in the green cup.",
+  "vi": "Mình xếp theo màu nhé. Bút vàng vào cốc vàng. Bút xanh lá vào cốc xanh lá.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The yellow crayons are together, and the green crayons are together.",
+  "vi": "Xếp xong rồi! Bút vàng ở cùng nhau, bút xanh lá ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Oops, that one has two dots.",
+  "vi": "Ơ, quân đó có hai chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Look again!",
+  "vi": "Nhìn lại nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Oops, that one has one dot.",
+  "vi": "Ơ, quân đó có một chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Hmm, that face looks scared.",
+  "vi": "Ơ, mặt đó đang sợ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Hmm, that’s under the bed.",
+  "vi": "Ơ, đó là dưới gầm giường.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The blue crayons go in the blue cup. The yellow crayons go in the yellow cup.",
+  "vi": "Mình xếp theo màu nhé. Bút xanh dương vào cốc xanh dương. Bút vàng vào cốc vàng.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The blue crayons are together, and the yellow crayons are together.",
+  "vi": "Xếp xong rồi! Bút xanh dương ở cùng nhau, bút vàng ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Oops, that one has three dots.",
+  "vi": "Ơ, quân đó có ba chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Hmm, that’s on the bed.",
+  "vi": "Ơ, đó là trên giường.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Hmm, that one has one dot.",
+  "vi": "Ơ, quân đó có một chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Hmm, that one has two dots.",
+  "vi": "Ơ, quân đó có hai chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Hmm, that one has three dots.",
+  "vi": "Ơ, quân đó có ba chấm.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The red crayons go in the red cup. The yellow crayons go in the yellow cup.",
+  "vi": "Mình xếp theo màu nhé. Bút đỏ vào cốc đỏ. Bút vàng vào cốc vàng.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The red crayons are together, and the yellow crayons are together.",
+  "vi": "Xếp xong rồi! Bút đỏ ở cùng nhau, bút vàng ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The red crayons go in the red cup. The green crayons go in the green cup.",
+  "vi": "Mình xếp theo màu nhé. Bút đỏ vào cốc đỏ. Bút xanh lá vào cốc xanh lá.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The red crayons are together, and the green crayons are together.",
+  "vi": "Xếp xong rồi! Bút đỏ ở cùng nhau, bút xanh lá ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The blue crayons go in the blue cup. The green crayons go in the green cup.",
+  "vi": "Mình xếp theo màu nhé. Bút xanh dương vào cốc xanh dương. Bút xanh lá vào cốc xanh lá.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The blue crayons are together, and the green crayons are together.",
+  "vi": "Xếp xong rồi! Bút xanh dương ở cùng nhau, bút xanh lá ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The blue crayons go in the blue cup. The red crayons go in the red cup.",
+  "vi": "Mình xếp theo màu nhé. Bút xanh dương vào cốc xanh dương. Bút đỏ vào cốc đỏ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The blue crayons are together, and the red crayons are together.",
+  "vi": "Xếp xong rồi! Bút xanh dương ở cùng nhau, bút đỏ ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The yellow crayons go in the yellow cup. The red crayons go in the red cup.",
+  "vi": "Mình xếp theo màu nhé. Bút vàng vào cốc vàng. Bút đỏ vào cốc đỏ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The yellow crayons are together, and the red crayons are together.",
+  "vi": "Xếp xong rồi! Bút vàng ở cùng nhau, bút đỏ ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The yellow crayons go in the yellow cup. The blue crayons go in the blue cup.",
+  "vi": "Mình xếp theo màu nhé. Bút vàng vào cốc vàng. Bút xanh dương vào cốc xanh dương.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The yellow crayons are together, and the blue crayons are together.",
+  "vi": "Xếp xong rồi! Bút vàng ở cùng nhau, bút xanh dương ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The green crayons go in the green cup. The blue crayons go in the blue cup.",
+  "vi": "Mình xếp theo màu nhé. Bút xanh lá vào cốc xanh lá. Bút xanh dương vào cốc xanh dương.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The green crayons are together, and the blue crayons are together.",
+  "vi": "Xếp xong rồi! Bút xanh lá ở cùng nhau, bút xanh dương ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "Let’s sort them by colour. The green crayons go in the green cup. The yellow crayons go in the yellow cup.",
+  "vi": "Mình xếp theo màu nhé. Bút xanh lá vào cốc xanh lá. Bút vàng vào cốc vàng.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "All sorted! The green crayons are together, and the yellow crayons are together.",
+  "vi": "Xếp xong rồi! Bút xanh lá ở cùng nhau, bút vàng ở cùng nhau.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "That crayon is red. It goes in the red cup.",
+  "vi": "Bút đó màu đỏ. Nó vào cốc màu đỏ.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "That crayon is blue. It goes in the blue cup.",
+  "vi": "Bút đó màu xanh dương. Nó vào cốc màu xanh dương.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "This crayon is blue.",
+  "vi": "Bút này màu xanh dương.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "It goes in the blue cup!",
+  "vi": "Nó vào cốc xanh dương!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "That crayon is yellow. It goes in the yellow cup.",
+  "vi": "Bút đó màu vàng. Nó vào cốc màu vàng.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "This crayon is yellow.",
+  "vi": "Bút này màu vàng.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "It goes in the yellow cup!",
+  "vi": "Nó vào cốc vàng!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "That crayon is green. It goes in the green cup.",
+  "vi": "Bút đó màu xanh lá. Nó vào cốc màu xanh lá.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "This crayon is green.",
+  "vi": "Bút này màu xanh lá.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "It goes in the green cup!",
+  "vi": "Nó vào cốc xanh lá!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "You said it, just like Na!",
+  "vi": "Con nói giống hệt Na!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "You said it, just like Lam!",
+  "vi": "Con nói giống hệt Lam!",
   "needEn": true,
   "needVi": true,
   "slow": false
