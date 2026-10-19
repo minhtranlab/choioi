@@ -1729,6 +1729,36 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .fs-in-garden .fs-sky,.fs-in-garden .fs-ground{display:none}
 .posintro.night{background:none;overflow:hidden}.posintro.night>.pi-bg{position:absolute;inset:0;border-radius:15px;overflow:hidden}.posintro.night>.pi-bg>svg{width:100%;height:100%;display:block}
 .posintro.night .pi-svg>svg>rect:first-child{fill:#2E6B4F}
+
+/* ---- 20/10: Màn 3 · Na's room ---- */
+.rbed,.rbasket,.tdesk{z-index:1}
+.bear{position:absolute;translate:-50% 0;border:0;background:none;padding:0;z-index:3}.bear svg{width:100%;height:auto;display:block}
+.bear .btag{position:absolute;left:50%;top:-22%;translate:-50% 0;background:#FFE066;border:3px solid var(--pl);border-radius:12px;padding:0 .4em;font:900 calc(4*var(--u)) Nunito,sans-serif;color:var(--pl);opacity:0;white-space:nowrap}
+.bear.hey{animation:hop .45s 2}.bear.hey .btag{opacity:1}
+.ccup{position:absolute;translate:-50% 0;border:0;background:none;padding:0;z-index:2}.ccup>svg{width:100%;height:auto;display:block;position:relative;z-index:2}
+.ccup .incup{position:absolute;bottom:40%;width:18%;translate:-50% 0;z-index:1}.ccup .incup svg{width:100%;height:auto;display:block}
+.crayon{position:absolute;width:3.4%;translate:-50% 0;border:0;background:none;padding:0;z-index:3;transform-origin:50% 80%}.crayon svg{width:100%;height:auto;display:block}
+.crayon.sel{filter:drop-shadow(0 0 6px #FFD21F) drop-shadow(0 0 3px #FFD21F);scale:1.15}
+.dom0{position:absolute;left:40%;bottom:28%;width:34%;translate:-50% 0;z-index:3}.dom0 svg{width:100%;height:auto;display:block}
+.dom0.flip{animation:domFlip .4s ease}@keyframes domFlip{50%{transform:scaleY(.1)}}
+.dom1{position:absolute;left:74%;bottom:28%;width:34%;translate:-50% 0;z-index:3;animation:pop .4s}.dom1 svg{width:100%;height:auto;display:block}
+.domopt svg{width:100%;height:auto}
+.mbox{position:absolute;left:58%;bottom:21%;width:20%;translate:-50% 0;z-index:3}.mbox svg{width:100%;height:auto;display:block;overflow:visible}
+.mbox .mdancer{opacity:0;transform-origin:50% 50%;transition:opacity .3s}.mbox .mlid{transform-origin:12% 50%;transition:transform .5s}
+.mbox.play .mlid{transform:rotate(-24deg)}.mbox.play .mdancer{opacity:1;animation:mspin 1.2s linear infinite}
+@keyframes mspin{50%{transform:scaleX(-1)}}
+.mbox.play::after{content:'♪ ♫';position:absolute;left:70%;top:-10%;font:900 calc(6*var(--u)) Nunito,sans-serif;color:#9B6BD0;animation:noteUp 1s ease-in-out infinite}
+.swords{position:absolute;translate:-50% 0;z-index:7;background:#fff;border:3px solid var(--pl);border-radius:14px;padding:.15em .5em;font:900 calc(5*var(--u,1cqh)) Nunito,sans-serif;color:#B7A9C4;white-space:nowrap;box-shadow:2px 3px 0 var(--pl)}
+.swords span{transition:color .25s}.swords span.on{color:var(--pl)}
+.fscene .swords{--u:1cqh}
+.khot{position:absolute;translate:-50% 0;width:22%;height:18%;border:0;background:transparent;border-radius:14px;z-index:4;padding:0}
+.khot[data-p="on"]{height:16%}.khot[data-p="under"]{height:12%;width:30%}.khot[data-p="in"]{width:16%;height:22%}
+.khot .ktail{position:absolute;width:12%;height:40%;left:62%;bottom:40%;border:3px solid var(--pl);border-bottom:0;border-radius:10px 10px 0 0;background:#F4A340;opacity:0;transform-origin:50% 100%}
+.khot.peek .ktail{opacity:1;animation:tailWag 1s ease-in-out infinite alternate}.khot.found .ktail{opacity:0}
+@keyframes tailWag{from{rotate:-14deg}to{rotate:14deg}}
+.kcat{position:absolute;width:11%;translate:-50% 0;z-index:5;animation:pop .4s}.kcat svg{width:100%;height:auto;display:block}
+.kcat.onshelf{left:78%;top:4%;bottom:auto;width:9%}
+.sbrow{flex:none}
 </style>
 
 <div id="root"></div>
@@ -5581,8 +5611,9 @@ async function flashlightGame({piece=0}={}){
    2. TOY CATCH (Lesson 3): toys fall from the shelf; move the basket. Catch the big ones, then the small ones.
    ========================================================= */
 const TOYS=[()=>ART.ball(),()=>ART.car(),()=>ART.duck(),()=>ART.drum()];
-async function toyCatch({piece=0}={}){
+async function toyCatch({piece=0,kitten=false}={}){
   const sk=SK['L2.M.SORT.02']; const f=rfield('toycatch',BG.home());
+  if(kitten){ f.append(el(`<div class="kcat onshelf"><svg viewBox="-16 -40 32 42">${catG(0,0,1)}</svg></div>`)); await say('Oops! The kitten knocked the toys off the shelf!','Ơ! Mèo con làm đồ chơi trên kệ rơi xuống!') }
   const bk=el(`<div class="tbasket stk">${ART.basket()}<b class="tcount"></b></div>`); f.append(bk);
   let W0=0,H0=0, bx=.5; const fit=()=>{ const r=f.getBoundingClientRect(); W0=r.width; H0=r.height }; fit();
   const moveB=x=>{ bx=Math.max(.1,Math.min(.9,x/W0)); bk.style.left=(bx*100)+'%' }; moveB(W0/2);
@@ -5856,11 +5887,12 @@ async function tidyUp(){
     const n=toys.length-left; sayQ(cap(W[n])+'!',cap(VI_N[n])+'!'); if(!left) g.done() };
   toys.forEach(t=>{ makeDrag(t,zones,{onDrop:z=>putIn(t,z)}); t.addEventListener('click',()=>{ if(t.dataset.used) return; toys.forEach(x=>x.classList.remove('sel')); t.classList.add('sel'); sel=t; tone(700,.06,'sine',.05) }) });
   [bigB,smB].forEach(z=>z.addEventListener('click',()=>{ if(sel) putIn(sel,z) }));
-  await say('The map shows a house. It’s Na’s house! Oh no, the toys are everywhere!','Bản đồ vẽ một ngôi nhà. Đó là nhà của Na! Ôi, đồ chơi bừa khắp nơi!');
+  await say('After all that playing, the toys are everywhere!','Chơi xong, đồ chơi bừa khắp nơi!');
   await say('Let’s tidy up. Big toys go in the big box. Small toys go in the small box.','Mình dọn dẹp nhé. Đồ chơi to vào hộp to. Đồ chơi nhỏ vào hộp nhỏ.');
-  await watchMe(); { const t=toys.find(x=>x.dataset.sz==='big'); await Hand.moveTo(center(t),500); await Hand.tap(); await say('This toy is big.','Đồ chơi này to.',{gap:100});
+  if(wantDemo('tidy')){ await watchMe(); { const t=toys.find(x=>x.dataset.sz==='big'); await Hand.moveTo(center(t),500); await Hand.tap(); await say('This toy is big.','Đồ chơi này to.',{gap:100});
     await demoDrag(t,bigB,700); t.classList.remove('dragging'); t.style.translate=''; await putIn(t,bigB); Hand.hide(); await say('It goes in the big box!','Nó vào hộp to!') }
-  await yourTurn(); await say('Now you! Drag each toy to the right box.','Đến con! Con kéo từng đồ chơi vào đúng hộp nhé.',{q:true});
+  await yourTurn() } else turn('kid');
+  await say('Put each toy in the right box. Big toys in the big box, small toys in the small box!','Con cho từng đồ chơi vào đúng hộp nhé. Đồ to vào hộp to, đồ nhỏ vào hộp nhỏ!',{q:true});
   if(AUTO) (async()=>{ for(const t of toys){ if(t.dataset.used) continue; await new Promise(r=>setTimeout(r,kidTapDelay())); t.click(); await new Promise(r=>setTimeout(r,200)); (t.dataset.sz==='big'?bigB:smB).click(); await new Promise(r=>setTimeout(r,600)) } })();
   await g.p; turn(null); rec(sk,wrong<=1,performance.now()-t0,'size:all'); confetti(); setKidFace(box.querySelector('.skid'),'Na','happy');
   await say('The room is tidy! Big toys in the big box, small toys in the small box.','Phòng gọn gàng rồi! Đồ to trong hộp to, đồ nhỏ trong hộp nhỏ.'); await nextPage(box) }
@@ -6785,6 +6817,161 @@ const BEN_BAG={f:'tired',name:'Ben',scene:'bed',act:'hold',music:'lullaby-box',
   hen:'Let’s help Ben into his sleeping bag. Press and hold Ben!',hvi:'Mình giúp Ben chui vào túi ngủ nhé. Con nhấn giữ vào Ben!'};
 
 /* =========================================================
+   LEVEL 3 · NA'S HOUSE: "an afternoon in Na's room" (spiral version, 20/10)
+   Na's room: the big bear and the small bear → Na's crayons, mixed up → Ben's present ("I feel happy!") → Lam's dominoes →
+   tidy up, big and small → Na's music box → snack time: Lam drops his ice cream ("I feel sad" … "I feel happy") →
+   Na's kitten hides → the kitten jumps on the shelf, toys fall: catch them, and the map piece.
+   New: sorting by size, big and small (start: the bears; middle: tidy up; end: catch the falling toys).
+   Second new: saying "I feel ___." (Na, then Lam twice). Mầm: sorting by colour (the crayons).
+   Looking back: scared and tired (music box), seeing at a glance (dominoes), in / on / under (the kitten).
+   ========================================================= */
+const TEDDY_SVG=(col='#C98A52',bow='#E8607E')=>`<svg viewBox="0 0 100 110" aria-hidden="true"><circle cx="24" cy="24" r="13" fill="${col}" stroke="${INK}" stroke-width="3.5"/><circle cx="76" cy="24" r="13" fill="${col}" stroke="${INK}" stroke-width="3.5"/><circle cx="24" cy="24" r="6" fill="#F3D2B0"/><circle cx="76" cy="24" r="6" fill="#F3D2B0"/>
+<ellipse cx="50" cy="84" rx="30" ry="24" fill="${col}" stroke="${INK}" stroke-width="3.5"/><ellipse cx="50" cy="88" rx="16" ry="13" fill="#F3D2B0"/><circle cx="22" cy="100" r="10" fill="${col}" stroke="${INK}" stroke-width="3.5"/><circle cx="78" cy="100" r="10" fill="${col}" stroke="${INK}" stroke-width="3.5"/>
+<circle cx="50" cy="42" r="28" fill="${col}" stroke="${INK}" stroke-width="3.5"/><ellipse cx="50" cy="52" rx="12" ry="9" fill="#F3D2B0" stroke="${INK}" stroke-width="2.5"/><ellipse cx="50" cy="48" rx="4.5" ry="3.2" fill="${INK}"/><path d="M45 56 q5 4 10 0" stroke="${INK}" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="40" cy="38" r="3.4" fill="${INK}"/><circle cx="60" cy="38" r="3.4" fill="${INK}"/>
+<path d="M38 66 l12 6 l12 -6 l-3 10 l-9 -4 l-9 4z" fill="${bow}" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/></svg>`;
+const ROOMBED_SVG=()=>`<svg viewBox="0 0 160 90" aria-hidden="true"><rect x="6" y="14" width="12" height="74" rx="4" fill="#9B6A45" stroke="${INK}" stroke-width="3.5"/><rect x="142" y="34" width="12" height="54" rx="4" fill="#9B6A45" stroke="${INK}" stroke-width="3.5"/>
+<rect x="14" y="44" width="134" height="16" rx="5" fill="#C98A52" stroke="${INK}" stroke-width="3.5"/><rect x="16" y="34" width="130" height="14" rx="7" fill="#fff" stroke="${INK}" stroke-width="3.5"/><path d="M60 34 h86 v14 h-86z" fill="#9B6BD0" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/><path d="M76 36 v10 M96 36 v10 M116 36 v10" stroke="#C7A9EE" stroke-width="3"/><rect x="20" y="26" width="32" height="14" rx="7" fill="#FFE3C2" stroke="${INK}" stroke-width="3"/></svg>`;
+const CRAYON_SVG=c=>`<svg viewBox="0 0 30 100" aria-hidden="true"><path d="M8 24 L15 2 L22 24Z" fill="#F6E3B4" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/><path d="M12 12 L15 2 L18 12Z" fill="${c}"/><rect x="6" y="24" width="18" height="72" rx="3" fill="${c}" stroke="${INK}" stroke-width="2.5"/><path d="M6 36 h18 M6 82 h18" stroke="${INK}" stroke-width="2" opacity=".4"/></svg>`;
+const CUP_SVG=c=>`<svg viewBox="0 0 80 70" aria-hidden="true"><path d="M8 8 H72 L66 66 H14Z" fill="#fff" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/><path d="M10 24 H70 L68 42 H12Z" fill="${c}"/><path d="M8 8 H72 L66 66 H14Z" fill="none" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/></svg>`;
+const DESK_SVG=()=>`<svg viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><rect x="4" y="4" width="192" height="14" rx="4" fill="#C98A52" stroke="${INK}" stroke-width="3.5"/><rect x="14" y="18" width="10" height="40" fill="#9B6A45" stroke="${INK}" stroke-width="3"/><rect x="176" y="18" width="10" height="40" fill="#9B6A45" stroke="${INK}" stroke-width="3"/></svg>`;
+const domHalf=(n,x)=>{ const lay=n?LAY[n][0]:[]; return lay.map(([a,b])=>`<circle cx="${x+6+a*.38}" cy="${6+b*.38}" r="4.6" fill="${INK}"/>`).join('') };
+/** a domino lying flat: two halves with a and b dots (b=null: one half only); back=true: face down */
+const DOMINO_SVG=(a,b,back=false)=>back?`<svg viewBox="0 0 104 54" aria-hidden="true"><rect x="2" y="2" width="100" height="50" rx="9" fill="#2E6E9E" stroke="${INK}" stroke-width="3.5"/><circle cx="52" cy="27" r="7" fill="#7FC0EE"/></svg>`
+  :`<svg viewBox="0 0 104 54" aria-hidden="true"><rect x="2" y="2" width="100" height="50" rx="9" fill="#FFFDF4" stroke="${INK}" stroke-width="3.5"/><path d="M52 8 V46" stroke="${INK}" stroke-width="2.5"/>${domHalf(a,2)}${b==null?'':domHalf(b,52)}</svg>`;
+const MUSICBOX_SVG=()=>`<svg viewBox="0 0 100 100" overflow="visible" aria-hidden="true"><g class="mlid"><path d="M10 50 L18 12 H82 L90 50" fill="#F7A9B8" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/><circle cx="50" cy="30" r="8" fill="#FFE066" stroke="${INK}" stroke-width="2.5"/></g>
+<g class="mdancer"><path d="M50 50 V36" stroke="${INK}" stroke-width="3"/><circle cx="50" cy="22" r="6" fill="#FFE3C2" stroke="${INK}" stroke-width="2.5"/><path d="M40 38 Q50 26 60 38Z" fill="#9B6BD0" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/><path d="M44 30 l-8 -6 M56 30 l8 -6" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/></g>
+<rect x="10" y="50" width="80" height="40" rx="6" fill="#E8607E" stroke="${INK}" stroke-width="3.5"/><path d="M18 62 h64 M18 76 h64" stroke="#fff" stroke-width="3" opacity=".55"/><path d="M90 66 h8 v-8 h-4" fill="none" stroke="#FCB515" stroke-width="5" stroke-linecap="round"/></svg>`;
+const NAROOM=()=>BG.home();
+
+/** say a whole sentence out loud, in the picture: the words light up as the friend says it; the child taps the microphone and says it too.
+ *  Not scored (kept with the child's voice clips, like every speaking turn). No microphone: say it together with Chồi. */
+async function sayLikeFriend(box,{who,model,vi,kws,kwsVi,spot={x:50,b:62}}){
+  const spoken=isVi()?vi:model; if(isVi()&&kwsVi) kws=kwsVi;
+  const words=el(`<div class="swords stk" style="left:${spot.x}%;bottom:${spot.b}%">${spoken.split(' ').map(w=>`<span>${esc(w)}</span>`).join(' ')}</div>`); box.append(words);
+  const lightUp=()=>{ const sp=[...words.children]; sp.forEach(s=>s.classList.remove('on')); const per=(spoken.length*85/RATE)/sp.length; sp.forEach((s,i)=>setTimeout(()=>s.classList.add('on'),(200+i*per)*SPEED)) };
+  await say(`Can you say it like ${who}?`,`Con nói giống ${who} được không?`,{q:false}); lightUp(); await say(model,vi,{q:false,rate:.85});
+  let T={};
+  if(micState!=='denied'&&micState!=='none'){ const mic=el(`<button class="mic tp-mic" style="left:${Math.min(84,spot.x+24)}%;bottom:${Math.max(4,spot.b-16)}%" aria-label="Micro">${ICON.mic}</button>`); box.append(mic);
+    await say('Tap the microphone, and say it!','Con chạm vào micro rồi nói nhé!',{q:true}); turn('kid'); T=await micTurn(mic,3800); turn(null); mic.remove() }
+  const r=T.r||null, heard=T.heard||null;
+  if(!(r&&r.voiced)){ await say('Let’s say it together!','Mình cùng nói nhé!',{gap:200}); lightUp(); await say(model,vi,{q:false,rate:.85}); words.remove(); return }
+  const matched=heardMatch(heard,kws), id='s'+Date.now();
+  S.speaks.push({s:'L2.E.LS.03',d:today(),lang:S.lang,text:spoken,voiced:true,heard:heard?heard[0]:null,matched:matched?true:(heard?false:null),clip:id}); save(); putClip(id,r.blob);
+  SFX.chime(); await say(matched?`You said it, just like ${who}!`:'Listen! That’s you!',matched?`Con nói giống hệt ${who}!`:'Nghe này, giọng của con đấy!',{gap:200});
+  Music.level(.15); await playBlob(r.blob); Music.level(1); words.remove() }
+
+/* ---- 1. Na's room: the big bear and the small bear (the new idea, first look). Chồi shows which is which; the child taps each one ---- */
+async function bearsIntro(){ const sk=SK['L2.M.SORT.02'];
+  const box=sbox('naroom',NAROOM()); box.append(sceneThing(ROOMBED_SVG(),32,3,44,'rbed'));
+  const big=el(`<button class="bear big" style="left:24%;bottom:22%;width:15%">${TEDDY_SVG('#C98A52')}<b class="btag stk"></b></button>`), small=el(`<button class="bear small" style="left:42%;bottom:22%;width:7%">${TEDDY_SVG('#E2A873','#4A9BDB')}<b class="btag stk"></b></button>`);
+  box.append(big,small); const na=kidAt('Na','happy',76,4,14); box.append(na); const mapA=el(`<div class="smap stk bob">${mapTornSVG(3)}</div>`); box.append(mapA);
+  const tag=(b,t)=>{ const g=$('.btag',b); g.textContent=t; b.classList.remove('hey'); void b.offsetWidth; b.classList.add('hey') };
+  await say('The map shows a house. It’s Na’s house! Na shows us her room.','Bản đồ vẽ một ngôi nhà. Đó là nhà của Na! Na cho mình xem phòng của bạn ấy.'); mapA.classList.add('away');
+  await say('Na has two teddy bears.','Na có hai chú gấu bông.');
+  if(wantDemo('bigsmall')){ turn('choi'); await Hand.moveTo(center(big),550); await Hand.tap(); tag(big,'big'); await say('This bear is big.','Chú gấu này to.');
+    await Hand.moveTo(center(small),550); await Hand.tap(); tag(small,'small'); await say('This bear is small.','Chú gấu này nhỏ.'); Hand.hide(); await pollyEcho('Big! Small!','To! Nhỏ!') }
+  turn('kid');
+  await stepPick(sk,[big,small],1,{concept:'size:small',ask:()=>say('Tap the small bear!','Con chạm vào chú gấu nhỏ nhé!'),labels:[['that bear is big','chú gấu đó to'],['that bear is small','chú gấu đó nhỏ']],onRight:async()=>tag(small,'small')});
+  await say('Yes! That bear is small.','Đúng rồi! Chú gấu đó nhỏ.');
+  await stepPick(sk,[big,small],0,{concept:'size:big',ask:()=>say('Now tap the big bear!','Giờ con chạm vào chú gấu to nhé!'),labels:[['that bear is big','chú gấu đó to'],['that bear is small','chú gấu đó nhỏ']],onRight:async()=>tag(big,'big')});
+  turn(null); setKidFace(na,'Na','excited'); na.classList.add('glad'); await say('Yes! That bear is big. Big bear, small bear!','Đúng rồi! Chú gấu đó to. Gấu to, gấu nhỏ!'); await nextPage(box) }
+
+/* ---- 2. Na's crayons are all mixed up: the red ones in the red cup, the blue ones in the blue cup (Mầm: sorting by colour) ---- */
+const CRAYON_COLS=[['red','đỏ','#E8484F'],['blue','xanh dương','#4A9BDB'],['yellow','vàng','#FCB515'],['green','xanh lá','#58B592']];
+async function crayonSort(){ const sk=SK['L2.M.SORT.01'];
+  const [A,B]=RUN.replay||RUN.mode==='review'?shuffle(CRAYON_COLS).slice(0,2):CRAYON_COLS.slice(0,2);
+  const box=sbox('desk',NAROOM()); box.append(sceneThing(DESK_SVG(),56,3,66,'tdesk')); const na=kidAt('Na','surprised',11,4,13); box.append(na);
+  const cups=[A,B].map(([n,vi,c],i)=>{ const b=el(`<button class="ccup" style="left:${i?78:62}%;bottom:36%;width:11%">${CUP_SVG(c)}</button>`); b.dataset.c=n; box.append(b); return b });
+  const spots=shuffle([[24,37,-14],[30,38,10],[36,37,-6],[42,38,16],[48,37,-18],[54,38,6]]);
+  const cr=shuffle([A,A,A,B,B,B]).map(([n,vi,c],i)=>{ const [x,b,rot]=spots[i]; const t=el(`<button class="crayon" style="left:${x}%;bottom:${b}%;rotate:${rot}deg">${CRAYON_SVG(c)}</button>`); t.dataset.c=n; box.append(t); return t });
+  let sel=null, wrong=0, left=cr.length; const t0=performance.now(); const g=gate();
+  const putIn=async(t,z)=>{ if(t.dataset.used) return; const want=cups.find(c=>c.dataset.c===t.dataset.c), C=CRAYON_COLS.find(x=>x[0]===t.dataset.c);
+    if(z!==want){ wrong++; t.classList.remove('nope'); void t.offsetWidth; t.classList.add('nope'); boing(); t.style.translate=''; sayQ(`That crayon is ${C[0]}. It goes in the ${C[0]} cup.`,`Bút đó màu ${C[1]}. Nó vào cốc màu ${C[1]}.`); return }
+    t.dataset.used='1'; t.classList.remove('sel'); sel=null; const k=6-left; await flyTo(t,z,{ms:420,scale:.7}); t.remove();
+    const inCup=el(`<i class="incup" style="left:${30+((k*13)%40)}%;rotate:${(k%3-1)*10}deg">${CRAYON_SVG(CRAYON_COLS.find(x=>x[0]===z.dataset.c)[2])}</i>`); z.append(inCup); SFX.pop(); left--; if(!left) g.done() };
+  cr.forEach(t=>{ makeDrag(t,()=>cups,{onDrop:z=>putIn(t,z)}); t.addEventListener('click',()=>{ if(t.dataset.used) return; cr.forEach(x=>x.classList.remove('sel')); t.classList.add('sel'); sel=t; tone(700,.06,'sine',.05) }) });
+  cups.forEach(z=>z.addEventListener('click',()=>{ if(sel) putIn(sel,z) }));
+  await say('Na wants to draw. Oh, her crayons are all mixed up!','Na muốn vẽ. Ôi, bút màu của Na lẫn lộn hết rồi!');
+  await say(`Let’s sort them by colour. The ${A[0]} crayons go in the ${A[0]} cup. The ${B[0]} crayons go in the ${B[0]} cup.`,`Mình xếp theo màu nhé. Bút ${A[1]} vào cốc ${A[1]}. Bút ${B[1]} vào cốc ${B[1]}.`);
+  if(RUN.mode==='teach'&&wantDemo('crayons')){ await watchMe(); const t=cr.find(x=>x.dataset.c===A[0]); await Hand.moveTo(center(t),500); await Hand.tap(); await say(`This crayon is ${A[0]}.`,`Bút này màu ${A[1]}.`,{gap:100});
+    await demoDrag(t,cups[0],650); t.classList.remove('dragging'); t.style.translate=''; await putIn(t,cups[0]); Hand.hide(); await say(`It goes in the ${A[0]} cup!`,`Nó vào cốc ${A[1]}!`); await yourTurn() }
+  turn('kid'); await say('Now you! Put each crayon in the cup of the same colour.','Đến con! Con cho từng cây bút vào cốc cùng màu nhé.',{q:true});
+  const hh=hintHand(()=>cr.find(x=>!x.dataset.used)); abortFns.add(hh); box.addEventListener('pointerdown',hh,{once:true});
+  if(AUTO) (async()=>{ for(const t of cr){ if(t.dataset.used) continue; await new Promise(r=>setTimeout(r,kidTapDelay())); t.click(); await new Promise(r=>setTimeout(r,200)); cups.find(c=>c.dataset.c===t.dataset.c).click(); await new Promise(r=>setTimeout(r,500)) } })();
+  await g.p; hh(); turn(null); rec(sk,wrong<=1,performance.now()-t0,'colour:all'); confetti(); setKidFace(na,'Na','happy');
+  await say(`All sorted! The ${A[0]} crayons are together, and the ${B[0]} crayons are together.`,`Xếp xong rồi! Bút ${A[1]} ở cùng nhau, bút ${B[1]} ở cùng nhau.`); await nextPage(box) }
+
+/* ---- 3. Ben brings Na a present; Na says "I feel happy!" (new: saying it in a whole sentence) ---- */
+async function iFeelHappyNa(){
+  const c=card(); const SC=feelScene('happy','Na','gift:Ben'); SC.el.dataset.noreplay='1'; c.append(SC.el); const fr=SC.kid();
+  await say('Knock, knock! It’s Ben, with a present for Na.','Cốc, cốc! Ben đến, mang quà cho Na.'); await SC.play(); SC.reveal('happy');
+  await say('Na opens it. It’s a new drawing book!','Na mở ra. Đó là một cuốn vở vẽ mới!');
+  await friendSays(fr,'I feel happy!','Tớ thấy vui!');
+  await say('Na says: I feel happy.','Na nói: Tớ thấy vui.');
+  await sayLikeFriend(SC.el,{who:'Na',model:'I feel happy.',vi:'Con thấy vui.',kws:['happy','feel'],kwsVi:['vui']});
+  fr.classList.add('glad'); confetti(); await say('Na is so happy!','Na vui quá!') }
+
+/* ---- 4. Lam brings his dominoes: one is turned over for a moment; which one can go next to it? (looking back at seeing at a glance) ---- */
+function dominoes(sk,rounds=2){ const st={};
+  return choiceActivity(sk,rounds,['Lam brings his dominoes. Let’s play!','Lam mang đô-mi-nô đến. Mình chơi nhé!'],r=>{
+    const n=nextDifferent(st.n,()=>1+rand(3)); st.n=n; const other=1+rand(3);
+    const c=card(); const sc=el(`<div class="sbox qbox domtable">${NAROOM()}<div class="sthing" style="left:50%;bottom:2%;width:80%">${DESK_SVG()}</div><div class="dom0">${DOMINO_SVG(other,n,true)}</div></div>`);
+    const set=[1,2,3]; const [row,opts]=optRow(set.map(k=>DOMINO_SVG(k,null).replace('viewBox="0 0 104 54"','viewBox="0 0 54 54"')),'small domopt'); c.append(sc,row);
+    const d0=$('.dom0',sc);
+    const show=async()=>{ d0.innerHTML=DOMINO_SVG(other,n); d0.classList.remove('flip'); void d0.offsetWidth; d0.classList.add('flip'); tone(500,.08,'square',.04,0,0); await sleep(2100); d0.innerHTML=DOMINO_SVG(other,n,true); d0.classList.remove('flip'); void d0.offsetWidth; d0.classList.add('flip'); await sleep(400) };
+    const q=()=>say('How many dots were on the end of the domino? Find the one with the same dots!','Đầu bên phải của quân đô-mi-nô có mấy chấm? Con tìm quân có số chấm giống vậy nhé!');
+    return {opts,correct:n-1,concept:'flash:'+n,labels:set.map(k=>[`that one has ${W[k]} ${k>1?'dots':'dot'}`,`quân đó có ${VI_N[k]} chấm`]),
+      pre:async()=>{ await say('Lam turns a domino over. Look quickly!','Lam lật một quân đô-mi-nô. Nhìn nhanh nào!',{gap:200}); await show() },
+      ask:q, replay:async()=>{ await say('Look again!','Nhìn lại nhé!',{gap:200}); await show(); await q() },
+      explain:async()=>{ d0.innerHTML=DOMINO_SVG(other,n); await say(`${cap(W[n])} ${n>1?'dots':'dot'} at the end. ${cap(W[n])} goes next to ${W[n]}!`,`Đầu bên phải có ${VI_N[n]} chấm. ${cap(VI_N[n])} nối với ${VI_N[n]}!`) },
+      onRight:async()=>{ d0.innerHTML=DOMINO_SVG(other,n); const m=el(`<div class="dom1">${DOMINO_SVG(n,1+rand(3))}</div>`); sc.append(m); SFX.pop() },
+      praise:[`You saw ${W[n]} ${n>1?'dots':'dot'} in a flash!`,`Con nhìn ra ${VI_N[n]} chấm thật nhanh!`],
+      answer:[`${cap(W[n])} and ${W[n]}. They match!`,`${cap(VI_N[n])} với ${VI_N[n]}. Khớp rồi!`]} }) }
+
+/* ---- 6. Na's music box: two tunes; how does the music sound? (looking back at scared and tired, by ear) ---- */
+async function naMusicBox(){ const sk=SK['L2.W.FEEL.02'];
+  const box=sbox('naroom',NAROOM()); box.append(sceneThing(DESK_SVG(),50,3,60,'tdesk')); const mb=el(`<div class="mbox stk">${MUSICBOX_SVG()}</div>`); box.append(mb);
+  const na=kidAt('Na','happy',16,4,13); box.append(na);
+  const [row,opts]=optRow(['scared','tired','happy'].map(f=>kidHead('Na',f)),'small kidhead'); row.classList.add('sbrow','sbunder'); box.parentElement.append(row); opts.forEach(o=>o.style.visibility='hidden');
+  await say('Na has a music box. When you wind it up, it plays music!','Na có một hộp nhạc. Lên dây cót là hộp nhạc phát nhạc!');
+  const T=shuffle(['scared','tired']); const LINE={scared:['Yes! That music sounds scary, a sneaky, creepy tune!','Đúng rồi! Nhạc đó nghe sợ sợ, rón ra rón rén!'],tired:['Yes! That music sounds sleepy. Time for a rest!','Đúng rồi! Nhạc đó nghe buồn ngủ. Đến giờ nghỉ rồi!']};
+  for(let r=0;r<2;r++){ const t=T[r]; const set=shuffle(['scared','tired','happy']); opts.forEach((o,i)=>{ o.innerHTML=kidHead('Na',set[i]); o.classList.remove('right','nope'); o.style.visibility='' }); await reveal(opts);
+    const play=async()=>{ mb.classList.add('play'); try{ await playFeelMusic(t,8) }finally{ mb.classList.remove('play') } };
+    await say(r?'Na winds it up again. A new tune!':'Na winds it up. Listen…',r?'Na lên dây cót lần nữa. Một bản nhạc mới!':'Na lên dây cót. Nghe nhé…',{gap:150,q:false}); await play();
+    const ask=()=>say('How does the music sound? Tap the face!','Bản nhạc nghe thế nào? Con chạm vào khuôn mặt nhé!');
+    turn('kid'); await stepPick(sk,opts,set.indexOf(t),{ask,concept:'feel:'+t,labels:set.map(f=>[`that face looks ${f}`,`mặt đó đang ${VI_FEEL[f]}`])}); RUN.qfn=async()=>{ await play(); await ask() }; turn(null);
+    await say(...LINE[t]); setKidFace(na,'Na',t); await reteachPending() }
+  row.remove(); setKidFace(na,'Na','happy'); await nextPage(box) }
+
+/* ---- 7. snack time: Lam drops his ice cream ("I feel sad") → we share a snack → "I feel happy!" ---- */
+async function iceCreamLam(){
+  const c=card(); const SC=feelScene('sad','Lam'); SC.el.dataset.noreplay='1'; c.append(SC.el); const fr=SC.kid();
+  await say('Snack time! Lam has an ice cream.','Đến giờ ăn nhẹ! Lam có một cây kem.'); await SC.play(); await say('Oh no! Lam dropped his ice cream.','Ôi! Lam làm rơi kem rồi.'); SC.reveal('sad');
+  await friendSays(fr,'I feel sad.','Tớ thấy buồn.'); await say('Lam says: I feel sad.','Lam nói: Tớ thấy buồn.');
+  await sayLikeFriend(SC.el,{who:'Lam',model:'I feel sad.',vi:'Con thấy buồn.',kws:['sad','feel'],kwsVi:['buon']});
+  await nextPage(SC.el) }
+async function shareLam(){ await shareFood('Lam'); const k=$('#card .skid'); if(k){ await friendSays(k,'I feel happy!','Tớ thấy vui!');
+  await say('Now Lam says: I feel happy!','Giờ Lam nói: Tớ thấy vui!'); await sayLikeFriend(k.closest('.sbox'),{who:'Lam',model:'I feel happy.',vi:'Con thấy vui.',kws:['happy','feel'],kwsVi:['vui'],spot:{x:30,b:66}}) } }
+
+/* ---- 8. Na's kitten hides (looking back at in / on / under): Chồi says where; the child taps there; the kitten pops out ---- */
+const KPLACES={on:{x:40,b:25,w:9,en:'on the bed',vi:'trên giường'},under:{x:36,b:3.5,w:6.5,en:'under the bed',vi:'dưới gầm giường'},in:{x:76,b:6,w:9,en:'in the basket',vi:'trong cái giỏ'}};   // % of the room picture: the mattress top, the space under the bed, the basket
+async function kittenHide(sk,rounds=2){
+  const box=sbox('naroom kroom',NAROOM()); box.append(sceneThing(ROOMBED_SVG(),34,3,46,'rbed')); box.append(sceneThing(ART.basket(),76,3,16,'rbasket'));
+  const hot=Object.entries(KPLACES).map(([p,P])=>{ const b=el(`<button class="khot" data-p="${p}" style="left:${P.x}%;bottom:${P.b}%"><i class="ktail"></i></button>`); box.append(b); return b });
+  await say('Na’s kitten wants to play hide and seek!','Mèo con của Na muốn chơi trốn tìm!');
+  let prev=null;
+  for(let r=0;r<rounds;r++){ const p=nextDifferent(prev,()=>pick(Object.keys(KPLACES))); prev=p; const k=Object.keys(KPLACES).indexOf(p);
+    hot.forEach(h=>h.classList.remove('found','peek')); hot[k].classList.add('peek'); box.querySelectorAll('.kcat').forEach(x=>x.remove());
+    const ask=()=>say(`The kitten is ${KPLACES[p].en}. Tap ${KPLACES[p].en}!`,`Mèo con ở ${KPLACES[p].vi}. Con chạm vào ${KPLACES[p].vi} nhé!`,{q:true});
+    turn('kid');
+    await stepPick(sk,hot,k,{ask,concept:'pos:'+p,labels:Object.keys(KPLACES).map(q=>[`that’s ${KPLACES[q].en}`,`đó là ${KPLACES[q].vi}`]),
+      onRight:async()=>{ hot[k].classList.add('found'); const P=KPLACES[p]; const cat=el(`<div class="kcat" style="left:${P.x}%;bottom:${P.b}%;width:${P.w}%"><svg viewBox="-16 -40 32 42">${catG(0,0,1)}</svg></div>`); box.append(cat); SFX.chime() }});
+    turn(null); await say(`Peekaboo! The kitten is ${KPLACES[p].en}.`,`Ú òa! Mèo con ở ${KPLACES[p].vi}.`); await pollyEcho(...{on:['On! On!','Trên! Trên!'],under:['Under! Under!','Dưới! Dưới!'],in:['In! In!','Trong! Trong!']}[p]); await reteachPending() }
+  // the kitten jumps up onto the shelf…
+  const cat=box.querySelector('.kcat'); if(cat){ cat.style.transition=`left ${1*SPEED}s ease-in-out, bottom ${1*SPEED}s cubic-bezier(.3,1.6,.5,1)`; cat.style.left='68%'; cat.style.bottom='68%' }
+  tone(600,.1,'square',.04,0,1200); await say('Oops! The kitten jumped up onto the shelf…','Ơ! Mèo con nhảy lên kệ…'); await nextPage(box) }
+
+/* =========================================================
    MUSIC (20/10): famous classical pieces, in our own recordings (tools/music/compose.py: the notes written by hand,
    played with the FluidR3 instruments, MIT licence; the music itself is public domain).
    In the levels the child meets a short part (6–9 s): the map-piece tune, a lantern, a music box, a bedtime.
@@ -6891,17 +7078,17 @@ Object.assign(EP,{
     async()=>findMapPiece(3,[['We found the third piece, in the dark garden!','Mình tìm được mảnh thứ ba, trong khu vườn tối!'],['Next time, let’s visit Na’s house!','Lần sau, mình đến nhà Na nhé!']]),
   ],
   3:[
-    async()=>tidyUp(),
-    async()=>feelPage('happy','Ben','gift:Na',['Na brings Ben a present, because he helped her tidy up. Ben feels happy.','Na mang quà đến tặng Ben vì Ben đã giúp dọn phòng. Ben thấy vui.']),
-    async()=>playFmt('sentence','repeat','L2.E.LS.03'),
-    async()=>feelPage('sad','Lam',null,['Snack time! But Lam dropped his ice cream. He feels sad.','Đến giờ ăn nhẹ! Nhưng Lam làm rơi kem. Bạn ấy thấy buồn.']),
-    async()=>shareFood('Lam'),
-    async()=>EXTRA.findFeeling.build(SK['L2.W.FEEL.02'],2),
-    async()=>playFmt('sentence','mine','L2.E.LS.03'),
-    async()=>{ RUN.sortBy='shape'; try{ await GAMES.sort(SK['L2.M.SORT.02'],2) } finally { RUN.sortBy=null } },
-    async()=>story('home',[{choi:true,mood:'happy',x:30,b:6,h:36},{who:'Na',f:'excited',x:70,b:4,h:46}],[['Oh! Toys are falling from the shelf!','Ơ! Đồ chơi đang rơi từ trên kệ xuống!'],['Get the basket. Let’s catch them!','Lấy cái giỏ. Mình bắt nhé!']]),
-    async()=>toyCatch({piece:4}),
-    async()=>findMapPiece(4,[['The fourth piece fell from the shelf!','Mảnh thứ tư rơi từ trên kệ xuống!'],['Next time, let’s go to the shop!','Lần sau, mình đi cửa hàng nhé!']]),
+    async()=>teachIt(()=>bearsIntro()),
+    async()=>inStep(mamMode('L2.M.SORT.01'),()=>crayonSort(),'L2.M.SORT.01'),
+    async()=>teachIt(()=>iFeelHappyNa()),
+    async()=>reviewIt('L2.M.NUM.05',()=>dominoes(SK['L2.M.NUM.05'])),
+    async()=>practise(()=>tidyUp()),
+    async()=>reviewIt(null,()=>{ RUN.remindQ=['Remember: scary music sneaks along. Sleepy music is slow and soft.','Nhớ nhé: nhạc sợ sợ thì rón rén. Nhạc buồn ngủ thì chậm và nhẹ.']; return naMusicBox() }),
+    async()=>practise(()=>iceCreamLam()),
+    async()=>practise(()=>shareLam()),
+    async()=>reviewIt('L2.M.POS.01',()=>kittenHide(SK['L2.M.POS.01'])),
+    async()=>practise(()=>toyCatch({piece:4,kitten:true})),
+    async()=>findMapPiece(4,[['The fourth piece fell from Na’s shelf!','Mảnh thứ tư rơi từ trên kệ của Na!'],['Next time, let’s go to the shop!','Lần sau, mình đi cửa hàng nhé!']]),
   ],
   4:[
     async()=>boxPour(),
@@ -7151,6 +7338,10 @@ mixQ(1,'L2.E.WR.02','park: Na’s kite string, down or across',()=>GAMES.trace(S
 mixQ(2,'L2.W.FEEL.02','garden at night: which lantern’s music sounds excited / has a surprise',()=>lanternMusic({rounds:1}));
 mixQ(2,'L2.M.NUM.05','garden at night: a ladybug lands for a moment; the card with the same dots',()=>ladybugDots(SK['L2.M.NUM.05'],1));
 mixQ(2,'L2.M.NUM.05','garden at night: Na’s drum, one beat for each dot',()=>EXTRA.flash.drum(SK['L2.M.NUM.05'],1));
+mixQ(3,'L2.M.SORT.01','Na’s room: put the crayons in the cup of the same colour',()=>crayonSort());
+mixQ(3,'L2.M.SORT.02','Na’s room: tidy up, big toys and small toys',()=>tidyUp());
+mixQ(3,'L2.M.NUM.05','Na’s room: Lam’s domino, look quickly and match the dots',()=>dominoes(SK['L2.M.NUM.05'],1));
+mixQ(3,'L2.M.POS.01','Na’s room: the kitten is on / under the bed, in the basket',()=>kittenHide(SK['L2.M.POS.01'],1));
 /* the skills a quick question can be made for, and how to make one */
 const MIX_FMT={findNumeral:['tap'],flash:['card','ladybug','dice'],findFeeling:['tap','story'],question:['mixed'],routine:['when'],sounds:['hear'],clap:['count'],position:['find']};
 function mixMakers(){ const played=new Set(S.attempts.map(a=>a.s)); const out=[]; const done=S.done||{};
