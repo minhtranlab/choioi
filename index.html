@@ -1557,10 +1557,8 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .fs-cookies.after .fs-giver{left:36%}.fs-cookies.after .fs-giver .gbox{transform:translate(78%,-6%)}
 .fs-polly .cookie{left:57%;bottom:30%;width:9%;z-index:3}
 .fs-parrot{position:absolute;left:-24%;bottom:70%;width:16%;z-index:4}.fs-parrot>svg{width:100%;height:auto;display:block}
-.fs-polly.go .fs-parrot{animation:fsParrot 2.4s ease-in-out forwards}
-.fs-polly.go .cookie{animation:fsCookieGo 2.4s ease-in-out forwards}
-@keyframes fsParrot{0%{left:-24%;bottom:70%}45%{left:48%;bottom:24%}58%{left:48%;bottom:24%}100%{left:112%;bottom:86%}}
-@keyframes fsCookieGo{0%,52%{left:57%;bottom:30%}100%{left:120%;bottom:84%}}
+.fs-parrot .cookie.inbeak{position:absolute;z-index:5}
+.fs-pbub{position:absolute;right:80%;top:-6%;background:#fff;border:3px solid var(--pl);border-radius:16px;padding:3px 12px;font-weight:900;font-size:clamp(13px,3cqh,22px);white-space:nowrap;box-shadow:3px 4px 0 var(--pl);color:var(--pl);z-index:6}
 .classroom .foldmap.onshelf{left:16%;bottom:73%;width:13%}
 .classroom .foldmap.onshelf.open{left:40%;bottom:20%;width:44%}
 .mapnote{position:absolute;left:80%;bottom:42%;width:22%;translate:-50% 0;z-index:4;animation:noteIn .9s cubic-bezier(.3,1.4,.5,1) both}.mapnote svg{width:100%;height:auto;display:block}
@@ -1569,6 +1567,32 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .bushhead{position:relative;display:block;width:100%;aspect-ratio:1}
 .bushhead .bh-kid{position:absolute;left:20%;top:4%;width:60%}.bushhead .bh-kid svg{width:100%;height:auto;display:block}
 .bushhead .bh-bush{position:absolute;left:-4%;bottom:-4%;width:108%}.bushhead .bh-bush svg{width:100%;height:auto;display:block}
+.actor.tapped>*{animation:none}
+.actor.tapped{animation:actHop .7s cubic-bezier(.3,1.5,.5,1);transform-origin:50% 100%}
+@keyframes actHop{30%{transform:translateY(-12%) scale(1.04)}60%{transform:translateY(0) scale(.97)}80%{transform:translateY(-3%)}}
+.actor.meet{animation:actMeet 1.2s cubic-bezier(.3,1.4,.5,1);transform-origin:50% 100%;z-index:3}
+@keyframes actMeet{0%{transform:none}22%{transform:translateY(-14%) scale(1.14)}45%{transform:translateY(0) scale(1.14)}80%{transform:scale(1.14)}100%{transform:none}}
+.tk-ico.bloom{transform:scale(0);transform-origin:50% 100%;animation:bloomUp .9s cubic-bezier(.3,1.5,.5,1) forwards;width:58px;height:58px;margin:-46px 0 0 -29px}
+@keyframes bloomUp{to{transform:scale(1)}}
+.micguide{margin:6px 0 4px;padding:10px;border:2px solid var(--line);border-radius:16px;background:#F7FBF9}
+.mg-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.mg{display:flex;flex-direction:column;gap:4px;font-size:13px}
+.mg-box{border:1.5px solid #C9D3CE;border-radius:12px;background:#fff;padding:8px;font-size:12px;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.mg-box p{margin:0 0 6px;font-weight:700;line-height:1.3}
+.mg-btns{display:flex;border-top:1px solid #DDE5E1}.mg-btns span{flex:1;text-align:center;padding:6px 2px;color:#2F6FD6}.mg-btns span+span{border-left:1px solid #DDE5E1}
+.mg-col{display:flex;flex-direction:column;gap:4px}.mg-col span{padding:5px 8px;border-radius:999px;border:1px solid #DDE5E1;color:#2F6FD6}
+.mg .pick{outline:3px solid #2FA877;outline-offset:1px;border-radius:999px;font-weight:800;color:#1E7A52}
+.mg-fix summary{cursor:pointer;font-size:13px;font-weight:700;margin-top:6px}.mg-fix ul{margin:4px 0 0 16px;padding:0}
+.okmsg{color:#1E7A52;font-weight:700}.warnmsg{color:#B5462F;font-weight:700}
+.bcab{position:absolute;right:10px;top:8px;bottom:22px;width:25%;display:flex;gap:6%;align-items:flex-start}
+.bcab .bdoor{align-self:stretch}
+.bcab .bdoor{flex:0 0 38%;border:3px solid #361D46;border-radius:6px;background:linear-gradient(90deg,#BFE8FA 0 47%,#361D46 47% 53%,#BFE8FA 53%);box-shadow:inset 0 -18px 0 #E09E00}
+.bcab .bwin{flex:1;border:3px solid #361D46;border-radius:6px 18px 6px 6px;background:#BFE8FA;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;height:80%}
+.bcab .bwin svg{width:92%;height:auto;display:block}
+.busbody{padding-right:calc(18px + 26%)}
+.hider.jiggle{animation:jig .5s ease-in-out infinite}
+@keyframes jig{25%{transform:rotate(-5deg) translateX(-2%)}75%{transform:rotate(5deg) translateX(2%)}}
+.actor.walking>svg{animation:hop .5s 5}
 </style>
 
 <div id="root"></div>
@@ -1655,7 +1679,7 @@ const FEELS=['happy','sad','angry','scared','tired','excited','surprised','proud
 const VI_FEEL={happy:'vui',sad:'buồn',angry:'giận',scared:'sợ',tired:'mệt',excited:'háo hức',surprised:'ngạc nhiên',proud:'tự hào'};
 const VI_SHAPE={circle:'tròn',square:'vuông',triangle:'tam giác',rectangle:'chữ nhật'};
 // Montessori-style: say what the child did, not "good / clever"
-const PRAISE=[['You found it!','Con tìm ra rồi!'],['You did it!','Con làm được rồi!'],['You worked it out!','Con tự nghĩ ra rồi!'],['That’s it!','Đúng rồi đấy!'],['You knew that one!','Con biết câu này rồi!'],['Look, you got it!','Nhìn kìa, con làm được rồi!']];
+const PRAISE=[['You found it!','Con tìm ra rồi!'],['You worked it out!','Con tự nghĩ ra rồi!']];   // only when there is nothing more specific to say (Montessori: say what the child did)
 const cap=s=>s[0].toUpperCase()+s.slice(1);
 
 /* ---------------- utils ---------------- */
@@ -1700,7 +1724,7 @@ function status(sk){
 }
 function satisfied(pid){ const p=SK[pid]; if(!p||p.kind!=='tap') return true; return passDays(pid).length>=1 }
 const unlocked=sk=>sk.prereqs.every(satisfied);
-function rec(sk,ok,rt,c){ if(RUN&&RUN.noRec) return; c=c===undefined?(RUN&&RUN.concept)||null:c; const a={s:sk.id,ok:!!ok,rt:Math.round(rt||0),d:today(),lang:S.lang}; if(c) a.c=c; S.attempts.push(a); if(typeof revNote==='function') revNote(sk.id,ok); if(c&&typeof missNote==='function') missNote(c,ok); save() }
+function rec(sk,ok,rt,c){ if(RUN) RUN.hintArmed=false; if(RUN&&RUN.noRec) return; c=c===undefined?(RUN&&RUN.concept)||null:c; const a={s:sk.id,ok:!!ok,rt:Math.round(rt||0),d:today(),lang:S.lang}; if(c) a.c=c; S.attempts.push(a); if(typeof revNote==='function') revNote(sk.id,ok); if(c&&typeof missNote==='function') missNote(c,ok); save() }
 
 /* ---------------- planner ---------------- */
 function planSession(){
@@ -1826,16 +1850,16 @@ function say(en,vi,opt={}){
       if(!('speechSynthesis' in window)||(V&&!viVoice())){ setTimeout(fin,est); return }   // never read Vietnamese with an English voice
       try{
         const u=new SpeechSynthesisUtterance(text); const v=V?viVoice():enVoice(); if(v) u.voice=v;
-        u.lang=V?'vi-VN':'en-US'; u.rate=opt.polly?Math.min(1.4,rate*1.15):rate; u.pitch=opt.polly?1.9:1.12; u.onend=fin; u.onerror=fin; setTimeout(fin,est+2500);
+        u.lang=V?'vi-VN':'en-US'; u.rate=opt.polly?Math.min(1.4,rate*1.15):rate; u.pitch=opt.polly?1.9:opt.kid?1.55:1.12; u.onend=fin; u.onerror=fin; setTimeout(fin,est+2500);
         speechSynthesis.cancel(); speechSynthesis.speak(u);
       }catch(e){ setTimeout(fin,est) } };
     const lang=V?'vi':'en'; const ip=voiceInit(lang);
     (VOICE.ready[lang]===false&&ip?Promise.race([ip,rawWait(2500)]):Promise.resolve()).then(()=>{ if(done) return 'dev'; if(!VOICE.ready[lang]){ device(); return 'dev' }
       voiceStop(); try{ speechSynthesis.cancel() }catch(e){} return vClip(lang,text,(opt.rate||RATE)<.65) }).then(buf=>{ if(done||buf==='dev') return; if(!buf) return device(); const a=ac(); if(!a||a.state!=='running') return device();
-      const src=a.createBufferSource(); src.buffer=buf; const pr=opt.polly?1.32:1; src.playbackRate.value=pr; src.connect(a.destination); const me={src,fin}; src.onended=()=>{ if(VOICE.cur===me) VOICE.cur=null; fin() }; VOICE.cur=me; src.start(); setTimeout(fin,buf.duration*1000/pr+1200) }).catch(()=>device());
+      const src=a.createBufferSource(); src.buffer=buf; const pr=opt.polly?1.32:opt.kid?1.12:1; src.playbackRate.value=pr; src.connect(a.destination); const me={src,fin}; src.onended=()=>{ if(VOICE.cur===me) VOICE.cur=null; fin() }; VOICE.cur=me; src.start(); setTimeout(fin,buf.duration*1000/pr+1200) }).catch(()=>device());
   });
 }
-async function praise(){ const [e,v]=pick(PRAISE); mood('happy'); await say(e,v,{keepMood:true,gap:400}); mood('idle') }
+async function praise(line){ const [e,v]=line||pick(PRAISE); mood('happy'); await say(e,v,{keepMood:true,gap:400}); mood('idle') }
 
 /* ---------------- microphone ---------------- */
 let micStream=null, micState='off';
@@ -2086,9 +2110,30 @@ const Hand={ el:null, cur:null,
   set(p){ const h=this.node(); h.getAnimations().forEach(a=>a.cancel()); h.style.opacity=1; h.style.transform=this.T(p); this.cur=p },
   async tap(){ const h=this.node(); if(!this.cur) return; const r=el(`<div class="ripple" style="left:${this.cur.x}px;top:${this.cur.y}px"></div>`); $('#fx').append(r); setTimeout(()=>r.remove(),700);
     const a=h.animate([{transform:this.T(this.cur)+' scale(1)'},{transform:this.T(this.cur)+' scale(.86)'},{transform:this.T(this.cur)+' scale(1)'}],{duration:Math.max(1,300*SPEED)}); await a.finished.catch(()=>{}); h.style.transform=this.T(this.cur) },
+  async press(ms=1300){ const h=this.node(); if(!this.cur) return; const r=el(`<div class="ripple" style="left:${this.cur.x}px;top:${this.cur.y}px"></div>`); $('#fx').append(r); setTimeout(()=>r.remove(),700);
+    await h.animate([{transform:this.T(this.cur)+' scale(1)'},{transform:this.T(this.cur)+' scale(.84)',offset:.15},{transform:this.T(this.cur)+' scale(.84)',offset:.85},{transform:this.T(this.cur)+' scale(1)'}],{duration:Math.max(1,ms*SPEED)}).finished.catch(()=>{}); h.style.transform=this.T(this.cur) },
   hide(){ if(this.el){ this.el.style.opacity=0 } this.cur=null }
 };
 function center(e){ const r=e.getBoundingClientRect(); return {x:r.left+r.width/2,y:r.top+r.height/2} }
+/* =========================================================
+   THE HINT HAND (19/10): the child does nothing for ~5.5 s → the hand shows what to do (with a little sparkle).
+   Questions that are scored: only on the first turn of each game (RUN.hintArmed, cleared by the first scored answer).
+   The doing parts of a story (hug, clap, breathe, open the map, tap the shaking bush, the microphone): every time.
+   ========================================================= */
+function hintHand(targetFn,{kind='tap',always=false,ms=5500,repeat=7000}={}){
+  if(AUTO||!RUN) return ()=>{};
+  if(!always&&!RUN.hintArmed) return ()=>{};
+  let t=null, stop=false, busy=false;
+  const go=async()=>{ if(stop||!RUN||RUN.aborted) return; const tg=targetFn(); if(!tg||!tg.isConnected) return;
+    busy=true;
+    try{ burst(center(tg),{n:8}); tone(1320,.12,'sine',.05); tone(1760,.16,'sine',.04,.08);
+      await Hand.moveTo(center(tg),550); if(stop) return;
+      if(kind==='hold') await Hand.press(1300); else if(kind==='tap3'){ for(let i=0;i<3&&!stop;i++){ await Hand.tap(); await sleep(180) } } else { await Hand.tap(); await sleep(200); if(!stop) await Hand.tap() }
+      await sleep(450) }catch(e){}
+    if(!stop) Hand.hide(); busy=false; if(!stop) t=setTimeout(go,repeat) };
+  t=setTimeout(go,ms);
+  return ()=>{ if(stop) return; stop=true; clearTimeout(t); if(busy) Hand.hide() } }
+
 
 /* ---------------- stage helpers ---------------- */
 function card(){ const c=$('#card'); c.innerHTML=''; c.classList.remove('citycard'); const w=$('.wrap-kid'); if(w) w.classList.remove('wide','city'); return c }
@@ -2113,10 +2158,12 @@ function tvPads(els){ const bar=padBar(); if(!S.tv||!bar||!RUN||!els.length||els
 function tvTapPad(onTap){ const bar=padBar(); if(!S.tv||!bar||!RUN) return ()=>{}; bar.innerHTML=''; bar.classList.add('live');
   const p=el(`<button class="tvpad one" style="--c:#FFFFFF" aria-label="Chạm">${ICON.hand}</button>`); p.onclick=()=>{ onTap() }; bar.append(p);
   return ()=>{ bar.innerHTML=''; bar.classList.remove('live') } }
-function tapOnce(els,{nudge=true}={}){
+function tapOnce(els,{nudge=true,hint}={}){
   return new Promise((res,rej)=>{
     const unpad=tvPads(els); const stopNudge=nudge?idleNudge(els):()=>{};
-    const hs=[]; const cleanup=()=>{ hs.forEach(([e,f])=>e.removeEventListener('click',f)); hs.length=0; abortFns.delete(ab); unpad(); stopNudge() };
+    const isNext=els.length===1&&els[0].classList.contains('nextbtn'), hm=hint===false||isNext?null:(hint==='always'||els.length===1?'always':'armed');
+    const stopHint=hm?hintHand(()=>els.find(e=>e.dataset.ok==='1'&&!e.dataset.used),{always:hm==='always'}):()=>{};
+    const hs=[]; const cleanup=()=>{ hs.forEach(([e,f])=>e.removeEventListener('click',f)); hs.length=0; abortFns.delete(ab); unpad(); stopNudge(); stopHint() };
     const ab=()=>{ cleanup(); rej(ABORT) };
     els.forEach((e,i)=>{ const f=ev=>{ ev.stopPropagation(); cleanup(); res(i) }; e.addEventListener('click',f); hs.push([e,f]) });
     abortFns.add(ab); if(RUN&&RUN.aborted) return ab();
@@ -2136,7 +2183,7 @@ async function kidRound(sk,R){
   const t0=performance.now(); let first=true;
   for(;;){
     const i=await tapOnce(R.opts);
-    if(i===R.correct){ R.opts[i].classList.add('right'); SFX.chime(); burst(center(R.opts[i])); if(first) rec(sk,true,performance.now()-t0); if(R.onRight) await R.onRight(); await kept(first,{later:true}); if(R.answer) await say(...R.answer,{gap:300}); await reteachPending(); return }
+    if(i===R.correct){ R.opts[i].classList.add('right'); SFX.chime(); burst(center(R.opts[i])); if(first) rec(sk,true,performance.now()-t0); if(R.onRight) await R.onRight(); await kept(first,{later:true,line:R.praise}); if(R.answer) await say(...R.answer,{gap:300}); await reteachPending(); return }
     R.opts[i].classList.remove('nope'); void R.opts[i].offsetWidth; R.opts[i].classList.add('nope'); boing();
     const Lb=R.labels&&R.labels[i]; if(Lb) await say(`Oops, ${Lb[0]}.`,`Ơ, ${Lb[1]}.`,{gap:300});
     if(first){ rec(sk,false,performance.now()-t0); first=false; await say('Try again!','Thử lại nào!'); await again() }
@@ -2147,11 +2194,11 @@ async function kidRound(sk,R){
 /** a game the child has already been shown: no 'watch me' demo the second time */
 function seenDemo(key){ S.seenDemo=S.seenDemo||{}; const was=!!S.seenDemo[key]; S.seenDemo[key]=1; save(); return was&&!(RUN&&RUN.dev&&RUN.forceDemo) }
 async function choiceActivity(sk,rounds,intro,make){
-  await say(...intro);
   const noShow=RUN&&RUN.mode?!wantDemo('choice'):(typeSeen('choice'),seenDemo('choice:'+sk.id+':'+intro[0]));
-  if(noShow){ turn('kid'); for(let r=0;r<rounds;r++){ const R=make(r); await kidRound(sk,R); await sleep(500) } turn(null); return }
+  let first=make(noShow?0:-1); await say(...intro);
+  if(noShow){ turn('kid'); for(let r=0;r<rounds;r++){ const R=r?make(r):first; await kidRound(sk,R); await sleep(500) } turn(null); return }
   await watchMe();
-  let R=make(-1); if(R.pre) await R.pre(); await reveal(R.opts); await sleep(300); await R.ask(); await sleep(300);
+  let R=first; if(R.pre) await R.pre(); await reveal(R.opts); await sleep(300); await R.ask(); await sleep(300);
   if(R.explain) await R.explain();
   await Hand.moveTo(center(R.opts[R.correct])); await Hand.tap(); R.opts[R.correct].classList.add('right'); SFX.chime(); if(R.onRight) await R.onRight();
   await say(...R.answer); await sleep(400);
@@ -2400,12 +2447,23 @@ const TRACE_SKINS=[
  {v:1,a:'star',b:'basket',m:null,en:'Help the star fall into the basket.',vi:'Giúp ngôi sao rơi xuống giỏ nhé.',fx:['Look! Lots of stars fall straight down into the basket!','Nhìn kìa! Thật nhiều ngôi sao rơi thẳng xuống giỏ!']},
  {v:0,a:'duck',b:'pond',m:null,en:'Help the duck swim to the pond.',vi:'Giúp chú vịt bơi tới cái ao nhé.',fx:['Look! Lots of ducks swim straight to the pond!','Nhìn kìa! Thật nhiều chú vịt bơi thẳng tới ao!']},
 ];
+
+/** what a line to draw looks like: a road (default), a dotted lane for things that fall or fly, a slide, a bridge, a kite string */
+function traceLane(lane,A,B,band,K){
+  const v=A.x===B.x, L=`x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}"`, h=band/2;
+  const side=d=>v?`x1="${A.x+d}" y1="${A.y}" x2="${B.x+d}" y2="${B.y}"`:`x1="${A.x}" y1="${A.y+d}" x2="${B.x}" y2="${B.y+d}"`;
+  if(lane==='dots'||lane==='string') return `<line ${side(-h)} stroke="#8FB9A6" stroke-width="4" stroke-dasharray="3 11" stroke-linecap="round"/><line ${side(h)} stroke="#8FB9A6" stroke-width="4" stroke-dasharray="3 11" stroke-linecap="round"/>`;
+  if(lane==='slide') return `<line ${L} stroke="${INK}" stroke-width="${band+10}" stroke-linecap="round"/><line ${L} stroke="#E8607E" stroke-width="${band}" stroke-linecap="round"/><line ${side(-h*.45)} stroke="#F7A9B8" stroke-width="6" stroke-linecap="round"/>`;
+  if(lane==='bridge'){ const n=Math.max(6,Math.round(Math.abs(B.x-A.x)/26)); let planks=''; for(let i=0;i<=n;i++){ const x=A.x+(B.x-A.x)*i/n; planks+=`<line x1="${x}" y1="${A.y-h}" x2="${x}" y2="${A.y+h}" stroke="#8A5530" stroke-width="3"/>` }
+    return `<rect x="${A.x-6}" y="${A.y-h}" width="${B.x-A.x+12}" height="${band}" rx="6" fill="#C98A52" stroke="${INK}" stroke-width="3"/>${planks}<line ${side(-h-10)} stroke="${INK}" stroke-width="4"/>${[0,.25,.5,.75,1].map(t=>`<line x1="${A.x+(B.x-A.x)*t}" y1="${A.y-h-10}" x2="${A.x+(B.x-A.x)*t}" y2="${A.y-h}" stroke="${INK}" stroke-width="4"/>`).join('')}` }
+  return `<line ${L} stroke="#D3E3DB" stroke-width="${band}" stroke-linecap="round"/><line ${L} stroke="#fff" stroke-width="5" stroke-dasharray="4 14" stroke-linecap="round"/>`;
+}
 GAMES.trace=async(sk,rounds,opt={})=>{
   const setup=(K)=>{ const c=card(); const box=el(`<div class="trackbox fade"><svg class="tk" preserveAspectRatio="none"></svg></div>`); c.append(box);
-    const r=box.getBoundingClientRect(), Wd=r.width, Ht=r.height, band=62, pad=56;
+    const r=box.getBoundingClientRect(), Wd=r.width, Ht=r.height, band=62, pad=56, lane=K.lane||'road';
     const A=K.v?{x:Wd/2,y:K.m?pad+34:pad}:{x:pad,y:Ht/2}, B=K.v?{x:Wd/2,y:Ht-pad}:{x:Wd-pad,y:Ht/2};   // room above the start for the thing it comes from (cloud, can, slide)
     const svg=$('svg',box); svg.setAttribute('viewBox',`0 0 ${Wd} ${Ht}`);
-    svg.innerHTML=`<line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="#D3E3DB" stroke-width="${band}" stroke-linecap="round"/><line x1="${A.x}" y1="${A.y}" x2="${B.x}" y2="${B.y}" stroke="#fff" stroke-width="5" stroke-dasharray="4 14" stroke-linecap="round"/><line class="done" x1="${A.x}" y1="${A.y}" x2="${A.x}" y2="${A.y}" stroke="${K.v?'#4A9BDB':'#E8607E'}" stroke-width="14" stroke-linecap="round"/><circle cx="${A.x}" cy="${A.y}" r="16" fill="#58B592" stroke="${INK}" stroke-width="3"/>`;
+    svg.innerHTML=traceLane(lane,A,B,band,K)+`<line class="done" x1="${A.x}" y1="${A.y}" x2="${A.x}" y2="${A.y}" stroke="${K.col||(K.lane==='string'?INK:K.lane==='slide'?'#FFE0EA':K.lane==='bridge'?'#F6D9A8':K.v?'#4A9BDB':'#E8607E')}" stroke-width="${K.lane==='string'?4:14}" stroke-linecap="round"/><circle cx="${A.x}" cy="${A.y}" r="50" fill="#58B592" fill-opacity=".18" stroke="#58B592" stroke-width="6"/><circle cx="${A.x}" cy="${A.y}" r="16" fill="#58B592" stroke="${INK}" stroke-width="3"/>`;   // the green circle stays visible around the thing that moves
     const icon=(k,p,cls)=>{ const a=typeof k==='function'?k():k==='flowerS'?flowerSVG():ART[k](k==='star'?'#FCB515':undefined); const e=el(`<div class="tk-ico ${cls}" style="left:${p.x}px;top:${p.y}px">${a}</div>`); box.append(e); return e };
     icon(K.b,B,'end'); const mover=icon(K.m||K.a,A,'mover'); if(K.m) icon(K.a,{x:A.x,y:A.y-46},'start');
     const line=$('line.done',svg); const len=K.v?B.y-A.y:B.x-A.x;
@@ -2413,8 +2471,9 @@ GAMES.trace=async(sk,rounds,opt={})=>{
     return {box,A,B,band,len,setProg} };
   const page=(T,p)=>{ const r=T.box.getBoundingClientRect(); return {x:r.left+p.x,y:r.top+p.y} };
   // what the line did: many more drops / cars / stars go the same straight way (something to watch, not a test)
-  const showFx=async(T,K)=>{ const r=T.box.getBoundingClientRect(), Wd=r.width, Ht=r.height, k=K.m||K.a, n=K.fxN||7;
+  const showFx=async(T,K)=>{ const r=T.box.getBoundingClientRect(), Wd=r.width, Ht=r.height, k=K.m||K.a, n=K.fxN===1?0:(K.fxN||7);   // one bus or one Ben: it has already arrived, nothing goes again
     if(K.b==='flowerS') T.box.querySelector('.tk-ico.end')?.classList.add('grow');
+    if(K.bloom) [.1,.26,.42,.58,.74,.9].forEach((x,i)=>{ if(Math.abs(x-.5)<.07) return; const f=el(`<div class="tk-ico bloom" style="left:${x*Wd}px;top:${Ht-34}px;animation-delay:${(500+i*230)*SPEED}ms">${flowerSVG()}</div>`); T.box.append(f) });
     const say1=say(K.fx[0],K.fx[1]).catch(()=>{});
     for(let i=0;i<n;i++){ const off=(i+1)/(n+1); const a=k==='flowerS'?flowerSVG():ART[k](k==='star'?'#FCB515':undefined);
       const e=el(`<div class="tk-ico fxmove" style="left:${K.v?off*Wd:-30}px;top:${K.v?-30:off*Ht}px">${a}</div>`); T.box.append(e);
@@ -2430,10 +2489,10 @@ GAMES.trace=async(sk,rounds,opt={})=>{
     const t0=performance.now(); let hinted=false;
     await new Promise((res,rej)=>{ let started=false, prog=0, idle=null; const ab=()=>{ clearTimeout(idle); rej(ABORT) }; abortFns.add(ab);
       let nudges=0;
-      const nudge=()=>{ idle=setTimeout(async()=>{ hinted=true; nudges++;
+      const nudge=()=>{ idle=setTimeout(async()=>{ nudges++; if(nudges>=2||!RUN.hintArmed) hinted=true;
         if(nudges>=4){ abortFns.delete(ab); T.box.onpointermove=T.box.onpointerdown=null;   // still stuck: draw it together, then move on
           try{ await say('Let’s draw it together.','Mình cùng vẽ nhé.',{gap:100}); const p0=prog; await Hand.moveTo(page(T,K.v?{x:T.A.x,y:T.A.y+p0}:{x:T.A.x+p0,y:T.A.y}),500); for(let i=0;i<=30;i++){ const q=T.setProg(p0+(T.len-p0)*i/30); Hand.set(page(T,q)); await sleep(40) } Hand.hide() }catch(e){} res(); return }
-        try{ await Hand.moveTo(page(T,started?(K.v?{x:T.A.x,y:T.A.y+Math.min(T.len,prog+70)}:{x:T.A.x+Math.min(T.len,prog+70),y:T.A.y}):T.A),600) }catch(e){} try{ await say(started?'Keep going, follow the line!':'Start at the green dot.',started?'Tiếp tục đi theo đường kẻ nào!':'Bắt đầu từ chấm xanh nhé.') }catch(e){} Hand.hide(); nudge() },8000*SPEED) };
+        try{ await Hand.moveTo(page(T,started?(K.v?{x:T.A.x,y:T.A.y+Math.min(T.len,prog+70)}:{x:T.A.x+Math.min(T.len,prog+70),y:T.A.y}):T.A),600) }catch(e){} try{ await say(started?'Keep going, follow the line!':'Start at the green circle.',started?'Tiếp tục đi theo đường kẻ nào!':'Bắt đầu từ vòng tròn xanh nhé.') }catch(e){} Hand.hide(); nudge() },(nudges===0&&RUN.hintArmed?5500:8000)*SPEED) };
       const mv=e=>{ const b=T.box.getBoundingClientRect(); const p={x:e.clientX-b.left,y:e.clientY-b.top};
         if(!started){ if(Math.hypot(p.x-T.A.x,p.y-T.A.y)<56){ started=true; SFX.pop() } else return }
         const d=K.v?Math.abs(p.x-T.A.x):Math.abs(p.y-T.A.y), along=K.v?p.y-T.A.y:p.x-T.A.x;
@@ -2444,7 +2503,7 @@ GAMES.trace=async(sk,rounds,opt={})=>{
         const stop=()=>{ clearInterval(iv); iv=null }; p.onpointerdown=e=>{ e.preventDefault(); started=true; clearTimeout(idle); stop(); iv=setInterval(()=>{ prog=Math.min(T.len,prog+T.len/45); T.setProg(prog); if(prog>=T.len){ stop(); bar.innerHTML=''; bar.classList.remove('live'); abortFns.delete(ab); res() } },40) };
         ['pointerup','pointerleave','pointercancel'].forEach(ev=>p.addEventListener(ev,stop)); abortFns.add(()=>{ stop(); bar.innerHTML=''; bar.classList.remove('live') }) }
       if(AUTO){ clearTimeout(idle); abortFns.delete(ab); setTimeout(res,5) } });
-    SFX.chime(); if(!S.tv) rec(sk,!hinted,performance.now()-t0); await praise(); await showFx(T,K); await sleep(200);
+    SFX.chime(); if(!S.tv) rec(sk,!hinted,performance.now()-t0); await praise(K.v?['You drew a line straight down!','Con vẽ được đường thẳng xuống rồi!']:['You drew a line straight across!','Con vẽ được đường thẳng ngang rồi!']); await showFx(T,K); await sleep(200);
   }
   turn(null);
 };
@@ -2606,10 +2665,10 @@ async function stepPick(sk,opts,correct,{ask,labels,onRight,record=true,concept}
 /** count taps on one or more buttons until the child stops for a moment */
 function countTaps(btns,onTap,{idle=2000,auto=0,cap=0,fastAt=0}={}){
   return new Promise((res,rej)=>{ let c=0,timer=null,fin=false; const unpad=tvTapPad(()=>{ const b=btns.find(x=>!x.dataset.used)||btns[0]; if(b&&b.onclick) b.onclick() });
-    const stopNudge=idleNudge(btns,()=>c===0,{point:true});
-    const ab=()=>{ fin=true; clearTimeout(timer); stopNudge(); unpad(); rej(ABORT) }; abortFns.add(ab);
+    const stopNudge=idleNudge(btns,()=>c===0,{point:true}); const stopHint=hintHand(()=>btns.find(x=>!x.dataset.used&&x.style.visibility!=='hidden')||btns[0]);
+    const ab=()=>{ fin=true; clearTimeout(timer); stopNudge(); stopHint(); unpad(); rej(ABORT) }; abortFns.add(ab);
     let waitDrag=0; const done=()=>{ if(fin) return; if(DRAGGING>0&&waitDrag++<6){ timer=setTimeout(done,600); return } fin=true; clearTimeout(timer); stopNudge(); abortFns.delete(ab); unpad(); btns.forEach(b=>b.onclick=null); res(c) };
-    btns.forEach(b=>b.onclick=()=>{ if(fin||b.dataset.used) return; c++; onTap(c,b); clearTimeout(timer);
+    btns.forEach(b=>b.onclick=()=>{ if(fin||b.dataset.used) return; c++; stopHint(); onTap(c,b); clearTimeout(timer);
       if(cap&&c>=cap){ fin=true; btns.forEach(x=>x.onclick=null); setTimeout(()=>{ fin=false; done() },500*SPEED); return }   // too many taps: stop here
       timer=setTimeout(done,(fastAt&&c===fastAt?450:idle)*SPEED) });
     if(AUTO) (async()=>{ if(window.__autoWrong&&Math.random()<window.__autoWrong) auto=Math.max(1,auto+(Math.random()<.5?-1:2)); for(let i=0;i<auto;i++){ await new Promise(r=>setTimeout(r,kidTapDelay())); const b=btns.find(x=>!x.dataset.used)||btns[0]; b.click() } })() });
@@ -2638,7 +2697,7 @@ async function countTurn(sk,{n,btns,onTap,idle=2000,cap,before,reset,retry,answe
   if(k===n){ SFX.chime(); return {ok:false,k,second:true} }
   await answer(k); return {ok:false,k} }
 async function demoTaps(btns,n,onEach){ for(let i=0;i<n;i++){ const b=btns.find(x=>!x.dataset.used)||btns[0]; await Hand.moveTo(center(b),520); await Hand.tap(); await onEach(i+1,b) } Hand.hide() }
-async function kept(first,{later=false}={}){ if(first) await praise(); else { mood('happy'); await say('You kept trying, and you got it!','Con cố gắng mãi và đã làm được!',{keepMood:true}); mood('idle') } if(!later) await reteachPending() }
+async function kept(first,{later=false,line=null}={}){ if(first) await praise(line); else { mood('happy'); await say('You kept trying, and you got it!','Con cố gắng mãi và đã làm được!',{keepMood:true}); mood('idle') } if(!later) await reteachPending() }
 
 /* =========================================================
    SPIRAL LESSONS (19/10): teach → practise → review; teach a concept again after two misses in a row.
@@ -2671,7 +2730,7 @@ const REMIND={
  'L2.E.LS.03':['Remember: I feel…','Nhớ nhé: "I feel…"'],
  'L2.E.PH.02':['Listen carefully!','Nghe thật kỹ nhé!'],
  'L2.E.PH.03':['Remember: one clap for each sound.','Nhớ nhé: mỗi tiếng vỗ một cái.'],
- 'L2.E.WR.02':['Remember: start at the green dot.','Nhớ nhé: bắt đầu từ chấm xanh.'],
+ 'L2.E.WR.02':['Remember: start at the green circle.','Nhớ nhé: bắt đầu từ vòng tròn xanh.'],
 };
 async function inMode(mode,fn,skill){ const prev=RUN.mode; RUN.mode=mode; try{ if(mode==='review'&&skill&&REMIND[skill]) await say(...REMIND[skill],{gap:200}); return await fn() } finally { if(RUN) RUN.mode=prev } }
 const teachIt=fn=>inMode('teach',fn), practise=fn=>inMode('practice',fn), reviewIt=(skill,fn)=>inMode('review',fn,skill);
@@ -3073,7 +3132,7 @@ function feelScene(f,name,variant){
     else if(f==='proud') await buildTower();
     else if(variant==='gift'||variant==='cookies') await sleep(2400);
     else if(variant==='mum') await sleep(2900);
-    else if(variant==='polly'){ setTimeout(()=>tone(1500,.12,'square',.05,0,1900),1100); await sleep(2600) }
+    else if(variant==='polly'){ await pollyGrab(sc); await sleep(300) }
     else await sleep(1300);
     if(hidden) setFace('q'); else setFace(f);
     sc.classList.add('after'); await sleep(900); playing=false };
@@ -3110,8 +3169,8 @@ function holdOn(target,ms=1600){
     let t0=0, raf=null, done=false; const total=ms*Math.max(SPEED,.05);
     const step=()=>{ const p=Math.min(1,(performance.now()-t0)/total); circ.style.strokeDashoffset=107*(1-p); target.style.setProperty('--hold',p);
       if(p>=1){ finish(); return } raf=requestAnimationFrame(step) };
-    const down=e=>{ if(e) e.preventDefault(); if(done) return; t0=performance.now(); target.classList.add('holding'); cancelAnimationFrame(raf); raf=requestAnimationFrame(step); tone(440,.15,'sine',.05,0,660) };
-    let quick=0; const stopN=idleNudge([target],()=>true,{point:true});
+    const down=e=>{ if(e) e.preventDefault(); if(done) return; stopH(); t0=performance.now(); target.classList.add('holding'); cancelAnimationFrame(raf); raf=requestAnimationFrame(step); tone(440,.15,'sine',.05,0,660) };
+    let quick=0; const stopN=idleNudge([target],()=>true,{point:true}); const stopH=hintHand(()=>target,{kind:'hold',always:true});
     const up=()=>{ if(done||!target.classList.contains('holding')) return; cancelAnimationFrame(raf); target.classList.remove('holding'); circ.style.strokeDashoffset=107; target.style.setProperty('--hold',0);
       if(performance.now()-t0<total*.6){ quick++;   // the child taps instead of holding
         if(quick===2) say('Keep your finger on it. Hold, hold, hold!','Con giữ ngón tay thật lâu nhé. Giữ, giữ, giữ!',{gap:0,q:false}).catch(()=>{});
@@ -3162,15 +3221,21 @@ addFormat('countTap','board',async(sk,rounds,opt={})=>{
   turn(null);
 });
 
+
+/** the bus driver: looks out at us like the team does (a front-facing head in a driver's cap) */
+const DRIVER_SVG=()=>`<svg viewBox="0 0 100 100" aria-hidden="true"><path d="M18 100 Q20 80 50 78 Q80 80 82 100Z" fill="#2E4A8C" stroke="${CK_PL}" stroke-width="4"/><path d="M42 80 L50 92 L58 80" fill="#fff" stroke="${CK_PL}" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="50" cy="56" r="24" fill="#F2C8A0" stroke="${CK_PL}" stroke-width="4"/><ellipse cx="41" cy="56" rx="2.6" ry="3.2" fill="${CK_PL}"/><ellipse cx="59" cy="56" rx="2.6" ry="3.2" fill="${CK_PL}"/>
+<path d="M40 66 q5 -4 10 0 q5 -4 10 0" stroke="#6B3E26" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M44 72 Q50 76 56 72" stroke="${CK_PL}" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+<path d="M24 46 Q26 20 50 20 Q74 20 76 46Z" fill="#2E4A8C" stroke="${CK_PL}" stroke-width="4" stroke-linejoin="round"/><path d="M22 46 Q50 40 78 46 Q80 52 74 52 Q50 47 26 52 Q20 52 22 46Z" fill="#1E2F5C" stroke="${CK_PL}" stroke-width="3.5" stroke-linejoin="round"/><circle cx="50" cy="32" r="5" fill="#FCB515" stroke="${CK_PL}" stroke-width="2.5"/></svg>`;
 /* ---- school bus: one friend for each empty seat ---- */
 addFormat('countTap','bus',async(sk,rounds,opt={})=>{
   const {min,max}=sk.p; const ramp=[...Array(rounds)].map((_,i)=>Math.max(2,Math.round(min+(max-min)*(i+1)/rounds)));
-  await say(...(opt.intro||['The school bus is here! Let’s help our friends get on.','Xe buýt đến rồi! Mình giúp các bạn lên xe nhé.']));
+  let introLeft=opt.intro||['The school bus is here! Let’s help our friends get on.','Xe buýt đến rồi! Mình giúp các bạn lên xe nhé.'];
   const HAIR=['#361D46','#9B6A45','#E9AE76','#4A3428','#C2562F'];
   const round=async(n,demo)=>{
     const T=n<=3?5:Math.min(n+2,10), taken=T-n;
-    const c=card(); const scene=el(`<div class="busscene fade"><div class="busbody"><div class="seats">${[...Array(T)].map((_,i)=>i<taken?`<i class="seat full">${kidIconSVG(HAIR[(i+2)%HAIR.length],'#F2C8A0')}</i>`:'<i class="seat"></i>').join('')}</div><i class="wheel w1"></i><i class="wheel w2"></i></div><div class="stop"></div></div>`); c.append(scene);
-    const seats=[...scene.querySelectorAll('.seat:not(.full)')], stop=$('.stop',scene);
+    const c=card(); const scene=el(`<div class="busscene fade"><div class="busbody"><div class="bcab"><i class="bdoor"></i><div class="bwin">${DRIVER_SVG()}</div></div><div class="seats">${[...Array(T)].map((_,i)=>i<taken?`<i class="seat full">${kidIconSVG(HAIR[(i+2)%HAIR.length],'#F2C8A0')}</i>`:'<i class="seat"></i>').join('')}</div><i class="wheel w1"></i><i class="wheel w2"></i></div><div class="stop"></div></div>`); c.append(scene);
+    const seats=[...scene.querySelectorAll('.seat:not(.full)')], stop=$('.stop',scene); if(introLeft){ await say(...introLeft); introLeft=null }
     const team=demo&&opt.demoClass?[]:shuffle(TEAM_RIDERS.slice()); const kids=[...Array(n+2)].map((_,i)=>{ const b=el(`<button class="rider${i<team.length?' team':''}" aria-label="${i<team.length?team[i][0]:'bạn nhỏ'}">${i<team.length?team[i][1]():kidIconSVG(HAIR[i%HAIR.length],pick(['#FFE0C2','#F2C8A0','#E3B08A']))}</button>`); stop.append(b); return b });   // the team gets on first
     await say(...(demo&&opt.demoLine?opt.demoLine:['Put one friend in each empty seat!','Mỗi ghế trống, con đưa một bạn lên nhé!']));
     let filled=0;
@@ -3190,7 +3255,7 @@ addFormat('countTap','bus',async(sk,rounds,opt={})=>{
     return r.ok };
   if(opt.single){ turn('kid'); const ok=await round(opt.n||ramp[ramp.length-1],false); if(ok) await praise(); turn(null); return }
   await demoOr('bus',async()=>{ await round(opt.demoN||2,true); if(opt.afterDemo) await say(...opt.afterDemo) });
-  for(let r=0;r<rounds;r++){ const ok=await round(ramp[r],false); if(ok) await praise(); await sleep(300) }
+  for(let r=0;r<rounds;r++){ const ok=await round(ramp[r],false); if(ok) await praise([`You put ${W[ramp[r]]} friends on the bus!`,`Con đã đưa ${VI_N[ramp[r]]} bạn lên xe!`]); await sleep(300) }
   turn(null);
 });
 
@@ -4150,7 +4215,7 @@ function renderParent(tab){
     body=`${acctPanelHTML()}<div class="panel setlist">
        <div class="setrow"><div><b>Ngôn ngữ</b><span class="note">Chồi nói</span></div>${seg('setLang',[['en','English'],['vi','Tiếng Việt']],S.lang)}</div>
        <div class="setrow"><div><b>Nhạc nền</b></div>${seg('setMusic',[[1,'Bật'],[0,'Tắt']],S.music?1:0)}</div>
-       <div class="setrow"><div><b>Micro</b><span class="note" id="micStatus2">${S.consentMic?(micState==='ok'?'Đang bật':'Đã cho phép'):'Đang tắt'}</span></div><div class="row" style="gap:6px"><button class="btn ghost sm" id="micAgain">${S.consentMic?'Kiểm tra':'Bật micro'}</button><button class="btn ghost sm" id="micTest">Thử ghi âm</button></div></div>
+       <div class="setrow"><div><b>Micro</b><span class="note" id="micStatus2">${S.consentMic?(micState==='ok'?'Đang bật':'Đã cho phép'):'Đang tắt'}</span></div><div class="row" style="gap:6px"><button class="btn ghost sm" id="micAgain">${S.consentMic?'Kiểm tra':'Bật micro'}</button><button class="btn ghost sm" id="micTest">Thử ghi âm</button></div></div><details class="mg-set"><summary class="note">Cách cho phép micro trên iPhone, Android, máy tính</summary>${MIC_GUIDE()}</details>
        <div class="setrow"><div><b>Nhắc nghỉ sau</b></div><select id="limitSel">${[0,10,15,20,30,45].map(v=>`<option value="${v}" ${v===limitMin()?'selected':''}>${v?v+' phút':'Không nhắc'}</option>`).join('')}</select></div>
        <div class="setrow"><div><b>Tên của bé</b></div><input id="setName" maxlength="20" value="${nm}" autocomplete="off"></div></div>
      <div class="panel"><h2>Trợ giúp</h2>
@@ -4225,6 +4290,7 @@ function renderDev(){
      <label class="switch"><input type="checkbox" id="o_auto" ${DEV.auto?'checked':''}> Tự trả lời đúng (chỉ xem luồng)</label>
      <label class="switch"><input type="checkbox" id="o_sand" ${DEV.sandbox?'checked':''}> Hộp cát: chơi xong trả lại tiến độ như cũ</label>
      <div class="row"><button class="btn ghost sm" data-lang="en">${S.lang==='en'?'✓ ':''}English</button><button class="btn ghost sm" data-lang="vi">${S.lang==='vi'?'✓ ':''}Tiếng Việt</button></div></div>
+   <div class="panel"><h2>Máy chủ Google Sheet (chỉ admin)</h2><div class="field-row"><label for="dvSrv">Địa chỉ Apps Script (…/exec)</label><input id="dvSrv" placeholder="https://script.google.com/macros/s/…/exec" value="${esc(syncUrl())}"></div><p class="note">Phụ huynh không thấy ô này. Khi đã có địa chỉ, gắn sẵn vào <code>SYNC_URL_DEFAULT</code> trong index.html để mọi máy tự kết nối.</p></div>
    <div class="panel"><h2>Thử nhiều ngày</h2><p class="note">Ngày trong app: ${esc(today())}</p><div class="row"><button class="btn ghost sm" id="nextDay">Sang ngày mới</button><button class="btn ghost sm" id="unlockAll">Mở hết các màn</button></div></div>
    <div class="panel"><h2>Cả buổi theo bài</h2><div class="row">${LESSONS.map((L,i)=>`<button class="btn ghost sm" data-lesson="${i}">${i===0?'Khởi động':'Bài '+i}</button>`).join('')}<button class="btn ghost sm" data-lesson="${LESSONS.length}">Ôn tập</button></div></div>
    <div class="panel"><h2>Từng hoạt động (theo lộ trình)</h2>${path.map(row).join('')}</div>
@@ -4237,7 +4303,7 @@ function renderDev(){
   </div>`;
   const opt=(id,fn)=>$(id).onchange=e=>{ fn(e.target.checked); saveDev() };
   opt('#o_rounds',v=>DEV.rounds=v?1:3); opt('#o_fast',v=>DEV.fast=v); opt('#o_mute',v=>DEV.mute=v); opt('#o_auto',v=>DEV.auto=v); opt('#o_sand',v=>DEV.sandbox=v);
-  $('#dvHome').onclick=renderHome;
+  $('#dvHome').onclick=renderHome; $('#dvSrv').onchange=e=>{ S.syncUrl=e.target.value.trim(); saveLocal() };
   $('#nextDay').onclick=()=>{ S.dayOffset++; save(); renderDev() };
   $('#unlockAll').onclick=()=>{ S.lesson=LESSONS.length; save(); renderHome() };
   const tour=from=>devRun(async()=>{
@@ -4320,16 +4386,16 @@ async function demoDrag(item,zone,dur=650){ const f=center(item), t=center(zone)
   item.classList.remove('dragging') }
 
 /* ---- pop games: bubbles (feelings) and balloons (numbers) keep rising; pop all the right ones ---- */
-async function popStream(sk,rounds,{intro,target,make,ask,label,answer,opt={},need=3,countAll=false,noDemo=false,finale=null}){
-  if(intro) await say(...intro);
+async function popStream(sk,rounds,{intro,target,make,ask,label,answer,opt={},need=3,countAll=false,noDemo=false,finale=null,bg=null}){
+  let introLeft=intro;
   const round=async(t,demo)=>{
-    const c=card(); const field=el(`<div class="popfield fade"></div>`); c.append(field);
+    const c=card(); const field=el(`<div class="popfield fade">${bg?bg():''}</div>`); c.append(field); if(introLeft){ await say(...introLeft); introLeft=null }
     let popped=0, wrong=0, alive=true, live=[];
     const others=make.others(t);
-    let lastPop=performance.now();
-    const spawn=(isT)=>{ if(!alive) return; const v=isT?t:pick(others); const sl=demo?1:1+Math.min(.9,k*.035)+(performance.now()-lastPop>6000?.5:0); const b=el(`<button class="riser ${make.cls}" style="left:${6+rand(74)}%;--dur:${((demo?7:6.2)+Math.random()*2.4)*sl}s;--sway:${rand(2)?'':'-'}${10+rand(16)}px"><span class="in">${make.art(v)}</span></button>`);
+    let lastPop=performance.now(), ease=1.12;   // slower with every new one (4%), and 22% slower each time a right one floats away untapped
+    const spawn=(isT)=>{ if(!alive) return; const v=isT?t:pick(others); if(!demo) ease=Math.min(3.6,ease*1.04); const sl=demo?1:ease; const b=el(`<button class="riser ${make.cls}" style="left:${6+rand(74)}%;--dur:${((demo?7:6.2)+Math.random()*2.4)*sl}s;--sway:${rand(2)?'':'-'}${10+rand(16)}px"><span class="in">${make.art(v)}</span></button>`);
       b.dataset.v=v; if(isT||countAll) b.dataset.ok='1'; field.append(b); live.push(b);
-      b.addEventListener('animationend',e=>{ if(e.animationName!=='rise') return; b.remove(); live=live.filter(x=>x!==b) }); return b };
+      b.addEventListener('animationend',e=>{ if(e.animationName!=='rise') return; if(!demo&&b.dataset.ok&&!b.dataset.used) ease=Math.min(3.6,ease*1.22); b.remove(); live=live.filter(x=>x!==b) }); return b };
     // a steady stream: about one in three is a right one, and there is always one on its way
     let k=0; const tick=()=>{ if(!alive) return; const rightOnes=live.filter(b=>b.dataset.ok&&!b.dataset.used).length; spawn(rightOnes===0||k%3===0); k++ };
     for(let i=0;i<3;i++) setTimeout(tick,i*500); const iv=setInterval(tick,demo?1500:1250);
@@ -4355,7 +4421,7 @@ async function popStream(sk,rounds,{intro,target,make,ask,label,answer,opt={},ne
           if(finale&&popped===need-1) startFinale();
           else if(popped>=need){ abortFns.delete(ab); setTimeout(res,500*SPEED) } }
         else { wrong++; const inn=$('.in',b); inn.classList.remove('nope'); void inn.offsetWidth; inn.classList.add('nope'); boing(); if(wrong===1||wrong%3===0) say(`Oops, ${label(b.dataset.v)}.`,`Ơ, ${label(b.dataset.v,true)}.`,{gap:0,q:false}).catch(()=>{}) } });
-      const nudge=idleNudge([field],()=>popped===0); abortFns.add(nudge);
+      const nudge=idleNudge([field],()=>popped===0); abortFns.add(nudge); const hh=hintHand(()=>live.find(x=>x.dataset.ok&&!x.dataset.used&&x.getBoundingClientRect().top>field.getBoundingClientRect().top+30)); abortFns.add(hh); field.addEventListener('pointerdown',hh,{once:true});
       if(AUTO) (async()=>{ for(let i=0;i<need;i++){ await new Promise(r=>setTimeout(r,kidTapDelay())); const b=live.find(x=>x.dataset.ok&&!x.dataset.used&&(!x.classList.contains('special')||x.dataset.ready)); if(b) b.click(); else i-- } })() });
     stop(); abortFns.delete(stop); const ok=wrong===0; rec(sk,ok,performance.now()-t0,FEELS.includes(t)?'feel:'+t:null);
     confetti(); await say(...answer(t)); if(!finale) field.remove(); return ok };
@@ -4424,13 +4490,13 @@ function sceneTap(e){
   return false }
 /** one page of the story: the picture, Chồi tells it, then the Next button. Tap the picture to hear it again. */
 async function storyPage(pic,lines,{play,after}={}){
-  const c=card(); const pg=el(`<div class="spage"></div>`); pg.append(pic.el||pic); c.append(pg);
+  const c=card(); const pg=el(`<div class="spage"></div>`); pg.append(pic.el||pic); c.append(pg); let gone=false; const alive=()=>!gone&&!(RUN&&RUN.aborted);
   const nx=el(`<button class="nextbtn" aria-label="Tiếp"><svg viewBox="0 0 24 24"><path d="M9 5 L16.5 12 L9 19" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`);
-  const tell=async()=>{ if(pic.play) await pic.play(); if(play) await play(); for(const l of lines) await say(...l,{q:false}) };
+  const tell=async()=>{ if(pic.play) await pic.play(); if(!alive()) return; if(play) await play(alive); for(const l of lines){ if(!alive()) return; await say(...l,{q:false}) } };
   turn('choi'); await tell(); turn(null); if(after) await after();
   let busy=false; (pic.el||pic).addEventListener('click',async()=>{ if(busy||!nx.isConnected) return; busy=true; try{ await tell() }catch(e){} busy=false });
   pg.append(nx); requestAnimationFrame(()=>nx.classList.add('show')); nx.dataset.ok='1'; if(RUN) RUN.qfn=tell;
-  await tapOnce([nx]); SFX.pop(); try{ speechSynthesis.cancel() }catch(e){} voiceStop();
+  await tapOnce([nx]); gone=true; SFX.pop(); try{ speechSynthesis.cancel() }catch(e){} voiceStop();
 }
 /** count things that are in the picture: tap each one (a look back at counting, inside the story) */
 async function countInPic(sk,{pic,items,n,ask,answer}){
@@ -4477,22 +4543,23 @@ async function kiteCount(sk){
 }
 /* ---- reward game: peekaboo in the bushes. Friends pop up and hide again; tap the ones Chồi asks for ---- */
 async function peekGame(sk,list,{intro,skipFirst=false,noDemo=false,bg=null}={}){
-  if(intro) await say(...intro);
+  let introLeft=intro;
   const need=4;
   const round=async(R,demo)=>{
     const c=card(); const field=el(`<div class="peekfield fade">${bg?bg():BG.yard()}</div>`); c.append(field);
     const xs=[12,31,50,69,88], holes=xs.map(x=>{ const h=el(`<div class="phole" style="left:${x}%"><button class="peeker"></button><div class="pbush">${ART.bush()}</div></div>`); field.append(h); return h });
     const others=(sk.p.set==='all'?FEELS:sk.p.set).filter(f=>f!==R.f);
-    let alive=true, got=0, wrong=0, k=0; const busy=new Set();
+    let alive=true, got=0, wrong=0, k=0, ease=1; const busy=new Set();   // ease grows 4% with every pop-up and 30% each time a right friend hides again untapped
     const up=(isT)=>{ if(!alive) return; const free=holes.filter((h,i)=>!busy.has(i)); if(!free.length) return; const h=pick(free), i=holes.indexOf(h); busy.add(i);
       const upNow=holes.map(q=>$('.peeker',q)).filter(q=>q.classList.contains('up')&&!q.classList.contains('down')).map(q=>q.dataset.who); const freeN=CAST.filter(n=>!upNow.includes(n)); if(!freeN.length){ busy.delete(i); return }   // never two of the same friend at once
       const who=pick(freeN), f=isT?R.f:pick(others);
       const p=$('.peeker',h); p.innerHTML=kidSVG(who,f); p.dataset.f=f; p.dataset.who=who; delete p.dataset.used; if(f===R.f) p.dataset.ok='1'; else delete p.dataset.ok;
       p.classList.remove('down'); p.classList.add('up'); tone(700+rand(300),.06,'sine',.04);
-      const slow=demo?1:1+Math.min(2,k*.09);   // quick at first, slower and slower so every child can finish
-      const stay=(demo?2600:(1700+rand(700))*slow); p._t=setTimeout(()=>{ p.classList.remove('up'); p.classList.add('down'); setTimeout(()=>busy.delete(i),350) },stay) };
+      if(!demo) ease=Math.min(4.5,ease*1.04);
+      const stay=(demo?2600:(2300+rand(500))*ease); p._t=setTimeout(()=>{ if(!demo&&p.dataset.ok&&!p.dataset.used) ease=Math.min(4.5,ease*1.3); p.classList.remove('up'); p.classList.add('down'); setTimeout(()=>busy.delete(i),350) },stay) };
     const tick=()=>{ if(!alive) return; const showing=holes.filter(h=>$('.peeker',h).classList.contains('up')&&$('.peeker',h).dataset.ok&&!$('.peeker',h).dataset.used).length; up(showing===0||k%2===0); k++ };
-    let iv=null; const loop=()=>{ if(!alive) return; tick(); iv=setTimeout(loop,demo?1300:950*(1+Math.min(1.6,k*.07))) }; iv=setTimeout(loop,200);
+    if(introLeft){ await say(...introLeft); introLeft=null }
+    let iv=null; const loop=()=>{ if(!alive) return; tick(); iv=setTimeout(loop,demo?1300:1100*Math.min(2.4,ease)) }; iv=setTimeout(loop,200);
     const stop=()=>{ alive=false; clearTimeout(iv) }; abortFns.add(stop);
     await say(...R.ask);
     const hit=p=>{ p.dataset.used=1; clearTimeout(p._t); p.classList.add('hit'); burst(center(p),{n:10}); SFX.chime(); setTimeout(()=>{ p.classList.remove('up','hit'); p.classList.add('down'); const i=holes.indexOf(p.parentElement); setTimeout(()=>busy.delete(i),350) },500) };
@@ -4503,7 +4570,7 @@ async function peekGame(sk,list,{intro,skipFirst=false,noDemo=false,bg=null}={})
       field.addEventListener('click',e=>{ const p=e.target.closest('.peeker'); if(!p||!p.classList.contains('up')||p.dataset.used) return;
         if(p.dataset.ok){ hit(p); got++; say(cap(W[got])+'!',cap(VI_N[got])+'!',{gap:0,q:false}).catch(()=>{}); if(got>=need){ clearTimeout(tEnd); abortFns.delete(ab); setTimeout(res,600) } }
         else { wrong++; p.classList.remove('nope'); void p.offsetWidth; p.classList.add('nope'); boing(); if(wrong===1||wrong%3===0) say(`Oops, that friend looks ${p.dataset.f}.`,`Ơ, bạn đó đang ${VI_FEEL[p.dataset.f]}.`,{gap:0,q:false}).catch(()=>{}) } });
-      const nudge=idleNudge([field],()=>got===0); abortFns.add(nudge);
+      const nudge=idleNudge([field],()=>got===0); abortFns.add(nudge); const hh=hintHand(()=>holes.map(h=>$('.peeker',h)).find(x=>x.classList.contains('up')&&x.dataset.ok&&!x.dataset.used)); abortFns.add(hh); field.addEventListener('pointerdown',hh,{once:true});
       if(AUTO) (async()=>{ while(got<need){ await new Promise(r=>setTimeout(r,kidTapDelay())); const p=holes.map(h=>$('.peeker',h)).find(x=>x.classList.contains('up')&&x.dataset.ok&&!x.dataset.used); if(p) p.click() } })() });
     stop(); abortFns.delete(stop); rec(sk,wrong===0,performance.now()-t0,'feel:'+R.f); confetti(); await say(...R.done); return wrong===0 };
   if(!noDemo) await demoOr('peek',()=>round(list[0],true)); else turn('kid');
@@ -4532,8 +4599,11 @@ async function clapFor(name,opt={}){
   const sk=SK['L2.W.FEEL.01']; const c=card(); const SC=feelScene('happy',name,opt.variant||'gift:'+(name==='Na'?'Lam':'Na')); c.append(SC.el); SC.el.dataset.noreplay='1'; const fr=SC.kid();
   if(opt.lines){ await say(...opt.lines[0]); await SC.play(); for(const l of opt.lines.slice(1)) await say(...l);
     await say(`${name} feels happy.`,`${name} thấy vui.`); await pollyEcho(...ECHO.happy);
-    await say(`Are you happy, ${name}?`,`${name} ơi, bạn vui à?`); { const yb=el(`<b class="yesbub stk">Yes!</b>`); fr.append(yb); fr.classList.add('nod'); await sleep(1100); yb.remove(); fr.classList.remove('nod') }
-    await say(`Let’s clap for ${name}! Tap three times.`,`Mình vỗ tay chúc mừng ${name} nhé! Con chạm ba lần.`,{q:true}) }
+    await say(`Are you ${opt.f||'happy'}, ${name}?`,`${name} ơi, bạn ${VI_FEEL[opt.f||'happy']} à?`); await friendSays(fr,'Yes!','Ừ!');
+    await say(`Let’s clap for ${name}! Tap three times.`,`Mình vỗ tay chúc mừng ${name} nhé! Con chạm ba lần.`,{q:true});
+    if(wantDemo('clap3')){ turn('choi'); const row=el(`<div class="claprow"></div>`); SC.el.append(row); await Hand.moveTo(center(fr),500);
+      for(let k=1;k<=3;k++){ await Hand.tap(); clapHit(); fr.classList.remove('beat'); void fr.offsetWidth; fr.classList.add('beat'); row.append(el(`<i class="clapi stk">${CLAP_SVG}<b>${k}</b></i>`)); await say(cap(W[k])+'!',cap(VI_N[k])+'!',{gap:120,q:false}) }
+      Hand.hide(); await sleep(300); row.remove(); await say('Now you clap three times!','Giờ con vỗ tay ba lần nhé!',{q:true}) } }
   else { await SC.play(); await say(`Look! ${name==='Na'?'Lam':'Na'} brings ${name} a big present!`,`Nhìn kìa! ${name==='Na'?'Lam':'Na'} mang đến tặng ${name} một hộp quà to!`); await say(`${name} feels happy. Let’s clap for ${name}! Tap three times.`,`${name} đang vui. Mình vỗ tay chúc mừng ${name} nhé! Con chạm ba lần.`,{q:true}) }
   turn('kid'); const row=el(`<div class="claprow"></div>`); SC.el.append(row);
   await tapN(fr,3,k=>{ clapHit(); fr.classList.remove('beat'); void fr.offsetWidth; fr.classList.add('beat'); row.append(el(`<i class="clapi stk">${CLAP_SVG}<b>${k}</b></i>`)) });
@@ -4598,7 +4668,7 @@ async function runEpisode(sess,li){
   for(let i=from;i<steps.length;i++){
     await limitGate();
     if(i>from){ $('#card').classList.add('out'); await sleep(320); $('#card').classList.remove('out') }
-    RUN.step=i; RUN.mode=null; RUN.concept=null; await reteachPending(); await steps[i](); S.partial={li,step:i+1,done:[]}; sess.skills.push('ep'+li+'.'+i); save() }
+    RUN.step=i; RUN.mode=null; RUN.concept=null; RUN.hintArmed=true; await reteachPending(); card(); await steps[i](); S.partial={li,step:i+1,done:[]}; sess.skills.push('ep'+li+'.'+i); save() }
   S.partial=null; S.done=S.done||{}; S.done[li]=(S.done[li]||0)+1; sess.completed=true; S.giftOwed=(S.giftOwed||0)+1;
   (EP_MAM[li]||[]).forEach(markTaught);
   if(li===S.lesson&&S.lesson<LESSONS.length){ S.lesson++; S.hopFrom=li }
@@ -4742,10 +4812,10 @@ const TEAM_RIDERS=[['Lam',()=>kidHead('Lam')],['Na',()=>kidHead('Na')],['Ben',()
 /** wait for exactly n taps on one thing (claps): the child can't finish with fewer; a gentle reminder if they stop */
 function tapN(target,n,onTap){
   return new Promise((res,rej)=>{ let c=0,done=false,t=null;
-    const stopN=idleNudge([target],()=>!done&&c===0,{point:true});
-    const ab=()=>{ done=true; clearTimeout(t); stopN(); target.onclick=null; rej(ABORT) }; abortFns.add(ab);
+    const stopN=idleNudge([target],()=>!done&&c===0,{point:true}); const stopH=hintHand(()=>target,{kind:'tap3',always:true});
+    const ab=()=>{ done=true; clearTimeout(t); stopN(); stopH(); target.onclick=null; rej(ABORT) }; abortFns.add(ab);
     const remind=()=>{ clearTimeout(t); t=setTimeout(()=>{ if(!done&&c<n) say('Keep clapping!','Vỗ tay tiếp nào!',{gap:0,q:false}).catch(()=>{}) },3500) };
-    target.onclick=()=>{ if(done) return; c++; onTap(c); if(c>=n){ done=true; clearTimeout(t); stopN(); abortFns.delete(ab); target.onclick=null; setTimeout(res,450*SPEED) } else remind() };
+    target.onclick=()=>{ if(done) return; c++; stopH(); onTap(c); if(c>=n){ done=true; clearTimeout(t); stopN(); abortFns.delete(ab); target.onclick=null; setTimeout(res,450*SPEED) } else remind() };
     if(AUTO) (async()=>{ for(let i=0;i<n;i++){ await new Promise(r=>setTimeout(r,kidTapDelay())); if(!done&&target.onclick) target.onclick() } })();
   });
 }
@@ -4754,8 +4824,9 @@ function tapN(target,n,onTap){
 async function pieceFrom(n,bg,hider,ask,actors=[]){
   const c=card(); const pic=scenePic(bg,actors); const pg=el(`<div class="spage"></div>`); pg.append(pic); c.append(pg);
   const h=el(`<button class="hider stk" aria-label="Tap">${hider}<span class="peekp">${mapPieceSVG(n)}</span></button>`); pic.append(h);
+  if(/shak/i.test(ask[0])) h.classList.add('jiggle');
   await say(...ask,{q:true}); turn('kid'); h.dataset.ok='1'; await tapOnce([h]); turn(null);
-  h.classList.add('shakeme'); tone(500,.1,'triangle',.07,0,900); await sleep(600); h.classList.add('done');
+  h.classList.remove('jiggle'); h.classList.add('shakeme'); tone(500,.1,'triangle',.07,0,900); await sleep(600); h.classList.add('done');
   const pr=pic.getBoundingClientRect(), hr=h.getBoundingClientRect();
   const pc=el(`<div class="dropiece stk" style="left:${hr.left-pr.left+hr.width/2}px;top:${hr.top-pr.top+hr.height*.3}px">${mapPieceSVG(n)}</div>`); pic.append(pc);
   const dx=pr.width/2-(hr.left-pr.left+hr.width/2), dy=pr.height*.45-(hr.top-pr.top+hr.height*.3);
@@ -5570,7 +5641,7 @@ async function sunsetTap(){
   // fireflies in little groups: one look is enough to know how many
   const G=shuffle([1,2,3]), at=[[30,40],[52,58],[72,36]];
   const groups=G.map((n,i)=>{ const g=el(`<button class="ffly" style="left:${at[i][0]}%;bottom:${at[i][1]}%">${[[50,50],[30,30,70,70],[25,30,72,32,50,72]][n-1].reduce((h,v,j,a)=>j%2?h:h+`<i style="left:${a[j]}%;top:${a[j+1]}%"></i>`,'')}</button>`); g.dataset.n=n; box.append(g); return g });
-  await say('Fireflies! Tap a group. Look quickly. How many?','Đom đóm kìa! Con chạm vào một nhóm. Nhìn nhanh nhé. Có mấy con?',{q:true});
+  await say('Fireflies! Tap a group, and look quickly. How many fireflies?','Đom đóm kìa! Con chạm vào một nhóm rồi nhìn thật nhanh. Có mấy con đom đóm?',{q:true});
   const left=groups.slice(); turn('kid');
   while(left.length){ left.forEach(g=>g.dataset.ok='1'); const k=await tapOnce(left); const g=left.splice(k,1)[0]; g.classList.add('lit'); SFX.chime(); const n=+g.dataset.n;
     await say(`${cap(W[n])}! I can see ${W[n]} without counting.`,`${cap(VI_N[n])}! Nhìn là biết ${VI_N[n]}, không cần đếm.`) }
@@ -5750,19 +5821,21 @@ async function roomShapes(){
 /* =========================================================
    COMFORT A FRIEND (no question): the story, the feeling, then the child does the kind thing
    ========================================================= */
+/** a friend answers out loud (a little higher voice), with a speech bubble and a nod */
+async function friendSays(fr,en,vi){ const yb=el(`<b class="yesbub stk">${esc(isVi()?vi:en)}</b>`); fr.append(yb); fr.classList.add('nod'); try{ await say(en,vi,{kid:true,q:false,gap:250}) } finally { yb.remove(); fr.classList.remove('nod') } }
 async function comfortStep(H,{hint=false}={}){
   const c=card(); const SC=feelScene(H.f,H.name,H.scene); SC.el.dataset.noreplay='1'; c.append(SC.el); const fr=SC.kid();
   if(H.lead) await say(...H.lead);
   await SC.play(); await say(H.en,H.vi); await say(`${H.name} feels ${H.f}.`,`${H.name} thấy ${VI_FEEL[H.f]}.`); if(ECHO[H.f]&&!H.noEcho) await pollyEcho(...ECHO[H.f]);
-  await say(`Are you ${H.f}, ${H.name}?`,`${H.name} ơi, bạn ${VI_FEEL[H.f]} à?`); { const yb=el(`<b class="yesbub stk">Yes.</b>`); fr.append(yb); fr.classList.add('nod'); await sleep(1100); yb.remove(); fr.classList.remove('nod') }
+  await say(`Are you ${H.f}, ${H.name}?`,`${H.name} ơi, bạn ${VI_FEEL[H.f]} à?`); await friendSays(fr,'Yes.','Ừ.');
   await say(H.hen,H.hvi,{q:true}); turn('kid');
-  if(hint&&wantDemo('hold')){ await Hand.moveTo(center(fr),500); await Hand.tap(); Hand.hide() }
+  if((hint||RUN.mode)&&wantDemo('hold')){ await Hand.moveTo(center(fr),500); await Hand.press(1300); Hand.hide(); await sleep(200) }
   if(H.act==='hold'){ const fxs=helpFx(SC,H); await holdOn(fr,1600); await fxs.done() }
   else { const row=el(`<div class="claprow"></div>`); SC.el.append(row); await tapN(fr,3,k=>{ clapHit(); fr.classList.remove('beat'); void fr.offsetWidth; fr.classList.add('beat'); row.append(el(`<i class="clapi stk">${CLAP_SVG}<b>${k}</b></i>`)) }) }
   turn(null); SC.reveal(['happy','excited','proud','surprised'].includes(H.f)?H.f:'happy'); fr.classList.add('glad'); confetti();
   if(H.scene==='bed') await say(`Good night, ${H.name}! When we feel tired, we go to sleep.`,`Chúc ${H.name} ngủ ngon! Khi mệt, mình đi ngủ nhé.`);
   else await say(['happy','excited','proud','surprised'].includes(H.f)?`${H.name} is so happy you’re here!`:`${H.name} feels better now. Thank you!`,['happy','excited','proud','surprised'].includes(H.f)?`${H.name} vui lắm vì có con!`:`${H.name} thấy dễ chịu hơn rồi. Cảm ơn con!`);
-  if(H.after) await H.after() }
+  if(H.after) await H.after(SC) }
 
 /* ---- Warm-up: tap the old map to open it ---- */
 async function mapIntro(){
@@ -5911,28 +5984,63 @@ async function mapFind(){
   await say('The first piece must be there! Let’s go and tell my friends.','Chắc mảnh đầu tiên ở đó! Mình đi kể cho các bạn nhé.'); await nextPage(box) }
 
 /* ---- 2. the school yard: meet the team (no microphone yet: the child is still getting to know the app) ---- */
-const meetTeam=()=>storyPage(scenePic('school',[{who:'Lam',x:22,b:4,h:52,name:1},{who:'Na',x:46,b:4,h:52,name:1},{who:'Ben',x:72,b:4,h:52,name:1},{polly:true,x:80,b:40,h:20,cls:'bob'}]),
-  [['Chồi runs out to the school yard. Here’s my team: Lam, Na and Ben!','Chồi chạy ra sân trường. Đây là đội của Chồi: Lam, Na và Ben!'],['And this is Polly, on Ben’s shoulder. Polly likes to say things again!','Còn đây là Polly, đậu trên vai Ben. Polly thích nói lại lời người khác!']],{after:()=>pollyEcho('Hello! Hello!','Xin chào! Xin chào!')});
+function meetTeam(){ const pic=scenePic('school',[{who:'Lam',x:22,b:4,h:52,name:1},{who:'Na',x:46,b:4,h:52,name:1},{who:'Ben',x:72,b:4,h:52,name:1},{polly:true,x:80,b:40,h:20,cls:'bob'}]);
+  const hop=w=>{ const a=pic.querySelector(`.actor[data-who="${w}"]`); if(!a) return; a.classList.remove('meet'); void a.offsetWidth; a.classList.add('meet'); SFX.pop() };
+  return storyPage(pic,[],{play:async alive=>{
+    await say('Chồi runs out to the school yard, to show the map to his team.','Chồi chạy ra sân trường, khoe tấm bản đồ với các bạn trong đội.');
+    for(const [w,en,vi] of [['Lam','This is Lam.','Đây là Lam.'],['Na','This is Na.','Đây là Na.'],['Ben','And this is Ben.','Còn đây là Ben.']]){ if(!alive()) return; hop(w); await say(en,vi,{q:false}) }
+    if(!alive()) return; hop('Polly'); await say('And this is Polly, on Ben’s shoulder. Polly likes to say things again!','Còn đây là Polly, đậu trên vai Ben. Polly thích nói lại lời người khác!',{q:false}) },
+   after:()=>pollyEcho('Hello! Hello!','Xin chào! Xin chào!')}) }
 
 /* ---- 3. three little things in the yard, one after another: Ben's mum leaves → the teacher's cookies → Polly takes Lam's cookie ---- */
+
+/* ---- Polly and Lam's cookie: Polly's beak really reaches the cookie, the cookie goes with Polly; later Polly brings it back ---- */
+const BEAK={x:.8,y:.44};   // where Polly's beak is, as a part of her picture
+function parrotAt(sc,p,ck){ const sr=sc.getBoundingClientRect(), cr=ck.getBoundingClientRect(), pr=p.getBoundingClientRect();
+  const lx=(cr.left+cr.width/2)-sr.left-BEAK.x*pr.width, ty=(cr.top+cr.height/2)-sr.top-BEAK.y*pr.height;
+  return {left:(lx/sr.width*100)+'%',bottom:((sr.height-ty-pr.height)/sr.height*100)+'%'} }
+const parrotFly=(p,from,to,ms)=>p.animate([from,to],{duration:Math.max(1,ms*SPEED),easing:'ease-in-out',fill:'forwards'}).finished.catch(()=>{});
+async function pollyGrab(sc){ const p=sc.querySelector('.fs-parrot'), ck=sc.querySelector('.cookie'); if(!p||!ck) return;
+  if(ck.parentElement!==sc){ sc.append(ck); ck.classList.remove('inbeak'); ck.removeAttribute('style') }
+  p.getAnimations().forEach(a=>a.cancel()); const start={left:'-24%',bottom:'72%'}; p.style.left=start.left; p.style.bottom=start.bottom;
+  const at=parrotAt(sc,p,ck); tone(900,.1,'square',.04,0,1400);
+  await parrotFly(p,start,at,1300*1.0);
+  // grab: the cookie goes into Polly's beak
+  const pr=p.getBoundingClientRect(), cr=ck.getBoundingClientRect(); const cw=cr.width/pr.width*100, ch=cr.height/pr.height*100;
+  p.append(ck); ck.classList.add('inbeak'); ck.style.width=cw+'%'; ck.style.left=(BEAK.x*100-cw/2)+'%'; ck.style.top=(BEAK.y*100-ch/2)+'%'; ck.style.bottom='auto';
+  tone(1500,.12,'square',.05,0,1900); await sleep(380);
+  await parrotFly(p,at,{left:'112%',bottom:'86%'},1100) }
+async function pollyReturn(SC){ const sc=SC.el, p=sc.querySelector('.fs-parrot'); if(!p) return; const ck=p.querySelector('.cookie');
+  p.getAnimations().forEach(a=>a.cancel()); const from={left:'112%',bottom:'86%'}; p.style.left=from.left; p.style.bottom=from.bottom;
+  // where the cookie goes back: Lam's hand
+  const home=el(`<div class="fs-prop cookie" style="visibility:hidden">${ART.cookie()}</div>`); sc.append(home);
+  const at=parrotAt(sc,p,home); await say('Look! Polly is coming back.','Nhìn kìa! Polly bay trở lại.',{q:false});
+  await parrotFly(p,from,at,1300);
+  if(ck) ck.remove(); home.style.visibility=''; SFX.pop(); await sleep(250);
+  await say('Polly gives the cookie back to Lam.','Polly trả lại bánh cho Lam.',{q:false});
+  const perch={left:'76%',bottom:'60%'}; await parrotFly(p,at,perch,900);
+  const b=el(`<div class="fs-pbub"></div>`); p.append(b);
+  for(const [en,vi] of [['Sorry!','Xin lỗi!'],['Sorry!','Xin lỗi!']]){ b.textContent=isVi()?vi:en; await say(en,vi,{polly:true,q:false,gap:450}) }
+  await sleep(300); b.remove() }
 const EP0_SAD={f:'sad',name:'Ben',scene:'mum',lead:['Oh, look. Ben’s mum is going to work.','Ơ, nhìn kìa. Mẹ Ben đi làm rồi.'],en:'Ben’s mum says bye-bye.',vi:'Mẹ Ben chào tạm biệt.',act:'hold',hen:'Let’s give Ben a big hug. Press and hold Ben!',hvi:'Mình ôm Ben thật chặt nhé. Con nhấn giữ vào Ben!'};
 const EP0_ANGRY={f:'angry',name:'Lam',scene:'polly',noEcho:true,lead:['Na shares her cookies with everyone. Lam has one too.','Na chia bánh cho mọi người. Lam cũng có một cái.'],en:'Oh no! Polly took Lam’s cookie!',vi:'Ôi! Polly giật mất bánh của Lam rồi!',act:'hold',hen:'Let’s breathe slowly with Lam. Press and hold to breathe in.',hvi:'Mình cùng Lam hít thở thật chậm nhé. Con nhấn giữ để hít vào.',
-  after:async()=>{ await say('Polly is sorry. Polly gives the cookie back.','Polly biết lỗi rồi. Polly trả lại bánh cho Lam.'); await pollyEcho('Sorry! Sorry!','Xin lỗi! Xin lỗi!') }};
+  after:SC=>pollyReturn(SC)};
 const EP0_HAPPY={variant:'cookies',lines:[['Look! The teacher has a present for Na, because Na helped a friend.','Nhìn kìa! Cô giáo tặng quà cho Na, vì Na đã giúp bạn.'],['It’s a box of cookies!','Đó là một hộp bánh quy!']]};
 
 /* ---- 5 and 7: lines to draw, all in this morning's story ---- */
-const EP0_TRACE_DEMO={v:0,a:'schoolbus',b:'school',en:'The bus needs a road. Watch me: I start at the green dot, and go all the way.',vi:'Xe buýt cần một con đường. Xem Chồi nhé: bắt đầu ở chấm xanh, đi một mạch đến cuối.',fx:['Vroom! The bus drives straight along the road.','Brừm! Xe buýt chạy thẳng trên đường.'],fxN:1};
-const EP0_TRACE1=[{v:0,a:'schoolbus',b:'bush',en:'Now draw the road to the garden, for the bus.','vi':'Giờ con vẽ đường cho xe buýt ra khu vườn nhé.',fx:['Vroom! The bus is at the garden!','Brừm! Xe buýt tới khu vườn rồi!'],fxN:1},
-  {v:1,a:'can',b:'flowerS',m:'drop',en:'The gardener is watering the flowers. Help the water fall down.','vi':'Bác làm vườn đang tưới hoa. Con giúp nước rơi xuống nhé.',fx:['Look! The water falls straight down. The flowers grow!','Nhìn kìa! Nước rơi thẳng xuống. Hoa lớn lên!']}];
-const EP0_TRACE2=[{v:1,a:'slide',b:'sandpit',m:'benhead',en:'Ben goes down the slide. Draw a line down for Ben!','vi':'Ben trượt cầu trượt. Con vẽ đường xuống cho Ben nhé!',fx:['Whee! Ben slides straight down.','Vèo! Ben trượt thẳng xuống.'],fxN:1},
-  {v:0,a:'benhead',b:'bushX',en:'Now Ben walks over the little bridge to the bush with the X. Draw a line across!','vi':'Giờ Ben đi qua cây cầu nhỏ tới bụi cây có dấu X. Con vẽ đường ngang nhé!',fx:['Ben is at the bush with the X!','Ben tới bụi cây có dấu X rồi!'],fxN:1}];
+const EP0_TRACE_DEMO={v:0,a:'schoolbus',b:'school',en:'Let’s draw a road for the bus. Watch me: I start at the green circle, and go all the way to the end.',vi:'Mình vẽ đường cho xe buýt nhé. Xem Chồi nè: bắt đầu ở vòng tròn xanh, đi một mạch đến cuối.',fx:['Vroom! The bus drives straight along the road.','Brừm! Xe buýt chạy thẳng trên đường.'],fxN:1};
+const EP0_TRACE1=[{v:0,a:'schoolbus',b:'bush',en:'Now you draw the road to the garden.','vi':'Giờ con vẽ đường ra khu vườn nhé.',fx:['Vroom! The bus is at the garden!','Brừm! Xe buýt tới khu vườn rồi!'],fxN:1},
+  {v:1,lane:'dots',bloom:true,a:'can',b:'flowerS',m:'drop',en:'The gardener is watering the flowers. Help the water fall down.','vi':'Bác làm vườn đang tưới hoa. Con giúp nước rơi xuống nhé.',fx:['Look! The water falls straight down. The flowers open up!','Nhìn kìa! Nước rơi thẳng xuống. Hoa nở rồi!']}];
+const EP0_TRACE2=[{v:1,lane:'slide',a:'benhead',b:'sandpit',en:'Ben goes down the slide. Draw a line down for Ben!','vi':'Ben trượt cầu trượt. Con vẽ đường xuống cho Ben nhé!',fx:['Whee! Ben slides straight down.','Vèo! Ben trượt thẳng xuống.'],fxN:1},
+  {v:0,lane:'bridge',a:'benhead',b:'bushX',en:'Now Ben walks over the little bridge to the bush with the X. Draw a line across!','vi':'Giờ Ben đi qua cây cầu nhỏ tới bụi cây có dấu X. Con vẽ đường ngang nhé!',fx:['Ben is at the bush with the X!','Ben tới bụi cây có dấu X rồi!'],fxN:1}];
 
 /* ---- 6. the flags in the garden ---- */
 async function gardenFlags(){
-  const pic=scenePic('sgarden',[{who:'Ben',f:'happy',x:12,b:4,h:50}]);
-  await countInPic(SK['L2.M.NUM.02'],{pic,n:5,items:[[32,6,20,FLAG('#E8607E')],[46,6,20,FLAG('#4A9BDB')],[60,6,20,FLAG('#FCB515')],[74,6,20,FLAG('#58B592')],[88,6,20,FLAG('#9B6BD0')]],
+  const pic=scenePic('sgarden',[{who:'Ben',f:'happy',x:9,b:4,h:46},{art:ART.slide(),x:78,b:4,h:30},{art:BRIDGE_SVG(),x:93,b:4,h:13}]);
+  await countInPic(SK['L2.M.NUM.02'],{pic,n:5,items:[[22,6,19,FLAG('#E8607E')],[33,6,19,FLAG('#4A9BDB')],[44,6,19,FLAG('#FCB515')],[55,6,19,FLAG('#58B592')],[66,6,19,FLAG('#9B6BD0')]],
     ask:['We’re in the garden! Ben’s map says: follow the flags. Let’s count them. Tap each flag!','Mình tới khu vườn rồi! Bản đồ của Ben ghi: đi theo những lá cờ. Mình đếm nhé. Con chạm vào từng lá cờ!'],answer:['Five flags! This way!','Năm lá cờ! Đi lối này!']});
-  const ben=pic.querySelector('.actor[data-who="Ben"]'); if(ben){ ben.classList.add('walkon'); await say('Ben follows the flags, to the slide and the little bridge.','Ben đi theo những lá cờ, tới cầu trượt và cây cầu nhỏ.'); await sleep(1600) } }
+  const ben=pic.querySelector('.actor[data-who="Ben"]'); if(ben){ ben.style.transition=`left ${2.4*SPEED}s ease-in-out`; ben.classList.add('walking'); ben.style.left='72%'; await say('Ben follows the flags, to the slide and the little bridge.','Ben đi theo những lá cờ, tới cầu trượt và cây cầu nhỏ.'); await sleep(900); ben.classList.remove('walking') } }
+const BRIDGE_SVG=()=>`<svg viewBox="0 0 100 44" aria-hidden="true"><path d="M2 40 Q50 4 98 40" stroke="${INK}" stroke-width="13" fill="none" stroke-linecap="round"/><path d="M2 40 Q50 4 98 40" stroke="#C98A52" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M8 26 Q50 -6 92 26" stroke="${INK}" stroke-width="3.5" fill="none"/>${[14,32,50,68,86].map((x,i)=>`<path d="M${x} ${[30,19,14,19,30][i]-8} v10" stroke="${INK}" stroke-width="3.5"/>`).join('')}</svg>`;
 
 /* ---- 8. the team hides in the bushes and makes faces: find the friend who calls you ---- */
 function bushFaces(sk,rounds){ const st={};
@@ -5940,7 +6048,7 @@ function bushFaces(sk,rounds){ const st={};
     const feels=shuffle(['happy','sad','angry']), who=shuffle(CAST.slice()); const k=nextDifferent(st.k,()=>rand(3)); st.k=k; const n=who[k], f=feels[k], I=CAST_INFO;
     const c=card(); const [row,opts]=optRow(who.map((w,i)=>`<span class="bushhead"><span class="bh-kid">${kidHead(w,feels[i])}</span><span class="bh-bush">${ART.bush()}</span></span>`),'bushrow'); c.append(row);
     return {opts,correct:k,concept:'feel:'+f,labels:who.map((w,i)=>[`that’s ${w}. ${I[w].he} looks ${feels[i]}`,`đó là ${w}, bạn ấy đang ${VI_FEEL[feels[i]]}`]),
-      ask:()=>say(`${n} says: Find me! I look ${f}!`,`${n} nói: Tìm ${n} đi! ${n} đang ${VI_FEEL[f]}!`),answer:[`There’s ${n}! ${n} looks ${f}.`,`${n} đây rồi! ${n} đang ${VI_FEEL[f]}.`]} }) }
+      ask:()=>say(`${n} says: Find me! I look ${f}!`,`${n} nói: Tìm ${n} đi! ${n} đang ${VI_FEEL[f]}!`),praise:[`You found ${n}!`,`Con tìm ra ${n} rồi!`],answer:[`${n} looks ${f}.`,`${n} đang ${VI_FEEL[f]}.`]} }) }
 
 /* ---- after the piece: the child's first time on the microphone. Polly says it back in a parrot voice. No microphone: we say it together ---- */
 async function playVoiceAs(b,rate=1.3){ try{ const a=ac(); if(!a) throw 0; const data=await b.arrayBuffer();
@@ -6185,7 +6293,20 @@ async function syncPull(){ if(!S.acct||S.acct.pending||!syncUrl()) return false;
 addEventListener('pagehide',()=>{ try{ if(S.acct&&!S.acct.pending&&syncUrl()&&navigator.sendBeacon){ S.updatedAt=Date.now(); saveLocal(); navigator.sendBeacon(syncUrl(),new Blob([JSON.stringify({action:'save',login:S.acct.login,h:S.acct.h,state:syncState(),summary:progressSummary(),meta:syncMeta()})],{type:'text/plain'})) } }catch(e){} });
 
 /* ---- the welcome page: create an account, log in, or just try it ---- */
-const ACCT_ERR={taken:'Tên đăng nhập này đã có người dùng. Con chọn tên khác nhé.',nouser:'Không tìm thấy tên đăng nhập này.',pin:'Mã PIN chưa đúng.',locked:'Nhập sai PIN nhiều lần. Ba mẹ đợi 15 phút rồi thử lại nhé.',nourl:'Chưa kết nối Google Sheet. Ba mẹ nhập địa chỉ ở mục "Máy chủ" bên dưới.',net:'Không kết nối được máy chủ. Ba mẹ kiểm tra mạng rồi thử lại.',fail:'Có lỗi, ba mẹ thử lại nhé.'};
+const ACCT_ERR={taken:'Tên đăng nhập này đã có người dùng. Con chọn tên khác nhé.',nouser:'Không tìm thấy tên đăng nhập này.',pin:'Mã PIN chưa đúng.',locked:'Nhập sai PIN nhiều lần. Ba mẹ đợi 15 phút rồi thử lại nhé.',nourl:'Chưa đăng nhập được vì app chưa kết nối máy chủ. Ba mẹ báo Fun Academy nhé; trong lúc chờ, bé vẫn chơi thử được.',net:'Không kết nối được máy chủ. Ba mẹ kiểm tra mạng rồi thử lại.',fail:'Có lỗi, ba mẹ thử lại nhé.'};
+
+/** for parents: what the browser asks when the app wants the microphone, and which button to press */
+const MIC_GUIDE=()=>`<div class="micguide"><p class="note small"><b>Máy sẽ hỏi quyền dùng micro.</b> Ba mẹ bấm nút được khoanh màu xanh:</p>
+ <div class="mg-row">
+  <div class="mg"><b>iPhone, iPad</b><div class="mg-box ios"><p>“minhtranlab.github.io” muốn truy cập micrô</p><div class="mg-btns"><span>Không cho phép</span><span class="pick">Cho phép</span></div></div><small>Máy để tiếng Anh: <b>Allow</b></small></div>
+  <div class="mg"><b>Điện thoại Android (Chrome)</b><div class="mg-box and"><p>minhtranlab.github.io muốn sử dụng micrô</p><div class="mg-col"><span class="pick">Khi truy cập trang web</span><span>Chỉ lần này</span><span>Không bao giờ</span></div></div><small>Tiếng Anh: <b>While visiting the site</b></small></div>
+  <div class="mg"><b>Máy tính (Chrome, Edge, Safari)</b><div class="mg-box pc"><p>minhtranlab.github.io muốn<br>Sử dụng micrô</p><div class="mg-col"><span class="pick">Cho phép khi truy cập trang web</span><span>Cho phép lần này</span><span>Không bao giờ cho phép</span></div></div><small>Safari trên Mac: <b>Cho phép</b> (Allow)</small></div>
+ </div>
+ <details class="mg-fix"><summary>Lỡ bấm chặn micro?</summary><ul class="note small">
+  <li><b>iPhone, iPad:</b> chạm <b>aA</b> (hoặc biểu tượng trang) bên trái thanh địa chỉ → <b>Cài đặt trang web</b> → <b>Micrô</b> → <b>Cho phép</b>, rồi tải lại trang. Nếu mở app từ Màn hình chính: <b>Cài đặt</b> → <b>Safari</b> → <b>Micrô</b> → <b>Cho phép</b>.</li>
+  <li><b>Chrome (điện thoại, máy tính):</b> chạm biểu tượng bên trái địa chỉ trang (ổ khoá hoặc ⚙) → <b>Quyền</b> → <b>Micrô</b> → <b>Cho phép</b>, rồi tải lại trang.</li>
+  <li><b>Safari trên Mac:</b> menu <b>Safari</b> → <b>Cài đặt cho trang web này</b> → <b>Micrô</b> → <b>Cho phép</b>.</li></ul></details>
+ <p class="note small" id="micGuideMsg"></p></div>`;
 function renderSetup(tab='new'){
   root.className='sheet';
   const yNow=new Date().getFullYear(); const years=[yNow-6,yNow-5,yNow-4,yNow-3,yNow-2];
@@ -6202,22 +6323,18 @@ function renderSetup(tab='new'){
    ${guest?'':`<div class="field-row"><label for="rgLogin">Tên đăng nhập</label><input id="rgLogin" maxlength="20" placeholder="vd: bin2021" autocomplete="username" autocapitalize="off" spellcheck="false"></div>
    <div class="field-row"><label for="rgPin">Mã PIN 4 số</label><input id="rgPin" inputmode="numeric" maxlength="4" type="password" autocomplete="new-password"></div>
    <div class="field-row"><label for="rgEmail">Email ba mẹ</label><input id="rgEmail" type="email" maxlength="80" autocomplete="email" placeholder="ten@email.com"></div>`}`}
-   ${tab!=='login'?`<label class="microw" for="setupMic">Dùng micro để bé nói theo <input type="checkbox" id="setupMic"></label>`:''}
+   ${tab!=='login'?`<label class="microw" for="setupMic">Dùng micro để bé nói theo <input type="checkbox" id="setupMic"></label><div id="micGuideBox" hidden>${MIC_GUIDE()}</div>`:''}
    <div class="err" id="setupErr"></div>
    <button class="btn" id="setupGo" style="font-size:17px;min-height:54px">${tab==='login'?'Đăng nhập':guest?'Bắt đầu chơi thử':'Tạo tài khoản và bắt đầu'}</button>
    ${guest?`<button class="linkbtn" id="toAcct">← Đăng ký / đăng nhập</button><p class="note small">Chơi thử: tiến độ chỉ lưu trên máy này. Sau này tạo tài khoản ở Settings, tiến độ được chuyển lên.</p>`:`<button class="linkbtn" id="toGuest">Chơi thử, không cần tài khoản</button>`}
-   <button class="linkbtn small" id="setupDemo">Dùng thử với bé mẫu</button>
-   <details class="srv"><summary>Máy chủ (Google Sheet)</summary><div class="field-row"><label for="srvUrl">Địa chỉ Apps Script</label><input id="srvUrl" placeholder="https://script.google.com/macros/s/…/exec" value="${esc(syncUrl())}"></div><p class="note small">${syncUrl()?'Đã có địa chỉ máy chủ.':'Chưa có địa chỉ: tài khoản vẫn tạo được, tiến độ sẽ lên Google Sheet khi có địa chỉ.'}</p></details>
   </div>`;
   const err=t=>{ $('#setupErr').textContent=t||'' };
   root.querySelectorAll('.seg').forEach(b=>b.onclick=()=>renderSetup(b.dataset.tab));
   if($('#toGuest')) $('#toGuest').onclick=()=>renderSetup('guest'); if($('#toAcct')) $('#toAcct').onclick=()=>renderSetup('new');
-  $('#srvUrl').onchange=e=>{ S.syncUrl=e.target.value.trim(); saveLocal() };
-  if($('#setupMic')) $('#setupMic').onchange=async e=>{ if(!e.target.checked){ S.consentMic=false; return } S.consentMic=true; const ok=await getMic(true); if(!ok){ S.consentMic=false; e.target.checked=false; err('Trang này chưa dùng được micro. Bé vẫn chơi được.') } };
+  if($('#setupMic')) $('#setupMic').onchange=async e=>{ const gb=$('#micGuideBox'); if(gb) gb.hidden=!e.target.checked; if(!e.target.checked){ S.consentMic=false; return } S.consentMic=true; await new Promise(r=>setTimeout(r,600)); const ok=await getMic(true); if(ok) releaseMic(); const ms=$('#micGuideMsg'); if(ms){ ms.textContent=ok?'Đã cho phép micro. Ba mẹ có thể bấm Bắt đầu.':'Micro chưa được phép. Xem hướng dẫn ở trên để mở lại; bé vẫn chơi được khi chưa có micro.'; ms.className='note small '+(ok?'okmsg':'warnmsg') } if(!ok){ S.consentMic=false; e.target.checked=false; err('Trang này chưa dùng được micro. Bé vẫn chơi được.') } };
   const start=(name,year)=>{ S.child={name,birthYear:+year}; saveLocal(); renderHome() };
-  $('#setupDemo').onclick=()=>start('Bin',yNow-5);
   const btn=$('#setupGo');
-  btn.onclick=async()=>{ err(''); S.syncUrl=$('#srvUrl').value.trim()||S.syncUrl||'';
+  btn.onclick=async()=>{ err('');
     if(tab==='guest'){ const n=$('#setupName').value.trim(); if(!n) return err('Nhập tên của bé nhé.'); return start(n,$('#setupYear').value) }
     if(tab==='login'){ const lg=cleanLogin($('#lgName').value), pin=$('#lgPin').value.trim(); if(!loginOk(lg)) return err('Nhập tên đăng nhập (3–20 chữ thường, số).'); if(!/^\d{4}$/.test(pin)) return err('Mã PIN gồm 4 chữ số.');
       btn.disabled=true; btn.textContent='Đang tải tiến độ…';
@@ -6237,9 +6354,8 @@ function renderSetup(tab='new'){
 }
 /* the account box in Settings */
 function acctPanelHTML(){ const a=S.acct, si=S.syncInfo||{};
-  const st=!a?'Đang chơi thử: tiến độ chỉ lưu trên máy này.':!syncUrl()?'Chưa có địa chỉ Google Sheet, tiến độ đang lưu trên máy này.':a.pending?'Tài khoản chưa gửi được lên Google Sheet, sẽ thử lại.':si.err?`Lần đồng bộ gần nhất bị lỗi (${esc(si.err)}). Sẽ thử lại.`:si.ok?`Đã đồng bộ lúc ${new Date(si.ok).toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'})}.`:'Chưa đồng bộ.';
+  const st=!a?'Đang chơi thử: tiến độ chỉ lưu trên máy này.':!syncUrl()?'Tiến độ đang lưu trên máy này.':a.pending?'Tài khoản chưa gửi được lên máy chủ, app sẽ tự thử lại.':si.err?`Lần đồng bộ gần nhất bị lỗi (${esc(si.err)}). Sẽ thử lại.`:si.ok?`Đã đồng bộ lúc ${new Date(si.ok).toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'})}.`:'Chưa đồng bộ.';
   return `<div class="panel"><h2>Tài khoản</h2>${a?`<p><b>${esc(a.login)}</b> · bé ${esc(S.child?S.child.name:'')}${a.email?` · ${esc(a.email)}`:''}</p>`:''}<p class="note">${st}</p>
-   <div class="field-row"><label for="acUrl">Địa chỉ Google Sheet (Apps Script)</label><input id="acUrl" placeholder="https://script.google.com/macros/s/…/exec" value="${esc(syncUrl())}"></div>
    <div class="row">${a?`<button class="btn ghost sm" id="acSync">Đồng bộ ngay</button><button class="btn ghost sm warn" id="acOut">Đăng xuất</button>`:`<button class="btn sm" id="acMake">Tạo tài khoản để lưu tiến độ</button><button class="btn ghost sm" id="acIn">Đăng nhập</button>`}</div><div class="err" id="acMsg"></div></div>` }
 function wireAcctPanel(rerender){ const m=t=>{ const e=$('#acMsg'); if(e) e.textContent=t };
   const u=$('#acUrl'); if(u) u.onchange=()=>{ S.syncUrl=u.value.trim(); saveLocal(); if(S.acct) syncPush().then(()=>rerender&&rerender()) };
@@ -6282,7 +6398,8 @@ function mixPlan(){ const all=mixMakers(); if(!all.length) return null; const d=
 async function mixCount(sk){ const n=3+rand(3); const SC=pick([['park','balloon'],['beach','star'],['yard','flag']]); const pic=scenePic(SC[0],[]);
   const sky=SC[1]==='balloon'; const spots=shuffle(sky?[[22,40],[36,58],[50,44],[64,62],[78,46],[88,60],[42,28],[70,30]]:[[20,5],[34,12],[48,4],[60,13],[72,5],[86,11],[42,20],[66,21]]).slice(0,n);
   const art=()=>SC[1]==='balloon'?ART.balloon(pick(PAL)):SC[1]==='star'?ART.star(pick(PAL)):FLAG(pick(PAL));
-  await countInPic(sk,{pic,n,items:spots.map(([x,b])=>[x,b,SC[1]==='star'?11:20,art()]),ask:['How many? Tap each one and count!','Có mấy cái nhỉ? Con chạm từng cái và đếm nhé!'],answer:[`${cap(W[n])}!`,`${cap(VI_N[n])}!`]}) }
+  await countInPic(sk,{pic,n,items:spots.map(([x,b])=>[x,b,SC[1]==='star'?11:20,art()]),ask:SC[1]==='balloon'?['How many balloons? Tap each balloon and count!','Có mấy quả bóng bay? Con chạm từng quả và đếm nhé!']:SC[1]==='star'?['How many starfish? Tap each starfish and count!','Có mấy con sao biển? Con chạm từng con và đếm nhé!']:['How many flags? Tap each flag and count!','Có mấy lá cờ? Con chạm từng lá và đếm nhé!'],
+    answer:SC[1]==='balloon'?[`${cap(W[n])} balloons!`,`${cap(VI_N[n])} quả bóng bay!`]:SC[1]==='star'?[`${cap(W[n])} starfish!`,`${cap(VI_N[n])} con sao biển!`]:[`${cap(W[n])} flags!`,`${cap(VI_N[n])} lá cờ!`]}) }
 
 const MIX_ICON=()=>`<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#D9C7F2"/><circle cx="34" cy="38" r="16" fill="#FFD21F" stroke="#3A1B49" stroke-width="4"/><path d="M27 36 q7 8 14 0" stroke="#3A1B49" stroke-width="3.5" fill="none" stroke-linecap="round"/><rect x="54" y="22" width="30" height="30" rx="7" fill="#fff" stroke="#3A1B49" stroke-width="4"/><circle cx="62" cy="30" r="3.4" fill="#3A1B49"/><circle cx="69" cy="37" r="3.4" fill="#3A1B49"/><circle cx="76" cy="44" r="3.4" fill="#3A1B49"/><path d="M50 60 l5 11 l12 1 l-9 8 l3 12 l-11 -6 l-11 6 l3 -12 l-9 -8 l12 -1z" fill="#FF8A3D" stroke="#3A1B49" stroke-width="3.5" stroke-linejoin="round"/><path d="M14 74 h22 M25 63 v22" stroke="#4A9BDB" stroke-width="6" stroke-linecap="round"/></svg>`;
 const mixReady=()=>mixMakers().length>=2;
