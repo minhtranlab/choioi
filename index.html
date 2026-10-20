@@ -11,55 +11,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.png">
 <link rel="apple-touch-icon" href="icon.png">
-<style>html,body{margin:0;height:100%}/* ---- Màn 5 · building site (20/10) ---- */
-.sbox .s5tap{pointer-events:auto}
-.s5house,.s5garage{z-index:1}
-.s5roof,.s5win,.s5plank,.s5tool,.s5piece,.s5blk,.s5gold,.s5num,.s5fz,.s5gz{border:0;background:none;padding:0;font:inherit;color:inherit;cursor:pointer}
-.s5roof{position:absolute;translate:-50% 0;z-index:3;transform-origin:50% -30%}.s5roof svg,.s5win svg,.s5plank svg,.s5tool svg,.s5piece svg,.s5blk svg,.s5door svg,.s5wwin svg,.s5stuck svg,.s5gold svg,.s5medal svg,.s5held svg,.s5wall svg,.s5trislot svg{width:100%;height:auto;display:block}
-.s5roof.swing{animation:s5swing 2.6s ease-in-out infinite}@keyframes s5swing{0%,100%{rotate:-2.5deg}50%{rotate:2.5deg}}
-.sides path{stroke:transparent;transition:stroke .25s}.sides path.on{stroke:#FFD21F}
-.s5rope{position:absolute;width:0;border-left:2.5px solid #3A1B49;translate:-50% 0;z-index:2;pointer-events:none}
-.s5trolley{position:absolute;width:3.2%;height:2.4%;background:#E0A71B;border:2px solid #3A1B49;border-radius:2px;translate:-50% 0;z-index:2;pointer-events:none}
-.s5stuck{position:absolute;left:77%;top:7.2%;width:7.5%;translate:-50% 0;z-index:2;pointer-events:none;display:flex;flex-direction:column;align-items:center}
-.s5stuck .s5str{display:block;width:0;height:3.4cqh;border-left:2px solid #3A1B49}
-.s5stuck.glint svg{animation:s5glint 1.6s ease-in-out infinite}@keyframes s5glint{50%{filter:drop-shadow(0 0 6px #FFE066) brightness(1.18)}}
-.s5win{position:absolute;translate:-50% 0;z-index:4}.s5win.beat{animation:pop .35s}.s5win.nope{animation:shake .35s}.s5win.lit,.s5wwin.lit,.s5door.lit{filter:drop-shadow(0 0 6px #FFD21F) drop-shadow(0 0 3px #FFD21F)}
-.s5doorway{position:absolute;translate:-50% 0;aspect-ratio:22/48;background:#C9D6E4;border:2px dashed rgba(58,27,73,.55);border-radius:2px;z-index:1;transition:box-shadow .3s}.s5doorway.lit{box-shadow:0 0 0 5px rgba(255,210,31,.8)}
-.s5fz{position:absolute;translate:-50% 50%;z-index:2;border-radius:3px}.s5fz.v{width:3%;height:34.3%}.s5fz.h{width:11%;height:4.3%}
-.s5fz.lit{background:#FFD21F;box-shadow:0 0 10px #FFD21F}.s5fz.done{visibility:hidden}.zhold .s5fz:not(.done){background:rgba(255,210,31,.45);animation:s5pulse 1s ease-in-out infinite}
-@keyframes s5pulse{50%{box-shadow:0 0 0 4px rgba(255,210,31,.6)}}
-.s5plank{position:absolute;translate:-50% 0;z-index:3;filter:drop-shadow(1px 2px 0 rgba(58,27,73,.35))}
-.s5door{position:absolute;translate:-50% 0;z-index:2;transform-origin:0 50%;animation:s5doorIn .8s ease-out}@keyframes s5doorIn{from{transform:scaleX(.05)}to{transform:none}}
-.s5wwin{z-index:1}
-.s5tool{position:absolute;translate:-50% 0;bottom:13.5%;width:8.5%;z-index:3}.s5tool.beat{animation:pop .35s}.s5tool.nope{animation:shake .35s}
-.s5bench{z-index:2}
-.s5builder{position:absolute;bottom:3%;width:12%;translate:-50% 0;z-index:1;transition:transform .5s ease-in-out}.s5builder>div svg{width:100%;height:auto;display:block}
-.s5builder.hid{transform:translateY(62%)}.s5builder.peep{transform:none}
-.s5held{position:absolute;left:84%;top:24%;width:62%;translate:-50% -70%;rotate:-18deg}
-.s5wall{position:absolute;translate:-50% 0;z-index:2;pointer-events:none}
-.s5slab{position:absolute;translate:-50% 0;height:4.3%;background:#CFC8BA;border:2.5px solid #3A1B49;border-radius:3px;z-index:1;pointer-events:none}
-.s5panel{position:absolute;translate:-50% 0;aspect-ratio:200/64;z-index:3}.s5panel>svg{position:absolute;inset:0;width:100%;height:100%}
-.s5btns{position:absolute;inset:14% 6%;display:flex;justify-content:space-between;align-items:center}
-.s5num{width:17%;aspect-ratio:1;border-radius:50%;background:#FCB515;border:3px solid #3A1B49;box-shadow:0 4px 0 #B07A10;display:grid;place-items:center;transition:transform .1s}
-.s5num b{font-size:clamp(16px,7cqh,40px);font-weight:900;color:#3A1B49;line-height:1}
-.s5num.press{transform:translateY(3px);box-shadow:0 1px 0 #B07A10;background:#FFE066}.s5num.nope{animation:shake .35s}
-.s5hang{position:absolute;translate:-50% 0;z-index:3;pointer-events:none}.s5load{display:flex}
-.s5brick{display:block;width:5cqw;height:3.6cqh;background:#D9714E;border:2px solid #3A1B49;border-radius:2px;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12)}
-.s5brick.bump{animation:pop .3s}
-.s5trislot{position:absolute;translate:-50% 0;z-index:1;pointer-events:none}
-.s5piece{position:absolute;translate:-50% 0;z-index:3;filter:drop-shadow(1px 3px 0 rgba(58,27,73,.3))}.s5piece.nope{animation:shake .35s}.s5piece.in{filter:none}
-.s5piece.rect svg>rect:first-of-type{transition:fill .6s}.s5piece.rect.blue svg>rect:first-of-type{fill:#4A9BDB}.s5piece.rect.blue svg>path{stroke:#2F7FC4}
-.s5piece.rect.painting{animation:pop .5s 2}.s5piece.rect{transition:clip-path .8s ease-in-out}.s5piece.rect.up{clip-path:inset(0 0 100% 0)}
-.s5gz{position:absolute;translate:-50% 50%;z-index:2}.s5gz.rect{width:18.4%;height:17.1%}.s5gz.square{width:8%;height:11.4%}.s5gz.circle{width:5.6%;height:8%;border-radius:50%}
-.zhold .s5gz:not(.done),.zhold .s5trislot{animation:s5pulse 1s ease-in-out infinite;border-radius:6px}
-.s5truck{z-index:2}.s5truck.parked{z-index:0}
-.s5pot{z-index:3}.s5pot.beat{animation:pop .35s}
-.s5blk{position:absolute;translate:-50% 0;bottom:5%;z-index:3;filter:drop-shadow(1px 3px 0 rgba(58,27,73,.3))}.s5blk.rect{width:15%}.s5blk.square{width:8%}.s5blk.triangle{width:9%}.s5blk.circle{width:8%}
-.s5blk.nope{animation:shake .35s}.s5blk.lift{animation:s5lift 1.1s ease-in forwards}@keyframes s5lift{30%{transform:translateY(-12%)}100%{transform:translateY(-420%);opacity:0}}
-.site5 .smap{z-index:5;left:30%}.s5gold{position:absolute;left:72%;top:10%;width:11%;translate:-50% 0;z-index:6;animation:s5bob 1.4s ease-in-out infinite}@keyframes s5bob{50%{transform:translateY(-8%) rotate(8deg)}}
-.s5medal{position:absolute;left:50%;top:56%;width:24%;translate:-50% -50%;z-index:3;pointer-events:none;animation:pop .4s}
-.fs-in-site .fs-sky,.fs-in-site .fs-ground{display:none}
-</style>
+<style>html,body{margin:0;height:100%}</style>
 </head>
 <body>
 <title>Chồi Ơi</title>
@@ -1910,6 +1862,54 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 #turnme .tm-en{font:900 clamp(22px,6.4vw,30px) Nunito,sans-serif;line-height:1.2}
 #turnme .tm-vi{font-size:15px;opacity:.88;line-height:1.5}
 #turnme .tm-full{margin-top:6px}
+/* ---- Màn 5 · building site (20/10) ---- */
+.sbox .s5tap{pointer-events:auto}
+.s5house,.s5garage{z-index:1}
+.s5roof,.s5win,.s5plank,.s5tool,.s5piece,.s5blk,.s5gold,.s5num,.s5fz,.s5gz{border:0;background:none;padding:0;font:inherit;color:inherit;cursor:pointer}
+.s5roof{position:absolute;translate:-50% 0;z-index:3;transform-origin:50% -30%}.s5roof svg,.s5win svg,.s5plank svg,.s5tool svg,.s5piece svg,.s5blk svg,.s5door svg,.s5wwin svg,.s5stuck svg,.s5gold svg,.s5medal svg,.s5held svg,.s5wall svg,.s5trislot svg{width:100%;height:auto;display:block}
+.s5roof.swing{animation:s5swing 2.6s ease-in-out infinite}@keyframes s5swing{0%,100%{rotate:-2.5deg}50%{rotate:2.5deg}}
+.sides path{stroke:transparent;transition:stroke .25s}.sides path.on{stroke:#FFD21F}
+.s5rope{position:absolute;width:0;border-left:2.5px solid #3A1B49;translate:-50% 0;z-index:2;pointer-events:none}
+.s5trolley{position:absolute;width:3.2%;height:2.4%;background:#E0A71B;border:2px solid #3A1B49;border-radius:2px;translate:-50% 0;z-index:2;pointer-events:none}
+.s5stuck{position:absolute;left:77%;top:7.2%;width:7.5%;translate:-50% 0;z-index:2;pointer-events:none;display:flex;flex-direction:column;align-items:center}
+.s5stuck .s5str{display:block;width:0;height:4.6cqh;margin-bottom:-1.6cqh;border-left:2.5px solid #3A1B49;position:relative;z-index:1}.s5stuck .s5knot{display:block;width:1.1cqw;aspect-ratio:1;margin-bottom:-.5cqw;border-radius:50%;background:#3A1B49}.s5stuck .s5pc{display:block;width:100%}
+.s5stuck.glint svg{animation:s5glint 1.6s ease-in-out infinite}@keyframes s5glint{50%{filter:drop-shadow(0 0 6px #FFE066) brightness(1.18)}}
+.s5win{position:absolute;translate:-50% 0;z-index:4}.s5win.beat{animation:pop .35s}.s5win.nope{animation:shake .35s}.s5win.lit,.s5wwin.lit,.s5door.lit{filter:drop-shadow(0 0 6px #FFD21F) drop-shadow(0 0 3px #FFD21F)}
+.s5doorway{position:absolute;translate:-50% 0;aspect-ratio:22/48;background:#C9D6E4;border:2px dashed rgba(58,27,73,.55);border-radius:2px;z-index:1;transition:box-shadow .3s}.s5doorway.lit{box-shadow:0 0 0 5px rgba(255,210,31,.8)}
+.s5fz{position:absolute;translate:-50% 50%;z-index:2;border-radius:3px}.s5fz.v{width:3%;height:34.3%}.s5fz.h{width:11%;height:4.3%}
+.s5fz.lit{background:#FFD21F;box-shadow:0 0 10px #FFD21F}.s5fz.done{visibility:hidden}.zhold .s5fz:not(.done){background:rgba(255,210,31,.45);animation:s5pulse 1s ease-in-out infinite}
+@keyframes s5pulse{50%{box-shadow:0 0 0 4px rgba(255,210,31,.6)}}
+.s5plank{position:absolute;translate:-50% 0;z-index:3;filter:drop-shadow(1px 2px 0 rgba(58,27,73,.35))}
+.s5door{position:absolute;translate:-50% 0;z-index:2;transform-origin:0 50%;animation:s5doorIn .8s ease-out}@keyframes s5doorIn{from{transform:scaleX(.05)}to{transform:none}}
+.s5wwin{z-index:1}
+.s5tool{position:absolute;translate:-50% 0;bottom:13.5%;width:8.5%;z-index:3}.s5tool.beat{animation:pop .35s}.s5tool.nope{animation:shake .35s}
+.s5bench{z-index:2}
+.s5builder{position:absolute;bottom:3%;width:12%;translate:-50% 0;z-index:1;transition:transform .5s ease-in-out}.s5builder>div svg{width:100%;height:auto;display:block}
+.s5builder.hid{transform:translateY(62%)}.s5builder.peep{transform:none}
+.s5held{position:absolute;left:84%;top:24%;width:62%;translate:-50% -70%;rotate:-18deg}
+.s5wall{position:absolute;translate:-50% 0;z-index:2;pointer-events:none}
+.s5slab{position:absolute;translate:-50% 0;height:4.3%;background:#CFC8BA;border:2.5px solid #3A1B49;border-radius:3px;z-index:1;pointer-events:none}
+.s5panel{position:absolute;translate:-50% 0;aspect-ratio:200/64;z-index:3}.s5panel>svg{position:absolute;inset:0;width:100%;height:100%}
+.s5btns{position:absolute;inset:14% 6%;display:flex;justify-content:space-between;align-items:center}
+.s5num{width:17%;aspect-ratio:1;border-radius:50%;background:#FCB515;border:3px solid #3A1B49;box-shadow:0 4px 0 #B07A10;display:grid;place-items:center;transition:transform .1s}
+.s5num b{font-size:clamp(16px,7cqh,40px);font-weight:900;color:#3A1B49;line-height:1}
+.s5num.press{transform:translateY(3px);box-shadow:0 1px 0 #B07A10;background:#FFE066}.s5num.nope{animation:shake .35s}
+.s5hang{position:absolute;translate:-50% 0;z-index:3;pointer-events:none}.s5load{display:flex}
+.s5brick{display:block;width:5cqw;height:3.6cqh;background:#D9714E;border:2px solid #3A1B49;border-radius:2px;box-shadow:inset 0 -3px 0 rgba(0,0,0,.12)}
+.s5brick.bump{animation:pop .3s}
+.s5trislot{position:absolute;translate:-50% 0;z-index:1;pointer-events:none}
+.s5piece{position:absolute;translate:-50% 0;z-index:3;filter:drop-shadow(1px 3px 0 rgba(58,27,73,.3))}.s5piece.nope{animation:shake .35s}.s5piece.in{filter:none}
+.s5piece.rect svg>rect:first-of-type{transition:fill .6s}.s5piece.rect.blue svg>rect:first-of-type{fill:#4A9BDB}.s5piece.rect.blue svg>path{stroke:#2F7FC4}
+.s5piece.rect.painting{animation:pop .5s 2}.s5piece.rect{transition:clip-path .8s ease-in-out}.s5piece.rect.up{clip-path:inset(0 0 100% 0)}
+.s5gz{position:absolute;translate:-50% 50%;z-index:2}.s5gz.rect{width:18.4%;height:17.1%}.s5gz.square{width:8%;height:11.4%}.s5gz.circle{width:5.6%;height:8%;border-radius:50%}
+.zhold .s5gz:not(.done),.zhold .s5trislot{animation:s5pulse 1s ease-in-out infinite;border-radius:6px}
+.s5truck{z-index:2}.s5truck.parked{z-index:0}
+.s5pot{z-index:3}.s5pot.beat{animation:pop .35s}
+.s5blk{position:absolute;translate:-50% 0;bottom:5%;z-index:3;filter:drop-shadow(1px 3px 0 rgba(58,27,73,.3))}.s5blk.rect{width:15%}.s5blk.square{width:8%}.s5blk.triangle{width:9%}.s5blk.circle{width:8%}
+.s5blk.nope{animation:shake .35s}.s5blk.lift{animation:s5lift 1.1s ease-in forwards}@keyframes s5lift{30%{transform:translateY(-12%)}100%{transform:translateY(-420%);opacity:0}}
+.site5 .smap{z-index:5;left:30%}.s5gold{position:absolute;left:72%;top:10%;width:11%;translate:-50% 0;z-index:6;animation:s5bob 1.4s ease-in-out infinite}@keyframes s5bob{50%{transform:translateY(-8%) rotate(8deg)}}
+.s5medal{position:absolute;left:50%;top:56%;width:24%;translate:-50% -50%;z-index:3;pointer-events:none;animation:pop .4s}
+.fs-in-site .fs-sky,.fs-in-site .fs-ground{display:none}
 </style>
 
 <div id="root"></div>
@@ -3727,7 +3727,7 @@ const STORIES={
    bridge:{sayRule:['In the shop, the same things go together.','Ở cửa hàng, đồ cùng loại được xếp cạnh nhau đấy.'],sounds:['So many sounds at the shop!','Ở cửa hàng có nhiều âm thanh quá!']},
    explore:[['apple','An apple!','Quả táo!'],['banana','A banana!','Quả chuối!'],[()=>ART.cupcake('#F7A9B8'),'A cupcake!','Bánh kem nhỏ!'],['cookie','A cookie!','Bánh quy!']],
    act:{mode:'collect',start:[[22,118],[50,128],[80,118],[104,128]],tgt:[158,106],line:['Let’s go shopping! Tap the food to put it in our basket.','Mình đi mua sắm nhé! Con chạm vào đồ ăn để bỏ vào giỏ.'],done:['Our basket is full!','Giỏ đầy rồi!']}},
- build:{art:'build',intro:[['Today we are builders!','Hôm nay mình làm thợ xây!'],['Let’s build a little house.','Mình cùng xây một ngôi nhà nhỏ nhé.']],outro:['What a great house! You’re a great builder!','Ngôi nhà đẹp quá! Con là thợ xây giỏi lắm!'],kinds:['star','heart','present','duck'],
+ build:{art:'build',intro:[['Today we are builders!','Hôm nay mình làm thợ xây!'],['Let’s build a little house.','Mình cùng xây một ngôi nhà nhỏ nhé.']],outro:['What a house! You put every shape in its place.','Ngôi nhà xong rồi! Con đặt từng hình vào đúng chỗ.'],kinds:['star','heart','present','duck'],
    bridge:{findShape:['Builders use shapes!','Thợ xây dùng các hình đấy!'],clap:['Let’s sing and clap while we work.','Vừa làm vừa vỗ tay hát nào.']},
    explore:[[()=>shapeSVG('square','#E8607E'),'A red block!','Khối màu đỏ!'],[()=>shapeSVG('square','#4A9BDB'),'A blue block!','Khối màu xanh!'],[()=>`<svg viewBox="0 0 100 100"><path d="M3 70 L50 30 L97 70Z" fill="#58B592" ${OL}/></svg>`,'A green triangle for the roof!','Hình tam giác xanh làm mái nhà!'],[()=>shapeSVG('square','#FCB515'),'A little yellow chimney!','Ống khói nhỏ màu vàng!']],
    act:{mode:'stack',start:[[24,118],[52,126],[176,118],[150,126]],slots:[[83,87,55],[117,87,55],[100,55,76],[127,38,23]],line:['Builders need blocks! Tap the blocks to build a little house.','Thợ xây cần khối gỗ! Con chạm vào các khối để xây một ngôi nhà nhỏ nhé.'],done:['What a lovely house!','Ngôi nhà đẹp quá!']}},
@@ -4278,7 +4278,7 @@ function bonusFmt(game,main){ if(!MAKE[game]) return null; const F=game==='clap'
 async function playSkill(sk,opt={}){
   ptip(sk); S.strandLast[sk.id.split('.')[2]]=S.sessions.length; save();
   await gameCard(sk.game);
-  if(opt.stepBack) await say('Let’s play this one again!','Mình chơi lại trò này cho thật giỏi nhé!');
+  if(opt.stepBack) await say('Let’s play this one again!','Mình chơi lại trò này nhé!');
   // the warm-up/lesson job is making faces: don't also build faces in the same level
   if(sk.game==='findFeeling'&&RUN.plan&&RUN.plan.mission&&MISSIONS[RUN.plan.mission.id]&&MISSIONS[RUN.plan.mission.id].art==='charades'&&fmtFor(sk,FMTS.findFeeling)==='build'&&!(inDev()&&DEV.fmt)){ S.plays=S.plays||{}; S.plays[sk.id]=(S.plays[sk.id]||0)+1 }
   // never two pick-the-answer activities in a row: after one, use a hands-on format when the game has one
@@ -5147,15 +5147,14 @@ function islandArt(){ const I='#3A1B49', s=`stroke="${I}" stroke-width="1.8" str
   return `<rect x="10" y="10" width="200" height="124" fill="#8ED3EE"/>${[[18,22],[176,20],[192,128],[22,126],[104,128],[110,18]].map(p=>wave(...p)).join('')}
    <path d="M28 22 C70 12 150 14 198 26 C208 60 204 114 188 124 C140 136 70 134 24 124 C12 98 14 48 28 22Z" fill="#F6E3B4" stroke="${I}" stroke-width="2"/>
    <path d="M36 28 C80 20 150 22 190 34 C197 62 194 108 180 116 C140 126 74 124 32 114 C23 92 26 52 36 28Z" fill="#A6DB86"/>
-   <path d="M90 60 L104 46 L116 58 L124 50 L140 66 Z" fill="#B9A58A" ${s}/><path d="M100 50 L104 46 L108 50 Z M120 54 L124 50 L128 54Z" fill="#fff"/>
    <ellipse cx="62" cy="72" rx="12" ry="5" fill="#8ED3EE" stroke="${I}" stroke-width="1.4"/>
    ${palm(160,78,.8)}${palm(118,92,.7)}${palm(56,92,.65)}
    <path d="M38 43 L86 43 L134 43 L182 43 L182 101 L134 101 L86 101 L38 101" stroke="#E8484F" stroke-width="3" stroke-dasharray="6 5" fill="none" stroke-linecap="round" opacity=".8"/>
-   ${at(0,`<rect x="-11" y="-3" width="22" height="13" fill="#FFD86B" ${s}/><path d="M-14 -2 L0 -12 L14 -2Z" fill="#E8484F" ${s}/><rect x="-3" y="3" width="6" height="7" fill="#9B6A45"/><path d="M0 -12 v-7 l7 2 -7 2" fill="#58B592" ${s}/>`)}
-   ${at(1,`<path d="M0 -16 L9 -4 L0 9 L-9 -4Z" fill="#E8607E" ${s}/><path d="M0 -16 V9 M-9 -4 H9" stroke="${I}" stroke-width="1"/><path d="M0 9 q5 4 -1 8 q-5 4 1 7" stroke="${I}" stroke-width="1.4" fill="none"/><circle cx="-14" cy="10" r="5" fill="#3E9A5A"/>`)}
-   ${at(2,`<circle cx="-8" cy="4" r="8" fill="#3E9A5A" ${s}/><circle cx="6" cy="2" r="9" fill="#58B592" ${s}/><circle cx="-2" cy="-6" r="7" fill="#6DC48A" ${s}/><circle cx="12" cy="-12" r="2" fill="#FFE066"/><circle cx="-14" cy="-10" r="1.6" fill="#FFE066"/><path d="M8 -20 a6 6 0 1 0 6 8 a5 5 0 0 1 -6 -8z" fill="#FFF3B0"/>`)}
-   ${at(3,`<rect x="-10" y="-4" width="20" height="14" fill="#fff" ${s}/><path d="M-13 -3 L0 -14 L13 -3Z" fill="#4A9BDB" ${s}/><rect x="-3" y="3" width="6" height="7" fill="#E8607E"/><rect x="5" y="-12" width="4" height="6" fill="#9B6A45"/>`)}
-   ${at(4,`<rect x="-11" y="-2" width="22" height="12" fill="#FFF3D0" ${s}/><path d="M-13 -9 H13 L11 -2 H-11Z" fill="#fff" ${s}/><path d="M-8 -9 L-7 -2 M-2 -9 V-2 M4 -9 L3 -2 M9 -9 L8 -2" stroke="#E8484F" stroke-width="3"/><circle cx="-4" cy="5" r="3" fill="#FCB515"/><circle cx="4" cy="5" r="3" fill="#E8607E"/>`)}
+   ${at(0,`<rect x="-14" y="-12" width="28" height="11" fill="#FFF3D6" ${s}/><rect x="-14" y="-12" width="28" height="3" fill="#F7A9C4"/><rect x="-11" y="-7" width="3" height="3" fill="#BFE3F6"/><rect x="8" y="-7" width="3" height="3" fill="#BFE3F6"/><rect x="-15" y="1" width="10" height="9" rx="1" fill="#FFF3D6" ${s}/><rect x="5" y="1" width="10" height="9" rx="1" fill="#FFF3D6" ${s}/><rect x="-12" y="3.5" width="2" height="4.5" rx="1" fill="#58B592"/><rect x="10" y="3.5" width="2" height="4.5" rx="1" fill="#E8607E"/><path d="M-2 10 L-1.4 2 H1.4 L2 10Z" fill="#EAD9B4"/><rect x="-6" y="-2" width="4.5" height="12" fill="#FFF3D6" ${s}/><rect x="1.5" y="-2" width="4.5" height="12" fill="#FFF3D6" ${s}/><circle cx="-3.75" cy="-4.5" r="2.4" fill="#3FAF6A" ${s}/><circle cx="3.75" cy="-4.5" r="2.4" fill="#3FAF6A" ${s}/>`)}
+   ${at(1,`<circle cx="-11" cy="-5" r="7" fill="#3FAF6A" ${s}/><rect x="-12.5" y="1" width="3" height="9" fill="#B5733E"/><path d="M0 10 V-8 M5 10 V-8" stroke="${I}" stroke-width="1.6"/><path d="M0 -3 H5 M0 2 H5 M0 7 H5" stroke="${I}" stroke-width="1.2"/><rect x="-1" y="-10" width="8" height="3" fill="#FCB515" ${s}/><path d="M6 -8 Q11 -6 13 2 Q15 8 18 9 L17 12 Q12 10 10 3 Q8 -4 5 -6Z" fill="#FF5C8A" ${s}/>`)}
+   ${at(2,`<path d="M8 -20 a6 6 0 1 0 6 8 a5 5 0 0 1 -6 -8z" fill="#FFF3B0"/><circle cx="-12" cy="-12" r="1.4" fill="#FFE066"/><circle cx="-2" cy="-17" r="1.2" fill="#FFE066"/><path d="M-14 10 L0 -9 L14 10Z" fill="#FF8A3D" ${s}/><path d="M0 -9 L-3 10 M0 -9 L3 10" stroke="${I}" stroke-width="1.2"/><circle cx="-14" cy="4" r="3.4" fill="#FFD86B" ${s}/>`)}
+   ${at(3,`<rect x="-7" y="-14" width="14" height="24" fill="#F7B5C8" ${s}/><rect x="-8.5" y="-16" width="17" height="3" fill="#E8607E" ${s}/><rect x="-4" y="-10" width="4" height="4" fill="#BFE3F6"/><rect x="-8.5" y="-3" width="17" height="2" fill="#E8607E"/><rect x="-3" y="3" width="6" height="7" fill="#B5733E"/><rect x="7" y="-6" width="7" height="16" fill="#FFE9A8" ${s}/>`)}
+   ${at(4,`<rect x="-13" y="-3" width="26" height="13" fill="#fff" ${s}/><rect x="-14" y="-9" width="28" height="6" rx="1.5" fill="#58B592" ${s}/><rect x="-4" y="0" width="8" height="10" fill="#BFE3F6" ${s}/><circle cx="-9" cy="3" r="1.6" fill="#E8484F"/><circle cx="-9" cy="7" r="1.6" fill="#FCB515"/><path d="M6 3 h3 l2 5 h4" stroke="${I}" stroke-width="1.2" fill="none"/>`)}
    ${at(5,`<path d="M8 12 V-16 M12 12 V-16" stroke="${I}" stroke-width="1.8"/><rect x="-14" y="-19" width="30" height="4" fill="#FCB515" ${s}/><path d="M-8 -15 V-4" stroke="${I}" stroke-width="1.4"/><rect x="-12" y="-4" width="8" height="6" fill="#4A9BDB" ${s}/><rect x="-14" y="5" width="9" height="7" fill="#E8607E" ${s}/><rect x="-5" y="5" width="9" height="7" fill="#FCB515" ${s}/>`)}
    ${at(6,`<path d="M-16 10 Q0 -6 16 10Z" fill="#7CC9A4" ${s}/><circle cx="0" cy="-8" r="7" fill="#FFD21F" ${s}/>${[0,1,2,3,4,5,6,7].map(i=>{ const a=i*Math.PI/4; return `<path d="M${(Math.cos(a)*10).toFixed(1)} ${(-8+Math.sin(a)*10).toFixed(1)} L${(Math.cos(a)*14).toFixed(1)} ${(-8+Math.sin(a)*14).toFixed(1)}" stroke="#F2A20C" stroke-width="2" stroke-linecap="round"/>` }).join('')}`)}
    ${at(7,`<path d="M-15 -15 L15 15 M15 -15 L-15 15" stroke="#E8484F" stroke-width="5" stroke-linecap="round" opacity=".9"/><rect x="-11" y="-3" width="22" height="13" rx="2" fill="#B5733E" ${s}/><path d="M-11 -3 Q0 -14 11 -3Z" fill="#D2A46A" ${s}/><rect x="-3" y="-3" width="6" height="7" rx="1.5" fill="#FFD21F" ${s}/><path d="M-14 -12 l2 -4 l2 4 l-2 4z M14 -10 l2 -4 l2 4 l-2 4z" fill="#FFE066"/>`)}` }
@@ -5640,16 +5639,18 @@ const LANDMARK={
   shop:()=>`<svg viewBox="0 0 100 100"><rect x="14" y="40" width="72" height="50" fill="#fff" ${LM_S}/><path d="M8 24 H92 V40 H8Z" fill="#E8484F" ${LM_S}/><path d="M22 24 V40 M36 24 V40 M50 24 V40 M64 24 V40 M78 24 V40" stroke="#fff" stroke-width="7"/><path d="M8 24 H92 V40 H8Z" fill="none" ${LM_S}/><rect x="24" y="52" width="24" height="22" fill="#9ED8F0" ${LM_S}/><rect x="56" y="52" width="20" height="38" fill="#C98A52" ${LM_S}/><circle cx="31" cy="66" r="4" fill="#FCB515"/><circle cx="41" cy="66" r="4" fill="#E8607E"/></svg>`,
   site:()=>`<svg viewBox="0 0 100 100"><path d="M60 90 V14 M70 90 V14" stroke="#3A1B49" stroke-width="3.5"/>${[22,36,50,64,78].map(y=>`<path d="M60 ${y} L70 ${y+12} M70 ${y} L60 ${y+12}" stroke="#3A1B49" stroke-width="2.4"/>`).join('')}<rect x="14" y="10" width="76" height="9" fill="#FCB515" ${LM_S}/><path d="M26 19 V44" stroke="#3A1B49" stroke-width="2.5"/><rect x="18" y="44" width="16" height="12" fill="#4A9BDB" ${LM_S}/><rect x="10" y="74" width="20" height="16" fill="#E8607E" ${LM_S}/><rect x="30" y="74" width="20" height="16" fill="#FCB515" ${LM_S}/><rect x="20" y="58" width="20" height="16" fill="#58B592" ${LM_S}/></svg>`,
   hill:()=>`<svg viewBox="0 0 100 100"><circle cx="64" cy="36" r="16" fill="#FFD21F" ${LM_S}/>${[0,1,2,3,4,5,6,7].map(k=>{ const a=k*Math.PI/4; return `<path d="M${(64+Math.cos(a)*22).toFixed(1)} ${(36+Math.sin(a)*22).toFixed(1)} L${(64+Math.cos(a)*29).toFixed(1)} ${(36+Math.sin(a)*29).toFixed(1)}" stroke="#F2A20C" stroke-width="4" stroke-linecap="round"/>` }).join('')}<path d="M4 90 Q34 46 70 74 Q84 66 96 74 V92 H4Z" fill="#7EDB9E" ${LM_S}/><rect x="24" y="62" width="14" height="12" fill="#fff" ${LM_S}/><path d="M22 63 L31 54 L40 63Z" fill="#E8607E" ${LM_S}/></svg>`};
-/* the map's place icons (20/10), drawn like the real places of the levels (Ho Chi Minh City): the school with the A-frame
-   entrance and its gate, the riverside park with the tall tower, Na's garden at night, Na's tube house, the supermarket */
+/* the map's place icons (20/10), drawn like the real places of the levels (Ho Chi Minh City): the school gate (its two pillars),
+   a playground slide in the park, Na's garden at night, Na's tube house, the supermarket. The treasure map shows the same places */
 Object.assign(LANDMARK,{
-  school2:()=>`<svg viewBox="0 0 100 100"><rect x="8" y="38" width="84" height="44" fill="#FFF3D6" ${LM_S}/><rect x="8" y="38" width="84" height="7" fill="#F7A9C4" ${LM_S}/><rect x="14" y="52" width="13" height="11" rx="2" fill="#BFE3F6" ${LM_S}/><rect x="73" y="52" width="13" height="11" rx="2" fill="#BFE3F6" ${LM_S}/>
-<path d="M50 10 L76 82 H24Z" fill="#fff" ${LM_S}/><path d="M50 24 L67 76 H33Z" fill="#BFE3F6"/><path d="M50 24 L57 46 H43Z" fill="#FFE066"/><path d="M43 46 H57 L61 60 H39Z" fill="#C7A9EE"/><path d="M39 60 H61 L65 76 H35Z" fill="#9BE0C8"/><path d="M50 24 V76" stroke="#3A1B49" stroke-width="2"/>
-<rect x="6" y="66" width="8" height="26" rx="2" fill="#E8607E" ${LM_S}/><rect x="86" y="66" width="8" height="26" rx="2" fill="#E8607E" ${LM_S}/><path d="M14 76 H86 M14 90 H86" stroke="#3A1B49" stroke-width="3"/>${[22,30,38,46,54,62,70,78].map(x=>`<path d="M${x} 76 V90" stroke="#3A1B49" stroke-width="2.4"/>`).join('')}</svg>`,
-  park2:()=>`<svg viewBox="0 0 100 100"><rect x="18" y="50" width="12" height="30" fill="#DCE6F2" ${LM_S}/><rect x="66" y="42" width="13" height="38" fill="#DCE6F2" ${LM_S}/><path d="M46 80 V30 L48 22 V12 L50 4 L52 12 V22 L54 30 V80Z" fill="#EEF3FA" ${LM_S}/><path d="M42 80 V50 H58 V80" fill="#E3EBF5" ${LM_S}/>
-<path d="M4 78 H96 V88 H4Z" fill="#7FC7EE" ${LM_S}/><path d="M14 83 q5 -3 10 0 M60 83 q5 -3 10 0" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M4 88 H96 V96 H4Z" fill="#7EDB9E" ${LM_S}/>
-<path d="M86 88 Q84 66 90 52" fill="none" stroke="#9B6A45" stroke-width="5" stroke-linecap="round"/><path d="M90 52 q-14 -6 -20 4 q10 -4 20 -4z M90 52 q12 -8 18 2 q-10 -4 -18 -2z M90 52 q-4 -12 -14 -12 q8 4 14 12z" fill="#3E9A5A" ${LM_S}/>
-<path d="M22 14 L30 22 L22 32 L14 22Z" fill="#E8607E" ${LM_S}/><path d="M22 32 q6 8 -2 14" fill="none" stroke="#3A1B49" stroke-width="2"/></svg>`,
+  school2:()=>`<svg viewBox="0 0 100 100"><path d="M2 84 H98 V93 H2Z" fill="#7FCB8B" ${LM_S}/>
+<rect x="8" y="30" width="84" height="32" fill="#FFF3D6" ${LM_S}/><rect x="8" y="30" width="84" height="7" fill="#F7A9C4" ${LM_S}/>${[14,30,62,78].map(x=>`<rect x="${x}" y="42" width="9" height="9" fill="#BFE3F6" stroke="#3A1B49" stroke-width="2.4"/>`).join('')}
+<path d="M44 84 L46 62 H54 L56 84Z" fill="#EAD9B4"/>
+${[[2,34,'#58B592'],[66,98,'#E8607E']].map(([x0,x1,c])=>`<rect x="${x0}" y="58" width="${x1-x0}" height="26" rx="2" fill="#FFF3D6" ${LM_S}/><path d="M${x0+1} 59 Q${(x0+x1)/2} 52 ${x1-1} 59" fill="none" stroke="#2FA090" stroke-width="5" stroke-linecap="round"/>${[0,1,2].map(i=>`<rect x="${x0+6+i*8}" y="64" width="5" height="13" rx="2.5" fill="${c}" stroke="#3A1B49" stroke-width="2.4"/>`).join('')}`).join('')}
+${[33,55].map(x=>`<rect x="${x}" y="44" width="12" height="42" rx="2" fill="#FFF3D6" ${LM_S}/><rect x="${x-2}" y="40" width="16" height="6" rx="2" fill="#2FA090" ${LM_S}/><circle cx="${x+6}" cy="33" r="6.5" fill="#3FAF6A" ${LM_S}/>`).join('')}</svg>`,
+  park2:()=>`<svg viewBox="0 0 100 100"><path d="M2 84 Q50 72 98 84 V94 H2Z" fill="#7EDB9E" ${LM_S}/>
+<rect x="17" y="50" width="8" height="32" rx="3" fill="#B5733E" ${LM_S}/><circle cx="21" cy="38" r="15" fill="#3FAF6A" ${LM_S}/><path d="M13 32 q5 -6 11 -4" stroke="#8FE3B8" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M50 82 V36 M62 82 V36" stroke="#3A1B49" stroke-width="4" stroke-linecap="round"/>${[46,56,66,76].map(y=>`<path d="M50 ${y} H62" stroke="#3A1B49" stroke-width="3.2" stroke-linecap="round"/>`).join('')}
+<rect x="46" y="31" width="22" height="6" rx="2" fill="#FCB515" ${LM_S}/><path d="M66 34 Q76 36 82 58 Q86 74 96 78 L94 86 Q80 82 76 64 Q72 46 64 40Z" fill="#FF5C8A" ${LM_S}/><path d="M70 42 Q76 48 80 62" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".7"/></svg>`,
   garden2:()=>`<svg viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" rx="20" fill="#2E3170"/><path d="M70 14 a12 12 0 1 0 10 18 a9 9 0 1 1 -10 -18z" fill="#FFF3B0" ${LM_S}/><circle cx="22" cy="18" r="2.2" fill="#FFF3B0"/><circle cx="46" cy="12" r="1.8" fill="#FFF3B0"/>
 <rect x="10" y="34" width="26" height="50" fill="#D58BA6" ${LM_S}/><rect x="7" y="30" width="32" height="6" fill="#B85C80" ${LM_S}/><rect x="15" y="42" width="7" height="9" fill="#FFE066" ${LM_S}/><rect x="25" y="42" width="7" height="9" fill="#FFE066" ${LM_S}/><rect x="17" y="62" width="12" height="22" fill="#8A5A36" ${LM_S}/>
 <path d="M4 84 H96 V96 H4Z" fill="#3F8A5E"/><path d="M48 84 L64 54 L80 84Z" fill="#FF8A3D" ${LM_S}/><path d="M64 54 L60 84 M64 54 L68 84" stroke="#3A1B49" stroke-width="2.4"/><circle cx="44" cy="62" r="2.6" fill="#FFE066"/><circle cx="86" cy="56" r="2.6" fill="#FFE066"/><circle cx="52" cy="46" r="2.2" fill="#FFE066"/></svg>`,
@@ -5820,11 +5821,12 @@ async function heldBack(H){ const t=H.item, g=H.g; H.g=null; if(g&&t.isConnected
 function dropHeld(){ const H=HELD; HELD=null; if(!H) return; if(H.box) H.box.classList.remove('zhold'); heldBack(H) }
 /** a set of things to put in places. put(thing, place) does the rest and returns true (it went in) or false (it flies back).
  *  Returns {demo(thing, place)}: Chồi's hand picks the thing up and carries it there. */
-function holdPlace(box,items,zones,{put,near=18,want}={}){
+function holdPlace(box,items,zones,{put,near=18,want,liftRot,onLift}={}){
   const zoneAt=(x,y)=>zones().find(z=>{ const r=z.getBoundingClientRect(); return x>=r.left-near&&x<=r.right+near&&y>=r.top-near&&y<=r.bottom+near });
-  const lift=(t,e)=>{ if(HELD) dropHeld(); t.classList.remove('sel'); const g=heldGhost(t,e); t.classList.add('held'); HELD={item:t,g,box,zones,hint:want?()=>want(t):null}; box.classList.add('zhold'); tone(700,.06,'sine',.05) };
-  const place=async(t,z)=>{ const H=HELD; HELD=null; box.classList.remove('zhold'); if(H) heldToThing(H); const ok=await put(t,z);
-    if(!ok&&t.isConnected){ const o=offOf(t); await t.animate([{transform:`translate(${o.x}px,${o.y}px)`},{transform:'translate(0,0)'}],{duration:Math.max(1,380*SPEED),easing:'cubic-bezier(.3,1.4,.5,1)'}).finished.catch(()=>{}); setOff(t,0,0) } };
+  const lift=(t,e)=>{ if(HELD) dropHeld(); t.classList.remove('sel'); const g=heldGhost(t,e); const r=liftRot&&liftRot(t); if(r!=null) g.style.rotate=r+'deg';   // e.g. a long plank stands up as soon as it is picked up
+    t.classList.add('held'); HELD={item:t,g,box,zones,hint:want?()=>want(t):null}; box.classList.add('zhold'); tone(700,.06,'sine',.05); if(onLift&&e) onLift(t) };
+  const place=async(t,z)=>{ const H=HELD; HELD=null; box.classList.remove('zhold'); const r0=t.style.rotate; if(H&&H.g&&H.g.style.rotate) t.style.rotate=H.g.style.rotate; if(H) heldToThing(H); const ok=await put(t,z);
+    if(!ok&&t.isConnected){ const o=offOf(t); await t.animate([{transform:`translate(${o.x}px,${o.y}px)`},{transform:'translate(0,0)'}],{duration:Math.max(1,380*SPEED),easing:'cubic-bezier(.3,1.4,.5,1)'}).finished.catch(()=>{}); setOff(t,0,0); t.style.rotate=r0 } };
   box.addEventListener('click',e=>{ const t=e.target.closest('[data-hold]'); const it=t&&items.includes(t)&&!t.dataset.used?t:null;
     if(it){ e.stopPropagation(); if(HELD&&HELD.item===it){ dropHeld(); return } lift(it,e); return }
     if(!HELD||!items.includes(HELD.item)) return; e.stopPropagation();
@@ -6038,13 +6040,13 @@ async function craneStack({piece=0}={}){
     await fb.animate([{top:(bb.top-R2.top)+'px',left:(x*100)+'%'},{top:endY+'px',left:(lx*100)+'%'}],{duration:Math.max(1,520*SPEED),easing:'cubic-bezier(.5,0,1,1)',fill:'forwards'}).finished.catch(()=>{});
     fb.style.top=endY+'px'; fb.style.left=(lx*100)+'%';
     if(kind==='piece'){ SFX.chime(); fb.style.visibility='hidden'; await pieceDropAt(f,lx*R2.width,endY+bh/2,piece); break }
-    if(ok){ stack.push({x:lx,w:bw,h:bh,e:fb}); tone(220,.12,'square',.07); fb.classList.add('land'); burst(center(fb),{n:6}); if(stack.length>1) sayQ(cap(W[stack.length])+'!',cap(VI_N[stack.length])+'!') }
+    if(ok){ stack.push({x:lx,w:bw,h:bh,e:fb}); tone(220,.12,'square',.07); fb.classList.add('land'); burst(center(fb),{n:6}) }   // 20/10: no counting here, the shapes are the point
     else { wrong++; boing(); fb.classList.add('tip'); await say('Oops, it missed! Here’s another one.','Ối, trượt rồi! Thêm một khối nữa nhé.',{gap:0}); setTimeout(()=>fb.remove(),600); i-- }
     await sleep(350);
     if(shown){ Hand.hide(); demo=false; await say('Right on the tower!','Trúng đỉnh tháp rồi!'); await yourTurn(); await say('Tap to drop the next block, when it is over the tower!','Con chạm để thả khối tiếp theo, khi nó ở ngay trên tháp nhé!',{q:true}) }
   }
   turn(null); confetti();
-  await say(`A tall tower! ${cap(W[stack.length])} blocks: squares and rectangles.`,`Tháp cao quá! ${cap(VI_N[stack.length])} khối: hình vuông và hình chữ nhật.`);
+  await say('A tall tower of squares and rectangles!','Tháp cao toàn hình vuông và hình chữ nhật!');
 }
 
 /* =========================================================
@@ -7587,7 +7589,7 @@ async function hideSound(rounds=2){ const sk=SK['L2.E.PH.02'];
     await stepPick(sk,toys,idx,{ask,concept:'sound:'+k,labels:toys.map(b=>{ const X=SND_TOYS.find(x=>x[0]===b.dataset.k); return [`that’s ${X[1]}`,`đó là ${X[2]}`] }),
       onWrong:async()=>{ await hear(k) },retry:['Listen again!','Nghe lại nhé!'],onRight:async()=>{ toys[idx].classList.add('beat') }});
     turn(null); await peep(k); await say(`Yes! It’s ${T[1]}. ${T[3]}`,`Đúng rồi! Là ${T[2]}. ${T[4]}`); toys[idx].classList.remove('beat'); await reteachPending(); if(r<rounds-1) await hide() }
-  if(inMix()) return; na.classList.remove('behind','hid','peep'); confetti(); await say('Great listening!','Con nghe giỏi lắm!'); await nextPage(box) }
+  if(inMix()) return; na.classList.remove('behind','hid','peep'); confetti(); await say('You heard each toy, and you found it!','Con nghe từng tiếng và tìm ra đúng món đồ chơi!'); await nextPage(box) }
 
 /* ---- 6. big and small toys (looking back): the big teddy for Ben's cart, the small ball for Lam ---- */
 async function bigSmallToys(rounds=2){ const sk=SK['L2.M.SORT.02'];
@@ -7641,7 +7643,7 @@ const TOYTRUCK_SVG=()=>`<svg viewBox="0 0 100 64" aria-hidden="true"><path d="M6
 /** a rope from the far crane's arm down to a thing: top fixed at the arm, its length follows the thing (both in % of the box) */
 function craneRope(box,x){ const r=el(`<i class="s5rope" style="left:${x}%;top:${JIB_TOP}%;height:0%"></i>`), tr=el(`<i class="s5trolley" style="left:${x}%;top:${JIB_TOP-1.6}%"></i>`); box.append(tr,r); return {r,tr,set:h=>{ r.style.height=h+'%' }} }
 /** the map piece, stuck at the end of the crane's arm (seen from Màn 5's first page until the tower brings it down) */
-const stuckPiece=box=>{ const p=el(`<div class="s5stuck stk"><i class="s5str"></i>${mapPieceSVG(6)}</div>`); box.append(p); return p };
+const stuckPiece=box=>{ const p=el(`<div class="s5stuck"><i class="s5knot"></i><i class="s5str"></i><i class="s5pc stk">${mapPieceSVG(6)}</i></div>`); box.append(p); return p };
 
 /* ---- 1. the building site: tap the roof, the crane lowers it onto the new house (a triangle); Lam and Na bring a square window and a
    round window (Mầm: circle, square, triangle; taught like new once a school year, then only asked) ---- */
@@ -7686,7 +7688,7 @@ async function siteArrive(){ const sk=SK['L2.M.SHAPE.01'], teach=RUN.mode==='tea
 /* ---- 2. inside the new house: the square window has four sides, all the same; the door needs a frame: two long planks and
    two short planks make a rectangle (⭐ new). The child puts the planks on (hold and place) ---- */
 const PLANK_SVG=len=>`<svg viewBox="0 0 ${len} 7" preserveAspectRatio="none" aria-hidden="true"><rect x="1.2" y="1.2" width="${len-2.4}" height="4.6" rx="1.6" fill="#D9A066" stroke="${INK}" stroke-width="1.6"/><path d="M${len*.2} 3.5 h${len*.25} M${len*.6} 3 h${len*.2}" stroke="#B5733E" stroke-width=".9" stroke-linecap="round"/></svg>`;
-const DOOR5_SVG=()=>`<svg viewBox="0 0 19 45" aria-hidden="true"><rect x=".8" y=".8" width="17.4" height="43.4" rx="1" fill="#C98A52" stroke="${INK}" stroke-width="1.4"/><rect x="3.4" y="4" width="12.2" height="15" rx="1" fill="#B5733E" stroke="${INK}" stroke-width="1"/><rect x="3.4" y="23" width="12.2" height="18" rx="1" fill="#B5733E" stroke="${INK}" stroke-width="1"/><circle cx="15" cy="22" r="1.4" fill="#FCB515" stroke="${INK}" stroke-width=".8"/></svg>`;
+const DOOR5_SVG=()=>`<svg viewBox="0 0 19 45" aria-hidden="true"><rect x=".8" y=".8" width="17.4" height="43.4" rx="1" fill="#C98A52" stroke="${INK}" stroke-width="1.4"/><rect x="3.4" y="4" width="12.2" height="15" rx="1" fill="#B5733E" stroke="${INK}" stroke-width="1"/><rect x="3.4" y="23" width="12.2" height="18" rx="1" fill="#B5733E" stroke="${INK}" stroke-width="1"/><circle cx="15" cy="22" r="1.4" fill="#FCB515" stroke="${INK}" stroke-width=".8"/><g class="sides" fill="none" stroke-width="2" stroke-linecap="round"><path d="M.8 .8 H18.2"/><path d="M18.2 .8 V44.2"/><path d="M18.2 44.2 H.8"/><path d="M.8 44.2 V.8"/></g></svg>`;
 const FRAME_SIDES=[{k:'L',len:'long',x:48,y:52.9,rot:90,cls:'v'},{k:'R',len:'long',x:59,y:52.9,rot:90,cls:'v'},{k:'T',len:'short',x:53.5,y:70,rot:0,cls:'h'},{k:'B',len:'short',x:53.5,y:35.7,rot:0,cls:'h'}];
 async function doorFrame(){ const sk=SK['L2.M.SHAPE.02'];
   const box=sbox('newroom5',BG.newroom());
@@ -7716,7 +7718,8 @@ async function doorFrame(){ const sk=SK['L2.M.SHAPE.02'];
       sayQ(t.dataset.len==='long'?'That plank is long. It goes on a long side.':'That plank is short. It goes on a short side.',t.dataset.len==='long'?'Tấm gỗ đó dài. Nó lắp vào cạnh dài.':'Tấm gỗ đó ngắn. Nó lắp vào cạnh ngắn.'); return false }
     t.dataset.used='1'; filled.add(z); z.classList.add('done'); await placeAt(t,box,F.x,F.y,{rot:F.rot,z:3,ms:560}); tone(260,.1,'square',.06); noise(.06,.2,0,900); left--;
     if(!left) g.done(); return true };
-  const HP=holdPlace(box,planks,()=>zones.filter(z=>!filled.has(z)),{put,want});
+  const HP=holdPlace(box,planks,()=>zones.filter(z=>!filled.has(z)),{put,want,liftRot:t=>t.dataset.len==='long'?90:null,
+    onLift:t=>sayQ(t.dataset.len==='long'?'A long plank.':'A short plank.',t.dataset.len==='long'?'Tấm gỗ dài.':'Tấm gỗ ngắn.')});
   if(wantDemo('doorframe')){ await watchMe(); const t=planks.find(x=>x.dataset.len==='long'); await say('This plank is long.','Tấm gỗ này dài.',{gap:100});
     await HP.demo(t,zones[0]); Hand.hide(); await say('It goes on a long side!','Nó lắp vào cạnh dài!'); await yourTurn() } else turn('kid');
   await say(left===4?'Put the planks on the door frame. Long planks on the long sides, short planks on the short sides!':'Put on the other planks. Long planks on the long sides, short planks on the short sides!',left===4?'Con lắp các tấm gỗ vào khung cửa nhé. Tấm dài vào cạnh dài, tấm ngắn vào cạnh ngắn!':'Con lắp các tấm gỗ còn lại nhé. Tấm dài vào cạnh dài, tấm ngắn vào cạnh ngắn!',{q:true});
@@ -7727,7 +7730,8 @@ async function doorFrame(){ const sk=SK['L2.M.SHAPE.02'];
   const door=el(`<div class="s5door" style="left:53.5%;bottom:36.8%;width:9.5%">${DOOR5_SVG()}</div>`); box.append(door); SFX.chime(); confetti();
   setKidFace(lam,'Lam','excited'); setKidFace(na,'Na','happy');
   await say('You made a rectangle! Two long sides and two short sides.','Con làm được hình chữ nhật rồi! Hai cạnh dài và hai cạnh ngắn.'); await pollyEcho('Rectangle! Rectangle!','Hình chữ nhật! Hình chữ nhật!');
-  sq.classList.add('lit'); door.classList.add('lit'); await say('The window is a square. The door is a rectangle.','Cửa sổ là hình vuông. Cửa ra vào là hình chữ nhật.'); sq.classList.remove('lit'); door.classList.remove('lit');
+  sq.classList.add('lit'); sq.querySelectorAll('.sides path').forEach(x=>x.classList.add('on')); await say('The window is a square.','Cửa sổ là hình vuông.'); sq.classList.remove('lit'); sq.querySelectorAll('.sides path').forEach(x=>x.classList.remove('on'));
+  door.classList.add('lit'); door.querySelectorAll('.sides path').forEach(x=>x.classList.add('on')); await say('The door is a rectangle.','Cửa ra vào là hình chữ nhật.'); door.classList.remove('lit'); door.querySelectorAll('.sides path').forEach(x=>x.classList.remove('on'));
   await nextPage(box) }
 
 /* ---- 3. outside, the builder's tools (looking back: telling sounds apart). Tap each tool to hear it; then the builder works behind
@@ -7794,7 +7798,7 @@ async function toolSounds(rounds=2){ const sk=SK['L2.E.PH.02'];
     await stepPick(sk,tools,idx,{ask:rule,concept:'sound:'+k,labels:tools.map(b=>{ const Y=T(b.dataset.k); return [`that’s ${Y[1]}`,`đó là ${Y[2]}`] }),
       onWrong:async()=>{ await hear(k) },retry:['Listen again!','Nghe lại nhé!'],onRight:async()=>{ tools[idx].classList.add('beat') }});
     turn(null); await peep(k); await say(`Yes! It’s ${X[1]}. ${X[3]}`,`Đúng rồi! Là ${X[2]}. ${X[4]}`); tools[idx].classList.remove('beat'); await reteachPending(); if(r<rounds-1) await hide() }
-  if(inMix()) return; confetti(); await say('You listened carefully!','Con nghe thật kỹ!'); await nextPage(box) }
+  if(inMix()) return; confetti(); await say('You heard each tool, and you found it!','Con nghe từng tiếng và tìm ra đúng dụng cụ!'); await nextPage(box) }
 
 /* ---- 4. Lam builds a tower; Ben's toy truck rolls into it: Lam is angry (looking back), and we breathe with him ---- */
 const LAM_TRUCK={f:'angry',name:'Lam',scene:'truck',lead:['While the builders work, Lam builds a tower with his blocks.','Trong lúc các bác thợ làm việc, Lam xếp một cái tháp bằng khối gỗ.'],
@@ -7849,13 +7853,13 @@ async function craneNumbers(rounds=2){ const sk=SK['L2.M.NUM.03'];
 
 /* ---- 7. the garage: put the door, the window, the roof and the lamp in their places (⭐ practice: rectangle and square; hold and place) ---- */
 const G5_PIECES=[
-  {k:'rect',name:['rectangle','hình chữ nhật'],w:18.4,svg:()=>`<svg viewBox="0 0 92 60" aria-hidden="true"><rect x="2" y="2" width="88" height="56" rx="2" fill="#E3E8EF" stroke="${INK}" stroke-width="3.5"/>${[12,22,32,42].map(y=>`<path d="M8 ${y} H84" stroke="#A9B4C2" stroke-width="2.4"/>`).join('')}<rect x="38" y="48" width="16" height="5" rx="2" fill="#8E99A4" stroke="${INK}" stroke-width="2"/></svg>`},
-  {k:'square',name:['square','hình vuông'],w:8,svg:()=>WIN_SQ()},
-  {k:'triangle',name:['triangle','hình tam giác'],w:44,svg:()=>`<svg viewBox="0 0 132 40" overflow="visible" aria-hidden="true"><path d="M4 37 L66 3 L128 37Z" fill="#58B592" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/><path d="M26 31 H106 M44 21 H88" stroke="#3E9A6E" stroke-width="2"/></svg>`},
-  {k:'circle',name:['circle','hình tròn'],w:5.6,svg:()=>`<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="#FFF3B0" stroke="${INK}" stroke-width="3.5"/><circle cx="20" cy="20" r="9" fill="#FFE066"/></svg>`}];
+  {k:'rect',name:['rectangle','hình chữ nhật'],obj:['door','cửa'],w:18.4,svg:()=>`<svg viewBox="0 0 92 60" aria-hidden="true"><rect x="2" y="2" width="88" height="56" rx="2" fill="#E3E8EF" stroke="${INK}" stroke-width="3.5"/>${[12,22,32,42].map(y=>`<path d="M8 ${y} H84" stroke="#A9B4C2" stroke-width="2.4"/>`).join('')}<rect x="38" y="48" width="16" height="5" rx="2" fill="#8E99A4" stroke="${INK}" stroke-width="2"/></svg>`},
+  {k:'square',name:['square','hình vuông'],obj:['window','cửa sổ'],w:8,svg:()=>WIN_SQ()},
+  {k:'triangle',name:['triangle','hình tam giác'],obj:['roof','mái'],w:44,svg:()=>`<svg viewBox="0 0 132 40" overflow="visible" aria-hidden="true"><path d="M4 37 L66 3 L128 37Z" fill="#58B592" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/><path d="M26 31 H106 M44 21 H88" stroke="#3E9A6E" stroke-width="2"/></svg>`},
+  {k:'circle',name:['circle','hình tròn'],obj:['window','cửa sổ'],w:5.6,svg:()=>WIN_CI()}];
 const G5_SLOTS={rect:{x:63.2,y:17.3},square:{x:80.4,y:22.4},triangle:{x:70,y:57.5},circle:{x:63.2,y:32.7}};
 const GARAGE_SVG=()=>`<svg viewBox="0 0 100 70" aria-hidden="true"><rect x="2" y="2" width="96" height="66" fill="#D9714E" stroke="${INK}" stroke-width="3"/>${Array.from({length:6},(_,r)=>Array.from({length:6},(_,i)=>`<rect x="${2+i*18-(r%2?9:0)}" y="${2+r*11}" width="18" height="11" fill="none" stroke="#F0B898" stroke-width="1.2"/>`).join('')).join('')}<rect x="2" y="2" width="96" height="66" fill="none" stroke="${INK}" stroke-width="3"/>
-<rect x="10" y="40" width="46" height="28" fill="#7A6273" stroke="#fff" stroke-width="1.6" stroke-dasharray="3 2.5"/><rect x="66" y="36" width="20" height="20" fill="#7A6273" stroke="#fff" stroke-width="1.6" stroke-dasharray="3 2.5"/><circle cx="33" cy="28" r="7" fill="#7A6273" stroke="#fff" stroke-width="1.4" stroke-dasharray="2.4 2"/></svg>`;
+<rect x="11.2" y="41.2" width="43.6" height="26.8" fill="#7A6273" stroke="#fff" stroke-width="1.4" stroke-dasharray="3 2.5"/><rect x="67.2" y="37.2" width="17.6" height="17.6" fill="#7A6273" stroke="#fff" stroke-width="1.4" stroke-dasharray="3 2.5"/><circle cx="33" cy="28" r="5.9" fill="#7A6273" stroke="#fff" stroke-width="1.2" stroke-dasharray="2.4 2"/></svg>`;
 function garageScene(box,{done=false}={}){
   box.append(el(`<div class="s5slab" style="left:70%;bottom:4%;width:34%"></div>`));
   box.append(el(`<div class="sthing s5tap s5garage" style="left:70%;bottom:8.7%;width:40%">${GARAGE_SVG()}</div>`));
@@ -7873,14 +7877,16 @@ async function garageBuild(){ const sk=SK['L2.M.SHAPE.02'];
   const want=t=>slots.find(z=>z.dataset.k===t.dataset.k);
   const put=async(t,z)=>{ if(z.dataset.k!==t.dataset.k){ wrong++; t.classList.remove('nope'); void t.offsetWidth; t.classList.add('nope'); boing(); const n=t._P.name;
       sayQ(`That’s a ${n[0]}. It goes in the ${n[0]} place.`,`Đó là ${n[1]}. Nó vào chỗ ${n[1]}.`); return false }
-    t.dataset.used='1'; z.classList.add('done'); const S0=G5_SLOTS[t.dataset.k]; await placeAt(t,box,S0.x,S0.y,{z:3,ms:600}); t.classList.add('in'); SFX.pop(); burst(center(t),{n:8}); left--; if(!left) g.done(); return true };
-  holdPlace(box,pieces,()=>slots.filter(z=>!z.classList.contains('done')),{put,want});
-  await tell('The walls are done! Now the garage needs a door, a window, a lamp and a roof.','Tường xong rồi! Giờ nhà để xe cần cửa, cửa sổ, đèn và mái.');
+    t.dataset.used='1'; z.classList.add('done'); const S0=G5_SLOTS[t.dataset.k]; await placeAt(t,box,S0.x,S0.y,{z:3,ms:600}); t.classList.add('in'); SFX.pop(); burst(center(t),{n:8});
+    const P=t._P; sayQ(`The ${P.name[0]} ${P.obj[0]}!`,`${cap(P.obj[1])} ${P.name[1]}!`);   // each one named as it goes in, so the child hears the word then
+    left--; if(!left) setTimeout(()=>g.done(),1300); return true };
+  holdPlace(box,pieces,()=>slots.filter(z=>!z.classList.contains('done')),{put,want,onLift:t=>sayQ(`A ${t._P.name[0]}.`,`${cap(t._P.name[1])}.`)});
+  await tell('The walls are done! Now the garage needs a door, two windows and a roof.','Tường xong rồi! Giờ nhà để xe cần cửa, hai cửa sổ và mái.');
   turn('kid'); await say('Put each shape in its place: the rectangle, the square, the circle and the triangle!','Con đặt từng hình vào đúng chỗ nhé: hình chữ nhật, hình vuông, hình tròn và hình tam giác!',{q:true});
   const hh=hintHand(()=>pieces.find(x=>!x.dataset.used)); abortFns.add(hh); box.addEventListener('pointerdown',hh,{once:true});
   if(AUTO) (async()=>{ for(const t of pieces){ if(t.dataset.used) continue; await new Promise(r=>setTimeout(r,kidTapDelay())); t.click(); await new Promise(r=>setTimeout(r,200)); want(t).click(); await new Promise(r=>setTimeout(r,800)) } })();
   await g.p; hh(); turn(null); rec(sk,wrong<=1,performance.now()-t0,'shape:rectangle'); confetti(); setKidFace(ben,'Ben','excited');
-  await say('What a garage! A rectangle door, a square window, a round lamp and a triangle roof.','Nhà để xe đẹp quá! Cửa hình chữ nhật, cửa sổ hình vuông, đèn hình tròn và mái hình tam giác.'); await nextPage(box) }
+  await say('What a garage! A rectangle door, a square window, a circle window and a triangle roof.','Nhà để xe xong rồi! Cửa hình chữ nhật, cửa sổ hình vuông, cửa sổ hình tròn và mái hình tam giác.'); await nextPage(box) }
 
 /* ---- 8. Na brings paint for the garage (looking back: "They are all ___", not yellow): the child says "They are all blue."
    The garage door turns blue, it rolls up, and Ben's truck drives in ---- */
@@ -7899,11 +7905,14 @@ async function paintGarage(){
   // paint the door blue, roll it up, the truck drives in
   door.classList.add('painting'); noise(.6,.12,0,1600); await sleep(900); door.classList.add('blue'); SFX.chime(); burst(center(door),{n:10});
   await say('Look! A blue door for Ben’s garage.','Nhìn kìa! Cánh cửa xanh cho nhà để xe của Ben.');
-  door.classList.add('up'); tone(260,.9,'sawtooth',.03,0,420); await sleep(900);
+  // an up-and-over door (20/10): it swings out and up on its top edge, like a real garage door (a 3D turn), then closes the same way
+  const swing=open=>{ const K=[{transform:'perspective(380px) rotateX(0deg)'},{transform:'perspective(380px) rotateX(-55deg) translateY(-4%)',offset:.55},{transform:'perspective(380px) rotateX(-84deg) translateY(-10%)'}];
+    return door.animate(open?K:K.slice().reverse(),{duration:Math.max(1,1100*SPEED),easing:'ease-in-out',fill:'forwards'}).finished.catch(()=>{}) };
+  door.style.transformOrigin='50% 0'; tone(260,1,'sawtooth',.025,0,420); await swing(true);
   const tr=truck.getBoundingClientRect(), dr=door.getBoundingClientRect(), dx=dr.left+dr.width/2-(tr.left+tr.width/2), dy=dr.bottom-tr.bottom;   // drives to the door, then in
   SOUNDS.car.play(); await truck.animate([{transform:'none'},{transform:`translate(${dx}px,${dy}px)`}],{duration:Math.max(1,1600*SPEED),easing:'ease-in-out',fill:'forwards'}).finished.catch(()=>{});
   await truck.animate([{transform:`translate(${dx}px,${dy}px)`,opacity:1},{transform:`translate(${dx}px,${dy-dr.height*.12}px) scale(.92)`,opacity:0}],{duration:Math.max(1,600*SPEED),easing:'ease-in',fill:'forwards'}).finished.catch(()=>{});
-  truck.classList.add('parked'); door.classList.remove('up'); tone(260,.8,'sawtooth',.03,0,180); await sleep(700); confetti(); setKidFace(ben,'Ben','happy');
+  truck.classList.add('parked'); tone(260,1,'sawtooth',.025,0,180); await swing(false); confetti(); setKidFace(ben,'Ben','happy');
   await say('Beep, beep! Ben’s truck is in its new garage.','Bim bim! Xe tải của Ben vào nhà để xe mới rồi.'); await nextPage(box) }
 
 const WIN_TRI=()=>`<svg viewBox="0 0 60 54" aria-hidden="true"><path d="M4 50 L30 4 L56 50Z" fill="#fff" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/><path d="M14 44 L30 16 L46 44Z" fill="#9ED8F0" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/></svg>`;
@@ -7924,6 +7933,14 @@ const block5SVG=(k,c)=>k==='rect'?`<svg viewBox="0 0 76 40" aria-hidden="true"><
   :k==='square'?`<svg viewBox="0 0 40 40" aria-hidden="true"><rect x="2.5" y="2.5" width="35" height="35" rx="3" fill="${c}" stroke="${INK}" stroke-width="3.5"/><path d="M8 32 H34 V8" stroke="rgba(0,0,0,.14)" stroke-width="4" fill="none"/></svg>`
   :k==='triangle'?`<svg viewBox="0 0 44 40" aria-hidden="true"><path d="M3 37 L22 3 L41 37Z" fill="${c}" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/></svg>`
   :`<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17.5" fill="${c}" stroke="${INK}" stroke-width="3.5"/></svg>`;
+/** the crane lowers its rope to a block, hooks it and lifts it up to its arm (the chosen block goes to the tower, not off into the sky) */
+async function craneLift(box,b){ const br=box.getBoundingClientRect(), r=b.getBoundingClientRect(); const x=(r.left+r.width/2-br.left)/br.width*100;
+  const H=(r.top-br.top)/br.height*100-JIB_TOP, rope=craneRope(box,x); const ease=k=>k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+  const run=(ms,f)=>new Promise(res=>{ const t0=performance.now(), D=Math.max(1,ms*SPEED); const st=()=>{ const k=Math.min(1,(performance.now()-t0)/D); f(ease(k)); if(k<1&&box.isConnected) requestAnimationFrame(st); else res() }; requestAnimationFrame(st) });
+  tone(300,.7,'sawtooth',.025,0,200); await run(700,q=>rope.set(H*q));
+  tone(500,.06,'square',.05); b.classList.add('hooked'); await sleep(150);
+  tone(200,.9,'sawtooth',.025,0,320); const up=H-4; await run(950,q=>{ rope.set(H-up*q); b.style.transform=`translateY(${-up*q/100*br.height}px)` });
+  await b.animate([{opacity:1},{opacity:0}],{duration:Math.max(1,300*SPEED),fill:'forwards'}).finished.catch(()=>{}); rope.r.remove(); rope.tr.remove(); b.remove() }
 async function rectBlock(rounds=2){ const sk=SK['L2.M.SHAPE.02'];
   const box=sbox('blocks5',BG.site()); stuckPiece(box).classList.add('glint');
   if(!inMix()) box.append(kidAt('Lam','happy',8,3,14),kidAt('Na','happy',92,3,14));
@@ -7936,7 +7953,7 @@ async function rectBlock(rounds=2){ const sk=SK['L2.M.SHAPE.02'];
     const idx=S0.opts.indexOf(S0.want), n=BLOCK5[S0.want];
     const ask=()=>say(`The crane needs a ${n[0]} block. Tap the ${n[0]}!`,`Cần cẩu cần một khối ${n[1]}. Con chạm vào ${n[1]} nhé!`,{q:true});
     turn('kid'); await stepPick(sk,bs,idx,{ask,concept:'shape:'+(S0.want==='rect'?'rectangle':'square'),labels:bs.map(b=>[`that block is a ${BLOCK5[b.dataset.k][0]}`,`khối đó là ${BLOCK5[b.dataset.k][1]}`]),
-      onRight:async()=>{ const b=bs[idx]; b.classList.add('lift'); tone(330,.6,'sine',.05,0,600) }});
+      onRight:async()=>{ await craneLift(box,bs[idx]) }});
     turn(null);
     await say(S0.want==='rect'?'Yes! Two long sides and two short sides. It’s a rectangle.':'Yes! Four sides, all the same. It’s a square.',S0.want==='rect'?'Đúng rồi! Hai cạnh dài và hai cạnh ngắn. Đó là hình chữ nhật.':'Đúng rồi! Bốn cạnh bằng nhau. Đó là hình vuông.'); await reteachPending() }
   if(inMix()) return; confetti(); await say('Now let’s build the tower!','Giờ mình xây tháp nào!'); await nextPage(box) }
@@ -8350,7 +8367,7 @@ async function viewMix(opt={}){
   try{ Music.start();
     await gameCard('mix'); await say('Fun Mix! A little bit of everything!','Giờ mình chơi mỗi trò một chút nhé!');
     for(const [i,m] of plan.entries()){ ptip(m.sk); turn('kid'); const c=$('#card'); if(c){ c.classList.add('out'); await sleep(250); c.classList.remove('out') }
-      await m.run(); await sleep(350); if(i===1||i===4){ confetti(); await say(...pick([['You’re doing great!','Con làm tốt lắm!'],['Let’s keep going!','Mình chơi tiếp nhé!']])) } }
+      await m.run(); await sleep(350); if(i===1||i===4){ confetti(); await say('Let’s keep going!','Mình chơi tiếp nhé!') } }
     ptip(null); turn(null);
     const games=Object.keys(S.done||{}).filter(i=>REWARD[i]);
     if(games.length){ const g=REWARD[pick(games)]; await say(`Now a game: ${g.en}!`,`Giờ chơi trò ${g.vi}!`); await g.run() }
