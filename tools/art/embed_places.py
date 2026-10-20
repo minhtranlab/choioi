@@ -8,12 +8,16 @@ Only the files listed in USED are copied (the ones a level uses now); add a name
 import os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 USED = ['lop-hoc', 'san-truong', 'vuon-truong', 'cong-vien', 'vuon-nha-na-chieu', 'vuon-nha-na-dem', 'phong-na', 'sieu-thi']
+# things taken out of a picture for the app (asked after a play-test), without changing the file in art/places/
+TRIM = {}   # name -> [regex, ...] to cut a part out of a place (each must match once). The rug in phong-na was removed in the art itself (20/10)
 A, B = '/* PLACES:BEGIN (made by tools/art/embed_places.py from art/places/, do not edit by hand) */', '/* PLACES:END */'
 parts = []
 for name in USED:
     s = open(os.path.join(ROOT, 'art', 'places', name + '.svg'), encoding='utf-8').read().strip()
     s = re.sub(r'<\?xml[^>]*\?>', '', s); s = re.sub(r'<!--.*?-->', '', s, flags=re.S); s = re.sub(r'\s*\n\s*', ' ', s)
     s = s.replace(' xmlns="http://www.w3.org/2000/svg"', '', 1)
+    for pat in TRIM.get(name, []):
+        s, n = re.subn(pat, '', s); assert n == 1, (name, pat)
     assert '`' not in s and '${' not in s, name
     parts.append(f"'{name}':`{s}`")
 block = A + '\nconst PLACE={\n' + ',\n'.join(parts) + '\n};\n' + B
