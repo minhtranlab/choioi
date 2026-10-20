@@ -438,7 +438,6 @@ button.basket{cursor:pointer;font:inherit}
 .wrap-kid.city .turns,.wrap-kid.city .dock .mascot,.wrap-kid.city .askagain,.wrap-kid.city .ptip{display:none!important}
 .wrap-kid.city .dock .caption{position:fixed;z-index:6;top:10px;left:50%;translate:-50% 0;width:min(620px,calc(100vw - 150px));margin:0;min-height:0;border-radius:18px;box-shadow:0 6px 18px rgba(54,29,70,.18);pointer-events:none}
 .wrap-kid.city .dock .caption:empty{display:none}
-@media (orientation:portrait){ .wrap-kid.city .dock .caption{top:76px;width:calc(100vw - 24px)} }
 .wrap-kid.city .gifts{bottom:max(16px,env(safe-area-inset-bottom))}
 
 #card.citycard{padding:0;gap:0}
@@ -560,9 +559,8 @@ button.basket{cursor:pointer;font:inherit}
 @keyframes fxSmoke{from{transform:translate(0,0) scale(.5);opacity:.9}to{transform:translate(var(--dx),-80px) scale(1.6);opacity:0}}
 @keyframes fxRoar{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(18px)}}
 @keyframes fxFly{0%{transform:translate(0,0);opacity:1}50%{transform:translate(40px,-60px)}100%{transform:translate(-20px,-140px);opacity:0}}
-/* ---------- landscape screens (laptop, iPad on its side, TV): the play area runs almost the full width;
+/* ---------- the screen (landscape only, 20/10: laptop, iPad and phone on their side): the play area runs almost the full width;
    a small Chồi sits on the left, the subtitles run under the play area ---------- */
-@media (min-aspect-ratio:5/4) and (min-width:640px){
   .wrap-kid:not(.map){max-width:none;display:grid;grid-template-columns:clamp(70px,9vw,120px) minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto auto;
     grid-template-areas:"top top" "choi card" "choi pads" "ear cap";column-gap:12px;padding-bottom:10px}
   .wrap-kid:not(.map) .topbar{grid-area:top;padding-block:6px 4px;min-height:48px}
@@ -576,9 +574,8 @@ button.basket{cursor:pointer;font:inherit}
   .wrap-kid:not(.map) .dock .caption .vi{font-size:clamp(12px,1.3vw,calc(15px*var(--k,1)))}
   .wrap-kid:not(.map) .askagain{grid-area:ear;justify-self:center;align-self:end;width:clamp(44px,5vw,calc(60px*var(--k,1)));height:clamp(44px,5vw,calc(60px*var(--k,1)))}
   .wrap-kid:not(.map) .devbar{grid-column:1/-1}
-}
-/* short landscape screens (a phone on its side, in the browser): no top bar, the card gets almost the whole height */
-@media (min-aspect-ratio:5/4) and (min-width:640px) and (max-height:520px){
+/* short screens (a phone on its side, in the browser): no top bar, the card gets almost the whole height */
+@media (max-height:520px){
   .wrap-kid:not(.map){grid-template-columns:clamp(62px,10vw,92px) minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto auto;grid-template-areas:"stop card" "choi card" "choi pads" "ear cap";column-gap:10px;
     padding-top:max(6px,env(safe-area-inset-top));padding-bottom:max(6px,env(safe-area-inset-bottom));padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right))}
   .wrap-kid:not(.map) .topbar{display:contents}
@@ -721,9 +718,6 @@ html.tv .tvpads{display:flex;gap:14px;justify-content:center;align-items:center;
 html.tv .wrap-kid{max-width:none}
 html.tv .wrap-kid:not(.map) .ptip{display:none}
 
-.rotate{display:none}
-@media (orientation:portrait){ html.tv body:has(.wrap-kid:not(.map)) .rotate{display:flex;position:fixed;inset:0;z-index:70;background:rgba(43,31,56,.92);color:#fff;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px max(24px,env(safe-area-inset-left,0px))}
-  .rotate svg{width:96px;height:96px;animation:wiggle 1.6s ease-in-out infinite} .rotate b{font-size:22px} .rotate span{max-width:32ch;opacity:.85;font-size:15px;line-height:1.5} }
 /* ---------- the map ---------- */
 .wrap-kid.map,.wrap-kid.wide{max-width:1100px}
 .zoomout{position:absolute;right:12px;bottom:12px;z-index:4;width:52px;height:52px;border-radius:50%;border:0;background:#fff;box-shadow:0 4px 0 var(--line);display:grid;place-items:center}
@@ -912,7 +906,6 @@ html.tv .wrap-kid:not(.map) .ptip{display:none}
 .citybtn>svg,.gamesbtn>svg,.mixbtn>svg,.musicbtn>svg{width:100%;height:100%;display:block;border-radius:22px}
 .gamesbtn .cnt,
 .mixbtn .cnt{position:absolute;right:-8px;top:-8px;min-width:30px;height:30px;padding:0 7px;border-radius:15px;background:var(--berry);color:#fff;font-weight:900;font-size:16px;display:grid;place-items:center;box-shadow:0 0 0 3px #fff}
-@media (max-width:520px){ .citybtn,.gamesbtn,.mixbtn{width:78px;height:78px;border-radius:22px} }
 /* ---- block-island city ---- */
 .isocity{position:absolute;inset:0;background:linear-gradient(160deg,#BFE6F5 0%,#E3E9FB 55%,#FFE8D6 100%);overflow:hidden}
 .isow{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
@@ -924,7 +917,6 @@ html.tv .wrap-kid:not(.map) .ptip{display:none}
 .ifood{width:54px;height:54px;border-radius:16px;border:3px solid var(--pl);background:#fff;display:grid;place-items:center;padding:0;touch-action:none;cursor:grab}
 .ifood svg{width:42px;height:42px;pointer-events:none}
 .ifood.sel{background:#FFD21F;transform:translateY(-4px)}
-@media (max-width:520px){ .ifood{width:44px;height:44px;border-radius:13px} .ifood svg{width:34px;height:34px} }
 .ighost{position:fixed;width:64px;height:64px;pointer-events:none;z-index:60;transform:translate(-50%,-60%) scale(1.15)}
 .ighost svg{width:100%;height:100%}
 .igift{background:#fff;border:4px solid var(--pl);box-shadow:5px 6px 0 var(--pl);display:grid;place-items:center}
@@ -1032,7 +1024,6 @@ html.tv .wrap-kid:not(.map) .ptip{display:none}
 .citybtn,.gamesbtn,.mapbtn,.mixbtn,.musicbtn{width:112px;height:112px;animation:none}
 .citybtn .blabel,.gamesbtn .blabel,.mixbtn .blabel,.musicbtn .blabel{position:absolute;left:50%;bottom:-12px;translate:-50% 0;white-space:nowrap;background:var(--pl);color:#fff;font-weight:900;font-size:14px;padding:2px 10px;border-radius:10px;border:3px solid #fff}
 .citybtn:has(.owed){animation:pulse 1.4s infinite}
-@media (max-width:520px){ .citybtn,.gamesbtn,.mixbtn,.mapbtn,.musicbtn{width:min(86px,calc((100vw - 90px)/5));height:min(86px,calc((100vw - 90px)/5))} .citybtn .blabel,.gamesbtn .blabel,.mixbtn .blabel,.musicbtn .blabel{font-size:11px} }
 
 .langs{background:#fff;border:3px solid var(--pl);box-shadow:3px 4px 0 var(--pl)}
 .langs button.on{background:var(--stk-sun2);color:var(--pl)}
@@ -1052,7 +1043,6 @@ html.tv .wrap-kid:not(.map) .ptip{display:none}
 .holding .pfill{transition:transform 1s linear;transform:scaleX(1)}
 .holdbtn{position:relative;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
 .holdbtn .pfill{background:rgba(255,255,255,.55)}
-@media (max-width:520px){ .pbtn span{display:none} .pbtn{padding:4px} }
 /* ---------- parent screen: Progress / Settings ---------- */
 .ptabs{display:flex;gap:8px;background:var(--soft);padding:5px;border-radius:16px}
 .ptabs button{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;border:0;background:none;border-radius:12px;padding:10px;font-weight:900;font-size:16px;color:var(--muted)}
@@ -1100,10 +1090,9 @@ details.help>*:not(summary){margin-top:8px}
 .mymap .mf-map{width:min(86%,calc(170*var(--u)));cursor:pointer}
 .mapbtn>svg{width:100%;height:100%;display:block;border-radius:22px}
 .mapbtn .blabel{position:absolute;left:50%;bottom:-12px;translate:-50% 0;white-space:nowrap;background:var(--pl);color:#fff;font-weight:900;font-size:14px;padding:2px 10px;border-radius:10px;border:3px solid #fff}
-@media (max-width:520px){ .mapbtn{width:min(86px,calc((100vw - 90px)/5));height:min(86px,calc((100vw - 90px)/5))} .mapbtn .blabel{font-size:11px} .mapdock{gap:8px;justify-content:center} .mapdock .blabel{font-size:10px!important;padding:1px 5px!important;border-width:2px!important} }
 
-/* short landscape phones: the dock goes to the right side so the map keeps its height */
-@media (orientation:landscape) and (max-height:560px){
+/* short screens (phones on their side): the dock goes to the right side so the map keeps its height */
+@media (max-height:560px){
   .wrap-kid.map{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto 1fr;column-gap:16px;max-width:none}
   .wrap-kid.map>.topbar{grid-column:1/-1;min-height:44px;padding-block:6px 2px}
   .wrap-kid.map>.pathmap{grid-column:1;grid-row:2;margin-bottom:10px}
@@ -1805,6 +1794,19 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .flashcard .cover{cursor:pointer}
 
 .citycard .nextbtn.citynext{position:absolute;right:max(14px,env(safe-area-inset-right,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:6}
+
+/* ---- 20/10: landscape only: the cover that asks to turn the screen sideways ---- */
+#turnme{display:none;position:fixed;inset:0;z-index:999;background:rgba(43,31,56,.96);color:#fff;align-items:center;justify-content:center;text-align:center;padding:24px}
+#turnme.on{display:flex}
+#turnme .tm-in{display:flex;flex-direction:column;align-items:center;gap:12px;max-width:360px}
+#turnme .tm-art{position:relative;width:min(70vw,250px);aspect-ratio:5/4}
+#turnme .mascot{position:absolute;left:0;bottom:0;width:46%}
+#turnme .tm-phone{position:absolute;right:10%;top:12%;width:28%;animation:tmTurn 2.8s ease-in-out infinite}
+#turnme .tm-arrow{position:absolute;right:0;top:0;width:24%;opacity:.9}
+@keyframes tmTurn{0%,22%{transform:rotate(0)}52%,82%{transform:rotate(-90deg)}100%{transform:rotate(0)}}
+#turnme .tm-en{font:900 clamp(22px,6.4vw,30px) Nunito,sans-serif;line-height:1.2}
+#turnme .tm-vi{font-size:15px;opacity:.88;line-height:1.5}
+#turnme .tm-full{margin-top:6px}
 </style>
 
 <div id="root"></div>
@@ -5266,7 +5268,7 @@ function isoCity(host){
   W.bubble=(o,t)=>{ const [x,y]=isoP(o.i,o.j); const w=t.length*12+34; W.fx(x,y-o.h-8,`<rect x="${-w/2}" y="-46" width="${w}" height="40" rx="16" fill="#fff" stroke="${CK_PL}" stroke-width="4.5"/><path d="M-8 -8 L0 6 L8 -8" fill="#fff" stroke="${CK_PL}" stroke-width="4.5" stroke-linejoin="round"/><path d="M-9 -9 H9" stroke="#fff" stroke-width="6"/><text y="-19" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="900" font-size="20" fill="${CK_PL}">${esc(t)}</text>`,'ifxb',1800) };
   // camera: world units per screen pixel
   W.apply=()=>{ const r=W.svg.getBoundingClientRect(); if(!r.width) return; const c=W.cam, w=r.width*c.z, h=r.height*c.z; W.svg.setAttribute('viewBox',`${(c.cx-w/2).toFixed(1)} ${(c.cy-h/2).toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}`) };
-  W.fitZ=(b,m)=>{ const r=W.svg.getBoundingClientRect(); if(m==null) m=r.height>r.width*1.1?6:30; return Math.max((b.w+2*m)/Math.max(1,r.width),(b.h+2*m)/Math.max(1,r.height)) };
+  W.fitZ=(b,m)=>{ const r=W.svg.getBoundingClientRect(); if(m==null) m=30; return Math.max((b.w+2*m)/Math.max(1,r.width),(b.h+2*m)/Math.max(1,r.height)) };
   W.fit=(b,instant)=>{ b=b||isoBounds(IISL[0]); const t={cx:b.x+b.w/2,cy:b.y+b.h/2,z:W.fitZ(b)}; if(instant){ W.cam=t; W.apply(); return } W.tgt=t; if(!W.camRaf) W.camRaf=requestAnimationFrame(W.camStep) };
   W.camStep=()=>{ const c=W.cam,t=W.tgt; if(!t){ W.camRaf=0; return } c.cx+=(t.cx-c.cx)*.16; c.cy+=(t.cy-c.cy)*.16; c.z+=(t.z-c.z)*.16; W.apply(); if(Math.abs(t.cx-c.cx)+Math.abs(t.cy-c.cy)<.5&&Math.abs(t.z-c.z)<.0008){ W.tgt=null; W.camRaf=0; return } W.camRaf=requestAnimationFrame(W.camStep) };
   W.toWorld=e=>{ const pt=W.svg.createSVGPoint(); pt.x=e.clientX; pt.y=e.clientY; return pt.matrixTransform(W.svg.getScreenCTM().inverse()) };
@@ -7644,12 +7646,35 @@ async function viewMix(opt={}){
   }catch(e){ if(e!==ABORT) console.error(e) }
   Music.stop(); sess.ms=Date.now()-sess.start; (S.sessions=S.sessions||[]).push(sess); save(); RUN=null; renderHome();
 }
+/* =========================================================
+   LANDSCAPE ONLY (20/10): the app is made for a screen on its side. Held upright (or in a very narrow window): a cover with Chồi
+   and a phone turning sideways. A level (or the city, the games…) that is playing waits, as with Pause, and goes on by itself once
+   the screen is on its side again. Phones and tablets: "Turn your phone sideways!" (Chồi says it once when nothing is playing;
+   Android also gets a button: full screen, locked on its side). Computers: "Make the window wider".
+   ========================================================= */
+const TALL=matchMedia('(orientation: portrait), (max-width: 559px)'), TOUCHY=matchMedia('(pointer: coarse)').matches;
+const PHONE_SVG=`<svg class="tm-phone" viewBox="0 0 64 104" aria-hidden="true"><rect x="6" y="4" width="52" height="96" rx="10" fill="#fff" stroke="${CK_PL}" stroke-width="5"/><rect x="13" y="16" width="38" height="70" rx="4" fill="#9ED8F0"/><circle cx="32" cy="93" r="3.5" fill="${CK_PL}"/><path d="M22 52 l6 6 l14 -14" stroke="#58B592" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0"/></svg>`;
+function turnCover(){ let c=$('#turnme'); if(c) return c;
+  const canLock=TOUCHY&&!!(document.documentElement.requestFullscreen&&screen.orientation&&screen.orientation.lock);
+  c=el(`<div id="turnme" role="dialog" aria-label="Xoay ngang màn hình"><div class="tm-in"><div class="tm-art"><div class="mascot" data-mood="happy" data-wave="1">${mascotSVG()}</div>${PHONE_SVG}<svg class="tm-arrow" viewBox="0 0 60 60" aria-hidden="true"><path d="M48 30 A18 18 0 1 1 30 12" fill="none" stroke="#FFD21F" stroke-width="5" stroke-linecap="round"/><path d="M24 4 L34 12 L24 20" fill="none" stroke="#FFD21F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <b class="tm-en">${TOUCHY?'Turn your phone sideways!':'Make the window wider!'}</b><span class="tm-vi">${TOUCHY?'Con xoay ngang điện thoại hoặc iPad nhé! App chỉ chơi ở màn hình ngang.':'Ba mẹ kéo rộng cửa sổ trình duyệt (hoặc phóng to cửa sổ) để chơi nhé. App chỉ chơi ở màn hình ngang.'}</span>
+    ${canLock?'<button class="btn tm-full" type="button">Xoay ngang và mở toàn màn hình</button>':''}</div></div>`);
+  document.body.append(c); const b=$('.tm-full',c); if(b) b.onclick=()=>goFull(); return c }
+let turnPaused=false;
+function onTurn(){ const tall=TALL.matches, c=turnCover(); c.classList.toggle('on',tall);
+  if(tall){ if(RUN&&!RUN.aborted&&!PAUSED){ turnPaused=true; setPaused(true) }
+    else if(!RUN&&TOUCHY&&!onTurn.said&&AC&&AC.state==='running'){ onTurn.said=true; say('Turn your phone sideways!','Con xoay ngang điện thoại nhé!',{gap:0,q:false}).catch(()=>{}) } }
+  else if(turnPaused){ turnPaused=false; if(!$('.pausebox')) setPaused(false) } }
+if(TALL.addEventListener) TALL.addEventListener('change',onTurn); else if(TALL.addListener) TALL.addListener(onTurn);
+addEventListener('resize',()=>{ if(TALL.matches!==!!($('#turnme')&&$('#turnme').classList.contains('on'))) onTurn() });
+
 /* ---------------- boot ---------------- */
 window.__choi={get state(){return S},SKILLS,status,planSession,
   demo(id){ RUN={aborted:false,start:Date.now()}; renderPlay(); const sk=SK[id]; ptip(sk); return GAMES[sk.game](sk,ROUNDS).catch(e=>{ if(e!==ABORT) console.error(e) }) },
   mission(id){ RUN={aborted:false,start:Date.now()}; renderPlay(); return giveMission(SK[id]).catch(()=>{}) }};
 if(S.tv){ S.tv=false; save() } document.documentElement.classList.remove('tv');
 if(!FAST&&HASH!=='dev'&&HASH!=='time') setTimeout(()=>voiceInit(S.lang==='vi'?'vi':'en'),200);   // load the recorded voice early
+onTurn();
 if(HASH==='new'){ try{localStorage.removeItem(KEY)}catch(e){} clearClips(); S=fresh(); renderSetup() } else if(HASH==='dev'){ if(!S.child){ S.child={name:'Bin',birthYear:new Date().getFullYear()-5}; save() } renderDev() } else if(!S.child) renderSetup(); else { renderHome(); if(S.acct){ syncPull().then(ch=>{ if(ch&&!RUN&&$('#pathmap')) renderHome() }); if(S.acct.pending) syncSoon(1500) } }
 </script>
 

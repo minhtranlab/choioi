@@ -792,6 +792,14 @@
   "slow": false
  },
  {
+  "part": "chung",
+  "en": "Turn your phone sideways!",
+  "vi": "Con xoay ngang điện thoại nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
   "part": "man0",
   "en": "Hello! I’m Chồi. Look, there’s something old on the bookshelf.",
   "vi": "Xin chào! Chồi đây. Nhìn kìa, trên tủ sách có một thứ gì cũ cũ.",
