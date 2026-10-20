@@ -8,7 +8,8 @@ Cảnh nào sửa thì thay file **cùng tên**, nên bên app chỉ cần chạ
 - Hình nền ngang, cùng khung với `BG.*`: `viewBox="0 0 200 140" preserveAspectRatio="xMidYMax meet" overflow="visible"`; trời và nền kéo dài x −400…600.
 - Chỉ là **nền**. Đồ bé chạm vào (lều, đèn lồng, giường, bàn, xe đẩy, quả, cần cẩu, ngôi nhà, rương, cây cao, ao, mặt trời…) do game vẽ chồng lên.
 - **Chỗ nhân vật đứng (sàn, nền đất) để một màu trơn**: không thảm, không đường kẻ gạch, không vệt bánh xe (20/10). Riêng sân cỏ có một dải cỏ sáng hơn dẫn vào sảnh.
-- Nền không giành mắt bé: lớp xa (`class="bg-far"`) nhạt, nét mảnh; không làm mờ thêm. Siêu thị cả cảnh được làm dịu màu bằng bộ lọc `p195-mute`.
+- Nền không giành mắt bé: lớp xa (`class="bg-far"`) nhạt, nét mảnh; không làm mờ thêm. Ở siêu thị chỉ kệ và đồ trên kệ được làm nhạt (bộ lọc `p195-mute`), phòng giữ nguyên.
+- Nét trang trí (đường gạch, đường kẻ) không bao giờ đè lên viền đen.
 - Không có mặt trời, không chữ, không số, không biển tên, không logo. Không có mặt trẻ thật.
 - Nhóm `tp tp-cloud` / `tp tp-tree` là mây và cây chạm được. Id trong SVG có tiền tố `p195-`.
 
