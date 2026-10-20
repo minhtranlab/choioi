@@ -1,0 +1,4772 @@
+[
+{
+"lang": "en",
+"key": "Are you ready? Now it’s your turn!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con sẵn sàng chưa? Giờ đến lượt con!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Yum! Hippos love watermelon.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hà mã thích dưa hấu.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: touch each one, and count.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: chạm từng cái rồi đếm.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: look at the face.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: nhìn kỹ khuôn mặt.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Elephants don’t eat watermelon. Try another one!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Voi không ăn dưa hấu đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: start at the green circle.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: bắt đầu từ vòng tròn xanh.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: excited music is quick and bouncy!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: nhạc háo hức thì nhanh và nhảy nhót!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: one, two, three, all the way to ten!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: một, hai, ba, đếm tới mười!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Pandas don’t eat watermelon. Try another one!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Gấu trúc không ăn dưa hấu đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: in, on, under!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: trong, trên, dưới!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: just look. No need to count!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: chỉ nhìn thôi, không cần đếm!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: scary music sneaks along. Sleepy music is slow and soft.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: nhạc sợ sợ thì rón rén. Nhạc buồn ngủ thì chậm và nhẹ.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: look at the colour.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: nhìn màu.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: big or small?",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: to hay nhỏ?",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: look at the shape of the number.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: nhìn kỹ hình con số.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Listen carefully!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nghe thật kỹ nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: They are all…",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: \"They are all…\"",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: circle, square, triangle.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: tròn, vuông, tam giác.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: a rectangle has two long sides.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: hình chữ nhật có hai cạnh dài.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the face. This face looks happy.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn khuôn mặt này nhé. Mặt này đang vui.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the face. This face looks sad.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn khuôn mặt này nhé. Mặt này đang buồn.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the face. This face looks angry.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn khuôn mặt này nhé. Mặt này đang giận.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the face. This face looks scared.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn khuôn mặt này nhé. Mặt này đang sợ.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the face. This face looks tired.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn khuôn mặt này nhé. Mặt này đang mệt.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the face. This face looks excited.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn khuôn mặt này nhé. Mặt này đang háo hức.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the face. This face looks surprised.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn khuôn mặt này nhé. Mặt này đang ngạc nhiên.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the face. This face looks proud.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn khuôn mặt này nhé. Mặt này đang tự hào.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "One! The last number tells us how many.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Một! Số cuối cùng cho biết có bao nhiêu.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Two! The last number tells us how many.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Hai! Số cuối cùng cho biết có bao nhiêu.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Three! The last number tells us how many.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ba! Số cuối cùng cho biết có bao nhiêu.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Five! The last number tells us how many.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Năm! Số cuối cùng cho biết có bao nhiêu.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "This is the number one.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Đây là số một.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "One apple.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Một quả táo.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "This is the number five.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Đây là số năm.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Five apples.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Năm quả táo.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look! The cat is on the table.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Con mèo ở trên cái bàn.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look! The cat is under the table.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Con mèo ở dưới gầm bàn.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "This is a circle.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Đây là hình tròn.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "The clock is a circle, too.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Cái đồng hồ cũng có hình tròn.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "This one is the square.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Đây là hình vuông.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "This is a triangle.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Đây là hình tam giác.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "The pizza slice is a triangle, too.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Miếng pizza cũng có hình tam giác.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "This duck is big.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Chú vịt này to.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "This duck is small.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Chú vịt này nhỏ.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the colour. These are all red.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn màu nhé. Tất cả đều màu đỏ.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the colour. These are all yellow.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn màu nhé. Tất cả đều màu vàng.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the colour. These are all blue.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn màu nhé. Tất cả đều màu xanh dương.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at the colour. These are all green.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn màu nhé. Tất cả đều màu xanh lá.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "One clap! One clap for each sound.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Một tiếng! Mỗi tiếng vỗ một cái.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Two claps! One clap for each sound.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Hai tiếng! Mỗi tiếng vỗ một cái.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "There’s Lam! Lam looks happy.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Lam đây rồi! Lam đang vui.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "There’s Lam! Lam looks sad.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Lam đây rồi! Lam đang buồn.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Lam. He looks sad.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Lam, bạn ấy đang buồn.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "There’s Lam! Lam looks angry.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Lam đây rồi! Lam đang giận.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "There’s Na! Na looks happy.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Na đây rồi! Na đang vui.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Na. She looks happy.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Na, bạn ấy đang vui.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "There’s Na! Na looks sad.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Na đây rồi! Na đang buồn.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "There’s Na! Na looks angry.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Na đây rồi! Na đang giận.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Na. She looks angry.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Na, bạn ấy đang giận.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "There’s Ben! Ben looks happy.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ben đây rồi! Ben đang vui.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Ben. He looks happy.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Ben, bạn ấy đang vui.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "There’s Ben! Ben looks sad.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ben đây rồi! Ben đang buồn.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "There’s Ben! Ben looks angry.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ben đây rồi! Ben đang giận.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Ben. He looks angry.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Ben, bạn ấy đang giận.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: morning, afternoon, night.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: sáng, chiều, tối.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: who is a friend, where is a place.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: \"who\" là ai, \"where\" là ở đâu.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: I feel…",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: \"I feel…\"",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Remember: one clap for each sound.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhớ nhé: mỗi tiếng vỗ một cái.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Your music box! Tap a picture to listen.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Hộp nhạc của con đây! Chạm vào một bức tranh để nghe nhé.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Play the levels to find music for your music box!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Chơi các màn để tìm nhạc cho hộp nhạc nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Play the levels to find more music!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Chơi các màn để tìm thêm nhạc nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Here is your zoo! Tap a food, then tap an animal. Or tap anything you like.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Sở thú của con đây! Con chạm vào một món ăn, rồi chạm vào con vật. Hoặc chạm vào bất cứ đâu nhé.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Trees don’t eat bananas. Trees drink water!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Cây không ăn chuối đâu. Cây uống nước thôi!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Hee hee! Meat? I’m not a lion!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Hi hi! Thịt á? Tớ đâu phải sư tử!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Trees don’t eat meat. Trees drink water!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Cây không ăn thịt đâu. Cây uống nước thôi!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Hee hee! Fish? I’m not a penguin!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Hi hi! Cá á? Tớ đâu phải chim cánh cụt!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Trees don’t eat fish. Trees drink water!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Cây không ăn cá đâu. Cây uống nước thôi!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Hee hee! Hay? I’m not a zebra!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Hi hi! Cỏ khô á? Tớ đâu phải ngựa vằn!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Trees don’t eat hay. Trees drink water!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Cây không ăn cỏ khô đâu. Cây uống nước thôi!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Trees don’t eat watermelon. Trees drink water!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Cây không ăn dưa hấu đâu. Cây uống nước thôi!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Hee hee! Bamboo? I’m not a panda!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Hi hi! Tre á? Tớ đâu phải gấu trúc!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Trees don’t eat bamboo. Trees drink water!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Cây không ăn tre đâu. Cây uống nước thôi!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Hee hee! Leaves? I’m not a giraffe!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Hi hi! Lá cây á? Tớ đâu phải hươu cao cổ!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Trees don’t eat leaves. Trees drink water!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Cây không ăn lá cây đâu. Cây uống nước thôi!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Yum! I love bananas! Thank you!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Yum! Banana! Banana!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ngon! Chuối! Chuối!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "No, no! Polly likes fruit!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Không, không! Polly thích hoa quả cơ!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Thank you! But I drink sunshine and water.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Cảm ơn con! Nhưng Chồi chỉ uống nắng và nước thôi.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Give the food to an animal!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con đưa thức ăn cho một con vật nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "How many flags? Tap each flag and count!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Có mấy lá cờ? Con chạm từng lá và đếm nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Three flags!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ba lá cờ!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Four flags!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Bốn lá cờ!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Five flags!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Năm lá cờ!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Six flags!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Sáu lá cờ!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Lions don’t eat watermelon. Try another one!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Sư tử không ăn dưa hấu đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Penguins don’t eat watermelon. Try another one!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Chim cánh cụt không ăn dưa hấu đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Monkeys don’t eat watermelon. Try another one!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Khỉ không ăn dưa hấu đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Giraffes don’t eat watermelon. Try another one!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Hươu cao cổ không ăn dưa hấu đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Zebras don’t eat watermelon. Try another one!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ngựa vằn không ăn dưa hấu đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Yum! I love watermelon! Thank you!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Tớ thích dưa hấu lắm! Cảm ơn bạn!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Yum! Watermelon! Watermelon!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Ngon! Dưa hấu! Dưa hấu!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Turn your phone sideways!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con xoay ngang điện thoại nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Tap each one, then tap the right basket!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào từng cái, rồi chạm vào đúng giỏ nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Tap the fish, then tap the cat!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào con cá, rồi chạm vào bạn mèo nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Tap the carrots, then tap the bunny!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào củ cà rốt, rồi chạm vào bạn thỏ nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Tap the bananas, then tap the monkey!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào quả chuối, rồi chạm vào bạn khỉ nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Tap the apples, then tap the elephant!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào quả táo, rồi chạm vào bạn voi nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Hello! I’m Chồi. Look, there’s something old on the bookshelf.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Xin chào! Chồi đây. Nhìn kìa, trên tủ sách có một thứ gì cũ cũ.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "It’s a map! Tap the map to open it!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Một tấm bản đồ! Con chạm vào bản đồ để mở ra nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "A little note fell out! It shows our school, and an X in the garden behind it.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Có một tờ giấy nhỏ rơi ra! Giấy vẽ trường mình, và một dấu X ở khu vườn sau trường.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "The first piece must be there! Let’s go and tell my friends.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chắc mảnh đầu tiên ở đó! Mình đi kể cho các bạn nhé.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Chồi runs out to the school yard, to show the map to his team.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chồi chạy ra sân trường, khoe tấm bản đồ với các bạn trong đội.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "This is Lam.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Đây là Lam.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "This is Na.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Đây là Na.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "And this is Ben.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Còn đây là Ben.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "And this is Polly, on Ben’s shoulder. Polly likes to say things again!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Còn đây là Polly, đậu trên vai Ben. Polly thích nói lại lời người khác!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Oh, look. Ben’s mum is going to work.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ơ, nhìn kìa. Mẹ Ben đi làm rồi.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben’s mum says bye-bye.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mẹ Ben chào tạm biệt.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Yes.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ừ.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s give Ben a big hug. Press and hold Ben!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình ôm Ben thật chặt nhé. Con nhấn giữ vào Ben!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Look! The teacher has a present for Na, because Na helped a friend.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Cô giáo tặng quà cho Na, vì Na đã giúp bạn.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "It’s a box of cookies!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Đó là một hộp bánh quy!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Yes!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ừ!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Now you clap three times!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Giờ con vỗ tay ba lần nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Na shares her cookies with everyone. Lam has one too.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Na chia bánh cho mọi người. Lam cũng có một cái.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Oh no! Polly took Lam’s cookie!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ôi! Polly giật mất bánh của Lam rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Look! Polly is coming back.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Polly bay trở lại.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Polly gives the cookie back to Lam.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Polly trả lại bánh cho Lam.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Sorry!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Xin lỗi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Everyone feels better. Now, let’s find the X! The garden is far behind the school. Here comes the school bus!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mọi người vui trở lại rồi. Giờ mình đi tìm dấu X nào! Khu vườn ở xa phía sau trường. Xe buýt của trường đến rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "First, three children from the big class get on.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Trước tiên, ba bạn lớp lớn lên xe.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Three empty seats, three friends. Now every seat is full!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ba chỗ trống, ba bạn. Kín chỗ rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "That bus is full. Here comes our bus!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Xe đó đầy rồi. Xe của đội mình đến kìa!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Tap a friend, then tap the bus.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào một bạn, rồi chạm vào xe buýt nhé.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "You put four friends on the bus!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con đã đưa bốn bạn lên xe!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s draw some lines for our trip!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình cùng vẽ đường cho chuyến đi nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s draw a road for the bus. Watch me: I start at the green circle, and go all the way to the gate.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình vẽ đường cho xe buýt nhé. Xem Chồi nè: bắt đầu ở vòng tròn xanh, đi một mạch tới cổng.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Vroom! The bus drives along the road, out of the school gate.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Brừm! Xe buýt chạy theo con đường, ra khỏi cổng trường.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Now you draw the road to the garden.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Giờ con vẽ đường ra khu vườn nhé.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "You drew a line straight across!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con vẽ được đường thẳng ngang rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Vroom! The bus is at the garden!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Brừm! Xe buýt tới khu vườn rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "The gardener is watering the flowers. Help the water fall straight down!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bác làm vườn đang tưới hoa. Con giúp nước rơi thẳng xuống nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "You drew a line straight down!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con vẽ được đường thẳng xuống rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Look! The water falls straight down. The flowers open up!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Nước rơi thẳng xuống. Hoa nở rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "We’re in the garden! Ben’s map says: follow the flags. Let’s count them. Tap each flag!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình tới khu vườn rồi! Bản đồ của Ben ghi: đi theo những lá cờ. Mình đếm nhé. Con chạm vào từng lá cờ!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben follows the flags, to the slide and the little bridge.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben đi theo những lá cờ, tới cầu trượt và cây cầu nhỏ.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "There’s a slide and a little bridge on the way.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Trên đường đi có cầu trượt và một cây cầu nhỏ.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben goes down the slide. Draw a line straight down for Ben!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben trượt cầu trượt. Con vẽ đường thẳng xuống cho Ben nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Whee! Ben slides straight down, into the sand!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Vèo! Ben trượt thẳng xuống, vào hố cát!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Now Ben walks over the little bridge to the bush with the X. Draw a line across!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Giờ Ben đi qua cây cầu nhỏ tới bụi cây có dấu X. Con vẽ đường ngang nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben is at the bush with the X!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben tới bụi cây có dấu X rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Lam, Na and Ben hide in the bushes. They are making faces!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lam, Na và Ben trốn trong bụi cây. Các bạn đang làm mặt!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Na says: Find me! I look sad!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Na nói: Tìm Na đi! Na đang buồn!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Na looks sad.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Na đang buồn.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Lam says: Find me! I look sad!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lam nói: Tìm Lam đi! Lam đang buồn!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "You found Lam!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con tìm ra Lam rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Lam looks sad.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lam đang buồn.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben says: Find me! I look angry!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben nói: Tìm Ben đi! Ben đang giận!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "You found Ben!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con tìm ra Ben rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben looks angry.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben đang giận.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Now let’s play peekaboo! Friends pop up from the bushes. Be quick!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Giờ mình chơi ú òa nhé! Các bạn sẽ ló ra từ bụi cây. Nhanh tay nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Look! The bush with the X is shaking. Something is inside! Tap the bush!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Bụi cây có dấu X đang rung. Có gì ở trong! Con chạm vào bụi cây nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "We found the first piece! Polly wants to cheer with you.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình tìm được mảnh đầu tiên! Polly muốn reo hò cùng con.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Tap the microphone, and say: Hooray!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào micro rồi nói: Hoan hô!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s say it together: Hooray!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình cùng nói nhé: Hoan hô!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "The first map piece was in the bush with the X!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mảnh bản đồ đầu tiên ở trong bụi cây có dấu X!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Next time, let’s look for the next piece at the park!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lần sau mình tìm mảnh tiếp theo ở công viên nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Look at your zoo! Feed the animals, or tap anything you like. Tap the arrow when you’re done.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Nhìn sở thú của con này! Con cho các bạn thú ăn, hoặc chạm vào bất cứ đâu nhé. Xong thì con chạm vào mũi tên.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben says: Find me! I look sad!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben nói: Tìm Ben đi! Ben đang buồn!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben looks sad.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben đang buồn.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Na says: Find me! I look happy!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Na nói: Tìm Na đi! Na đang vui!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Ben. He looks sad.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Ben, bạn ấy đang buồn.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Na looks happy.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Na đang vui.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s look at this one again, together.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình cùng xem lại cái này nhé.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Touch each one, and count.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chạm từng cái rồi đếm nhé.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Four! The last number tells us how many.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bốn! Số cuối cùng cho biết có bao nhiêu.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Lam says: Find me! I look happy!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lam nói: Tìm Lam đi! Lam đang vui!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Lam looks happy.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lam đang vui.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "You found Na!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con tìm ra Na rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Lam says: Find me! I look angry!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lam nói: Tìm Lam đi! Lam đang giận!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Lam looks angry.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lam đang giận.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben says: Find me! I look happy!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben nói: Tìm Ben đi! Ben đang vui!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Na. She looks sad.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Na, bạn ấy đang buồn.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Lam. He looks angry.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Lam, bạn ấy đang giận.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben looks happy.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben đang vui.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Lam. He looks happy.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Lam, bạn ấy đang vui.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Na says: Find me! I look angry!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Na nói: Tìm Na đi! Na đang giận!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Na looks angry.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Na đang giận.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Here we are at the park! It’s so windy today.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mình tới công viên rồi! Hôm nay gió to quá.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Whoosh! Up it goes!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Vù! Diều bay lên rồi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Look! More kites are going up, across the river!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Thêm nhiều diều bay lên bên kia sông!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Let’s count the kites, all the way to ten. Listen to me first.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mình đếm diều đến mười nhé. Con nghe Chồi đếm trước.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Seven.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Bảy.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Eight.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Tám.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Nine.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chín.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Ten.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mười.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Now count with me! Say the numbers out loud.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Giờ con đếm cùng Chồi nhé! Con nói to các số lên.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Ten kites! You counted all the way to ten.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mười con diều! Con đã đếm đến mười rồi.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Look at Lam’s kite, flying up, up, up!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Nhìn diều của Lam kìa, bay cao, cao mãi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Let’s clap for Lam! Tap three times.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mình vỗ tay chúc mừng Lam nhé! Con chạm ba lần.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Na wants to fly her kite too.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Na cũng muốn thả diều.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Polly is holding Na’s kite up high. Draw the string straight down to Na’s hand!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Polly đang giữ diều của Na trên cao. Con vẽ dây diều thẳng xuống tay Na nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Polly lets go, and up goes Na’s kite! Na is holding the string.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Polly thả ra, và diều của Na bay lên! Na đang cầm dây diều.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Whoosh! The wind blows Na’s kite across the park. Draw a line across, all the way to the tall tree!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Vù! Gió thổi diều của Na bay ngang qua công viên. Con vẽ đường ngang, tới tận cây cao nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "The wind blew Na’s kite all the way to the tall tree! Na ran with it.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Gió thổi diều của Na tới tận cây cao! Na chạy theo diều.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Look! The balloon man is blowing bubbles, and they have faces!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Chú bán bóng bay đang thổi bong bóng, bong bóng có vẽ mặt!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Pop the happy faces! Find three!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chọc vỡ các mặt vui nhé! Tìm ba cái!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Pop the sad faces! Find three!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chọc vỡ các mặt buồn nhé! Tìm ba cái!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You found three sad faces!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con tìm được ba mặt buồn!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Now you say it like Polly: Excited!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Giờ con nói giống Polly nhé: Háo hức!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Let’s say it together: Excited!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mình cùng nói nhé: Háo hức!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Pop the angry faces! Find three!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chọc vỡ các mặt giận nhé! Tìm ba cái!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You found three angry faces!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con tìm được ba mặt giận!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Now you say it like Polly: Surprised!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Giờ con nói giống Polly nhé: Ngạc nhiên!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Let’s say it together: Surprised!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mình cùng nói nhé: Ngạc nhiên!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Here’s the pond. Ten little ducks are waiting on the grass. They want to swim!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Đây là cái ao. Mười bạn vịt đang đứng chờ trên cỏ. Các bạn ấy muốn bơi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Count to ten, and the ducks will swim in, one by one!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con đếm đến mười, các bạn vịt sẽ lần lượt bơi xuống ao!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Tap the microphone, and count out loud!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con chạm micro rồi đếm thật to nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Let’s count them in together!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mình cùng đếm cho các bạn vịt vào ao nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Ten ducks are swimming in the pond!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mười bạn vịt đã bơi trong ao!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Ben sees something in the reeds by the pond. It’s a box, and it’s wiggling!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ben thấy có gì đó trong bụi lau cạnh ao. Một cái hộp, và nó đang động đậy!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Pop! A red balloon jumped out of the box, with a map piece tied to its string!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Bụp! Một quả bóng đỏ bật ra khỏi hộp, trên dây có buộc một mảnh bản đồ!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Ben runs to catch the string…",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ben chạy tới nắm dây…",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Oh no! The wind blew the red balloon away. Its string is stuck in the tall tree!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ôi không! Gió thổi quả bóng đỏ bay đi. Dây bóng mắc trên ngọn cây cao rồi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "The balloon man has balloons for everyone!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chú bán bóng có bóng bay cho tất cả các bạn!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "This yellow balloon is for the friend who looks excited. Who looks excited?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Quả bóng vàng này dành cho bạn đang háo hức. Bạn nào đang háo hức?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You found the friend who looks excited!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con tìm ra bạn đang háo hức rồi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Lam looks excited. Here’s your balloon, Lam!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Lam đang háo hức. Bóng của Lam đây!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "This blue balloon is for the friend who looks surprised. Who looks surprised?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Quả bóng xanh này dành cho bạn đang ngạc nhiên. Bạn nào đang ngạc nhiên?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You found the friend who looks surprised!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con tìm ra bạn đang ngạc nhiên rồi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Lam looks surprised. Here’s your balloon, Lam!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Lam đang ngạc nhiên. Bóng của Lam đây!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "The wind is still blowing!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Gió vẫn đang thổi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Oh no! Five balloons are stuck in front of the red balloon. Pop them, and count!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ôi! Năm quả bóng mắc ngay trước quả bóng đỏ. Con chọc vỡ và đếm nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You popped five balloons, and counted them all!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con chọc vỡ năm quả bóng và đếm hết rồi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "There’s the red balloon! Oh no, here comes more wind!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Quả bóng đỏ kia rồi! Ơ, lại có gió nữa!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Whoosh! The wind blows more balloons in the way! Pop them all, and count!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Vù! Gió thổi thêm bóng chắn đường! Con chọc vỡ hết và đếm nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You popped four balloons, and counted them all!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con chọc vỡ bốn quả bóng và đếm hết rồi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Now we can see the red balloon again. But it’s stuck way up high!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Giờ mình lại thấy quả bóng đỏ. Nhưng nó mắc trên cao quá!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Polly can fly! She can pull the balloon down.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Polly biết bay! Polly kéo quả bóng xuống được.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Polly holds the end of the string in her beak.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Polly ngậm đầu dây bóng.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Count to ten, and Polly will pull the balloon down, a little with each number!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con đếm đến mười, mỗi số Polly sẽ kéo quả bóng xuống một chút!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Let’s count together, nice and loud!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mình cùng đếm thật to nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Ten! Polly pulled the balloon down!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mười! Polly kéo quả bóng xuống rồi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Polly gives the string to Ben. Ben has the red balloon!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Polly đưa dây cho Ben. Ben cầm được quả bóng đỏ rồi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Ben unties the map piece.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ben tháo mảnh bản đồ ra.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "The second map piece was tied to the red balloon!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mảnh bản đồ thứ hai được buộc vào quả bóng đỏ!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Next time, let’s look in a garden, at night!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Lần sau mình tìm trong một khu vườn, vào ban đêm nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You found three happy faces!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con tìm được ba mặt vui!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Na looks excited. Here’s your balloon, Na!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Na đang háo hức. Bóng của Na đây!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "There’s still a balloon in the way!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Vẫn còn quả bóng chắn đường kìa!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "The wind blew them back! Let’s pop them again, and count from one.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Gió thổi bóng về rồi! Mình chọc lại và đếm từ một nhé.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Ben looks surprised. Here’s your balloon, Ben!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ben đang ngạc nhiên. Bóng của Ben đây!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Na looks surprised. Here’s your balloon, Na!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Na đang ngạc nhiên. Bóng của Na đây!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Lam. He looks excited.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Lam, bạn ấy đang háo hức.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Ben looks excited. Here’s your balloon, Ben!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ben đang háo hức. Bóng của Ben đây!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You counted ten ducks into the pond!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con đã đếm mười bạn vịt xuống ao!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You counted to ten, and the balloon came down!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con đếm đến mười, và quả bóng đã xuống rồi!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "This yellow balloon is for the friend who looks surprised. Who looks surprised?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Quả bóng vàng này dành cho bạn đang ngạc nhiên. Bạn nào đang ngạc nhiên?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "This blue balloon is for the friend who looks excited. Who looks excited?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Quả bóng xanh này dành cho bạn đang háo hức. Bạn nào đang háo hức?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "This pink balloon is for the friend who looks excited. Who looks excited?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Quả bóng hồng này dành cho bạn đang háo hức. Bạn nào đang háo hức?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "This pink balloon is for the friend who looks surprised. Who looks surprised?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Quả bóng hồng này dành cho bạn đang ngạc nhiên. Bạn nào đang ngạc nhiên?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Oops, that face looks happy.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ơ, mặt đó đang vui.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Oops, that face looks sad.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ơ, mặt đó đang buồn.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Oops, that face looks angry.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ơ, mặt đó đang giận.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Na. She looks excited.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Na, bạn ấy đang háo hức.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Ben. He looks excited.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Ben, bạn ấy đang háo hức.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Lam. He looks surprised.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Lam, bạn ấy đang ngạc nhiên.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Na. She looks surprised.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Na, bạn ấy đang ngạc nhiên.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Oops, that’s Ben. He looks surprised.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là Ben, bạn ấy đang ngạc nhiên.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You said “excited”, just like Polly!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con nói “háo hức”, giống hệt Polly!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You said “surprised”, just like Polly!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con nói “ngạc nhiên”, giống hệt Polly!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "That’s you! Polly says it just like you.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Đó là con đấy! Polly nói giống hệt con.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "You counted to ten, and Polly pulled the balloon down!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con đếm đến mười, và Polly đã kéo quả bóng xuống!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Hello, {N}!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chào {N}!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s play!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình cùng chơi nào!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Oh no, it’s torn. Eight pieces are missing!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ôi, bản đồ bị rách rồi. Mất tám mảnh!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Hello!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Xin chào!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben feels sad.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben thấy buồn.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Sad!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Buồn!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Are you sad, Ben?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben ơi, bạn buồn à?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben feels better now. Thank you!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben thấy dễ chịu hơn rồi. Cảm ơn con!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Na feels happy.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Na thấy vui.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Happy!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Vui!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Are you happy, Na?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Na ơi, bạn vui à?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s clap for Na! Tap three times.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình vỗ tay chúc mừng Na nhé! Con chạm ba lần.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "One!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Một!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Two!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Hai!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Three!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ba!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Na is so happy you’re here!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Na vui lắm vì có con!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Lam feels angry.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lam thấy giận.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Are you angry, Lam?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lam ơi, bạn giận à?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s breathe slowly with Lam. Press and hold to breathe in.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình cùng Lam hít thở thật chậm nhé. Con nhấn giữ để hít vào.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Lam feels better now. Thank you!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lam thấy dễ chịu hơn rồi. Cảm ơn con!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Watch me first!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Xem Chồi làm trước nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "One.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Một.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Two.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Hai.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Three.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ba.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Put one friend in each empty seat!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mỗi ghế trống, con đưa một bạn lên nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Four.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bốn.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Four empty seats, four friends! Off we go!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bốn ghế trống, bốn bạn! Xe chạy thôi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "All the way to the end!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Đến nơi rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Just move your finger along the line.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con chỉ cần di ngón tay theo đường kẻ.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "một",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "hai",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "ba",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "bốn",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Five.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "năm",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Five flags! This way!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Năm lá cờ! Đi lối này!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Tap the friends who look happy! Find four!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chạm vào các bạn đang vui nhé! Tìm bốn bạn!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Four!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bốn!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Four happy friends!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bốn bạn đang vui!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "You found it!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con tìm ra rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Now tap the friends who look angry!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Giờ chạm vào các bạn đang giận nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Four angry friends! Grrr!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bốn bạn đang giận! Grừ!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Hooray!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Hoan hô!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Look! This piece shows the school.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Mảnh này vẽ trường học.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "One piece is on the map. Seven more to go, then we’ll see where the treasure is!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Một mảnh đã vào bản đồ. Còn bảy mảnh nữa là mình biết kho báu ở đâu!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "This is your city! The first place is a zoo.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Đây là thành phố của con! Chỗ đầu tiên là sở thú.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Pick an animal for your zoo!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con chọn một bạn thú cho sở thú nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Where should the penguin live? Tap a spot!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chú chim cánh cụt sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Hello, penguin!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chào chú chim cánh cụt!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "The penguin is hungry! What does the penguin eat?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chú chim cánh cụt đói rồi! Chú chim cánh cụt ăn gì nhỉ?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Yum! Penguins love fish.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Chim cánh cụt thích cá.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Fish!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Cá!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Great job, {N}!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con giỏi lắm, {N}!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Tap Lam’s kite to fly it!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào diều của Lam để thả nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Năm.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Six.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Sáu.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Ten kites in the sky!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mười con diều trên trời!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Lam feels excited.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Lam thấy háo hức.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Excited!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Háo hức!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Are you excited, Lam?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Lam ơi, bạn háo hức à?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Lam is so happy you’re here!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Lam vui lắm vì có con!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Surprised!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ngạc nhiên!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Tap the box to open it!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Con chạm để mở hộp nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Ben feels surprised.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ben thấy ngạc nhiên.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Are you surprised, Ben?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ben ơi, bạn ngạc nhiên à?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Five!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Năm!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Look! This piece shows the park.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Mảnh này vẽ công viên.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Two pieces are on the map. Six more to go, then we’ll see where the treasure is!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Hai mảnh đã vào bản đồ. Còn sáu mảnh nữa là mình biết kho báu ở đâu!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Where should the zebra live? Tap a spot!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Bạn ngựa vằn sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Hello, zebra!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chào bạn ngựa vằn!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "The zebra is hungry! What does the zebra eat?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Bạn ngựa vằn đói rồi! Bạn ngựa vằn ăn gì nhỉ?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Yum! Zebras love hay.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Ngựa vằn thích cỏ khô.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Hay!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Cỏ khô!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Hmm, did we count them all?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ơ, mình đếm hết chưa nhỉ?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s count again. Tap each one!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình đếm lại nhé. Con chạm vào từng cái!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Try again!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Thử lại nào!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "You kept trying, and you got it!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con cố gắng mãi và đã làm được!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "You worked it out!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con tự nghĩ ra rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Where should the elephant live? Tap a spot!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chú voi sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Hello, elephant!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chào chú voi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "The elephant is hungry! What does the elephant eat?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chú voi đói rồi! Chú voi ăn gì nhỉ?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Elephants don’t eat leaves. Try another one!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Voi không ăn lá cây đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Yum! Elephants love bananas.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Voi thích chuối.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Bananas!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chuối!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Where should the panda live? Tap a spot!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Bạn gấu trúc sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Hello, panda!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chào bạn gấu trúc!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "The panda is hungry! What does the panda eat?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Bạn gấu trúc đói rồi! Bạn gấu trúc ăn gì nhỉ?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Pandas don’t eat fish. Try another one!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Gấu trúc không ăn cá đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Yum! Pandas love bamboo.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Gấu trúc thích tre.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Bamboo!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Tre!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Penguins don’t eat meat. Try another one!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chim cánh cụt không ăn thịt đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Where should the lion live? Tap a spot!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chú sư tử sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Hello, lion!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chào chú sư tử!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "The lion is hungry! What does the lion eat?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chú sư tử đói rồi! Chú sư tử ăn gì nhỉ?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Lions don’t eat fish. Try another one!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Sư tử không ăn cá đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Yum! Lions love meat.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Sư tử thích thịt.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Meat!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Thịt!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Where should the giraffe live? Tap a spot!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bạn hươu cao cổ sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Hello, giraffe!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chào bạn hươu cao cổ!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "The giraffe is hungry! What does the giraffe eat?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bạn hươu cao cổ đói rồi! Bạn hươu cao cổ ăn gì nhỉ?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Yum! Giraffes love leaves.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hươu cao cổ thích lá cây.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Leaves!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lá cây!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Where should the monkey live? Tap a spot!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chú khỉ sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Hello, monkey!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chào chú khỉ!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "The monkey is hungry! What does the monkey eat?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Chú khỉ đói rồi! Chú khỉ ăn gì nhỉ?",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Yum! Monkeys love bananas.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Khỉ thích chuối.",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Penguins don’t eat bananas. Try another one!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chim cánh cụt không ăn chuối đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Yum! Elephants love hay.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Voi thích cỏ khô.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Look, there’s still an empty seat!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, xe vẫn còn ghế trống!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s try again. One friend for each empty seat!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình thử lại nhé. Mỗi ghế trống một bạn!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "The bus is full!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Xe đầy rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Oops! There were only four empty seats.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ơ! Xe chỉ có bốn ghế trống thôi.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s count together.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình cùng đếm nhé.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Monkeys don’t eat leaves. Try another one!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Khỉ không ăn lá cây đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Where should the hippo live? Tap a spot!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bạn hà mã sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Hello, hippo!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chào bạn hà mã!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "The hippo is hungry! What does the hippo eat?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bạn hà mã đói rồi! Bạn hà mã ăn gì nhỉ?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Yum! Hippos love hay.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ngon quá! Hà mã thích cỏ khô.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Penguins don’t eat bamboo. Try another one!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chim cánh cụt không ăn tre đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Pandas don’t eat hay. Try another one!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Gấu trúc không ăn cỏ khô đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Elephants don’t eat fish. Try another one!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Voi không ăn cá đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Elephants don’t eat bamboo. Try another one!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Voi không ăn tre đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Hippos don’t eat leaves. Try another one!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Hà mã không ăn lá cây đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Hippos don’t eat meat. Try another one!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Hà mã không ăn thịt đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Na got a present! She feels happy.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Na được tặng quà! Bạn ấy thấy vui.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Watermelon!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Dưa hấu!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Lions don’t eat leaves. Try another one!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Sư tử không ăn lá cây đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Pandas don’t eat bananas. Try another one!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Gấu trúc không ăn chuối đâu. Thử món khác nhé!",
+"who": "chồi",
+"part": "man1"
+}
+]

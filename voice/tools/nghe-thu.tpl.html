@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giọng Chồi · nghe thử Màn 0–1</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap">
+<style>
+:root{--bg:#f6f8f1;--card:#fff;--fg:#2b2340;--muted:#6b6680;--green:#3f9b3a;--soft:#e3f1df;--yellow:#ffc928;--purple:#4b2a7b;--line:#e2e4da;--f:'Nunito',ui-rounded,system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#17141f;--card:#221e2d;--fg:#f0edf6;--muted:#a8a2b8;--green:#6cc865;--soft:#22331f;--yellow:#ffd451;--purple:#c9a8ff;--line:#353043;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 var(--f);padding:24px max(16px,env(safe-area-inset-left)) 60px}
+main{max-width:860px;margin:0 auto;display:grid;gap:20px}
+h1{margin:0;font-weight:900;color:var(--purple);font-size:clamp(24px,5vw,34px)}
+h2{margin:0;font-weight:900;color:var(--purple);font-size:20px}
+p{margin:0}.muted{color:var(--muted)}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button{font:inherit;cursor:pointer;border:2px solid var(--green);background:var(--soft);color:var(--fg);border-radius:999px;padding:5px 14px;font-weight:800;min-height:38px}
+button.on{background:var(--green);color:#fff}
+button:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+a{color:var(--purple);font-weight:800}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;display:grid;gap:4px}
+.row{display:grid;grid-template-columns:auto auto 1fr;gap:10px;align-items:center;padding:6px 0;border-top:1px dashed var(--line)}
+.row:first-of-type{border-top:0}
+.row .t{min-width:0}.row .k{font-size:12px;color:var(--muted);font-weight:800}
+.pb{min-height:34px;padding:2px 12px}
+</style>
+</head>
+<body>
+<main>
+<header class="bar" style="justify-content:space-between">
+ <div><h1>Giọng Chồi: Màn 0–1</h1><p class="muted">Mọi câu giọng mới. Bấm ▶ để nghe một câu, hoặc nghe liền cả phần.</p></div>
+ <a href="../#">Mở app ▸</a>
+</header>
+<div class="bar"><span class="muted">Tiếng:</span><button data-lang="en" class="on">English</button><button data-lang="vi">Tiếng Việt</button></div>
+<div id="list" style="display:grid;gap:16px"></div>
+</main>
+<script>
+const ROWS=/*ROWS*/null;
+const NAMES={chung:'Cơ chế chung',man0:'Màn 0',man1:'Màn 1',man2:'Màn 2',man3:'Màn 3',man4:'Màn 4',man5:'Màn 5',man6:'Màn 6',man7:'Màn 7'};
+let LANG='en', ctx=null, cur=null, idx={}, bundles={}, stopAll=false;
+const ac=()=>ctx||(ctx=new (window.AudioContext||window.webkitAudioContext)());
+async function index(lang){ return idx[lang]||(idx[lang]=fetch(`${lang}.json`).then(r=>r.json())) }
+async function bundle(lang,b){ const k=lang+b; return bundles[k]||(bundles[k]=fetch(`${lang}-${String(b).padStart(2,'0')}.mp3`).then(r=>r.arrayBuffer())) }
+async function play(lang,h,btn){ const I=await index(lang); const e=I.c[h]; if(!e) return;
+  const buf=await bundle(lang,e[0]); const ab=await ac().decodeAudioData(buf.slice(e[1],e[1]+e[2]));
+  if(cur){ try{cur.onended=null;cur.stop()}catch(_){} } document.querySelectorAll('.pb.on').forEach(x=>x.classList.remove('on'));
+  return new Promise(res=>{ const s=ctx.createBufferSource(); s.buffer=ab; s.connect(ctx.destination); cur=s; btn&&btn.classList.add('on');
+    s.onended=()=>{ btn&&btn.classList.remove('on'); res() }; s.start() }) }
+function render(){ const L=document.getElementById('list'); L.innerHTML='';
+  for(const part of Object.keys(NAMES)){ const rows=(ROWS[part]||[]).filter(r=>r[0]===LANG); if(!rows.length) continue;
+    const sec=document.createElement('section'); sec.innerHTML=`<div class="bar" style="justify-content:space-between"><h2>${NAMES[part]} · ${rows.length} câu</h2><button class="all">▶ Nghe liền</button></div>`;
+    rows.forEach(([lang,h,k,who])=>{ const d=document.createElement('div'); d.className='row';
+      d.innerHTML=`<button class="pb" aria-label="Nghe">▶</button><span class="k">${who==='kid'?'bạn nhỏ':''}</span><span class="t"></span>`; d.querySelector('.t').textContent=k.replace(/^~/,'(chậm) ');
+      d.querySelector('.pb').onclick=e=>{ stopAll=true; play(lang,h,e.currentTarget) }; sec.append(d) });
+    sec.querySelector('.all').onclick=async e=>{ const b=e.currentTarget; if(b.classList.contains('on')){ stopAll=true; return } stopAll=false; b.classList.add('on');
+      const btns=[...sec.querySelectorAll('.pb')]; for(let i=0;i<rows.length&&!stopAll;i++){ await play(rows[i][0],rows[i][1],btns[i]); await new Promise(r=>setTimeout(r,650)) } b.classList.remove('on') };
+    L.append(sec) } }
+document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>{ LANG=b.dataset.lang; document.querySelectorAll('[data-lang]').forEach(x=>x.classList.toggle('on',x===b)); stopAll=true; render() });
+render();
+</script>
+</body>
+</html>
