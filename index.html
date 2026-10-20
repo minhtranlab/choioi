@@ -7180,7 +7180,7 @@ async function shopSounds(){
    web app (see apps-script/Code.gs). On another device the parent logs in with the login name + PIN and the
    progress comes back. Without a sheet address the app still works and keeps everything on this device.
    ========================================================= */
-const SYNC_URL_DEFAULT='';   // the Apps Script web app address (…/exec). Can also be typed in Settings.
+const SYNC_URL_DEFAULT='https://script.google.com/macros/s/AKfycbxoZAmzYyTYv5vDPXHBti7fN1ZUA40q_ZIUzYtc3ygimTO5PkLuZKiQRE0IQLqEE7g6/exec';   // the Apps Script web app address (…/exec). Can also be typed in Settings.
 const syncUrl=()=>String(S.syncUrl||SYNC_URL_DEFAULT||'').trim();
 const BOOT_UPD=S.updatedAt||0;   // this device's last change when the app opened (to compare with the sheet)
 
