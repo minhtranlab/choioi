@@ -4625,8 +4625,8 @@
  },
  {
   "part": "man5",
-  "en": "The builder has three tools: a hammer, a saw and a drill.",
-  "vi": "Bác thợ có ba dụng cụ: cái búa, cái cưa và cái khoan.",
+  "en": "The builder has three tools: a hammer, a saw and a trowel.",
+  "vi": "Bác thợ có ba dụng cụ: cái búa, cái cưa và cái bay.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -4657,14 +4657,6 @@
  },
  {
   "part": "man5",
-  "en": "Whirr, whirr! A drill!",
-  "vi": "Rè rè! Cái khoan!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
   "en": "Now the builder works behind the wall.",
   "vi": "Giờ bác thợ làm việc sau bức tường.",
   "needEn": true,
@@ -4683,14 +4675,6 @@
   "part": "man5",
   "en": "Yes! It’s a hammer. Bang, bang!",
   "vi": "Đúng rồi! Là cái búa. Cộc, cộc!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
-  "en": "Yes! It’s a drill. Whirr, whirr!",
-  "vi": "Đúng rồi! Là cái khoan. Rè rè!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -4857,14 +4841,6 @@
  },
  {
   "part": "man5",
-  "en": "Swish, swish! A blue door for Ben’s garage.",
-  "vi": "Quét quét! Cánh cửa xanh cho nhà để xe của Ben.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
   "en": "Beep, beep! Ben’s truck is in its new garage.",
   "vi": "Bim bim! Xe tải của Ben vào nhà để xe mới rồi.",
   "needEn": true,
@@ -5025,22 +5001,6 @@
  },
  {
   "part": "man5",
-  "en": "Whirr, whirr! I hear a drill.",
-  "vi": "Rè rè! Chồi nghe thấy cái khoan.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
-  "en": "Yes! The builder is using a drill.",
-  "vi": "Đúng rồi! Bác thợ đang dùng cái khoan.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
   "en": "Hmm, that’s three.",
   "vi": "Ơ, đó là số ba.",
   "needEn": true,
@@ -5121,14 +5081,6 @@
  },
  {
   "part": "man5",
-  "en": "Bang, bang! That’s a hammer!",
-  "vi": "Cộc, cộc! Đó là cái búa!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
   "en": "Hmm, that’s a hammer.",
   "vi": "Ơ, đó là cái búa.",
   "needEn": true,
@@ -5137,32 +5089,8 @@
  },
  {
   "part": "man5",
-  "en": "Swish, swish! That’s a saw!",
-  "vi": "Xoẹt, xoẹt! Đó là cái cưa!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
   "en": "Hmm, that’s a saw.",
   "vi": "Ơ, đó là cái cưa.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
-  "en": "Whirr, whirr! That’s a drill!",
-  "vi": "Rè rè! Đó là cái khoan!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
-  "en": "Hmm, that’s a drill.",
-  "vi": "Ơ, đó là cái khoan.",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -5356,6 +5284,54 @@
   "en": "All blue! All blue!",
   "vi": "Màu xanh! Màu xanh!",
   "needEn": false,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man5",
+  "en": "Scrape, scrape! A trowel!",
+  "vi": "Quẹt, quẹt! Cái bay!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man5",
+  "en": "Scrape, scrape! I hear a trowel.",
+  "vi": "Quẹt, quẹt! Chồi nghe thấy cái bay.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man5",
+  "en": "Yes! The builder is using a trowel.",
+  "vi": "Đúng rồi! Bác thợ đang dùng cái bay.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man5",
+  "en": "Yes! It’s a trowel. Scrape, scrape!",
+  "vi": "Đúng rồi! Là cái bay. Quẹt, quẹt!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man5",
+  "en": "Hmm, that’s a trowel.",
+  "vi": "Ơ, đó là cái bay.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man5",
+  "en": "Look! A blue door for Ben’s garage.",
+  "vi": "Nhìn kìa! Cánh cửa xanh cho nhà để xe của Ben.",
+  "needEn": true,
   "needVi": true,
   "slow": false
  }
