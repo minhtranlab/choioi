@@ -1300,11 +1300,12 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .sunset .nightveil{position:absolute;inset:0;background:linear-gradient(#1F2160,#2B2D6E 60%,rgba(43,45,110,.5));opacity:0;transition:opacity 1.6s;pointer-events:none;z-index:1}
 .sunset.night .nightveil{opacity:.85}
 .sunset .stars{position:absolute;inset:0;z-index:1;pointer-events:none}
-.sunset .stars i{position:absolute;width:1.6%;aspect-ratio:1;border-radius:50%;background:#FFF3B0;opacity:0;box-shadow:0 0 6px #FFF3B0}
-.sunset.night .stars i{animation:fsShow .4s 1.2s forwards}
-.bigsun{position:absolute;left:58%;top:32%;width:16%;border:0;background:none;padding:0;z-index:2;transition:top 1.6s ease-in,opacity 1.6s;animation:nextPulse 1.6s ease-in-out infinite}
+.sunset .stars i{position:absolute;width:1.5%;aspect-ratio:1;background:#FFF8D6;opacity:0;clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%)}
+.sunset.night .stars i{animation:fsShow .4s 1.2s forwards,twinkle 2.6s 1.8s ease-in-out infinite}
+@keyframes twinkle{50%{opacity:.45}}
+.bigsun{position:absolute;left:62%;top:34%;width:16%;translate:-50% -50%;border:0;background:none;padding:0;z-index:2;pointer-events:auto;transition:filter 2.8s;animation:nextPulse 1.6s ease-in-out infinite}
 .bigsun svg{width:100%;height:auto;display:block}
-.bigsun.down{top:78%;opacity:0;animation:none}
+.bigsun.down{animation:none;filter:saturate(1.6) hue-rotate(-18deg) brightness(.95)}.bigsun .rays{transition:opacity 1.6s}.bigsun.down .rays{opacity:0}
 .sunset .skid,.sunset .smap{z-index:3}
 .sunset .tp-sun{display:none}
 .smap{position:absolute;left:38%;bottom:30%;width:22%}.smap svg{width:100%;height:auto;display:block}
@@ -1517,7 +1518,7 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .posintro{position:relative;width:min(100%,calc(62vh * 1.2));aspect-ratio:120/100;margin:0 auto;background:#EAF6F0;border-radius:18px;border:3px solid var(--pl)}
 .posintro .pi-svg{position:absolute;inset:4%}.posintro .pi-svg svg{width:100%;height:100%;display:block}.posintro .pi-svg.hop{animation:pop .35s}
 .posintro .pi-hot{position:absolute;border:0;background:transparent;border-radius:14px;cursor:pointer}.posintro .pi-hot:active{background:#FFE06633}
-.posintro .pi-word{position:absolute;left:50%;top:3%;translate:-50% 0;background:#FFE066;border:3px solid var(--pl);border-radius:14px;padding:2px 16px;font:900 clamp(18px,3.4vw,30px) Nunito,sans-serif;color:var(--pl);opacity:0;transition:opacity .3s}.posintro .pi-word.show{opacity:1}
+.posintro .pi-word{position:absolute;left:50%;top:3%;translate:-50% 0;white-space:nowrap;background:#FFE066;border:3px solid var(--pl);border-radius:14px;padding:2px 16px;font:900 clamp(18px,3.4vw,30px) Nunito,sans-serif;color:var(--pl);opacity:0;transition:opacity .3s}.posintro .pi-word.show{opacity:1}
 .pic.kidsay svg{width:auto;max-width:100%;max-height:min(40vh,300px);display:block;margin:0 auto}
 .trackbox{overflow:hidden}.trackbox .fxmove{z-index:1;opacity:.9}.trackbox .tk-ico.end.grow{transition:transform .9s cubic-bezier(.3,1.6,.5,1);transform:scale(1.45)}
 .mixbtn.locked>svg{filter:grayscale(.85);opacity:.6}.mixbtn .glock{position:absolute;left:50%;top:42%;width:40%;translate:-50% -50%}.mixbtn .glock svg{width:100%;display:block}.mixbtn.nope{animation:wob .45s}
@@ -1689,7 +1690,7 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .tp-pic{position:absolute;z-index:6;width:12%;translate:-50% 0;background:#fff;border-radius:50%;padding:1%;animation:pop .4s}.tp-pic svg{width:100%;height:auto;display:block}
 .tp-mic{position:absolute;z-index:7;width:clamp(56px,13cqh,88px);height:clamp(56px,13cqh,88px)}
 .popfield{container-type:size;--u:1cqh}
-.isocity.holding,.isocity.holding *{cursor:none!important}.ihold{transform:translate(-50%,-60%) scale(1.15);filter:drop-shadow(0 4px 4px rgba(54,29,70,.3))}
+.isocity.zhold,.isocity.zhold *{cursor:none!important}.ihold{transform:translate(-50%,-60%) scale(1.15);filter:drop-shadow(0 4px 4px rgba(54,29,70,.3))}
 
 .musicbtn .cnt{position:absolute;right:-8px;top:-8px;min-width:30px;height:30px;padding:0 7px;border-radius:15px;background:var(--berry);color:#fff;font-weight:900;font-size:16px;display:grid;place-items:center;box-shadow:0 0 0 3px #fff}
 .musicbtn.fresh>svg{animation:nextPulse 1.4s ease-in-out infinite}
@@ -1759,6 +1760,51 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .kcat{position:absolute;width:11%;translate:-50% 0;z-index:5;animation:pop .4s}.kcat svg{width:100%;height:auto;display:block}
 .kcat.onshelf{left:78%;top:4%;bottom:auto;width:9%}
 .sbrow{flex:none}
+
+/* ---- 20/10 b: after the Màn 2 play-test ---- */
+.sbox .tapwig{animation:tapWig .7s ease}
+@keyframes tapWig{20%{transform:rotate(-5deg) translateY(-4%)}45%{transform:rotate(4deg)}70%{transform:rotate(-2deg)}}
+.sbox .lantern.tapswing{animation:lsing .28s ease-in-out 3 alternate}
+.sbox .tp{transform-box:fill-box;transform-origin:50% 100%}
+.sbox .tp-tree.shakeme{animation:shakeme .7s ease}.sbox .tp-cloud.driftme{animation:driftme 1.6s ease-in-out}.sbox .tp-sun.shine{animation:shine 1.2s ease;transform-origin:50% 50%}
+.sunset .sunclip{position:absolute;inset:0;z-index:2;pointer-events:none;clip-path:polygon(0 0,100% 0,100% 61.5%,92% 64.5%,79% 66.8%,65% 66.7%,50% 64.3%,35% 61.4%,21% 61%,0 64%)}
+.ffly .fnum{position:absolute;left:50%;top:-30%;translate:-50% 0;font:900 clamp(14px,4.2cqh,26px) Nunito,sans-serif;color:#FFE066;text-shadow:0 0 6px #000,0 2px 0 #3A1B49;opacity:0;pointer-events:none}
+.ffly.lit .fnum{opacity:1;animation:pop .4s}
+.skid .fnose{position:absolute;left:54%;top:23%;width:9%;aspect-ratio:1;border-radius:50%;background:#FFF3A0;box-shadow:0 0 10px 4px #FFE066;animation:pop .4s;pointer-events:none}
+.skid.bouncy{animation:kidBounce .32s ease-in-out infinite alternate}
+@keyframes kidBounce{to{transform:translateY(-4%)}}
+.skid.jumpy{animation:actHop .7s cubic-bezier(.3,1.5,.5,1)}
+.lantern.popopen{animation:lpop .55s ease}
+@keyframes lpop{30%{scale:1.25;rotate:-8deg}60%{scale:.95;rotate:5deg}}
+.bfly{position:absolute;width:8.5%;translate:-50% -50%;z-index:6;pointer-events:none;transition:opacity 1s}.bfly.gone{opacity:0}
+.bfly svg{width:100%;height:auto;display:block;overflow:visible;animation:bfHover 1.3s ease-in-out infinite alternate}
+@keyframes bfHover{from{translate:0 -8%}to{translate:4% 10%}}
+.bfly .bwing{transform-box:view-box;transform-origin:0 0;animation:bflap .16s ease-in-out infinite alternate}
+@keyframes bflap{to{transform:scaleX(.35)}}
+.sweet{position:absolute;width:5.5%;translate:-50% -50%;z-index:6;pointer-events:none}.sweet svg{width:100%;height:auto;display:block}
+.storm .stormveil{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(#14163A,#24275A 65%,rgba(30,32,70,.25));opacity:0;transition:opacity 2.6s}
+.storm.darken .stormveil{opacity:.62}.storm.calm .stormveil{opacity:.3}
+.storm .scloud{position:absolute;z-index:3;pointer-events:none}.storm .scloud svg{width:100%;height:auto;display:block}
+.storm .skid{z-index:4}.storm .lantern,.storm .lstring{z-index:3}
+.storm.blowing .lantern:not(.loose){animation:lstorm .42s ease-in-out infinite alternate}
+@keyframes lstorm{from{rotate:-14deg}to{rotate:22deg}}
+.storm .srain{position:absolute;inset:0;z-index:5;pointer-events:none;opacity:0;transition:opacity 1s;overflow:hidden}
+.storm.raining .srain{opacity:.85}
+.storm .srain i{position:absolute;top:-12%;width:.5%;height:9%;border-radius:3px;background:linear-gradient(rgba(200,225,255,0),rgba(200,225,255,.95));rotate:12deg;animation:rainDrop .6s linear infinite}
+@keyframes rainDrop{to{transform:translateY(1300%)}}
+.storm .sflash{position:absolute;inset:0;z-index:7;pointer-events:none;background:#fff;opacity:0}
+.storm .sflash.go{animation:sflash 1s ease-out}
+@keyframes sflash{0%{opacity:0}8%{opacity:.85}22%{opacity:.1}32%{opacity:.6}55%,100%{opacity:0}}
+.storm .sbolt{position:absolute;left:66%;top:12%;width:8%;z-index:6;pointer-events:none;opacity:0}.storm .sbolt svg{width:100%;height:auto;display:block}
+.storm .sbolt.go{animation:sbolt 1s ease-out}
+@keyframes sbolt{0%,4%{opacity:0}8%,40%{opacity:1}60%,100%{opacity:0}}
+.skid.shiver{animation:shiver .1s linear infinite alternate}
+@keyframes shiver{from{transform:translateX(-1.5%)}to{transform:translateX(1.5%)}}
+.lbugbox .lbranch{position:absolute;right:-6%;bottom:1%;width:92%;z-index:1}.lbugbox .lbranch svg{width:100%;height:auto;display:block;overflow:visible}
+.lbugbox .lbug{left:47%;bottom:42%;width:17%}
+.flashcard .cover{cursor:pointer}
+
+.citycard .nextbtn.citynext{position:absolute;right:max(14px,env(safe-area-inset-right,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:6}
 </style>
 
 <div id="root"></div>
@@ -1969,7 +2015,7 @@ function setCaption(en,vi){ const c=$('#caption'); if(!c) return; c.innerHTML=`<
 function mood(m){ document.querySelectorAll('.mascot').forEach(x=>x.dataset.mood=m) }
 /** Chồi says one line in the chosen language; the other language is the subtitle. Resolves after the line plus a pause. */
 /** what the dock ear button replays: the latest question or instruction (consecutive ones together) */
-const NOT_Q=/^(Oh no|Try again|Now it’s your turn|Watch me|You kept|Well done|Great|Yay|Wow|Good|Yes|Hello|Bye|Look at your city|That’s|There it is|You found|Hoan hô|Almost)/;
+const NOT_Q=/^(Oh no|Try again|Now it’s your turn|Are you ready|Watch me|You kept|Well done|Great|Yay|Wow|Good|Yes|Hello|Bye|Look at your city|That’s|There it is|You found|Hoan hô|Almost)/;
 let lastWasQ=false;
 const isQline=(en,opt={})=>opt.q===true||(opt.q!==false&&!NOT_Q.test(en)&&(/\?$/.test(en)||/^(Tap|Give|Find|Pop|Put|Make|Let’s make|Clap|Jump|Count|Play the drum|Listen|Say|Show|Build|Feed|Pick|Choose|Copy|Help|Where|Which|How|What|Who|Can you|Roll|Draw|Press|Hold|Hug)\b/.test(en)));
 function noteQ(en,vi,opt){ if(!RUN||opt.replay) return; const isQ=isQline(en,opt);
@@ -2002,9 +2048,9 @@ let SAYN=0;
 /* "Watch me first!", "Now it’s your turn!" and a review's "Remember: …" wait for the next question, so they are said
    over the new scene, right before the thing to do (never over an empty card) */
 function pendingPre(){ if(!RUN) return []; const out=(RUN.preQ||[]).splice(0); if(RUN.remindQ&&!RUN.inDemo){ out.push(RUN.remindQ); RUN.remindQ=null } return out }
-async function flushPre(){ for(const l of pendingPre()) await say(l[0],l[1],{_pre:1,gap:200}) }
+async function flushPre(){ for(const l of pendingPre()){ await say(l[0],l[1],{_pre:1,gap:200}); if(l[2]) await sleep(l[2]) } }   // l[2]: a pause after it (ms)
 function say(en,vi,opt={}){
-  if(RUN&&!opt._pre&&!opt.replay&&!opt.kid&&!opt.polly&&((RUN.preQ&&RUN.preQ.length)||(RUN.remindQ&&!RUN.inDemo))&&isQline(en,opt)){ const pre=pendingPre(); return pre.reduce((p,l)=>p.then(()=>say(l[0],l[1],{_pre:1,gap:200})),Promise.resolve()).then(()=>say(en,vi,{...opt,_pre:1})) }
+  if(RUN&&!opt._pre&&!opt.replay&&!opt.kid&&!opt.polly&&((RUN.preQ&&RUN.preQ.length)||(RUN.remindQ&&!RUN.inDemo))&&isQline(en,opt)){ const pre=pendingPre(); return pre.reduce((p,l)=>p.then(()=>say(l[0],l[1],{_pre:1,gap:200})).then(()=>l[2]?sleep(l[2]):0),Promise.resolve()).then(()=>say(en,vi,{...opt,_pre:1})) }
   noteQ(en,vi,opt); if(window.__sayLog) window.__sayLog.push([en,vi||'',opt.rate||0]);
   const V=isVi()&&!!vi; const text=V?vi:en, sub=V?en:vi;
   setCaption(text,sub===text?'':sub);
@@ -2338,10 +2384,11 @@ function tvTapPad(onTap){ const bar=padBar(); if(!S.tv||!bar||!RUN) return ()=>{
   return ()=>{ bar.innerHTML=''; bar.classList.remove('live') } }
 function tapOnce(els,{nudge=true,hint}={}){
   return new Promise((res,rej)=>{
+    els.forEach(e=>e.dataset.live='1');
     const unpad=tvPads(els); const stopNudge=nudge?idleNudge(els):()=>{};
     const isNext=els.length===1&&els[0].classList.contains('nextbtn'), hm=hint===false||isNext?null:(hint==='always'||els.length===1?'always':'armed');
     const stopHint=hm?hintHand(()=>els.find(e=>e.dataset.ok==='1'&&!e.dataset.used),{always:hm==='always'}):()=>{};
-    const hs=[]; const cleanup=()=>{ hs.forEach(([e,f])=>e.removeEventListener('click',f)); hs.length=0; abortFns.delete(ab); unpad(); stopNudge(); stopHint() };
+    const hs=[]; const cleanup=()=>{ hs.forEach(([e,f])=>e.removeEventListener('click',f)); hs.length=0; els.forEach(e=>delete e.dataset.live); abortFns.delete(ab); unpad(); stopNudge(); stopHint() };
     const ab=()=>{ cleanup(); rej(ABORT) };
     els.forEach((e,i)=>{ const f=ev=>{ ev.stopPropagation(); cleanup(); res(i) }; e.addEventListener('click',f); hs.push([e,f]) });
     abortFns.add(ab); if(RUN&&RUN.aborted) return ab();
@@ -2349,7 +2396,7 @@ function tapOnce(els,{nudge=true,hint}={}){
   });
 }
 async function watchMe(){ turn('choi'); await say('Watch me first!','Xem Chồi làm trước nhé!') }
-async function yourTurn(){ Hand.hide(); await sleep(300); turn('kid'); SFX.ding(); await say('Now it’s your turn!','Giờ đến lượt con!') }
+async function yourTurn(){ Hand.hide(); await sleep(800); turn('kid'); SFX.ding(); await say('Are you ready? Now it’s your turn!','Con sẵn sàng chưa? Giờ đến lượt con!',{q:false}); await sleep(900) }
 
 /* ---------------- choice rounds ---------------- */
 /** One child round: pictures appear first, then Chồi asks. First tap is what counts. */
@@ -2371,9 +2418,9 @@ async function kidRound(sk,R){
 /** Choice activity: one demo round by Chồi (hand taps the answer), then child rounds. */
 /** a game the child has already been shown: no 'watch me' demo the second time */
 function seenDemo(key){ S.seenDemo=S.seenDemo||{}; const was=!!S.seenDemo[key]; S.seenDemo[key]=1; save(); return was&&!(RUN&&RUN.dev&&RUN.forceDemo) }
-async function choiceActivity(sk,rounds,intro,make){
+async function choiceActivity(sk,rounds,intro,make,{mixIntro=true}={}){
   const noShow=RUN&&RUN.mode?!wantDemo('choice'):(typeSeen('choice'),seenDemo('choice:'+sk.id+':'+intro[0]));
-  let first=make(noShow?0:-1); await say(...intro);
+  let first=make(noShow?0:-1); if(mixIntro||!inMix()) await say(...intro);
   if(noShow){ turn('kid'); for(let r=0;r<rounds;r++){ const R=r?make(r):first; await kidRound(sk,R); await sleep(500) } turn(null); return }
   await watchMe();
   let R=first; if(R.pre) await R.pre(); await reveal(R.opts); await sleep(300); await flushPre(); await R.ask(); await sleep(300);
@@ -2830,7 +2877,7 @@ const choiceFmts=game=>(FMTS[game]||[]).filter(f=>!(EXTRA[game]&&EXTRA[game][f])
 const kidTapDelay=()=>HASH==='auto'?3:HASH==='time'?700:450*SPEED;
 
 /** pick among visible options; returns true if right on the first tap */
-async function stepPick(sk,opts,correct,{ask,labels,onRight,record=true,concept}={}){
+async function stepPick(sk,opts,correct,{ask,labels,onRight,onWrong,retry=['Let’s look again.','Mình nhìn lại nhé.'],record=true,concept}={}){
   if(concept&&RUN) RUN.concept=concept;
   opts.forEach((o,i)=>{ delete o.dataset.ok; o.classList.remove('hint'); if(i===correct) o.dataset.ok='1' });
   // the child may answer while Chồi is still asking: the options listen straight away
@@ -2841,17 +2888,18 @@ async function stepPick(sk,opts,correct,{ask,labels,onRight,record=true,concept}
     if(i===correct){ SFX.chime(); burst(center(opts[i])); if(first&&record) rec(sk,true,performance.now()-t0); if(onRight) await onRight(i); return first }
     opts[i].classList.remove('nope'); void opts[i].offsetWidth; opts[i].classList.add('nope'); boing();
     p=tapOnce(opts); let early=false;
-    const Lb=labels&&labels[i]; if(Lb) early=await race(()=>say(`Hmm, ${Lb[0]}.`,`Ơ, ${Lb[1]}.`,{gap:300}),p);
-    if(first){ if(record) rec(sk,false,performance.now()-t0); first=false; if(!early) early=await race(()=>say('Let’s look again.','Mình nhìn lại nhé.'),p) }
+    if(onWrong) early=await race(()=>onWrong(i),p);
+    const Lb=labels&&labels[i]; if(Lb&&!early) early=await race(()=>say(`Hmm, ${Lb[0]}.`,`Ơ, ${Lb[1]}.`,{gap:300}),p);
+    if(first){ if(record) rec(sk,false,performance.now()-t0); first=false; if(!early&&retry) early=await race(()=>say(...retry),p) }
     else if(!early){ opts[correct].classList.add('hint'); await Hand.moveTo(center(opts[correct]),600); await sleep(600); Hand.hide() }
     if(ask&&!early) await race(ask,p) }
 }
 /** count taps on one or more buttons until the child stops for a moment */
 function countTaps(btns,onTap,{idle=2000,auto=0,cap=0,fastAt=0}={}){
-  return new Promise((res,rej)=>{ let c=0,timer=null,fin=false; const unpad=tvTapPad(()=>{ const b=btns.find(x=>!x.dataset.used)||btns[0]; if(b&&b.onclick) b.onclick() });
+  return new Promise((res,rej)=>{ let c=0,timer=null,fin=false; btns.forEach(b=>b.dataset.live='1'); const unlive=()=>btns.forEach(b=>delete b.dataset.live); const unpad=tvTapPad(()=>{ const b=btns.find(x=>!x.dataset.used)||btns[0]; if(b&&b.onclick) b.onclick() });
     const stopNudge=idleNudge(btns,()=>c===0,{point:true}); const stopHint=hintHand(()=>btns.find(x=>!x.dataset.used&&x.style.visibility!=='hidden')||btns[0]);
-    const ab=()=>{ fin=true; clearTimeout(timer); stopNudge(); stopHint(); unpad(); rej(ABORT) }; abortFns.add(ab);
-    let waitDrag=0; const done=()=>{ if(fin) return; if(DRAGGING>0&&waitDrag++<6){ timer=setTimeout(done,600); return } fin=true; clearTimeout(timer); stopNudge(); abortFns.delete(ab); unpad(); btns.forEach(b=>b.onclick=null); res(c) };
+    const ab=()=>{ fin=true; clearTimeout(timer); stopNudge(); stopHint(); unpad(); unlive(); rej(ABORT) }; abortFns.add(ab);
+    let waitDrag=0; const done=()=>{ if(fin) return; if(DRAGGING>0&&waitDrag++<6){ timer=setTimeout(done,600); return } fin=true; clearTimeout(timer); stopNudge(); abortFns.delete(ab); unpad(); unlive(); btns.forEach(b=>b.onclick=null); res(c) };
     btns.forEach(b=>b.onclick=()=>{ if(fin||b.dataset.used) return; c++; stopHint(); onTap(c,b); clearTimeout(timer);
       if(cap&&c>=cap){ fin=true; btns.forEach(x=>x.onclick=null); setTimeout(()=>{ fin=false; done() },500*SPEED); return }   // too many taps: stop here
       timer=setTimeout(done,(fastAt&&c===fastAt?450:idle)*SPEED) });
@@ -2865,7 +2913,7 @@ function idleNudge(els,still=()=>true,{point=false}={}){
     if(n%2===1){ await askAgain() } else wig();
     if(n<5) t=setTimeout(tick,(n%2?9000:11000)) };
   // taps that miss everything: after a few, show what to tap
-  const host=$('#card'); const onMiss=async e=>{ if(!live()||els.some(x=>x.contains(e.target))) return; miss++;
+  const host=$('#card'); const onMiss=async e=>{ if(!live()||els.some(x=>x.contains(e.target))||e.target.closest('.skid,.sthing,.actor,.tp,.lantern,.ffly')) return; miss++;
     if(miss%3===0){ wig(); if(point){ const tg=els.find(x=>!x.dataset.used&&!x.disabled)||els[0]; try{ await Hand.moveTo(center(tg),500); await Hand.tap(); await sleep(400) }catch(_){} Hand.hide() } } };
   if(host) host.addEventListener('pointerdown',onMiss,true);
   t=setTimeout(tick,12000); return ()=>{ clearTimeout(t); n=99; if(host) host.removeEventListener('pointerdown',onMiss,true) } }
@@ -2897,7 +2945,7 @@ function wantDemo(key){ const seen=typeSeen(key); if(RUN&&RUN.dev&&RUN.forceDemo
 /** Chồi's demo round, when it is wanted; otherwise straight to the child's turn */
 async function demoOr(key,fn){ if(wantDemo(key)){ turn('choi'); RUN.inDemo=true; RUN.preQ=[['Watch me first!','Xem Chồi làm trước nhé!']];
     try{ await fn() } finally { if(RUN){ RUN.inDemo=false; if(RUN.preQ&&RUN.preQ.length) (window.__lostPre=window.__lostPre||[]).push(key+':watch'); RUN.preQ=[] } }
-    Hand.hide(); await sleep(300); turn('kid'); SFX.ding(); RUN.preQ=[['Now it’s your turn!','Giờ đến lượt con!']]; return true }
+    Hand.hide(); await sleep(800); turn('kid'); SFX.ding(); RUN.preQ=[['Are you ready? Now it’s your turn!','Con sẵn sàng chưa? Giờ đến lượt con!',900]]; return true }
   turn('kid'); return false }
 const REMIND={
  'L2.M.NUM.02':['Remember: touch each one, and count.','Nhớ nhé: chạm từng cái rồi đếm.'],
@@ -2919,7 +2967,7 @@ const REMIND={
  'L2.E.PH.03':['Remember: one clap for each sound.','Nhớ nhé: mỗi tiếng vỗ một cái.'],
  'L2.E.WR.02':['Remember: start at the green circle.','Nhớ nhé: bắt đầu từ vòng tròn xanh.'],
 };
-async function inMode(mode,fn,skill){ const prev=RUN.mode, prevR=RUN.remindQ; RUN.mode=mode; if(mode==='review'&&skill&&REMIND[skill]) RUN.remindQ=REMIND[skill];   // said with the first question
+async function inMode(mode,fn,skill){ const prev=RUN.mode, prevR=RUN.remindQ; RUN.mode=mode; if(mode==='review'&&skill&&REMIND[skill]&&!RUN.mix) RUN.remindQ=REMIND[skill];   // said with the first question
   try{ return await fn() } finally { if(RUN){ RUN.mode=prev; RUN.remindQ=prevR||null } } }
 const teachIt=fn=>inMode('teach',fn), practise=fn=>inMode('practice',fn), reviewIt=(skill,fn)=>inMode('review',fn,skill);
 /* Mầm (bridge) ideas: taught like new the first time in a school year (from August), then only asked */
@@ -3051,11 +3099,14 @@ wrapGame('countAlong','shelf'); addFormat('countAlong','hideseek',hideSeek);
 
 /* ---- 3. drum the dots (spot 1, 2, 3 at a glance) ---- */
 addFormat('flash','drum',async(sk,rounds)=>{
-  await say('Look at the dots, then bang the drum!','Nhìn các chấm, rồi gõ trống nhé!');
+  await tell('Look at the dots, then bang the drum!','Nhìn các chấm, rồi gõ trống nhé!'); let kidN=0;
   const round=async(n,demo)=>{
     const lay=pick(LAY[n]); const c=card(); const fc=el(`<div class="flashcard plain fade">${dotsSVG('dice',lay)}<div class="cover">?</div></div>`);
     const dr=el(`<button class="drumbtn pre" aria-label="Trống">${ART.drum()}</button>`); const beats=el(`<div class="beats"></div>`); c.append(fc,beats,dr);
-    await say('Look quickly!','Nhìn nhanh nào!',{gap:150}); $('.cover',fc).style.opacity=0; await sleep(2000); $('.cover',fc).style.opacity=1;
+    if(!demo){ await sleep(400); await flushPre() }   // "Are you ready? Now it's your turn!" before the dots show
+    await say('Look quickly!','Nhìn nhanh nào!',{gap:150}); $('.cover',fc).style.opacity=0; await sleep(demo||kidN===0?3000:2000); $('.cover',fc).style.opacity=1; if(!demo) kidN++;
+    // not sure how many? tap the "?" to see the dots again, for a moment
+    { const cv=$('.cover',fc); let peek=false; cv.addEventListener('click',async e=>{ e.stopPropagation(); if(peek||cv.style.opacity==='0') return; peek=true; SFX.soft(); cv.style.opacity=0; await rawWait(1000); if(cv.isConnected&&cv.dataset.open!=='1') cv.style.opacity=1; peek=false }) }
     await reveal([dr]); await say('One drum beat for each dot!','Mỗi chấm con gõ trống một cái nhé!',{q:true});
     const hit=k=>{ dr.classList.remove('beat'); void dr.offsetWidth; dr.classList.add('beat'); beats.append(el('<i></i>')); tone(150,.3,'sine',.45,0,50); noise(.05,.2,0,400) };
     if(demo){ await countDots(fc,'dice',lay,['dots','chấm']); await say(`So I bang the drum ${n===1?'once':W[n]+' times'}.`,`Vậy Chồi gõ trống ${VI_N[n]} cái.`,{gap:150});
@@ -3066,7 +3117,7 @@ addFormat('flash','drum',async(sk,rounds)=>{
       reset:()=>{ beats.innerHTML='' },
       retry:async()=>{ await say('Let’s look at the dots again.','Mình nhìn lại các chấm nhé.',{gap:150}); cov.style.opacity=0; await sleep(2500); cov.style.opacity=1; await say('Now bang the drum. One beat for each dot!','Giờ con gõ trống nhé. Mỗi chấm một cái!') },
       answer:async()=>{ beats.innerHTML=''; cov.style.opacity=0; await say(`Look, there ${n>1?'are':'is'} ${W[n]} ${n>1?'dots':'dot'}. Let’s count: ${W.slice(1,n+1).join(', ')}.`,`Nhìn này, có ${VI_N[n]} chấm. Mình đếm nhé: ${VI_N.slice(1,n+1).join(', ')}.`) }});
-    cov.style.opacity=0;
+    cov.dataset.open='1'; cov.style.opacity=0;
     if(r.ok||r.second){ if(r.second) await say('You got it!','Đúng rồi!',{gap:150}); await say(`${cap(W[n])} ${n>1?'dots':'dot'}, ${W[n]} ${n>1?'beats':'beat'}!`,`${cap(VI_N[n])} chấm, ${VI_N[n]} tiếng trống!`) }
     return r.ok };
   let prev=1+rand(3); await demoOr('drum',()=>round(prev,true));
@@ -3339,11 +3390,11 @@ function feelScene(f,name,variant){
   return {el:sc, play, reveal(face=f){ hidden=false; setFace(face); const k=sc.querySelector('.fs-kid'); k.classList.remove('pop'); void k.offsetWidth; k.classList.add('pop') }, kid:()=>sc.querySelector('.fs-kid')};
 }
 /** while the child presses and holds: a friend walks over for a hug (sad, scared), or the friend breathes in and out (angry) */
-function helpFx(SC,H){
-  const fr=SC.kid(), sc=SC.el; const breathe=H.f==='angry'; let raf=0, alive=true, faced=false; let hug=null;
+function helpFx(SC,H,tg){
+  const fr=SC.kid(), sc=SC.el; tg=tg||fr; const breathe=H.f==='angry'; let raf=0, alive=true, faced=false; let hug=null;
   if(!breathe&&H.f!=='tired'){ const who=CAST.find(n=>n!==H.name)||'Na'; hug=el(`<div class="fs-hugger stk">${kidSVG(who,'happy')}</div>`); sc.append(hug) }
   if(breathe) fr.classList.add('breathing');
-  const step=()=>{ if(!alive) return; const p=parseFloat(fr.style.getPropertyValue('--hold'))||0; sc.style.setProperty('--hp',p);
+  const step=()=>{ if(!alive) return; const p=parseFloat(tg.style.getPropertyValue('--hold'))||0; sc.style.setProperty('--hp',p);
     if(breathe&&p>.55&&!faced){ faced=true; setKidFace(fr,H.name,'neutral') } raf=requestAnimationFrame(step) };
   raf=requestAnimationFrame(step);
   return {done:async()=>{ alive=false; cancelAnimationFrame(raf); sc.style.setProperty('--hp',1);
@@ -3364,7 +3415,7 @@ async function feelingsIntro(list,lead){
 /** press and hold (a hug, a deep breath, pulling a blanket); a ring fills up. TV mode: hold the big pad */
 function holdOn(target,ms=1600){
   return new Promise((res,rej)=>{
-    const ring=el(`<div class="holdring"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17"/></svg></div>`); target.append(ring); const circ=ring.querySelector('circle');
+    const ring=el(`<div class="holdring"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17"/></svg></div>`); target.append(ring); const circ=ring.querySelector('circle'); target.dataset.live='1';
     let t0=0, raf=null, done=false; const total=ms*Math.max(SPEED,.05);
     const step=()=>{ const p=Math.min(1,(performance.now()-t0)/total); circ.style.strokeDashoffset=107*(1-p); target.style.setProperty('--hold',p);
       if(p>=1){ finish(); return } raf=requestAnimationFrame(step) };
@@ -3378,7 +3429,7 @@ function holdOn(target,ms=1600){
     if(S.tv&&bar){ bar.innerHTML=''; bar.classList.add('live'); pad=el(`<button class="tvpad one hold" style="--c:#FFFFFF" aria-label="Nhấn giữ">${ICON.hand}</button>`); bar.append(pad);
       pad.addEventListener('pointerdown',down); ['pointerup','pointerleave','pointercancel'].forEach(ev=>pad.addEventListener(ev,up)) }
     target.addEventListener('pointerdown',down); ['pointerup','pointerleave','pointercancel'].forEach(ev=>target.addEventListener(ev,up));
-    const cleanup=()=>{ done=true; stopN(); cancelAnimationFrame(raf); ring.remove(); target.classList.remove('holding'); if(pad){ bar.innerHTML=''; bar.classList.remove('live') } abortFns.delete(ab) };
+    const cleanup=()=>{ done=true; stopN(); cancelAnimationFrame(raf); ring.remove(); target.classList.remove('holding'); delete target.dataset.live; if(pad){ bar.innerHTML=''; bar.classList.remove('live') } abortFns.delete(ab) };
     function finish(){ cleanup(); SFX.chime(); res() }
     const ab=()=>{ cleanup(); rej(ABORT) }; abortFns.add(ab);
     if(AUTO) setTimeout(()=>{ if(!done) finish() },HASH==='auto'?10:600*SPEED);
@@ -3510,9 +3561,9 @@ function playTune(f){ const a=ac(); if(!a) return 0; const T=TUNES[f], beat=60/T
   if(T.rumble) noise(beat*T.notes.length,.06,0,180);
   const dur=(t-a.currentTime)*1000; setTimeout(()=>Music.level(1),dur); return dur }
 /** real music (public-domain pieces played with recorded instruments, see tts/feelmusic.py); falls back to the little synth tune */
-const FMUSIC={buf:{},cur:null};
+const FMUSIC={buf:{},cur:null}; const MUSIC_V='2';   // bump when the music files are made again (20/10: equal loudness), so no old copy is used
 async function feelBuf(f){ if(FMUSIC.buf[f]) return FMUSIC.buf[f]; const a=ac(); if(!a) return null;
-  try{ const r=await fetch(`music/feel-${f}.mp3`); if(!r.ok) throw 0; const ab=await r.arrayBuffer(); const b=await new Promise((res,rej)=>{ const p=a.decodeAudioData(ab,res,rej); if(p&&p.then) p.then(res,rej) }); return FMUSIC.buf[f]=b }catch(e){ return null } }
+  try{ const r=await fetch(`music/feel-${f}.mp3?v=${MUSIC_V}`); if(!r.ok) throw 0; const ab=await r.arrayBuffer(); const b=await new Promise((res,rej)=>{ const p=a.decodeAudioData(ab,res,rej); if(p&&p.then) p.then(res,rej) }); return FMUSIC.buf[f]=b }catch(e){ return null } }
 function stopFeelMusic(){ const c=FMUSIC.cur; FMUSIC.cur=null; if(c){ try{ c.g.gain.setTargetAtTime(0,ac().currentTime,.08); c.s.stop(ac().currentTime+.4) }catch(e){} c.done() } }
 async function playFeelMusic(f,maxSec=9){
   stopFeelMusic(); if(FAST){ await sleep(20); return } const a=ac(); const b=await Promise.race([feelBuf(f),rawWait(4000).then(()=>null)]);
@@ -4170,7 +4221,7 @@ async function goodbye(){
 /** a finished level: breathing (only in the big-feelings lesson), a present for the city, a happy wave */
 async function afterLevel(sess){
   const plan=RUN&&RUN.plan; if(plan&&plan.mission&&plan.mission.id==='L2.W.FEEL.05') await breathing();
-  await cityGift();
+  await cityGift({free:true});   // then the child stays in the zoo and plays, until the arrow
   const name=S.child?S.child.name:'';
   const c=card(); c.append(el(`<div class="mascot fade" data-mood="happy" data-wave="1" style="width:min(44vw,180px)">${mascotSVG()}</div>`));
   if(S.finishing===today()){ S.finishing=null; save(); await say(`Thank you for playing, ${name}! Time for a rest now.`,`Cảm ơn con đã chơi cùng Chồi, ${name}! Giờ mình nghỉ nhé.`); await say('See you next time!','Hẹn gặp lại con nhé!') }
@@ -4989,7 +5040,6 @@ async function findMapPiece(n,lines){
   const tx=mr.left+(38+cx*48)/220*mr.width, ty=mr.top+(43+cy*58)/150*mr.height, sc=(58/220*mr.width)/pr.width;
   pc.style.animation='none';
   const a=pc.animate([{transform:'translate(-50%,-50%)'},{transform:`translate(calc(-50% + ${(tx-(pr.left+pr.width/2))*.5}px),calc(-50% + ${(ty-(pr.top+pr.height/2))*.5-60}px)) scale(${(1+sc)/2}) rotate(-12deg)`},{transform:`translate(calc(-50% + ${tx-(pr.left+pr.width/2)}px),calc(-50% + ${ty-(pr.top+pr.height/2)}px)) scale(${sc})`}],{duration:Math.max(1,1100*SPEED),easing:'ease-in-out',fill:'forwards'});
-  const tune=playMusic('map-ode',{gain:.62,under:true,maxSec:9}); heardPiece('ode');   // the map-piece tune: Ode to Joy (no name said; it opens in the Music box)
   await a.finished.catch(()=>{});
   pc.remove(); map.innerHTML=mapTornSVG(n); map.classList.add('glow'); SFX.chime(); burst({x:tx,y:ty},{n:12});
   await say(`Look! This piece shows ${MAP_PLACE[n-1][0]}.`,`Nhìn này! Mảnh này vẽ ${MAP_PLACE[n-1][1]}.`,{q:false});
@@ -4998,7 +5048,7 @@ async function findMapPiece(n,lines){
   for(const l of lines.slice(1)) await say(...l,{q:false});
   const nx=el(`<button class="nextbtn" aria-label="Tiếp"><svg viewBox="0 0 24 24"><path d="M9 5 L16.5 12 L9 19" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`);
   pg.append(nx); requestAnimationFrame(()=>nx.classList.add('show')); if(RUN) RUN.qfn=async()=>{ for(const l of lines.slice(1)) await say(...l,{q:false}) };
-  await tapOnce([nx]); SFX.pop(); voiceStop(); tune.then(t=>t.stop());
+  await tapOnce([nx]); SFX.pop(); voiceStop();
   S.pieces=Math.max(S.pieces||0,n); save();
 }
 /** the old map, with the pieces found so far (found = 0..8): found pieces show their part of Treasure Island, missing ones a "?" */
@@ -5282,6 +5332,7 @@ function isoWire(W,{canDrag=true}={}){
       o.i=best[0]+.5; o.j=best[1]+.5; W.pos(o); W.sort(); W.anim(o,'ijump',650); SFX.pop(); const A=Z0().animals[o.ani]; if(A){ A.i=o.i; A.j=o.j; save() } o.next=performance.now()+6000; return }
     if(p.moved||W.busy&&!W.allowTap) return;
     if(W.onTile){ const q=W.toWorld(e); const [i,j]=isoT(q.x,q.y); if(W.onTile(Math.floor(i),Math.floor(j))) return }
+    if(W.sel&&p.o&&p.o.ani==null){ isoGiveOther(W,p.o); return }   // holding food: give it to whatever was tapped
     if(p.o&&p.o.id==='polly'){ W.pollyStop=performance.now()+2200; W.bubble({i:isoT(...W.pollyAt)[0],j:isoT(...W.pollyAt)[1],h:40},'Hello! Hello!'); say('Hello! Hello!','Xin chào! Xin chào!',{polly:true,gap:0,q:false}).catch(()=>{}); return }
     if(p.o&&(p.o.tap||p.o.ani!=null)){ isoTap(W,p.o); return }
     if(p.isl){ const s=IISL.find(z=>z.id===p.isl.dataset.isl); if(s&&s.soon){ isoTap(W,{soon:s.id,i:0,j:0}); if(isoShut(s)) return } if(s&&W.cam.z>W.fitZ(isoBounds(s))*1.4) W.fit(isoBounds(s)) } };
@@ -5304,26 +5355,45 @@ function isoFoods(W){
 /** holding a food (20/10): tap a food and the pointer becomes that food; just move it (no dragging) to an animal and tap the animal.
  *  Eaten: the food goes into the animal's mouth. Not the right food: it bounces off, falls and is gone. Either way the hand comes back;
  *  to feed again, pick a food from the tray again. On a touch screen the food waits where the finger last touched. */
-function isoHold(W,f,b,e){ isoDrop(W); W.sel=f; const g=el(`<div class="ighost ihold"><svg viewBox="0 0 64 64">${ZFOOD[f].svg}</svg></div>`); document.body.append(g); W.hold=g; W.box.classList.add('holding');
+function isoHold(W,f,b,e){ isoDrop(W); W.sel=f; const g=el(`<div class="ighost ihold"><svg viewBox="0 0 64 64">${ZFOOD[f].svg}</svg></div>`); document.body.append(g); W.hold=g; W.box.classList.add('zhold');
   const r=b.getBoundingClientRect(); const pt=e&&e.clientX!=null&&e.pointerType==='mouse'?{x:e.clientX,y:e.clientY}:{x:r.left+r.width/2,y:r.top-r.height*.6}; g.style.left=pt.x+'px'; g.style.top=pt.y+'px';
   if(!W.holdMove){ W.holdMove=ev=>{ if(!W.box.isConnected){ isoDrop(W); window.removeEventListener('pointermove',W.holdMove); window.removeEventListener('pointerdown',W.holdMove,true); W.holdMove=null; return }
       if(W.hold&&!ev.target.closest('.ifoods')){ W.hold.style.left=ev.clientX+'px'; W.hold.style.top=ev.clientY+'px' } };
     window.addEventListener('pointermove',W.holdMove); window.addEventListener('pointerdown',W.holdMove,true) } }
-function isoDrop(W){ if(W.hold){ W.hold.remove(); W.hold=null } W.sel=null; if(W.box) W.box.classList.remove('holding'); if(W.foods) W.foods.querySelectorAll('.ifood').forEach(x=>x.classList.remove('sel')) }
-async function isoGive(W,o,f){ const g=W.hold; W.hold=null; W.sel=null; W.box.classList.remove('holding'); W.foods.querySelectorAll('.ifood').forEach(x=>x.classList.remove('sel'));
+function isoDrop(W){ if(W.hold){ W.hold.remove(); W.hold=null } W.sel=null; if(W.box) W.box.classList.remove('zhold'); if(W.foods) W.foods.querySelectorAll('.ifood').forEach(x=>x.classList.remove('sel')) }
+async function isoGive(W,o,f){ const g=W.hold; W.hold=null; W.sel=null; W.box.classList.remove('zhold'); W.foods.querySelectorAll('.ifood').forEach(x=>x.classList.remove('sel'));
   const key=Object.keys(W.spr).find(k=>W.spr[k]===o), node=key&&W.svg.querySelector(`[data-id="${key}"]`), r=node&&node.getBoundingClientRect();
   const to=r&&r.width?{x:r.left+r.width*.5,y:r.top+r.height*.4}:null;
   if(g&&to){ const fr={x:parseFloat(g.style.left)||to.x,y:parseFloat(g.style.top)||to.y}; await g.animate([{left:fr.x+'px',top:fr.y+'px'},{left:to.x+'px',top:to.y+'px'}],{duration:380,easing:'ease-in',fill:'forwards'}).finished.catch(()=>{}) }
   const ok=isoFeed(W,o,f); if(!g) return;
   if(ok){ await g.animate([{transform:'translate(-50%,-60%) scale(1.15)',opacity:1},{transform:'translate(-50%,-60%) scale(.15)',opacity:0}],{duration:320,fill:'forwards'}).finished.catch(()=>{}); g.remove(); return }
-  // bounced off: a little hop up and away, then it falls (faster and faster) and is gone
-  const x0=to?to.x:parseFloat(g.style.left), y0=to?to.y:parseFloat(g.style.top), dir=x0>innerWidth/2?-1:1, K=[];
+  await isoFoodFall(g,to) }
+/** the food bounces off: a little hop up and away, then it falls (faster and faster) and is gone */
+async function isoFoodFall(g,to){ const x0=to?to.x:parseFloat(g.style.left), y0=to?to.y:parseFloat(g.style.top), dir=x0>innerWidth/2?-1:1, K=[];
   for(let i=0;i<=10;i++){ const t=i/10; K.push({left:(x0+dir*170*t)+'px',top:(y0-160*t+(innerHeight-y0+260)*t*t)+'px',transform:`translate(-50%,-60%) rotate(${dir*300*t}deg)`,opacity:i>8?.4:1}) }
   await g.animate(K,{duration:1200,easing:'linear',fill:'forwards'}).finished.catch(()=>{}); g.remove() }
+/** food given to something that is not an animal (20/10): the friends laugh ("Fish? I'm not a penguin!") or eat a banana,
+ *  Polly eats fruit only, Chồi drinks sunshine, trees drink water. Then the food falls, or is eaten */
+const FOOD_FOR={banana:'monkey',meat:'lion',fish:'penguin',hay:'zebra',bamboo:'panda',leaves:'giraffe'};
+async function isoGiveOther(W,o){ const f=W.sel, g=W.hold, F=ZFOOD[f]; W.hold=null; W.sel=null; W.box.classList.remove('zhold'); W.foods.querySelectorAll('.ifood').forEach(x=>x.classList.remove('sel'));
+  const node=o.id==='polly'?W.svg.querySelector('.ipolly'):o.el, r=node&&node.getBoundingClientRect(), to=r&&r.width?{x:r.left+r.width*.5,y:r.top+r.height*.35}:null;
+  if(g&&to){ const fr={x:parseFloat(g.style.left)||to.x,y:parseFloat(g.style.top)||to.y}; await g.animate([{left:fr.x+'px',top:fr.y+'px'},{left:to.x+'px',top:to.y+'px'}],{duration:380,easing:'ease-in',fill:'forwards'}).finished.catch(()=>{}) }
+  const kid={lam:'Lam',na:'Na',ben:'Ben'}[o.id], V=isVi(), q={gap:0,q:false}; let eat=false;
+  if(kid){ W.anim(o,'ijump',650);
+    if(f==='banana'){ eat=true; W.heart(o); W.bubble(o,V?'Ngon!':'Yum!'); say('Yum! I love bananas! Thank you!','Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!',{...q,kid:true}).catch(()=>{}) }
+    else { const a=ZA[FOOD_FOR[f]]; W.bubble(o,V?'Hi hi!':'Hee hee!'); say(`Hee hee! ${cap(F.en)}? I’m not a ${a.en}!`,`Hi hi! ${cap(F.vi)} á? Tớ đâu phải ${a.vi.replace(/^(chú|bạn) /,'')}!`,{...q,kid:true}).catch(()=>{}) } }
+  else if(o.id==='polly'){ W.pollyStop=performance.now()+2200;
+    if(f==='banana'){ eat=true; say('Yum! Banana! Banana!','Ngon! Chuối! Chuối!',{...q,polly:true}).catch(()=>{}) } else say('No, no! Polly likes fruit!','Không, không! Polly thích hoa quả cơ!',{...q,polly:true}).catch(()=>{}) }
+  else if(o.id==='choi'||o.id==='star'){ W.anim(W.spr.choi,'ijump',650); say('Thank you! But I drink sunshine and water.','Cảm ơn con! Nhưng Chồi chỉ uống nắng và nước thôi.',q).catch(()=>{}) }
+  else if(/^tree/.test(o.id)){ W.anim(o,'ishake',550); say(`Trees don’t eat ${F.en}. Trees drink water!`,`Cây không ăn ${F.vi} đâu. Cây uống nước thôi!`,q).catch(()=>{}) }
+  else { if(o.el) W.anim(o,'ishake',550); say('Give the food to an animal!','Con đưa thức ăn cho một con vật nhé!',q).catch(()=>{}) }
+  if(!g) return;
+  if(eat){ await g.animate([{transform:'translate(-50%,-60%) scale(1.15)',opacity:1},{transform:'translate(-50%,-60%) scale(.15)',opacity:0}],{duration:320,fill:'forwards'}).finished.catch(()=>{}); g.remove(); return }
+  await isoFoodFall(g,to) }
 /** 3 animals to choose from: the ones not in the zoo yet come first */
 function isoGiftOptions(){ const have=new Set(Z0().animals.map(a=>a.t)); const fresh=ZA_ORDER.filter(t=>!have.has(t)); const pool=shuffle(fresh).slice(0,3); while(pool.length<3){ const t=pick(ZA_ORDER); if(!pool.includes(t)) pool.push(t) } return shuffle(pool) }
 /** after a finished level: pick an animal for the zoo, give it a home, then find its food */
-async function cityGift(){
+async function cityGift({free=false}={}){
   const z=Z0(); await gameCard('city');
   const host=card(); host.classList.add('citycard'); $('.wrap-kid').classList.add('wide','city'); const W=isoCity(host); isoWire(W,{canDrag:false}); W.busy=true;
   await sleep(700);
@@ -5357,7 +5427,12 @@ async function cityGift(){
   for(const b of newBadges()){ W._badged=true; C().stars=C().stars||[]; C().stars.push(b); save(); W.fit(isoBounds(IISL[1])); await sleep(1100); W.spr.star.el.querySelector('svg').innerHTML=isoStarTree(C().stars.length).s; W.anim(W.spr.star,'igrow',600); confetti(); SFX.chime(); const L=BADGE_EN[b]||[SK[b].vi,SK[b].vi];
     await say(`You can ${L[0]} now! A new star for your star tree!`,`Giờ con đã ${L[1]} rồi! Cây sao có thêm một ngôi sao!`) }
   if(C().stars&&W._badged){ W.fit(isoBounds(IISL[0])); await sleep(900) } W.busy=false;
-  await say('Look at your zoo!','Nhìn sở thú của con này!');
+  if(!free){ await say('Look at your zoo!','Nhìn sở thú của con này!'); return }
+  // stay and play (20/10): the food tray comes out; feed the animals, or tap anything; the arrow goes on, nothing closes by itself
+  isoFoods(W); W.allowTap=true;
+  const nx=nextBtn(); nx.classList.add('citynext'); host.append(nx);
+  await say('Look at your zoo! Feed the animals, or tap anything you like. Tap the arrow when you’re done.','Nhìn sở thú của con này! Con cho các bạn thú ăn, hoặc chạm vào bất cứ đâu nhé. Xong thì con chạm vào mũi tên.');
+  requestAnimationFrame(()=>nx.classList.add('show')); nx.dataset.ok='1'; await tapOnce([nx],{nudge:false,hint:false}); SFX.pop(); voiceStop(); isoDrop(W)
 }
 /** from the map: look around the city, feed the animals, move them about */
 async function viewCity(){
@@ -5540,10 +5615,24 @@ function rafLoop(fn){ let on=true, t0=performance.now(); const step=t=>{ if(!on)
 /** wait for a condition set by the game: returns {done, promise} */
 function gate(){ let res,rej; const p=new Promise((a,b)=>{ res=a; rej=b }); const ab=()=>rej(ABORT); abortFns.add(ab); return {p,done:v=>{ abortFns.delete(ab); res(v) }} }
 const sayQ=(en,vi)=>say(en,vi,{gap:0,q:false}).catch(()=>{});
+/** Fun Mix (20/10): just play. A line of the story (not the question) is said only in the level */
+const inMix=()=>!!(RUN&&RUN.mix);
+async function tell(en,vi,opt){ if(inMix()) return; return say(en,vi,opt) }
 
 
 /* ---- a picture box with the shape of the background (200 × 140): everything inside is placed in %, so it lines up on every screen ---- */
-function sbox(cls,bg,{under=''}={}){ const c=card(); const w=el(`<div class="sboxwrap fade"><div class="sbox ${cls}">${bg||''}</div>${under}</div>`); c.append(w); return $('.sbox',w) }
+function sbox(cls,bg,{under=''}={}){ const c=card(); const w=el(`<div class="sboxwrap fade"><div class="sbox ${cls}">${bg||''}</div>${under}</div>`); c.append(w); const box=$('.sbox',w); box.addEventListener('click',e=>boxTap(e,box),true); return box }
+/** tapping things in a story picture (20/10): every friend and every big thing answers a tap, with a wiggle and a little sound.
+ *  Where the child may tap freely (box._tapSay), a friend also says something about the scene, when Chồi is not talking.
+ *  Never a wrong answer; whatever is part of the question right now (data-live) is left alone. */
+function boxTap(e,box){ if(!RUN||RUN.aborted||e.target.closest('[data-live],.opt,.nextbtn,.mic,.boxmic')) return;
+  const k=e.target.closest('.skid'), th=!k&&e.target.closest('.sthing,.lantern,.tpolly'), tp=!k&&!th&&e.target.closest('.tp');
+  const wig=(n,cls,ms=700)=>{ n.classList.remove(cls); void n.getBoundingClientRect(); n.classList.add(cls); setTimeout(()=>n.classList.remove(cls),ms) };
+  if(k){ if(k.classList.contains('walking')||k.classList.contains('tobed')) return; wig(k,'tapwig'); const L=box._tapSay&&box._tapSay[k.dataset.who];
+    if(L&&!SAYN){ friendSays(k,...L).catch(()=>{}); if(box._tapFx) box._tapFx(k) } else { tone(780,.07,'sine',.05,0,1100); tone(980,.08,'sine',.04,.09,1300) } return }
+  if(th){ if(th.matches('.tdesk,.rbed,.rbasket,.dpond')){ SFX.soft(); return } wig(th,th.classList.contains('lantern')?'tapswing':'tapwig',900);
+    if(th.classList.contains('cdrum')){ tone(150,.3,'sine',.45,0,50); noise(.05,.2,0,400) } else if(th.classList.contains('lantern')) SFX.chime(); else if(th.classList.contains('ctent')) noise(.3,.12,0,900); else SFX.pop(); return }
+  if(tp){ if(tp.classList.contains('tp-sun')){ wig(tp,'shine',1200); SFX.chime() } else if(tp.classList.contains('tp-cloud')){ wig(tp,'driftme',1600); SFX.soft() } else { wig(tp,'shakeme',700); tone(600,.08,'triangle',.06,0,900) } } }
 const pctIn=(box,e)=>{ const r=box.getBoundingClientRect(); return {x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100} };
 function flyTo(elm,target,{ms=650,scale=1,arc=60}={}){ const a=elm.getBoundingClientRect(), b=target.getBoundingClientRect(); const dx=b.left+b.width/2-(a.left+a.width/2), dy=b.top+b.height/2-(a.top+a.height/2);
   return elm.animate([{translate:'0 0'},{translate:`${dx/2}px ${dy/2-arc}px`},{translate:`${dx}px ${dy}px`,scale}],{duration:Math.max(1,ms*SPEED),easing:'ease-in-out',fill:'forwards'}).finished.catch(()=>{}) }
@@ -5554,20 +5643,21 @@ function flyTo(elm,target,{ms=650,scale=1,arc=60}={}){ const a=elm.getBoundingCl
    ========================================================= */
 const TREE_ART=()=>`<svg viewBox="-24 -88 48 92" aria-hidden="true" overflow="visible"><path d="M-7 4 Q-6 -20 -6 -50 H6 Q6 -20 8 4Z" fill="#A8673A" ${OL}/><path d="M-2 -8 q1 -8 0 -16 M3 -26 q1 -6 0 -10" stroke="#7A4526" stroke-width="1.6" fill="none" stroke-linecap="round"/><g transform="translate(0 -62) scale(1.22) translate(0 62)"><path d="M0 -82 q16 -1 19 13 q7 8 -1 16 q-7 6 -16 2 q-9 4 -17 -3 q-7 -9 1 -16 q2 -12 14 -12z" fill="#2FA877" ${OL}/><path d="M-8 -70 q4 -5 9 -4" stroke="#8FE3B8" stroke-width="2.4" fill="none" stroke-linecap="round"/></g></svg>`;
 const BOX_ART=()=>`<svg viewBox="0 0 100 70" aria-hidden="true"><path d="M8 24 H92 V66 H8Z" fill="#C98A52" ${OL}/><path d="M8 24 L20 8 H80 L92 24" fill="#E2A873" ${OL}/><path d="M30 40 h40" stroke="${INK}" stroke-width="3" stroke-linecap="round"/></svg>`;
+const SLIDE_SIT={x:76,b:12};   // a friend on the slide sits on the chute, halfway down (not floating above it)
 const SLIDE_ART=()=>`<svg viewBox="0 0 100 80" aria-hidden="true"><path d="M70 76 V14 M86 76 V14" stroke="${INK}" stroke-width="5"/><path d="M70 22 h16 M70 38 h16 M70 54 h16" stroke="${INK}" stroke-width="4"/><path d="M70 14 Q40 20 30 50 Q24 70 6 74 L10 80 Q34 76 40 56 Q50 30 72 26Z" fill="#FF5C8A" ${OL}/></svg>`;
 // x,b,w: the hiding thing (% of the box); px,pb: where the friend peeks out (their centre-bottom, % of the box). Friends are all 13% wide.
 const SPOTS=[
- {x:15,b:6,w:24,art:()=>ART.bush(),en:'in the bush',vi:'trong bụi cây',word:['In!','Trong!'],px:15,pb:22},
- {x:40,b:6,w:24,art:TREE_ART,en:'under the tree',vi:'dưới gốc cây',word:['Under!','Dưới!'],px:48,pb:6},
- {x:64,b:6,w:20,art:BOX_ART,en:'in the box',vi:'trong cái hộp',word:['In!','Trong!'],px:64,pb:17},
- {x:78,b:6,w:20,art:SLIDE_ART,en:"on the slide",vi:"trên cầu trượt",word:["On!","Trên!"],px:84,pb:23}];
+ {x:15,b:6,w:24,art:()=>ART.bush(),en:'in the bush',vi:'trong bụi cây',word:['In the bush!','Trong bụi cây!'],px:15,pb:22},
+ {x:40,b:6,w:24,art:TREE_ART,en:'under the tree',vi:'dưới gốc cây',word:['Under the tree!','Dưới gốc cây!'],px:48,pb:6},
+ {x:64,b:6,w:20,art:BOX_ART,en:'in the box',vi:'trong cái hộp',word:['In the box!','Trong cái hộp!'],px:64,pb:17},
+ {x:78,b:6,w:20,art:SLIDE_ART,en:"on the slide",vi:"trên cầu trượt",word:["On the slide!","Trên cầu trượt!"],px:SLIDE_SIT.x,pb:SLIDE_SIT.b,sit:1}];
 async function flashlightGame({piece=0}={}){
   const sk=SK['L2.E.LS.02']; const box=sbox('flashl',BG.night(),{under:'<div class="sbunder"></div>'}); const under=box.parentElement.querySelector('.sbunder');
   const dark=el(`<div class="darkness"></div>`); box.append(dark);
   const setLight=(x,y)=>{ dark.style.setProperty('--mx',x+'%'); dark.style.setProperty('--my',y+'%') }; setLight(50,50);
   box.addEventListener('pointermove',e=>{ const p=pctIn(box,e); setLight(p.x,p.y) }); box.addEventListener('pointerdown',e=>{ const p=pctIn(box,e); setLight(p.x,p.y) });
   const who=shuffle(CAST); const order=shuffle([0,1,2,3]);
-  const spots=SPOTS.map(S0=>{ const pe=el(`<span class="fpeek${S0.back?' back':''}"></span>`); pe.style.left=S0.px+'%'; pe.style.bottom=S0.pb+'%'; box.append(pe);
+  const spots=SPOTS.map(S0=>{ const pe=el(`<span class="fpeek${S0.back?' back':''}${S0.sit?' sit':''}"></span>`); pe.style.left=S0.px+'%'; pe.style.bottom=S0.pb+'%'; box.append(pe);
     const b=el(`<button class="fspot" style="left:${S0.x}%;bottom:${S0.b}%;width:${S0.w}%"><span class="hid stk">${S0.art()}</span></button>`); box.append(b); b._pe=pe; return b });
   const place=(k,html)=>{ spots[k]._pe.innerHTML=html };
   who.forEach((n,i)=>place(order[i],kidSVG(n,'happy'))); place(order[3],piece?`<span class="ppc">${mapPieceSVG(piece)}</span>`:pollySVG(false));
@@ -5618,7 +5708,7 @@ async function toyCatch({piece=0,kitten=false}={}){
   let W0=0,H0=0, bx=.5; const fit=()=>{ const r=f.getBoundingClientRect(); W0=r.width; H0=r.height }; fit();
   const moveB=x=>{ bx=Math.max(.1,Math.min(.9,x/W0)); bk.style.left=(bx*100)+'%' }; moveB(W0/2);
   f.addEventListener('pointermove',e=>moveB(fpos(f,e).x)); f.addEventListener('pointerdown',e=>moveB(fpos(f,e).x));
-  let toys=[], want='big', got=0, need=4, wrong=0, slowF=1, spawnT=0, phase=null, special=null; const t0=performance.now();
+  let toys=[], want='big', got=0, need=4, wrong=0, slowF=1, spawnT=0, phase=null, special=null, gDemo=null; const t0=performance.now();
   const spawn=(kind)=>{ const big=kind?kind==='big':Math.random()<.5, isP=kind==='piece';
     const t=el(`<div class="ftoy ${isP?'piece':big?'big':'small'}" style="left:${8+rand(84)}%">${isP?mapPieceSVG(piece):pick(TOYS)()}</div>`); f.append(t);
     toys.push({e:t,y:-.15,big,isP,v:(isP?.16:.2+Math.random()*.06)*slowF,x:parseFloat(t.style.left)/100}) };
@@ -5626,17 +5716,23 @@ async function toyCatch({piece=0,kitten=false}={}){
   const stop=rafLoop(dt=>{ if(!phase) return; fit(); spawnT-=dt;
     if(phase==='play'&&spawnT<=0){ spawnT=1.3; const right=toys.filter(o=>!o.done&&o.big===(want==='big')&&!o.isP).length; spawn(right?null:want) }
     if(phase==='piece'&&!toys.some(o=>o.isP&&!o.done)) spawn('piece');
-    if(AUTO){ const tg=toys.filter(o=>!o.done&&(o.isP||o.big===(want==='big'))).sort((a,b)=>b.y-a.y)[0]; if(tg) moveB((bx+(tg.x-bx)*Math.min(1,dt*6))*W0) }
+    if(AUTO||phase==='demo'){ const tg=toys.filter(o=>!o.done&&(o.isP||o.big===(want==='big'))).sort((a,b)=>b.y-a.y)[0]; if(tg) moveB((bx+(tg.x-bx)*Math.min(1,dt*(phase==='demo'?2.5:6)))*W0) }
+    if(phase==='demo') Hand.set(center(bk));   // Chồi's hand holds the basket
     for(const o of toys){ if(o.done) continue; o.y+=o.v*dt; o.e.style.top=(o.y*100)+'%';
       if(o.y>.72&&o.y<.86&&Math.abs(o.x-bx)<.11){ o.done=true;
+        if(phase==='demo'){ o.e.classList.add('caught'); SFX.pop(); burst(center(bk),{n:8}); setTimeout(()=>o.e.remove(),300); if(gDemo) gDemo.done(); continue }
         if(o.isP){ o.e.remove(); g.done('piece'); continue }
         if(o.big===(want==='big')){ got++; o.e.classList.add('caught'); SFX.pop(); burst(center(bk),{n:8}); $('.tcount',bk).textContent=got; sayQ(cap(W[got])+'!',cap(VI_N[got])+'!'); setTimeout(()=>o.e.remove(),300);
           if(got>=need){ phase=null; toys.forEach(q=>{ if(!q.done){ q.done=true; q.e.classList.add('gone') } }); setTimeout(()=>g.done('round'),500) } }
         else { wrong++; o.e.classList.add('bounce'); boing(); sayQ(o.big?'That one is big!':'That one is small!',o.big?'Cái đó to!':'Cái đó nhỏ!'); setTimeout(()=>o.e.remove(),700) } }
       else if(o.y>1.1){ o.done=true; o.e.remove(); if(o.isP||o.big===(want==='big')) slowF=Math.max(.55,slowF*.85) } }
     toys=toys.filter(o=>!o.done||o.e.isConnected) });
-  turn('kid');
   try{
+    // the first time (a new way of playing): Chồi's hand takes the basket and moves it under a falling big toy
+    if(!inMix()&&wantDemo('catch')){ turn('choi'); await say('Watch me first! I move the basket under a big toy.','Xem Chồi làm trước nhé! Chồi di cái giỏ tới dưới một đồ chơi to.');
+      await Hand.moveTo(center(bk),500); gDemo=gate(); phase='demo'; spawn('big'); await gDemo.p; phase=null; await sleep(300); Hand.hide();
+      await say('I caught it! The big toy is in the basket.','Chồi bắt được rồi! Đồ chơi to vào giỏ rồi.'); await yourTurn() }
+    turn('kid');
     await say('Toys are falling from the shelf! Move the basket. Catch the big toys!','Đồ chơi rơi từ trên kệ xuống! Con di chuyển cái giỏ. Bắt các đồ chơi to nhé!',{q:true});
     phase='play'; await g.p;
     await say('Four big toys!','Bốn đồ chơi to!'); want='small'; got=0; need=5; $('.tcount',bk).textContent=''; bk.classList.add('small');
@@ -5847,7 +5943,7 @@ const NEXT_ON=(n,en,vi)=>[['Next time: '+en,'Lần sau: '+vi]];
    ========================================================= */
 const kidAt=(name,f,x,b,w=15,cls='')=>el(`<div class="skid stk ${cls}" data-who="${name}" style="left:${x}%;bottom:${b}%;width:${w}%">${kidSVG(name,f)}<b>${name}</b></div>`);
 const nextBtn=()=>el(`<button class="nextbtn" aria-label="Tiếp"><svg viewBox="0 0 24 24"><path d="M9 5 L16.5 12 L9 19" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`);
-async function nextPage(box){ const nx=nextBtn(); box.parentElement.append(nx); requestAnimationFrame(()=>nx.classList.add('show')); nx.dataset.ok='1'; await tapOnce([nx]); SFX.pop(); voiceStop() }
+async function nextPage(box){ if(inMix()){ await sleep(1100); return } const nx=nextBtn(); box.parentElement.append(nx); requestAnimationFrame(()=>nx.classList.add('show')); nx.dataset.ok='1'; await tapOnce([nx]); SFX.pop(); voiceStop() }
 
 /* ---- Lesson 2: tap the sun to help it go down; the garden gets dark, stars come out ---- */
 async function sunsetTap(){
@@ -5887,8 +5983,8 @@ async function tidyUp(){
     const n=toys.length-left; sayQ(cap(W[n])+'!',cap(VI_N[n])+'!'); if(!left) g.done() };
   toys.forEach(t=>{ makeDrag(t,zones,{onDrop:z=>putIn(t,z)}); t.addEventListener('click',()=>{ if(t.dataset.used) return; toys.forEach(x=>x.classList.remove('sel')); t.classList.add('sel'); sel=t; tone(700,.06,'sine',.05) }) });
   [bigB,smB].forEach(z=>z.addEventListener('click',()=>{ if(sel) putIn(sel,z) }));
-  await say('After all that playing, the toys are everywhere!','Chơi xong, đồ chơi bừa khắp nơi!');
-  await say('Let’s tidy up. Big toys go in the big box. Small toys go in the small box.','Mình dọn dẹp nhé. Đồ chơi to vào hộp to. Đồ chơi nhỏ vào hộp nhỏ.');
+  await tell('After all that playing, the toys are everywhere!','Chơi xong, đồ chơi bừa khắp nơi!');
+  await tell('Let’s tidy up. Big toys go in the big box. Small toys go in the small box.','Mình dọn dẹp nhé. Đồ chơi to vào hộp to. Đồ chơi nhỏ vào hộp nhỏ.');
   if(wantDemo('tidy')){ await watchMe(); { const t=toys.find(x=>x.dataset.sz==='big'); await Hand.moveTo(center(t),500); await Hand.tap(); await say('This toy is big.','Đồ chơi này to.',{gap:100});
     await demoDrag(t,bigB,700); t.classList.remove('dragging'); t.style.translate=''; await putIn(t,bigB); Hand.hide(); await say('It goes in the big box!','Nó vào hộp to!') }
   await yourTurn() } else turn('kid');
@@ -6054,8 +6150,9 @@ async function comfortStep(H,{hint=false}={}){
   await SC.play(); await say(H.en,H.vi); await say(`${H.name} feels ${H.f}.`,`${H.name} thấy ${VI_FEEL[H.f]}.`); if(ECHO[H.f]&&!H.noEcho) await pollyEcho(...ECHO[H.f]);
   await say(`Are you ${H.f}, ${H.name}?`,`${H.name} ơi, bạn ${VI_FEEL[H.f]} à?`); await friendSays(fr,'Yes.','Ừ.');
   await say(H.hen,H.hvi,{q:true}); turn('kid');
-  if((hint||RUN.mode)&&wantDemo('hold')){ await Hand.moveTo(center(fr),500); await Hand.press(1300); Hand.hide(); await sleep(200) }
-  if(H.act==='hold'){ const fxs=helpFx(SC,H); await holdOn(fr,1600); await fxs.done() }
+  const tg=H.holdOn&&SC.el.querySelector(H.holdOn)||fr;   // what to press: the friend, or a thing that stays still (Ben's sleeping bag)
+  if((hint||RUN.mode)&&wantDemo('hold')){ await Hand.moveTo(center(tg),500); await Hand.press(1300); Hand.hide(); await sleep(200) }
+  if(H.act==='hold'){ const fxs=helpFx(SC,H,tg); await holdOn(tg,1600); await fxs.done() }
   else { const row=el(`<div class="claprow"></div>`); SC.el.append(row); await tapN(fr,3,k=>{ clapHit(); fr.classList.remove('beat'); void fr.offsetWidth; fr.classList.add('beat'); row.append(el(`<i class="clapi stk">${CLAP_SVG}<b>${k}</b></i>`)) }) }
   turn(null); SC.reveal(['happy','excited','proud','surprised'].includes(H.f)?H.f:'happy'); fr.classList.add('glad'); confetti();
   if(H.scene==='bed') await say(`Good night, ${H.name}! When we feel tired, we go to sleep.`,`Chúc ${H.name} ngủ ngon! Khi mệt, mình đi ngủ nhé.`);
@@ -6082,23 +6179,56 @@ async function parkIntro(){
   setKidFace(box.querySelector('.skid'),'Lam','excited');
   await say('Whoosh! Up, up, up! Look, lots of kites are flying now!','Vù! Lên cao, cao nữa! Nhìn kìa, nhiều diều bay lên rồi!'); await nextPage(box) }
 
-/* ---- Lesson 2: in, on, under — a kitten looks for a dry spot after the storm. Chồi shows one, the child moves the kitten to the other two (a first look, before any question) ---- */
+/* ---- Lesson 2 / Màn 2: in, on, under: Na's kitten looks for a dry spot after the storm. Chồi shows one (the first time this school year),
+   the child moves the kitten to the other two. The kitten moves like a kitten: it jumps up onto the table, hops down, walks under it,
+   jumps into the box (never a jump cut from one picture to the next) ---- */
+const PCAT={wet:[72.5,91,.55],on:[38,40,.95],under:[38,91,.95],in:[95,84,.95],side:[74,91,.95]};
+function posSceneSVG(){ const [x,y,s]=PCAT.wet; const t=sceneSVG(null), i=t.indexOf('<rect x="78" y="72"'), j=t.lastIndexOf('</svg>');   // the box's front gets its own group: the kitten goes behind it only when it is in the box
+  return t.slice(0,i)+`<g class="boxfront">${t.slice(i,j)}</g><g class="pcat" transform="translate(${x} ${y}) scale(${s})">${catG(0,0,1)}</g></svg>` }
+/** the way from one spot to another: out from under the table / off the table / out of the box first, then up, under or in */
+function catPath(from,to){ const S2=[];
+  if(from===to) return [{to:PCAT[to],arc:8}];
+  if(from==='under') S2.push({to:PCAT.side,walk:true});
+  if(from==='on') S2.push({to:PCAT.side,arc:8});
+  if(from==='in') S2.push({to:PCAT.side,arc:26});
+  if(to==='on') S2.push({to:PCAT.on,arc:12});
+  if(to==='under') S2.push({to:PCAT.under,walk:true});
+  if(to==='in') S2.push({to:PCAT.in,arc:30});
+  return S2 }
+/** move the kitten (an SVG group, feet at its origin) along the way: arcs for jumps (a little squash when it lands), a trot for walking */
+function animCat(g,segs,start){ let cur={x:start[0],y:start[1],s:start[2],d:1};
+  const sv=g.ownerSVGElement, front=sv&&sv.querySelector('.boxfront');
+  const one=seg=>new Promise(res=>{ const [x1,y1,s1]=seg.to, x0=cur.x, y0=cur.y, s0=cur.s, dx=x1-x0; const dir=Math.abs(dx)<.5?cur.d:(dx>0?-1:1);
+    if(sv&&front&&g.nextSibling!==null) sv.append(g);   // out of the box: in front of it again
+    const into=seg.to===PCAT.in;
+    const ms=Math.max(1,(seg.walk?Math.abs(dx)*13+250:560+Math.hypot(dx,y1-y0)*3)*SPEED), c=seg.walk?0:2*(Math.min(y0,y1)-seg.arc)-(y0+y1)/2, t0=performance.now();
+    if(!seg.walk) tone(520,.1,'triangle',.05,0,900);
+    const put=(x,y,sx,sy)=>g.setAttribute('transform',`translate(${x.toFixed(2)} ${y.toFixed(2)}) scale(${sx.toFixed(3)} ${sy.toFixed(3)})`);
+    const step=now=>{ const t=Math.min(1,(now-t0)/ms), s=s0+(s1-s0)*t; let x=x0+dx*t, y;
+      if(seg.walk) y=y0+(y1-y0)*t-1.8*Math.abs(Math.sin(t*Math.PI*Math.max(1,Math.round(Math.abs(dx)/8)))); else { const u=1-t; y=u*u*y0+2*u*t*c+t*t*y1 }
+      put(x,y,s*dir,s); if(into&&t>.55&&front&&g.nextSibling===null) sv.insertBefore(g,front);   // dropping into the box: behind its front
+      if(t<1) return requestAnimationFrame(step);
+      cur={x:x1,y:y1,s:s1,d:dir}; if(seg.walk) return res();
+      put(x1,y1,s1*dir*1.08,s1*.86); tone(300,.08,'sine',.05,0,200); setTimeout(()=>{ put(x1,y1,s1*dir,s1); res() },Math.max(1,120*SPEED)) };
+    requestAnimationFrame(step) });
+  return segs.reduce((p,seg)=>p.then(()=>one(seg)),Promise.resolve()).then(()=>[cur.x,cur.y,cur.s]) }
 async function posIntro(){
-  const c=card(); const pic=el(`<div class="posintro fade"><div class="pi-svg">${sceneSVG('wet')}</div><button class="pi-hot" data-p="on" style="left:6%;top:14%;width:54%;height:28%"></button><button class="pi-hot" data-p="under" style="left:11%;top:49%;width:44%;height:42%"></button><button class="pi-hot" data-p="in" style="left:64%;top:52%;width:30%;height:40%"></button><b class="pi-word stk"></b></div>`); c.append(pic);
+  const c=card(); const pic=el(`<div class="posintro fade"><div class="pi-svg">${posSceneSVG()}</div><button class="pi-hot" data-p="on" style="left:6%;top:14%;width:54%;height:28%"></button><button class="pi-hot" data-p="under" style="left:11%;top:49%;width:44%;height:42%"></button><button class="pi-hot" data-p="in" style="left:64%;top:52%;width:30%;height:40%"></button><b class="pi-word stk"></b></div>`); c.append(pic);
   if(FS_PLACE==='garden'){ pic.classList.add('night'); pic.prepend(el(`<div class="pi-bg">${BG.night()}</div>`)) }   // the kitten in Na's garden, at night
-  const svg=$('.pi-svg',pic), word=$('.pi-word',pic), hot=p=>pic.querySelector(`.pi-hot[data-p="${p}"]`);
-  const NAME={on:['On','Trên','on the table','trên cái bàn'],under:['Under','Dưới','under the table','dưới gầm bàn'],in:['In','Trong','in the box','trong cái hộp']};
-  const put=async p=>{ svg.innerHTML=sceneSVG(p); svg.classList.remove('hop'); void svg.offsetWidth; svg.classList.add('hop'); SFX.pop(); word.textContent=NAME[p][0]+'!'; word.classList.add('show') };
+  const word=$('.pi-word',pic), hot=p=>pic.querySelector(`.pi-hot[data-p="${p}"]`), cat=$('.pcat',pic);
+  const NAME={on:['on the table','trên cái bàn'],under:['under the table','dưới gầm bàn'],in:['in the box','trong cái hộp']};
+  let at='wet', pos=PCAT.wet;
+  const put=async p=>{ word.classList.remove('show'); SFX.pop(); pos=await animCat(cat,catPath(at,p),pos); at=p; word.textContent=cap(NAME[p][0])+'!'; word.classList.add('show') };
   await say('After the storm, Na’s little kitten wants a dry spot. Let’s help her!','Sau cơn bão, chú mèo con của Na muốn tìm chỗ khô ráo. Mình giúp mèo nhé!');
   if(RUN.mode!=='review'){ await watchMe(); await say('I put the kitten on the table.','Chồi đặt mèo lên trên cái bàn.',{gap:150}); await Hand.moveTo(center(hot('on')),600); await Hand.tap(); Hand.hide(); await put('on');
-    await say('The kitten is on the table.','Mèo ở trên cái bàn.'); await pollyEcho('On! On!','Trên! Trên!');
+    await say('The kitten is on the table.','Mèo ở trên cái bàn.'); await pollyEcho('On the table! On the table!','Trên cái bàn! Trên cái bàn!');
     await yourTurn() } else turn('kid');
-  for(const p of ['under','in']){ word.classList.remove('show');
-    const ask=()=>say(`Now put the kitten ${NAME[p][2]}. Tap ${NAME[p][2]}!`,`Giờ con đặt mèo ${NAME[p][3]} nhé. Con chạm vào ${NAME[p][3]}!`,{q:true});
+  for(const p of ['under','in']){
+    const ask=()=>say(`Now put the kitten ${NAME[p][0]}. Tap ${NAME[p][0]}!`,`Giờ con đặt mèo ${NAME[p][1]} nhé. Con chạm vào ${NAME[p][1]}!`,{q:true});
     await ask(); RUN.qfn=ask;
     for(;;){ const btns=[...pic.querySelectorAll('.pi-hot')]; btns.forEach(b=>b.dataset.ok=b.dataset.p===p?'1':'0'); const i=await tapOnce(btns); const q=btns[i].dataset.p;
-      await put(q); if(q===p) break; await say(`That’s ${NAME[q][2]}. Let’s find ${NAME[p][0].toLowerCase()}!`,`Đó là ${NAME[q][3]}. Mình tìm chỗ "${NAME[p][1].toLowerCase()}" nhé!`) }
-    SFX.chime(); await say(`Yes! The kitten is ${NAME[p][2]}.`,`Đúng rồi! Mèo ở ${NAME[p][3]}.`); await pollyEcho(`${NAME[p][0]}! ${NAME[p][0]}!`,`${NAME[p][1]}! ${NAME[p][1]}!`) }
+      await put(q); if(q===p) break; await say(`That’s ${NAME[q][0]}. Let’s put the kitten ${NAME[p][0]}!`,`Đó là ${NAME[q][1]}. Mình đặt mèo ${NAME[p][1]} nhé!`) }
+    SFX.chime(); await say(`Yes! The kitten is ${NAME[p][0]}.`,`Đúng rồi! Mèo ở ${NAME[p][1]}.`); await pollyEcho(`${cap(NAME[p][0])}! ${cap(NAME[p][0])}!`,`${cap(NAME[p][1])}! ${cap(NAME[p][1])}!`) }
   turn(null); RUN.qfn=null; confetti(); await say('In, on, under! The kitten is warm and dry now.','Trong, trên, dưới! Mèo con khô ráo, ấm áp rồi.'); await nextPage(pic) }
 
 /* ---- Lesson 2: hide and seek before the dark game — count to ten, then: where is everyone? (in, on, under) ---- */
@@ -6302,10 +6432,12 @@ const EP0_TRACE2=[
     done:async T=>{ T.clean('all'); const e=T.el.ben; e.style.transition=`left ${.8*SPEED}s ease-out`; e.style.left='79%'; await sleep(800); e.classList.add('glad'); await say(...T.K.fx); await sleep(200) }}}];
 
 /* ---- 6. the flags in the garden ---- */
-async function gardenFlags(){
+async function gardenFlags(){ const mixed=inMix(), n=mixed?3+rand(4):5, xs=mixed?[20,29,38,47,56,65].slice(0,n):[22,33,44,55,66], COLS=['#E8607E','#4A9BDB','#FCB515','#58B592','#9B6BD0','#FF8A3D'];
   const pic=scenePic('sgarden',[{who:'Ben',f:'happy',x:9,b:4,h:46},{art:ART.slide(),x:78,b:4,h:30},{art:BRIDGE_SVG(),x:93,b:4,h:13}]);
-  await countInPic(SK['L2.M.NUM.02'],{pic,n:5,items:[[22,6,19,FLAG('#E8607E')],[33,6,19,FLAG('#4A9BDB')],[44,6,19,FLAG('#FCB515')],[55,6,19,FLAG('#58B592')],[66,6,19,FLAG('#9B6BD0')]],
-    ask:['We’re in the garden! Ben’s map says: follow the flags. Let’s count them. Tap each flag!','Mình tới khu vườn rồi! Bản đồ của Ben ghi: đi theo những lá cờ. Mình đếm nhé. Con chạm vào từng lá cờ!'],answer:['Five flags! This way!','Năm lá cờ! Đi lối này!']});
+  await countInPic(SK['L2.M.NUM.02'],{pic,n,items:xs.map((x,i)=>[x,6,19,FLAG(COLS[i])]),
+    ask:mixed?['How many flags? Tap each flag and count!','Có mấy lá cờ? Con chạm từng lá và đếm nhé!']:['We’re in the garden! Ben’s map says: follow the flags. Let’s count them. Tap each flag!','Mình tới khu vườn rồi! Bản đồ của Ben ghi: đi theo những lá cờ. Mình đếm nhé. Con chạm vào từng lá cờ!'],
+    answer:mixed?[`${cap(W[n])} flags!`,`${cap(VI_N[n])} lá cờ!`]:['Five flags! This way!','Năm lá cờ! Đi lối này!']});
+  if(mixed) return;
   const ben=pic.querySelector('.actor[data-who="Ben"]'); if(ben){ ben.style.transition=`left ${2.4*SPEED}s ease-in-out`; ben.classList.add('walking'); ben.style.left='72%'; await say('Ben follows the flags, to the slide and the little bridge.','Ben đi theo những lá cờ, tới cầu trượt và cây cầu nhỏ.'); await sleep(900); ben.classList.remove('walking') } }
 const BRIDGE_SVG=()=>`<svg viewBox="0 0 100 44" aria-hidden="true"><path d="M2 40 Q50 4 98 40" stroke="${INK}" stroke-width="13" fill="none" stroke-linecap="round"/><path d="M2 40 Q50 4 98 40" stroke="#C98A52" stroke-width="8" fill="none" stroke-linecap="round"/><path d="M8 26 Q50 -6 92 26" stroke="${INK}" stroke-width="3.5" fill="none"/>${[14,32,50,68,86].map((x,i)=>`<path d="M${x} ${[30,19,14,19,30][i]-8} v10" stroke="${INK}" stroke-width="3.5"/>`).join('')}</svg>`;
 
@@ -6669,7 +6801,7 @@ async function popCover({gusts=2}={}){ const sk=SK['L2.M.NUM.02'];
       e.animate([{transform:`translate(${fx}px,${fy}px) rotate(-20deg)`},{transform:`translate(${fx*.55}px,${fy*.3}px) rotate(12deg)`,offset:.45},{transform:`translate(${fx*.18}px,${-fy*.15}px) rotate(-6deg)`,offset:.8},{transform:'none'}],{duration:Math.max(1,1500*SPEED),delay:i*170*SPEED,easing:'ease-out',fill:'backwards'});
       return e });
     await sleep((1500+pos.length*170)*SPEED); return bs };
-  await say('The wind is still blowing!','Gió vẫn đang thổi!');
+  await tell('The wind is still blowing!','Gió vẫn đang thổi!');
   for(const [ri,pos] of (gusts<2?[pick([COVER,COVER2])]:[COVER,COVER2]).entries()){ const n=pos.length;
     const bs=await blow(pos,ri*2);
     await say(...(ri?['Whoosh! The wind blows more balloons in the way! Pop them all, and count!','Vù! Gió thổi thêm bóng chắn đường! Con chọc vỡ hết và đếm nhé!']:['Oh no! Five balloons are stuck in front of the red balloon. Pop them, and count!','Ôi! Năm quả bóng mắc ngay trước quả bóng đỏ. Con chọc vỡ và đếm nhé!']),{q:true});
@@ -6682,7 +6814,7 @@ async function popCover({gusts=2}={}){ const sk=SK['L2.M.NUM.02'];
     turn(null); setTimeout(()=>bs.forEach(b=>b.remove()),400);
     if(r.ok) await kept(true,{line:[`You popped ${W[n]} balloons, and counted them all!`,`Con chọc vỡ ${VI_N[n]} quả bóng và đếm hết rồi!`]}); else if(r.second) await kept(false); else await reteachPending();
     if(!ri&&gusts>1) await say('There’s the red balloon! Oh no, here comes more wind!','Quả bóng đỏ kia rồi! Ơ, lại có gió nữa!') }
-  setKidFace(ben,'Ben','happy'); await say('Now we can see the red balloon again. But it’s stuck way up high!','Giờ mình lại thấy quả bóng đỏ. Nhưng nó mắc trên cao quá!') }
+  setKidFace(ben,'Ben','happy'); await tell('Now we can see the red balloon again. But it’s stuck way up high!','Giờ mình lại thấy quả bóng đỏ. Nhưng nó mắc trên cao quá!') }
 
 /* ---- 9. Polly flies up, takes the end of the string in her beak and pulls the balloon down, a little with each number the child says;
    at ten she gives the string to Ben. Ben unties the map piece. ---- */
@@ -6720,77 +6852,191 @@ async function balloonDown(){ const sk=SK['L2.M.NUM.04'];
 const TENT_SVG=()=>`<svg viewBox="0 0 120 90" aria-hidden="true"><path d="M8 86 L60 8 L112 86Z" fill="#F28C3C" stroke="${INK}" stroke-width="4" stroke-linejoin="round"/><path d="M60 8 L44 86 H76Z" fill="#B85F1F" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M60 8 L52 86 M60 8 L68 86" stroke="#7A3E14" stroke-width="2"/><path d="M60 8 v-6" stroke="${INK}" stroke-width="3"/><path d="M60 2 l10 3 -10 3z" fill="#58B592" stroke="${INK}" stroke-width="2"/><path d="M4 86 H116" stroke="${INK}" stroke-width="4" stroke-linecap="round"/></svg>`;
 const LANTERN_SVG=(col)=>`<svg viewBox="0 0 60 90" overflow="visible" aria-hidden="true"><circle class="lglow" cx="30" cy="48" r="34" fill="${col}"/><path d="M30 0 v10" stroke="${INK}" stroke-width="2.5"/><rect x="20" y="9" width="20" height="7" rx="2" fill="#5B3A2E" stroke="${INK}" stroke-width="2.5"/><ellipse class="lbody" cx="30" cy="46" rx="22" ry="27" fill="${col}" stroke="${INK}" stroke-width="3.5"/><path d="M30 19 q-12 27 0 54 M30 19 q12 27 0 54 M8 46 h44" stroke="${INK}" stroke-width="1.5" fill="none" opacity=".4"/><ellipse cx="23" cy="37" rx="5" ry="9" fill="#fff" opacity=".45"/><rect x="20" y="72" width="20" height="6" rx="2" fill="#5B3A2E" stroke="${INK}" stroke-width="2.5"/><path d="M30 78 v9" stroke="#E8484F" stroke-width="3"/></svg>`;
 
-/* ---- 1. the sun goes down; fireflies come out in little groups. Chồi shows how one look is enough (no counting), then the child taps the others ---- */
+/* ---- 1. the sun goes down: along its big arc across the sky (so, going down, it moves on a little to the side), redder and redder,
+   until it sinks behind the hill. Then fireflies, in little groups of 1, 2 or 3: Chồi shows how one look is enough (no counting);
+   the child taps three groups, and may tap more (every group, again and again; the friends; the tent) before the arrow ---- */
+const FF_SAY={Ben:['Look! A firefly is on my nose!','Nhìn này! Một chú đom đóm đậu trên mũi tớ!'],Na:['They look like tiny stars!','Trông như những ngôi sao tí hon!'],Lam:['I want to catch one!','Tớ muốn bắt một con!']};
 async function campIntro(){
   const box=sbox('sunset',BG.dusk()); box.append(el(`<div class="nightveil"></div>`));
-  const stars=el(`<div class="stars">${Array.from({length:14},(_,i)=>`<i style="left:${(i*37+11)%96}%;top:${(i*53+7)%46}%;animation-delay:${i*90}ms"></i>`).join('')}</div>`); box.append(stars);
-  const sun=el(`<button class="bigsun" aria-label="Sun"><svg viewBox="0 0 40 40">${sunG(20,20,11,'#FF8A3D').replace('class="tp tp-sun"','')}</svg></button>`); box.append(sun);
+  box.append(el(`<div class="stars">${Array.from({length:12},(_,i)=>`<i style="left:${(i*37+11)%96}%;top:${3+(i*53+7)%22}%;animation-delay:${i*90}ms,${1600+i*170}ms"></i>`).join('')}</div>`));
+  const clip=el(`<div class="sunclip"></div>`); box.append(clip);
+  const sun=el(`<button class="bigsun" aria-label="Sun"><svg viewBox="0 0 40 40" overflow="visible">${sunG(20,20,11,'#FF8A3D').replace('class="tp tp-sun"','')}</svg></button>`); clip.append(sun);
   box.append(sceneThing(TENT_SVG(),62,4,24,'ctent'));
   box.append(kidAt('Na','happy',20,4,13),kidAt('Ben','happy',36,4,13),kidAt('Lam','happy',86,4,13)); const mapA=el(`<div class="smap stk bob">${mapTornSVG(2)}</div>`); box.append(mapA);
   await say('The map shows a garden. Tonight, we’re camping in Na’s garden!','Bản đồ vẽ một khu vườn. Tối nay mình cắm trại trong vườn nhà Na!'); mapA.classList.add('away');
   await say('Look, the sun is going down. Tap the sun to help it go to sleep!','Nhìn kìa, mặt trời đang lặn. Con chạm vào mặt trời để giúp nó đi ngủ nhé!',{q:true});
   turn('kid'); sun.dataset.ok='1'; await tapOnce([sun]); turn(null);
-  sun.classList.add('down'); box.classList.add('night'); tone(600,1.2,'sine',.06,0,250); await sleep(1600);
+  sun.classList.add('down'); tone(600,1.2,'sine',.06,0,250);
+  const K=[]; for(let i=0;i<=16;i++){ const t=i/16; K.push({left:(62+18*Math.sin(t*Math.PI/2)).toFixed(2)+'%',top:(34+42*Math.pow(t,1.6)).toFixed(2)+'%'}) }
+  sun.animate(K,{duration:Math.max(1,3000*SPEED),easing:'cubic-bezier(.4,0,.8,1)',fill:'forwards'});
+  setTimeout(()=>{ if(box.isConnected) box.classList.add('night') },2000*SPEED); await sleep(3400);   // the sky darkens as the sun goes behind the hill
   box.querySelectorAll('.skid').forEach(k=>setKidFace(k,k.dataset.who,'surprised'));
   await say('Good night, sun! Now it’s dark in the garden. Look at the stars!','Chúc mặt trời ngủ ngon! Giờ khu vườn tối rồi. Nhìn những ngôi sao kìa!');
-  // fireflies in little groups: one look is enough to know how many
-  const G=[2,...shuffle([1,3])], at=[[30,40],[52,58],[78,40]];
-  const groups=G.map((n,i)=>{ const g=el(`<button class="ffly" style="left:${at[i][0]}%;bottom:${at[i][1]}%">${[[50,50],[30,30,70,70],[25,30,72,32,50,72]][n-1].reduce((h,v,j,a)=>j%2?h:h+`<i style="left:${a[j]}%;top:${a[j+1]}%"></i>`,'')}</button>`); g.dataset.n=n; box.append(g); return g });
-  const light=async(g,line)=>{ g.classList.add('lit'); SFX.chime(); const n=+g.dataset.n; await say(...(line||[`${cap(W[n])}! I can see ${W[n]} without counting.`,`${cap(VI_N[n])}! Nhìn là biết ${VI_N[n]}, không cần đếm.`])) };
+  // every firefly on the screen belongs to a little group: one look is enough to know how many
+  const G=[2,...shuffle([1,3,2,3,1])], at=[[30,46],[48,57],[61,37],[76,52],[13,55],[92,41]];
+  const DOTS=[[[50,50]],[[30,32],[70,68]],[[24,30],[74,34],[50,72]]];
+  const groups=G.map((n,i)=>{ const g=el(`<button class="ffly" style="left:${at[i][0]}%;bottom:${at[i][1]}%;animation-delay:${-i*370}ms" aria-label="Đom đóm">${DOTS[n-1].map(([x,y])=>`<i style="left:${x}%;top:${y}%"></i>`).join('')}<b class="fnum">${n}</b></button>`); g.dataset.n=n; box.append(g); return g });
+  const light=g=>{ g.classList.remove('lit'); void g.offsetWidth; g.classList.add('lit'); SFX.chime() };
   await say('Fireflies! They fly in little groups.','Đom đóm kìa! Chúng bay thành từng nhóm nhỏ.');
-  const left=groups.slice();
   if(wantDemo('glance')){ turn('choi'); await say('Watch me. I just look… and I know!','Xem Chồi nhé. Chồi chỉ nhìn một cái… là biết!');
-    await Hand.moveTo(center(left[0]),600); await Hand.tap(); Hand.hide(); await light(left.shift(),['Two! I see two fireflies. I don’t need to count!','Hai! Chồi thấy hai con đom đóm. Không cần đếm!']) }
+    await Hand.moveTo(center(groups[0]),600); await Hand.tap(); Hand.hide(); light(groups[0]); groups[0].dataset.seen='1';
+    await say('Two! I see two fireflies. I don’t need to count!','Hai! Chồi thấy hai con đom đóm. Không cần đếm!'); Hand.hide(); await sleep(500) }
   await say('Now you! Tap a group, and look quickly. How many fireflies?','Giờ đến con! Con chạm vào một nhóm rồi nhìn thật nhanh. Có mấy con đom đóm?',{q:true});
-  turn('kid');
-  while(left.length){ left.forEach(g=>g.dataset.ok='1'); const k=await tapOnce(left); const g=left.splice(k,1)[0]; await light(g) }
-  turn(null); await nextPage(box) }
+  turn('kid'); box._tapSay=FF_SAY; box._tapFx=k=>{ if(k.dataset.who!=='Ben') return; const f=el(`<i class="fnose"></i>`); k.append(f); setTimeout(()=>f.remove(),2600) };
+  // three groups, then the arrow. Every group can be tapped again and again: its number is said each time
+  const g3=gate(); let n3=0, first=true, stopH=()=>{};
+  const arm=()=>{ stopH(); stopH=hintHand(()=>groups.find(g=>!g.dataset.seen),{always:true}) }; arm();
+  groups.forEach(g=>g.addEventListener('click',()=>{ light(g); const n=+g.dataset.n, fresh=!g.dataset.seen; g.dataset.seen='1';
+    if(fresh&&n3<3){ n3++; stopH(); if(n3<3) arm(); else g3.done();
+      if(first){ first=false; say(`${cap(W[n])}! You knew it with one look!`,`${cap(VI_N[n])}! Con nhìn một cái là biết!`,{gap:0,q:false}).catch(()=>{}) } else say(cap(W[n])+'!',cap(VI_N[n])+'!',{gap:0,q:false}).catch(()=>{}) }
+    else if(!SAYN) say(cap(W[n])+'!',cap(VI_N[n])+'!',{gap:0,q:false}).catch(()=>{}) }));
+  abortFns.add(()=>stopH());
+  if(AUTO) (async()=>{ for(const g of groups.filter(x=>!x.dataset.seen).slice(0,3)){ await new Promise(r=>setTimeout(r,kidTapDelay())); if(!box.isConnected) return; g.click() } })();
+  await g3.p; stopH(); await sleep(1600);
+  await say('Tap more fireflies if you like. Then tap the arrow!','Con chạm thêm đom đóm nếu thích nhé. Rồi chạm vào mũi tên!',{q:false});
+  await nextPage(box); turn(null) }
 
-/* ---- 2. the lanterns play music (looking back at excited and surprised, in a new way: by ear).
-   Two lanterns light up one at a time, each with its music; which one sounds excited? Then two more: which one has a surprise? ---- */
+/* ---- 2. Na's lanterns (looking back at excited and surprised).
+   By ear: two lanterns light up one at a time, each playing music; which one sounds excited? (the other sounds sad). While a lantern
+   plays, Lam and Na show how its music feels; a wrong tap plays that music again, with their faces. In Fun Mix the faces do not change.
+   By sight: two quiet lanterns, something is hiding inside. Tap one: butterflies flutter out! How does Lam feel? The last one: sweets! ---- */
 const LANTERNS=[[16,'#FCB515',30],[38,'#E8484F',22],[62,'#58B592',22],[84,'#9B6BD0',30]];   // left %, colour, top %
-async function lanternMusic({rounds=2}={}){ const sk=SK['L2.W.FEEL.02'];
-  const box=sbox('lanterns',BG.night()); box.append(sceneThing(TENT_SVG(),56,4,22,'ctent'));
-  box.append(kidAt('Lam','happy',22,4,12),kidAt('Na','happy',80,4,12));
+function lanternScene(cls){ const box=sbox(cls,BG.night()); box.append(sceneThing(TENT_SVG(),56,4,22,'ctent'));
+  const lam=kidAt('Lam','happy',22,4,12), na=kidAt('Na','happy',80,4,12); box.append(lam,na);
   box.append(el(`<svg class="lstring" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 Q16 32 27 28 T50 22 T73 28 T100 18" stroke="${INK}" stroke-width=".5" fill="none" vector-effect="non-scaling-stroke"/></svg>`));
-  const L=LANTERNS.map(([x,c,t])=>{ const b=el(`<button class="lantern" style="left:${x}%;top:${t}%">${LANTERN_SVG(c)}</button>`); box.append(b); return b });
-  await say('Na’s lanterns are magic. When a lantern lights up, it plays music!','Đèn lồng của Na có phép. Đèn nào sáng lên là phát ra nhạc!');
-  const RR=shuffle([['excited','háo hức','sounds excited'],['surprised','ngạc nhiên','has a surprise in it']]).sort((a,b)=>a[0]==='excited'?-1:1);
-  if(rounds<2) RR.sort(()=>Math.random()-.5);
-  for(let r=0;r<rounds;r++){ const [t,tvi,phrase]=RR[r], other=t==='excited'?'surprised':'excited', pair=[L[r*2],L[r*2+1]], k=rand(2), feels=k?[other,t]:[t,other];
-    const play=async(i)=>{ const b=pair[i]; b.classList.add('lit','sing'); try{ await playFeelMusic(feels[i],7.5) }finally{ b.classList.remove('sing'); if(!b.classList.contains('bright')) b.classList.remove('lit') } };
-    const listen=async()=>{ await say(r?'Two new lanterns. Listen to this one…':'Listen to this lantern…',r?'Hai đèn lồng mới. Nghe đèn này nhé…':'Nghe đèn lồng này nhé…',{gap:150,q:false}); await play(0); await say('…and this one.','…và đèn này.',{gap:150,q:false}); await play(1) };
-    const ask=()=>say(`Which lantern’s music ${phrase}? Tap that lantern!`,`Nhạc của đèn lồng nào nghe ${tvi}? Con chạm vào đèn đó nhé!`);
+  const L=LANTERNS.map(([x,c,t])=>{ const b=el(`<button class="lantern" style="left:${x}%;top:${t}%" aria-label="Đèn lồng">${LANTERN_SVG(c)}</button>`); box.append(b); return b });
+  return {box,L,lam,na} }
+const BUTTERFLY_SVG=c=>`<svg viewBox="-20 -16 40 32" overflow="visible" aria-hidden="true"><g class="bwing"><path d="M0 0 C-6 -16 -20 -16 -18 -4 C-17 4 -8 6 0 2Z M0 2 C-6 6 -14 14 -8 15 C-3 16 0 8 0 4Z" fill="${c}" stroke="${INK}" stroke-width="1.8" stroke-linejoin="round"/></g><g class="bwing r"><path d="M0 0 C6 -16 20 -16 18 -4 C17 4 8 6 0 2Z M0 2 C6 6 14 14 8 15 C3 16 0 8 0 4Z" fill="${c}" stroke="${INK}" stroke-width="1.8" stroke-linejoin="round"/></g><ellipse cx="0" cy="2" rx="2" ry="8" fill="${INK}"/><path d="M-1 -5 q-3 -6 -6 -7 M1 -5 q3 -6 6 -7" stroke="${INK}" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>`;
+const SWEET_SVG=c=>`<svg viewBox="0 0 40 20" overflow="visible" aria-hidden="true"><path d="M10 10 L2 3 L3 17Z M30 10 L38 3 L37 17Z" fill="${c}" stroke="${INK}" stroke-width="1.8" stroke-linejoin="round"/><ellipse cx="20" cy="10" rx="11" ry="8" fill="${c}" stroke="${INK}" stroke-width="2"/><path d="M14 6 q6 -3 12 0" stroke="#fff" stroke-width="2" fill="none" opacity=".7" stroke-linecap="round"/></svg>`;
+/** a quiet lantern pops open: butterflies flutter out, or sweets fall out onto the grass. Lam and Na are surprised (a happy surprise) */
+async function lanternSurprise(box,b,kind,kids){
+  const r=box.getBoundingClientRect(), q=b.getBoundingClientRect(); const x0=(q.left-r.left+q.width/2)/r.width*100, y0=(q.top-r.top+q.height*.82)/r.height*100;
+  b.classList.add('lit','bright'); b.classList.remove('popopen'); void b.offsetWidth; b.classList.add('popopen'); SFX.pop(); tone(300,.12,'square',.06,0,900); burst(center(b),{n:12});
+  const things=[];
+  if(kind==='butterflies') ['#FF8A3D','#9B6BD0','#4A9BDB','#FCB515','#E8607E'].forEach((c,i)=>{ const e=el(`<div class="bfly" style="left:${x0}%;top:${y0}%">${BUTTERFLY_SVG(c)}</div>`); box.append(e); things.push(e);
+    const dx=(i-2)*12+rand(6), dy=-(6+rand(14)); const K=[]; for(let k=0;k<=12;k++){ const t=k/12; K.push({transform:`translate(${(dx*t*r.width/100).toFixed(1)}px,${(dy*t*r.height/100+Math.sin(t*Math.PI*3+i)*10).toFixed(1)}px) rotate(${(Math.sin(t*9+i)*16).toFixed(1)}deg)`}) }
+    e.animate(K,{duration:Math.max(1,2600*SPEED),delay:i*130*SPEED,easing:'ease-out',fill:'both'}) });
+  else ['#E8484F','#FCB515','#58B592','#4A9BDB','#9B6BD0','#FF8A3D'].forEach((c,i)=>{ const e=el(`<div class="sweet" style="left:${x0}%;top:${y0}%">${SWEET_SVG(c)}</div>`); box.append(e); things.push(e);
+    const tx=(50-x0)*.45+(i-2.5)*6+rand(4), ty=90-y0-rand(5); const K=[]; for(let k=0;k<=12;k++){ const t=k/12; K.push({transform:`translate(${(tx*t*r.width/100).toFixed(1)}px,${((-9*Math.sin(t*Math.PI)+ty*t*t)*r.height/100).toFixed(1)}px) rotate(${((tx>0?1:-1)*t*320).toFixed(0)}deg)`}) }
+    e.animate(K,{duration:Math.max(1,1100*SPEED),delay:i*90*SPEED,easing:'linear',fill:'both'}) });
+  if(kind!=='butterflies') setTimeout(()=>{ for(let i=0;i<6;i++) tone(1200+i*90,.05,'triangle',.04,i*.09,1400) },700*SPEED);
+  await sleep(500); kids.forEach(([k,n])=>{ setKidFace(k,n,'surprised'); k.classList.remove('jumpy'); void k.offsetWidth; k.classList.add('jumpy') });
+  await friendSays(kids[0][0],kind==='butterflies'?'Oh! Butterflies!':'Oh! Sweets!',kind==='butterflies'?'Ồ! Bươm bướm!':'Ồ! Kẹo!');
+  return things }
+async function lanternMusic({rounds=2}={}){ const sk=SK['L2.W.FEEL.02'];
+  const {box,L,lam,na}=lanternScene('lanterns'); const kids=[[lam,'Lam'],[na,'Na']];
+  const mirror=!inMix();
+  const face=f=>kids.forEach(([k,n])=>{ setKidFace(k,n,f); k.classList.toggle('bouncy',f==='excited') });
+  const byEar=rounds>1||Math.random()<.5, bySight=rounds>1||!byEar;
+  if(byEar){ await say('Na’s lanterns are magic. When a lantern lights up, it plays music!','Đèn lồng của Na có phép. Đèn nào sáng lên là phát ra nhạc!');
+    const pair=[L[0],L[1]], k=rand(2), feels=k?['sad','excited']:['excited','sad'];
+    const play=async(i,sec=7.5)=>{ const b=pair[i]; b.classList.add('lit','sing'); if(mirror) face(feels[i]); try{ await playFeelMusic(feels[i],sec) }finally{ b.classList.remove('sing'); if(!b.classList.contains('bright')) b.classList.remove('lit'); if(mirror) face('happy') } };
+    const listen=async()=>{ await say('Listen to this lantern…','Nghe đèn lồng này nhé…',{gap:150,q:false}); await play(0); await say('…and this one.','…và đèn này.',{gap:150,q:false}); await play(1) };
+    const ask=()=>say('Which lantern’s music sounds excited? Tap that lantern!','Nhạc của đèn lồng nào nghe háo hức? Con chạm vào đèn đó nhé!');
     turn('kid'); await listen();
-    const hh=r===0?hintHand(()=>pair[k]):()=>{}; abortFns.add(hh);
-    await stepPick(sk,pair,k,{ask,concept:'feel:'+t,labels:feels.map(f=>[`that music sounds ${f}`,`nhạc đó nghe ${VI_FEEL[f]}`]),
-      onRight:async()=>{ hh(); pair[k].classList.add('lit','bright') }});
+    const hh=hintHand(()=>pair[k]); abortFns.add(hh);
+    await stepPick(sk,pair,k,{ask,concept:'feel:excited',retry:null,labels:feels.map(f=>[`that music sounds ${f}`,`nhạc đó nghe ${VI_FEEL[f]}`]),
+      onWrong:async i=>{ hh(); await play(i,3.5) },   // hear that one again (and see how the friends feel), then what it sounds like
+      onRight:async()=>{ hh(); pair[k].classList.add('lit','bright'); if(mirror) face('excited') }});
     hh(); RUN.qfn=async()=>{ await listen(); await ask() }; turn(null);
-    await say(...(t==='excited'?['Yes! That music sounds excited. Bouncy and quick!','Đúng rồi! Nhạc đó nghe háo hức. Nhảy nhót và nhanh!']:['Yes! That music has a surprise in it. Quiet, quiet… boom!','Đúng rồi! Nhạc đó có một điều bất ngờ. Nhẹ, nhẹ… bùm!'])); await reteachPending() }
+    await say('Yes! That music sounds excited. Bouncy and quick!','Đúng rồi! Nhạc đó nghe háo hức. Nhảy nhót và nhanh!'); face('happy'); await reteachPending() }
+  if(bySight){ const pair=[L[2],L[3]];
+    await say(...(byEar?['These two lanterns don’t play music. Something is hiding inside!','Hai đèn lồng này không phát nhạc. Có gì đó trốn ở bên trong!']:['Na’s lanterns are magic. Something is hiding inside these two!','Đèn lồng của Na có phép. Có gì đó trốn trong hai đèn này!']));
+    await say('Tap a lantern!','Con chạm vào một đèn lồng nhé!',{q:true}); turn('kid');
+    pair.forEach(b=>b.dataset.ok='1'); const i=await tapOnce(pair); pair.forEach(b=>delete b.dataset.ok); turn(null);
+    const fl=await lanternSurprise(box,pair[i],'butterflies',kids);
+    const set=shuffle(['surprised','excited','sad']); const [row,opts]=optRow(set.map(f=>kidHead('Lam',f)),'small kidhead'); row.classList.add('sbrow','sbunder'); box.parentElement.append(row); await reveal(opts);
+    turn('kid'); await stepPick(sk,opts,set.indexOf('surprised'),{ask:()=>say('Look at Lam. How does Lam feel?','Nhìn Lam kìa. Lam thấy thế nào?'),concept:'feel:surprised',labels:set.map(f=>[`that face looks ${f}`,`mặt đó đang ${VI_FEEL[f]}`])}); turn(null);
+    await say('Yes! Lam feels surprised. He didn’t know butterflies were inside!','Đúng rồi! Lam thấy ngạc nhiên. Bạn ấy không biết bên trong có bươm bướm!'); await pollyEcho(...ECHO.surprised);
+    row.remove(); fl.forEach(e=>e.classList.add('gone')); await reteachPending();
+    if(rounds>1){ const o=pair[1-i]; await say('What’s inside the last lantern? Tap it!','Đèn lồng cuối cùng có gì nhỉ? Con chạm vào nhé!',{q:true}); turn('kid'); o.dataset.ok='1'; await tapOnce([o]); delete o.dataset.ok; turn(null);
+      await lanternSurprise(box,o,'sweets',kids); face('excited'); await say('Another surprise! Sweets for everyone!','Lại một điều bất ngờ! Kẹo cho tất cả mọi người!') } }
   L.forEach((b,i)=>setTimeout(()=>b.classList.add('lit','bright'),i*200*SPEED)); SFX.chime(); await sleep(900);
-  await say('Now all the lanterns are glowing!','Giờ tất cả đèn lồng đều sáng rồi!'); await nextPage(box) }
+  await tell('Now all the lanterns are glowing!','Giờ tất cả đèn lồng đều sáng rồi!'); face('happy'); await nextPage(box) }
 
-/* ---- 3. a storm: Lam is scared; hug him (the new feeling: scared) ---- */
-const LAM_STORM={...{f:'scared',name:'Lam',act:'hold'},lead:['Oh! Dark clouds are coming. The wind blows out the lanterns…','Ơ! Mây đen kéo đến. Gió thổi tắt hết đèn lồng…'],
-  en:'Boom! Thunder! Lam is scared.',vi:'Ầm! Sấm nổ! Lam thấy sợ.',hen:'Let’s give Lam a big hug. Press and hold Lam!',hvi:'Mình ôm Lam thật chặt nhé. Con nhấn giữ vào Lam!'};
+/* ---- 3. a storm, in the same lantern scene: dark clouds roll in from the side, the wind blows the lanterns out (one comes off its string
+   and blows away), lightning and thunder, rain. Lam is scared. Press and hold Lam: Na comes over and hugs him (the new feeling: scared) ---- */
+async function stormLam(){
+  const {box,L,lam,na}=lanternScene('lanterns storm'); L.forEach(b=>b.classList.add('lit','bright'));
+  const veil=el(`<div class="stormveil"></div>`), rain=el(`<div class="srain">${Array.from({length:34},(_,i)=>`<i style="left:${(i*29+7)%100}%;animation-delay:${-((i*137)%600)}ms;animation-duration:${520+(i*53)%180}ms"></i>`).join('')}</div>`), flash=el(`<div class="sflash"></div>`);
+  const bolt=el(`<div class="sbolt"><svg viewBox="0 0 40 70"><path d="M24 0 L4 40 H18 L10 70 L36 26 H22 Z" fill="#FCB515" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/></svg></div>`);
+  box.append(veil);
+  const clouds=[[10,1,32],[36,-2,30],[60,1,32],[86,-1,30]].map(([x,y,w])=>{ const c=el(`<div class="scloud" style="left:${x}%;top:${y}%;width:${w}%"><svg viewBox="0 0 120 60"><path d="M20 54 h80 a20 20 0 0 0 -8 -38 a26 26 0 0 0 -48 -2 a18 18 0 0 0 -24 40z" fill="#5E6878" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/></svg></div>`); box.append(c); return c });
+  box.append(rain,bolt,flash);
+  await sleep(500);
+  const r=box.getBoundingClientRect(); box.classList.add('darken');
+  clouds.forEach((c,i)=>c.animate([{transform:`translateX(${(-(parseFloat(c.style.left)+40)/100*r.width).toFixed(0)}px)`},{transform:'none'}],{duration:Math.max(1,(2600+i*300)*SPEED),easing:'ease-out',fill:'backwards'}));
+  await say('Oh! Dark clouds are coming.','Ơ! Mây đen kéo đến.'); await sleep(900);
+  windGust(box,{ms:2600,n:6}); box.classList.add('blowing');
+  L.forEach((b,i)=>setTimeout(()=>{ b.classList.remove('bright','lit'); tone(330-i*30,.2,'sine',.04,0,140) },(600+i*450)*SPEED));
+  const lost=L[3]; setTimeout(()=>{ lost.classList.add('loose'); lost.animate([{transform:'none'},{transform:'translate(30%,-20%) rotate(35deg)',offset:.3},{transform:'translate(260%,40%) rotate(220deg)',opacity:0}],{duration:Math.max(1,1600*SPEED),easing:'ease-in',fill:'forwards'}) },2500*SPEED);
+  await say('The wind blows out the lanterns…','Gió thổi tắt hết đèn lồng…'); await sleep(1600);
+  // lightning, then thunder, then rain
+  flash.classList.add('go'); bolt.classList.add('go'); noise(.9,.35,.12,180); tone(60,.8,'sawtooth',.06,.12,40); await sleep(250);
+  box.classList.add('raining'); setKidFace(lam,'Lam','scared'); lam.classList.add('shiver'); setKidFace(na,'Na','neutral');
+  await say('Boom! Thunder! Lam is scared.','Ầm! Sấm nổ! Lam thấy sợ.'); await say('Lam feels scared.','Lam thấy sợ.'); await pollyEcho(...ECHO.scared);
+  await say('Are you scared, Lam?','Lam ơi, bạn sợ à?'); await friendSays(lam,'Yes.','Ừ.');
+  await say('Let’s give Lam a big hug. Press and hold Lam!','Mình ôm Lam thật chặt nhé. Con nhấn giữ vào Lam!',{q:true}); turn('kid');
+  if(wantDemo('hold')){ await Hand.moveTo(center(lam),500); await Hand.press(1300); Hand.hide(); await sleep(200) }
+  // while the child holds, Na comes over to hug Lam
+  const nx0=80, nx1=33; let alive=true; na.style.transition='none';
+  const follow=()=>{ if(!alive) return; const p=parseFloat(lam.style.getPropertyValue('--hold'))||0; na.style.left=(nx0+(nx1-nx0)*p).toFixed(1)+'%'; requestAnimationFrame(follow) }; requestAnimationFrame(follow);
+  try{ await holdOn(lam,1600) } finally { alive=false }
+  na.style.transition=''; na.style.left=nx1+'%'; turn(null);
+  lam.classList.remove('shiver'); setKidFace(na,'Na','happy'); burst(center(lam),{n:10,kind:'heart'}); await sleep(700); setKidFace(lam,'Lam','happy'); confetti();
+  box.classList.remove('raining','blowing'); box.classList.add('calm');
+  await say('Lam feels better now. Thank you!','Lam thấy dễ chịu hơn rồi. Cảm ơn con!'); await nextPage(box) }
 
-/* ---- 4. ladybugs after the rain: a ladybug lands on a leaf for a moment, then flies away. Which card has the same number of dots? ---- */
+/* ---- 4. ladybugs after the rain (seeing at a glance, step by step). Chồi shows how: the ladybug stays on the leaf, count its spots,
+   find the card. Then the ladybug stays for the child. Then it flies away quickly; not sure (no answer after a while, or a wrong card)?
+   It comes back and stays longer; the time after that, it stays. In Fun Mix: one quick one ---- */
 const LADYBUG_SVG=lay=>dotsSVG('ladybug',lay).replace('<svg viewBox="0 0 100 100">','<svg viewBox="0 0 100 100" overflow="visible"><g class="lwing l"><ellipse cx="34" cy="56" rx="20" ry="34" fill="#DDF1F8" opacity=".75" stroke="'+INK+'" stroke-width="2"/></g><g class="lwing r"><ellipse cx="66" cy="56" rx="20" ry="34" fill="#DDF1F8" opacity=".75" stroke="'+INK+'" stroke-width="2"/></g>');
-const LEAF_SVG=()=>`<svg viewBox="0 0 120 80" aria-hidden="true"><path d="M6 60 Q30 4 110 10 Q100 70 20 70Z" fill="#58B592" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/><path d="M14 64 Q60 36 104 14" stroke="#2A8060" stroke-width="3" fill="none"/><circle cx="70" cy="30" r="3" fill="#BFE3F7"/><circle cx="44" cy="48" r="2.5" fill="#BFE3F7"/></svg>`;
-function ladybugDots(sk,rounds=2){ const st={};
-  return choiceActivity(sk,rounds,['The rain stops. Look, the ladybugs come out!','Mưa tạnh rồi. Nhìn kìa, các bạn bọ rùa bò ra!'],r=>{
-    const n=nextDifferent(st.n,()=>1+rand(3)); st.n=n; const lay=pick(LAY[n]); const lays=[1,2,3].map(k=>k===n&&LAY[n].length>1?pick(LAY[n].filter(x=>x!==lay)):pick(LAY[k]));
-    const c=card(); const sc=el(`<div class="sbox qbox lbugbox">${BG.night()}<div class="sthing lleaf" style="left:50%;bottom:6%;width:44%">${LEAF_SVG()}</div><div class="lbug">${LADYBUG_SVG(lay)}</div></div>`);
-    const [row,opts]=optRow([1,2,3].map(k=>dotsSVG('card',lays[k-1])),'small'); c.append(sc,row);
-    const bug=$('.lbug',sc);
-    const show=async()=>{ bug.classList.remove('away','land'); void bug.offsetWidth; bug.classList.add('land'); tone(900,.15,'sine',.04,0,1200); await sleep(2100); bug.classList.add('away'); tone(1000,.3,'triangle',.03,0,1600); await sleep(700) };
-    const q=()=>say('How many spots did the ladybug have? Find the card with the same number of dots!','Bạn bọ rùa có mấy chấm? Con tìm thẻ có số chấm giống vậy nhé!');
-    return {opts,correct:n-1,concept:'flash:'+n,labels:[1,2,3].map(k=>[`that card has ${W[k]} ${k>1?'dots':'dot'}`,`thẻ đó có ${VI_N[k]} chấm`]),
-      pre:async()=>{ await say('A ladybug is landing on the leaf. Look quickly!','Một bạn bọ rùa đậu xuống chiếc lá. Nhìn nhanh nào!',{gap:200}); await show() },
-      ask:q, replay:async()=>{ await say('Here it comes again. Look!','Bọ rùa bay lại kìa. Nhìn nhé!',{gap:200}); await show(); await q() },
-      explain:async()=>{ bug.classList.remove('away'); bug.classList.add('land'); await sleep(400); await say(`${cap(W[n])} ${n>1?'spots':'spot'}, and ${W[n]} ${n>1?'dots':'dot'}. The same!`,`${cap(VI_N[n])} chấm trên lưng, ${VI_N[n]} chấm trên thẻ. Giống nhau!`) },
-      praise:[`You saw ${W[n]} ${n>1?'spots':'spot'}, quick as a wink!`,`Con nhìn ra ${VI_N[n]} chấm thật nhanh!`],
-      answer:[`${cap(W[n])} ${n>1?'spots':'spot'}, ${W[n]} ${n>1?'dots':'dot'}!`,`${cap(VI_N[n])} chấm trên lưng, ${VI_N[n]} chấm trên thẻ!`]} }) }
+/** a close-up of a branch coming in from the side of the picture (so the leaf is big because it is near) */
+const BRANCH_SVG=()=>`<svg viewBox="0 0 200 110" overflow="visible" aria-hidden="true"><path d="M214 74 Q160 62 112 66" stroke="${INK}" stroke-width="11" fill="none" stroke-linecap="round"/><path d="M214 74 Q160 62 112 66" stroke="#7A5A3A" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M118 66 C96 34 58 26 22 36 C40 64 80 76 118 66Z" fill="#58B592" stroke="${INK}" stroke-width="3.5" stroke-linejoin="round"/><path d="M116 65 C90 50 58 42 28 38" stroke="#2A8060" stroke-width="2.6" fill="none"/>
+<path d="M164 66 C156 88 134 100 112 104 C116 86 136 70 164 66Z" fill="#7EDB9E" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M162 67 C146 80 128 92 116 101" stroke="#2A8060" stroke-width="2" fill="none"/>
+<path d="M186 68 C180 44 190 26 206 18 C210 40 202 58 186 68Z" fill="#7EDB9E" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M187 66 C192 50 198 34 204 22" stroke="#2A8060" stroke-width="2" fill="none"/>
+<circle cx="60" cy="58" r="3" fill="#BFE3F7" stroke="${INK}" stroke-width="1"/><circle cx="140" cy="94" r="2.4" fill="#BFE3F7" stroke="${INK}" stroke-width="1"/></svg>`;
+/** wait for a tap on one of the cards; -1 after ms (when ms) */
+function waitPick(opts,ms=0){ return new Promise((res,rej)=>{ const hs=[]; let t=null, over=false;
+  const off=()=>{ over=true; hs.forEach(([e,f])=>e.removeEventListener('click',f)); clearTimeout(t); abortFns.delete(ab); opts.forEach(o=>delete o.dataset.live) };
+  const done=v=>{ if(over) return; off(); res(v) }; const ab=()=>{ off(); rej(ABORT) }; abortFns.add(ab);
+  opts.forEach((o,i)=>{ o.dataset.live='1'; const f=e=>{ e.stopPropagation(); done(i) }; o.addEventListener('click',f); hs.push([o,f]) });
+  if(ms&&!AUTO) t=setTimeout(()=>done(-1),ms);
+  if(AUTO) setTimeout(()=>{ let i=opts.findIndex(o=>o.dataset.ok==='1'); if(window.__autoWrong&&Math.random()<window.__autoWrong) i=rand(opts.length); done(i<0?0:i) },HASH==='auto'?15:HASH==='time'?2200:900*SPEED) }) }
+async function ladybugDots(sk,rounds=2){ const mixed=inMix(); let prev=null;
+  const make=(force)=>{ const n=force||nextDifferent(prev,()=>1+rand(3)); prev=n; const lay=pick(LAY[n]); const lays=[1,2,3].map(k=>k===n&&LAY[n].length>1?pick(LAY[n].filter(x=>x!==lay)):pick(LAY[k]));
+    const c=card(); const sc=el(`<div class="sbox qbox lbugbox">${BG.night()}<div class="lbranch">${BRANCH_SVG()}</div><div class="lbug">${LADYBUG_SVG(lay)}</div></div>`);
+    const [row,opts]=optRow([1,2,3].map(k=>dotsSVG('card',lays[k-1])),'small'); c.append(sc,row); const bug=$('.lbug',sc);
+    return {n,lay,opts,bug,
+      land:async()=>{ bug.classList.remove('away','land'); void bug.offsetWidth; bug.classList.add('land'); tone(900,.15,'sine',.04,0,1200); await sleep(800) },
+      away:async()=>{ bug.classList.remove('land'); bug.classList.add('away'); tone(1000,.3,'triangle',.03,0,1600); await sleep(700) }} };
+  await tell('The rain stops. Look, the ladybugs come out!','Mưa tạnh rồi. Nhìn kìa, các bạn bọ rùa bò ra!');
+  if(!mixed&&wantDemo('ladybug')){ const Q=make(2); await watchMe(); await reveal(Q.opts);
+    await say('A ladybug is landing on the leaf.','Một bạn bọ rùa đậu xuống chiếc lá.',{gap:200}); await Q.land(); await sleep(300);
+    await countDots(Q.bug,'ladybug',Q.lay,['spots','chấm']);
+    await say(`Now I find the card with ${W[Q.n]} dots.`,`Giờ Chồi tìm thẻ có ${VI_N[Q.n]} chấm.`,{gap:150});
+    await Hand.moveTo(center(Q.opts[Q.n-1]),600); await Hand.tap(); Q.opts[Q.n-1].classList.add('right'); SFX.chime(); burst(center(Q.opts[Q.n-1])); Hand.hide();
+    await say(`${cap(W[Q.n])} spots, ${W[Q.n]} dots. The same!`,`${cap(VI_N[Q.n])} chấm trên lưng, ${VI_N[Q.n]} chấm trên thẻ. Giống nhau!`);
+    await yourTurn() }
+  for(let r=0;r<rounds;r++){ const Q=make(); const flies=mixed||r>0; turn('kid'); await reveal(Q.opts); await flushPre();
+    await say(...(flies?(mixed?['A ladybug lands for a moment. Look quickly!','Một bạn bọ rùa đậu xuống một chút thôi. Nhìn nhanh nào!']:['This time, the ladybug flies away quickly. Look quickly!','Lần này bọ rùa bay đi nhanh lắm. Nhìn nhanh nào!']):['Here comes a ladybug. It stays on the leaf.','Một bạn bọ rùa bay đến. Bạn ấy đậu yên trên lá.']),{gap:200,q:false});
+    await Q.land(); let gone=false; if(flies){ await sleep(1300); await Q.away(); gone=true }
+    const ask=()=>gone?say('How many spots did the ladybug have? Find the card with the same number of dots!','Bạn bọ rùa có mấy chấm? Con tìm thẻ có số chấm giống vậy nhé!'):say('How many spots does the ladybug have? Find the card with the same number of dots!','Bạn bọ rùa có mấy chấm? Con tìm thẻ có số chấm giống vậy nhé!');
+    Q.opts.forEach((o,i)=>{ if(i===Q.n-1) o.dataset.ok='1' }); if(RUN) RUN.concept='flash:'+Q.n;
+    await ask(); RUN.qfn=ask; const t0=performance.now(); let first=true, back=0;
+    for(;;){ const stopH=gone?()=>{}:hintHand(()=>Q.opts[Q.n-1]); let i; try{ i=await waitPick(Q.opts,gone?4500:0) } finally { stopH() }
+      if(i===Q.n-1){ Q.opts[i].classList.add('right'); SFX.chime(); burst(center(Q.opts[i])); if(first) rec(sk,true,performance.now()-t0);
+        if(gone) await Q.land();   // it comes back to show its spots
+        await kept(first,{later:true,line:[`You saw ${W[Q.n]} ${Q.n>1?'spots':'spot'}, quick as a wink!`,`Con nhìn ra ${VI_N[Q.n]} chấm thật nhanh!`]});
+        await say(`${cap(W[Q.n])} ${Q.n>1?'spots':'spot'}, ${W[Q.n]} ${Q.n>1?'dots':'dot'}!`,`${cap(VI_N[Q.n])} chấm trên lưng, ${VI_N[Q.n]} chấm trên thẻ!`,{gap:300}); await reteachPending(); break }
+      if(i>=0){ const o=Q.opts[i]; o.classList.remove('nope'); void o.offsetWidth; o.classList.add('nope'); boing();
+        await say(`Oops, that card has ${W[i+1]} ${i?'dots':'dot'}.`,`Ơ, thẻ đó có ${VI_N[i+1]} chấm.`,{gap:300});
+        if(first){ rec(sk,false,performance.now()-t0); first=false } else if(!gone){ Q.opts[Q.n-1].classList.add('hint'); await Hand.moveTo(center(Q.opts[Q.n-1]),600); await sleep(600); Hand.hide() } }
+      if(gone){ back++; await say('Here it comes again. Look!','Bọ rùa bay lại kìa. Nhìn nhé!',{gap:200,q:false}); await Q.land(); if(back<2){ await sleep(3200); await Q.away() } else gone=false }
+      await ask() }
+    await sleep(500) }
+  turn(null) }
 
 /* ---- 6. Na found her drum in the tent: look at the dots, then bang the drum (seeing at a glance, at the end of the level) ---- */
 async function naDrum(){ const box=sbox('ndrum',BG.night()); box.append(sceneThing(TENT_SVG(),60,4,26,'ctent')); const na=kidAt('Na','excited',40,4,14); box.append(na); box.append(sceneThing(ART.drum(),48,4,9,'cdrum'));
@@ -6814,7 +7060,7 @@ async function hideCount(){ const sk=SK['L2.M.NUM.04'];
 /* ---- 9. Ben is tired: help him into his sleeping bag, with a lullaby ---- */
 const BEN_BAG={f:'tired',name:'Ben',scene:'bed',act:'hold',music:'lullaby-box',
   en:'It’s late. Ben played all evening. Now he is yawning.',vi:'Khuya rồi. Ben chơi cả buổi tối. Giờ Ben ngáp rồi.',
-  hen:'Let’s help Ben into his sleeping bag. Press and hold Ben!',hvi:'Mình giúp Ben chui vào túi ngủ nhé. Con nhấn giữ vào Ben!'};
+  hen:'Let’s help Ben into his sleeping bag. Press and hold the sleeping bag!',hvi:'Mình giúp Ben chui vào túi ngủ nhé. Con nhấn giữ vào túi ngủ!',holdOn:'.fbed'};
 
 /* =========================================================
    LEVEL 3 · NA'S HOUSE: "an afternoon in Na's room" (spiral version, 20/10)
@@ -6891,7 +7137,7 @@ async function crayonSort(){ const sk=SK['L2.M.SORT.01'];
     const inCup=el(`<i class="incup" style="left:${30+((k*13)%40)}%;rotate:${(k%3-1)*10}deg">${CRAYON_SVG(CRAYON_COLS.find(x=>x[0]===z.dataset.c)[2])}</i>`); z.append(inCup); SFX.pop(); left--; if(!left) g.done() };
   cr.forEach(t=>{ makeDrag(t,()=>cups,{onDrop:z=>putIn(t,z)}); t.addEventListener('click',()=>{ if(t.dataset.used) return; cr.forEach(x=>x.classList.remove('sel')); t.classList.add('sel'); sel=t; tone(700,.06,'sine',.05) }) });
   cups.forEach(z=>z.addEventListener('click',()=>{ if(sel) putIn(sel,z) }));
-  await say('Na wants to draw. Oh, her crayons are all mixed up!','Na muốn vẽ. Ôi, bút màu của Na lẫn lộn hết rồi!');
+  await tell('Na wants to draw. Oh, her crayons are all mixed up!','Na muốn vẽ. Ôi, bút màu của Na lẫn lộn hết rồi!');
   await say(`Let’s sort them by colour. The ${A[0]} crayons go in the ${A[0]} cup. The ${B[0]} crayons go in the ${B[0]} cup.`,`Mình xếp theo màu nhé. Bút ${A[1]} vào cốc ${A[1]}. Bút ${B[1]} vào cốc ${B[1]}.`);
   if(RUN.mode==='teach'&&wantDemo('crayons')){ await watchMe(); const t=cr.find(x=>x.dataset.c===A[0]); await Hand.moveTo(center(t),500); await Hand.tap(); await say(`This crayon is ${A[0]}.`,`Bút này màu ${A[1]}.`,{gap:100});
     await demoDrag(t,cups[0],650); t.classList.remove('dragging'); t.style.translate=''; await putIn(t,cups[0]); Hand.hide(); await say(`It goes in the ${A[0]} cup!`,`Nó vào cốc ${A[1]}!`); await yourTurn() }
@@ -6918,15 +7164,17 @@ function dominoes(sk,rounds=2){ const st={};
     const c=card(); const sc=el(`<div class="sbox qbox domtable">${NAROOM()}<div class="sthing" style="left:50%;bottom:2%;width:80%">${DESK_SVG()}</div><div class="dom0">${DOMINO_SVG(other,n,true)}</div></div>`);
     const set=[1,2,3]; const [row,opts]=optRow(set.map(k=>DOMINO_SVG(k,null).replace('viewBox="0 0 104 54"','viewBox="0 0 54 54"')),'small domopt'); c.append(sc,row);
     const d0=$('.dom0',sc);
-    const show=async()=>{ d0.innerHTML=DOMINO_SVG(other,n); d0.classList.remove('flip'); void d0.offsetWidth; d0.classList.add('flip'); tone(500,.08,'square',.04,0,0); await sleep(2100); d0.innerHTML=DOMINO_SVG(other,n,true); d0.classList.remove('flip'); void d0.offsetWidth; d0.classList.add('flip'); await sleep(400) };
+    const show=async()=>{ d0.dataset.down=''; d0.innerHTML=DOMINO_SVG(other,n); d0.classList.remove('flip'); void d0.offsetWidth; d0.classList.add('flip'); tone(500,.08,'square',.04,0,0); await sleep(2100); d0.innerHTML=DOMINO_SVG(other,n,true); d0.classList.remove('flip'); void d0.offsetWidth; d0.classList.add('flip'); d0.dataset.down='1'; await sleep(400) };
+    // not sure? tap the turned-over domino to see it again, for a moment
+    let peek=false; d0.addEventListener('click',async()=>{ if(peek||d0.dataset.down!=='1') return; peek=true; SFX.soft(); d0.innerHTML=DOMINO_SVG(other,n); await rawWait(1000); if(d0.dataset.down==='1') d0.innerHTML=DOMINO_SVG(other,n,true); peek=false });
     const q=()=>say('How many dots were on the end of the domino? Find the one with the same dots!','Đầu bên phải của quân đô-mi-nô có mấy chấm? Con tìm quân có số chấm giống vậy nhé!');
     return {opts,correct:n-1,concept:'flash:'+n,labels:set.map(k=>[`that one has ${W[k]} ${k>1?'dots':'dot'}`,`quân đó có ${VI_N[k]} chấm`]),
       pre:async()=>{ await say('Lam turns a domino over. Look quickly!','Lam lật một quân đô-mi-nô. Nhìn nhanh nào!',{gap:200}); await show() },
       ask:q, replay:async()=>{ await say('Look again!','Nhìn lại nhé!',{gap:200}); await show(); await q() },
-      explain:async()=>{ d0.innerHTML=DOMINO_SVG(other,n); await say(`${cap(W[n])} ${n>1?'dots':'dot'} at the end. ${cap(W[n])} goes next to ${W[n]}!`,`Đầu bên phải có ${VI_N[n]} chấm. ${cap(VI_N[n])} nối với ${VI_N[n]}!`) },
-      onRight:async()=>{ d0.innerHTML=DOMINO_SVG(other,n); const m=el(`<div class="dom1">${DOMINO_SVG(n,1+rand(3))}</div>`); sc.append(m); SFX.pop() },
+      explain:async()=>{ d0.dataset.down=''; d0.innerHTML=DOMINO_SVG(other,n); await say(`${cap(W[n])} ${n>1?'dots':'dot'} at the end. ${cap(W[n])} goes next to ${W[n]}!`,`Đầu bên phải có ${VI_N[n]} chấm. ${cap(VI_N[n])} nối với ${VI_N[n]}!`) },
+      onRight:async()=>{ d0.dataset.down=''; d0.innerHTML=DOMINO_SVG(other,n); const m=el(`<div class="dom1">${DOMINO_SVG(n,1+rand(3))}</div>`); sc.append(m); SFX.pop() },
       praise:[`You saw ${W[n]} ${n>1?'dots':'dot'} in a flash!`,`Con nhìn ra ${VI_N[n]} chấm thật nhanh!`],
-      answer:[`${cap(W[n])} and ${W[n]}. They match!`,`${cap(VI_N[n])} với ${VI_N[n]}. Khớp rồi!`]} }) }
+      answer:[`${cap(W[n])} and ${W[n]}. They match!`,`${cap(VI_N[n])} với ${VI_N[n]}. Khớp rồi!`]} },{mixIntro:false}) }
 
 /* ---- 6. Na's music box: two tunes; how does the music sound? (looking back at scared and tired, by ear) ---- */
 async function naMusicBox(){ const sk=SK['L2.W.FEEL.02'];
@@ -6966,7 +7214,8 @@ async function kittenHide(sk,rounds=2){
     turn('kid');
     await stepPick(sk,hot,k,{ask,concept:'pos:'+p,labels:Object.keys(KPLACES).map(q=>[`that’s ${KPLACES[q].en}`,`đó là ${KPLACES[q].vi}`]),
       onRight:async()=>{ hot[k].classList.add('found'); const P=KPLACES[p]; const cat=el(`<div class="kcat" style="left:${P.x}%;bottom:${P.b}%;width:${P.w}%"><svg viewBox="-16 -40 32 42">${catG(0,0,1)}</svg></div>`); box.append(cat); SFX.chime() }});
-    turn(null); await say(`Peekaboo! The kitten is ${KPLACES[p].en}.`,`Ú òa! Mèo con ở ${KPLACES[p].vi}.`); await pollyEcho(...{on:['On! On!','Trên! Trên!'],under:['Under! Under!','Dưới! Dưới!'],in:['In! In!','Trong! Trong!']}[p]); await reteachPending() }
+    turn(null); await say(`Peekaboo! The kitten is ${KPLACES[p].en}.`,`Ú òa! Mèo con ở ${KPLACES[p].vi}.`); await pollyEcho(...{on:['On the bed! On the bed!','Trên giường! Trên giường!'],under:['Under the bed! Under the bed!','Dưới gầm giường! Dưới gầm giường!'],in:['In the basket! In the basket!','Trong cái giỏ! Trong cái giỏ!']}[p]); await reteachPending() }
+  if(inMix()) return;
   // the kitten jumps up onto the shelf…
   const cat=box.querySelector('.kcat'); if(cat){ cat.style.transition=`left ${1*SPEED}s ease-in-out, bottom ${1*SPEED}s cubic-bezier(.3,1.6,.5,1)`; cat.style.left='68%'; cat.style.bottom='68%' }
   tone(600,.1,'square',.04,0,1200); await say('Oops! The kitten jumped up onto the shelf…','Ơ! Mèo con nhảy lên kệ…'); await nextPage(box) }
@@ -6989,11 +7238,11 @@ const PIECES={
 /** a paper lantern, glowing (the picture for the lantern tunes; also used in Màn 2) */
 const LANTERN_ART=(col,pop=false)=>`<svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="#3B3F72"/><circle cx="50" cy="56" r="36" fill="${col}" opacity=".25"/><path d="M50 6 v12" stroke="${CK_PL}" stroke-width="3"/><rect x="38" y="16" width="24" height="8" rx="2" fill="#5B3A2E" stroke="${CK_PL}" stroke-width="2.5"/><ellipse cx="50" cy="54" rx="26" ry="30" fill="${col}" stroke="${CK_PL}" stroke-width="3.5"/><path d="M50 24 q-14 30 0 60 M50 24 q14 30 0 60 M26 54 h48" stroke="${CK_PL}" stroke-width="1.6" fill="none" opacity=".45"/><ellipse cx="42" cy="44" rx="6" ry="10" fill="#fff" opacity=".45"/><rect x="38" y="82" width="24" height="7" rx="2" fill="#5B3A2E" stroke="${CK_PL}" stroke-width="2.5"/><path d="M50 89 v8" stroke="#E8484F" stroke-width="3"/>${pop?`<path d="M82 22 l3 -8 l3 8 l8 3 l-8 3 l-3 8 l-3 -8 l-8 -3z" fill="#FFD21F" stroke="${CK_PL}" stroke-width="2"/><path d="M14 30 l2 -5 l2 5 l5 2 l-5 2 l-2 5 l-2 -5 l-5 -2z" fill="#FFD21F"/>`:''}</svg>`;
 const FEEL_PIECE={happy:'ode',excited:'nacht',surprised:'surprise',tired:'lullaby',scared:'mountain',angry:'fifth',sad:'moonlight'};
-const MUSIC_ORDER=['ode','nacht','surprise','lullaby','mountain','fifth','moonlight'];
+const MUSIC_ORDER=['ode','nacht','lullaby','mountain','moonlight','fifth'];   // Haydn's "Surprise" is kept for Unit 2 (loud and quiet); Ode to Joy opens at the treasure chest (Màn 7)
 /** the child has met this piece: it opens in the Music box (and the home button sparkles once) */
 function heardPiece(id){ if(!PIECES[id]) return; S.heard=S.heard||{}; if(!S.heard[id]){ S.heard[id]=today(); S.heardNew=1; save() } }
 const MBUF={}; async function musicBuf(file){ if(MBUF[file]) return MBUF[file]; const a=ac(); if(!a) return null;
-  try{ const r=await fetch(`music/${file}.mp3`); if(!r.ok) throw 0; const ab=await r.arrayBuffer(); return MBUF[file]=await new Promise((res,rej)=>{ const p=a.decodeAudioData(ab,res,rej); if(p&&p.then) p.then(res,rej) }) }catch(e){ return null } }
+  try{ const r=await fetch(`music/${file}.mp3?v=${MUSIC_V}`); if(!r.ok) throw 0; const ab=await r.arrayBuffer(); return MBUF[file]=await new Promise((res,rej)=>{ const p=a.decodeAudioData(ab,res,rej); if(p&&p.then) p.then(res,rej) }) }catch(e){ return null } }
 /** play a music file. under: Chồi may talk over it (it is quieter and does not wait). Returns {stop, done} */
 async function playMusic(file,{gain=.95,maxSec=60,under=false}={}){
   const a=ac(), b=await Promise.race([musicBuf(file),rawWait(4000).then(()=>null)]); if(!a||!b||FAST) return {stop(){},done:Promise.resolve()};
@@ -7022,6 +7271,7 @@ async function viewMusicBox(){
       const me=await playMusic(id+'-box',{maxSec:40}); if(curB!==b){ me.stop(); return } cur=me; me.done.then(()=>{ if(curB===b){ b.classList.remove('playing'); curB=null; cur=null } }) };
     return b });
   const n=MUSIC_ORDER.filter(id=>heard[id]).length;
+  { const t=$('#ptip'); if(t) t.innerHTML='Ba mẹ: để âm lượng vừa phải khi bé nghe nhạc nhé. Các bản nhạc đã được chỉnh to nhỏ đều nhau.' }
   try{ await say(n?'Your music box! Tap a picture to listen.':'Play the levels to find music for your music box!',n?'Hộp nhạc của con đây! Chạm vào một bức tranh để nghe nhé.':'Chơi các màn để tìm nhạc cho hộp nhạc nhé!');
     await new Promise((res,rej)=>abortFns.add(()=>rej(ABORT))) }catch(e){}
   if(cur) cur.stop(); RUN=null; renderHome() }
@@ -7066,8 +7316,8 @@ Object.assign(EP,{
   ],
   2:[
     async()=>teachIt(()=>campIntro()),
-    async()=>reviewIt(null,()=>{ RUN.remindQ=['Remember: excited music is quick and bouncy. A surprise goes boom!','Nhớ nhé: nhạc háo hức thì nhanh và nhảy nhót. Nhạc bất ngờ thì có tiếng bùm!']; return lanternMusic() }),
-    async()=>teachIt(()=>comfortStep(LAM_STORM,{hint:true})),
+    async()=>reviewIt(null,()=>{ RUN.remindQ=['Remember: excited music is quick and bouncy!','Nhớ nhé: nhạc háo hức thì nhanh và nhảy nhót!']; return lanternMusic() }),
+    async()=>teachIt(()=>stormLam()),
     async()=>practise(()=>ladybugDots(SK['L2.M.NUM.05'])),
     async()=>inStep(mamMode('L2.M.POS.01'),()=>posIntro(),'L2.M.POS.01'),
     async()=>practise(()=>naDrum()),
@@ -7327,16 +7577,16 @@ function revNote(id,ok){ S.rev=S.rev||{}; const r=S.rev[id]||(S.rev[id]={box:0,d
 /* FUN MIX CATALOGUE (20/10): every level registers short review turns that use its own scene, friends and way of playing
    (the same pictures the child met there). Fun Mix only uses turns from levels the child has finished; a skill with no turn
    here falls back to the general quick questions below. Add the turns of each new level here. */
-const MIXQ=[]; const mixQ=(level,skill,what,run)=>MIXQ.push({level,skill,what,run});
+const MIXQ=[]; const mixQ=(level,skill,what,run,w=1)=>MIXQ.push({level,skill,what,run,w});   // w: how often it is picked (the flags: less)
 mixQ(0,'L2.W.FEEL.01','school: friends hiding in the bushes, find the face',()=>bushFaces(SK['L2.W.FEEL.01'],1));
-mixQ(0,'L2.M.NUM.02','school garden: count the flags',()=>gardenFlags());
+mixQ(0,'L2.M.NUM.02','school garden: count the flags (3 to 6)',()=>gardenFlags(),.35);
 mixQ(0,'L2.E.WR.02','school: draw the road, the water, the slide or the bridge',()=>GAMES.trace(SK['L2.E.WR.02'],1,{skins:[pick([...EP0_TRACE1,...EP0_TRACE2])],intro:['Let’s draw a line, like at school!','Mình vẽ một đường, như ở trường nhé!']}));
 mixQ(1,'L2.W.FEEL.01','park: pop the bubbles with the right face',()=>bubbleFaces({rounds:1,polly:false}));
 mixQ(1,'L2.W.FEEL.02','park: the balloon man’s balloon for the excited / surprised friend',()=>balloonMan(SK['L2.W.FEEL.02'],1));
 mixQ(1,'L2.M.NUM.02','park: pop the balloons stuck in the tree, and count',()=>popCover({gusts:1}));
 mixQ(1,'L2.E.WR.02','park: Na’s kite string, down or across',()=>GAMES.trace(SK['L2.E.WR.02'],1,{skins:[pick(EP1_TRACE)],intro:['Na wants to fly her kite!','Na muốn thả diều!']}));
-mixQ(2,'L2.W.FEEL.02','garden at night: which lantern’s music sounds excited / has a surprise',()=>lanternMusic({rounds:1}));
-mixQ(2,'L2.M.NUM.05','garden at night: a ladybug lands for a moment; the card with the same dots',()=>ladybugDots(SK['L2.M.NUM.05'],1));
+mixQ(2,'L2.W.FEEL.02','garden at night: which lantern’s music sounds excited, or what pops out of a lantern (how does Lam feel?)',()=>lanternMusic({rounds:1}));
+mixQ(2,'L2.M.NUM.05','garden at night: a ladybug lands for a moment (it comes back if needed); the card with the same dots',()=>ladybugDots(SK['L2.M.NUM.05'],1));
 mixQ(2,'L2.M.NUM.05','garden at night: Na’s drum, one beat for each dot',()=>EXTRA.flash.drum(SK['L2.M.NUM.05'],1));
 mixQ(3,'L2.M.SORT.01','Na’s room: put the crayons in the cup of the same colour',()=>crayonSort());
 mixQ(3,'L2.M.SORT.02','Na’s room: tidy up, big toys and small toys',()=>tidyUp());
@@ -7344,21 +7594,30 @@ mixQ(3,'L2.M.NUM.05','Na’s room: Lam’s domino, look quickly and match the do
 mixQ(3,'L2.M.POS.01','Na’s room: the kitten is on / under the bed, in the basket',()=>kittenHide(SK['L2.M.POS.01'],1));
 /* the skills a quick question can be made for, and how to make one */
 const MIX_FMT={findNumeral:['tap'],flash:['card','ladybug','dice'],findFeeling:['tap','story'],question:['mixed'],routine:['when'],sounds:['hear'],clap:['count'],position:['find']};
+/** every game Fun Mix may use now: the turns of finished levels (each one a game of its own), or one quick question for a skill with none */
 function mixMakers(){ const played=new Set(S.attempts.map(a=>a.s)); const out=[]; const done=S.done||{};
   for(const sk of SKILLS){ if(!played.has(sk.id)) continue;
     const own=MIXQ.filter(q=>q.skill===sk.id&&done[q.level]);
-    if(own.length) out.push({sk,run:()=>inMode('review',()=>pick(own).run(),sk.id)});
-    else if(sk.id==='L2.M.NUM.02') out.push({sk,run:()=>mixCount(sk)});
-    else if(MAKE[sk.game]&&MIX_FMT[sk.game]){ const F=MIX_FMT[sk.game].filter(f=>choiceFmts(sk.game).includes(f)); if(F.length) out.push({sk,run:()=>kidRound(sk,MAKE[sk.game](sk,1,pick(F),{}))}) } }
+    if(own.length) own.forEach(q=>out.push({sk,key:q.level+':'+q.what,w:q.w,run:()=>inMode('review',()=>q.run(),sk.id)}));
+    else if(sk.id==='L2.M.NUM.02') out.push({sk,key:'gen:'+sk.id,w:.6,run:()=>mixCount(sk)});
+    else if(MAKE[sk.game]&&MIX_FMT[sk.game]){ const F=MIX_FMT[sk.game].filter(f=>choiceFmts(sk.game).includes(f)); if(F.length) out.push({sk,key:'gen:'+sk.id,w:.6,run:()=>kidRound(sk,MAKE[sk.game](sk,1,pick(F),{}))}) } }
   return out }
 const accOf=id=>{ const a=S.attempts.filter(x=>x.s===id).slice(-8); return a.length?a.filter(x=>x.ok).length/a.length:1 };
+/* a Fun Mix (20/10): up to six turns (easy, easy, practise, practise, easy, practise), each one a different game: never the same game
+   twice in one Fun Mix. A skill comes back at most twice, in two different games, never twice in a row; the skills that need practice
+   get the practise turns. Not enough different games yet: the Fun Mix is shorter, it does not repeat one */
 function mixPlan(){ const all=mixMakers(); if(!all.length) return null; const d=today(), R=S.rev||{};
-  const rank=m=>{ const r=R[m.sk.id]; if(r&&r.miss&&r.box===0) return 0; if(r&&r.due<=d) return 1; if(r&&r.ok) return 2; return 3 };
-  const weak=all.slice().sort((a,b)=>rank(a)-rank(b)||accOf(a.sk.id)-accOf(b.sk.id)||(((R[b.sk.id]||{}).ok||'')>((R[a.sk.id]||{}).ok||'')?1:-1));
-  const practise=weak.slice(0,3), rest=all.filter(m=>!practise.includes(m));
-  const easy=(rest.length?rest:all).slice().sort((a,b)=>accOf(b.sk.id)-accOf(a.sk.id)).slice(0,3);
-  const P=i=>practise[i%practise.length], E=i=>easy[i%easy.length];
-  return [E(0),E(1),P(0),P(1),E(2),P(2)] }
+  const rank=id=>{ const r=R[id]; if(r&&r.miss&&r.box===0) return 0; if(r&&r.due<=d) return 1; if(r&&r.ok) return 2; return 3 };
+  const ids=[...new Set(all.map(m=>m.sk.id))];
+  const weak=ids.slice().sort((a,b)=>rank(a)-rank(b)||accOf(a)-accOf(b)), practise=weak.slice(0,Math.min(3,Math.max(1,ids.length-2)));
+  const easy=shuffle(ids.filter(id=>!practise.includes(id)));
+  const used=new Set(), cnt={}, plan=[];
+  const choose=pref=>{ const order=pref.map((id,i)=>[id,i]).sort((a,b)=>(cnt[a[0]]||0)-(cnt[b[0]]||0)||a[1]-b[1]).map(x=>x[0]);
+    for(const id of order){ if((cnt[id]||0)>=2||(plan.length&&plan[plan.length-1].sk.id===id)) continue;
+      const c=all.filter(m=>m.sk.id===id&&!used.has(m.key)).map(m=>[m,Math.random()*(m.w||1)]).sort((a,b)=>b[1]-a[1]); if(c.length) return c[0][0] }
+    return null };
+  for(const slot of ['E','E','P','P','E','P']){ const m=choose(slot==='P'?[...practise,...easy]:[...easy,...practise]); if(!m) continue; used.add(m.key); cnt[m.sk.id]=(cnt[m.sk.id]||0)+1; plan.push(m) }
+  return plan }
 
 /* count objects in a small picture (up to 5, Chapter 1) */
 async function mixCount(sk){ const n=3+rand(3); const SC=pick([['park','balloon'],['beach','star'],['yard','flag']]); const pic=scenePic(SC[0],[]);

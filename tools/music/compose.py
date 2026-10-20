@@ -62,12 +62,14 @@ def build(parts, tempo, name, tempo_map=None):
 def render(mid, wav, gain=.7):
     subprocess.run(['fluidsynth', '-ni', '-g', str(gain), '-r', '44100', '-o', 'synth.reverb.active=1', '-o', 'synth.reverb.room-size=0.55',
                     '-o', 'synth.reverb.level=0.55', '-o', 'synth.chorus.active=0', '-F', wav, SF2, mid], check=True, capture_output=True)
-def mp3(wav, out, start=0.0, dur=None, fade_in=0.05, fade_out=1.2):
-    """cut, fade, and bring the loudest moment to -1.5 dB (keeps the quiet and loud parts: the Surprise needs its surprise)"""
+def mp3(wav, out, start=0.0, dur=None, fade_in=0.05, fade_out=1.2, target=-16.0):
+    """cut, fade, and bring every clip to the same loudness (EBU R128, about -16 LUFS), with a limiter so that no peak goes above
+    -3 dB (mp3 adds a little on top). All the clips sound about as loud as each other, so nobody turns the volume up for a quiet one and then gets a fright."""
     cut = ['-ss', str(start)] + (['-t', str(dur)] if dur else [])
-    r = subprocess.run(['ffmpeg', '-hide_banner'] + cut + ['-i', wav, '-af', 'volumedetect', '-f', 'null', '-'], capture_output=True, text=True)
-    peak = float(re.search(r'max_volume: (-?[\d.]+) dB', r.stderr).group(1))
-    af = f'afade=t=in:st=0:d={fade_in}' + (f',afade=t=out:st={max(0,dur-fade_out)}:d={fade_out}' if dur else '') + f',volume={-1.5-peak:.2f}dB'
+    fades = f'afade=t=in:st=0:d={fade_in}' + (f',afade=t=out:st={max(0,dur-fade_out)}:d={fade_out}' if dur else '')
+    r = subprocess.run(['ffmpeg', '-hide_banner', '-nostats'] + cut + ['-i', wav, '-af', fades + ',ebur128', '-f', 'null', '-'], capture_output=True, text=True)
+    loud = float(re.findall(r'I:\s+(-?[\d.]+) LUFS', r.stderr)[-1])
+    af = fades + f',volume={target-loud:.2f}dB,alimiter=limit=0.7:level=false:attack=4:release=60'
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error'] + cut + ['-i', wav, '-af', af, '-ac', '1', '-ar', '44100', '-b:a', '80k', out], check=True)
 def length(wav):
     r = subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', wav], capture_output=True, text=True); return float(r.stdout)
@@ -185,10 +187,9 @@ P['moonlight'] = dict(tempo=56, parts=[
 # Music box: (start, length) of the best-known part. Clips: name → (piece, start, length) for the levels.
 BOX = {'ode': (0, 33.5), 'nacht': (0, 25), 'surprise': (0, 31), 'lullaby': (1.3, 38), 'mountain': (0, 33), 'fifth': (0, 20), 'moonlight': (0, 34)}
 CLIPS = {
-    'map-ode': ('ode', 0, 8.6),             # the map piece flies into the map
     'feel-happy': ('ode', 0, 8.6),
     'feel-excited': ('nacht', 0, 8.2),
-    'feel-surprised': ('surprise', 17.6, 9.6),   # the quiet tune … and the loud chord
+    'feel-surprised': ('surprise', 17.6, 9.6),   # the quiet tune … and the loud chord (not used now: kept for Unit 2, loud and quiet)
     'feel-tired': ('lullaby', 1.4, 9.0),
     'feel-scared': ('mountain', 0, 9.0),
     'feel-angry': ('fifth', 0, 8.0),
