@@ -1,38 +1,47 @@
 # Bối cảnh thật (TP.HCM), vẽ lại theo nét sticker của app
 
-Mỗi file là một hình nền ngang, cùng khung với `BG.*` trong `index.html`:
-`viewBox="0 0 200 140" preserveAspectRatio="xMidYMax meet" overflow="visible"`.
-Trời và nền kéo dài từ x −400 đến 600, nên khung 16:9 nào cũng kín.
+Do chat **[App] Bối cảnh & hình vẽ** vẽ và duyệt với chị Minh. Gắn vào app bằng `python3 tools/art/embed_places.py`
+(chỉ các tên trong `USED` của script được chép vào `index.html`; màn nào bắt đầu dùng cảnh mới thì thêm tên vào đó).
+Cảnh nào sửa thì thay file **cùng tên**, nên bên app chỉ cần chạy lại script.
 
-Đây chỉ là **nền**. Đồ bé chạm vào (lều, đèn lồng, xe đẩy, quả, cây cao, ao, mặt trời…) vẫn do game vẽ chồng lên.
-Trên hình không có chữ, số, biển tên hay logo. Không có mặt trẻ thật.
+## Luật vẽ chung
+- Hình nền ngang, cùng khung với `BG.*`: `viewBox="0 0 200 140" preserveAspectRatio="xMidYMax meet" overflow="visible"`; trời và nền kéo dài x −400…600.
+- Chỉ là **nền**. Đồ bé chạm vào (lều, đèn lồng, giường, bàn, xe đẩy, quả, cần cẩu, ngôi nhà, rương, cây cao, ao, mặt trời…) do game vẽ chồng lên.
+- **Chỗ nhân vật đứng (sàn, nền đất) để một màu trơn**: không thảm, không đường kẻ gạch, không vệt bánh xe (20/10). Riêng sân cỏ có một dải cỏ sáng hơn dẫn vào sảnh.
+- Nền không giành mắt bé: lớp xa (`class="bg-far"`) nhạt, nét mảnh; không làm mờ thêm. Siêu thị cả cảnh được làm dịu màu bằng bộ lọc `p195-mute`.
+- Không có mặt trời, không chữ, không số, không biển tên, không logo. Không có mặt trẻ thật.
+- Nhóm `tp tp-cloud` / `tp tp-tree` là mây và cây chạm được. Id trong SVG có tiền tố `p195-`.
 
+## Unit 1
 | File | Dùng ở | Thay cho |
 |---|---|---|
-| `lop-hoc.svg` | Màn 0 · trong lớp (bản đồ treo trên kệ trái, y ≈ 38–50) | `BG.classroom` |
-| `san-truong.svg` | Màn 0 · sân trường | `BG.school` |
-| `cong-vao-truong.svg` | Màn 0 · cổng trường (sân phía sau, cổng phía trước) | — |
-| `xe-buyt.svg` | Màn 0 · xe buýt trường | — |
-| `vuon-truong.svg` | Màn 0 · vườn trường | `BG.sgarden` |
-| `cong-vien.svg` | Màn 1 · công viên (chỉ cỏ; cây cao và ao vẫn do game vẽ) | `BG.park` |
+| `lop-hoc.svg` | Màn 0 · trong lớp (bản đồ trên kệ trái, y ≈ 38–50) | `BG.classroom` |
+| `san-truong.svg` | Màn 0 · sân trường: cỏ nhân tạo, mái kính chữ A, sảnh cột xanh, cây sứ | `BG.school` |
+| `cong-vao-truong.svg` | Màn 0 mở đầu (đến trường), cuối Màn 6 · cổng, sân trường phía sau | — |
+| `xe-buyt.svg` | Màn 0 · xe buýt trường (đồ vật 120×72) | — |
+| `vuon-truong.svg` | Màn 0 · vườn sau trường: khung leo, nhà nấm, đồi cỏ có hầm, hàng rào trắng | `BG.sgarden` |
+| `cong-vien.svg` | Màn 1 · công viên (chỉ cỏ) | `BG.park` |
 | `vuon-nha-na-chieu.svg` | Màn 2 · phần 1, hoàng hôn (mặt trời của game lặn sau dãy nhà) | `BG.dusk` |
 | `vuon-nha-na-dem.svg` | Màn 2 · phần 2–9, ban đêm | `BG.night` |
-| `phong-na.svg` | Màn 3 · phòng Na, cả màn (giường, bàn, kệ đồ chơi do game vẽ) | `BG.home` / phòng Na |
+| `phong-na.svg` | Màn 3 · phòng Na | phòng Na |
 | `phong-na-toi.svg` | Màn 6 · buổi tối chọn sách | — |
-| `sieu-thi.svg` | Màn 4 · cửa hàng | `BG.shop` |
-| `cong-truong-xay.svg` | Màn 5 · công trường (cần cẩu, ngôi nhà, xe tải, tháp do game vẽ) | — |
-| `phong-nha-moi.svg` | Màn 5 · trong ngôi nhà mới xây, tìm hình vuông/chữ nhật (cửa sổ, đồng hồ, ti vi… do game vẽ) | — |
-| `bep.svg` | Màn 6 · bữa sáng (bàn ăn và bát do game vẽ) | — |
-| `duong-toi-truong.svg` | Màn 6 · đường từ nhà tới cổng trường | — |
-| `dao-bai-cat.svg` | Màn 7 · trên đảo: bãi cát, dừa, đá (rương và các trạm do game vẽ) | — |
-| `dao-hai-dang.svg` | Màn 7 · trên đảo: đồi có hải đăng, cầu gỗ (bản thứ hai, dùng cho trạm khác) | — |
+| `sieu-thi.svg` | Màn 4 · cửa hàng (đã dịu màu) | `BG.shop` |
+| `cong-truong-xay.svg` | Màn 5 · công trường | — |
+| `phong-nha-moi.svg` | Màn 5 · trong ngôi nhà mới xây (cửa sổ lớn nhìn ra công trường) | — |
+| `bep.svg` | Màn 6 · bữa sáng | — |
+| `duong-toi-truong.svg` | Màn 6 · đường tới trường; chiều Na đạp xe | — |
+| `roi-ben.svg` | Màn 7 · mở đầu, đi thuyền trên sông Sài Gòn | — |
+| `dao-bai-cat.svg` | Màn 7 · trên đảo: bãi cát, dừa, đá | — |
+| `dao-hai-dang.svg` | Màn 7 · trên đảo: đồi có hải đăng, cầu gỗ | — |
 
-Ghi chú khi gắn vào app:
-- Nhóm `class="tp tp-cloud"` và `class="tp tp-tree"` là mây và cây chạm được, giống `BG` hiện tại.
-- Nhóm `class="bg-far"` là lớp xa (nhạt, nét mảnh). Không làm mờ thêm.
-- Không có mặt trời trong nền; game tự vẽ.
-- Id trong `clipPath` đều có tiền tố `p195-` để không trùng khi nhiều SVG cùng nằm trong trang.
+## `do-choi/` · đồ chơi sân trường thật, để game đặt riêng (đồ vật, đứng trên mặt đất)
+| File | Gợi ý dùng |
+|---|---|
+| `nha-nam.svg` | ú òa (bạn ló ra từ cửa), in/on (mèo trong nhà nấm, trên mái) |
+| `doi-co-ham.svg` | kẻ đường: leo thang lên đồi rồi chui ra hầm; trốn tìm; in/under |
+| `cong-con-cua.svg` | kẻ đường: chui cổng cua → qua cầu khúc gỗ → chui ống; đếm khúc gỗ, gọi tên màu |
+| `khung-leo.svg` | on/under, leo thang |
+| `khung-hat.svg` | khung hạt đỏ trắng: đếm đến 5 (Unit 1), đến 10 (Unit 2) |
 
-Còn chờ: cảnh rời bến (Màn 7). Màn 6 không có cảnh hẻm; chiều Na đạp xe dùng `duong-toi-truong.svg`.
-
-Nguồn vẽ: thư mục làm việc của chat [App] Bối cảnh & hình vẽ. Cảnh nào sửa thì thay file cùng tên.
+## `sau/` · địa danh, chưa dùng trong Unit 1
+`buu-dien.svg`, `thao-cam-vien.svg` (cổng sắt), `nha-tho-duc-ba.svg`, `cho-ben-thanh.svg`, `metro.svg`, `pho-di-bo.svg` (nhìn về Bitexco).
