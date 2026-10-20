@@ -7,9 +7,9 @@ in art/places/ changes:  python3 tools/art/embed_places.py
 Only the files listed in USED are copied (the ones a level uses now); add a name when a level starts using it."""
 import os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-USED = ['lop-hoc', 'san-truong', 'vuon-truong', 'cong-vien', 'vuon-nha-na-chieu', 'vuon-nha-na-dem', 'phong-na', 'sieu-thi']
+USED = ['lop-hoc', 'san-truong', 'vuon-truong', 'cong-vien', 'vuon-nha-na-chieu', 'vuon-nha-na-dem', 'phong-na', 'sieu-thi', 'cong-truong-xay', 'phong-nha-moi']
 # things taken out of a picture for the app (asked after a play-test), without changing the file in art/places/
-TRIM = {}   # name -> [regex, ...] to cut a part out of a place (each must match once). The rug in phong-na was removed in the art itself (20/10)
+TRIM = {'cong-truong-xay': [r'<path d="M146 10 V30"[^>]*/>', r'<rect x="142" y="30" width="8" height="5"[^>]*/>']}   # name -> [regex, ...] cut out (each must match once). The far crane's own hook: the game hangs its own (Màn 5)
 A, B = '/* PLACES:BEGIN (made by tools/art/embed_places.py from art/places/, do not edit by hand) */', '/* PLACES:END */'
 parts = []
 for name in USED:
