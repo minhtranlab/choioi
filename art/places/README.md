@@ -32,11 +32,12 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 | `lop-hoc.svg` | Màn 0 · trong lớp (bản đồ trên kệ trái, y ≈ 38–50) | 96 | toàn cảnh: mọi trang | `BG.classroom` |
 | `san-truong.svg` | Màn 0 · sân trường | 92 | toàn cảnh: mọi trang | `BG.school` |
 | `cong-vao-truong.svg` | Màn 0 mở đầu, cuối Màn 6 · cổng | 104 (vỉa hè), đường 117 | toàn cảnh: trang đầu, trang kể chuyện | — |
-| `cong-vao-truong-tron.svg` | như trên, sân khấu (21/10) | 104 (vỉa hè trơn tới đáy, không có đường) | sân khấu: mọi trang có đồ của game. Tường trơn kem + xanh ngọc, không biển tên | — |
+| `cong-vao-truong-tron.svg` | như trên, sân khấu (21/10) | 104 (vỉa hè trơn tới đáy, không có đường) | sân khấu: mọi trang có đồ của game. Cổng giữ nguyên thiết kế (biển tên, sóng, hoa, chậu), chỉ dịu đi một chút | — |
 | `xe-buyt.svg` | Màn 0 · xe buýt trường (đồ vật) | đáy hình | — | — |
 | `vuon-truong.svg` | Màn 0 · vườn sau trường. **21/10: chân trời lên y 62, cỏ cắt sọc**; nhà nấm, khung leo, đồi cỏ dời lên theo; hố cát giữ đúng chỗ cũ (y ≈ 108–132) | 62 | toàn cảnh: trang đầu, ú òa, mảnh 1 | `BG.sgarden` |
 | `vuon-truong-tron.svg` | Màn 0 · vườn sau trường, sân khấu (21/10) | 62 | sân khấu: đếm cờ, cầu trượt, cây cầu, trốn tìm. Không hố cát: cầu trượt `do-choi/cau-truot-*.svg`, cây cầu `do-choi/cay-cau.svg`, bụi cây đặt thẳng trên cỏ | — |
 | `cong-vien.svg` | Màn 1 · công viên | 92 | toàn cảnh: mọi trang | `BG.park` |
+| `cong-vien-duong.svg` | Màn 1 · đường ven công viên (cạnh Landmark 81), nơi xe chạy qua (21/10) | vỉa hè gần 132, làn xa 106–119, làn gần 119–132 | toàn cảnh: mọi trang có xe chạy | — |
 | `vuon-nha-na-chieu.svg` | Màn 2 · phần 1, hoàng hôn | ≈ 92 | toàn cảnh: mọi trang | `BG.dusk` |
 | `vuon-nha-na-dem.svg` | Màn 2 · phần 2–9, ban đêm | ≈ 92 | toàn cảnh: mọi trang | `BG.night` |
 | `phong-na.svg` | Màn 3 · phòng Na | 92 | toàn cảnh: mọi trang | phòng Na |
@@ -64,6 +65,7 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 - Mái kính chữ A giữ rõ (không nhạt theo lớp xa). Cổng trường giữ thiết kế cũ, kể cả cụm đỏ trên biển tên.
 - Cầu trượt và cây cầu vẽ một lần trong `do-choi/`.
 - Xe: xem `art/props/README.md`.
+- Vòng 2 (21/10 chiều): đồng ý vườn trường mới, đường tới trường + bản sân khấu, đường ven công viên, taxi, xe chở hàng, cầu trượt và cây cầu. Cổng trường bản sân khấu sửa lại: giữ nguyên thiết kế cổng, chỉ dịu màu một chút (cổng là chỗ ai cũng nhận ra).
 
 ## `do-choi/` · đồ chơi sân trường, để game đặt riêng (đồ vật, đứng trên mặt đất; tỉ lệ khoảng 32 đơn vị = 1 m)
 | File | Gợi ý dùng |
