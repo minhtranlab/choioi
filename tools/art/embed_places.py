@@ -11,12 +11,19 @@ USED = ['lop-hoc', 'san-truong', 'vuon-truong', 'cong-vien', 'vuon-nha-na-chieu'
         'nha-na-bo-doc', 'bep', 'doc-cau-qua-kenh', 'duong-toi-truong', 'duong-toi-truong-toi', 'cong-vien-chieu', 'phong-na-toi', 'phong-na-dem', 'trang-sach', 'cong-vao-truong',
         'roi-ben', 'ra-khoi', 'dao-bai-cat', 'dao-hai-dang', 'hang-kho-bau',
         # 21/10: the stage versions (-tron: the play area left plain, for the pages with things to play) and the road by the park
-        'vuon-truong-tron', 'cong-vao-truong-tron', 'duong-toi-truong-tron', 'duong-toi-truong-toi-tron', 'cong-vien-duong']
+        'vuon-truong-tron', 'cong-vao-truong-tron', 'duong-toi-truong-tron', 'duong-toi-truong-toi-tron', 'cong-vien-duong',
+        # 21/10 (b): every stage version (-tron) and close-up (-can-) of Unit 1 (art/places/README.md, table "Bản → trang")
+        'san-truong-tron', 'cong-vien-tron', 'vuon-nha-na-chieu-tron', 'vuon-nha-na-dem-tron', 'phong-na-tron', 'sieu-thi-tron', 'cong-truong-xay-tron',
+        'phong-nha-moi-tron', 'bep-tron', 'cong-vien-chieu-tron', 'phong-na-toi-tron', 'phong-na-dem-tron', 'roi-ben-tron', 'dao-bai-cat-tron', 'dao-hai-dang-tron',
+        'vuon-nha-na-dem-can-ban', 'vuon-nha-na-dem-can-la', 'vuon-nha-na-dem-truoc-leu', 'phong-na-can-ban', 'phong-na-can-but', 'phong-na-can-san',
+        'sieu-thi-can-ghe', 'cong-truong-can-cua-so', 'cong-truong-can-nha-xe', 'ra-khoi-can']
 # things a game puts on a background, drawn once and used on every page (art/places/do-choi/, art/props/): copied into PROP, keyed by file name
 PROPS = ['places/do-choi/cau-truot-phai', 'places/do-choi/cay-cau'] + [f'props/xe/{n}-{d}' for n in ('xe-om-xanh', 'xe-om-vang', 'xe-om-xanh-cho-khach', 'xe-om-vang-cho-khach',
          'xe-om-xanh-thung', 'xe-om-vang-thung', 'taxi-xanh-ngoc', 'taxi-xanh-ngoc-suv', 'xe-buyt-xanh-duong', 'xe-buyt-dien-xanh-la', 'xe-dua-don') for d in ('phai', 'trai')]
+PROPS += ['props/xe/xe-dua-don-can', 'props/xe/xe-dua-don-can-trai']   # Màn 0: the close-up school bus for the seating game (240×136, 4 windows for faces)
+PROPS += [f'places/the-tranh/mot-ngay-{t}' for t in ('sang', 'chieu', 'toi')]   # Màn 6: the three day cards (120×90); the game draws Na on them
 # things taken out of a picture for the app (asked after a play-test), without changing the file in art/places/
-TRIM = {'cong-truong-xay': [r'<path d="M146 10 V30"[^>]*/>', r'<rect x="142" y="30" width="8" height="5"[^>]*/>'],
+TRIM = {**{n: [r'<rect x="170.6" y="9.2"[^>]*/>', r'<path d="M173.6 12.4 V31"[^>]*/>', r'<path d="M173.6 31 v2.4[^"]*"[^>]*/>'] for n in ('cong-truong-xay', 'cong-truong-xay-tron')},   # the game draws the trolley-less hook that swings
         # the boat's wake (Màn 7): the game draws the team's boat from the side, with its own foam behind it
         **{n: [r'<path d="M64 140 Q90 122 106 104 M150 140 Q128 122 116 104"[^>]*/>'] for n in ('roi-ben', 'ra-khoi')},
         # two tiny shells on the beach (Màn 7): the games put their own shells, starfish and shapes on the sand
