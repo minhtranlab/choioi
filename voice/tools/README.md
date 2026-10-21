@@ -41,8 +41,8 @@ python3 tao_giong.py page                   # voice/nghe-thu.html: nghe từng c
 - `en.json`/`vi.json` có thêm khoá `p` (phần → các file mp3 của phần đó), để app tải trước đúng file của màn sắp chơi. App bản hiện tại bỏ qua khoá này.
 - Màn chưa làm giọng mới (hiện là Màn 4–7) vẫn dùng giọng cũ (bản 2).
 
-## Việc cần sửa trong index.html (chưa làm, để chat Cấu trúc màn làm)
-1. **Tải trước theo màn, có màn chờ.** Hiện `voiceLoad` tải lần lượt mọi file từ `-00`, nên file giọng mới (ở cuối) về sau cùng, còn `runSession` chỉ chờ 15 giây. Nên dùng `I.p['chung']` và `I.p['man'+li]`: chờ đủ các file đó trước khi vào màn (màn chờ vui, có thanh tiến độ), rồi tải phần còn lại ngầm.
-2. **Không lẫn giọng máy giữa màn.** Hiện câu không có bản ghi sẽ đọc bằng giọng máy. Nên: câu thiếu thì chỉ hiện chữ (và ghi `console.warn`); chỉ khi cả bộ giọng không tải được thì cả màn đọc bằng giọng máy.
-3. **Giọng bạn nhỏ.** `opt.kid` đang tăng `playbackRate` lên 1.12 (nâng giọng). Nếu ghi giọng bạn nhỏ riêng (khoá `@…` trong `config.json` → `kid`), bỏ 1.12. Polly giữ 1.32 vì là con vẹt.
-4. **Tốc độ Chậm / Vừa / Nhanh trong Settings.** Công cụ tạo được 3 bộ (speed 0.62 / 0.70 / 0.84 cho tiếng Anh). App cần: `S.vspeed`, đọc `voice/<lang>-<s|m|f>.json`, và khoảng nghỉ sau câu (`GAP`) 800 / 650 / 520 ms theo tốc độ. Có sẵn bản sửa mẫu (tải giọng theo màn, màn chờ, nút tốc độ) trong `index-v3.patch` để tham khảo.
+## Phần trong index.html (đã làm 21/10, commit 186183a)
+1. **Tải trước theo màn, có màn chờ.** Màn có `I.p['chung']` và `I.p['man'+li]`: app chờ đủ các file đó trước khi vào màn (màn chờ có Chồi nhún và thanh tiến độ), rồi tải phần còn lại ngầm, màn sắp chơi trước.
+2. **Không lẫn giọng máy giữa màn.** Trong màn đó, câu thiếu bản ghi chỉ hiện chữ (`console.warn`); không tải được giọng thì cả màn đọc bằng giọng máy. Màn chưa có trong `p` giữ cách cũ.
+3. **Giọng bạn nhỏ.** App tìm khoá `"@" + khoá câu` (hash của chuỗi đó) cho câu của Lam, Na, Ben trước; có thì phát nguyên tốc độ, chưa có thì dùng bản của Chồi nâng 1.12. Polly giữ 1.32. Khi ghi giọng `kid`, `pack` cần ghi câu đó dưới khoá có `@`.
+4. **Tốc độ Chậm / Vừa / Nhanh.** App đọc `voice/<lang>-s.json` với `voice/<lang>-s-NN.mp3` (Chậm), `voice/<lang>-f.json` với `voice/<lang>-f-NN.mp3` (Nhanh), cùng định dạng `en.json` (có khoá `p`); Vừa là bộ hiện có. Nghỉ sau câu 800 / 650 / 520 ms. Dòng chọn tốc độ trong Cài đặt chỉ hiện khi có đủ bộ Chậm và Nhanh.
