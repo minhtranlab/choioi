@@ -187,30 +187,33 @@ def sig(lang, who):
     c = CFG[lang][who]; return f"{c['engine']}|{c['voice']}|{c.get('speed', 1)}|gap{CFG['gap']}|v{CFG['version']}"
 def lines_path(): return os.path.join(HERE, 'lines.json')
 def cmd_lines(a):
-    """what to record: the parts of voice/pending-unit1.json, plus every line the app said in a test run (--log)"""
+    """what to record: every line already in the new voice (kept), the parts of voice/pending-unit1.json,
+    and every line the app said in a test run (--log)"""
     pend = json.load(open(os.path.join(VOICE, 'pending-unit1.json'), encoding='utf-8'))
-    parts = a.parts.split(','); out = collections.OrderedDict()
+    parts = a.parts.split(',') if a.parts else None; out = collections.OrderedDict()
     def add(lang, text, slow, who, part):
         k = vkey(text, slow); h = vhash(k); o = out.setdefault((lang, h), {'lang': lang, 'key': k, 'who': who, 'part': part})
         if who == 'chồi': o['who'] = 'chồi'           # said by Chồi anywhere: Chồi's voice
+    for lang in ('en', 'vi'):                         # lines made before stay (the pending list drops them once they have the new voice)
+        for h, m in manifest(lang)['c'].items(): add(lang, m['k'].lstrip('~'), m['k'].startswith('~'), m['who'], m['part'])
     for x in pend:
-        if x['part'] not in parts: continue
+        if parts and x['part'] not in parts: continue
         add('en', x['en'], x.get('slow'), 'chồi', x['part']); add('vi', x['vi'], x.get('slow'), 'chồi', x['part'])
     for f in (a.log or []):
         for li, en, vi, rate, *rest in json.load(open(f, encoding='utf-8')):
             if a.name:   # the test child's name -> {N}, as the app does
                 nm = re.compile(r'(^|[^\w])' + re.escape(a.name) + r'(?!\w)'); en = nm.sub(r'\1{N}', en); vi = nm.sub(r'\1{N}', vi)
-            who = 'kid' if rest and rest[0] == 'k' else 'chồi'; slow = bool(rate) and rate < .65; part = f'man{li}'
+            who = 'kid' if rest and rest[0] == 'k' else 'chồi'; slow = bool(rate) and rate < .65; part = li if isinstance(li, str) else f'man{li}'
             if en: add('en', en, slow, who, part)
             if vi: add('vi', vi, slow, who, part)
     L = [o for o in out.values() if spoken(o['key'], o['lang'])]
     json.dump(L, open(lines_path(), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
-    print('lines', collections.Counter((o['lang'], o['part']) for o in L))
+    print('lines', sorted(collections.Counter((o['lang'], o['part']) for o in L).items()))
 
 # ---------------------------------------------------------------- make (synthesize what is missing)
 def manifest(lang):
     p = os.path.join(HERE, f'manifest-{lang}.json')
-    return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else {'first': None, 'c': {}}
+    return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else {'c': {}}
 def cache_path(lang, h, s): return os.path.join(CACHE, lang, hashlib.sha1((s + h).encode()).hexdigest()[:16] + '.wav')
 def make_line(o):
     lang, c = o['lang'], CFG[o['lang']][o['who']]; e = engine(c['engine']); text = spoken(o['key'], lang)
@@ -240,6 +243,7 @@ def cmd_make(a):
             if M['c'].get(h, {}).get('s') == s and M['c'][h].get('k') == o['key']: continue   # already in the bundles
             if os.path.exists(cache_path(lang, h, s)): continue
             todo.append(o)
+        todo.sort(key=lambda o: ORDER.get(o['part'], 99))   # common lines and the first levels first
         print(lang, 'to make', len(todo), flush=True); t0 = time.time(); low = []
         for i, o in enumerate(todo):
             h = vhash(o['key']); s = sig(lang, o['who']); p = cache_path(lang, h, s); os.makedirs(os.path.dirname(p), exist_ok=True)
@@ -253,49 +257,51 @@ def cmd_make(a):
 # ---------------------------------------------------------------- pack (write the files the app reads)
 def mp3(path):
     return subprocess.run(['ffmpeg', '-loglevel', 'error', '-i', path, '-ac', '1', '-ar', str(SR_OUT), '-c:a', 'libmp3lame', '-b:a', '48k', '-f', 'mp3', '-'], capture_output=True, check=True).stdout
+ORDER = {p: i for i, p in enumerate(['chung'] + [f'man{i}' for i in range(8)])}
 def cmd_pack(a):
+    """Write the files the app reads. By default only new or changed lines are added, in new mp3 files at the end
+    (the files already on GitHub stay as they are). --compact rewrites every file: new-voice lines first, by part
+    (chung, Màn 0, Màn 1 …, so a new player gets the first level first), then the older-voice lines still not replaced."""
     L = json.load(open(lines_path(), encoding='utf-8'))
     for lang in a.lang.split(','):
-        ip = os.path.join(VOICE, f'{lang}.json'); I = json.load(open(ip)); M = manifest(lang)
-        first = M['first'] if M['first'] is not None else I['n']           # bundles before this one are the older voice, never touched
-        oldb = {}
-        def bundle(b):
-            if b not in oldb: oldb[b] = open(os.path.join(VOICE, f'{lang}-{b:02d}.mp3'), 'rb').read()
-            return oldb[b]
-        clips = collections.OrderedDict(); newM = {}
-        order = {p: i for i, p in enumerate(['chung'] + [f'man{i}' for i in range(8)])}
-        for o in sorted((o for o in L if o['lang'] == lang), key=lambda o: order.get(o['part'], 99)):
+        ip = os.path.join(VOICE, f'{lang}.json'); I = json.load(open(ip)); M = manifest(lang); cache = {}
+        def clip(h):
+            b, off, ln = I['c'][h]
+            if b not in cache: cache[b] = open(os.path.join(VOICE, f'{lang}-{b:02d}.mp3'), 'rb').read()
+            return cache[b][off:off + ln]
+        newM, fresh, missing = {}, collections.OrderedDict(), 0
+        for o in sorted((o for o in L if o['lang'] == lang), key=lambda o: ORDER.get(o['part'], 99)):
             h = vhash(o['key']); s = sig(lang, o['who']); p = cache_path(lang, h, s)
-            if os.path.exists(p): data = mp3(p)
-            elif M['c'].get(h, {}).get('s') == s and M['c'][h].get('k') == o['key'] and h in I['c'] and I['c'][h][0] >= first:
-                b, off, ln = I['c'][h]; data = bundle(b)[off:off + ln]
-            else: print('  missing (run make):', lang, o['key']); continue
-            old = M['c'].get(h, {}).get('old') or (I['c'][h] if h in I['c'] and I['c'][h][0] < first else None)
-            clips[h] = data; newM[h] = {'k': o['key'], 's': s, 'part': o['part'], 'who': o['who'], **({'old': old} if old else {})}
-        # lines that were in the new voice but are no longer wanted go back to their older recording (or away)
-        for h, m in M['c'].items():
-            if h not in newM:
-                if m.get('old'): I['c'][h] = m['old']
-                else: I['c'].pop(h, None)
-        for b in range(first, I['n']):
-            f = os.path.join(VOICE, f'{lang}-{b:02d}.mp3')
-            if os.path.exists(f): oldb.setdefault(b, open(f, 'rb').read())
-        bufs, buf = [], b''
-        for h, data in clips.items():
+            ok = M['c'].get(h, {}).get('s') == s and M['c'][h].get('k') == o['key'] and h in I['c']
+            if not ok:
+                if not os.path.exists(p): missing += 1; print('  missing (run make):', lang, o['key']); continue
+                fresh[h] = mp3(p)
+            newM[h] = {'k': o['key'], 's': s, 'part': o['part'], 'who': o['who']}
+        if a.compact:
+            items = [(h, fresh[h] if h in fresh else clip(h)) for h in sorted(newM, key=lambda h: ORDER.get(newM[h]['part'], 99))]
+            items += [(h, clip(h)) for h in I['c'] if h not in newM]       # older voice, still used for lines not remade
+            start = 0
+        else:
+            items = list(fresh.items()); start = I['n']
+        bufs, buf, pos = [], b'', {}
+        for h, data in items:
             if buf and len(buf) + len(data) > MAXB: bufs.append(buf); buf = b''
-            I['c'][h] = [first + len(bufs), len(buf), len(data)]; buf += data
+            pos[h] = [start + len(bufs), len(buf), len(data)]; buf += data
         if buf: bufs.append(buf)
+        if a.compact:
+            for f in os.listdir(VOICE):
+                if re.fullmatch(rf'{lang}-\d+\.mp3', f): os.remove(os.path.join(VOICE, f))
+            I['c'] = {}
+        I['c'].update(pos)
+        for i, data in enumerate(bufs): open(os.path.join(VOICE, f'{lang}-{start + i:02d}.mp3'), 'wb').write(data)
+        I['n'] = start + len(bufs)
         parts = collections.defaultdict(set)
         for h, m in newM.items(): parts[m['part']].add(I['c'][h][0])
-        I['p'] = {k: sorted(v) for k, v in parts.items()}   # part -> its mp3 files (to fetch a level's voice first)
-        for b in range(first, max(I['n'], first + len(bufs))):
-            f = os.path.join(VOICE, f'{lang}-{b:02d}.mp3')
-            if os.path.exists(f): os.remove(f)
-        for i, data in enumerate(bufs): open(os.path.join(VOICE, f'{lang}-{first + i:02d}.mp3'), 'wb').write(data)
-        I['n'] = first + len(bufs)
+        I['p'] = {k: sorted(v) for k, v in sorted(parts.items(), key=lambda kv: ORDER.get(kv[0], 99))}   # part -> its mp3 files
         json.dump(I, open(ip, 'w'), separators=(',', ':'))
-        json.dump({'first': first, 'c': newM}, open(os.path.join(HERE, f'manifest-{lang}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
-        print(lang, 'new-voice lines', len(clips), 'bundles', f'{first}..{I["n"] - 1}', 'MB', round(sum(map(len, bufs)) / 1e6, 1))
+        json.dump({'c': newM}, open(os.path.join(HERE, f'manifest-{lang}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+        tot = sum(os.path.getsize(os.path.join(VOICE, f'{lang}-{b:02d}.mp3')) for b in range(I['n']))
+        print(lang, 'new-voice lines', len(newM), '(new now', len(fresh), ') files', I['n'], 'written', len(bufs), 'all MB', round(tot / 1e6, 1), 'missing', missing)
 
 # ---------------------------------------------------------------- listening page
 def cmd_page(a):
@@ -309,8 +315,8 @@ def cmd_page(a):
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest='cmd', required=True)
-    p = sp.add_parser('lines'); p.add_argument('--parts', default='chung,man0,man1'); p.add_argument('--log', nargs='*'); p.add_argument('--name', default='Bin', help='the child name used in the test run')
+    p = sp.add_parser('lines'); p.add_argument('--parts', default='', help='e.g. chung,man0 (empty = all)'); p.add_argument('--log', nargs='*'); p.add_argument('--name', default='Bin', help='the child name used in the test run')
     p = sp.add_parser('make'); p.add_argument('--lang', default='en,vi')
-    p = sp.add_parser('pack'); p.add_argument('--lang', default='en,vi')
+    p = sp.add_parser('pack'); p.add_argument('--lang', default='en,vi'); p.add_argument('--compact', action='store_true')
     sp.add_parser('page')
     a = ap.parse_args(); {'lines': cmd_lines, 'make': cmd_make, 'pack': cmd_pack, 'page': cmd_page}[a.cmd](a)

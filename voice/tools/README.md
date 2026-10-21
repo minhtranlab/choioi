@@ -26,16 +26,20 @@ Cần: Python 3.10+, `ffmpeg`, `pip install kokoro-onnx vieneu sherpa-onnx sound
 
 ```bash
 cd voice/tools
-python3 tao_giong.py lines --parts chung,man0,man1 --log thu-cau-man01.json   # danh sách câu
-python3 tao_giong.py make --lang en,vi                                  # tạo câu còn thiếu (thư mục tạm ~/.cache/choi-voice)
-python3 tao_giong.py pack --lang en,vi                                  # ghi voice/en.json, voice/vi.json, voice/<lang>-NN.mp3
-python3 tao_giong.py page                                               # voice/nghe-thu.html
+python3 tao_giong.py lines --parts chung,man0,man1,man2,man3 --log thu-cau-man0123.json so-thu.json   # danh sách câu (bỏ --parts = mọi phần)
+python3 tao_giong.py make --lang en,vi      # tạo câu còn thiếu (thư mục tạm ~/.cache/choi-voice), theo thứ tự chung, Màn 0, Màn 1…
+python3 tao_giong.py pack --lang en,vi      # thêm câu mới vào voice/en.json, voice/vi.json và các file mp3 mới ở cuối
+python3 tao_giong.py page                   # voice/nghe-thu.html: nghe từng câu giọng mới
 ```
 
-- `lines` lấy câu từ `voice/pending-unit1.json` (các phần trong `--parts`). Nếu có `--log`, lấy thêm mọi câu app đã nói trong lần chạy thử, để cả màn chỉ một giọng.
-- `thu_cau.py` cho app tự chơi các màn trong trình duyệt không đầu và ghi lại mọi câu Chồi nói: `python3 thu_cau.py 24 0,1 thu-cau.json` (cần `python3 -m http.server 8765` ở thư mục gốc repo và `pip install playwright`).
-- `pack` không đụng các file giọng cũ (bản 2, `voice/<lang>-00.mp3` đến `-24.mp3` hoặc `-19.mp3`). Giọng mới nằm ở các file phía sau, số đầu tiên ghi trong `manifest-<lang>.json` (`first`). Câu đã có giọng mới trỏ sang file mới; câu bị bỏ khỏi danh sách trỏ về bản cũ.
+**Khi có câu mới hoặc câu sửa:** cập nhật `voice/pending-unit1.json`, chạy lại 4 lệnh trên. Chỉ câu mới/đã đổi được tạo; các file mp3 đã có trên GitHub giữ nguyên, câu mới nằm trong file mp3 mới ở cuối.
+
+- `lines` giữ mọi câu đã có giọng mới (`manifest-<lang>.json`), thêm câu trong `voice/pending-unit1.json` (các phần trong `--parts`, bỏ trống là tất cả), và mọi câu trong các file `--log`.
+- `thu_cau.py` cho app tự chơi các màn trong trình duyệt không đầu và ghi lại mọi câu Chồi nói, để không sót câu nào không có trong `pending-unit1.json` (vd. "See you next time!"): `python3 thu_cau.py 8 0,1,2,3 thu-cau.json` (cần `python3 -m http.server 8765` ở thư mục gốc repo và `pip install playwright`). Kết quả đã chạy cho Màn 0–3: `thu-cau-man0123.json`.
+- `so_thu.py` liệt kê mọi câu cho thú ăn ở sở thú (8 loài × 7 món), lấy từ dữ liệu của app: `so-thu.json`.
+- `pack` mặc định chỉ thêm, không ghi đè file mp3 cũ. `pack --compact` ghi lại toàn bộ: câu giọng mới xếp trước theo phần (chung, Màn 0, Màn 1…, để bé mới mở app tải màn đầu trước), rồi tới câu giọng cũ chưa được thay. Nên chạy một lần khi đã xong cả 8 màn (đỡ phải tải những đoạn giọng cũ đã bị thay).
 - `en.json`/`vi.json` có thêm khoá `p` (phần → các file mp3 của phần đó), để app tải trước đúng file của màn sắp chơi. App bản hiện tại bỏ qua khoá này.
+- Màn chưa làm giọng mới (hiện là Màn 4–7) vẫn dùng giọng cũ (bản 2).
 
 ## Việc cần sửa trong index.html (chưa làm, để chat Cấu trúc màn làm)
 1. **Tải trước theo màn, có màn chờ.** Hiện `voiceLoad` tải lần lượt mọi file từ `-00`, nên file giọng mới (ở cuối) về sau cùng, còn `runSession` chỉ chờ 15 giây. Nên dùng `I.p['chung']` và `I.p['man'+li]`: chờ đủ các file đó trước khi vào màn (màn chờ vui, có thanh tiến độ), rồi tải phần còn lại ngầm.

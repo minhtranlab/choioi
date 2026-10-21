@@ -1,5 +1,4 @@
 {
-"first": 25,
 "c": {
 "1e7l4kw": {
 "k": "Are you ready? Now it’s your turn!",
@@ -95,12 +94,7 @@
 "k": "Listen carefully!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
-"who": "chồi",
-"old": [
-9,
-76944,
-5556
-]
+"who": "chồi"
 },
 "wef5z7": {
 "k": "Remember: They are all…",
@@ -648,6 +642,288 @@
 "part": "chung",
 "who": "chồi"
 },
+"2nth30": {
+"k": "Where does the hippo go? Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"qckmn6": {
+"k": "Thank you for playing, {N}!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"194powg": {
+"k": "Where does the penguin go? Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1n6dbv9": {
+"k": "Where does the monkey go? Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1fm1m5k": {
+"k": "Where does the giraffe go? Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"14uv3rc": {
+"k": "Where does the zebra go? Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1w2hqd4": {
+"k": "Where does the panda go? Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1afms55": {
+"k": "Where does the elephant go? Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1ry8wjq": {
+"k": "Where does the lion go? Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"3dbc0b": {
+"k": "This is the number two.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"14vnoc0": {
+"k": "Two apples.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"yujs2x": {
+"k": "This is the number three.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"h5x7wy": {
+"k": "Three apples.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"12kwdvz": {
+"k": "This is the number four.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"s9ut6c": {
+"k": "Four apples.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"18y8ogt": {
+"k": "This one is the rectangle.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"j8srf2": {
+"k": "It’s a ship!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"4uhwvn": {
+"k": "It’s a seagull!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"eds06w": {
+"k": "Three claps! One clap for each sound.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"3822fn": {
+"k": "Tap the yellow arrow to go on!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"fu61j9": {
+"k": "Let’s find a home for the elephant. Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"18w72ss": {
+"k": "Let’s find a home for the lion. Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1iecej4": {
+"k": "Let’s find a home for the giraffe. Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1s07zex": {
+"k": "Let’s find a home for the monkey. Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1xmfgjs": {
+"k": "Let’s find a home for the panda. Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"j9o3rw": {
+"k": "Let’s find a home for the penguin. Tap a spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1q70pih": {
+"k": "Elephants don’t eat meat. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1rqhnxj": {
+"k": "Lions don’t eat bananas. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"8s4wd1": {
+"k": "Lions don’t eat bamboo. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"kxqxcv": {
+"k": "Penguins don’t eat hay. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1j4jy5x": {
+"k": "Penguins don’t eat leaves. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1cmn5el": {
+"k": "Monkeys don’t eat meat. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1bw2g40": {
+"k": "Monkeys don’t eat fish. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"s7d4wi": {
+"k": "Monkeys don’t eat hay. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1mqf8bm": {
+"k": "Monkeys don’t eat bamboo. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1qdm9o7": {
+"k": "Giraffes don’t eat bananas. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1n5qane": {
+"k": "Giraffes don’t eat meat. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"13hlh1z": {
+"k": "Giraffes don’t eat fish. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1byakxb": {
+"k": "Giraffes don’t eat hay. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1sxbc4l": {
+"k": "Giraffes don’t eat bamboo. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"g4uow6": {
+"k": "Pandas don’t eat meat. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1xce9sp": {
+"k": "Pandas don’t eat leaves. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"yys8at": {
+"k": "Zebras don’t eat bamboo. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"v5ij39": {
+"k": "Zebras don’t eat leaves. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1k8k3t3": {
+"k": "Hippos don’t eat bananas. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"bb59xj": {
+"k": "Hippos don’t eat fish. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1c5jxdh": {
+"k": "Hippos don’t eat bamboo. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
 "1uc8vmr": {
 "k": "Hello! I’m Chồi. Look, there’s something old on the bookshelf.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -724,12 +1000,7 @@
 "k": "Let’s give Ben a big hug. Press and hold Ben!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-8,
-0,
-12975
-]
+"who": "chồi"
 },
 "1iln82o": {
 "k": "Look! The teacher has a present for Na, because Na helped a friend.",
@@ -747,12 +1018,7 @@
 "k": "Yes!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-22,
-196700,
-3048
-]
+"who": "chồi"
 },
 "f79v23": {
 "k": "Now you clap three times!",
@@ -1148,408 +1414,223 @@
 "k": "Hello, {N}!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-4,
-455488,
-2839
-]
+"who": "chồi"
 },
 "46xa0v": {
 "k": "Let’s play!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-8,
-328224,
-4198
-]
+"who": "chồi"
 },
 "5wxmm6": {
 "k": "Oh no, it’s torn. Eight pieces are missing!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-13,
-189206,
-12034
-]
+"who": "chồi"
 },
 "1b7efoe": {
 "k": "Hello!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-4,
-335803,
-2839
-]
+"who": "chồi"
 },
 "1a5g9kb": {
 "k": "Ben feels sad.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-1,
-548720,
-5138
-]
+"who": "chồi"
 },
 "1rmieia": {
 "k": "Sad!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-15,
-285814,
-2735
-]
+"who": "chồi"
 },
 "108k1fo": {
 "k": "Are you sad, Ben?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-1,
-292038,
-5556
-]
+"who": "chồi"
 },
 "1dkhotb": {
 "k": "Ben feels better now. Thank you!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-1,
-505790,
-8064
-]
+"who": "chồi"
 },
 "1r1ihir": {
 "k": "Na feels happy.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-11,
-6183,
-5451
-]
+"who": "chồi"
 },
 "liesfk": {
 "k": "Happy!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-4,
-265161,
-3257
-]
+"who": "chồi"
 },
 "1swyh2i": {
 "k": "Are you happy, Na?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-1,
-281657,
-5034
-]
+"who": "chồi"
 },
 "5s5mlm": {
 "k": "Let’s clap for Na! Tap three times.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-7,
-365823,
-11198
-]
+"who": "chồi"
 },
 "1oeu5ey": {
 "k": "One!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-13,
-411224,
-2108
-]
+"who": "chồi"
 },
 "pft6pk": {
 "k": "Two!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-20,
-546782,
-1690
-]
+"who": "chồi"
 },
 "5yzp46": {
 "k": "Three!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-20,
-268959,
-1794
-]
+"who": "chồi"
 },
 "9f913e": {
 "k": "Na is so happy you’re here!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-11,
-110872,
-7019
-]
+"who": "chồi"
 },
 "1n56vkd": {
 "k": "Lam feels angry.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-6,
-534641,
-5765
-]
+"who": "chồi"
 },
 "i0eo7w": {
 "k": "Are you angry, Lam?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-1,
-269709,
-5974
-]
+"who": "chồi"
 },
 "1szbwn9": {
 "k": "Let’s breathe slowly with Lam. Press and hold to breathe in.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-7,
-247656,
-15274
-]
+"who": "chồi"
 },
 "1ipdgqq": {
 "k": "Lam feels better now. Thank you!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-6,
-540406,
-8168
-]
+"who": "chồi"
 },
 "1qetuer": {
 "k": "Watch me first!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-21,
-30792,
-5451
-]
+"who": "chồi"
 },
 "1kszbeb": {
 "k": "One.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-13,
-456559,
-2108
-]
+"who": "chồi"
 },
 "p5tl0l": {
 "k": "Two.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-20,
-595687,
-1690
-]
+"who": "chồi"
 },
 "90vbqv": {
 "k": "Three.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-20,
-302572,
-1794
-]
+"who": "chồi"
 },
 "qdkbl3": {
 "k": "Put one friend in each empty seat!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-15,
-236892,
-8795
-]
+"who": "chồi"
 },
 "ngfeup": {
 "k": "Four.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-3,
-582232,
-1794
-]
+"who": "chồi"
 },
 "7g7oj8": {
 "k": "Four empty seats, four friends! Off we go!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-3,
-468646,
-12243
-]
+"who": "chồi"
 },
 "7dfbdi": {
 "k": "All the way to the end!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-1,
-90808,
-5765
-]
+"who": "chồi"
 },
 "18vnmey": {
 "k": "Just move your finger along the line.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-6,
-453117,
-8482
-]
+"who": "chồi"
 },
 "sfxa81": {
 "k": "Five.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-3,
-341754,
-1481
-]
+"who": "chồi"
 },
 "12xfk1j": {
 "k": "Five flags! This way!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-3,
-256747,
-6496
-]
+"who": "chồi"
 },
 "1cbh6d0": {
 "k": "Tap the friends who look happy! Find four!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-16,
-164674,
-11407
-]
+"who": "chồi"
 },
 "lii6zw": {
 "k": "Four!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-3,
-552381,
-1794
-]
+"who": "chồi"
 },
 "dpv2o9": {
 "k": "Four happy friends!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-3,
-487072,
-5660
-]
+"who": "chồi"
 },
 "16fzyp8": {
 "k": "You found it!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-23,
-183125,
-4407
-]
+"who": "chồi"
 },
 "wcjby9": {
 "k": "Now tap the friends who look angry!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-12,
-245391,
-8900
-]
+"who": "chồi"
 },
 "1ah4icc": {
 "k": "Four angry friends! Grrr!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-3,
-452728,
-10989
-]
+"who": "chồi"
 },
 "1fhlrtm": {
 "k": "Hooray!",
@@ -1561,474 +1642,283 @@
 "k": "Look! This piece shows the school.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-10,
-137013,
-9736
-]
+"who": "chồi"
 },
 "1entf": {
 "k": "One piece is on the map. Seven more to go, then we’ll see where the treasure is!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-13,
-390081,
-17050
-]
+"who": "chồi"
 },
 "1dcby25": {
 "k": "This is your city! The first place is a zoo.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-19,
-524817,
-12766
-]
+"who": "chồi"
 },
 "oycvc0": {
 "k": "Pick an animal for your zoo!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-14,
-469975,
-7437
-]
+"who": "chồi"
 },
 "1xw88c2": {
 "k": "Where should the penguin live? Tap a spot!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-21,
-480892,
-11407
-]
+"who": "chồi"
 },
 "vgoxo0": {
 "k": "Hello, penguin!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-4,
-445107,
-5138
-]
+"who": "chồi"
 },
 "h8z8yz": {
 "k": "The penguin is hungry! What does the penguin eat?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-18,
-303995,
-13288
-]
+"who": "chồi"
 },
 "8j94ye": {
 "k": "Yum! Penguins love fish.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-24,
-18217,
-8900
-]
+"who": "chồi"
 },
 "1w8f1mu": {
 "k": "Fish!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-3,
-198193,
-2735
-]
+"who": "chồi"
 },
 "11p13ii": {
 "k": "Great job, {N}!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-4,
-249747,
-4720
-]
+"who": "chồi"
 },
 "1oee8b": {
 "k": "Hmm, did we count them all?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-5,
-122507,
-6601
-]
+"who": "chồi"
 },
 "1mdqz3s": {
 "k": "Let’s count again. Tap each one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-7,
-405810,
-9527
-]
+"who": "chồi"
 },
 "dgdjnl": {
 "k": "Try again!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-20,
-441954,
-4198
-]
+"who": "chồi"
 },
 "10lkfbh": {
 "k": "You kept trying, and you got it!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-23,
-342951,
-7959
-]
+"who": "chồi"
 },
 "1gimprk": {
 "k": "You worked it out!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-23,
-373656,
-5243
-]
+"who": "chồi"
 },
 "war7rn": {
 "k": "Where should the elephant live? Tap a spot!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-21,
-414016,
-11407
-]
+"who": "chồi"
 },
 "9bn2w9": {
 "k": "Hello, elephant!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-4,
-413861,
-5869
-]
+"who": "chồi"
 },
 "b4arnr": {
 "k": "The elephant is hungry! What does the elephant eat?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-17,
-364656,
-14020
-]
+"who": "chồi"
 },
 "10k2cau": {
 "k": "Elephants don’t eat leaves. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-3,
-11930,
-12243
-]
+"who": "chồi"
 },
 "1b8zs8f": {
 "k": "Yum! Elephants love bananas.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-23,
-484093,
-10154
-]
+"who": "chồi"
 },
 "e8pxs8": {
 "k": "Bananas!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-1,
-394047,
-3466
-]
+"who": "chồi"
 },
 "a71mey": {
 "k": "Penguins don’t eat meat. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-14,
-445157,
-11616
-]
+"who": "chồi"
 },
 "10kp10e": {
 "k": "Where should the giraffe live? Tap a spot!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-21,
-425423,
-11512
-]
+"who": "chồi"
 },
 "1qlvz7w": {
 "k": "Hello, giraffe!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-4,
-419730,
-5138
-]
+"who": "chồi"
 },
 "1oyvldn": {
 "k": "The giraffe is hungry! What does the giraffe eat?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-17,
-523402,
-13184
-]
+"who": "chồi"
 },
 "7v9ogs": {
 "k": "Yum! Giraffes love leaves.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-23,
-521468,
-9631
-]
+"who": "chồi"
 },
 "df53h4": {
 "k": "Leaves!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-7,
-212543,
-3362
-]
+"who": "chồi"
 },
 "hfqpk7": {
 "k": "Penguins don’t eat bananas. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-14,
-408845,
-12661
-]
+"who": "chồi"
 },
 "1bt6mxb": {
 "k": "Yum! Elephants love hay.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-23,
-503042,
-8795
-]
+"who": "chồi"
 },
 "pjq96k": {
 "k": "Look, there’s still an empty seat!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-10,
-307461,
-7855
-]
+"who": "chồi"
 },
 "5mzody": {
 "k": "Let’s try again. One friend for each empty seat!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-8,
-535318,
-13811
-]
+"who": "chồi"
 },
 "17w7sn6": {
 "k": "The bus is full!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-17,
-230466,
-5556
-]
+"who": "chồi"
 },
 "miupz5": {
 "k": "Oops! There were only four empty seats.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-13,
-486410,
-11303
-]
+"who": "chồi"
 },
 "1lp9zjx": {
 "k": "Let’s count together.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-7,
-482703,
-5660
-]
+"who": "chồi"
 },
 "nn0tma": {
 "k": "Monkeys don’t eat leaves. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-10,
-441811,
-12348
-]
+"who": "chồi"
 },
 "1ci3wwu": {
 "k": "Where should the hippo live? Tap a spot!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-21,
-436935,
-11198
-]
+"who": "chồi"
 },
 "1qaoba8": {
 "k": "Hello, hippo!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-4,
-424868,
-4929
-]
+"who": "chồi"
 },
 "139d14j": {
 "k": "The hippo is hungry! What does the hippo eat?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-18,
-7228,
-12557
-]
+"who": "chồi"
 },
 "5al9ji": {
 "k": "Yum! Hippos love hay.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-23,
-531099,
-8586
-]
+"who": "chồi"
 },
 "9a7i39": {
 "k": "Penguins don’t eat bamboo. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-14,
-396602,
-12243
-]
+"who": "chồi"
 },
 "kx00to": {
 "k": "Elephants don’t eat fish. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-3,
-0,
-11930
-]
+"who": "chồi"
 },
 "kalcji": {
 "k": "Elephants don’t eat bamboo. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-2,
-578911,
-12243
-]
+"who": "chồi"
 },
 "dm8d3e": {
 "k": "Na got a present! She feels happy.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
-"who": "chồi",
-"old": [
-11,
-85235,
-10363
-]
+"who": "chồi"
+},
+"1hu52b8": {
+"k": "Chồi gives the map to Ben. Ben will keep it safe!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1eo2yst": {
+"k": "Look! The red path goes to the park. Next time, let’s look there!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"g98uwa": {
+"k": "That friend is in another class. Bye-bye!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"15xv4zg": {
+"k": "See you next time!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
 },
 "oo9sol": {
 "k": "Here we are at the park! It’s so windy today.",
@@ -2058,45 +1948,25 @@
 "k": "Seven.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-15,
-345327,
-2944
-]
+"who": "chồi"
 },
 "4x2xei": {
 "k": "Eight.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-2,
-577535,
-1376
-]
+"who": "chồi"
 },
 "1yti24h": {
 "k": "Nine.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-11,
-430489,
-2003
-]
+"who": "chồi"
 },
 "10p0isu": {
 "k": "Ten.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-16,
-253061,
-2108
-]
+"who": "chồi"
 },
 "kjyxml": {
 "k": "Now count with me! Say the numbers out loud.",
@@ -2408,12 +2278,7 @@
 "k": "You found three happy faces!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-23,
-251256,
-8168
-]
+"who": "chồi"
 },
 "1vm071e": {
 "k": "Na looks excited. Here’s your balloon, Na!",
@@ -2569,419 +2434,229 @@
 "k": "Tap Lam’s kite to fly it!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-16,
-36471,
-7437
-]
+"who": "chồi"
 },
 "1m29ptr": {
 "k": "Six.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-15,
-445350,
-1481
-]
+"who": "chồi"
 },
 "lli2lo": {
 "k": "Ten kites in the sky!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-16,
-244457,
-6496
-]
+"who": "chồi"
 },
 "grunkk": {
 "k": "Lam feels excited.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-6,
-548574,
-6287
-]
+"who": "chồi"
 },
 "13d6smk": {
 "k": "Excited!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-3,
-59126,
-3884
-]
+"who": "chồi"
 },
 "1ht3j5b": {
 "k": "Are you excited, Lam?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-1,
-275683,
-5974
-]
+"who": "chồi"
 },
 "wceeft": {
 "k": "Lam is so happy you’re here!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-7,
-12575,
-7332
-]
+"who": "chồi"
 },
 "14rx7wh": {
 "k": "Surprised!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-16,
-26613,
-4302
-]
+"who": "chồi"
 },
 "1cyubwb": {
 "k": "Tap the box to open it!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-16,
-138270,
-6810
-]
+"who": "chồi"
 },
 "1gas58": {
 "k": "Ben feels surprised.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-1,
-559518,
-6810
-]
+"who": "chồi"
 },
 "1gpealp": {
 "k": "Are you surprised, Ben?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-1,
-308393,
-6392
-]
+"who": "chồi"
 },
 "qi02d8": {
 "k": "Five!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-3,
-310544,
-1481
-]
+"who": "chồi"
 },
 "1t321pu": {
 "k": "Look! This piece shows the park.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-10,
-127173,
-9840
-]
+"who": "chồi"
 },
 "ajvitb": {
 "k": "Two pieces are on the map. Six more to go, then we’ll see where the treasure is!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-20,
-524803,
-17677
-]
+"who": "chồi"
 },
 "acte1m": {
 "k": "Where should the zebra live? Tap a spot!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-21,
-492299,
-10885
-]
+"who": "chồi"
 },
 "bo5m14": {
 "k": "Hello, zebra!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-4,
-450245,
-5243
-]
+"who": "chồi"
 },
 "dimm17": {
 "k": "The zebra is hungry! What does the zebra eat?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-19,
-87864,
-12975
-]
+"who": "chồi"
 },
 "1m3c57q": {
 "k": "Yum! Zebras love hay.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-24,
-80097,
-8377
-]
+"who": "chồi"
 },
 "102zm00": {
 "k": "Hay!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-4,
-288203,
-2630
-]
+"who": "chồi"
 },
 "1jbs7bm": {
 "k": "Where should the panda live? Tap a spot!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-21,
-470007,
-10885
-]
+"who": "chồi"
 },
 "c0l944": {
 "k": "Hello, panda!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-4,
-439969,
-5138
-]
+"who": "chồi"
 },
 "1hqtoej": {
 "k": "The panda is hungry! What does the panda eat?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-18,
-276147,
-12452
-]
+"who": "chồi"
 },
 "fegg5v": {
 "k": "Pandas don’t eat fish. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-14,
-335264,
-11616
-]
+"who": "chồi"
 },
 "1c6nwt8": {
 "k": "Yum! Pandas love bamboo.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-24,
-0,
-9213
-]
+"who": "chồi"
 },
 "1c4nas0": {
 "k": "Bamboo!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-1,
-368375,
-3153
-]
+"who": "chồi"
 },
 "8kvcs": {
 "k": "Where should the lion live? Tap a spot!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-21,
-448133,
-10989
-]
+"who": "chồi"
 },
 "ykleyg": {
 "k": "Hello, lion!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-4,
-429797,
-4825
-]
+"who": "chồi"
 },
 "1skgndn": {
 "k": "The lion is hungry! What does the lion eat?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-18,
-55070,
-12557
-]
+"who": "chồi"
 },
 "2zualj": {
 "k": "Lions don’t eat fish. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-9,
-25114,
-11616
-]
+"who": "chồi"
 },
 "m6jpwx": {
 "k": "Yum! Lions love meat.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-23,
-560306,
-8691
-]
+"who": "chồi"
 },
 "p3yr9l": {
 "k": "Meat!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-10,
-367042,
-3362
-]
+"who": "chồi"
 },
 "2gv06f": {
 "k": "Where should the monkey live? Tap a spot!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-21,
-459122,
-10885
-]
+"who": "chồi"
 },
 "jqc6ut": {
 "k": "Hello, monkey!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-4,
-434622,
-5347
-]
+"who": "chồi"
 },
 "1bh42pz": {
 "k": "The monkey is hungry! What does the monkey eat?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-18,
-227696,
-12661
-]
+"who": "chồi"
 },
 "n36oy3": {
 "k": "Yum! Monkeys love bananas.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-23,
-579046,
-9945
-]
+"who": "chồi"
 },
 "cjm84b": {
 "k": "Pandas don’t eat hay. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-14,
-346880,
-10989
-]
+"who": "chồi"
 },
 "aos26t": {
 "k": "Hippos don’t eat leaves. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-5,
-98961,
-11930
-]
+"who": "chồi"
 },
 "zlfjiy": {
 "k": "Hippos don’t eat meat. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-5,
-110891,
-11616
-]
+"who": "chồi"
 },
 "1byl8aq": {
 "k": "Watermelon!",
@@ -2993,23 +2668,1879 @@
 "k": "Lions don’t eat leaves. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-9,
-48033,
-12034
-]
+"who": "chồi"
 },
 "1ul4f0z": {
 "k": "Pandas don’t eat bananas. Try another one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
-"who": "chồi",
-"old": [
-14,
-322394,
-12870
-]
+"who": "chồi"
+},
+"fkd64e": {
+"k": "Look! The balloon man has a bubble machine. The bubbles have faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"1s0zxs2": {
+"k": "And a green balloon for Na!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"1wuhkfn": {
+"k": "Now everyone has a balloon!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"1bj6fq7": {
+"k": "Look! The red path goes to a garden, at night. Next time, let’s look there!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"1j1iqse": {
+"k": "And a green balloon for Ben!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"wdt9cn": {
+"k": "And a green balloon for Lam!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"178t4ju": {
+"k": "Zebras don’t eat meat. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"297u1j": {
+"k": "Zebras don’t eat bananas. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"6bvz6n": {
+"k": "Lions don’t eat hay. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"jzhibo": {
+"k": "The map shows a garden. Tonight, we’re camping in Na’s garden!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"zftv3j": {
+"k": "Fireflies! They fly in little groups.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1q9fw2g": {
+"k": "Watch me. I just look… and I know!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"877uvh": {
+"k": "Two! I see two fireflies. I don’t need to count!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"6xk95h": {
+"k": "Now you! Tap a group, and look quickly. How many fireflies?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1g1ho2v": {
+"k": "Three! You knew it with one look!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"5nw4sy": {
+"k": "Tap more fireflies if you like. Then tap the arrow!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1fjzmv5": {
+"k": "Na’s lanterns are magic. When a lantern lights up, it plays music!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"5qkwzd": {
+"k": "Listen to this lantern…",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1wuzvys": {
+"k": "…and this one.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"11rhqtf": {
+"k": "Which lantern’s music sounds excited? Tap that lantern!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"wk0t32": {
+"k": "Yes! That music sounds excited. Bouncy and quick!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1uqel3a": {
+"k": "These two lanterns don’t play music. Something is hiding inside!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"xaae4g": {
+"k": "Tap a lantern!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"kihswx": {
+"k": "Oh! Butterflies!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1tka4b7": {
+"k": "Look at Lam. How does Lam feel?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1xbygji": {
+"k": "Yes! Lam feels surprised. He didn’t know butterflies were inside!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"uuzex2": {
+"k": "What’s inside the last lantern? Tap it!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1s8ryel": {
+"k": "Oh! Sweets!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"v0zf7k": {
+"k": "Another surprise! Sweets for everyone!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1a24ndk": {
+"k": "Now all the lanterns are glowing!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"bpz4xu": {
+"k": "Oh! Dark clouds are coming.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"28w8x": {
+"k": "The wind blows out the lanterns…",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1iha3cv": {
+"k": "The rain stops. Look, the ladybugs come out!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"r7wwzz": {
+"k": "A ladybug is landing on the leaf.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1kuf3u2": {
+"k": "Now I find the card with two dots.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"z01co2": {
+"k": "Two spots, two dots. The same!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"4uhw82": {
+"k": "Here comes a ladybug. It stays on the leaf.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"193xpa8": {
+"k": "How many spots does the ladybug have? Find the card with the same number of dots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"n9i9x8": {
+"k": "You saw three spots, quick as a wink!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"49xxyh": {
+"k": "Three spots, three dots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"161nboo": {
+"k": "This time, the ladybug flies away quickly. Look quickly!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"13bgpce": {
+"k": "How many spots did the ladybug have? Find the card with the same number of dots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1igw28f": {
+"k": "You saw one spot, quick as a wink!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"jrjanr": {
+"k": "One spot, one dot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"g6hy14": {
+"k": "After the storm, Na’s little kitten wants a dry spot. Let’s help her!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1swkykd": {
+"k": "In, on, under! The kitten is warm and dry now.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"ikpssj": {
+"k": "Boom, boom! Na found her drum in the tent.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"wopgdg": {
+"k": "Let’s play a drum game!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"o20m3t": {
+"k": "Now let’s play hide and seek! Lam, Na and Ben will hide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1o0gvzl": {
+"k": "We close our eyes, and count to ten, nice and loud.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"184kajw": {
+"k": "Count to ten while they hide!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"fgkpjl": {
+"k": "Ten! Ready or not, here we come!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"pvajko": {
+"k": "Oh! It’s so dark. We need a flashlight!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1woahn0": {
+"k": "You found our map piece! It was on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"16mtxqp": {
+"k": "And you found everyone in the dark!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1hfshpj": {
+"k": "It’s late. Ben played all day. Now he is yawning.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1brqu0p": {
+"k": "Let’s help Ben into his sleeping bag. Press and hold the sleeping bag!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1e3gv73": {
+"k": "We found the third piece, in the dark garden!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"5brao6": {
+"k": "Look! The red path goes to Na’s house. Next time, let’s visit Na!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1rdy9hv": {
+"k": "One! You knew it with one look!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1f0spmx": {
+"k": "Oops, that card has three dots.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1s0t21n": {
+"k": "Oops, that card has two dots.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1nu24b9": {
+"k": "Two! You knew it with one look!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"rpzzsl": {
+"k": "Hmm, that face looks sad.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"17w4s6y": {
+"k": "You saw two spots, quick as a wink!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"rz42m5": {
+"k": "Two spots, two dots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"seg38e": {
+"k": "You found our map piece! It was in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"9l49us": {
+"k": "You found our map piece! It was under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"5hjlbn": {
+"k": "Here it comes again. Look!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"tm0dm9": {
+"k": "That’s under the table. Let’s put the kitten in the box!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"18us68h": {
+"k": "Next time, just look. Two!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1rfycjh": {
+"k": "Hmm, that music sounds sad.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"rnifeu": {
+"k": "That’s on the table. Let’s put the kitten under the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1okj4kd": {
+"k": "You found our map piece! It was in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"10rdgfz": {
+"k": "That’s in the box. Let’s put the kitten under the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"wt2rwa": {
+"k": "That’s on the table. Let’s put the kitten in the box!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1xdgsz4": {
+"k": "Look, there are three dots. Let’s count: one, two, three.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"k4n962": {
+"k": "Oops, that card has one dot.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"4z4vsr": {
+"k": "Next time, just look. Three!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"15cm3ir": {
+"k": "Hmm, that music sounds excited.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"35ogii": {
+"k": "Hmm, that face looks surprised.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1ppa4iz": {
+"k": "Hmm, that face looks excited.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"46mwd9": {
+"k": "You counted to ten! Ready or not, here we come!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"11rpdky": {
+"k": "Look! A firefly is on my nose!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"100i99v": {
+"k": "They look like tiny stars!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"tkvc73": {
+"k": "I want to catch one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"5w7uq4": {
+"k": "Now put the kitten on the table. Tap on the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"zhd0a1": {
+"k": "Yes! The kitten is on the table.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"158vg2v": {
+"k": "On the table! On the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"gzo5wg": {
+"k": "That’s under the table. Let’s put the kitten on the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"12fos0g": {
+"k": "That’s in the box. Let’s put the kitten on the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"ibbbqz": {
+"k": "Under the table! Under the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"11qrn9j": {
+"k": "In the box! In the box!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1sqreil": {
+"k": "In the bush! In the bush!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"l782vz": {
+"k": "Under the tree! Under the tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"9mb3pr": {
+"k": "On the slide! On the slide!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"b9huuo": {
+"k": "A ladybug lands for a moment. Look quickly!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"w5dsm9": {
+"k": "Na’s lanterns are magic. Something is hiding inside these two!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"7fbqt5": {
+"k": "Look, the sun is going down. Tap the sun to help it go to sleep!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"xb9v86": {
+"k": "Good night, sun! Now it’s dark in the garden. Look at the stars!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"5lw7gq": {
+"k": "Boom! Thunder! Lam is scared.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"im4twa": {
+"k": "Lam feels scared.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"4isij8": {
+"k": "Scared!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"olp20t": {
+"k": "Are you scared, Lam?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"m6z3vm": {
+"k": "Let’s give Lam a big hug. Press and hold Lam!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"l9lrvn": {
+"k": "Two spots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1f23mh5": {
+"k": "I put the kitten on the table.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"j85ut9": {
+"k": "The kitten is on the table.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1qmy8qm": {
+"k": "On the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"14rmdqk": {
+"k": "Now put the kitten under the table. Tap under the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1muznya": {
+"k": "Yes! The kitten is under the table.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"psdegh": {
+"k": "Under the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1jxz370": {
+"k": "Now put the kitten in the box. Tap in the box!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1ln7k7k": {
+"k": "Yes! The kitten is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1rzv14n": {
+"k": "In the box!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"x2sfxb": {
+"k": "Look at the dots, then bang the drum!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1hnx60l": {
+"k": "Look quickly!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"i5njcx": {
+"k": "One drum beat for each dot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"bc4ly3": {
+"k": "One dot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"9eahhy": {
+"k": "So I bang the drum once.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"4g9lil": {
+"k": "Two dots, two beats!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"cbxpqp": {
+"k": "Three dots, three beats!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1hjfy5c": {
+"k": "Let’s count together!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1pb8jeh": {
+"k": "It’s so dark in the garden! Move the light with your finger to look around.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1w87ng3": {
+"k": "Where is Ben? Find Ben!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"12na43b": {
+"k": "There’s Ben! Ben is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1i23ydj": {
+"k": "Where is Lam? Find Lam!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"fg44vv": {
+"k": "There’s Lam! Lam is on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1rt59ex": {
+"k": "On the slide!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"14ftd1g": {
+"k": "Who is in the bush?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"12n6mil": {
+"k": "It’s Na! Na is in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"10n9bnb": {
+"k": "Something is shining in the dark! Find it!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1qx52ip": {
+"k": "Ben feels tired.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1ngne4c": {
+"k": "Tired!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"7jbrne": {
+"k": "Are you tired, Ben?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"2fqaae": {
+"k": "Good night, Ben! When we feel tired, we go to sleep.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1ul2obp": {
+"k": "Look! This piece shows the garden.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1vyppcp": {
+"k": "Three pieces are on the map. Five more to go, then we’ll see where the treasure is!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1mn01u3": {
+"k": "Hmm, not quite!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"rtqku3": {
+"k": "Let’s look at the dots again.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"141mv3k": {
+"k": "Now bang the drum. One beat for each dot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"19v0lyp": {
+"k": "Where is Na? Find Na!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"14xvmzd": {
+"k": "There’s Na! Na is on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"2kml9p": {
+"k": "Who is under the tree?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1vpv0le": {
+"k": "It’s Lam! Lam is under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"12ueh7y": {
+"k": "You got it!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"3kyjka": {
+"k": "Two dots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"11y5mrm": {
+"k": "There’s Na! Na is in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"mfb1ko": {
+"k": "In the bush!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"11a9vtl": {
+"k": "There’s Lam! Lam is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"rem9ok": {
+"k": "Hmm, that’s Lam.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"d5oqt5": {
+"k": "Hmm, that’s Na.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1eesss4": {
+"k": "It’s Ben! Ben is under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"hsb2vk": {
+"k": "There’s Lam! Lam is in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1xmaemn": {
+"k": "There’s Na! Na is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"4k3mch": {
+"k": "There’s Na! Na is under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"106ovxd": {
+"k": "Under the tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"16bdehh": {
+"k": "Who is on the slide?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"qoq0zg": {
+"k": "It’s Ben! Ben is on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"90art4": {
+"k": "Oops, that’s too many beats!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"w4o7u2": {
+"k": "Look, there are two dots. Let’s count: one, two.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1d69uqk": {
+"k": "Three dots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"1bbybcx": {
+"k": "There’s Ben! Ben is on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"o6i2v": {
+"k": "Who is in the box?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"qltuym": {
+"k": "It’s Na! Na is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"16f5k7v": {
+"k": "There’s Lam! Lam is under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"qd8tpo": {
+"k": "It’s Na! Na is on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"tfjlfd": {
+"k": "The map shows a house. It’s Na’s house! Na shows us her room.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"ijqf57": {
+"k": "Na has two teddy bears.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"qa26b9": {
+"k": "This bear is big.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1w9i2u": {
+"k": "This bear is small.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1cdm0qz": {
+"k": "Tap the small bear!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1193rsl": {
+"k": "Yes! That bear is small.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1bop9da": {
+"k": "Now tap the big bear!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"bubpec": {
+"k": "Yes! That bear is big. Big bear, small bear!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"9cm0mv": {
+"k": "Na wants to draw. Oh, her crayons are all mixed up!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1y1t4xf": {
+"k": "Let’s sort them by colour. The green crayons go in the green cup. The red crayons go in the red cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1jb044q": {
+"k": "This crayon is green.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"k7uup0": {
+"k": "It goes in the green cup!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"4upgp3": {
+"k": "Now you! Put each crayon in the cup of the same colour.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"mu4w9r": {
+"k": "All sorted! The green crayons are together, and the red crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"x5g0ay": {
+"k": "Knock, knock! It’s Ben, with a present for Na.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1fwnr4q": {
+"k": "Na opens it. It’s a new drawing book!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"96g8fh": {
+"k": "I feel happy!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1tyi5gl": {
+"k": "Na says: I feel happy.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"deliln": {
+"k": "Can you say it like Na?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"ofhaz7": {
+"k": "Tap the microphone, and say it!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"16lvg6j": {
+"k": "Na is so happy!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1f3bjsw": {
+"k": "Lam brings his dominoes. Let’s play!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1khzklo": {
+"k": "Lam turns a domino over. Look quickly!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"r12ert": {
+"k": "How many dots were on the domino? Find the same dots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1egorir": {
+"k": "One dot on the domino. One goes next to one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"236xzu": {
+"k": "One and one. They match!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"ji04og": {
+"k": "You saw two dots in a flash!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1u10com": {
+"k": "Two and two. They match!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1bqqgfi": {
+"k": "You saw three dots in a flash!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1bflaoe": {
+"k": "Three and three. They match!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1xj35x6": {
+"k": "After all that playing, the toys are everywhere!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1gc9wl3": {
+"k": "Put each toy in the right box. Big toys in the big box, small toys in the small box!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"93wu0p": {
+"k": "Na puts the toy boxes up on the shelf.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"15vqj60": {
+"k": "Na has a music box. When you wind it up, it plays music!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"29o486": {
+"k": "Na winds it up. Listen…",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"n1ty34": {
+"k": "How does the music sound? Tap the face!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1xcfixj": {
+"k": "Yes! That music sounds sleepy. Time for a rest!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1x25adl": {
+"k": "Na winds it up again. A new tune!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"rdp8ai": {
+"k": "Yes! That music sounds scary, a sneaky, creepy tune!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"lvc9sn": {
+"k": "Snack time! Lam has an ice cream.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1lwdhe1": {
+"k": "Oh no! Lam dropped his ice cream.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1hz7xvy": {
+"k": "I feel sad.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"x0od86": {
+"k": "Lam says: I feel sad.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"180qdds": {
+"k": "Can you say it like Lam?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1y7hg5r": {
+"k": "Lam dropped the ice cream and feels sad. Let’s share a snack with Lam!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1pm1hzn": {
+"k": "Tap a snack. Then tap Lam to give it!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"11juf2t": {
+"k": "Now Lam says: I feel happy!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"lmtbct": {
+"k": "Na’s kitten wants to play hide and seek!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1cxadqv": {
+"k": "The kitten is under the bed. Tap under the bed!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"lg192o": {
+"k": "Peekaboo! The kitten is under the bed.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1syjd2j": {
+"k": "The kitten is in the basket. Tap in the basket!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"5iaqss": {
+"k": "Peekaboo! The kitten is in the basket.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"xduv6w": {
+"k": "Oops! The kitten jumped up onto the toy shelf…",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1v3v90q": {
+"k": "Oops! The kitten knocked over the toy boxes. The toys are falling out!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1kgova3": {
+"k": "Watch me first! I move the basket under a big toy.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"zis5gt": {
+"k": "I caught it! The big toy is in the basket.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"9k2fqu": {
+"k": "Five small toys! The toys are back in the boxes.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"81sdax": {
+"k": "The fourth piece fell from Na’s shelf!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"187s6gm": {
+"k": "Look! The red path goes to a shop. Next time, let’s go there!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"15eqr9h": {
+"k": "Let’s sort them by colour. The red crayons go in the red cup. The blue crayons go in the blue cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"wxps6i": {
+"k": "This crayon is red.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1cellpc": {
+"k": "It goes in the red cup!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"k7szty": {
+"k": "All sorted! The red crayons are together, and the blue crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"9kllpc": {
+"k": "Three dots on the domino. Three goes next to three!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"fswy5j": {
+"k": "You saw one dot in a flash!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"3acalf": {
+"k": "Oops, that one has two dots.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1dd9g3d": {
+"k": "Look again!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"eb48d7": {
+"k": "Hmm, that face looks happy.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"txm6xn": {
+"k": "Hmm, that face looks tired.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"rzyakd": {
+"k": "The kitten is on the bed. Tap on the bed!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"dsljr4": {
+"k": "Hmm, that’s under the bed.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1c8xgeh": {
+"k": "Peekaboo! The kitten is on the bed.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"cjk8bt": {
+"k": "Hmm, that bear is small.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"8ka3wj": {
+"k": "Let’s sort them by colour. The red crayons go in the red cup. The green crayons go in the green cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"h6fqb3": {
+"k": "All sorted! The red crayons are together, and the green crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1ewly9z": {
+"k": "Hmm, that face looks scared.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"11qpe8y": {
+"k": "Two dots on the domino. Two goes next to two!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"17bifv5": {
+"k": "Let’s sort them by colour. The green crayons go in the green cup. The yellow crayons go in the yellow cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"tq3zae": {
+"k": "All sorted! The green crayons are together, and the yellow crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"vpb2ya": {
+"k": "Oops, that one has one dot.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"14u7gzg": {
+"k": "Hmm, that’s in the basket.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"do6ri1": {
+"k": "Hmm, that’s on the bed.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1st0085": {
+"k": "Let’s sort them by colour. The yellow crayons go in the yellow cup. The red crayons go in the red cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"eoo7uy": {
+"k": "All sorted! The yellow crayons are together, and the red crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"42uawj": {
+"k": "Look! The cat is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"dfdfoh": {
+"k": "Let’s sort them by colour. The blue crayons go in the blue cup. The green crayons go in the green cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"in4o7e": {
+"k": "All sorted! The blue crayons are together, and the green crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"eq8cj3": {
+"k": "Next time, just look. One!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"jtw0un": {
+"k": "Hmm, that one has one dot.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1nrcplo": {
+"k": "Hmm, that one has two dots.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"q1yf1y": {
+"k": "Hmm, that one has three dots.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"3hbuqh": {
+"k": "Let’s sort them by colour. The red crayons go in the red cup. The yellow crayons go in the yellow cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"kr1cie": {
+"k": "All sorted! The red crayons are together, and the yellow crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1lpg8q7": {
+"k": "Let’s sort them by colour. The blue crayons go in the blue cup. The yellow crayons go in the yellow cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1cux2e5": {
+"k": "All sorted! The blue crayons are together, and the yellow crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"41lo5p": {
+"k": "Let’s sort them by colour. The yellow crayons go in the yellow cup. The green crayons go in the green cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"8o0v0m": {
+"k": "All sorted! The yellow crayons are together, and the green crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1abctyh": {
+"k": "Let’s sort them by colour. The blue crayons go in the blue cup. The red crayons go in the red cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"mq9i6": {
+"k": "All sorted! The blue crayons are together, and the red crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"uo3f6n": {
+"k": "Let’s sort them by colour. The yellow crayons go in the yellow cup. The blue crayons go in the blue cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1wdnuml": {
+"k": "All sorted! The yellow crayons are together, and the blue crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"9dfxnh": {
+"k": "Let’s sort them by colour. The green crayons go in the green cup. The blue crayons go in the blue cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"du5npy": {
+"k": "All sorted! The green crayons are together, and the blue crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"5ovs2j": {
+"k": "That crayon is red. It goes in the red cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"15cl9p5": {
+"k": "That crayon is blue. It goes in the blue cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"14u6or1": {
+"k": "This crayon is blue.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"gg1a9p": {
+"k": "It goes in the blue cup!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"191ui3x": {
+"k": "That crayon is yellow. It goes in the yellow cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"eo5oah": {
+"k": "This crayon is yellow.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1a7bzv1": {
+"k": "It goes in the yellow cup!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"5p7qy3": {
+"k": "That crayon is green. It goes in the green cup.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"cqt2dr": {
+"k": "You said it, just like Na!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"883blg": {
+"k": "You said it, just like Lam!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"dzjqr3": {
+"k": "On the bed! On the bed!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"127wft1": {
+"k": "Under the bed! Under the bed!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"13onmp": {
+"k": "In the basket! In the basket!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"4f5qa": {
+"k": "Give it to Lam! Tap Lam.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1idocx1": {
+"k": "An apple!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"m24n1m": {
+"k": "Hmm, that bear is big.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"tax3vs": {
+"k": "Big!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"d2qs1j": {
+"k": "Small!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"50m70w": {
+"k": "I feel happy.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"dl11d3": {
+"k": "Let’s say it together!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1s5xp6d": {
+"k": "Let’s tidy up. Big toys go in the big box. Small toys go in the small box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"cvd795": {
+"k": "This toy is big.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1gwdr00": {
+"k": "It goes in the big box!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1ng7qam": {
+"k": "Six!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1rrfpvk": {
+"k": "The room is tidy! Big toys in the big box, small toys in the small box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1dw9bm4": {
+"k": "A banana!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"12lesq1": {
+"k": "Thank you for sharing a banana! Lam feels happy again.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1obmrkm": {
+"k": "Sharing!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1uclrz8": {
+"k": "Under the bed!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"y00eb0": {
+"k": "In the basket!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1x28kdh": {
+"k": "Toys are falling from the shelf! Move the basket. Catch the big toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"18yvvsn": {
+"k": "Four big toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"brn0tw": {
+"k": "Now catch the small toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"70g9rx": {
+"k": "That one is big!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1cogaci": {
+"k": "Look! Something else is falling. Catch it!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1op5yq6": {
+"k": "Look! This piece shows the house.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1j45hv3": {
+"k": "Four pieces are on the map. Four more to go, then we’ll see where the treasure is!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"jh8uj7": {
+"k": "On the bed!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"117gj01": {
+"k": "Oops, that one has three dots.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"pnm4xj": {
+"k": "Zebras don’t eat fish. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1jz6jz6": {
+"k": "That one is small!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
 }
 }
 }
