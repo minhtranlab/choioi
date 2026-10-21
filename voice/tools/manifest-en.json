@@ -1920,6 +1920,66 @@
 "part": "man0",
 "who": "chồi"
 },
+"680f3p": {
+"k": "Hello! I’m Chồi. This is the street to my school.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1a11yln": {
+"k": "Tap a motorbike, a taxi or a bus!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"aztb5d": {
+"k": "Here comes my school bus!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1plrgmz": {
+"k": "A motorbike!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1svzg02": {
+"k": "Here’s my school! Let’s go in.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"13b56aj": {
+"k": "A taxi!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"jhm0no": {
+"k": "Look, there’s something old on the bookshelf.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"cm4ee9": {
+"k": "Ben is at the top of the slide. Oops, he drops his ball! Draw a line straight down for the ball!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"129h0jd": {
+"k": "Bounce! The ball rolls away. Ben slides down to get it. Whee!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1ycqruh": {
+"k": "A bus!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
 "oo9sol": {
 "k": "Here we are at the park! It’s so windy today.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -2726,6 +2786,18 @@
 },
 "6bvz6n": {
 "k": "Lions don’t eat hay. Try another one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"1wi3l90": {
+"k": "Here we are at the park! Look, the tallest building in our city!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"1rs0etd": {
+"k": "It’s so windy today. Let’s fly our kites!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
 "who": "chồi"

@@ -1896,6 +1896,66 @@
 "part": "man0",
 "who": "chồi"
 },
+"1pwd80w": {
+"k": "Xin chào! Chồi đây. Đây là con phố tới trường của Chồi.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"14tm4i1": {
+"k": "Con chạm vào xe máy, xe taxi hay xe buýt nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"c7fgyj": {
+"k": "Xe buýt của trường Chồi tới rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1ogi74i": {
+"k": "Xe máy!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"yrd9mt": {
+"k": "Trường của Chồi đây! Mình vào thôi.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"e6w8jc": {
+"k": "Taxi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1gmhe3b": {
+"k": "Nhìn kìa, trên tủ sách có một thứ gì cũ cũ.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"19291ks": {
+"k": "Ben ở trên đỉnh cầu trượt. Ối, Ben làm rơi quả bóng! Con vẽ đường thẳng xuống cho quả bóng nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1hviaq2": {
+"k": "Bịch! Quả bóng lăn đi. Ben trượt xuống nhặt bóng. Vèo!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"h4v2b9": {
+"k": "Xe buýt!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
 "1ze9zk": {
 "k": "Mình tới công viên rồi! Hôm nay gió to quá.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -2708,6 +2768,18 @@
 },
 "tyte0p": {
 "k": "Sư tử không ăn cỏ khô đâu. Thử món khác nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"1k2qdj": {
+"k": "Mình tới công viên rồi! Nhìn kìa, toà nhà cao nhất thành phố!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"gzle4s": {
+"k": "Hôm nay gió to quá. Mình đi thả diều nào!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man1",
 "who": "chồi"
