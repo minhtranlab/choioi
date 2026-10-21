@@ -43,9 +43,17 @@ def vkey(t, slow=False):
     return ('~' if slow else '') + re.sub(r'\s+', ' ', str(t)).strip()
 
 # ---------------------------------------------------------------- text the engine reads
+SYL_KEEP = {'bye-bye', 'ding-dong', 'kee-ow', 'đô-mi-nô', 'roly-poly'}   # real words with hyphens, read as one word
+def syllables(m):
+    """a clapping drill (ba-na-na, ap - pull): each sound said on its own, with a small pause between"""
+    w = m.group(0)
+    if re.sub(r'\s+', '', w).lower() in SYL_KEEP: return w
+    if re.sub(r'\s+', '', w).lower() == 'is-land': return 'Eye, land' if w[0].isupper() else 'eye, land'   # said "eye-land", not "is"
+    return ', '.join(x.strip() for x in w.split('-'))
 def spoken(key, lang):
     """the app swaps the child's name for {N}; the recording leaves the name out (it can't know it)"""
     t = key.lstrip('~')
+    t = re.sub(r'[\wÀ-ỹ]+(?:\s*-\s*[\wÀ-ỹ]+)+', syllables, t)
     t = re.sub(r',\s*\{N\}(?=[!?.,…]|$)', '', t)          # "Great job, {N}!" -> "Great job!"
     t = re.sub(r'\{N\},\s*', '', t)                        # "{N}, look!" -> "look!"
     if lang == 'vi':
@@ -206,7 +214,9 @@ def cmd_lines(a):
             who = 'kid' if rest and rest[0] == 'k' else 'chồi'; slow = bool(rate) and rate < .65; part = li if isinstance(li, str) else f'man{li}'
             if en: add('en', en, slow, who, part)
             if vi: add('vi', vi, slow, who, part)
-    L = [o for o in out.values() if spoken(o['key'], o['lang'])]
+    VI = re.compile(r'[ăâđêôơưàáảãạèéẻẽẹìíỉĩịòóỏõọùúủũụỳýỷỹỵằắẳẵặầấẩẫậềếểễệồốổỗộờớởỡợừứửữự]', re.I)
+    # an English line with Vietnamese words in it (other than Chồi) is only the subtitle of a Vietnamese-mode line: never spoken
+    L = [o for o in out.values() if spoken(o['key'], o['lang']) and not (o['lang'] == 'en' and VI.search(o['key'].replace('Chồi', '')))]
     json.dump(L, open(lines_path(), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
     print('lines', sorted(collections.Counter((o['lang'], o['part']) for o in L).items()))
 
@@ -235,11 +245,13 @@ def make_line(o):
     return loud(np.concatenate(parts[:-1])), info
 def cmd_make(a):
     L = json.load(open(lines_path(), encoding='utf-8'))
+    redo = re.compile(a.redo) if a.redo else None
     for lang in a.lang.split(','):
         M = manifest(lang); todo = []
         for o in L:
             if o['lang'] != lang: continue
             h = vhash(o['key']); s = sig(lang, o['who'])
+            if redo and redo.search(o['key']): todo.append(o); continue   # made again on purpose (the way of reading it changed)
             if M['c'].get(h, {}).get('s') == s and M['c'][h].get('k') == o['key']: continue   # already in the bundles
             if os.path.exists(cache_path(lang, h, s)): continue
             todo.append(o)
@@ -269,13 +281,12 @@ def cmd_pack(a):
             b, off, ln = I['c'][h]
             if b not in cache: cache[b] = open(os.path.join(VOICE, f'{lang}-{b:02d}.mp3'), 'rb').read()
             return cache[b][off:off + ln]
-        newM, fresh, missing = {}, collections.OrderedDict(), 0
+        newM, fresh, missing, done = {}, collections.OrderedDict(), 0, []
         for o in sorted((o for o in L if o['lang'] == lang), key=lambda o: ORDER.get(o['part'], 99)):
             h = vhash(o['key']); s = sig(lang, o['who']); p = cache_path(lang, h, s)
             ok = M['c'].get(h, {}).get('s') == s and M['c'][h].get('k') == o['key'] and h in I['c']
-            if not ok:
-                if not os.path.exists(p): missing += 1; print('  missing (run make):', lang, o['key']); continue
-                fresh[h] = mp3(p)
+            if os.path.exists(p): fresh[h] = mp3(p); done.append(p)          # made since the last pack (new, changed, or redone)
+            elif not ok: missing += 1; print('  missing (run make):', lang, o['key']); continue
             newM[h] = {'k': o['key'], 's': s, 'part': o['part'], 'who': o['who']}
         if a.compact:
             items = [(h, fresh[h] if h in fresh else clip(h)) for h in sorted(newM, key=lambda h: ORDER.get(newM[h]['part'], 99))]
@@ -300,6 +311,10 @@ def cmd_pack(a):
         I['p'] = {k: sorted(v) for k, v in sorted(parts.items(), key=lambda kv: ORDER.get(kv[0], 99))}   # part -> its mp3 files
         json.dump(I, open(ip, 'w'), separators=(',', ':'))
         json.dump({'c': newM}, open(os.path.join(HERE, f'manifest-{lang}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+        for p in done:   # packed: keep a copy aside, so the next pack doesn't add it again
+            d = os.path.join(os.path.dirname(p), 'packed'); os.makedirs(d, exist_ok=True)
+            for ext in ('.wav', '.json'):
+                if os.path.exists(p[:-4] + ext): os.replace(p[:-4] + ext, os.path.join(d, os.path.basename(p)[:-4] + ext))
         tot = sum(os.path.getsize(os.path.join(VOICE, f'{lang}-{b:02d}.mp3')) for b in range(I['n']))
         print(lang, 'new-voice lines', len(newM), '(new now', len(fresh), ') files', I['n'], 'written', len(bufs), 'all MB', round(tot / 1e6, 1), 'missing', missing)
 
@@ -316,7 +331,7 @@ def cmd_page(a):
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest='cmd', required=True)
     p = sp.add_parser('lines'); p.add_argument('--parts', default='', help='e.g. chung,man0 (empty = all)'); p.add_argument('--log', nargs='*'); p.add_argument('--name', default='Bin', help='the child name used in the test run')
-    p = sp.add_parser('make'); p.add_argument('--lang', default='en,vi')
+    p = sp.add_parser('make'); p.add_argument('--lang', default='en,vi'); p.add_argument('--redo', default='', help='regex: make these lines again even if they exist')
     p = sp.add_parser('pack'); p.add_argument('--lang', default='en,vi'); p.add_argument('--compact', action='store_true')
     sp.add_parser('page')
     a = ap.parse_args(); {'lines': cmd_lines, 'make': cmd_make, 'pack': cmd_pack, 'page': cmd_page}[a.cmd](a)
