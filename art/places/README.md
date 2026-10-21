@@ -72,7 +72,7 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 | `the-tranh/mot-ngay-sang.svg`, `-chieu.svg`, `-toi.svg` | Màn 6 · ba thẻ tranh để xếp một ngày (khung 120×90, góc bo, có viền): sáng = bàn ăn có khăn kẻ, bát cháo bốc hơi, nải chuối, cốc sữa bên cửa sổ có mặt trời mọc (vẽ lại 21/10); chiều = công viên nắng chiều có lối đạp xe; tối = cửa sổ có trăng và cái giường nhìn ngang (đầu giường cao, gối, chăn kẻ sọc) (vẽ lại 21/10). Na do game vẽ (21/10) | — | thẻ | — |
 | `bep.svg` | Màn 6 · bữa sáng | 96 | toàn cảnh | — |
 | `bep-tron.svg` | Màn 6 · bếp, sân khấu: quầy bếp ngắn lại về mép trái, bỏ nồi cơm, đĩa quả (21/10) | 96 | sân khấu: bữa sáng, vỗ tay ba-na-na | — |
-| `doc-cau-qua-kenh.svg` | Màn 6 · kẻ đường xuống dốc tới trường | mặt cầu 85 (giữa) → 112 (hai đầu) | toàn cảnh | — |
+| `doc-cau-qua-kenh.svg` | Màn 6 · kẻ đường xuống dốc tới trường. 21/10: mặt cầu mỏng, vòm mảnh chân đặt trên bờ, không chạm mặt nước | mặt cầu 85 (giữa) → 112 (hai đầu) | toàn cảnh | — |
 | `duong-toi-truong.svg` (+ `-chieu`, `-toi`) | Màn 6 · đường tới trường sáng/chiều/tối. **21/10: bỏ xe ôm vẽ sẵn** (xe lấy từ `art/props/xe/`), vỉa hè gần trơn | 128 (vỉa hè gần), làn xe 104–128 (xa 104–116, gần 116–128) | toàn cảnh: trang đầu, kẻ đường tới trường | — |
 | `duong-toi-truong-tron.svg` (+ `-chieu-tron`, `-toi-tron`) | như trên, sân khấu (21/10): không đèn giao thông, không vạch qua đường, không tường cổng ở giữa, cây chỉ ở hai mép | như trên | sân khấu: ếch qua đường, xếp tranh sáng/chiều/tối, mọi trang có xe chạy | — |
 | `cong-vien-chieu.svg` | Màn 6 · chiều Na đạp xe | 92 | toàn cảnh | — |
