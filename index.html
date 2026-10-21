@@ -1277,6 +1277,7 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 #card .sbox>:is(.darkness,.nightveil,.eyesshut,.stormveil,.srain,.sflash,.d6tint,.d6warm){left:-80%;right:-80%}   /* the id wins over each veil's own inset:0 */
 .flashl .darkness{--mx2:calc((var(--mx) + 80%)/2.6)}
 .posintro.night.catcan,.posintro.night.catcan>.pi-bg{overflow:visible;border-radius:0}
+#card .posintro .pi-word{font-size:clamp(16px,min(3.4vw,5cqh),30px);top:2%}   /* 21/10: on a short phone screen the word stays above the kitten, not over her head */
 /* 21/10: a small thing the child taps gets a bigger, invisible place to tap (about 12% of the picture wide), centred on it; where things stand close together the place is a little smaller (--hw), so it never covers the thing next to it */
 .sbox .hit::before{content:'';position:absolute;left:50%;top:50%;translate:-50% -50%;width:max(100%,var(--hw,12cqw));height:max(100%,var(--hh,var(--hw,12cqw)));border-radius:40%}
 .sbunder{display:flex;align-items:center;justify-content:center;flex:none}
