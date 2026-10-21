@@ -1257,6 +1257,13 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .sboxwrap>.sbunder.side{left:auto;translate:0 -50%;top:50%;bottom:auto;right:calc((100cqw - min(100cqw, 142.857cqh))/2 + 1.6cqw);flex-direction:column}
 .sboxwrap>.sbunder.side .opt.d6opt{width:min(19cqh,17cqw,150px)}
 .sboxwrap>.sbunder.br{left:auto;translate:none;right:calc((100cqw - min(100cqw, 142.857cqh))/2 + 2cqw)}
+/* a wide phone screen has empty space beside the picture: the side column goes there, a little bigger */
+/* a wide phone screen has empty space beside the picture: every row of choices becomes a column there (a little bigger), and the whole picture stays clear */
+@container (min-aspect-ratio:9/5){
+  .sboxwrap>.sbunder,.sboxwrap>.sbunder.top,.sboxwrap>.sbunder.br,.sboxwrap>.sbunder.side{left:auto;bottom:auto;top:50%;translate:0 -50%;right:max(1cqw,calc((100cqw - 142.857cqh)/2 - 27cqh));flex-direction:column;max-width:none}
+  .sboxwrap>.sbunder .opt:not(.d6opt){width:min(22cqh,104px)} .sboxwrap>.sbunder:has(>.opt:nth-child(4)) .opt:not(.d6opt){width:min(19cqh,104px)}
+  .sboxwrap>.sbunder .opt.d6opt{width:min(24cqh,150px)} .sboxwrap>.sbunder .opt.d6opt.sky{width:min(22cqh,130px)}
+  .sboxwrap>.sbunder .whorow{flex-direction:column;flex-wrap:nowrap;width:auto} .sboxwrap>.sbunder.sbrow{flex-wrap:nowrap;width:auto} }
 .sboxwrap>.qbox{width:min(100%,calc(100cqh*200/140))}
 .sbox>svg:first-child{position:absolute;inset:0;width:100%;height:100%}
 /* 21/10: a small thing the child taps gets a bigger, invisible place to tap (about 12% of the picture wide), centred on it; where things stand close together the place is a little smaller (--hw), so it never covers the thing next to it */
