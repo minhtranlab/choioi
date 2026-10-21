@@ -1670,8 +1670,8 @@ line.done,.tether path{filter:url(#haloW)}
 /* Na's room on the new picture (20/10) */
 .crayon.flat{width:10%;transform-origin:50% 50%}.crayon.flat::before{content:'';position:absolute;inset:-70% -4%}
 .sboxwrap>.domtable{width:min(100%,calc(100cqh*200/140))}
-.domtable .dom0{left:40%;bottom:33%;width:24%}
-.domtable .dom1{left:64%;bottom:33%;width:24%;animation:none;transform-origin:25% 50%}.dom1.joined svg{animation:pop .4s}
+.domtable .dom0{left:40%;bottom:23%;width:24%}
+.domtable .dom1{left:64%;bottom:23%;width:24%;animation:none;transform-origin:25% 50%}.dom1.joined svg{animation:pop .4s}
 .tidy .ttoy.big{width:11%}.tidy .tbox.big{left:79%;width:17%}.tidy .tbox.small{left:94%;width:10%}
 .ktail2{position:absolute;translate:-50% 0;z-index:3;opacity:0;pointer-events:none;transition:opacity .25s}.ktail2.flip{scale:-1 1}
 .ktail2 svg{width:100%;height:auto;display:block;overflow:visible}
@@ -7495,7 +7495,7 @@ function dominoes(sk,rounds=2){ const st={};
   return choiceActivity(sk,rounds,['Lam brings his dominoes. Let’s play!','Lam mang đô-mi-nô đến. Mình chơi nhé!'],r=>{
     const n=nextDifferent(st.n,()=>1+rand(3)); st.n=n;
     const sc=el(`<div class="sbox qbox domtable">${NAROOM()}<div class="dom0">${DOMINO_SVG(0,n,true)}</div></div>`);
-    sc.append(kidAt('Lam','happy',11,2,RK));
+    sc.insertBefore(sceneThing(DESK_SVG(),52,12,54,'tdesk'),$('.dom0',sc)); sc.append(kidAt('Lam','happy',11,2,RK));   // 21/10: the dominoes lie on a low table (they looked as if they hung on the wall)
     const set=[1,2,3]; const [row,opts]=optRow(set.map(k=>DOMINO_SVG(k,null).replace('viewBox="0 0 104 54"','viewBox="0 0 54 54"')),'small domopt'); qscene(sc,row);
     const d0=$('.dom0',sc);
     const face=()=>{ d0.dataset.down=''; d0.innerHTML=DOMINO_SVG(0,n) };
