@@ -22,3 +22,17 @@ Mỗi xe có hai file: `-phai.svg` (đầu xe quay sang phải, chạy từ trá
 | `xe-dua-don` | 90×42 | xe đưa đón học sinh màu vàng (bản đã duyệt, thu 75% cho khớp tỉ lệ, cỡ xe mầm non khoảng 7,5 m) |
 
 Bảng tuyến xe buýt để trống (dải tối, không chữ, không số).
+
+### Xe đưa đón, bản cận (trò xếp bạn lên xe, Màn 0, tối 21/10)
+`xe-dua-don-can.svg` (đầu xe quay phải) và `xe-dua-don-can-trai.svg` (bản lật). Khung **240×136**, bánh chạm cạnh dưới. Cùng dáng và màu với `xe-dua-don` (vàng, mui tròn, mũi dốc, sọc hồng và xanh, cửa lên xuống dưới kính lái), vẽ to, **không theo tỉ lệ 12 đơn vị/m** (đây là cảnh cận). Bác tài ngồi sau kính lái, hai tay cầm vô lăng, tóc ngắn, áo xanh nhạt, không chữ, không logo.
+
+4 cửa sổ khách để trống (kính xanh rất nhạt, lưng ghế xanh lộ ở đáy, một vệt sáng nhỏ ở góc trên trái). Toạ độ trong khung 240×136 (x, y, rộng, cao):
+
+| Cửa sổ | `xe-dua-don-can.svg` (quay phải) | `xe-dua-don-can-trai.svg` (quay trái) |
+|---|---|---|
+| 1 (đuôi xe) | 18, 24, 36, 42 | 186, 24, 36, 42 |
+| 2 | 60, 24, 36, 42 | 144, 24, 36, 42 |
+| 3 | 102, 24, 36, 42 | 102, 24, 36, 42 |
+| 4 (sau bác tài) | 144, 24, 36, 42 | 60, 24, 36, 42 |
+
+Mặt bạn đặt giữa ô, tâm khoảng y 42 (lưng ghế chiếm 10 đơn vị dưới đáy ô, từ y 56), đường kính mặt tới khoảng 30. Kính lái (bác tài) ở x 186–220, y 24–60 bản quay phải (x 20–54 bản quay trái), không dùng để đặt bạn.

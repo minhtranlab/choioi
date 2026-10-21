@@ -39,15 +39,15 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 | `cong-vao-truong-tron.svg` | như trên, sân khấu (21/10) | 104 (vỉa hè trơn tới đáy, không có đường) | sân khấu: mọi trang có đồ của game. Cổng giữ nguyên thiết kế (biển tên, sóng, hoa, chậu), chỉ dịu đi một chút | — |
 | `xe-buyt.svg` | Màn 0 · xe buýt trường (đồ vật) | đáy hình | — | — |
 | `vuon-truong.svg` | Màn 0 · vườn sau trường. **21/10: chân trời lên y 62, cỏ cắt sọc**; nhà nấm, khung leo, đồi cỏ dời lên theo; hố cát giữ đúng chỗ cũ (y ≈ 108–132) | 62 | toàn cảnh: trang đầu, mảnh 1 | `BG.sgarden` |
-| `vuon-truong-tron.svg` | Màn 0 · vườn sau trường, sân khấu (21/10) | 62 | sân khấu: đếm cờ, cầu trượt, cây cầu, trốn tìm, **ú òa** (trang có trò chơi). Không hố cát: cầu trượt `do-choi/cau-truot-*.svg`, cây cầu `do-choi/cay-cau.svg`, bụi cây đặt thẳng trên cỏ | — |
+| `vuon-truong-tron.svg` | Màn 0 · vườn sau trường, sân khấu (21/10). Tối 21/10: thêm ở xa, nhạt, đứng trên đường chân trời (y 62, cao tới khoảng y 44): khung gỗ leo (x 22–58), nhà nấm (x 94–114), góc hộp cát có xẻng và xô (x 132–186); không gì vào vùng chơi | 62 | sân khấu: đếm cờ, cầu trượt, cây cầu, trốn tìm, **ú òa** (trang có trò chơi). Không hố cát: cầu trượt `do-choi/cau-truot-*.svg`, cây cầu `do-choi/cay-cau.svg`, bụi cây đặt thẳng trên cỏ | — |
 | `cong-vien.svg` | Màn 1 · công viên | 92 | toàn cảnh: mọi trang | `BG.park` |
 | `cong-vien-tron.svg` | Màn 1 · công viên, sân khấu: bỏ cây cọ và đèn ở giữa, bỏ hoa (21/10) | 92 | sân khấu: diều, bong bóng, vịt, bóng bay | — |
 | `cong-vien-duong.svg` | Màn 1 · đường ven công viên (cạnh Landmark 81), nơi xe chạy qua (21/10) | vỉa hè gần 132, làn xa 106–119, làn gần 119–132 | toàn cảnh: mọi trang có xe chạy | — |
 | `vuon-nha-na-chieu.svg` | Màn 2 · phần 1, hoàng hôn | ≈ 92 | toàn cảnh: mọi trang | `BG.dusk` |
-| `vuon-nha-na-chieu-tron.svg` | Màn 2 · vườn chiều, sân khấu: bỏ cây nhỏ ở giữa (21/10) | ≈ 92 | sân khấu: mặt trời lặn, đom đóm | — |
+| `vuon-nha-na-chieu-tron.svg` | Màn 2 · vườn chiều, sân khấu (21/10, sửa tối 21/10): bỏ nhà Na, cây to và cây nhỏ; chỉ còn tường rào thấp có chậu cây, thành phố xa, một bụi cây thấp ở mỗi mép (ngoài x 25–175) | ≈ 92 | sân khấu: mặt trời lặn, đom đóm | — |
 | `vuon-nha-na-dem.svg` | Màn 2 · phần 2–9, ban đêm | ≈ 92 | toàn cảnh: trang kể chuyện, đèn lồng, bão, trốn tìm, đèn pin | `BG.night` |
-| `vuon-nha-na-dem-tron.svg` | Màn 2 · vườn đêm, sân khấu: bỏ cây nhỏ ở giữa (21/10) | ≈ 92 | sân khấu: đèn lồng, bão, trốn tìm, đèn pin, túi ngủ | — |
-| `vuon-nha-na-dem-can-ban.svg` | Màn 2 · cận: mèo con tìm chỗ khô (in/on/under). Tường rào thấp có chậu cây, bụi cây mép trái, góc nhà Na mép phải (21/10) | 104 | cận: trò mèo, bàn, hộp (bàn, hộp, mèo do game vẽ) | — |
+| `vuon-nha-na-dem-tron.svg` | Màn 2 · vườn đêm, sân khấu (21/10, sửa tối 21/10): bỏ nhà Na, cây to và cây nhỏ; như bản chiều, thêm trăng sao | ≈ 92 | sân khấu: đèn lồng, bão, trốn tìm, đèn pin, túi ngủ, gõ trống | — |
+| `vuon-nha-na-dem-can-ban.svg` | Màn 2 · cận: mèo con tìm chỗ khô (in/on/under). Tường rào thấp có chậu cây, một bụi cây ở mỗi mép (21/10; tối 21/10 bỏ góc nhà Na: đứng cạnh cái bàn cỡ mèo, góc nhà trông to bằng cái bàn) | 104 | cận: trò mèo, bàn, hộp (bàn, hộp, mèo do game vẽ). Nền không còn vật gì có cỡ cố định (nhà, cửa) để so, nên bàn và hộp ở cỡ nào cũng đúng; chỉ cần bàn cao hơn mèo đứng khoảng 1,3–2 lần và hộp vừa mèo ngồi lọt | — |
 | `vuon-nha-na-dem-can-la.svg` | Màn 2 · cận: bọ rùa đậu trên lá. Cành từ mép trái, một chiếc lá to nằm ngang (chỗ đậu, y ≈ 58–96), vườn tối xa phía sau (21/10) | — | cận: trò bọ rùa (bọ rùa do game vẽ) | — |
 | `vuon-nha-na-dem-truoc-leu.svg` | Màn 2 · cận: trước lều. Lều cam to ở mép trái, dây đèn nhỏ trên cao (21/10) | 112 | cận: trò gõ trống (trống do game vẽ) | — |
 | `phong-na.svg` | Màn 3 · phòng Na | 92 | toàn cảnh: trang đầu, trang kể chuyện | phòng Na |
@@ -62,8 +62,8 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 | `sieu-thi.svg` | Màn 4 · cửa hàng | 98 | toàn cảnh: trang đầu, trang kể chuyện | `BG.shop` |
 | `sieu-thi-tron.svg` | Màn 4 · cửa hàng, sân khấu (21/10, bản B): cùng tường, sàn, biển treo; quầy trái cây mép trái, kệ nước mép phải; hai kệ đồ chơi nhỏ rất nhạt ở x 34–64 và 134–164; giữa x 64–134 trống (chỗ tấm bản đồ) | 98 | sân khấu: mọi trang có đồ của game | — |
 | `sieu-thi-can-ghe.svg` | Màn 4 · cận: ghế gỗ dài (mặt ghế y 84, x 18–182), biển quả treo trên, quầy quả ở mép trái (21/10) | 84 (mặt ghế), sàn 98 | cận: quả, giỏ quả có số trên ghế dài | — |
-| `cong-truong-xay.svg` | Màn 5 · công trường | 98 | toàn cảnh: mọi trang | — |
-| `cong-truong-xay-tron.svg` | Màn 5 · công trường, sân khấu: bỏ cọc giao thông, chồng gạch (21/10) | 98 | sân khấu: cần cẩu, bác thợ, tháp, xe tải | — |
+| `cong-truong-xay.svg` | Màn 5 · công trường. Tối 21/10: cánh tay cần cẩu xa dài tới x 180, xe con và dây móc ở x 174 treo thẳng từ cánh tay; bỏ đám mây ở đầu cánh tay | 98 | toàn cảnh: mọi trang | — |
+| `cong-truong-xay-tron.svg` | Màn 5 · công trường, sân khấu: bỏ cọc giao thông, chồng gạch (21/10); cần cẩu sửa như bản toàn cảnh (tối 21/10) | 98 | sân khấu: cần cẩu, bác thợ, tháp, xe tải | — |
 | `cong-truong-can-cua-so.svg` | Màn 5 · cận: bức tường nhà mới, **lỗ vuông x 44–78, y 40–74; lỗ tròn tâm (150, 57), r 17** (21/10) | 112 | cận: cửa sổ Lam và Na cầm bay vào lỗ | — |
 | `cong-truong-can-nha-xe.svg` | Màn 5 · cận: nhà để xe của Ben, tường gạch có 4 chỗ trống viền nét đứt: **cửa cuốn x 78–122, y 76–116; cửa sổ x 130–152, y 70–92; đèn tâm (60, 78), r 8; mái tam giác (40,60) (100,30) (160,60)** (21/10) | 116 | cận: ghép hình nhà để xe | — |
 | `phong-nha-moi.svg` | Màn 5 · trong ngôi nhà mới xây | 92 | toàn cảnh | — |
