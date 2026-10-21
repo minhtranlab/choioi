@@ -650,6 +650,7 @@ button.basket{cursor:pointer;font:inherit}
 .rider{width:clamp(52px,min(13cqw,20cqh),calc(84px*var(--k,1)));aspect-ratio:1;border:0;background:none;padding:0}
 .rider svg{width:100%;height:100%}
 .rider.nope{animation:shake .35s}
+.rider.other{opacity:.92;margin-left:14px}.rider.other+.rider.other{margin-left:0}.rider.waveby{animation:bob .6s ease-in-out 2}
 .helpscene{display:flex;gap:18px;align-items:center;justify-content:center;width:100%}
 .hs-art{width:min(30cqw,26cqh,calc(150px*var(--k,1)))}
 .hs-art svg{width:100%;height:auto}
@@ -1261,6 +1262,8 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .fpeek.found{z-index:3;transform:translateY(-18%) scale(1.06);filter:drop-shadow(0 0 8px #FFF3B0)}
 .fpeek.shadow{filter:brightness(0) opacity(.8)}
 .fpeek.back{z-index:1}.flashl .fspot{z-index:2}.fpeek.back.found{z-index:1;transform:translateX(14%) scale(1.04)}
+/* in the box / in the bush: the friend stays behind the front, only the head shows, and just bobs up when found (21/10) */
+.fpeek.inside.found{z-index:1;transform:translateY(-7%) scale(1.04)}.fpeek.sit.found{transform:scale(1.05)}
 .fpeek.glint{animation:cbob 1.2s ease-in-out infinite;filter:drop-shadow(0 0 10px #FFE066)}
 .flashl .fspot.nope .hid{animation:wob .45s}
 .sbunder .whorow{position:static;translate:none;background:none;padding:0}
@@ -1433,6 +1436,12 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .mapnote{position:absolute;left:80%;bottom:42%;width:22%;translate:-50% 0;z-index:4;animation:noteIn .9s cubic-bezier(.3,1.4,.5,1) both}.mapnote svg{width:100%;height:auto;display:block}
 @keyframes noteIn{0%{transform:translate(-140%,30%) rotate(-30deg) scale(.4);opacity:0}100%{transform:rotate(6deg)}}
 .bushrow .opt{padding:2px;overflow:hidden}
+.mf-next{opacity:0;animation:mfnext .9s .1s ease-out forwards}.mf-ring{transform-box:fill-box;transform-origin:center;animation:mfring 1.3s ease-in-out infinite}
+@keyframes mfnext{to{opacity:1}}@keyframes mfring{50%{transform:scale(1.15)}}
+.cpolly{position:absolute;width:9%;z-index:6;pointer-events:none}.cpolly svg{width:100%;height:auto;display:block}
+.mapgive{position:fixed;width:min(12vw,84px);z-index:60;pointer-events:none}.mapgive svg{width:100%;height:auto;display:block}
+.bfriends{display:flex;justify-content:center;gap:min(4vw,28px);margin-top:min(9vh,70px)}.bfr{position:relative;width:min(15vw,112px)}.bfr>svg{width:100%;height:auto;display:block}
+.bfb{position:absolute;left:50%;bottom:88%;width:48%;translate:-50% 0;transition:opacity .4s,transform .5s cubic-bezier(.3,1.6,.5,1)}.bfb svg{width:100%;height:auto;display:block}.bfr.wait .bfb{opacity:0;transform:translateY(40%)}
 .bushhead{position:relative;display:block;width:100%;aspect-ratio:1}
 .bushhead .bh-kid{position:absolute;left:20%;top:4%;width:60%}.bushhead .bh-kid svg{width:100%;height:auto;display:block}
 .bushhead .bh-bush{position:absolute;left:-4%;bottom:-4%;width:108%}.bushhead .bh-bush svg{width:100%;height:auto;display:block}
@@ -1840,7 +1849,7 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .d6bowldown{z-index:3}.d6bowl.pop{animation:pop .4s}.d6card{position:relative;width:100%;aspect-ratio:4/3;display:grid;place-items:center}
 .d6card.bf .h{position:absolute;left:6%;top:4%;width:50%}.d6card.bf .p{position:absolute;right:4%;bottom:6%;width:52%}
 .d6card.bk svg{width:96%}.d6card.sl svg{width:98%}
-.opt.d6opt.sky{width:clamp(96px,20vw,170px)}.d6sky{width:100%;aspect-ratio:5/4;border-radius:10px;overflow:hidden}.d6sky svg{width:100%;height:100%;display:block}
+.opt.d6opt.sky{width:clamp(96px,20vw,170px)}.opt.d6opt.sky.s7{width:clamp(70px,11vw,104px)}.sbunder .opt.s7{width:clamp(62px,10vw,92px);height:auto}.d6sky{width:100%;aspect-ratio:5/4;border-radius:10px;overflow:hidden}.d6sky svg{width:100%;height:100%;display:block}
 /* the kitchen: clap the beats */
 .c6food{z-index:3}.c6food.pop{animation:pop .45s}
 .c6clap{position:absolute;left:84%;bottom:8%;width:15%;aspect-ratio:1;translate:-50% 0;border-radius:50%;background:#fff;border:3.5px solid #3A1B49;box-shadow:0 5px 0 #3A1B49;display:grid;place-items:center;z-index:5;padding:2.6%;cursor:pointer}
@@ -1933,7 +1942,7 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 .s7src.nope svg{animation:shake .35s}
 /* the pier and the lighthouse */
 .p7pier{position:absolute;inset:0;z-index:4;pointer-events:none}.p7pier svg{width:100%;height:100%;display:block}.dimbg .p7pier svg{filter:saturate(.5) contrast(.72) brightness(1.13)}
-.pier7 .b7boat{z-index:3}.pier7 .p7kid{z-index:5}.pier7 .p7kid b{display:none}
+.pier7 .b7boat{z-index:3}.pier7 .p7kid{z-index:5}.pier7 .p7kid b{display:none}.pier7 .l7top{z-index:3}
 .l7sdoor{position:absolute;left:75.25%;bottom:60%;width:2.6%;height:6.4%;translate:-50% 0;background:#B5733E;border:2px solid #3A1B49;border-radius:3px 3px 0 0;z-index:2;transition:background .5s,box-shadow .5s;pointer-events:none}
 .l7sdoor.open{background:#3A2418;box-shadow:0 0 10px 3px rgba(255,226,120,.85)}
 .l7lamp{position:absolute;left:75.25%;top:19.6%;width:11%;aspect-ratio:1;translate:-50% -50%;border-radius:50%;background:radial-gradient(rgba(255,240,150,.95),rgba(255,240,150,0) 70%);opacity:0;z-index:2;pointer-events:none;transition:opacity .8s}
@@ -2595,9 +2604,10 @@ async function kidRound(sk,R){
 /** Choice activity: one demo round by Chồi (hand taps the answer), then child rounds. */
 /** a game the child has already been shown: no 'watch me' demo the second time */
 function seenDemo(key){ S.seenDemo=S.seenDemo||{}; const was=!!S.seenDemo[key]; S.seenDemo[key]=1; save(); return was&&!(RUN&&RUN.dev&&RUN.forceDemo) }
-async function choiceActivity(sk,rounds,intro,make,{mixIntro=true}={}){
+async function choiceActivity(sk,rounds,intro,make,{mixIntro=true,showFirst=false}={}){
   const noShow=RUN&&RUN.mode?!wantDemo('choice'):(typeSeen('choice'),seenDemo('choice:'+sk.id+':'+intro[0]));
-  let first=make(noShow?0:-1); if(mixIntro||!inMix()) await say(...intro);
+  let first=make(noShow?0:-1); if(showFirst&&!inMix()) await reveal(first.opts);   // showFirst: the picture is already there while the intro is said (no blank page)
+  if(mixIntro||!inMix()) await say(...intro);
   if(noShow){ turn('kid'); for(let r=0;r<rounds;r++){ const R=r?make(r):first; await kidRound(sk,R); await sleep(500) } turn(null); return }
   await watchMe();
   let R=first; if(R.pre) await R.pre(); await reveal(R.opts); await sleep(300); await flushPre(); await R.ask(); await sleep(300);
@@ -3297,8 +3307,8 @@ addFormat('flash','drum',async(sk,rounds)=>{
     cov.dataset.open='1'; cov.style.opacity=0;
     if(r.ok||r.second){ if(r.second) await say('You got it!','Đúng rồi!',{gap:150}); await say(`${cap(W[n])} ${n>1?'dots':'dot'}, ${W[n]} ${n>1?'beats':'beat'}!`,`${cap(VI_N[n])} chấm, ${VI_N[n]} tiếng trống!`) }
     return r.ok };
-  let prev=1+rand(3); await demoOr('drum',()=>round(prev,true));
-  for(let r=0;r<rounds;r++){ const n=nextDifferent(prev,()=>1+rand(3)); prev=n; const ok=await round(n,false); if(ok) await praise(); await sleep(300) }
+  await demoOr('drum',()=>round(1,true));   // 21/10: Chồi shows one dot, then the child's rounds get harder: two dots, then three
+  for(let r=0;r<rounds;r++){ const n=[2,3,3,2][r%4]; const ok=await round(n,false); if(ok) await praise(); await sleep(300) }
   turn(null);
 });
 
@@ -3664,7 +3674,10 @@ addFormat('countTap','bus',async(sk,rounds,opt={})=>{
     const T=n<=3?5:Math.min(n+2,10), taken=T-n;
     const c=card(); const scene=el(`<div class="busscene fade"><div class="busbody"><div class="bcab"><i class="bdoor"></i><div class="bwin">${DRIVER_SVG()}</div></div><div class="seats">${[...Array(T)].map((_,i)=>i<taken?`<i class="seat full">${kidIconSVG(HAIR[(i+2)%HAIR.length],'#F2C8A0')}</i>`:'<i class="seat"></i>').join('')}</div><i class="wheel w1"></i><i class="wheel w2"></i></div><div class="stop"></div></div>`); c.append(scene);
     const seats=[...scene.querySelectorAll('.seat:not(.full)')], stop=$('.stop',scene); if(introLeft){ await say(...introLeft); introLeft=null }
-    const team=demo&&opt.demoClass?[]:shuffle(TEAM_RIDERS.slice()); const kids=[...Array(n+2)].map((_,i)=>{ const b=el(`<button class="rider${i<team.length?' team':''}" aria-label="${i<team.length?team[i][0]:'bạn nhỏ'}">${i<team.length?team[i][1]():kidIconSVG(HAIR[i%HAIR.length],pick(['#FFE0C2','#F2C8A0','#E3B08A']))}</button>`); stop.append(b); return b });   // the team gets on first
+    // teamOnly (Màn 0, 21/10): our bus takes exactly our team (Lam, Na, Ben, Chồi; Polly flies along), so nobody in the story is left behind; two children from another class wave at the stop
+    const teamOnly=!demo&&opt.teamOnly, team=demo&&opt.demoClass?[]:teamOnly?shuffle(TEAM_RIDERS.filter(t=>t[0]!=='Polly')).slice(0,n):shuffle(TEAM_RIDERS.slice()); const kids=[...Array(teamOnly?team.length:n+2)].map((_,i)=>{ const b=el(`<button class="rider${i<team.length?' team':''}" aria-label="${i<team.length?team[i][0]:'bạn nhỏ'}">${i<team.length?team[i][1]():kidIconSVG(HAIR[i%HAIR.length],pick(['#FFE0C2','#F2C8A0','#E3B08A']))}</button>`); stop.append(b); return b });   // the team gets on first
+    if(teamOnly) for(let i=0;i<2;i++){ const o=el(`<button class="rider other" aria-label="bạn lớp khác">${kidIconSVG(HAIR[(i+3)%HAIR.length],pick(['#FFE0C2','#F2C8A0','#E3B08A']))}</button>`); stop.append(o);
+      o.addEventListener('click',()=>{ o.classList.remove('waveby'); void o.offsetWidth; o.classList.add('waveby'); SFX.soft(); say('That friend is in another class. Bye-bye!','Bạn ấy học lớp khác. Tạm biệt bạn nhé!',{gap:0,q:false}).catch(()=>{}) }) }
     await say(...(demo&&opt.demoLine?opt.demoLine:['Put one friend in each empty seat!','Mỗi ghế trống, con đưa một bạn lên nhé!']));
     let filled=0;
     const board=async(k,b)=>{ b.dataset.used=1; if(filled>=seats.length){ b.style.translate=''; b.classList.add('nope'); SFX.soft(); say('The bus is full!','Xe đầy rồi!',{gap:0,q:false}).catch(()=>{}); return }
@@ -4403,7 +4416,7 @@ async function afterLevel(sess){
   const name=S.child?S.child.name:'';
   const c=card(); c.append(el(`<div class="mascot fade" data-mood="happy" data-wave="1" style="width:min(44vw,180px)">${mascotSVG()}</div>`));
   if(S.finishing===today()){ S.finishing=null; save(); await say(`Thank you for playing, ${name}! Time for a rest now.`,`Cảm ơn con đã chơi cùng Chồi, ${name}! Giờ mình nghỉ nhé.`); await say('See you next time!','Hẹn gặp lại con nhé!') }
-  else await say(`Great job, ${name}!`,`Con giỏi lắm, ${name}!`);
+  else { await say(`Thank you for playing, ${name}!`,`Cảm ơn con đã chơi cùng Chồi, ${name}!`); await say('See you next time!','Hẹn gặp lại con nhé!') }
 }
 async function runSession(li){
   ac(); Music.start();
@@ -5222,7 +5235,7 @@ async function pollyEcho(word,vi){
 const MAP_CELLS=[[0,0],[1,0],[2,0],[3,0],[3,1],[2,1],[1,1],[0,1]];
 const mapCell=k=>{ const [cx,cy]=MAP_CELLS[k]; return {x:14+cx*48,y:14+cy*58,w:48,h:58,c:[38+cx*48,43+cy*58]} };
 const mapJag=k=>{ const {x,y,w,h}=mapCell(k); return `M${x} ${y} l${w*.3} 4 l${w*.4} -4 l${w*.3} 3 l-3 ${h*.35} l3 ${h*.3} l-2 ${h*.35} l${-w*.35} -3 l${-w*.3} 4 l${-w*.35} -2 l3 ${-h*.3} l-4 ${-h*.4}z` };
-const MAP_PLACE=[['the school','trường học'],['the park','công viên'],['the garden','khu vườn'],['the house','ngôi nhà'],['the shop','cửa hàng'],['the building site','công trường'],['the sunny hill','đồi nắng'],['the treasure','kho báu']];
+const MAP_PLACE=[['the school','trường học'],['the park','công viên'],['the garden','khu vườn'],['the house','ngôi nhà'],['the shop','cửa hàng'],['the building site','công trường'],['the sun and the moon: Na’s whole day','mặt trời và mặt trăng: cả một ngày của Na'],['the treasure','kho báu']];
 let _mapUid=0;
 function islandArt(){ const I='#3A1B49', s=`stroke="${I}" stroke-width="1.8" stroke-linejoin="round"`;
   const at=(k,g)=>{ const [x,y]=mapCell(k).c; return `<g transform="translate(${x} ${y})">${g}</g>` };
@@ -5240,7 +5253,7 @@ function islandArt(){ const I='#3A1B49', s=`stroke="${I}" stroke-width="1.8" str
    ${at(3,`<rect x="-7" y="-14" width="14" height="24" fill="#F7B5C8" ${s}/><rect x="-8.5" y="-16" width="17" height="3" fill="#E8607E" ${s}/><rect x="-4" y="-10" width="4" height="4" fill="#BFE3F6"/><rect x="-8.5" y="-3" width="17" height="2" fill="#E8607E"/><rect x="-3" y="3" width="6" height="7" fill="#B5733E"/><rect x="7" y="-6" width="7" height="16" fill="#FFE9A8" ${s}/>`)}
    ${at(4,`<rect x="-13" y="-3" width="26" height="13" fill="#fff" ${s}/><rect x="-14" y="-9" width="28" height="6" rx="1.5" fill="#58B592" ${s}/><rect x="-4" y="0" width="8" height="10" fill="#BFE3F6" ${s}/><circle cx="-9" cy="3" r="1.6" fill="#E8484F"/><circle cx="-9" cy="7" r="1.6" fill="#FCB515"/><path d="M6 3 h3 l2 5 h4" stroke="${I}" stroke-width="1.2" fill="none"/>`)}
    ${at(5,`<path d="M8 12 V-16 M12 12 V-16" stroke="${I}" stroke-width="1.8"/><rect x="-14" y="-19" width="30" height="4" fill="#FCB515" ${s}/><path d="M-8 -15 V-4" stroke="${I}" stroke-width="1.4"/><rect x="-12" y="-4" width="8" height="6" fill="#4A9BDB" ${s}/><rect x="-14" y="5" width="9" height="7" fill="#E8607E" ${s}/><rect x="-5" y="5" width="9" height="7" fill="#FCB515" ${s}/>`)}
-   ${at(6,`<path d="M-16 10 Q0 -6 16 10Z" fill="#7CC9A4" ${s}/><circle cx="0" cy="-8" r="7" fill="#FFD21F" ${s}/>${[0,1,2,3,4,5,6,7].map(i=>{ const a=i*Math.PI/4; return `<path d="M${(Math.cos(a)*10).toFixed(1)} ${(-8+Math.sin(a)*10).toFixed(1)} L${(Math.cos(a)*14).toFixed(1)} ${(-8+Math.sin(a)*14).toFixed(1)}" stroke="#F2A20C" stroke-width="2" stroke-linecap="round"/>` }).join('')}`)}
+   ${at(6,`<path d="M0 -15 A15 15 0 0 0 0 15Z" fill="#8ED3EE"/><path d="M0 -15 A15 15 0 0 1 0 15Z" fill="#3B3F7A"/><circle cx="-6.5" cy="-1" r="5" fill="#FFD21F" ${s}/>${[0,1,2,3,4,5].map(i=>{ const a=Math.PI/2+i*Math.PI/5; return `<path d="M${(-6.5+Math.cos(a)*7).toFixed(1)} ${(-1+Math.sin(a)*7).toFixed(1)} L${(-6.5+Math.cos(a)*9.6).toFixed(1)} ${(-1+Math.sin(a)*9.6).toFixed(1)}" stroke="#F2A20C" stroke-width="1.6" stroke-linecap="round"/>` }).join('')}<path d="M8.5 -7 a5.5 5.5 0 1 0 4.5 8.5 a4.4 4.4 0 0 1 -4.5 -8.5z" fill="#FFF3B0" stroke="#3A1B49" stroke-width="1.2" stroke-linejoin="round"/><circle cx="5" cy="7" r="1" fill="#FFE066"/><circle cx="11" cy="-10" r=".9" fill="#FFE066"/><circle cx="0" cy="0" r="15" fill="none" ${s}/><path d="M0 -15 V15" stroke="#3A1B49" stroke-width="1.4"/>`)}
    ${at(7,`<path d="M-15 -15 L15 15 M15 -15 L-15 15" stroke="#E8484F" stroke-width="5" stroke-linecap="round" opacity=".9"/><rect x="-11" y="-3" width="22" height="13" rx="2" fill="#B5733E" ${s}/><path d="M-11 -3 Q0 -14 11 -3Z" fill="#D2A46A" ${s}/><rect x="-3" y="-3" width="6" height="7" rx="1.5" fill="#FFD21F" ${s}/><path d="M-14 -12 l2 -4 l2 4 l-2 4z M14 -10 l2 -4 l2 4 l-2 4z" fill="#FFE066"/>`)}` }
 /** one piece of the map: its own part of the Treasure Island picture, so it fits its gap */
 function mapPieceSVG(n=1){ const k=(n-1)%8, {x,y,w,h}=mapCell(k), id='mpc'+(++_mapUid);
@@ -5261,7 +5274,10 @@ async function findMapPiece(n,lines){
   pc.remove(); map.innerHTML=mapTornSVG(n); map.classList.add('glow'); SFX.chime(); burst({x:tx,y:ty},{n:12});
   await say(`Look! This piece shows ${MAP_PLACE[n-1][0]}.`,`Nhìn này! Mảnh này vẽ ${MAP_PLACE[n-1][1]}.`,{q:false});
   if(n<8) await say(`${cap(W[n])} ${n>1?'pieces are':'piece is'} on the map. ${cap(W[8-n])} more to go, then we’ll see where the treasure is!`,`${cap(VI_N[n])} mảnh đã vào bản đồ. Còn ${VI_N[8-n]} mảnh nữa là mình biết kho báu ở đâu!`,{q:false});
-  else await say('The map is finished! It’s Treasure Island!','Bản đồ đủ rồi! Đó là Đảo Kho Báu!',{q:false});
+  else await say('The map is finished! Look, the whole way from our school to the treasure!','Bản đồ đủ rồi! Nhìn này, cả con đường từ trường mình tới kho báu!',{q:false});
+  if(n<8&&lines.length>1){ // 21/10: the clue for next time: the red path goes on from this piece, to a little round peek at the next place
+    const svg=map.querySelector('svg'), A=mapCell(n-1).c, B=mapCell(n).c, id='mpk'+(++_mapUid);
+    if(svg){ svg.insertAdjacentHTML('beforeend',`<g class="mf-next"><path d="M${A[0]} ${A[1]} L${B[0]} ${B[1]}" stroke="#E8484F" stroke-width="3.4" stroke-dasharray="6 5" stroke-linecap="round" fill="none"/><clipPath id="${id}"><circle cx="${B[0]}" cy="${B[1]}" r="13"/></clipPath><g clip-path="url(#${id})"><rect x="${B[0]-13}" y="${B[1]-13}" width="26" height="26" fill="#F6E3B4"/>${islandArt()}</g><circle class="mf-ring" cx="${B[0]}" cy="${B[1]}" r="13" fill="none" stroke="#E8484F" stroke-width="2.6"/></g>`); SFX.soft() } }
   for(const l of lines.slice(1)) await say(...l,{q:false});
   const nx=el(`<button class="nextbtn" aria-label="Tiếp"><svg viewBox="0 0 24 24"><path d="M9 5 L16.5 12 L9 19" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>`);
   pg.append(nx); requestAnimationFrame(()=>nx.classList.add('show')); if(RUN) RUN.qfn=async()=>{ for(const l of lines.slice(1)) await say(...l,{q:false}) };
@@ -5626,8 +5642,8 @@ async function cityGift({free=false}={}){
   const pi=await pr; const t=opts[pi]; SFX.pop(); bs.forEach((b,i)=>b.classList.add(i===pi?'pick':'gone')); await sleep(650); row.remove();
   // where should it live? tap a free spot
   const fr=W.free(); const marks=fr.map(([i,j])=>{ const g=document.createElementNS('http://www.w3.org/2000/svg','polygon'); g.setAttribute('points',ipoly([isoP(i+.12,j+.12),isoP(i+.88,j+.12),isoP(i+.88,j+.88),isoP(i+.12,j+.88)])); g.setAttribute('class','imark'); W.svg.querySelector('.iisl').append(g); return g });
-  await say(`Where should the ${ZA[t].en} live? Tap a spot!`,`${cap(ZA[t].vi)} sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!`);
-  RUN.qfn=()=>say(`Where should the ${ZA[t].en} live? Tap a spot!`,`${cap(ZA[t].vi)} sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!`,{replay:true});
+  await say(`Where does the ${ZA[t].en} go? Tap a spot!`,`${cap(ZA[t].vi)} sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!`);
+  RUN.qfn=()=>say(`Where does the ${ZA[t].en} go? Tap a spot!`,`${cap(ZA[t].vi)} sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!`,{replay:true});
   const spot=await new Promise((res,rej)=>{ const ab=()=>rej(ABORT); abortFns.add(ab); W.allowTap=true;
     W.onTile=(i,j)=>{ if(!fr.some(([a,b])=>a===i&&b===j)) return false; W.onTile=null; W.allowTap=false; abortFns.delete(ab); res([i,j]); return true };
     if(AUTO) setTimeout(()=>{ if(W.onTile){ W.onTile=null; abortFns.delete(ab); res(pick(fr)) } },HASH==='auto'?10:900*SPEED) });
@@ -5713,7 +5729,7 @@ async function keyOpensCity(){
    Places already visited carry their map piece; Chồi stands on the place to play next.
    ========================================================= */
 /** each place on the map is the landmark of that level's story */
-const MAP_PLACES=['School','Park','Garden','Na’s House','Shop','Building Site','Sunny Hill','Treasure Island'];
+const MAP_PLACES=['School','Park','Garden','Na’s House','Shop','Building Site','Na’s Day','Treasure Island'];
 const MAP_LABEL=i=>MAP_PLACES[i]||'';
 const CHEST_SVG=()=>`<svg viewBox="0 0 100 100" aria-hidden="true"><g stroke="#3A1B49" stroke-width="4.5" stroke-linejoin="round"><path d="M14 46 Q14 22 50 22 Q86 22 86 46Z" fill="#D2A46A"/><rect x="14" y="44" width="72" height="38" rx="6" fill="#B5733E"/><path d="M14 56 H86" fill="none"/><rect x="42" y="50" width="16" height="16" rx="3" fill="#FFD21F"/></g><path d="M50 22 V44 M30 24 V44 M70 24 V44" stroke="#8A5A36" stroke-width="3"/><path d="M78 14 l3 6 l6 1 l-5 4 l1 6 l-5 -3 l-5 3 l1 -6 l-5 -4 l6 -1z" fill="#FFD21F" stroke="#3A1B49" stroke-width="2"/></svg>`;
 const LM_S='stroke="#3A1B49" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"';
@@ -5927,13 +5943,15 @@ function holdPlace(box,items,zones,{put,near=18,want,liftRot,onLift}={}){
    ========================================================= */
 const TREE_ART=()=>`<svg viewBox="-24 -88 48 92" aria-hidden="true" overflow="visible"><path d="M-7 4 Q-6 -20 -6 -50 H6 Q6 -20 8 4Z" fill="#A8673A" ${OL}/><path d="M-2 -8 q1 -8 0 -16 M3 -26 q1 -6 0 -10" stroke="#7A4526" stroke-width="1.6" fill="none" stroke-linecap="round"/><g transform="translate(0 -62) scale(1.22) translate(0 62)"><path d="M0 -82 q16 -1 19 13 q7 8 -1 16 q-7 6 -16 2 q-9 4 -17 -3 q-7 -9 1 -16 q2 -12 14 -12z" fill="#2FA877" ${OL}/><path d="M-8 -70 q4 -5 9 -4" stroke="#8FE3B8" stroke-width="2.4" fill="none" stroke-linecap="round"/></g></svg>`;
 const BOX_ART=()=>`<svg viewBox="0 0 100 70" aria-hidden="true"><path d="M8 24 H92 V66 H8Z" fill="#C98A52" ${OL}/><path d="M8 24 L20 8 H80 L92 24" fill="#E2A873" ${OL}/><path d="M30 40 h40" stroke="${INK}" stroke-width="3" stroke-linecap="round"/></svg>`;
-const SLIDE_SIT={x:76,b:12};   // a friend on the slide sits on the chute, halfway down (not floating above it)
+const SLIDE_SIT={x:81,b:24};   // a friend "on the slide" stands on its top, in front of the ladder (21/10: was beside the chute, read as "next to")
+/* an open box: only its front and the two flaps, so a friend hiding "in the box" shows just the head above the front (21/10) */
+const BOXOPEN_ART=()=>`<svg viewBox="0 0 100 70" aria-hidden="true" overflow="visible"><path d="M8 24 L-6 10 L10 6 L20 22Z" fill="#E2A873" ${OL}/><path d="M92 24 L106 10 L90 6 L80 22Z" fill="#E2A873" ${OL}/><path d="M8 24 H92 V66 H8Z" fill="#C98A52" ${OL}/><path d="M10 29 H90" stroke="#A86F3E" stroke-width="4"/><path d="M30 44 h40" stroke="${INK}" stroke-width="3" stroke-linecap="round"/></svg>`;
 const SLIDE_ART=()=>`<svg viewBox="0 0 100 80" aria-hidden="true"><path d="M70 76 V14 M86 76 V14" stroke="${INK}" stroke-width="5"/><path d="M70 22 h16 M70 38 h16 M70 54 h16" stroke="${INK}" stroke-width="4"/><path d="M70 14 Q40 20 30 50 Q24 70 6 74 L10 80 Q34 76 40 56 Q50 30 72 26Z" fill="#FF5C8A" ${OL}/></svg>`;
 // x,b,w: the hiding thing (% of the box); px,pb: where the friend peeks out (their centre-bottom, % of the box). Friends are all 13% wide.
 const SPOTS=[
- {x:15,b:6,w:24,art:()=>ART.bush(),en:'in the bush',vi:'trong bụi cây',word:['In the bush!','Trong bụi cây!'],px:15,pb:22},
+ {x:15,b:6,w:24,art:()=>ART.bush(),en:'in the bush',vi:'trong bụi cây',word:['In the bush!','Trong bụi cây!'],px:15,pb:11,inside:1},
  {x:40,b:6,w:24,art:TREE_ART,en:'under the tree',vi:'dưới gốc cây',word:['Under the tree!','Dưới gốc cây!'],px:48,pb:6},
- {x:64,b:6,w:20,art:BOX_ART,en:'in the box',vi:'trong cái hộp',word:['In the box!','Trong cái hộp!'],px:64,pb:17},
+ {x:64,b:6,w:20,art:BOXOPEN_ART,en:'in the box',vi:'trong cái hộp',word:['In the box!','Trong cái hộp!'],px:64,pb:12,inside:1},
  {x:78,b:6,w:20,art:SLIDE_ART,en:"on the slide",vi:"trên cầu trượt",word:["On the slide!","Trên cầu trượt!"],px:SLIDE_SIT.x,pb:SLIDE_SIT.b,sit:1}];
 async function flashlightGame({piece=0}={}){
   const sk=SK['L2.E.LS.02']; const box=sbox('flashl',BG.night(),{under:'<div class="sbunder"></div>'}); const under=box.parentElement.querySelector('.sbunder');
@@ -5941,10 +5959,11 @@ async function flashlightGame({piece=0}={}){
   const setLight=(x,y)=>{ dark.style.setProperty('--mx',x+'%'); dark.style.setProperty('--my',y+'%') }; setLight(50,50);
   box.addEventListener('pointermove',e=>{ const p=pctIn(box,e); setLight(p.x,p.y) }); box.addEventListener('pointerdown',e=>{ const p=pctIn(box,e); setLight(p.x,p.y) });
   const who=shuffle(CAST); const order=shuffle([0,1,2,3]);
-  const spots=SPOTS.map(S0=>{ const pe=el(`<span class="fpeek${S0.back?' back':''}${S0.sit?' sit':''}"></span>`); pe.style.left=S0.px+'%'; pe.style.bottom=S0.pb+'%'; box.append(pe);
+  const spots=SPOTS.map(S0=>{ const pe=el(`<span class="fpeek${S0.back?' back':''}${S0.sit?' sit':''}${S0.inside?' inside':''}"></span>`); pe.style.left=S0.px+'%'; pe.style.bottom=S0.pb+'%'; box.append(pe);
     const b=el(`<button class="fspot" style="left:${S0.x}%;bottom:${S0.b}%;width:${S0.w}%"><span class="hid stk">${S0.art()}</span></button>`); box.append(b); b._pe=pe; return b });
   const place=(k,html)=>{ spots[k]._pe.innerHTML=html };
   who.forEach((n,i)=>place(order[i],kidSVG(n,'happy'))); place(order[3],piece?`<span class="ppc">${mapPieceSVG(piece)}</span>`:pollySVG(false));
+  if(SPOTS[order[3]].inside) spots[order[3]]._pe.style.bottom=(SPOTS[order[3]].pb+6)+'%';   // the piece (or Polly) is small: it sits higher, so it still shows above the box or the bush
   const shineAt=async k=>{ const S0=SPOTS[k]; setLight(S0.px,100-S0.pb-14); await sleep(500) };
   const hitSpot=(e)=>{ const t=e.target.closest('.fspot,.fpeek'); if(!t) return -1; return t.classList.contains('fpeek')?spots.findIndex(b=>b._pe===t):spots.indexOf(t) };
   let wrong=0; const t0=performance.now();
@@ -5975,10 +5994,11 @@ async function flashlightGame({piece=0}={}){
     b._pe.classList.add('glint'); const g=gate(); const on=e=>{ if(hitSpot(e)!==k) return; box.removeEventListener('click',on); g.done() }; box.addEventListener('click',on);
     if(AUTO) setTimeout(async()=>{ await shineAt(k).catch(()=>{}); b.click() },kidTapDelay());
     await g.p; b._pe.classList.remove('glint');
-    if(piece){ dark.classList.add('off'); const fr=box.getBoundingClientRect(), r=b._pe.getBoundingClientRect(); b._pe.style.visibility='hidden'; await pieceDropAt(box,r.left-fr.left+r.width/2,r.top-fr.top+r.height/2,piece) }
+    if(piece){ dark.classList.add('off'); const fr=box.getBoundingClientRect(), r=b._pe.getBoundingClientRect(); b._pe.style.visibility='hidden'; await pieceDropAt(box,r.left-fr.left+r.width/2,r.top-fr.top+r.height/2,piece);
+      await say(`You found our map piece! It was ${SPOTS[k].en}.`,`Con tìm thấy mảnh bản đồ rồi! Nó ở ${SPOTS[k].vi}.`) }   // 21/10: the piece is what the whole level looks for, so it is named
     else { await reveal1(k); await say(`It’s Polly! Polly is ${SPOTS[k].en}.`,`Là Polly! Polly ở ${SPOTS[k].vi}.`) } }
   turn(null); rec(sk,wrong===0,performance.now()-t0,'pos:all'); dark.classList.add('off'); confetti();
-  await say('You found everyone in the dark!','Con tìm thấy mọi người trong bóng tối rồi!');
+  await say(piece?'And you found everyone in the dark!':'You found everyone in the dark!',piece?'Con còn tìm thấy mọi người trong bóng tối nữa!':'Con tìm thấy mọi người trong bóng tối rồi!');
 }
 
 /* =========================================================
@@ -5987,7 +6007,8 @@ async function flashlightGame({piece=0}={}){
 const TOYS=[()=>ART.ball(),()=>ART.car(),()=>ART.duck(),()=>ART.drum()];
 async function toyCatch({piece=0,kitten=false}={}){
   const sk=SK['L2.M.SORT.02']; const f=rfield('toycatch',BG.home());
-  if(kitten){ f.append(sceneThing(WSHELF_SVG(),85,52,20,'wshelf')); f.append(el(`<div class="kcat onshelf"><svg viewBox="-16 -40 32 42">${catG(0,0,1)}</svg></div>`)); await say('Oops! The kitten knocked the toys off the shelf!','Ơ! Mèo con làm đồ chơi trên kệ rơi xuống!') }
+  if(kitten){ f.append(sceneThing(WSHELF_BOXES_SVG(),85,52,20,'wshelf')); f.append(el(`<div class="kcat onshelf"><svg viewBox="-16 -40 32 42">${catG(0,0,1)}</svg></div>`)); await say('Oops! The kitten knocked over the toy boxes. The toys are falling out!','Ơ! Mèo con làm đổ hộp đồ chơi. Đồ chơi rơi ra rồi!') }
+  const SHELF={x:.86,y:.36};   // with the kitten, every toy starts at the shelf: it is flicked up and across, then falls (21/10: they used to fall from anywhere)
   const bk=el(`<div class="tbasket stk">${ART.basket()}<b class="tcount"></b></div>`); f.append(bk);
   let W0=0,H0=0, bx=.5; const fit=()=>{ const r=f.getBoundingClientRect(); W0=r.width; H0=r.height }; fit();
   const ro=new ResizeObserver(fit); ro.observe(f); abortFns.add(()=>ro.disconnect());   // measured on resize only (smoother on tablets)
@@ -5995,21 +6016,25 @@ async function toyCatch({piece=0,kitten=false}={}){
   f.addEventListener('pointermove',e=>moveB(fpos(f,e).x)); f.addEventListener('pointerdown',e=>moveB(fpos(f,e).x));
   let toys=[], want='big', got=0, need=4, wrong=0, slowF=1, spawnT=0, phase=null, special=null, gDemo=null; const t0=performance.now();
   const spawn=(kind)=>{ const big=kind?kind==='big':Math.random()<.5, isP=kind==='piece';
-    const t=el(`<div class="ftoy ${isP?'piece':big?'big':'small'}" style="left:${8+rand(84)}%">${isP?mapPieceSVG(piece):pick(TOYS)()}</div>`); f.append(t);
-    toys.push({e:t,y:-.15,big,isP,v:(isP?.18:.27+Math.random()*.07)*slowF,x:parseFloat(t.style.left)/100}) };   // a little quicker (20/10): moving the basket is easy
+    const tx=(8+rand(84))/100, x0=kitten?SHELF.x:tx;
+    const t=el(`<div class="ftoy ${isP?'piece':big?'big':'small'}" style="left:${x0*100}%">${isP?mapPieceSVG(piece):pick(TOYS)()}</div>`); f.append(t);
+    toys.push({e:t,y:kitten?SHELF.y:-.15,big,isP,v:(isP?.18:.27+Math.random()*.07)*slowF,x:x0,x0,tx,toss:kitten?0:1}) };   // a little quicker (20/10): moving the basket is easy
   const g=gate();
   const stop=rafLoop(dt=>{ if(!phase) return; spawnT-=dt;
     if(phase==='play'&&spawnT<=0){ spawnT=1.15; const right=toys.filter(o=>!o.done&&o.big===(want==='big')&&!o.isP).length; spawn(right?null:want) }
     if(phase==='piece'&&!toys.some(o=>o.isP&&!o.done)) spawn('piece');
     if(AUTO||phase==='demo'){ const tg=toys.filter(o=>!o.done&&(o.isP||o.big===(want==='big'))).sort((a,b)=>b.y-a.y)[0]; if(tg) moveB((bx+(tg.x-bx)*Math.min(1,dt*(phase==='demo'?2.5:6)))*W0) }
     if(phase==='demo') Hand.set(center(bk));   // Chồi's hand holds the basket
-    for(const o of toys){ if(o.done) continue; const py=o.y; o.y+=o.v*dt; o.e.style.transform=`translateY(${((o.y+.15)*H0).toFixed(1)}px)`;   // moved by transform: no layout each frame
+    for(const o of toys){ if(o.done) continue; const py=o.y;
+      if(o.toss<1){ o.toss=Math.min(1,o.toss+dt/.9); const e=1-(1-o.toss)*(1-o.toss); o.x=o.x0+(o.tx-o.x0)*e; o.y=SHELF.y+(-.12-SHELF.y)*Math.sin(o.toss*Math.PI/2) }   // up and across, off the shelf
+      else o.y+=o.v*dt;
+      o.e.style.transform=`translate(${((o.x-o.x0)*W0).toFixed(1)}px,${((o.y+.15)*H0).toFixed(1)}px)`;   // moved by transform: no layout each frame
       if(o.y>.72&&py<.86&&Math.abs(o.x-bx)<.11){ o.done=true;   // swept: a slow frame can't jump a toy past the basket
         if(phase==='demo'){ o.e.classList.add('caught'); SFX.pop(); burst(center(bk),{n:8}); setTimeout(()=>o.e.remove(),300); if(gDemo) gDemo.done(); continue }
         if(o.isP){ o.e.remove(); g.done('piece'); continue }
         if(o.big===(want==='big')){ got++; o.e.classList.add('caught'); SFX.pop(); burst(center(bk),{n:8}); $('.tcount',bk).textContent=got; sayQ(cap(W[got])+'!',cap(VI_N[got])+'!'); setTimeout(()=>o.e.remove(),300);
           if(got>=need){ phase=null; toys.forEach(q=>{ if(!q.done){ q.done=true; q.e.classList.add('gone') } }); setTimeout(()=>g.done('round'),500) } }
-        else { wrong++; o.e.style.top=(o.y*100)+'%'; o.e.style.transform=''; o.e.classList.add('bounce'); boing(); sayQ(o.big?'That one is big!':'That one is small!',o.big?'Cái đó to!':'Cái đó nhỏ!'); setTimeout(()=>o.e.remove(),700) } }
+        else { wrong++; o.e.style.top=(o.y*100)+'%'; o.e.style.left=(o.x*100)+'%'; o.e.style.transform=''; o.e.classList.add('bounce'); boing(); sayQ(o.big?'That one is big!':'That one is small!',o.big?'Cái đó to!':'Cái đó nhỏ!'); setTimeout(()=>o.e.remove(),700) } }
       else if(o.y>1.1){ o.done=true; o.e.remove(); if(o.isP||o.big===(want==='big')) slowF=Math.max(.55,slowF*.85) } }
     toys=toys.filter(o=>!o.done||o.e.isConnected) });
   try{
@@ -6023,7 +6048,7 @@ async function toyCatch({piece=0,kitten=false}={}){
     await say('Four big toys!','Bốn đồ chơi to!'); want='small'; got=0; need=5; $('.tcount',bk).textContent=''; bk.classList.add('small');
     const g2=gate(); g.done=g2.done; g.p=g2.p;
     await say('Now catch the small toys!','Giờ bắt các đồ chơi nhỏ nhé!',{q:true}); phase='play'; await g2.p;
-    await say('Five small toys! The room is tidy.','Năm đồ chơi nhỏ! Phòng gọn gàng rồi.');
+    await say(...(kitten?['Five small toys! The toys are back in the boxes.','Năm đồ chơi nhỏ! Đồ chơi về lại hộp rồi.']:['Five small toys! The room is tidy.','Năm đồ chơi nhỏ! Phòng gọn gàng rồi.']));
     if(piece){ const g3=gate(); g.done=g3.done; await say('Look! Something else is falling. Catch it!','Nhìn kìa! Có gì đang rơi xuống nữa. Con bắt nhé!',{q:true}); phase='piece'; await g3.p; phase=null;
       const fr=f.getBoundingClientRect(), r=bk.getBoundingClientRect(); await pieceDropAt(f,r.left-fr.left+r.width/2,r.top-fr.top,piece) }
   } finally { stop(); ro.disconnect() }
@@ -6086,7 +6111,7 @@ async function craneStack({piece=0}={}){
   const hook=el(`<div class="chook"><i class="rope"></i></div>`); f.append(hook);
   const base=el(`<div class="cbase"></div>`); f.append(base);
   const COLS=['#E8607E','#4A9BDB','#FCB515','#58B592','#9B6BD0','#FF8A3D'];
-  let stack=[], wrong=0; const need=4;
+  let stack=[], wrong=0, towerSaid=false; const need=4;
   const fr=()=>f.getBoundingClientRect();
   const make=(kind,i)=>{ if(kind==='piece') return el(`<div class="cblock piece">${mapPieceSVG(piece)}</div>`); const b=el(`<div class="cblock ${kind}" style="--c:${COLS[i%COLS.length]}"></div>`); return b };
   // the first time: Chồi's hand drops one block when it is over the tower (20/10)
@@ -6095,9 +6120,17 @@ async function craneStack({piece=0}={}){
   else { turn('kid'); await say('Let’s build a tall tower with the crane! Tap to drop the block.','Mình xây tháp cao bằng cần cẩu nhé! Con chạm để thả khối xuống.',{q:true}) }
   for(let i=0;i<=need;i++){
     const kind=i===need?(piece?'piece':null):(i%2?'square':'rectangle'); if(!kind) break;
-    if(kind==='piece'&&stuck){ // the map piece comes off the crane's arm, along to the hook
-      const hb=hook.getBoundingClientRect(), sb=stuck.getBoundingClientRect(); stuck.classList.remove('glint');
-      await stuck.animate([{transform:'none'},{transform:`translate(${hb.left-(sb.left+sb.width/2)}px,0)`}],{duration:Math.max(1,900*SPEED),easing:'ease-in-out',fill:'forwards'}).finished.catch(()=>{}); stuck.remove() }
+    if(kind==='piece'&&stuck){ // 21/10: the tower is for Polly: she flies onto its top, hops up to the crane's arm and takes the piece (the crane no longer brings it down itself)
+      hook.style.visibility='hidden'; turn(null); confetti(); await say('A tall tower of squares and rectangles!','Tháp cao toàn hình vuông và hình chữ nhật!'); towerSaid=true;
+      const R=fr(), tb=(stack.length?stack[stack.length-1].e:base).getBoundingClientRect(), sb=stuck.getBoundingClientRect();
+      const pp=el(`<div class="cpolly">${pollySVG(false)}</div>`); f.append(pp); const pr=pp.getBoundingClientRect(), pw=pr.width, ph=pr.height;
+      const at=(x,y)=>({left:(x-pw/2)+'px',top:(y-ph)+'px'});   // x: her middle, y: her feet, in px inside the picture
+      const A=at(-pw,R.height*.25), B=at(tb.left-R.left+tb.width/2,tb.top-R.top+2), C=at(sb.left-R.left+sb.width/2,sb.top-R.top+sb.height*.85);
+      Object.assign(pp.style,A); const fly=(P,Q,ms)=>pp.animate([P,Q],{duration:Math.max(1,ms*SPEED),easing:'ease-in-out',fill:'forwards'}).finished.catch(()=>{});
+      await Promise.all([say('Now Polly can fly up onto the tower…','Giờ Polly bay lên đỉnh tháp…',{q:false}),fly(A,B,1400).then(()=>{ Object.assign(pp.style,B); SFX.pop() })]); await sleep(300);
+      await fly(B,C,800); Object.assign(pp.style,C); stuck.classList.remove('glint'); SFX.chime();
+      const r2=stuck.getBoundingClientRect(); stuck.style.visibility='hidden'; await pieceDropAt(f,r2.left-R.left+r2.width/2,r2.top-R.top+r2.height/2,piece);
+      await say('Polly hopped up and got our map piece!','Polly nhảy lên lấy được mảnh bản đồ rồi!'); break }
     const b=make(kind,i); hook.append(b); await sleep(30); const bw=b.getBoundingClientRect().width/fr().width;
     { // the block hangs from the crane's arm, above the tower top
       const R=fr(), artH=R.height, armY=artH*JIB_TOP/100, bh0=b.getBoundingClientRect().height;
@@ -6129,8 +6162,7 @@ async function craneStack({piece=0}={}){
     await sleep(350);
     if(shown){ Hand.hide(); demo=false; await say('Right on the tower!','Trúng đỉnh tháp rồi!'); await yourTurn(); await say('Tap to drop the next block, when it is over the tower!','Con chạm để thả khối tiếp theo, khi nó ở ngay trên tháp nhé!',{q:true}) }
   }
-  turn(null); confetti();
-  await say('A tall tower of squares and rectangles!','Tháp cao toàn hình vuông và hình chữ nhật!');
+  turn(null); if(!towerSaid){ confetti(); await say('A tall tower of squares and rectangles!','Tháp cao toàn hình vuông và hình chữ nhật!') }
 }
 
 /** the pedestrian light: the red standing man, the green walking man */
@@ -6208,7 +6240,10 @@ async function tidyUp(){
   await say('Put each toy in the right box. Big toys in the big box, small toys in the small box!','Con cho từng đồ chơi vào đúng hộp nhé. Đồ to vào hộp to, đồ nhỏ vào hộp nhỏ!',{q:true});
   if(AUTO) (async()=>{ for(const t of toys){ if(t.dataset.used) continue; await new Promise(r=>setTimeout(r,kidTapDelay())); t.click(); await new Promise(r=>setTimeout(r,200)); want(t).click(); await new Promise(r=>setTimeout(r,700)) } })();
   await g.p; turn(null); rec(sk,wrong<=1,performance.now()-t0,'size:all'); confetti(); setKidFace(box.querySelector('.skid'),'Na','happy');
-  await say('The room is tidy! Big toys in the big box, small toys in the small box.','Phòng gọn gàng rồi! Đồ to trong hộp to, đồ nhỏ trong hộp nhỏ.'); await nextPage(box) }
+  await say('The room is tidy! Big toys in the big box, small toys in the small box.','Phòng gọn gàng rồi! Đồ to trong hộp to, đồ nhỏ trong hộp nhỏ.');
+  if(!inMix()){ const lift=[bigB,smB,...toys].map(e=>e.animate([{transform:'translateY(0)',opacity:1},{transform:'translateY(-70%)',opacity:1,offset:.6},{transform:'translateY(-110%)',opacity:0}],{duration:Math.max(1,1400*SPEED),easing:'ease-in',fill:'forwards'}).finished.catch(()=>{}));
+    await say('Na puts the toy boxes up on the shelf.','Na cất hai hộp đồ chơi lên kệ.'); await Promise.all(lift) }   // 21/10: so the kitten can knock them over later (one story)
+  await nextPage(box) }
 
 /* ---- a friend is sad: share a snack with them (any snack is right). Like feeding the zoo animals (20/10): tap a snack and the pointer
    becomes the snack; move to the friend and tap the friend (touch screen: tap the snack, then tap the friend; the snack flies there) ---- */
@@ -6444,6 +6479,11 @@ function meetTeam(){ const pic=scenePic('school',[{who:'Lam',x:22,b:4,h:52,name:
   return storyPage(pic,[],{play:async alive=>{
     await say('Chồi runs out to the school yard, to show the map to his team.','Chồi chạy ra sân trường, khoe tấm bản đồ với các bạn trong đội.');
     for(const [w,en,vi] of [['Lam','This is Lam.','Đây là Lam.'],['Na','This is Na.','Đây là Na.'],['Ben','And this is Ben.','Còn đây là Ben.']]){ if(!alive()) return; hop(w); await say(en,vi,{q:false}) }
+    // 21/10: the map Chồi found goes to Ben, who carries it from now on (Ben always holds the map in the pictures, and later "Ben’s map says…")
+    if(!alive()) return; { const dc=$('#dockChoi'), ben=pic.querySelector('.actor[data-who="Ben"]');
+      if(dc&&ben){ const r=dc.getBoundingClientRect(), m=el(`<div class="mapgive stk" style="left:${r.left+r.width*.2}px;top:${r.top}px">${mapTornSVG(0)}</div>`); document.body.append(m); SFX.soft();
+        await flyTo(m,ben,{ms:1100,arc:110}); m.animate([{opacity:1},{opacity:0}],{duration:Math.max(1,300*SPEED),fill:'forwards'}); setTimeout(()=>m.remove(),400*SPEED+50); hop('Ben') }
+      await say('Chồi gives the map to Ben. Ben will keep it safe!','Chồi đưa tấm bản đồ cho Ben. Ben sẽ giữ thật cẩn thận!',{q:false}) }
     if(!alive()) return; hop('Polly'); await say('And this is Polly, on Ben’s shoulder. Polly likes to say things again!','Còn đây là Polly, đậu trên vai Ben. Polly thích nói lại lời người khác!',{q:false}) },
    after:()=>pollyEcho('Hello! Hello!','Xin chào! Xin chào!')}) }
 
@@ -6546,7 +6586,7 @@ function bushFaces(sk,rounds){ const st={};
     const feels=shuffle(['happy','sad','angry']), who=shuffle(CAST.slice()); const k=nextDifferent(st.k,()=>rand(3)); st.k=k; const n=who[k], f=feels[k], I=CAST_INFO;
     const c=card(); const [row,opts]=optRow(who.map((w,i)=>`<span class="bushhead"><span class="bh-kid">${kidHead(w,feels[i])}</span><span class="bh-bush">${ART.bush()}</span></span>`),'bushrow'); c.append(row);
     return {opts,correct:k,concept:'feel:'+f,labels:who.map((w,i)=>[`that’s ${w}. ${I[w].he} looks ${feels[i]}`,`đó là ${w}, bạn ấy đang ${VI_FEEL[feels[i]]}`]),
-      ask:()=>say(`${n} says: Find me! I look ${f}!`,`${n} nói: Tìm ${n} đi! ${n} đang ${VI_FEEL[f]}!`),praise:[`You found ${n}!`,`Con tìm ra ${n} rồi!`],answer:[`${n} looks ${f}.`,`${n} đang ${VI_FEEL[f]}.`]} }) }
+      ask:()=>say(`${n} says: Find me! I look ${f}!`,`${n} nói: Tìm ${n} đi! ${n} đang ${VI_FEEL[f]}!`),praise:[`You found ${n}!`,`Con tìm ra ${n} rồi!`],answer:[`${n} looks ${f}.`,`${n} đang ${VI_FEEL[f]}.`]} },{showFirst:true}) }
 
 /* ---- after the piece: the child's first time on the microphone. Polly says it back in a parrot voice. No microphone: we say it together ---- */
 async function playVoiceAs(b,rate=1.3){ try{ const a=ac(); if(!a) throw 0; const data=await b.arrayBuffer();
@@ -6797,7 +6837,7 @@ const BMAN_FROM=fd=>{ const m=fd.querySelector('.bman svg'), r=fd.getBoundingCli
 async function bubbleFaces({rounds=2,polly=true}={}){ const sk=SK['L2.W.FEEL.01'], base=['happy','sad','angry'];
   const m=mostMissed('feel',base)||'sad'; const rest=shuffle(base.filter(f=>f!==m)); const q=[rest[0],m,rest[1]]; let qi=0;   // the first is the demo's (skipped when there is no demo)
   const SAY=[['excited','háo hức','Lam'],['surprised','ngạc nhiên','Ben']];
-  await popStream(sk,rounds,{intro:['Look! The balloon man is blowing bubbles, and they have faces!','Nhìn kìa! Chú bán bóng bay đang thổi bong bóng, bong bóng có vẽ mặt!'],target:()=>q[Math.min(qi++,q.length-1)],ratio:2,
+  await popStream(sk,rounds,{intro:['Look! The balloon man has a bubble machine. The bubbles have faces!','Nhìn kìa! Chú bán bóng bay có máy thổi bong bóng. Bong bóng có vẽ mặt!'],target:()=>q[Math.min(qi++,q.length-1)],ratio:2,
     make:{cls:'bubble',art:f=>faceSVG(f),others:t=>base.filter(f=>f!==t)},bg:()=>BG.park()+`<div class="bman stk">${manSVG({arm:'wand',bunch:true})}</div>`,from:BMAN_FROM,
     ask:t=>say(`Pop the ${t} faces! Find three!`,`Chọc vỡ các mặt ${VI_FEEL[t]} nhé! Tìm ba cái!`),label:(v,vi)=>vi?`mặt đó đang ${VI_FEEL[v]}`:`that face looks ${v}`,
     answer:t=>[`You found three ${t} faces!`,`Con tìm được ba mặt ${VI_FEEL[t]}!`],
@@ -6873,10 +6913,13 @@ async function reedBox(){
 
 /* ---- 7. the balloon man (the bubble man, with his bunch of balloons): a balloon for the friend who looks excited, then surprised.
    The red balloon is still stuck in the tall tree behind him. Two turns. ---- */
-function balloonMan(sk,rounds=2){
+async function balloonMan(sk,rounds=2){
   const R=[{t:'excited',set:['excited','surprised','sad'],col:'#FCB515',cen:'yellow',cvi:'vàng'},{t:'surprised',set:['surprised','excited','angry'],col:'#4A9BDB',cen:'blue',cvi:'xanh'}];   // the demo uses the first
-  return choiceActivity(sk,rounds,['The balloon man has balloons for everyone!','Chú bán bóng có bóng bay cho tất cả các bạn!'],r=>{
-    const Q=R[r<0?0:r%2], who=shuffle(CAST.slice()), feels=shuffle(Q.set), k=feels.indexOf(Q.t), n=who[k];
+  const st={col:{}};   // 21/10: each balloon goes to a different friend (it was Ben twice), and at the end everyone has one
+  await choiceActivity(sk,rounds,['The balloon man has balloons for everyone!','Chú bán bóng có bóng bay cho tất cả các bạn!'],r=>{
+    const Q=R[r<0?0:r%2], feels=shuffle(Q.set), k=feels.indexOf(Q.t);
+    let free=CAST.filter(x=>!st.col[x]); if(!free.length) free=CAST.slice(); const n=pick(free); st.col[n]=Q.col;
+    const rest=shuffle(CAST.filter(x=>x!==n)), who=feels.map((f,i)=>i===k?n:rest.pop());
     const c=card(); const sc=el(`<div class="sbox qbox nopond">${BG.park()}<div class="sthing ttree" style="left:${TREE_X}%;bottom:2%;width:${TREE_W}%">${TALLTREE_SVG()}</div><div class="redb small bob">${REDB_SVG(2)}</div><div class="bmanq stk">${manSVG({arm:'hold',bunch:true})}</div><div class="oneb stk">${ART.balloon(Q.col)}</div></div>`);
     const [row,opts]=optRow(who.map((w,i)=>kidHead(w,feels[i])),'small kidhead'); c.append(sc,row);
     requestAnimationFrame(()=>{ const rb=$('.redb',sc), tr=$('.ttree svg',sc), r0=sc.getBoundingClientRect(), q=tr.getBoundingClientRect(); if(q.width) placeRedB(rb,sc,{x:q.left-r0.left+q.width*TREE_TOP.x,y:q.top-r0.top+q.height*TREE_TOP.y});
@@ -6885,7 +6928,15 @@ function balloonMan(sk,rounds=2){
       ask:()=>say(`This ${Q.cen} balloon is for the friend who looks ${Q.t}. Who looks ${Q.t}?`,`Quả bóng ${Q.cvi} này dành cho bạn đang ${VI_FEEL[Q.t]}. Bạn nào đang ${VI_FEEL[Q.t]}?`),
       praise:[`You found the friend who looks ${Q.t}!`,`Con tìm ra bạn đang ${VI_FEEL[Q.t]} rồi!`],
       onRight:async()=>{ const b=$('.oneb',sc); if(b) await flyTo(b,opts[k],{ms:800,scale:.5,arc:80}).catch(()=>{}); if(b) b.remove() },
-      answer:[`${n} looks ${Q.t}. Here’s your balloon, ${n}!`,`${n} đang ${VI_FEEL[Q.t]}. Bóng của ${n} đây!`]} }) }
+      answer:[`${n} looks ${Q.t}. Here’s your balloon, ${n}!`,`${n} đang ${VI_FEEL[Q.t]}. Bóng của ${n} đây!`]} });
+  if(inMix()) return;
+  // everyone gets one: the friend still without a balloon gets a green one
+  const c=card(); const sc=el(`<div class="sbox qbox nopond">${BG.park()}<div class="sthing ttree" style="left:${TREE_X}%;bottom:2%;width:${TREE_W}%">${TALLTREE_SVG()}</div><div class="redb small bob">${REDB_SVG(2)}</div><div class="bmanq stk">${manSVG({arm:'hold',bunch:true})}</div></div>`);
+  requestAnimationFrame(()=>{ const rb=$('.redb',sc), tr=$('.ttree svg',sc), r0=sc.getBoundingClientRect(), q=tr.getBoundingClientRect(); if(q.width) placeRedB(rb,sc,{x:q.left-r0.left+q.width*TREE_TOP.x,y:q.top-r0.top+q.height*TREE_TOP.y}) });   // the red balloon is still stuck in the tree
+  const row=el(`<div class="opts bfriends"></div>`); CAST.forEach(x=>row.append(el(`<div class="bfr${st.col[x]?'':' wait'}" data-n="${x}"><span class="bfb">${ART.balloon(st.col[x]||'#58B592')}</span>${kidHead(x,'happy')}</div>`))); c.append(sc,row);
+  await sleep(500);
+  for(const x of CAST.filter(y=>!st.col[y])){ const b=row.querySelector(`[data-n="${x}"]`); b.classList.remove('wait'); SFX.pop(); burst(center(b),{n:8}); await say(`And a green balloon for ${x}!`,`Còn quả bóng xanh lá cho ${x}!`) }
+  confetti(); await say('Now everyone has a balloon!','Giờ bạn nào cũng có bóng bay rồi!'); await sleep(600) }
 
 /* ---- 8. more wind: balloons blow in from the left and get stuck in the tree, right in front of the red balloon.
    Pop them and count (looking back at counting things to five): five (the number is said), then a few more (count to find out). ---- */
@@ -7110,6 +7161,7 @@ async function ladybugDots(sk,rounds=2){ const mixed=inMix(); let prev=null;
     return {n,lay,opts,bug,
       land:async()=>{ bug.classList.remove('away','land'); void bug.offsetWidth; bug.classList.add('land'); tone(900,.15,'sine',.04,0,1200); await sleep(800) },
       away:async()=>{ bug.classList.remove('land'); bug.classList.add('away'); tone(1000,.3,'triangle',.03,0,1600); await sleep(700) }} };
+  if(!mixed){ card().append(el(`<div class="sbox qbox lbugbox">${BG.night()}<div class="lbranch">${BRANCH_SVG()}</div></div>`)) }   // 21/10: the leaf is there while Chồi speaks (was a blank page)
   await tell('The rain stops. Look, the ladybugs come out!','Mưa tạnh rồi. Nhìn kìa, các bạn bọ rùa bò ra!');
   if(!mixed&&wantDemo('ladybug')){ const Q=make(2); await watchMe(); await reveal(Q.opts);
     await say('A ladybug is landing on the leaf.','Một bạn bọ rùa đậu xuống chiếc lá.',{gap:200}); await Q.land(); await sleep(300);
@@ -7158,7 +7210,7 @@ async function hideCount(){ const sk=SK['L2.M.NUM.04'];
 
 /* ---- 9. Ben is tired: help him into his sleeping bag, with a lullaby ---- */
 const BEN_BAG={f:'tired',name:'Ben',scene:'bed',act:'hold',music:'lullaby-box',
-  en:'It’s late. Ben played all evening. Now he is yawning.',vi:'Khuya rồi. Ben chơi cả buổi tối. Giờ Ben ngáp rồi.',
+  en:'It’s late. Ben played all day. Now he is yawning.',vi:'Khuya rồi. Ben chơi cả ngày. Giờ Ben ngáp rồi.',
   hen:'Let’s help Ben into his sleeping bag. Press and hold the sleeping bag!',hvi:'Mình giúp Ben chui vào túi ngủ nhé. Con nhấn giữ vào túi ngủ!',holdOn:'.fbed'};
 
 /* =========================================================
@@ -7187,6 +7239,8 @@ const CUP_SVG=c=>`<svg viewBox="0 0 80 74" aria-hidden="true"><path d="M10 14 H7
 /** Na's desk, seen from the front with a little of its top (things can lie on it) */
 const DESK_SVG=()=>`<svg viewBox="0 0 200 40" aria-hidden="true"><rect x="12" y="20" width="10" height="19" fill="#9B6A45" stroke="${INK}" stroke-width="3"/><rect x="178" y="20" width="10" height="19" fill="#9B6A45" stroke="${INK}" stroke-width="3"/><path d="M13 2 H187 L197 13 H3Z" fill="#E9B77F" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><rect x="3" y="12" width="194" height="8" rx="2" fill="#C98A52" stroke="${INK}" stroke-width="3"/></svg>`;
 /** the toy shelf on the wall (the kitten jumps up here; the toys fall from here) */
+/* 21/10: after tidying, the two toy boxes go up on the wall shelf; the kitten later knocks them over (one story, not two tidy-ups) */
+const WSHELF_BOXES_SVG=()=>`<svg viewBox="0 0 100 34" overflow="visible" aria-hidden="true"><circle cx="56" cy="6" r="5.5" fill="#E8484F" stroke="${INK}" stroke-width="2.2"/><rect x="63" y="1" width="8" height="8" rx="1.5" fill="#FCB515" stroke="${INK}" stroke-width="2.2"/><path d="M46 9 H78 V24 H46Z" fill="#C98A52" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/><path d="M46 9 L42 3 M78 9 L82 3" stroke="${INK}" stroke-width="2.5" stroke-linecap="round"/><path d="M55 17 h14" stroke="${INK}" stroke-width="2" stroke-linecap="round"/><path d="M86 13 q0 -6 5 -6 q4 0 4 4 l3 1 l-3 1 q0 3 -3 3Z" fill="#FFD21F" stroke="${INK}" stroke-width="2" stroke-linejoin="round"/><path d="M82 14 H98 V24 H82Z" fill="#4A9BDB" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/><rect x="2" y="24" width="96" height="6" rx="2" fill="#C98A52" stroke="${INK}" stroke-width="2.5"/><path d="M12 30 v4 l8 -4 M88 30 v4 l-8 -4" fill="#9B6A45" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/></svg>`;
 const WSHELF_SVG=()=>`<svg viewBox="0 0 100 34" overflow="visible" aria-hidden="true"><circle cx="52" cy="16" r="8" fill="#E8484F" stroke="${INK}" stroke-width="2.5"/><path d="M47 12 q5 -3 9 0" stroke="#fff" stroke-width="2" fill="none" opacity=".6"/><rect x="63" y="12" width="12" height="12" rx="2" fill="#4A9BDB" stroke="${INK}" stroke-width="2.5"/><rect x="65" y="1" width="11" height="11" rx="2" fill="#FCB515" stroke="${INK}" stroke-width="2.5"/><path d="M80 24 v-6 l4 -4 h8 l3 5 h2 v5z" fill="#58B592" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/><circle cx="85" cy="24" r="3" fill="${INK}"/><circle cx="94" cy="24" r="3" fill="${INK}"/>
 <rect x="2" y="24" width="96" height="6" rx="2" fill="#C98A52" stroke="${INK}" stroke-width="2.5"/><path d="M12 30 v4 l8 -4 M88 30 v4 l-8 -4" fill="#9B6A45" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/></svg>`;
 /** the kitten's tail: lying on the floor or the bed (curl), or hanging over the basket's rim (drape) */
@@ -7353,7 +7407,7 @@ async function catOut(box,p){ const P=KPLACES[p], W=8; const cat=el(`<div class=
   cat.classList.remove('hid'); return cat }
 async function kittenHide(sk,rounds=2){
   const box=sbox('naroom kroom',NAROOM()); box.append(sceneThing(ROOMBED_SVG(),38,4,44,'rbed')); box.append(sceneThing(ART.basket(),81,4,15,'rbasket'));
-  box.append(sceneThing(WSHELF_SVG(),85,52,20,'wshelf'));
+  box.append(sceneThing(WSHELF_BOXES_SVG(),85,52,20,'wshelf'));
   const hot=Object.entries(KPLACES).map(([p,P])=>{ const b=el(`<button class="khot" data-p="${p}" style="left:${P.x}%;bottom:${P.b}%;width:${P.w}%;height:${P.h}%"></button>`); box.append(b); return b });
   const tails=Object.fromEntries(Object.entries(KTAIL).map(([p,T])=>{ const t=el(`<i class="ktail2 k-${p}${T.flip?' flip':''}" style="left:${T.x}%;bottom:${T.b}%;width:${T.w}%">${TAIL_SVG(T.drape?'drape':'curl')}</i>`); box.append(t); return [p,t] }));
   const bump=el(`<i class="kbump" style="left:41.5%;bottom:23.6%;width:11%"><svg viewBox="0 0 60 16" aria-hidden="true"><path d="M2 16 Q10 1 30 1 Q50 1 58 16Z" fill="#9B6BD0" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/><path d="M22 4 v10 M38 4 v10" stroke="#C7A9EE" stroke-width="2.5"/></svg></i>`); box.append(bump);
@@ -7376,7 +7430,7 @@ async function kittenHide(sk,rounds=2){
   await say('Oops! The kitten jumped up onto the toy shelf…','Ơ! Mèo con nhảy lên kệ đồ chơi…'); await nextPage(box) }
 
 /* =========================================================
-   LEVEL 4 (20/10): THE SHOP. One story: the team goes shopping for a picnic. A box spills red things and the map piece
+   LEVEL 4 (20/10): THE SHOP. One story: the team goes shopping. A box spills red things and the map piece
    jumps out and is lost in the shop; at the end it rides the checkout belt.
    New: saying the rule "They are all red." (⭐) and telling sounds apart (➕). Mầm: the numbers 1 to 5.
    Looking back: colours (red and yellow fruit), big and small (toys), "I feel ___" (Lam's kite).
@@ -7417,7 +7471,7 @@ async function shopArrive(){ const sk=SK['L2.M.SORT.03'];
   const na=kidAt('Na','happy',91,2,RK), lam=kidAt('Lam','happy',76,2,RK); box.append(lam,na);
   const bx=el(`<button class="shopbox stk" style="left:52%">${BOX_ART()}</button>`); box.append(bx);
   const mapA=el(`<div class="smap stk bob">${mapTornSVG(4)}</div>`); box.append(mapA);
-  await tell('The map shows a shop! Ben has a cart. Let’s go shopping for a picnic.','Bản đồ vẽ một cửa hàng! Ben có xe đẩy. Mình đi mua đồ cho buổi dã ngoại nhé.'); mapA.classList.add('away');
+  await tell('The map shows a shop! Ben has a cart. Let’s go shopping!','Bản đồ vẽ một cửa hàng! Ben có xe đẩy. Mình đi mua đồ nhé!'); mapA.classList.add('away');
   bx.classList.add('wiggle'); tone(300,.1,'square',.04,0,500);
   await say('Look! That box is moving. Tap the box to open it!','Nhìn kìa! Cái hộp kia đang động đậy. Con chạm để mở hộp nhé!',{q:true});
   turn('kid'); bx.dataset.ok='1'; await tapOnce([bx]); turn(null);
@@ -7459,7 +7513,7 @@ async function numberBaskets({mix=false}={}){ const sk=SK['L2.M.NUM.03'];
     for(const b of bs){ await Hand.moveTo(center($('.ntag',b)),380); b.classList.add('lit'); SFX.pop(); await say(cap(W[+b.dataset.n])+'.',cap(VI_N[+b.dataset.n])+'.',{gap:120,q:false}); b.classList.remove('lit') }
     Hand.hide(); await yourTurn() }
   const want=mix?[2+rand(4)]:[3,nextDifferent(3,()=>pick([2,4,5]))];
-  const who=[['Na needs three bananas for our picnic.','Na cần ba quả chuối cho buổi dã ngoại.'],['Ben wants some fruit too.','Ben cũng muốn mua hoa quả.']];
+  const who=[['Na needs three bananas.','Na cần ba quả chuối.'],['Ben wants some fruit too.','Ben cũng muốn mua hoa quả.']];
   for(let r=0;r<want.length;r++){ const n=want[r], k=bs.findIndex(b=>+b.dataset.n===n), f=NUM_FRUIT[n];
     if(!mix&&r===0&&n===3) await say(...who[0]); else if(!mix&&r===1) await say(...who[1]);
     const ask=()=>say(`Find the number ${W[n]}!`,`Con tìm số ${VI_N[n]} nhé!`,{q:true});
@@ -7467,7 +7521,7 @@ async function numberBaskets({mix=false}={}){ const sk=SK['L2.M.NUM.03'];
     await stepPick(sk,bs,k,{ask,concept:'numeral:'+n,labels:bs.map(b=>[`that’s ${W[+b.dataset.n]}`,`đó là số ${VI_N[+b.dataset.n]}`]),onRight:async()=>{ bs[k].classList.add('done') }});
     turn(null); await countIn(bs[k],n); const nm=FRUIT_NAME[f];
     await say(`${cap(W[n])} ${n>1?nm[1]:nm[0]}! Just like the number.`,`${cap(VI_N[n])} quả ${nm[2]}! Đúng bằng con số.`); await toCart(bs[k]); await reteachPending() }
-  if(mix) return; confetti(); await say('Our cart has fruit for the picnic!','Xe đẩy có hoa quả cho buổi dã ngoại rồi!'); await nextPage(box) }
+  if(mix) return; confetti(); await say('Our cart has fruit!','Xe đẩy có hoa quả rồi!'); await nextPage(box) }
 
 /* ---- 3. red fruit and yellow fruit (looking back at colours), then the rule again: "They are all yellow." ---- */
 const SORT_FRUIT={red:['apple','strawberry','cherry'],yellow:['banana','mango','pineapple']};
@@ -7484,7 +7538,7 @@ async function colourFruit({say2=true}={}){ const sk=SK['L2.M.SORT.01'];
     t.dataset.used='1'; const k=nIn[t.dataset.c]++; await placeAt(t,box,parseFloat(z.style.left)+(k?3:-3),15.5,{z:1,ms:500});
     z.classList.remove('pop'); void z.offsetWidth; z.classList.add('pop'); SFX.pop(); left--; if(!left) g.done(); return true };
   holdPlace(box,fr,()=>bks,{put,want});
-  await tell('Ben has two baskets: a red one and a yellow one.','Ben có hai cái giỏ: một giỏ đỏ và một giỏ vàng.');
+  await tell('Na has two baskets: a red one and a yellow one.','Na có hai cái giỏ: một giỏ đỏ và một giỏ vàng.');
   turn('kid'); await say('Put the red fruit in the red basket, and the yellow fruit in the yellow basket!','Con cho quả màu đỏ vào giỏ đỏ, quả màu vàng vào giỏ vàng nhé!',{q:true});
   const hh=hintHand(()=>fr.find(x=>!x.dataset.used)); abortFns.add(hh); box.addEventListener('pointerdown',hh,{once:true});
   if(AUTO) (async()=>{ for(const t of fr){ if(t.dataset.used) continue; await new Promise(r=>setTimeout(r,kidTapDelay())); t.click(); await new Promise(r=>setTimeout(r,200)); want(t).click(); await new Promise(r=>setTimeout(r,700)) } })();
@@ -7887,7 +7941,7 @@ async function craneLift(box,b){ const br=box.getBoundingClientRect(), r=b.getBo
 async function rectBlock(rounds=2){ const sk=SK['L2.M.SHAPE.02'];
   const box=sbox('blocks5',BG.site()); stuckPiece(box).classList.add('glint');
   if(!inMix()) box.append(kidAt('Lam','happy',8,3,14),kidAt('Na','happy',92,3,14));
-  if(!inMix()){ await tell('Our map piece is still up on the crane. Let’s build a tall tower to reach it!','Mảnh bản đồ vẫn ở trên cần cẩu. Mình xây một cái tháp thật cao để với tới nhé!') }
+  if(!inMix()){ await tell('Our map piece is stuck high up on the crane. Let’s build a tall tower, so Polly can hop up and get it!','Mảnh bản đồ mắc trên cao ở cần cẩu. Mình xây một cái tháp thật cao để Polly nhảy lên lấy nhé!') }
   const sets=[{want:'rect',opts:shuffle(['rect','square','triangle'])},{want:'square',opts:shuffle(['square','rect','circle'])}];
   const R=inMix()?[pick(sets)]:sets.slice(0,rounds);
   const COL={rect:'#E8607E',square:'#4A9BDB',triangle:'#58B592',circle:'#FCB515'};
@@ -7902,7 +7956,7 @@ async function rectBlock(rounds=2){ const sk=SK['L2.M.SHAPE.02'];
   if(inMix()) return; confetti(); await say('Now let’s build the tower!','Giờ mình xây tháp nào!'); await nextPage(box) }
 
 /* =========================================================
-   LEVEL 6 (20/10): ONE DAY WITH NA (the sunny hill on the map). One story: the map shows the sun going over a hill, so the team
+   LEVEL 6 (20/10): ONE DAY WITH NA (the sun and the moon on the map, 21/10). One story: the map shows the sun and the moon, so the team
    spends a whole day with Na, from morning to night. Morning: breakfast in the kitchen, the walk to school over the canal bridge.
    At school: Na's day in order. Afternoon: Na rides her bike by herself in the park. Evening: a bedtime book (a rectangle, with a
    funny bookmark), the frog in the book jumps across its pond; Na goes to sleep and dreams that the little frog crosses Na's own
@@ -7987,7 +8041,7 @@ async function dayIntro(){
   const bed=el(`<div class="sthing s6bed" style="left:19%;bottom:35.4%;width:17%">${bed6SVG()}</div>`); box.append(bed);
   const na=kidAt('Na','happy',27,8.4,9.5,'d6na'); box.append(na); const bowl=el(`<i class="d6bowl">${BOWL6_SVG()}</i>`); na.append(bowl);
   const mapA=el(`<div class="smap stk bob">${mapTornSVG(6)}</div>`); box.append(mapA);
-  await tell('The map shows the sun over a hill. Let’s spend a whole day with Na!','Bản đồ vẽ ông mặt trời trên ngọn đồi. Mình cùng Na trải qua cả một ngày nhé!'); mapA.classList.add('away');
+  await tell('The map shows the sun and the moon. Let’s spend a whole day with Na!','Bản đồ vẽ ông mặt trời và mặt trăng. Mình cùng Na trải qua cả một ngày nhé!'); mapA.classList.add('away');
   await say('Look! The sun is coming up. It’s morning.','Nhìn kìa! Mặt trời đang lên. Buổi sáng rồi.');
   na.classList.add('eat'); await say('In the morning, Na eats breakfast.','Buổi sáng, Na ăn sáng.'); na.classList.remove('eat');
   await pollyEcho('In the morning! In the morning!','Buổi sáng! Buổi sáng!');
@@ -8172,7 +8226,7 @@ async function rectBook(rounds=2){ const sk=SK['L2.M.SHAPE.02'];
   const labels=bs=>bs.map(b=>[`that book is ${NAME[b.dataset.k][0]}`,`quyển đó là ${NAME[b.dataset.k][1]}`]);
   const lightSides=async(b,line)=>{ const ps=[...b.querySelectorAll('.sides path')]; b.classList.add('lit'); ps.forEach(p=>p.classList.add('on')); await say(...line); b.classList.remove('lit'); ps.forEach(p=>p.classList.remove('on')) };
   const toHand=async(b,who,{dx=1.06,dy=.8}={})=>{ const r=who.querySelector('svg').getBoundingClientRect(), br=box.getBoundingClientRect(); await placeAt(b,box,(r.left-br.left+r.width*dx)/br.width*100,(br.bottom-r.top-r.height*dy)/br.height*100,{ms:620,z:5}); SFX.pop() };   // at her side, below the face
-  if(!inMix()) await tell('In the evening, Na chooses a book to read in bed.','Buổi tối, Na chọn một quyển sách để đọc trên giường.');
+  if(!inMix()) await tell('At night, Na chooses a book to read in bed.','Buổi tối, Na chọn một quyển sách để đọc trên giường.');
   let opts=[sq,rc,ci];
   turn('kid'); await stepPick(sk,opts,1,{ask:()=>say('Na wants the rectangle book. Which book is a rectangle? Tap it!','Na muốn quyển sách hình chữ nhật. Quyển nào là hình chữ nhật? Con chạm vào nhé!',{q:true}),concept:'shape:rectangle',labels:labels(opts),
     onRight:async()=>{ await toHand(rc,na) }});
@@ -8527,6 +8581,11 @@ async function dock7(){ RUN.m7=plan7();
   mp.classList.add('zoom'); SFX.chime(); await sleep(600);
   await say('It’s an island! The red path goes to the missing piece. The treasure is there, on Treasure Island!','Đó là một hòn đảo! Con đường đỏ dẫn tới mảnh còn thiếu. Kho báu ở đó, trên Đảo Kho Báu!');
   mp.classList.add('away'); face7(B,'excited');
+  { // 21/10: the last level looks back at every core skill: morning or night, before we sail (POS.02)
+    const [row,opts]=optRow([0,2].map(t=>`<div class="d6sky">${skySVG(t)}</div>`),'d6opt sky s7'); row.classList.add('sbrow','sbunder'); box.parentElement.append(row); await reveal(opts);
+    turn('kid'); await stepPick(SK['L2.M.POS.02'],opts,0,{ask:()=>say('Look at the sky. Is it morning or night?','Nhìn bầu trời nào. Bây giờ là buổi sáng hay buổi tối?',{q:true}),concept:'time:morning',
+      labels:[['that’s morning','đó là buổi sáng'],['that’s night','đó là buổi tối']],onRight:async()=>{ await say('Morning!','Buổi sáng!',{gap:100}) }});
+    turn(null); row.remove(); await say('Yes! It’s morning, a good time to sail.','Đúng rồi! Buổi sáng, đúng lúc ra khơi.') }
   const mast=$('.b7mast',B.el), r=box.getBoundingClientRect(), q=mast.getBoundingClientRect();
   const sb=el(`<button class="b7sailbtn" aria-label="Cánh buồm" style="left:${(q.left-r.left+q.width/2)/r.width*100}%;top:${(q.top-r.top)/r.height*100}%;height:${q.height/r.height*100}%"></button>`); box.append(sb);
   await say('Our boat is ready. Let’s sail to Treasure Island! Tap the sail to put it up.','Thuyền của mình sẵn sàng rồi. Mình đi thuyền đến Đảo Kho Báu nhé! Con chạm vào cánh buồm để kéo buồm lên.',{q:true});
@@ -8663,20 +8722,31 @@ async function lighthouse7({kind='shape',mix=false}={}){ const sk=SK[kind==='sha
   door.classList.add('open'); SFX.chime(); if(mix){ confetti(); return }
   await say('The door is open! There’s one more lock, at the top.','Cửa mở rồi! Còn một ổ khoá nữa, ở trên đỉnh.');
   await lock(R[1][0],{opts:R[1][1],dots:R[1][2],top:true});
-  // Polly flies up to the top, the lamp shines, and she sees the X
+  // 21/10: the team climbs up (that is what the two keys were for); Polly flies up with them, the lamp shines, and she sees the X
+  const fade=(els,o)=>Promise.all(els.map(e=>e.animate([{opacity:1-o},{opacity:o}],{duration:Math.max(1,500*SPEED),fill:'forwards'}).finished.catch(()=>{})));
+  await say('We climb the stairs, all the way to the top!','Mình leo cầu thang, lên tận đỉnh!'); await fade(kids,0);
+  const topKids=CAST.map((n,i)=>{ const k=kidAt(n,'happy',73.2+i*2.1,70.5,2.4,'p7kid l7top'); k.style.opacity=0; box.append(k); return k }); await fade(topKids,1);
   lamp.classList.add('on'); SFX.chime();
   const pol=el(`<div class="tpolly hover stk" style="left:33%;bottom:40%;width:7%">${pollySVG(false)}</div>`); box.append(pol); if(B.polly) B.polly.style.visibility='hidden'; tone(900,.1,'square',.04,0,1400);
-  await parrotFly(pol,{left:'33%',bottom:'40%'},{left:'80%',bottom:'78%'},1600); pol.style.left='80%'; pol.style.bottom='78%';
-  await say('Polly flies to the top. She can see the whole island!','Polly bay lên đỉnh. Bạn ấy nhìn thấy cả hòn đảo!');
+  await parrotFly(pol,{left:'33%',bottom:'40%'},{left:'82%',bottom:'78%'},1600); pol.style.left='82%'; pol.style.bottom='78%';
+  await say('From the top, we can see the whole island!','Từ trên đỉnh, mình nhìn thấy cả hòn đảo!');
   await friendSays(pol,'I see an X on the beach!','Tớ thấy dấu X trên bãi biển!');
-  confetti(); await say('Let’s walk along the pier to the beach!','Mình đi dọc cầu gỗ ra bãi biển nào!');
+  await fade(topKids,0); topKids.forEach(k=>k.remove()); await fade(kids,1);
+  confetti(); await say('Let’s go down, and walk along the pier to the beach!','Mình xuống thôi, rồi đi dọc cầu gỗ ra bãi biển nào!');
   await Promise.all(kids.map((k,i)=>walkPath(k,[[44-i*2,22.5],[112-i*9,24]],22)));
   await nextPage(box) }
 
 /* ---- 4. the beach (two pages): two games here; then Polly finds the cave behind the rocks ---- */
 async function beachPage7({first=false,last=false,mix=false,cls=''}={}){ const box=sbox('beach7 '+cls,BG.beach7());
-  if(first&&!mix) await tell('Here’s the beach. Polly saw the X near here!','Bãi biển đây rồi. Polly thấy dấu X ở gần đây!');
+  if(first&&!mix) await beachWho7(box);
   return {box,end:async()=>{ if(mix) return; if(last) await caveHint7(box); await nextPage(box) }} }
+/* 21/10: arriving on the beach, a "who" question, so the last level looks back at Who / Where (LS.02) */
+async function beachWho7(box){ await tell('Here’s the beach. Someone saw an X near here!','Bãi biển đây rồi. Có bạn đã thấy dấu X ở gần đây!');
+  const who=shuffle(['Polly','Lam','Na']), art=n=>n==='Polly'?TEAM_RIDERS[3][1]():kidHead(n,'happy');
+  const [row,opts]=optRow(who.map(art),'small kidhead s7'); row.classList.add('sbrow','sbunder'); box.parentElement.append(row); await reveal(opts);
+  turn('kid'); await stepPick(SK['L2.E.LS.02'],opts,who.indexOf('Polly'),{ask:()=>say('Who saw the X from the lighthouse? Tap!','Ai đã thấy dấu X từ ngọn hải đăng? Con chạm nhé!',{q:true}),concept:'who',
+    labels:who.map(n=>[`that’s ${n}`,`đó là ${n}`]),onRight:async()=>{ await say('Polly!','Polly!',{gap:100}) }});
+  turn(null); row.remove(); await say('Yes! Polly saw the X. Let’s look around the beach.','Đúng rồi! Polly thấy dấu X. Mình tìm quanh bãi biển nhé.') }
 async function caveHint7(box){ const pol=el(`<div class="tpolly hover stk" style="left:112%;bottom:64%;width:7%">${pollySVG(false)}</div>`); box.append(pol); tone(900,.1,'square',.04,0,1400);
   await parrotFly(pol,{left:'112%',bottom:'64%'},{left:'83%',bottom:'34%'},1300); pol.style.left='83%'; pol.style.bottom='34%';
   const x=el(`<i class="c7x"></i>`); box.append(x); SFX.chime();
@@ -8821,7 +8891,8 @@ const EP7_TRACE=[
     done:async T=>{ T.clean('line'); const c=T.el.c; c.style.transition=`top ${400*SPEED}ms ease-out,left ${400*SPEED}ms`; c.style.left='83%'; c.style.top='59%'; await sleep(450); c.classList.add('snap'); tone(1500,.05,'square',.04); setTimeout(()=>tone(1500,.05,'square',.04),140*SPEED); await say(...T.K.fx); await sleep(200) }}}];
 async function trace7(o={}){ const sk=SK['L2.E.WR.02'];
   if(o.mix){ await GAMES.trace(sk,1,{skins:[pick(EP7_TRACE)],intro:['Let’s draw a line on the beach!','Mình vẽ một đường trên bãi biển nhé!']}); return }
-  await GAMES.trace(sk,2,{skins:EP7_TRACE,intro:o.first?['Here’s the beach. Polly saw the X near here!','Bãi biển đây rồi. Polly thấy dấu X ở gần đây!']:['Look at the palm tree on the beach.','Nhìn cây dừa trên bãi biển kìa.']});
+  if(o.first){ const b0=sbox('beach7',BG.beach7()); await beachWho7(b0) }
+  await GAMES.trace(sk,2,{skins:EP7_TRACE,intro:['Look at the palm tree on the beach.','Nhìn cây dừa trên bãi biển kìa.']});
   const box=$('#card .sbox'); if(!box) return; if(o.last) await caveHint7(box); await nextPage(box) }
 
 /* ---- 5. the cave: the treasure chest has a picture lock (find the pairs of faces; the feelings missed most are in it).
@@ -8862,12 +8933,27 @@ async function cave7({reward=false}={}){ const sk=SK['L2.W.FEEL.02'], light=rewa
   await mus.done; clearInterval(shine); pol.classList.remove('loop'); K.forEach(k=>k.classList.remove('glad'));
   if(light){ confetti(); return }
   await say('This music is called Ode to Joy. Now it is in your music box!','Bản nhạc này tên là Khúc hoan ca. Giờ nó có trong hộp nhạc của con rồi!');
+  // 21/10: say the rule (SORT.03) with the gold coins in the chest
+  await say('Look at the coins in the chest. What is the same?','Nhìn các đồng xu trong rương. Chúng giống nhau ở điểm nào?');
+  turn('kid'); await sayLikeFriend(box,{who:null,ask:['You say it! They are all…','Con nói nhé! Tất cả đều…'],model:'They are all yellow.',vi:'Tất cả đều màu vàng.',kws:['yellow','all'],kwsVi:['vàng'],skill:'L2.M.SORT.03',spot:{x:50,b:70}}); turn(null);
+  await pollyEcho('All yellow! All yellow!','Màu vàng! Màu vàng!');
   // the golden key and the last piece
   const key=el(`<div class="c7key">${GOLDKEY7()}</div>`); box.append(key); tone(660,.15,'triangle',.08,0,990); await sleep(1100); burst(center(key),{n:14});
   await say('A golden key!','Một chiếc chìa khoá vàng!');
   const p=at7(box,chest,.5,.3), br=box.getBoundingClientRect(); S.goldKey=true; save();
   await say('And something else is inside…','Và còn có gì nữa ở bên trong…',{gap:100});
   await pieceDropAt(box,p.x/100*br.width,p.y/100*br.height,8) }
+
+/* 21/10: after the last piece, the team feels proud (they did it all by themselves): the child says "I feel proud" like Lam (LS.03) */
+async function proud7(){ const box=sbox('cave7',BG.cave7());
+  const chest=el(`<div class="sthing c7chest open unlocked" style="left:50%;bottom:4%;width:23%">${CHEST7()}</div>`); box.append(chest);
+  const lam=kidAt('Lam','proud',22,3,13), na=kidAt('Na','happy',8,3,12), ben=kidAt('Ben','happy',86,3,12); box.append(na,lam,ben);
+  const pol=el(`<div class="tpolly hover stk" style="left:73%;bottom:44%;width:7%">${pollySVG(false)}</div>`); box.append(pol);
+  await say('We found the treasure, all by ourselves!','Mình tự tìm ra kho báu rồi!');
+  await friendSays(lam,'I feel proud!','Mình thấy tự hào!');
+  turn('kid'); await sayLikeFriend(box,{who:'Lam',model:'I feel proud.',vi:'Mình thấy tự hào.',kws:['proud'],kwsVi:['tự hào'],skill:'L2.E.LS.03',spot:{x:50,b:70}}); turn(null);
+  [lam,na,ben].forEach(k=>k.classList.add('glad')); confetti();
+  await say('Now let’s see what the golden key can open!','Giờ mình xem chìa khoá vàng mở được gì nhé!'); await nextPage(box) }
 
 /* the island steps: the station for each place is picked when the level starts */
 
@@ -8945,7 +9031,7 @@ Object.assign(BG,{classroom:()=>PLACE['lop-hoc'],school:()=>withSun(PLACE['san-t
    → the questions (pick one) near the end → the level's game → the map piece. One place, one story, step by step.
    ========================================================= */
 const LAM_SCARED={f:'scared',name:'Lam',en:'Boom! Thunder! Lam is scared.',vi:'Ầm! Sấm nổ! Lam thấy sợ.',act:'hold',hen:'Let’s give Lam a big hug. Press and hold Lam!',hvi:'Mình ôm Lam thật chặt nhé. Con nhấn giữ vào Lam!'};
-const BED_BEN={f:'tired',name:'Ben',scene:'bed',en:'It’s late. Ben played hide and seek all evening.',vi:'Khuya rồi. Ben chơi trốn tìm cả buổi tối.',act:'hold',hen:'Let’s take Ben to bed. Press and hold Ben!',hvi:'Mình đưa Ben đi ngủ nhé. Con nhấn giữ vào Ben!'};
+const BED_BEN={f:'tired',name:'Ben',scene:'bed',en:'It’s late. Ben played hide and seek all day.',vi:'Khuya rồi. Ben chơi trốn tìm cả ngày.',act:'hold',hen:'Let’s take Ben to bed. Press and hold Ben!',hvi:'Mình đưa Ben đi ngủ nhé. Con nhấn giữ vào Ben!'};
 const story=(bg,actors,lines)=>storyPage(scenePic(bg,actors),lines);
 Object.assign(EP,{
   0:[
@@ -8956,7 +9042,7 @@ Object.assign(EP,{
     async()=>inStep(mamMode('L2.W.FEEL.01'),()=>comfortStep(EP0_ANGRY)),
     async()=>inStep(mamMode('L2.M.NUM.02'),()=>EXTRA.countTap.bus({...SK['L2.M.NUM.02'],p:{min:4,max:4}},1,{demoN:3,demoClass:true,
       intro:['Everyone feels better. Now, let’s find the X! The garden is far behind the school. Here comes the school bus!','Mọi người vui trở lại rồi. Giờ mình đi tìm dấu X nào! Khu vườn ở xa phía sau trường. Xe buýt của trường đến rồi!'],
-      demoLine:['First, three children from the big class get on.','Trước tiên, ba bạn lớp lớn lên xe.'],afterDemo:['That bus is full. Here comes our bus!','Xe đó đầy rồi. Xe của đội mình đến kìa!']}),'L2.M.NUM.02'),
+      teamOnly:true,demoLine:['First, three children from the big class get on.','Trước tiên, ba bạn lớp lớn lên xe.'],afterDemo:['That bus is full. Here comes our bus!','Xe đó đầy rồi. Xe của đội mình đến kìa!']}),'L2.M.NUM.02'),
     async()=>teachIt(()=>GAMES.trace(SK['L2.E.WR.02'],2,{demo:EP0_TRACE_DEMO,skins:EP0_TRACE1,intro:['Let’s draw some lines for our trip!','Mình cùng vẽ đường cho chuyến đi nhé!']})),
     async()=>inStep(askMode('L2.M.NUM.02'),()=>gardenFlags(),'L2.M.NUM.02'),
     async()=>practise(()=>GAMES.trace(SK['L2.E.WR.02'],2,{skins:EP0_TRACE2,intro:['There’s a slide and a little bridge on the way.','Trên đường đi có cầu trượt và một cây cầu nhỏ.']})),
@@ -8964,7 +9050,7 @@ Object.assign(EP,{
     async()=>inStep(askMode('L2.W.FEEL.01'),()=>peekGame(SK['L2.W.FEEL.01'],[{f:'happy',ask:['Tap the friends who look happy! Find four!','Chạm vào các bạn đang vui nhé! Tìm bốn bạn!'],done:['Four happy friends!','Bốn bạn đang vui!']},{f:'angry',ask:['Now tap the friends who look angry!','Giờ chạm vào các bạn đang giận nhé!'],done:['Four angry friends! Grrr!','Bốn bạn đang giận! Grừ!']}],{intro:['Now let’s play peekaboo! Friends pop up from the bushes. Be quick!','Giờ mình chơi ú òa nhé! Các bạn sẽ ló ra từ bụi cây. Nhanh tay nhé!'],bg:BG.sgarden})),
     async()=>pieceFrom(1,'sgarden',ART.bushX(),['Look! The bush with the X is shaking. Something is inside! Tap the bush!','Nhìn kìa! Bụi cây có dấu X đang rung. Có gì ở trong! Con chạm vào bụi cây nhé!'],[{who:'Na',f:'surprised',x:22,b:6,h:46},{who:'Lam',f:'excited',x:54,b:6,h:46}],{x:83}),
     async()=>pollyHooray(),
-    async()=>findMapPiece(1,[['The first map piece was in the bush with the X!','Mảnh bản đồ đầu tiên ở trong bụi cây có dấu X!'],['Next time, let’s look for the next piece at the park!','Lần sau mình tìm mảnh tiếp theo ở công viên nhé!']]),
+    async()=>findMapPiece(1,[['The first map piece was in the bush with the X!','Mảnh bản đồ đầu tiên ở trong bụi cây có dấu X!'],['Look! The red path goes to the park. Next time, let’s look there!','Nhìn này! Đường đỏ dẫn tới công viên. Lần sau mình tìm ở đó nhé!']]),
   ],
   1:[
     async()=>teachIt(()=>parkKites()),
@@ -8976,7 +9062,7 @@ Object.assign(EP,{
     async()=>practise(()=>balloonMan(SK['L2.W.FEEL.02'])),
     async()=>reviewIt('L2.M.NUM.02',()=>popCover()),
     async()=>practise(()=>balloonDown()),
-    async()=>findMapPiece(2,[['The second map piece was tied to the red balloon!','Mảnh bản đồ thứ hai được buộc vào quả bóng đỏ!'],['Next time, let’s look in a garden, at night!','Lần sau mình tìm trong một khu vườn, vào ban đêm nhé!']]),
+    async()=>findMapPiece(2,[['The second map piece was tied to the red balloon!','Mảnh bản đồ thứ hai được buộc vào quả bóng đỏ!'],['Look! The red path goes to a garden, at night. Next time, let’s look there!','Nhìn này! Đường đỏ dẫn tới một khu vườn, vào ban đêm. Lần sau mình tìm ở đó nhé!']]),
   ],
   2:[
     async()=>teachIt(()=>campIntro()),
@@ -8989,7 +9075,7 @@ Object.assign(EP,{
     async()=>reviewIt('L2.M.NUM.04',()=>hideCount()),
     async()=>inStep(askMode('L2.M.POS.01'),()=>flashlightGame({piece:3}),'L2.M.POS.01'),
     async()=>teachIt(()=>comfortStep(BEN_BAG)),
-    async()=>findMapPiece(3,[['We found the third piece, in the dark garden!','Mình tìm được mảnh thứ ba, trong khu vườn tối!'],['Next time, let’s visit Na’s house!','Lần sau, mình đến nhà Na nhé!']]),
+    async()=>findMapPiece(3,[['We found the third piece, in the dark garden!','Mình tìm được mảnh thứ ba, trong khu vườn tối!'],['Look! The red path goes to Na’s house. Next time, let’s visit Na!','Nhìn này! Đường đỏ dẫn tới nhà Na. Lần sau mình đến nhà Na nhé!']]),
   ],
   3:[
     async()=>teachIt(()=>bearsIntro()),
@@ -9002,7 +9088,7 @@ Object.assign(EP,{
     async()=>practise(()=>shareLam()),
     async()=>reviewIt('L2.M.POS.01',()=>kittenHide(SK['L2.M.POS.01'])),
     async()=>practise(()=>toyCatch({piece:4,kitten:true})),
-    async()=>findMapPiece(4,[['The fourth piece fell from Na’s shelf!','Mảnh thứ tư rơi từ trên kệ của Na!'],['Next time, let’s go to the shop!','Lần sau, mình đi cửa hàng nhé!']]),
+    async()=>findMapPiece(4,[['The fourth piece fell from Na’s shelf!','Mảnh thứ tư rơi từ trên kệ của Na!'],['Look! The red path goes to a shop. Next time, let’s go there!','Nhìn này! Đường đỏ dẫn tới một cửa hàng. Lần sau mình đến đó nhé!']]),
   ],
   4:[
     async()=>teachIt(()=>shopArrive()),
@@ -9013,7 +9099,7 @@ Object.assign(EP,{
     async()=>reviewIt('L2.M.SORT.02',()=>bigSmallToys()),
     async()=>reviewIt(null,()=>lamKiteShop()),
     async()=>practise(()=>shopCart({piece:5,rounds:1,sayRule:true})),
-    async()=>findMapPiece(5,[['The fifth piece rode the belt at the shop!','Mảnh thứ năm đi trên băng chuyền ở cửa hàng!'],['Next time, let’s visit the building site!','Lần sau, mình đến công trường nhé!']]),
+    async()=>findMapPiece(5,[['The fifth piece rode the belt at the shop!','Mảnh thứ năm đi trên băng chuyền ở cửa hàng!'],['Look! The red path goes to a building site. Next time, let’s go there!','Nhìn này! Đường đỏ dẫn tới một công trường. Lần sau mình đến đó nhé!']]),
   ],
   5:[
     async()=>inStep(mamMode('L2.M.SHAPE.01'),()=>siteArrive(),'L2.M.SHAPE.01'),
@@ -9026,7 +9112,7 @@ Object.assign(EP,{
     async()=>reviewIt('L2.M.SORT.03',()=>paintGarage()),
     async()=>practise(()=>rectBlock()),
     async()=>practise(()=>craneStack({piece:6})),
-    async()=>findMapPiece(6,[['The sixth piece came down from the crane!','Mảnh thứ sáu theo cần cẩu xuống!'],['Next time, we’ll play from morning to night!','Lần sau, mình chơi từ sáng đến tối nhé!']]),
+    async()=>findMapPiece(6,[['Polly brought the sixth piece down from the crane!','Polly mang mảnh thứ sáu từ cần cẩu xuống!'],['Look! The red path goes to the sun and the moon. Next time, we’ll play from morning to night!','Nhìn này! Đường đỏ dẫn tới ông mặt trời và mặt trăng. Lần sau, mình chơi từ sáng đến tối nhé!']]),
   ],
   6:[
     async()=>teachIt(()=>dayIntro()),
@@ -9039,7 +9125,7 @@ Object.assign(EP,{
     async()=>practise(()=>dayAsk({wake:false})),
     async()=>practise(()=>frogCross()),
     async()=>practise(()=>dayAsk({wake:true})),
-    async()=>findMapPiece(7,[['The seventh piece was Na’s bookmark!','Mảnh thứ bảy là cái kẹp sách của Na!'],['One more piece. It’s in the treasure chest! Next time: Treasure Island!','Còn một mảnh nữa, ở trong rương kho báu! Lần sau: Đảo Kho Báu!']]),
+    async()=>findMapPiece(7,[['The seventh piece was Na’s bookmark!','Mảnh thứ bảy là cái kẹp sách của Na!'],['One more piece! The red path goes to a treasure chest. Next time: Treasure Island!','Còn một mảnh nữa! Đường đỏ dẫn tới một cái rương kho báu. Lần sau: Đảo Kho Báu!']]),
   ],
   7:[
     async()=>teachIt(()=>dock7()),
@@ -9050,7 +9136,8 @@ Object.assign(EP,{
     async()=>station7('beach',1),
     async()=>station7('beach',2),
     async()=>practise(()=>cave7()),
-    async()=>findMapPiece(8,[['We did it! We found all eight pieces!','Mình làm được rồi! Mình tìm đủ tám mảnh!'],['Now let’s see what the golden key can open!','Giờ mình xem chìa khoá vàng mở được gì nhé!']]),
+    async()=>findMapPiece(8,[['We did it! We found all eight pieces!','Mình làm được rồi! Mình tìm đủ tám mảnh!']]),
+    async()=>proud7(),
     async()=>keyOpensCity(),
   ]
 });
@@ -9097,7 +9184,7 @@ function syncState(){ const st=JSON.parse(JSON.stringify(S)); delete st.acct; de
 /* one line per skill, for the parent to read in the sheet */
 function progressSummary(){ return SKILLS.map(sk=>{ const at=S.attempts.filter(a=>a.s===sk.id), last=at.length?at[at.length-1].d:(S.speaks.filter(x=>x.s===sk.id).slice(-1)[0]||{}).d||'';
   return {id:sk.id,name:sk.vi,status:status(sk),tries:at.length,correct:at.filter(a=>a.ok).length,last,review:(S.rev&&S.rev[sk.id]&&S.rev[sk.id].due)||''} }) }
-const LEVEL_VI=['Khởi động','Bài 1 · Công viên','Bài 2 · Khu vườn','Bài 3 · Nhà Na','Bài 4 · Cửa hàng','Bài 5 · Công trường','Bài 6 · Đồi nắng','Đảo Kho Báu'];
+const LEVEL_VI=['Khởi động','Bài 1 · Công viên','Bài 2 · Khu vườn','Bài 3 · Nhà Na','Bài 4 · Cửa hàng','Bài 5 · Công trường','Bài 6 · Một ngày của Na','Đảo Kho Báu'];
 /* numbers for the Report sheet: where the child is, how often they play, what is due for review */
 function syncMeta(){ const days=new Set([...(S.attempts||[]).map(a=>a.d),...Object.keys(S.playMs||{})]); const last=[...days].sort().pop()||'';
   const wk=[...Array(7)].map((_,i)=>localDate(S.dayOffset-i)); const min7=Math.round(wk.reduce((a,d)=>a+((S.playMs||{})[d]||0),0)/60000);
