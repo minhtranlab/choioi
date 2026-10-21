@@ -8,11 +8,16 @@ Only the files listed in USED are copied (the ones a level uses now); add a name
 import os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 USED = ['lop-hoc', 'san-truong', 'vuon-truong', 'cong-vien', 'vuon-nha-na-chieu', 'vuon-nha-na-dem', 'phong-na', 'sieu-thi', 'cong-truong-xay', 'phong-nha-moi',
-        'nha-na-bo-doc', 'bep', 'doc-cau-qua-kenh', 'duong-toi-truong', 'duong-toi-truong-toi', 'cong-vien-chieu', 'phong-na-toi', 'phong-na-dem', 'trang-sach', 'cong-vao-truong']
+        'nha-na-bo-doc', 'bep', 'doc-cau-qua-kenh', 'duong-toi-truong', 'duong-toi-truong-toi', 'cong-vien-chieu', 'phong-na-toi', 'phong-na-dem', 'trang-sach', 'cong-vao-truong',
+        'roi-ben', 'ra-khoi', 'dao-bai-cat', 'dao-hai-dang', 'hang-kho-bau']
 # things taken out of a picture for the app (asked after a play-test), without changing the file in art/places/
 TRIM = {'cong-truong-xay': [r'<path d="M146 10 V30"[^>]*/>', r'<rect x="142" y="30" width="8" height="5"[^>]*/>'],
         # the scooter rider parked on the road (Màn 6): the frog-crossing game drives him along the road itself (SCOOTER6_SVG)
-        **{n: [r'<circle cx="32" cy="122\.5" r="5".*?<path d="M20 106 h-9 M18 110 h-12"[^>]*/>'] for n in ('duong-toi-truong', 'duong-toi-truong-toi')}}   # name -> [regex, ...] cut out (each must match once). The far crane's own hook: the game hangs its own (Màn 5)
+        **{n: [r'<circle cx="32" cy="122\.5" r="5".*?<path d="M20 106 h-9 M18 110 h-12"[^>]*/>'] for n in ('duong-toi-truong', 'duong-toi-truong-toi')},
+        # the boat's wake (Màn 7): the game draws the team's boat from the side, with its own foam behind it
+        **{n: [r'<path d="M64 140 Q90 122 106 104 M150 140 Q128 122 116 104"[^>]*/>'] for n in ('roi-ben', 'ra-khoi')},
+        # two tiny shells on the beach (Màn 7): the games put their own shells, starfish and shapes on the sand
+        'dao-bai-cat': [r'<path d="M60 126 q4 -6 8 0z"[^>]*/>', r'<path d="M120 120 l3 -5 3 5z"[^>]*/>']}   # name -> [regex, ...] cut out (each must match once). The far crane's own hook: the game hangs its own (Màn 5)
 A, B = '/* PLACES:BEGIN (made by tools/art/embed_places.py from art/places/, do not edit by hand) */', '/* PLACES:END */'
 parts = []
 for name in USED:
