@@ -2280,6 +2280,24 @@
 "part": "man0",
 "who": "kid"
 },
+"6mw9s4": {
+"k": "How does Na feel? Tap the face!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"p36om0": {
+"k": "How does Ben feel? Tap the face!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1orir60": {
+"k": "Lam feels proud.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
 "oo9sol": {
 "k": "Here we are at the park! It’s so windy today.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -3122,6 +3140,12 @@
 },
 "1ozatze": {
 "k": "This blue balloon is for the friend who looks excited. Who looks excited? Tap the friend!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"ghgwhb": {
+"k": "How does Lam feel? Tap the face!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
 "who": "chồi"
@@ -4122,6 +4146,18 @@
 "part": "man2",
 "who": "chồi"
 },
+"1or516m": {
+"k": "Lam, Na and Ben are playing hide and seek!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"a54mr9": {
+"k": "Where is Ben? Tap Ben!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
 "tfjlfd": {
 "k": "The map shows a house. It’s Na’s house! Na shows us her room.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -4997,6 +5033,30 @@
 "s": "kokoro|af_sky|0.85|gap0.6|v3",
 "part": "man3",
 "who": "kid"
+},
+"l3dljm": {
+"k": "Hmm, that face looks angry.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1ybaip6": {
+"k": "Lam feels sad.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"f53zo5": {
+"k": "Three big toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"1lvshtk": {
+"k": "Three small toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
 },
 "1xhv1d5": {
 "k": "Find the number one!",
@@ -7430,6 +7490,30 @@
 },
 "ecuy50": {
 "k": "A rectangle has two long sides and two short sides.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"1fvisq4": {
+"k": "Stop! The light is red. Wait for the green light.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"rra4o2": {
+"k": "Here comes the police officer. He holds the frog’s hand.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"jio08b": {
+"k": "They wait for the green light.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"1tgxud7": {
+"k": "Green light! Now they cross together.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man6",
 "who": "chồi"

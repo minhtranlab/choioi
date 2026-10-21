@@ -2292,6 +2292,24 @@
 "part": "man0",
 "who": "kid"
 },
+"bfqhcj": {
+"k": "Na thấy thế nào? Con chạm vào khuôn mặt nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"19bz711": {
+"k": "Ben thấy thế nào? Con chạm vào khuôn mặt nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"wkjpxd": {
+"k": "Lam thấy tự hào.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
 "1ze9zk": {
 "k": "Mình tới công viên rồi! Hôm nay gió to quá.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -3140,6 +3158,18 @@
 },
 "1o2wc77": {
 "k": "Quả bóng xanh này dành cho bạn đang háo hức. Bạn nào đang háo hức? Con chạm vào bạn ấy nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"ashmve": {
+"k": "Lam thấy thế nào? Con chạm vào khuôn mặt nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"1amij35": {
+"k": "Ben thấy có gì đó trong bụi lau cạnh ao. Đó là một cái hộp, và nó đang động đậy!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man1",
 "who": "chồi"
@@ -4122,6 +4152,18 @@
 "part": "man2",
 "who": "chồi"
 },
+"1vsnj8g": {
+"k": "Lam, Na và Ben đang chơi trốn tìm!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
+"uiob0m": {
+"k": "Ben đâu rồi? Con chạm vào Ben nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
 "jqgrmk": {
 "k": "Bản đồ vẽ một ngôi nhà. Đó là nhà của Na! Na cho mình xem phòng của bạn ấy.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -4955,6 +4997,24 @@
 "s": "vieneu|Trúc Ly|1|gap0.6|v3",
 "part": "man3",
 "who": "kid"
+},
+"4rh547": {
+"k": "Lam thấy buồn.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"4ipr6t": {
+"k": "Ba đồ chơi to!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
+"19n4xst": {
+"k": "Ba đồ chơi nhỏ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
 },
 "1vxhfv6": {
 "k": "Con tìm số một nhé!",
@@ -7406,6 +7466,30 @@
 },
 "zvwsfp": {
 "k": "Hình chữ nhật có hai cạnh dài và hai cạnh ngắn.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"1ypz1i3": {
+"k": "Dừng lại! Đèn đỏ rồi. Chờ đèn xanh nhé.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"1op08kg": {
+"k": "Chú công an đến rồi. Chú nắm tay ếch.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"aovtgl": {
+"k": "Chú và ếch cùng chờ đèn xanh.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"103zf3o": {
+"k": "Đèn xanh rồi! Giờ chú và ếch cùng qua đường.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man6",
 "who": "chồi"
