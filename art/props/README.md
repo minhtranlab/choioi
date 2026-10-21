@@ -36,3 +36,16 @@ Bảng tuyến xe buýt để trống (dải tối, không chữ, không số).
 | 4 (sau bác tài) | 144, 24, 36, 42 | 60, 24, 36, 42 |
 
 Mặt bạn đặt giữa ô, tâm khoảng y 42 (lưng ghế chiếm 10 đơn vị dưới đáy ô, từ y 56), đường kính mặt tới khoảng 30. Kính lái (bác tài) ở x 186–220, y 24–60 bản quay phải (x 20–54 bản quay trái), không dùng để đặt bạn.
+
+## `nguoi/` · người (tối 21/10)
+Vẽ theo nét các bạn nhỏ trong app (`kidSVG`): viền #3A1B49 dày 4,5, đầu tròn to, tay là nét dày, quay mặt ra phía người xem. Khung **200×340**, chân chạm y 326 (bạn nhỏ: khung 200×260, chân y 246, cùng khoảng trống 14 ở dưới). **Cùng tỉ lệ với các bạn:** đặt cùng bề rộng (w %) và cùng đáy (b %) như bạn nhỏ trên cùng trang (ví dụ `duong-toi-truong`), chú sẽ cao hơn bạn khoảng 1,3 lần.
+
+**Chú công an giao thông** (trò ếch qua đường, Màn 6): đồng phục vàng (áo vàng, quần vàng đậm), mũ kê-pi vàng có vành tối, găng tay trắng, còi bạc trên dây trắng, gậy chỉ đường trắng có khoang đỏ. Mặt cười. Không phù hiệu, không số, không chữ.
+
+| File | Tư thế | Ghi chú |
+|---|---|---|
+| `cong-an-giao-thong.svg` | ra hiệu dừng, thổi còi | tay giơ thẳng lên, lòng bàn tay ra trước (mọi xe dừng); còi ở miệng, má phồng; gậy cầm xuôi ở tay kia |
+| `cong-an-giao-thong-khen.svg` | giơ ngón cái khen | cười to; gậy cầm xuôi ở tay kia; còi treo ở túi áo |
+| `cong-an-giao-thong-dat-tay.svg` | dắt tay | một tay đưa thấp, mở ra để nắm tay ếch: **bàn tay ở khoảng x 186, y 296** của khung (gần mép phải, cao bằng con ếch); tay kia giơ gậy chéo lên chỉ đường |
+
+Ba file cùng khung, cùng chỗ đứng: đổi file là đổi tư thế, không cần dời vị trí. Muốn quay sang phía kia thì lật ngang (`scale(-1,1)`).
