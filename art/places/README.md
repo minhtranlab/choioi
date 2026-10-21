@@ -39,14 +39,21 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 | `cong-vien.svg` | Màn 1 · công viên | 92 | toàn cảnh: mọi trang | `BG.park` |
 | `cong-vien-duong.svg` | Màn 1 · đường ven công viên (cạnh Landmark 81), nơi xe chạy qua (21/10) | vỉa hè gần 132, làn xa 106–119, làn gần 119–132 | toàn cảnh: mọi trang có xe chạy | — |
 | `vuon-nha-na-chieu.svg` | Màn 2 · phần 1, hoàng hôn | ≈ 92 | toàn cảnh: mọi trang | `BG.dusk` |
-| `vuon-nha-na-dem.svg` | Màn 2 · phần 2–9, ban đêm | ≈ 92 | toàn cảnh: mọi trang | `BG.night` |
-| `phong-na.svg` | Màn 3 · phòng Na | 92 | toàn cảnh: mọi trang | phòng Na |
+| `vuon-nha-na-dem.svg` | Màn 2 · phần 2–9, ban đêm | ≈ 92 | toàn cảnh: trang kể chuyện, đèn lồng, bão, trốn tìm, đèn pin | `BG.night` |
+| `vuon-nha-na-dem-can-ban.svg` | Màn 2 · cận: mèo con tìm chỗ khô (in/on/under). Tường rào thấp có chậu cây, bụi cây mép trái, góc nhà Na mép phải (21/10) | 104 | cận: trò mèo, bàn, hộp (bàn, hộp, mèo do game vẽ) | — |
+| `vuon-nha-na-dem-can-la.svg` | Màn 2 · cận: bọ rùa đậu trên lá. Cành từ mép trái, một chiếc lá to nằm ngang (chỗ đậu, y ≈ 58–96), vườn tối xa phía sau (21/10) | — | cận: trò bọ rùa (bọ rùa do game vẽ) | — |
+| `vuon-nha-na-dem-truoc-leu.svg` | Màn 2 · cận: trước lều. Lều cam to ở mép trái, dây đèn nhỏ trên cao (21/10) | 112 | cận: trò gõ trống (trống do game vẽ) | — |
+| `phong-na.svg` | Màn 3 · phòng Na | 92 | toàn cảnh: trang đầu, trang kể chuyện | phòng Na |
+| `phong-na-tron.svg` | Màn 3 · phòng Na, sân khấu (21/10): cửa sổ, tranh, đồng hồ, máy lạnh đều trên y 58; thời khoá biểu ra mép phải; tường và sàn dưới trơn | 92 | sân khấu: gấu, bút màu, dọn đồ, hộp nhạc, mèo trốn, bắt đồ chơi | — |
+| `phong-na-can-ban.svg` | Màn 3 · cận: mặt bàn thấp của Na (gỗ trơn từ y 62), tường hồng, một tranh trên cao (21/10) | 62 (mặt bàn) | cận: đô-mi-nô (quân do game vẽ) | — |
 | `phong-na-toi.svg` | Màn 6 · buổi tối chọn sách | 92 | toàn cảnh | — |
 | `phong-na-dem.svg` | Màn 6 · Na đi ngủ, "morning or night?" | 92 | toàn cảnh | — |
-| `sieu-thi.svg` | Màn 4 · cửa hàng | 98 | toàn cảnh: mọi trang | `BG.shop` |
+| `sieu-thi.svg` | Màn 4 · cửa hàng | 98 | toàn cảnh: trang đầu, trang kể chuyện | `BG.shop` |
+| `sieu-thi-tron.svg` | Màn 4 · cửa hàng, sân khấu (21/10, bản B): cùng tường, sàn, biển treo; quầy trái cây mép trái, kệ nước mép phải; hai kệ đồ chơi nhỏ rất nhạt ở x 34–64 và 134–164; giữa x 64–134 trống (chỗ tấm bản đồ) | 98 | sân khấu: mọi trang có đồ của game | — |
 | `cong-truong-xay.svg` | Màn 5 · công trường | 98 | toàn cảnh: mọi trang | — |
 | `phong-nha-moi.svg` | Màn 5 · trong ngôi nhà mới xây | 92 | toàn cảnh | — |
 | `nha-na-bo-doc.svg` | Màn 6 · mở đầu, xếp tranh một ngày | 128 (tầng dưới), 90 (tầng trên) | toàn cảnh | — |
+| `the-tranh/mot-ngay-sang.svg`, `-chieu.svg`, `-toi.svg` | Màn 6 · ba thẻ tranh để xếp một ngày (khung 120×90, góc bo, có viền): sáng = bàn ăn sáng bên cửa sổ có mặt trời mọc; chiều = công viên nắng chiều có lối đạp xe; tối = cửa sổ có trăng và góc giường. Na do game vẽ (21/10) | — | thẻ | — |
 | `bep.svg` | Màn 6 · bữa sáng | 96 | toàn cảnh | — |
 | `doc-cau-qua-kenh.svg` | Màn 6 · kẻ đường xuống dốc tới trường | mặt cầu 85 (giữa) → 112 (hai đầu) | toàn cảnh | — |
 | `duong-toi-truong.svg` (+ `-chieu`, `-toi`) | Màn 6 · đường tới trường sáng/chiều/tối. **21/10: bỏ xe ôm vẽ sẵn** (xe lấy từ `art/props/xe/`), vỉa hè gần trơn | 128 (vỉa hè gần), làn xe 104–128 (xa 104–116, gần 116–128) | toàn cảnh: trang đầu, kẻ đường tới trường | — |
@@ -55,6 +62,7 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 | `trang-sach.svg` | Màn 6 · trong cuốn sách | mặt ao 78 | toàn cảnh | — |
 | `roi-ben.svg` | Màn 7 · rời bến | mặt sông 59 | toàn cảnh | — |
 | `ra-khoi.svg` | Màn 7 · ra khơi | mặt biển 70 | toàn cảnh | — |
+| `ra-khoi-can.svg` | Màn 7 · cận: mặt nước sát mạn thuyền, mép thuyền gỗ ở đáy khung (y ≈ 128), đảo nhỏ ở chân trời (21/10) | mặt biển 56 | cận: cá heo (cá heo do game vẽ) | — |
 | `dao-bai-cat.svg` | Màn 7 · trên đảo: bãi cát | ≈ 98 | toàn cảnh | — |
 | `dao-hai-dang.svg` | Màn 7 · trên đảo: hải đăng, cầu gỗ | ≈ 98 | toàn cảnh | — |
 | `hang-kho-bau.svg` | Màn 7 · chỗ đặt rương | 112 | toàn cảnh | — |
