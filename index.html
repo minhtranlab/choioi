@@ -407,7 +407,7 @@ button.basket{cursor:pointer;font:inherit}
 }
 .spic>svg,.peekfield>svg{position:absolute;inset:0;width:100%;height:100%}
 .spic.fscene{cursor:pointer}
-.spage>.fscene{width:min(100%,calc((100cqh - 16px)*200/140));max-width:calc(640px*var(--k,1))}
+.spage>.fscene{width:min(100%,calc((100cqh - 16px)*200/140));max-width:none}
 .actor{position:absolute;translate:-50% 0;display:flex;flex-direction:column;align-items:center;animation:actorIn .6s cubic-bezier(.3,1.5,.5,1) backwards;pointer-events:none}
 .actor>svg,.actor>.mascot{height:100%;width:auto;flex:1 1 auto;min-height:0}
 .actor>.mascot svg{height:100%;width:auto}
@@ -672,7 +672,8 @@ button.basket{cursor:pointer;font:inherit}
 .speaker.playing svg{animation:pop .5s infinite}
 .speaker.playing .notes i{animation:noteUp 1.2s ease-out infinite}.speaker.playing .notes i:nth-child(2){animation-delay:.4s}.speaker.playing .notes i:nth-child(3){animation-delay:.8s}
 @keyframes noteUp{from{opacity:1;transform:translateY(10px)}to{opacity:0;transform:translateY(-30px)}}
-.fscene{position:relative;aspect-ratio:200/140;width:min(100%,calc((100cqh - 40px)*200/140));max-width:calc(560px*var(--k,1));border-radius:20px;overflow:hidden;cursor:pointer;box-shadow:0 0 0 3px var(--soft);flex:none}
+/* 21/10 (#25): the story picture is as big as the page allows (no cap on small screens) */
+.fscene{position:relative;aspect-ratio:200/140;width:min(100%,calc((100cqh - 8px)*200/140));max-width:none;border-radius:20px;overflow:hidden;cursor:pointer;box-shadow:0 0 0 3px var(--soft);flex:none}
 .fscene.withq{width:min(100%,calc((100cqh - 190px)*200/140))}
 .fs-sky{position:absolute;inset:0 0 28% 0;background:#DDF1F8;transition:background 1s}
 .fs-ground{position:absolute;left:0;right:0;bottom:0;height:28%;background:#AFDFC6}
