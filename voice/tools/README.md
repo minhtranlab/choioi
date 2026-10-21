@@ -26,7 +26,7 @@ Cần: Python 3.10+, `ffmpeg`, `pip install kokoro-onnx vieneu sherpa-onnx sound
 
 ```bash
 cd voice/tools
-python3 tao_giong.py lines --parts chung,man0,man1,man2,man3 --log thu-cau-man0123.json so-thu.json   # danh sách câu (bỏ --parts = mọi phần)
+python3 tao_giong.py lines --log thu-cau.json thu-mix.json so-thu.json   # danh sách câu (--parts chung,man0 để chỉ lấy vài phần)
 python3 tao_giong.py make --lang en,vi      # tạo câu còn thiếu (thư mục tạm ~/.cache/choi-voice), theo thứ tự chung, Màn 0, Màn 1…
 python3 tao_giong.py pack --lang en,vi      # thêm câu mới vào voice/en.json, voice/vi.json và các file mp3 mới ở cuối
 python3 tao_giong.py page                   # voice/nghe-thu.html: nghe từng câu giọng mới
@@ -35,11 +35,13 @@ python3 tao_giong.py page                   # voice/nghe-thu.html: nghe từng c
 **Khi có câu mới hoặc câu sửa:** cập nhật `voice/pending-unit1.json`, chạy lại 4 lệnh trên. Chỉ câu mới/đã đổi được tạo; các file mp3 đã có trên GitHub giữ nguyên, câu mới nằm trong file mp3 mới ở cuối.
 
 - `lines` giữ mọi câu đã có giọng mới (`manifest-<lang>.json`), thêm câu trong `voice/pending-unit1.json` (các phần trong `--parts`, bỏ trống là tất cả), và mọi câu trong các file `--log`.
-- `thu_cau.py` cho app tự chơi các màn trong trình duyệt không đầu và ghi lại mọi câu Chồi nói, để không sót câu nào không có trong `pending-unit1.json` (vd. "See you next time!"): `python3 thu_cau.py 8 0,1,2,3 thu-cau.json` (cần `python3 -m http.server 8765` ở thư mục gốc repo và `pip install playwright`). Kết quả đã chạy cho Màn 0–3: `thu-cau-man0123.json`.
+- `thu_cau.py` cho app tự chơi các màn trong trình duyệt không đầu và ghi lại mọi câu Chồi nói, để không sót câu nào không có trong `pending-unit1.json` (vd. "See you next time!"): `python3 thu_cau.py 8 0,1,2,3 thu-cau.json` (cần `python3 -m http.server 8765` ở thư mục gốc repo và `pip install playwright`). Kết quả đã chạy cho cả 8 màn: `thu-cau.json` (có cả câu của các bạn nhỏ, cờ `k`). `thu_mix.py` chơi hết 8 màn rồi chơi Fun Mix 3 lần (có trò thưởng): `thu-mix.json`.
 - `so_thu.py` liệt kê mọi câu cho thú ăn ở sở thú (8 loài × 7 món), lấy từ dữ liệu của app: `so-thu.json`.
 - `pack` mặc định chỉ thêm, không ghi đè file mp3 cũ. `pack --compact` ghi lại toàn bộ: câu giọng mới xếp trước theo phần (chung, Màn 0, Màn 1…, để bé mới mở app tải màn đầu trước), rồi tới câu giọng cũ chưa được thay. Nên chạy một lần khi đã xong cả 8 màn (đỡ phải tải những đoạn giọng cũ đã bị thay).
 - `en.json`/`vi.json` có thêm khoá `p` (phần → các file mp3 của phần đó), để app tải trước đúng file của màn sắp chơi. App bản hiện tại bỏ qua khoá này.
-- Màn chưa làm giọng mới (hiện là Màn 4–7) vẫn dùng giọng cũ (bản 2).
+- Cả 8 màn, Fun Mix và trò thưởng đã có giọng mới (22/10). Câu của Lam, Na, Ben (cờ `kid`) được ghi thêm dưới khoá `"@" + câu` bằng giọng `kid` trong `config.json`.
+- `make --redo '<mẫu>'` tạo lại những câu khớp mẫu (vd. khi đổi cách đọc câu vỗ tay), rồi `pack` thay bản cũ.
+- `pack` chỉ đóng gói clip đang chờ trong `~/.cache/choi-voice/<lang>/`; clip đã đóng gói chuyển sang `…/packed/`.
 
 ## Phần trong index.html (đã làm 21/10, commit 186183a)
 1. **Tải trước theo màn, có màn chờ.** Màn có `I.p['chung']` và `I.p['man'+li]`: app chờ đủ các file đó trước khi vào màn (màn chờ có Chồi nhún và thanh tiến độ), rồi tải phần còn lại ngầm, màn sắp chơi trước.
