@@ -20,8 +20,14 @@ Mỗi xe có hai file: `-phai.svg` (đầu xe quay sang phải, chạy từ trá
 | `xe-buyt-xanh-duong` | 134×40 | xe buýt thành phố, khoảng 11 m |
 | `xe-buyt-dien-xanh-la` | 98×36 | xe buýt điện xanh lá, khoảng 8 m |
 | `xe-dua-don` | 90×42 | xe đưa đón học sinh màu vàng (bản đã duyệt, thu 75% cho khớp tỉ lệ, cỡ xe mầm non khoảng 7,5 m) |
+| `o-to-con-trang` | 56×18 | ô tô con gia đình kiểu sedan màu trắng, khoảng 4,6 m (22/10) |
+| `o-to-gia-dinh-bac` | 56×21 | ô tô 7 chỗ màu bạc, mui cao, thanh giá nóc, khoảng 4,7 m (22/10) |
+| `o-to-nho-cam` | 44×18 | ô tô nhỏ (hatchback) màu cam san hô, khoảng 3,7 m (22/10) |
+| `xe-may-thuong` | 26×24 | xe số thường, người lái áo xanh dương, mũ bảo hiểm trắng, không thùng hàng (22/10) |
+| `xe-may-me-cho-be` | 28×25 | xe tay ga xanh nhạt, mẹ áo hồng mũ xanh nhạt, bé ngồi sau áo cam đội mũ bảo hiểm hồng (22/10) |
+| `xe-dap` | 22×24 | xe đạp xanh dương, người đạp áo trắng, mũ bảo hiểm cam (22/10) |
 
-Bảng tuyến xe buýt để trống (dải tối, không chữ, không số).
+Bảng tuyến xe buýt để trống (dải tối, không chữ, không số). Ô tô gia đình không có đèn taxi, không chữ, không logo; màu khác hẳn taxi xanh ngọc.
 
 ### Xe đưa đón, bản cận (trò xếp bạn lên xe, Màn 0, tối 21/10)
 `xe-dua-don-can.svg` (đầu xe quay phải) và `xe-dua-don-can-trai.svg` (bản lật). Khung **240×136**, bánh chạm cạnh dưới. Cùng dáng và màu với `xe-dua-don` (vàng, mui tròn, mũi dốc, sọc hồng và xanh, cửa lên xuống dưới kính lái), vẽ to, **không theo tỉ lệ 12 đơn vị/m** (đây là cảnh cận). Bác tài ngồi sau kính lái, hai tay cầm vô lăng, tóc ngắn, áo xanh nhạt, không chữ, không logo.
@@ -49,3 +55,5 @@ Vẽ theo nét các bạn nhỏ trong app (`kidSVG`): viền #3A1B49 dày 4,5, �
 | `cong-an-giao-thong-dat-tay.svg` | dắt tay | một tay đưa thấp, mở ra để nắm tay ếch: **bàn tay ở khoảng x 186, y 296** của khung (gần mép phải, cao bằng con ếch); tay kia giơ gậy chéo lên chỉ đường |
 
 Ba file cùng khung, cùng chỗ đứng: đổi file là đổi tư thế, không cần dời vị trí. Muốn quay sang phía kia thì lật ngang (`scale(-1,1)`).
+
+**Người đi bộ cho vỉa hè phía xa** (22/10): `nguoi-di-bo-dat-be-phai.svg` / `-trai.svg`, khung **24×20**. Vẽ **cùng tỉ lệ với xe trong `xe/` (1 m ≈ 12 đơn vị)**, không theo cỡ các bạn nhỏ: người lớn cao khoảng 1,6 m (19 đơn vị), bé khoảng 1 m (12 đơn vị), chân chạm cạnh dưới. Người lớn áo xanh lá đi sau, bé áo cam đi trước, hai người nắm tay, dáng đang bước. Đặt trên vỉa hè xa với cùng hệ số như làn xe xa (ví dụ 0,9 như trên `duong-toi-truong`).
