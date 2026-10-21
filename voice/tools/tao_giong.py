@@ -52,7 +52,7 @@ def syllables(m):
     return ', '.join(x.strip() for x in w.split('-'))
 def spoken(key, lang):
     """the app swaps the child's name for {N}; the recording leaves the name out (it can't know it)"""
-    t = key.lstrip('~')
+    t = key.lstrip('@').lstrip('~')
     t = re.sub(r'[\wÀ-ỹ]+(?:\s*-\s*[\wÀ-ỹ]+)+', syllables, t)
     t = re.sub(r',\s*\{N\}(?=[!?.,…]|$)', '', t)          # "Great job, {N}!" -> "Great job!"
     t = re.sub(r'\{N\},\s*', '', t)                        # "{N}, look!" -> "look!"
@@ -199,11 +199,12 @@ def cmd_lines(a):
     and every line the app said in a test run (--log)"""
     pend = json.load(open(os.path.join(VOICE, 'pending-unit1.json'), encoding='utf-8'))
     parts = a.parts.split(',') if a.parts else None; out = collections.OrderedDict()
-    def add(lang, text, slow, who, part):
-        k = vkey(text, slow); h = vhash(k); o = out.setdefault((lang, h), {'lang': lang, 'key': k, 'who': who, 'part': part})
-        if who == 'chồi': o['who'] = 'chồi'           # said by Chồi anywhere: Chồi's voice
+    def add(lang, text, slow, who, part, key=None):
+        # a kid's line (Lam, Na, Ben) is keyed "@" + the line, in the kid's own voice; the app falls back to Chồi's recording
+        k = key or (('@' if who == 'kid' else '') + vkey(text, slow)); h = vhash(k)
+        out.setdefault((lang, h), {'lang': lang, 'key': k, 'who': who, 'part': part})
     for lang in ('en', 'vi'):                         # lines made before stay (the pending list drops them once they have the new voice)
-        for h, m in manifest(lang)['c'].items(): add(lang, m['k'].lstrip('~'), m['k'].startswith('~'), m['who'], m['part'])
+        for h, m in manifest(lang)['c'].items(): add(lang, None, None, m['who'], m['part'], key=m['k'])
     for x in pend:
         if parts and x['part'] not in parts: continue
         add('en', x['en'], x.get('slow'), 'chồi', x['part']); add('vi', x['vi'], x.get('slow'), 'chồi', x['part'])
@@ -214,6 +215,9 @@ def cmd_lines(a):
             who = 'kid' if rest and rest[0] == 'k' else 'chồi'; slow = bool(rate) and rate < .65; part = li if isinstance(li, str) else f'man{li}'
             if en: add('en', en, slow, who, part)
             if vi: add('vi', vi, slow, who, part)
+            if who == 'kid':                          # and Chồi's version too, for an app that has no kid voice yet
+                if en: add('en', en, slow, 'chồi', part)
+                if vi: add('vi', vi, slow, 'chồi', part)
     VI = re.compile(r'[ăâđêôơưàáảãạèéẻẽẹìíỉĩịòóỏõọùúủũụỳýỷỹỵằắẳẵặầấẩẫậềếểễệồốổỗộờớởỡợừứửữự]', re.I)
     # an English line with Vietnamese words in it (other than Chồi) is only the subtitle of a Vietnamese-mode line: never spoken
     L = [o for o in out.values() if spoken(o['key'], o['lang']) and not (o['lang'] == 'en' and VI.search(o['key'].replace('Chồi', '')))]
@@ -227,7 +231,7 @@ def manifest(lang):
 def cache_path(lang, h, s): return os.path.join(CACHE, lang, hashlib.sha1((s + h).encode()).hexdigest()[:16] + '.wav')
 def make_line(o):
     lang, c = o['lang'], CFG[o['lang']][o['who']]; e = engine(c['engine']); text = spoken(o['key'], lang)
-    speed = c.get('speed', 1) * (0.85 if o['key'].startswith('~') else 1)
+    speed = c.get('speed', 1) * (0.85 if o['key'].lstrip('@').startswith('~') else 1)
     parts, info = [], []
     for s in sentences(text):
         best = None

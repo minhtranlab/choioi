@@ -8,14 +8,14 @@ async def one(br,li,wrong,lang,replay,first):
     pg=await br.new_page(); errs=[]
     pg.on('pageerror',lambda e:errs.append(str(e)))
     await pg.goto('http://localhost:8765/index.html#auto'); await pg.wait_for_timeout(400)
-    await pg.evaluate(f"""()=>{{ window.__sayLog=[]; window.__autoWrong={wrong}; {POLLY}
+    await pg.evaluate(f"""()=>{{ window.__sayLog=[]; window.__autoWrong={wrong}; {POLLY} window.__kid=[]; {{ const o=say; say=function(en,vi,opt){{ if(opt&&opt.kid) window.__kid.push([en,vi||'',opt.rate||0]); return o.apply(this,arguments) }} }}
       S.child={{name:'Bin',birthYear:2021}}; S.lang='{lang}'; S.lesson=Math.max(S.lesson||0,{li}); S.done=S.done||{{}};
       for(let i=0;i<{li};i++) S.done[i]=1; if({'true' if replay else 'false'}) S.done[{li}]=1; if({'true' if first else 'false'}) S.introSeen={{}}; save();
       window.__fin=false; runSession({li}).then(()=>window.__fin=true,()=>window.__fin=true) }}""")
     for t in range(240):
         await pg.wait_for_timeout(1000)
         if await pg.evaluate("window.__fin"): break
-    log=await pg.evaluate("window.__sayLog"); await pg.close(); return log,t,errs
+    log=await pg.evaluate("window.__sayLog.concat(window.__kid.map(x=>[...x,'k']))"); await pg.close(); return log,t,errs
 async def main():
     out=[]
     async with async_playwright() as p:
