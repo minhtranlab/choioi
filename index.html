@@ -1193,6 +1193,13 @@ details.help>*:not(summary){margin-top:8px}
 .cblock.falling{position:absolute;translate:-50% 0;z-index:2}
 .cblock.land{animation:pop .3s}
 .cblock.tip{transition:transform .6s ease-in,opacity .6s;transform:rotate(60deg) translateY(30%);opacity:0}
+.fgtally{position:absolute;left:1.5%;top:2.5%;display:flex;gap:.6%;z-index:9;width:30%;pointer-events:none}
+.fgtally .fgt{flex:1;max-width:15%;filter:grayscale(1) brightness(1.5);opacity:.45;transition:filter .3s,opacity .3s,transform .3s}
+.fgtally .fgt svg{width:100%;height:auto;display:block}
+.fgtally .fgt.on{filter:none;opacity:1;animation:pop .4s}
+.fgtally.done .fgt{animation:pop .5s}
+.cblock.sink{transition:transform .65s ease-in,opacity .65s ease-in;transform:translateY(55%) scaleY(.5);opacity:0}
+.crane .ctarget.ontop{z-index:3;transition:bottom .3s,left .3s,width .3s}
 .crane .cbase{position:absolute;left:50%;bottom:14%;width:30%;height:0;translate:-50% 0}
 /* frog crossing */
 /* memory cards */
@@ -2344,7 +2351,10 @@ function vNeed(set,li){ const I=VOICE.idx[set]; const P=I&&I.p; if(!P||!P.chung|
 const VCACHE=new Map();
 const rawWait=ms=>new Promise(r=>setTimeout(r,ms));
 /** where a line is: a kid's line (Lam, Na, Ben) in the kid's own voice is keyed "@…" (then it plays as is); else Chồi's recording */
+const VOICE_WHO=['Lam','Na','Ben','Bac'];
 function vEntry(set,text,slow,kid){ const I=VOICE.idx[set]; if(!I) return null; const k=vKey(text,slow), k0=slow?vKey(text,false):null;
+  // 22/10: each friend has a voice of their own: '@Lam:…', '@Na:…', '@Ben:…', the crane driver '@Bac:…'; then the shared kids' voice '@…'; then Chồi's (raised a little)
+  if(typeof kid==='string'&&VOICE_WHO.includes(kid)){ const p='@'+kid+':'; const e=I.c[vHash(p+k)]||(k0?I.c[vHash(p+k0)]:null); if(e) return {e,own:true} }
   if(kid){ const e=I.c[vHash('@'+k)]||(k0?I.c[vHash('@'+k0)]:null); if(e) return {e,own:true} }
   const e=I.c[vHash(k)]||(k0?I.c[vHash(k0)]:null); return e?{e,own:false}:null }
 /** a line's clip: an AudioBuffer, null (never recorded) or 'fail' (its file would not load) */
@@ -2412,13 +2422,13 @@ function say(en,vi,opt={}){
     if(VOICE.mode==='device'){ device(); return }
     if(VOICE.mode==='rec'){ voiceStop(); try{ speechSynthesis.cancel() }catch(e){}
       const quiet=why=>{ if(!VOICE.missing.has(lang+text)){ VOICE.missing.add(lang+text); console.warn('voice:',why,lang,JSON.stringify(vKey(text,slow))) } setTimeout(fin,readMs) };   // the subtitle stays for a reading time; never another voice
-      vClip(vSet(lang),text,slow,!!opt.kid).then(buf=>{ if(done) return; if(!buf) return quiet('no recording for'); if(buf==='fail') return quiet('could not load');
+      vClip(vSet(lang),text,slow,opt.kid||false).then(buf=>{ if(done) return; if(!buf) return quiet('no recording for'); if(buf==='fail') return quiet('could not load');
         const a=ac(); if(!a) return quiet('no audio');
         if(a.state==='running') play(buf,a); else { try{ a.resume() }catch(e){} rawWait(300).then(()=>{ if(done) return; if(a.state==='running') play(buf,a); else setTimeout(fin,readMs) }) } }).catch(()=>quiet('error'));
       return }
     const set=vSet(lang); const ip=voiceInit(set);
     (VOICE.ready[set]===false&&ip?Promise.race([ip,rawWait(2500)]):Promise.resolve()).then(()=>{ if(done) return 'dev'; if(!VOICE.ready[set]){ device(); return 'dev' }
-      voiceStop(); try{ speechSynthesis.cancel() }catch(e){} return vClip(set,text,slow,!!opt.kid) }).then(buf=>{ if(done||buf==='dev') return; if(!buf||buf==='fail') return device(); const a=ac(); if(!a||a.state!=='running') return device();
+      voiceStop(); try{ speechSynthesis.cancel() }catch(e){} return vClip(set,text,slow,opt.kid||false) }).then(buf=>{ if(done||buf==='dev') return; if(!buf||buf==='fail') return device(); const a=ac(); if(!a||a.state!=='running') return device();
       play(buf,a) }).catch(()=>device());
   });
 }
@@ -3288,7 +3298,7 @@ async function kept(first,{later=false,line=null}={}){ if(first) await praise(li
    A replayed level keeps its pictures but skips Chồi's demo of any way of playing the child has already seen.
    ========================================================= */
 function typeSeen(key){ S.seenType=S.seenType||{}; const was=!!S.seenType[key]; if(!was){ S.seenType[key]=1; save() } return was }
-function wantDemo(key){ const seen=typeSeen(key); if(RUN&&RUN.dev&&RUN.forceDemo) return true; const m=RUN&&RUN.mode; if(!m) return true; if(RUN.replay||m!=='teach') return !seen; return true }
+function wantDemo(key){ if(RUN&&RUN.games) return false; const seen=typeSeen(key); if(RUN&&RUN.dev&&RUN.forceDemo) return true; const m=RUN&&RUN.mode; if(!m) return true; if(RUN.replay||m!=='teach') return !seen; return true }
 /** Chồi's demo round, when it is wanted; otherwise straight to the child's turn */
 async function demoOr(key,fn){ if(wantDemo(key)){ turn('choi'); RUN.inDemo=true; RUN.preQ=[['Watch me first!','Xem Chồi làm trước nhé!']];
     try{ await fn() } finally { if(RUN){ RUN.inDemo=false; if(RUN.preQ&&RUN.preQ.length) (window.__lostPre=window.__lostPre||[]).push(key+':watch'); RUN.preQ=[] } }
@@ -4977,8 +4987,8 @@ addEventListener('pointerup',()=>setTimeout(()=>{ if(!document.querySelector('.d
 addEventListener('pointerdown',e=>{ lastPt={x:e.clientX,y:e.clientY,t:performance.now()} },true);
 /** little stars/hearts flying out from a point */
 function burst(p,{n=10,kind='star'}={}){ const fx=$('#fx'); if(!fx||!p||FAST) return;
-  for(let i=0;i<n;i++){ const a=Math.PI*2*i/n+Math.random()*.5, d=60+Math.random()*60, col=pick(PAL);
-    const sh=kind==='heart'?`<path d="M12 21 C4 15 1 10 4 6 C6.5 3 10 4 12 7 C14 4 17.5 3 20 6 C23 10 20 15 12 21Z" fill="${col}"/>`:`<path d="${starPath(12,12,11)}" fill="${col}" stroke="${INK}" stroke-width="1.4"/>`;
+  for(let i=0;i<n;i++){ const a=kind==='dust'?Math.PI*(1+i/Math.max(1,n-1))+Math.random()*.2:Math.PI*2*i/n+Math.random()*.5, d=kind==='dust'?24+Math.random()*30:60+Math.random()*60, col=pick(PAL);
+    const sh=kind==='dust'?`<circle cx="12" cy="12" r="${7+Math.random()*3}" fill="#D9C39A" opacity=".85"/>`:kind==='heart'?`<path d="M12 21 C4 15 1 10 4 6 C6.5 3 10 4 12 7 C14 4 17.5 3 20 6 C23 10 20 15 12 21Z" fill="${col}"/>`:`<path d="${starPath(12,12,11)}" fill="${col}" stroke="${INK}" stroke-width="1.4"/>`;
     const e=el(`<svg class="spark" viewBox="0 0 24 24" style="left:${p.x-11}px;top:${p.y-11}px">${sh}</svg>`); fx.append(e);
     e.animate([{transform:'translate(0,0) scale(.4) rotate(0)',opacity:1},{transform:`translate(${Math.cos(a)*d}px,${Math.sin(a)*d}px) scale(1) rotate(${rand(360)}deg)`,opacity:1,offset:.7},{transform:`translate(${Math.cos(a)*d*1.2}px,${Math.sin(a)*d*1.2+30}px) scale(.6)`,opacity:0}],{duration:900,easing:'cubic-bezier(.2,.7,.3,1)'}).finished.then(()=>e.remove(),()=>e.remove()) } }
 /* ---- the star jar: one star for every right answer in this level ---- */
@@ -5329,7 +5339,7 @@ function sceneTap(e){
   const anim=(n,cls,ms=800)=>{ n.classList.remove(cls); void n.getBoundingClientRect(); n.classList.add(cls); setTimeout(()=>n.classList.remove(cls),ms) };
   const talk=(en,vi,o={})=>{ if(!SAYN) say(en,vi,{q:false,gap:0,...o}).catch(()=>{}) };
   if(a){ const w=a.dataset.who; anim(a,'tapped',700);
-    if(CAST.includes(w)){ SFX.pop(); talk(`Hi! I’m ${w}!`,`Chào bạn! Mình là ${w}!`); poseFor(a,'vay-chao',1400) }   // 22/10: they wave when they say hello
+    if(CAST.includes(w)){ SFX.pop(); talk(`Hi! I’m ${w}!`,`Chào bạn! Mình là ${w}!`,{kid:w}); poseFor(a,'vay-chao',1400) }   // 22/10: they wave when they say hello
     else if(w==='Polly'){ poseFor(a,'noi',1200); talk('Hello! Hello!','Xin chào! Xin chào!',{polly:true}) ; if(SAYN) tone(900,.12,'square',.05,0,1300) }
     else if(w==='Chồi'){ SFX.pop(); talk('Hi! I’m Chồi!','Chào bạn! Chồi đây!'); poseFor(a,'vay-chao',1400) }
     else { SFX.pop() }
@@ -6032,8 +6042,8 @@ async function isoGiveOther(W,o){ const f=W.sel, g=W.hold, F=ZFOOD[f]; W.hold=nu
   if(g&&to){ const fr={x:parseFloat(g.style.left)||to.x,y:parseFloat(g.style.top)||to.y}; await g.animate([{left:fr.x+'px',top:fr.y+'px'},{left:to.x+'px',top:to.y+'px'}],{duration:380,easing:'ease-in',fill:'forwards'}).finished.catch(()=>{}) }
   const kid={lam:'Lam',na:'Na',ben:'Ben'}[o.id], V=isVi(), q={gap:0,q:false}; let eat=false;
   if(kid){ W.anim(o,'ijump',650);
-    if(KID_FOOD.includes(f)){ eat=true; W.heart(o); W.bubble(o,V?'Ngon!':'Yum!'); say(`Yum! I love ${F.en}! Thank you!`,`Ngon quá! Tớ thích ${F.vi} lắm! Cảm ơn bạn!`,{...q,kid:true}).catch(()=>{}) }
-    else { const a=ZA[FOOD_FOR[f]]; W.bubble(o,V?'Hi hi!':'Hee hee!'); say(`Hee hee! ${cap(F.en)}? I’m not a ${a.en}!`,`Hi hi! ${cap(F.vi)} á? Tớ đâu phải ${a.vi.replace(/^(chú|bạn) /,'')}!`,{...q,kid:true}).catch(()=>{}) } }
+    if(KID_FOOD.includes(f)){ eat=true; W.heart(o); W.bubble(o,V?'Ngon!':'Yum!'); say(`Yum! I love ${F.en}! Thank you!`,`Ngon quá! Tớ thích ${F.vi} lắm! Cảm ơn bạn!`,{...q,kid}).catch(()=>{}) }
+    else { const a=ZA[FOOD_FOR[f]]; W.bubble(o,V?'Hi hi!':'Hee hee!'); say(`Hee hee! ${cap(F.en)}? I’m not a ${a.en}!`,`Hi hi! ${cap(F.vi)} á? Tớ đâu phải ${a.vi.replace(/^(chú|bạn) /,'')}!`,{...q,kid}).catch(()=>{}) } }
   else if(o.id==='polly'){ W.pollyStop=performance.now()+2200;
     if(KID_FOOD.includes(f)){ eat=true; const nm=f==='banana'?['Banana','Chuối']:['Watermelon','Dưa hấu']; say(`Yum! ${nm[0]}! ${nm[0]}!`,`Ngon! ${nm[1]}! ${nm[1]}!`,{...q,polly:true}).catch(()=>{}) } else say('No, no! Polly likes fruit!','Không, không! Polly thích hoa quả cơ!',{...q,polly:true}).catch(()=>{}) }
   else if(o.id==='choi'||o.id==='star'){ W.anim(W.spr.choi,'ijump',650); say('Thank you! But I drink sunshine and water.','Cảm ơn con! Nhưng Chồi chỉ uống nắng và nước thôi.',q).catch(()=>{}) }
@@ -6114,7 +6124,9 @@ async function viewGames(){ document.body.classList.add('dimbg');
       await say(n?'Your games! Tap one to play again.':'Finish a level to open a game here!',n?'Trò chơi của con đây! Chạm vào một trò để chơi lại nhé.':'Chơi xong một màn để mở trò chơi ở đây nhé!');
       const pi=await new Promise((res,rej)=>{ const ab=()=>rej(ABORT); abortFns.add(ab);
         btns.forEach((b,k)=>b.onclick=()=>{ if(b.classList.contains('locked')){ b.classList.remove('nope'); void b.offsetWidth; b.classList.add('nope'); SFX.soft(); say('Finish that level to open this game!','Chơi xong màn đó để mở trò này nhé!',{gap:0,q:false}).catch(()=>{}); return } abortFns.delete(ab); res(k) }) });
-      SFX.pop(); await REWARD[keys[pi]].run(); confetti(); await say('Fun! Want to play another one?','Vui quá! Chơi trò khác nhé?');
+      // 22/10 (My Games): straight into the game: Chồi only says its name; no explaining, no showing first (RUN.games)
+      SFX.pop(); const R=REWARD[keys[pi]]; RUN.games=true; try{ await say(R.en+'!',R.vi+'!'); await (R.play||R.run)() } finally { if(RUN) RUN.games=false }
+      confetti(); await say('Fun! Want to play another one?','Vui quá! Chơi trò khác nhé?');
     }catch(e){ if(e===ABORT) break; throw e }
   }
   RUN=null; renderHome();
@@ -6387,7 +6399,7 @@ async function flashlightGame({piece=0,mix=false}={}){
   const hitSpot=(e)=>{ const t=e.target.closest('.fspot,.fpeek'); if(!t) return -1; return t.classList.contains('fpeek')?spots.findIndex(b=>b._pe===t):spots.indexOf(t) };
   let wrong=0; const t0=performance.now();
   const reveal1=async k=>{ const b=spots[k]; b._pe.classList.add('found'); b.classList.add('found'); burst(center(b._pe),{n:12}); SFX.chime() };
-  await say('It’s so dark in the garden! Move the light with your finger to look around.','Trong vườn tối quá! Con di ngón tay để soi đèn nhìn quanh nhé.');
+  if(!(RUN&&RUN.games)) await say('It’s so dark in the garden! Move the light with your finger to look around.','Trong vườn tối quá! Con di ngón tay để soi đèn nhìn quanh nhé.');
   const findOne=async(k,name)=>{ const S0=SPOTS[k];
     await say(`Where is ${name}? Find ${name}!`,`${name} đâu rồi? Con tìm ${name} nhé!`,{q:true});
     const g=gate(); let done=false;
@@ -6468,7 +6480,8 @@ async function toyCatch({piece=0,kitten=false,mix=false}={}){
       await say(...(want==='big'?['Toys are falling from the shelf! Move the basket. Catch the big toys!','Đồ chơi rơi từ trên kệ xuống! Con di chuyển cái giỏ. Bắt các đồ chơi to nhé!']:['Now catch the small toys!','Giờ bắt các đồ chơi nhỏ nhé!']),{q:true});
       phase='play'; await g.p; await say(want==='big'?'Three big toys!':'Three small toys!',want==='big'?'Ba đồ chơi to!':'Ba đồ chơi nhỏ!');
       throw 'mixdone' }
-    await say('Toys are falling from the shelf! Move the basket. Catch the big toys!','Đồ chơi rơi từ trên kệ xuống! Con di chuyển cái giỏ. Bắt các đồ chơi to nhé!',{q:true});
+    if(RUN&&RUN.games) await say('Catch the big toys!','Bắt các đồ chơi to nhé!',{q:true});   // My Games: just the goal
+    else await say('Toys are falling from the shelf! Move the basket. Catch the big toys!','Đồ chơi rơi từ trên kệ xuống! Con di chuyển cái giỏ. Bắt các đồ chơi to nhé!',{q:true});
     phase='play'; await g.p;
     await say('Four big toys!','Bốn đồ chơi to!'); want='small'; got=0; need=5; $('.tcount',bk).textContent=''; bk.classList.add('small');
     const g2=gate(); g.done=g2.done; g.p=g2.p;
@@ -6509,10 +6522,12 @@ async function shopCart({piece=0,rounds=2,sayRule=false}={}){
           beep(); got++; sayQ(cap(W[got])+'!',cap(VI_N[got])+'!'); if(got>=need){ alive=false; setTimeout(()=>g.done(),700) } }
         else { wrong++; it.classList.remove('nope'); void it.offsetWidth; it.classList.add('nope'); boing(); sayQ(`That one is not ${n}.`,`Cái đó không phải màu ${vn}.`) } } };
     let iv=null; const tick=()=>{ spawn(); iv=setTimeout(tick,1700*slowBy()*Math.max(.3,SPEED)) }; tick(); abortFns.add(()=>clearTimeout(iv));   // further apart when the belt is slower
-    await say(`Look at the number on the cart: ${W[need]}. Put ${W[need]} ${n} things in the cart!`,`Nhìn số trên xe đẩy: số ${VI_N[need]}. Con bỏ ${VI_N[need]} thứ màu ${vn} vào xe nhé!`,{q:true});
+    if(RUN&&RUN.games) await say(`Put ${W[need]} ${n} things in the cart!`,`Con bỏ ${VI_N[need]} thứ màu ${vn} vào xe nhé!`,{q:true});   // My Games: just the goal
+    else await say(`Look at the number on the cart: ${W[need]}. Put ${W[need]} ${n} things in the cart!`,`Nhìn số trên xe đẩy: số ${VI_N[need]}. Con bỏ ${VI_N[need]} thứ màu ${vn} vào xe nhé!`,{q:true});
     if(AUTO) (async()=>{ while(alive){ await new Promise(r=>setTimeout(r,kidTapDelay())); const it=[...f.querySelectorAll('.sitem')].find(x=>x.dataset.c===col&&!x.dataset.used&&x.getBoundingClientRect().right<f.getBoundingClientRect().right-10); if(it) it.click() } })();
     await g.p; clearTimeout(iv); f.querySelectorAll('.sitem').forEach(x=>{ if(!x.dataset.used) x.remove() });
     cart.classList.add('full'); SFX.chime(); await say(`${cap(W[need])}! Just like the number.`,`${cap(VI_N[need])}! Đúng bằng số trên xe.`);
+    if(RUN&&RUN.games){ await sleep(600); cart.classList.remove('full'); return }   // My Games: on to the next cart
     await say('Why are they all in the cart?','Sao chúng ở chung một xe nhỉ?');
     if(sayRule){ turn('kid'); await sayLikeFriend(f,{who:null,ask:['You say it! They are all…','Con nói nhé! Tất cả đều…'],model:`They are all ${n}.`,vi:`Tất cả đều màu ${vn}.`,kws:[n,'all'],kwsVi:[vn.split(' ').pop()],skill:'L2.M.SORT.03',spot:{x:62,b:70}}); turn(null) }
     else await say(`They are all ${n}!`,`Tất cả đều màu ${vn}!`);
@@ -6543,16 +6558,23 @@ async function craneStack({piece=0}={}){
   // 22/10: the place for the tower is marked on the ground, so the child knows where the first block must go
   const pad=el(`<div class="ctarget" aria-hidden="true"><svg viewBox="0 0 100 18" preserveAspectRatio="none"><rect x="2" y="2" width="96" height="14" rx="3" fill="#FCB515" fill-opacity=".45" stroke="#E8484F" stroke-width="3" stroke-dasharray="8 5"/><path d="M42 5 L58 13 M58 5 L42 13" stroke="#E8484F" stroke-width="3" stroke-linecap="round"/></svg></div>`); f.append(pad);
   const COLS=['#E8607E','#4A9BDB','#FCB515','#58B592','#9B6BD0','#FF8A3D'];
-  let stack=[], wrong=0; const need=4;
+  // 22/10 (My Games, Màn 5): five floors; the mark is on the ground for the first block and on top of the tower after that; a block falls
+  // straight down (it never slides onto the tower); a miss falls to the ground and sinks away in a puff of dust, and a new block comes, as
+  // many as it takes; the swing starts slow and gets a little faster with each floor
+  const games=!!(RUN&&RUN.games);
+  let stack=[], wrong=0; const need=5;
   const fr=()=>f.getBoundingClientRect();
   const make=(kind,i)=>{ const b=el(`<div class="cblock ${kind}" style="--c:${COLS[i%COLS.length]}"></div>`); return b };
   // the first time: Chồi's hand drops one block when it is over the tower (20/10)
-  let demo=!inMix()&&wantDemo('crane');
+  let demo=!inMix()&&!games&&wantDemo('crane');
   if(story){ hook.style.left=(CX*100)+'%'; const R=fr(); hook.style.top=(R.height*JIB_TOP/100)+'px'; hook.style.height=Math.max(30,R.height*.16)+'px'; await sleep(200);
     await say('Look! Our map piece is caught on the crane’s hook.','Nhìn kìa! Mảnh bản đồ mắc vào móc cần cẩu.');
-    await friendSays(bld,'I’m busy building this tower. Help me finish it, then I can bring the hook down!','Bác đang bận xây cái tháp này. Con giúp bác xây xong, rồi bác hạ móc xuống cho nhé!') }
+    await friendSays(bld,'I’m busy building this tower. Help me finish it, then I can bring the hook down!','Bác đang bận xây cái tháp này. Con giúp bác xây xong, rồi bác hạ móc xuống cho nhé!','Bac') }
   if(demo){ turn('choi'); await say('Let’s build a tall tower with the crane! Watch me first. I tap when the block is over the tower.','Mình xây tháp cao bằng cần cẩu nhé! Xem Chồi làm trước. Chồi chạm khi khối ở ngay trên tháp.') }
+  else if(games) turn('kid');   // My Games: straight in, no words
   else { turn('kid'); await say('Let’s build a tall tower with the crane! Tap to drop the block.','Mình xây tháp cao bằng cần cẩu nhé! Con chạm để thả khối xuống.',{q:true}) }
+  const markTop=()=>{ const R=fr(); if(!stack.length||!R.height) return; const t=stack[stack.length-1], topY=R.height*.86-stack.reduce((a,q)=>a+q.h,0);
+    pad.classList.remove('hit'); pad.classList.add('ontop'); pad.style.left=(t.x*100)+'%'; pad.style.width=(t.w*100*1.04)+'%'; pad.style.bottom=((R.height-topY)/R.height*100-1)+'%' };
   for(let i=0;i<need;i++){
     const kind=i%2?'square':'rectangle';
     const b=make(kind,i); hook.append(b); await sleep(30); const bw=b.getBoundingClientRect().width/fr().width;
@@ -6560,32 +6582,34 @@ async function craneStack({piece=0}={}){
       const R=fr(), artH=R.height, armY=artH*JIB_TOP/100, bh0=b.getBoundingClientRect().height;
       const hang=Math.min(armY+Math.max(30,artH*.16), R.height*.86-stack.reduce((a,q)=>a+q.h,0)-bh0*1.9);
       if(hang-armY>=24){ hook.style.top=armY+'px'; hook.style.height=(hang-armY)+'px' } else { hook.style.top='0px'; hook.style.height=Math.max(16,hang)+'px' } }
-    await say(kind==='square'?'A square!':'A rectangle!',kind==='square'?'Hình vuông!':'Hình chữ nhật!',{q:false,gap:0});
+    if(!games) await say(kind==='square'?'A square!':'A rectangle!',kind==='square'?'Hình vuông!':'Hình chữ nhật!',{q:false,gap:0});
     // swing
     // 22/10: every block starts on the left and swings to and fro on its rope; the child waits until it is over the mark (or the tower)
-    let t=-Math.PI/2, x=CX-.2, dropping=false; const amp=.2;
-    const stopS=rafLoop(dt=>{ if(dropping) return; t+=dt*1.1; x=CX+Math.sin(t)*amp; hook.style.left=(x*100)+'%'; hook.style.rotate=(-Math.cos(t)*7).toFixed(2)+'deg' });
+    let t=-Math.PI/2, x=CX-.2, dropping=false; const amp=.2, sw=.8+.12*stack.length;   // slow at first, a little faster each floor
+    const stopS=rafLoop(dt=>{ if(dropping) return; t+=dt*sw; x=CX+Math.sin(t)*amp; hook.style.left=(x*100)+'%'; hook.style.rotate=(-Math.cos(t)*7).toFixed(2)+'deg' });
     const g=gate(); const tap=()=>{ if(dropping) return; dropping=true; f.removeEventListener('pointerdown',tap); g.done() };
     const shown=demo&&i===0;
     if(!shown) f.addEventListener('pointerdown',tap);
     if(shown){ const R=fr(); await Hand.moveTo({x:R.left+R.width*.5,y:R.top+R.height*.62},500) }
-    if(AUTO||shown) (async()=>{ for(let w=0;w<(shown?400:60)&&!dropping;w++){ await new Promise(r=>setTimeout(r,shown?30:60)); const top=stack.length?stack[stack.length-1].x:CX; if(Math.abs(x-top)<.03&&w>8){ tap(); if(shown) await Hand.tap() } } if(!dropping) tap() })();
-    await g.p; stopS(); hook.style.rotate='0deg'; if(!stack.length) pad.classList.add('hit');
-    // fall onto the tower (a kind magnet: within half a block it lines up)
-    const top=stack.length?stack[stack.length-1]:{x:CX,w:base.getBoundingClientRect().width/fr().width}; let off=x-top.x; const ok=Math.abs(off)<(top.w/2+bw/2)*.85;
-    if(ok&&Math.abs(off)<bw*.6) off*=.35; const lx=ok?top.x+off:x;
+    if(AUTO||shown) (async()=>{ for(let w=0;w<(shown?400:60)&&!dropping;w++){ await new Promise(r=>setTimeout(r,shown?30:60)); if(!shown&&window.__craneMiss>0&&w===4){ window.__craneMiss--; tap(); break }   // tests: a miss on purpose
+      const top=stack.length?stack[stack.length-1].x:CX; if(Math.abs(x-top)<.03&&w>8){ tap(); if(shown) await Hand.tap() } } if(!dropping) tap() })();
+    await g.p; stopS(); hook.style.rotate='0deg';
+    // it falls straight down: on the mark (the middle of the block over the mark, or over the top block), it lands; otherwise it misses
+    const top=stack.length?stack[stack.length-1]:{x:CX,w:pad.getBoundingClientRect().width/fr().width||.24}; const off=x-top.x; const ok=Math.abs(off)<top.w*.5;
+    const lx=x; if(ok) pad.classList.add('hit');
     const R2=fr(), bb=b.getBoundingClientRect();
     const bh=bb.height, groundY=R2.height*.86, topY=groundY-stack.reduce((a,s)=>a+s.h,0);
     b.remove(); const fb=b; fb.style.left=(x*100)+'%'; fb.style.top=(bb.top-R2.top)+'px'; fb.classList.add('falling'); f.append(fb);
     const endY=ok?topY-bh:groundY-bh;
     await fb.animate([{top:(bb.top-R2.top)+'px',left:(x*100)+'%'},{top:endY+'px',left:(lx*100)+'%'}],{duration:Math.max(1,520*SPEED),easing:'cubic-bezier(.5,0,1,1)',fill:'forwards'}).finished.catch(()=>{});
     fb.style.top=endY+'px'; fb.style.left=(lx*100)+'%';
-    if(ok){ stack.push({x:lx,w:bw,h:bh,e:fb}); tone(220,.12,'square',.07); fb.classList.add('land'); burst(center(fb),{n:6}) }   // 20/10: no counting here, the shapes are the point
-    else { wrong++; boing(); fb.classList.add('tip'); await say('Oops, it missed! Here’s another one.','Ối, trượt rồi! Thêm một khối nữa nhé.',{gap:0}); setTimeout(()=>fb.remove(),600); i-- }
+    if(ok){ stack.push({x:lx,w:bw,h:bh,e:fb}); tone(220,.12,'square',.07); fb.classList.add('land'); burst(center(fb),{n:6}); markTop() }   // 20/10: no counting here, the shapes are the point
+    else { wrong++; boing(); const c0=center(fb); c0.y+=bh*.4; burst(c0,{n:7,kind:'dust'}); fb.classList.add('sink'); setTimeout(()=>fb.remove(),700*Math.max(.3,SPEED));
+      if(!games) await say('Oops, it missed! Here’s another one.','Ối, trượt rồi! Thêm một khối nữa nhé.',{gap:0}); else await sleep(500); i-- }
     await sleep(350);
     if(shown){ Hand.hide(); demo=false; await say('Right on the tower!','Trúng đỉnh tháp rồi!'); await yourTurn(); await say('Tap to drop the next block, when it is over the tower!','Con chạm để thả khối tiếp theo, khi nó ở ngay trên tháp nhé!',{q:true}) }
   }
-  turn(null); confetti(); await say('A tall tower of squares and rectangles!','Tháp cao toàn hình vuông và hình chữ nhật!');
+  turn(null); pad.remove(); confetti(); await say('A tall tower of squares and rectangles!','Tháp cao toàn hình vuông và hình chữ nhật!');
   if(!story) return;
   // the builder brings the hook down to Ben; Ben takes the map piece off the hook
   const R=fr(), armY=R.height*JIB_TOP/100, br=ben.getBoundingClientRect(), hb=hpc.getBoundingClientRect();
@@ -6614,7 +6638,7 @@ Object.assign(REWARD,{
   3:{name:'Bắt đồ chơi',vi:'Bắt đồ chơi',en:'Toy catch',art:()=>ART.basket(),run:()=>toyCatch()},
   4:{name:'Xe đẩy',vi:'Xe đẩy',en:'Shopping cart',art:()=>`<svg viewBox="0 0 120 90"><path d="M6 10 H22 L34 62 H100 L112 22 H28" fill="none" stroke="${INK}" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M28 22 H112 L100 62 H34Z" fill="#E8484F" opacity=".8"/><circle cx="44" cy="78" r="8" fill="#fff" stroke="${INK}" stroke-width="5"/><circle cx="92" cy="78" r="8" fill="#fff" stroke="${INK}" stroke-width="5"/></svg>`,run:()=>shopCart()},
   5:{name:'Cần cẩu',vi:'Cần cẩu',en:'Crane tower',art:()=>ART.blocks(),run:()=>craneStack()},
-  6:{name:'Ếch qua đường',vi:'Ếch qua đường',en:'Frog crossing',art:()=>ART.frog(),run:()=>frogCross({reward:true})},
+  6:{name:'Ếch qua đường',vi:'Ếch qua đường',en:'Frog crossing',art:()=>ART.frog(),run:()=>frogCross({reward:true}),play:()=>frogCross({game:true})},   // play: My Games (22/10)
   7:{name:'Rương kho báu',vi:'Rương kho báu',en:'Treasure chest',art:()=>CHEST_SVG(),run:()=>cave7({reward:true})}
 });
 
@@ -6725,9 +6749,17 @@ async function shareFood(name){
    COMFORT A FRIEND (no question): the story, the feeling, then the child does the kind thing
    ========================================================= */
 /** a friend answers out loud (a little higher voice), with a speech bubble and a nod */
-async function friendSays(fr,en,vi){ const yb=el(`<b class="yesbub stk">${esc(isVi()?vi:en)}</b>`); fr.append(yb); fr.classList.add('nod');
+/** who is this friend in the picture: 'Lam' | 'Na' | 'Ben' | 'Polly' | 'Choi' (from data-who, on the element or its drawing), or null */
+function speakerOf(fr){ if(!fr) return null; const d=(fr.dataset&&fr.dataset.who)||((fr.querySelector&&fr.querySelector('svg[data-who]'))||{dataset:{}}).dataset.who;
+  return ['Lam','Na','Ben','Polly','Choi','Chồi'].includes(d)?(d==='Chồi'?'Choi':d):null }
+/** a friend in the picture says a line, in a bubble, in their own voice (22/10). who: 'Lam' | 'Na' | 'Ben' | 'Bac' (the crane driver); by default from the picture */
+async function friendSays(fr,en,vi,who=null){ const yb=el(`<b class="yesbub stk">${esc(isVi()?vi:en)}</b>`); fr.append(yb); fr.classList.add('nod');
+  const w=who||speakerOf(fr), vo=w==='Polly'?{polly:true}:w==='Choi'?{}:{kid:w||true};
   { const box=fr.closest('.sbox,.spic'); if(box){ const r=box.getBoundingClientRect(), q=yb.getBoundingClientRect(), pad=r.width*.02; let dx=0;   // 21/10: a long bubble stays inside the picture
-      if(q.left<r.left+pad) dx=r.left+pad-q.left; else if(q.right>r.right-pad) dx=r.right-pad-q.right; if(dx) yb.style.marginLeft=dx+'px' } } try{ await say(en,vi,{kid:true,q:false,gap:250}) } finally { yb.remove(); fr.classList.remove('nod') } }
+      if(q.left<r.left+pad) dx=r.left+pad-q.left; else if(q.right>r.right-pad) dx=r.right-pad-q.right; if(dx) yb.style.marginLeft=dx+'px' } } try{ await say(en,vi,{...vo,q:false,gap:250}) } finally { yb.remove(); fr.classList.remove('nod') } }
+/** Polly in the picture says a line: her bubble, her talking pose, her parrot voice (not a friend's voice) */
+async function pollySays(pol,en,vi){ const yb=el(`<b class="yesbub stk">${esc(isVi()?vi:en)}</b>`); pol.append(yb); poseFor(pol,'noi',1400);
+  try{ await say(en,vi,{polly:true,q:false,gap:250}) } finally { yb.remove() } }
 async function comfortStep(H,{hint=false}={}){
   const c=card(); const SC=feelScene(H.f,H.name,H.scene); SC.el.dataset.noreplay='1'; c.append(SC.el); const fr=SC.kid();
   const mus=H.music?await playMusic(H.music,{gain:.42,under:true,maxSec:40}):null;   // a lullaby under the bedtime scene
@@ -8867,7 +8899,7 @@ async function proudBike(){ const sk=SK['L2.W.FEEL.02'];
     labels:set.map(f=>[`that face looks ${f}`,`mặt đó đang ${VI_FEEL[f]}`]),onRight:async()=>{ setKidFace(bike,'Na','proud'); bike.classList.remove('pop'); void bike.offsetWidth; bike.classList.add('pop') }});
   turn(null); row.remove();
   await say('Yes! Na feels proud. She did it all by herself.','Đúng rồi! Na thấy tự hào. Bạn ấy tự làm được.'); await pollyEcho(...ECHO.proud);
-  await friendSays(bike,'I feel proud!','Tớ thấy tự hào!'); await reteachPending();
+  await friendSays(bike,'I feel proud!','Tớ thấy tự hào!','Na'); await reteachPending();
   const bell=el(`<button class="s6bell" aria-label="Chuông"></button>`); box.append(bell);
   const place=()=>{ const b=bike.querySelector('.b6bell'), br=box.getBoundingClientRect(); if(!b) return; const q=b.getBoundingClientRect(); bell.style.left=((q.left+q.width/2-br.left)/br.width*100)+'%'; bell.style.top=((q.top+q.height/2-br.top)/br.height*100)+'%' }; place();
   await say('Ring Na’s bell! Tap the bell.','Con bấm chuông xe cho Na nhé! Chạm vào cái chuông.',{q:true});
@@ -8992,7 +9024,7 @@ async function dayAsk({wake=false}={}){ const sk=SK['L2.M.POS.02'], mixed=inMix(
    goes home (back across, then away to its pond in the park). Tap on red: a car beeps and the frog hops back ---- */
 const PED6=()=>`<div class="r6ped"><i class="pr">${PED('#FF4D4D',false)}</i><i class="pg">${PED('#4CE38A',true)}</i></div>`;
 const R6_STEPS=[2,10.7,14,17.1,20.3,23.4,27.6];   // where the frog sits, % from the bottom: the near pavement, the five white stripes, the far pavement
-async function frogCross({reward=false,mix=false}={}){
+async function frogCross({reward=false,mix=false,game=false}={}){
   // 21/10: the stage road (no light, no crossing, no trees in the middle): the game puts in the walking light and the zebra crossing itself
   const box=sbox('road6 am',BG.road6T()); box.append(el(`<div class="r6bg night">${BG.road6nightT()}</div>`));
   box.append(el(`<svg class="r6zebra" viewBox="0 0 200 140" preserveAspectRatio="xMidYMax meet" aria-hidden="true">${[106,110.4,114.8,119.2,123.6].map(y=>`<rect x="108" y="${y}" width="26" height="2.4" fill="#fff"/>`).join('')}<path d="M84 74 V101" stroke="#3A1B49" stroke-width="3.4" stroke-linecap="round"/><path d="M84 74 V101" stroke="#6B6380" stroke-width="1.4" stroke-linecap="round"/></svg>`));
@@ -9007,10 +9039,10 @@ async function frogCross({reward=false,mix=false}={}){
   add('xe-om-xanh',1,-12); add('o-to-con-trang',1,-48); add('xe-om-vang-cho-khach',1,-84);
   add('xe-om-vang',0,108); add('taxi-xanh-ngoc-suv',0,140); add('xe-may-me-cho-be',0,176);
   const P=walkers(box,{b:R6_STEPS[6],k:.9}); abortFns.add(P.stop);   // D2: along the far pavement (behind the far lane), never onto the road
-  let green=false, speed=13, crossing=false;
+  let green=false, speed=13, crossing=false, halt=false, clearing=false;   // clearing: the cars stop at the line before the walking man turns green   // halt: every vehicle stands still (My Games: the frog jumped on red)
   const setG=v=>{ green=v; ped.classList.toggle('go',v) };
-  const stop=rafLoop(dt=>{ for(const c of V){ let nx=c.x+c.dir*speed*dt, half=c.w/2;
-      if(green){ if(c.dir>0){ const line=CW[0]-1-half; if(c.x<=line&&nx>line) nx=line } else { const line=CW[1]+1+half; if(c.x>=line&&nx<line) nx=line } }
+  const stop=rafLoop(dt=>{ if(halt) return; for(const c of V){ let nx=c.x+c.dir*speed*dt, half=c.w/2;
+      if(green||clearing){ if(c.dir>0){ const line=CW[0]-1-half; if(c.x<=line&&nx>line) nx=line } else { const line=CW[1]+1+half; if(c.x>=line&&nx<line) nx=line } }
       for(const o of V){ if(o===c||o.lane!==c.lane) continue; const gap=(o.x-c.x)*c.dir; if(gap>0&&gap<half+o.w/2+3) nx=c.dir>0?Math.min(nx,o.x-o.w/2-half-3):Math.max(nx,o.x+o.w/2+half+3) }   // keep behind the one in front
       if((nx-c.x)*c.dir<0) nx=c.x;   // never backwards
       if(c.dir>0&&nx-half>104) nx=-half-8-Math.random()*30; if(c.dir<0&&nx+half<-4) nx=100+half+8+Math.random()*30;
@@ -9072,6 +9104,48 @@ async function frogCross({reward=false,mix=false}={}){
     crossing=false; return wrong };
   turn(null);
   try{
+    if(game){ // 22/10 (My Games): straight in, no words. The walking light is green only for a short time; the child taps the frog right then.
+      // Green: the frog crosses by itself (no police officer), a little party on the other side, and it comes back the other way next time.
+      // Red: the cars stop, the officer walks in from the right, whistles and walks the frog back, then walks on. The third time on red
+      // (counted over the whole game) he holds its hand, they wait for green and cross together, and the game goes on. Six good crossings
+      // (small frogs in the corner) and it is done.
+      const GOAL=6, MAXX=10; let up=true, okN=0, all=0, wrongN=0, busy=false, gDur=3000, tapped=false, missed=0, over=false;
+      const tally=el(`<div class="fgtally" aria-hidden="true">${Array.from({length:GOAL},()=>`<i class="fgt">${ART.frog()}</i>`).join('')}</div>`); box.append(tally);
+      const ms=v=>v*Math.max(.3,SPEED);
+      frog.style.transition='none'; frog.style.left='60.5%'; at(0); await sleep(250);
+      const gcycle=()=>{ if(over) return; if(busy||crossing){ cyc=setTimeout(gcycle,ms(250)); return }
+        if(green){ setG(false); if(!tapped) missed++; cyc=setTimeout(gcycle,ms(2200+Math.random()*1400)) }
+        else if(!clearing){ clearing=true; cyc=setTimeout(gcycle,ms(1300)) }   // the cars stop first; the crossing is empty before green
+        else { if(onCross()){ cyc=setTimeout(gcycle,ms(200)); return } clearing=false; setG(true); tapped=false; SFX.ding(); cyc=setTimeout(gcycle,ms(gDur));
+          if(missed>=2&&!AUTO){ missed=0; (async()=>{ try{ await Hand.moveTo(center(frog),350); await Hand.tap(); Hand.hide() }catch(e){} })() } } };   // a hand on the frog after two missed greens, no words
+      const party=async()=>{ confetti(); SFX.chime(); setTimeout(()=>clapHit(),ms(250)); setTimeout(()=>clapHit(),ms(500)); setTimeout(()=>clapHit(),ms(750));
+        for(let j=0;j<2;j++){ frog.classList.remove('hop'); void frog.offsetWidth; frog.classList.add('hop'); tone(784+j*196,.14,'sine',.06); await sleep(320) } };
+      const steps=()=>up?[1,2,3,4,5,6]:[5,4,3,2,1,0];
+      const onGreen=async()=>{ crossing=true; setG(true); for(let w=0;w<20&&onCross();w++) await sleep(100);   // a car still on the crossing: a moment
+        for(const i of steps()) await hopTo(null,R6_STEPS[i],280);
+        okN++; all++; const t=tally.children[okN-1]; if(t) t.classList.add('on'); await party();
+        gDur=Math.max(2000,gDur-200); up=!up; crossing=false; stopCyc(); setG(false); cyc=setTimeout(gcycle,ms(1600)) };
+      const onRed=async()=>{ wrongN++; stopCyc(); clearing=false; halt=true; tone(330,.18,'sawtooth',.03,0,220);   // brakes
+        const first=up?1:5, back=up?0:6, side=copSide(up), p0=copBy(R6_STEPS[back]);
+        if(onCross()){ frog.classList.remove('bump'); void frog.offsetWidth; frog.classList.add('bump'); await sleep(300) } else await hopTo(null,R6_STEPS[first],260);   // it jumps onto the road at once (or only starts to, with a car right there)
+        const cin=copIn('stop',p0.x,p0.b,side.z); setTimeout(whistle,ms(300)); await cin;
+        copPose('hand'); cop.classList.add('flip'); await sleep(300); await hopTo(null,R6_STEPS[back],320);   // he walks it back to where it was
+        if(wrongN<3){ await sleep(500); copPose('ok'); cop.classList.remove('flip'); await sleep(500); halt=false; await copOut(); cyc=setTimeout(gcycle,ms(1500)); return }
+        // the third time: hand in hand, they wait for green and cross together; then the game goes on
+        wrongN=0; halt=false; await sleep(600); clearing=true; await sleep(1300); for(let w=0;w<25&&onCross();w++) await sleep(100); clearing=false; crossing=true; setG(true); SFX.ding(); cop.style.zIndex=5;
+        for(const i of steps()){ cop.style.transition=`bottom ${.3*SPEED}s ease-out`; cop.style.bottom=copBy(R6_STEPS[i]).b+'%'; await hopTo(null,R6_STEPS[i],300) }
+        await sleep(300); copPose('ok'); cop.classList.remove('flip'); SFX.soft(); await sleep(600); cop.style.zIndex=up?1:7; all++; up=!up;
+        await copOut(); crossing=false; stopCyc(); setG(false); cyc=setTimeout(gcycle,ms(1600)) };
+      const g=gate();
+      const tap=async()=>{ if(busy||crossing||over) return; busy=true; tapped=true; missed=0;
+        try{ if(green) await onGreen(); else await onRed() } finally { busy=false }
+        if(okN>=GOAL||all>=MAXX){ over=true; stopCyc(); box.removeEventListener('pointerdown',tap); g.done() } };
+      box.addEventListener('pointerdown',tap); frog.dataset.live='1'; turn('kid');
+      setG(false); cyc=setTimeout(gcycle,ms(1400));
+      if(AUTO) (async()=>{ let reds=window.__frogReds||0; while(!over){ await new Promise(r=>setTimeout(r,90)); if(busy||crossing) continue; if(!green&&reds>0){ reds--; tap(); continue } if(green) tap() } })();
+      await g.p; turn(null); delete frog.dataset.live;
+      await sleep(400); confetti(); tally.classList.add('done'); SFX.chime(); await sleep(1200);
+      return }
     if(mix){ // Fun Mix (21/10, lần 2): is it morning or night? then the frog crosses once, with the police officer as in the level
       const night=Math.random()<.5; if(night){ box.classList.remove('am'); box.classList.add('night'); speed=16 }
       frog.style.transition='none'; frog.style.left='60.5%'; at(night?6:0); await sleep(300);
@@ -9103,7 +9177,7 @@ async function frogCross({reward=false,mix=false}={}){
     await hopTo(40,null,420); await hopTo(20,null,420); await hopTo(-10,null,420);
     await say(reward?'The frog is home. Good night, frog!':'The frog went home to its pond. Good night, frog!',reward?'Ếch về đến nhà rồi. Chúc ếch ngủ ngon!':'Ếch về ao nhà rồi. Chúc ếch ngủ ngon!');
   } finally { stop(); stopCyc(); P.stop() }
-  if(!reward) await nextPage(box) }
+  if(!reward&&!game) await nextPage(box) }
 
 /* ---- Màn 7 art: drawn by the game (the places are the backgrounds from art/places) ---- */
 let _b7id=0;
@@ -9495,7 +9569,7 @@ async function window7(){ const box=sbox('win7',PLACE['nhin-tu-cua-so']);
   const pol=el(`<div class="tpolly hover stk" style="left:-20%;bottom:66%;width:7%">${pollySVG(false)}</div>`); box.append(pol);
   await parrotFly(pol,{left:'-20%',bottom:'66%'},{left:'14%',bottom:'62%'},1200);
   await tell('From the top, we can see the whole island!','Từ trên đỉnh, mình nhìn thấy cả hòn đảo!');
-  box.append(x); SFX.chime(); await friendSays(pol,'I see a red X, next to the big rock!','Tớ thấy một dấu X đỏ, cạnh hòn đá to!');
+  box.append(x); SFX.chime(); await pollySays(pol,'I see a red X, next to the big rock!','Tớ thấy một dấu X đỏ, cạnh hòn đá to!');
   box.append(cave); tone(700,.2,'sine',.05,0,900);
   await say('And there’s a cave near the rock. Let’s go down to the beach and find the X!','Và có một cái hang gần hòn đá. Mình xuống bãi biển tìm dấu X nào!');
   await nextPage(box) }
@@ -9542,7 +9616,7 @@ async function beachWho7(box){ await tell('Here’s the beach. Someone saw an X 
 async function caveHint7(box){ const pol=el(`<div class="tpolly hover stk" style="left:142%;bottom:64%;width:7%">${pollySVG(false)}</div>`); box.append(pol); tone(900,.1,'square',.04,0,1400);
   await parrotFly(pol,{left:'145%',bottom:'64%'},{left:'83%',bottom:'34%'},1300); pol.style.left='83%'; pol.style.bottom='34%';
   const x=el(`<i class="c7x"></i>`); box.append(x); SFX.chime();
-  await friendSays(pol,'Over here! A big X, and a cave behind the rocks!','Đằng này! Một dấu X to, và một cái hang sau mấy tảng đá!');
+  await pollySays(pol,'Over here! A big X, and a cave behind the rocks!','Đằng này! Một dấu X to, và một cái hang sau mấy tảng đá!');
   await say('The X shows where the treasure is. Let’s go into the cave!','Dấu X chỉ chỗ có kho báu. Mình vào hang nào!') }
 
 /* starfish on the sand point the way: tap each one, and count (4, then 5); then they line up into an arrow */

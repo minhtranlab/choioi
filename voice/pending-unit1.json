@@ -24,6 +24,70 @@
   "slow": false
  },
  {
+  "part": "chung",
+  "en": "Treasure chest!",
+  "vi": "Rương kho báu!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Catch the big toys!",
+  "vi": "Bắt các đồ chơi to nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Put four red things in the cart!",
+  "vi": "Con bỏ bốn thứ màu đỏ vào xe nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Put four blue things in the cart!",
+  "vi": "Con bỏ bốn thứ màu xanh dương vào xe nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Put four yellow things in the cart!",
+  "vi": "Con bỏ bốn thứ màu vàng vào xe nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Put five red things in the cart!",
+  "vi": "Con bỏ năm thứ màu đỏ vào xe nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Put five blue things in the cart!",
+  "vi": "Con bỏ năm thứ màu xanh dương vào xe nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Put five yellow things in the cart!",
+  "vi": "Con bỏ năm thứ màu vàng vào xe nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
   "part": "man0",
   "en": "Oh no, it’s torn! Only one piece is left.",
   "vi": "Ôi, bản đồ bị rách rồi! Chỉ còn một mảnh thôi.",
