@@ -26,8 +26,8 @@ async def zoo():
         await pg.goto('http://localhost:8765/index.html#auto'); await pg.wait_for_timeout(500)
         P = await pg.evaluate(JS); await br.close(); return P
 out = []
-for en, vi in ANY + [tuple(x) for x in asyncio.run(zoo())]:
-    for k in KIDS: out.append({'who': k, 'en': en, 'vi': vi})
+for en, vi, z in [(e, v, 0) for e, v in ANY] + [(e, v, 1) for e, v in asyncio.run(zoo())]:
+    for k in KIDS: out.append({'who': k, 'en': en, 'vi': vi, **({'zoo': 1} if z else {})})   # zoo: câu ở sở thú (đóng gói vào nhóm sothu)
 for k, L in OWN.items():
     for en, vi in L: out.append({'who': k, 'en': en, 'vi': vi})
 json.dump(out, open('cau-ban-nho.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=0)

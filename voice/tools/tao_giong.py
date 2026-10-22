@@ -26,7 +26,6 @@ VOICE = os.path.dirname(HERE)
 MODELS = os.environ.get('CHOI_MODELS', os.path.expanduser('~/models'))
 CACHE = os.environ.get('CHOI_CACHE', os.path.join(os.path.expanduser('~'), '.cache', 'choi-voice'))
 CFG = json.load(open(os.path.join(HERE, 'config.json'), encoding='utf-8'))
-MAXB = 900_000          # bytes per bundle
 SR_OUT = 24000
 
 # ---------------------------------------------------------------- keys (same as index.html vKey / vHash)
@@ -321,13 +320,75 @@ def cmd_make(a):
         for k, info in low[:40]: print('  ?', k, '|', ' / '.join(x[2] for x in info))
 
 # ---------------------------------------------------------------- pack (write the files the app reads)
+def kbps(): return int(CFG.get('mp3_kbps', 48))
 def mp3(path):
-    return subprocess.run(['ffmpeg', '-loglevel', 'error', '-i', path, '-ac', '1', '-ar', str(SR_OUT), '-c:a', 'libmp3lame', '-b:a', '48k', '-f', 'mp3', '-'], capture_output=True, check=True).stdout
+    return subprocess.run(['ffmpeg', '-loglevel', 'error', '-i', path, '-ac', '1', '-ar', str(SR_OUT), '-c:a', 'libmp3lame', '-b:a', f'{kbps()}k', '-f', 'mp3', '-'], capture_output=True, check=True).stdout
 ORDER = {p: i for i, p in enumerate(['chung'] + [f'man{i}' for i in range(8)])}
+
+# ---------------------------------------------------------------- pack (the files the app reads)
+# Gói theo nhóm (khoá p trong en.json / vi.json), mỗi nhóm là các file mp3 liền nhau, theo thứ tự câu được nói:
+#   chung   câu dùng ở từ 2 màn trở lên (khen, nhắc…), câu của Polly, câu các bạn nhỏ nói trong màn
+#   man0 … man7   câu chỉ màn đó dùng, theo thứ tự nói (file đầu = đầu màn)
+#   sothu   phần cuối mỗi màn: thành phố, sở thú, cho thú ăn (Chồi và các bạn nhỏ)
+#   ngoai   câu các lần máy tự chơi 8 màn không gặp: câu ít gặp (giảng lại khi bé sai nhiều…), Fun Mix, My Games, hộp nhạc…
+#   cu      giọng cũ chưa được thay, và giọng bạn nhỏ chung cũ (@câu): không tải trước, chỉ tải khi cần
+LEVELS = [f'man{i}' for i in range(8)]
+GROUPS = ['chung'] + LEVELS + ['sothu', 'ngoai', 'cu']
+MAXB = 400_000           # bytes per file: a level's first file holds its first minutes
+MAXB_CU = 1_000_000
+TAIL = 'This is your city!'   # a level's last part (the city and the zoo) starts with this line
+def usage(lang):
+    """from thu-thu-tu.json (thu_thu_tu.py): {hash: {level: earliest place in a run, 0..1}} for the lines said before the
+    city/zoo part at the end of a level, {hash: earliest place} for the lines said only there, and the hashes Polly said"""
+    U, T, polly = collections.defaultdict(dict), {}, set()
+    p = os.path.join(HERE, 'thu-thu-tu.json')
+    if not os.path.exists(p): return U, T, polly
+    nm = re.compile(r'(^|[^\w])Bin(?!\w)')
+    for run in json.load(open(p, encoding='utf-8')):
+        seq = run['seq']; n = max(len(seq), 1); lv = f"man{run['li']}"
+        tail = next((i for i, x in enumerate(seq) if x[0].startswith(TAIL)), n)
+        for i, (en, vi, rate, flag) in enumerate(seq):
+            t = en if lang == 'en' else vi
+            if not t: continue
+            k = vkey(nm.sub(r'\1{N}', t), bool(rate) and rate < .65)
+            if flag.startswith('k:'): k = f'@{flag[2:]}:' + k
+            h = vhash(k)
+            if i < tail: U[h][lv] = min(U[h].get(lv, 9), i / n)
+            else: T[h] = min(T.get(h, 9), (i - tail) / max(n - tail, 1))
+            if flag == 'p': polly.add(h)
+    return U, T, polly
+def layout(lang, M):
+    """group -> its lines (hashes), in the order they are said"""
+    U, T, polly = usage(lang)
+    zoo = {vkey(x[1] if lang == 'en' else x[2]) for x in json.load(open(os.path.join(HERE, 'so-thu.json'), encoding='utf-8'))}
+    kp = os.path.join(HERE, 'cau-ban-nho.json')
+    if os.path.exists(kp): zoo |= {vkey(x[lang]) for x in json.load(open(kp, encoding='utf-8')) if x.get('zoo')}
+    OLD = collections.defaultdict(set); nm = re.compile(r'(^|[^\w])Bin(?!\w)')
+    for li, en, vi, rate, *_ in json.load(open(os.path.join(HERE, 'thu-cau.json'), encoding='utf-8')):
+        t = en if lang == 'en' else vi
+        if t: OLD[vhash(vkey(nm.sub(r'\1{N}', t), bool(rate) and rate < .65))].add(f'man{li}')
+    G = {g: [] for g in GROUPS}; seen = {}
+    for idx, (h, m) in enumerate(M.items()):
+        k = m['k']; kid = bool(re.match(r'^@[A-Za-z]+:', k)); text = KEYPFX.sub('', k)
+        if k.startswith('@') and not kid: g = 'cu'                     # the old shared kid voice: never asked for now
+        elif not U.get(h) and (h in T or text in zoo): g = 'sothu'; seen[h] = (0, T.get(h, 9))
+        elif U.get(h):
+            lv = U[h]
+            g = 'chung' if (len(lv) > 1 or kid or h in polly) else next(iter(lv))
+            seen[h] = min((LEVELS.index(l), x) for l, x in lv.items()) if g == 'chung' else (0, lv[g])
+        elif kid: g = 'chung'
+        elif h in OLD: g = next(iter(OLD[h])) if len(OLD[h]) == 1 else 'chung'   # met only in the older test runs (thu-cau.json)
+        elif m.get('part') in LEVELS: g = m['part']                   # not met in the test runs: after the lines that were
+        else: g = 'ngoai'
+        G[g].append((seen.get(h, (99, 9)), idx, h))
+    return {g: [h for _, _, h in sorted(v)] for g, v in G.items()}, U, T
+def wav_for(lang, h, who):
+    p = cache_path(lang, h, sig(lang, who)); q = os.path.join(os.path.dirname(p), 'packed', os.path.basename(p))
+    return p if os.path.exists(p) else (q if os.path.exists(q) else None)
 def cmd_pack(a):
     """Write the files the app reads. By default only new or changed lines are added, in new mp3 files at the end
-    (the files already on GitHub stay as they are). --compact rewrites every file: new-voice lines first, by part
-    (chung, Màn 0, Màn 1 …, so a new player gets the first level first), then the older-voice lines still not replaced."""
+    (the files already on GitHub stay as they are), each new file holding one group. --compact rewrites every file,
+    group by group in the order the lines are said, and re-encodes every new-voice line at mp3_kbps (config.json)."""
     L = json.load(open(lines_path(), encoding='utf-8'))
     for lang in a.lang.split(','):
         ip = os.path.join(VOICE, f'{lang}.json'); I = json.load(open(ip)); M = manifest(lang); cache = {}
@@ -335,42 +396,55 @@ def cmd_pack(a):
             b, off, ln = I['c'][h]
             if b not in cache: cache[b] = open(os.path.join(VOICE, f'{lang}-{b:02d}.mp3'), 'rb').read()
             return cache[b][off:off + ln]
-        newM, fresh, missing, done = {}, collections.OrderedDict(), 0, []
+        newM, fresh, missing, done = collections.OrderedDict(), {}, 0, []
         for o in sorted((o for o in L if o['lang'] == lang), key=lambda o: ORDER.get(o['part'], 99)):
             h = vhash(o['key']); s = sig(lang, o['who']); p = cache_path(lang, h, s)
             ok = M['c'].get(h, {}).get('s') == s and M['c'][h].get('k') == o['key'] and h in I['c']
-            if os.path.exists(p): fresh[h] = mp3(p); done.append(p)          # made since the last pack (new, changed, or redone)
+            if os.path.exists(p): fresh[h] = p; done.append(p)                # made since the last pack (new, changed, or redone)
             elif not ok: missing += 1; print('  missing (run make):', lang, o['key']); continue
             newM[h] = {'k': o['key'], 's': s, 'part': o['part'], 'who': o['who']}
+        G, U, T = layout(lang, newM)
+        old = [h for h in I['c'] if h not in newM]                          # older voice, still not remade
         if a.compact:
-            items = [(h, fresh[h] if h in fresh else clip(h)) for h in sorted(newM, key=lambda h: ORDER.get(newM[h]['part'], 99))]
-            items += [(h, clip(h)) for h in I['c'] if h not in newM]       # older voice, still used for lines not remade
-            start = 0
+            def data(h):
+                w = fresh.get(h) or wav_for(lang, h, newM[h]['who'])
+                return mp3(w) if w else clip(h)
+            plan = [(g, [(h, data(h)) for h in G[g]]) for g in GROUPS if g != 'cu']
+            plan.append(('cu', [(h, data(h)) for h in G['cu']] + [(h, clip(h)) for h in old]))
+            start = 0; I['c'] = {}; I['p'] = {}
         else:
-            items = list(fresh.items()); start = I['n']
-        bufs, buf, pos = [], b'', {}
-        for h, data in items:
-            if buf and len(buf) + len(data) > MAXB: bufs.append(buf); buf = b''
-            pos[h] = [start + len(bufs), len(buf), len(data)]; buf += data
-        if buf: bufs.append(buf)
+            plan = [(g, [(h, mp3(fresh[h])) for h in G[g] if h in fresh]) for g in GROUPS]
+            start = I['n']; I.setdefault('p', {})
+        bufs, pos = [], {}
+        for g, items in plan:
+            if not items: continue
+            buf, cap = b'', (MAXB_CU if g == 'cu' else MAXB); files = []
+            for h, d in items:
+                if buf and len(buf) + len(d) > cap: bufs.append(buf); files.append(start + len(bufs) - 1); buf = b''
+                pos[h] = [start + len(bufs), len(buf), len(d)]; buf += d
+            bufs.append(buf); files.append(start + len(bufs) - 1)
+            I['p'][g] = I['p'].get(g, []) + files
         if a.compact:
             for f in os.listdir(VOICE):
                 if re.fullmatch(rf'{lang}-\d+\.mp3', f): os.remove(os.path.join(VOICE, f))
-            I['c'] = {}
         I['c'].update(pos)
-        for i, data in enumerate(bufs): open(os.path.join(VOICE, f'{lang}-{start + i:02d}.mp3'), 'wb').write(data)
+        for i, d in enumerate(bufs): open(os.path.join(VOICE, f'{lang}-{start + i:02d}.mp3'), 'wb').write(d)
         I['n'] = start + len(bufs)
-        parts = collections.defaultdict(set)
-        for h, m in newM.items(): parts[m['part']].add(I['c'][h][0])
-        I['p'] = {k: sorted(v) for k, v in sorted(parts.items(), key=lambda kv: ORDER.get(kv[0], 99))}   # part -> its mp3 files
-        json.dump(I, open(ip, 'w'), separators=(',', ':'))
+        I['p'] = {g: I['p'][g] for g in GROUPS if I['p'].get(g)}
+        for g in GROUPS:
+            for h in G[g]: newM[h]['g'] = g
+        json.dump({'n': I['n'], 'c': I['c'], 'p': I['p']}, open(ip, 'w'), separators=(',', ':'))
         json.dump({'c': newM}, open(os.path.join(HERE, f'manifest-{lang}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
         for p in done:   # packed: keep a copy aside, so the next pack doesn't add it again
             d = os.path.join(os.path.dirname(p), 'packed'); os.makedirs(d, exist_ok=True)
             for ext in ('.wav', '.json'):
                 if os.path.exists(p[:-4] + ext): os.replace(p[:-4] + ext, os.path.join(d, os.path.basename(p)[:-4] + ext))
-        tot = sum(os.path.getsize(os.path.join(VOICE, f'{lang}-{b:02d}.mp3')) for b in range(I['n']))
-        print(lang, 'new-voice lines', len(newM), '(new now', len(fresh), ') files', I['n'], 'written', len(bufs), 'all MB', round(tot / 1e6, 1), 'missing', missing)
+        size = lambda fs: sum(os.path.getsize(os.path.join(VOICE, f'{lang}-{b:02d}.mp3')) for b in fs)
+        print(lang, f'{kbps()}k' if a.compact else '', 'new-voice lines', len(newM), '(new now', len(fresh), ') files', I['n'], 'written', len(bufs),
+              'all MB', round(size(range(I['n'])) / 1e6, 1), 'missing', missing)
+        for g, fs in I['p'].items(): print(f'   {g:6s} files {fs[0]:>2}–{fs[-1]:<2} ({len(fs):>2})  {size(fs) / 1e6:5.2f} MB  first file {size(fs[:1]) / 1e3:4.0f} KB')
+        heard = set(U) | set(T); heard_old = [h for h in heard if h not in newM and h in I['c']]; none = [h for h in heard if h not in I['c']]
+        print('   test runs: lines still in the old voice', len(heard_old), '· lines with no recording', len(none))
 
 # ---------------------------------------------------------------- listening page
 def cmd_page(a):

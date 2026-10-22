@@ -1,0 +1,638 @@
+[
+[
+"man0",
+"You did it! Pick a new friend for your zoo!",
+"",
+1
+],
+[
+"man2",
+"Pop! Something jumped out of the box! Ben feels surprised.",
+"",
+1
+],
+[
+"man6",
+"Look, it’s an apple.",
+"",
+1
+],
+[
+"man6",
+"Na built a tall tower all by herself. She feels proud.",
+"",
+1
+],
+[
+"man7",
+"Your golden key opened a new island!",
+"",
+1
+],
+[
+"man7",
+"Look, it’s a banana.",
+"",
+1
+],
+[
+"man7",
+"Banana.",
+"",
+0.5
+],
+[
+"man1",
+"Lam’s kite is flying high! He feels excited.",
+"",
+1
+],
+[
+"man2",
+"It’s Lam! Lam is on the slide.",
+"",
+1
+],
+[
+"man2",
+"It’s Ben! Ben is in the box.",
+"",
+1
+],
+[
+"chung",
+"Ben dropped his ice cream. He feels sad.",
+"",
+1
+],
+[
+"chung",
+"The ball knocked down Lam’s tower. He feels angry.",
+"",
+1
+],
+[
+"chung",
+"Boom! Thunder! Ben feels scared.",
+"",
+1
+],
+[
+"chung",
+"Na played all day long. She feels tired.",
+"",
+1
+],
+[
+"chung",
+"We eat breakfast in the morning.",
+"",
+1
+],
+[
+"chung",
+"We play outside in the afternoon.",
+"",
+1
+],
+[
+"chung",
+"We go to sleep at night.",
+"",
+1
+],
+[
+"chung",
+"It’s clapping!",
+"",
+1
+],
+[
+"chung",
+"It’s a drum!",
+"",
+1
+],
+[
+"chung",
+"It’s a car!",
+"",
+1
+],
+[
+"chung",
+"Look, it’s a cat.",
+"",
+1
+],
+[
+"chung",
+"Cat.",
+"",
+0.5
+],
+[
+"chung",
+"cat",
+"",
+0.5
+],
+[
+"chung",
+"Look, it’s a fish.",
+"",
+1
+],
+[
+"chung",
+"Fish.",
+"",
+0.5
+],
+[
+"chung",
+"fish",
+"",
+0.5
+],
+[
+"chung",
+"Look, it’s a star.",
+"",
+1
+],
+[
+"chung",
+"Star.",
+"",
+0.5
+],
+[
+"chung",
+"star",
+"",
+0.5
+],
+[
+"chung",
+"Look, it’s a balloon.",
+"",
+1
+],
+[
+"chung",
+"Balloon.",
+"",
+0.5
+],
+[
+"chung",
+"buh",
+"",
+0.5
+],
+[
+"chung",
+"loon",
+"",
+0.5
+],
+[
+"chung",
+"Look, it’s a present.",
+"",
+1
+],
+[
+"chung",
+"Present.",
+"",
+0.5
+],
+[
+"chung",
+"pre",
+"",
+0.5
+],
+[
+"chung",
+"zent",
+"",
+0.5
+],
+[
+"man1",
+"Listen! That’s you counting!",
+"",
+1
+],
+[
+"man3",
+"Listen! That’s you!",
+"",
+1
+],
+[
+"man4",
+"That one is not red.",
+"",
+1
+],
+[
+"man4",
+"All red! All red!",
+"",
+1
+],
+[
+"man4",
+"Look at the number on the cart: four. Put four blue things in the cart!",
+"",
+1
+],
+[
+"man4",
+"That one is not blue.",
+"",
+1
+],
+[
+"man4",
+"That one is not yellow.",
+"",
+1
+],
+[
+"man4",
+"All yellow! All yellow!",
+"",
+1
+],
+[
+"man3",
+"A cookie!",
+"",
+1
+],
+[
+"man5",
+"Oops, it missed! Here’s another one.",
+"",
+1
+],
+[
+"man6",
+"ap-pull. Two jumps!",
+"",
+1
+],
+[
+"man6",
+"fish. One jump!",
+"",
+1
+],
+[
+"man2",
+"It’s Lam! Lam is in the box.",
+"",
+1
+],
+[
+"man2",
+"It’s Ben! Ben is in the bush.",
+"",
+1
+],
+[
+"man0",
+"",
+"Ơ, đó là hai.",
+1
+],
+[
+"man0",
+"",
+"Con làm xong rồi! Chọn một bạn thú mới cho sở thú nhé!",
+1
+],
+[
+"man2",
+"",
+"Bụp! Có gì nhảy ra khỏi hộp! Ben thấy ngạc nhiên.",
+1
+],
+[
+"man6",
+"",
+"Nhìn này, quả táo.",
+1
+],
+[
+"man6",
+"",
+"Na tự xây được tháp cao. Bạn ấy thấy tự hào.",
+1
+],
+[
+"man7",
+"",
+"Chìa khoá vàng của con đã mở một hòn đảo mới!",
+1
+],
+[
+"man7",
+"",
+"Nhìn này, quả chuối.",
+1
+],
+[
+"man7",
+"",
+"Quả chuối.",
+0.5
+],
+[
+"man1",
+"",
+"Diều của Lam bay cao quá! Bạn ấy thấy háo hức.",
+1
+],
+[
+"man2",
+"",
+"Là Lam! Lam ở trên cầu trượt.",
+1
+],
+[
+"man2",
+"",
+"Là Ben! Ben ở trong cái hộp.",
+1
+],
+[
+"chung",
+"",
+"Ben làm rơi kem. Bạn ấy thấy buồn.",
+1
+],
+[
+"chung",
+"",
+"Quả bóng làm đổ tháp của Lam. Bạn ấy thấy giận.",
+1
+],
+[
+"chung",
+"",
+"Ầm! Sấm nổ! Ben thấy sợ.",
+1
+],
+[
+"chung",
+"",
+"Na chơi cả ngày rồi. Bạn ấy thấy mệt.",
+1
+],
+[
+"chung",
+"",
+"Mình ăn sáng vào buổi sáng.",
+1
+],
+[
+"chung",
+"",
+"Mình chơi ngoài trời vào buổi chiều.",
+1
+],
+[
+"chung",
+"",
+"Mình đi ngủ vào buổi tối.",
+1
+],
+[
+"chung",
+"",
+"Tiếng vỗ tay đấy!",
+1
+],
+[
+"chung",
+"",
+"Tiếng trống đấy!",
+1
+],
+[
+"chung",
+"",
+"Tiếng xe ô tô đấy!",
+1
+],
+[
+"chung",
+"",
+"Nhìn này, con mèo.",
+1
+],
+[
+"chung",
+"",
+"Con mèo.",
+0.5
+],
+[
+"chung",
+"",
+"cat",
+0.5
+],
+[
+"chung",
+"",
+"Nhìn này, con cá.",
+1
+],
+[
+"chung",
+"",
+"Con cá.",
+0.5
+],
+[
+"chung",
+"",
+"fish",
+0.5
+],
+[
+"chung",
+"",
+"Nhìn này, ngôi sao.",
+1
+],
+[
+"chung",
+"",
+"Ngôi sao.",
+0.5
+],
+[
+"chung",
+"",
+"star",
+0.5
+],
+[
+"chung",
+"",
+"Nhìn này, bóng bay.",
+1
+],
+[
+"chung",
+"",
+"Bóng bay.",
+0.5
+],
+[
+"chung",
+"",
+"buh",
+0.5
+],
+[
+"chung",
+"",
+"loon",
+0.5
+],
+[
+"chung",
+"",
+"Nhìn này, hộp quà.",
+1
+],
+[
+"chung",
+"",
+"Hộp quà.",
+0.5
+],
+[
+"chung",
+"",
+"pre",
+0.5
+],
+[
+"chung",
+"",
+"zent",
+0.5
+],
+[
+"chung",
+"",
+"Nhìn này, con bướm.",
+1
+],
+[
+"chung",
+"",
+"Con bướm.",
+0.5
+],
+[
+"man1",
+"",
+"Nghe này, con đếm đấy!",
+1
+],
+[
+"man3",
+"",
+"Nghe này, giọng của con đấy!",
+1
+],
+[
+"man4",
+"",
+"Cái đó không phải màu đỏ.",
+1
+],
+[
+"man4",
+"",
+"Màu đỏ! Màu đỏ!",
+1
+],
+[
+"man4",
+"",
+"Nhìn số trên xe đẩy: số bốn. Con bỏ bốn thứ màu xanh dương vào xe nhé!",
+1
+],
+[
+"man4",
+"",
+"Cái đó không phải màu xanh dương.",
+1
+],
+[
+"man4",
+"",
+"Màu xanh dương! Màu xanh dương!",
+1
+],
+[
+"man4",
+"",
+"Cái đó không phải màu vàng.",
+1
+],
+[
+"man4",
+"",
+"Màu vàng! Màu vàng!",
+1
+],
+[
+"man3",
+"",
+"Bánh quy!",
+1
+],
+[
+"man5",
+"",
+"Ối, trượt rồi! Thêm một khối nữa nhé.",
+1
+],
+[
+"man6",
+"",
+"ap - pull. Hai bước!",
+1
+],
+[
+"man6",
+"",
+"fish. Một bước!",
+1
+],
+[
+"man2",
+"",
+"Là Lam! Lam ở trong cái hộp.",
+1
+],
+[
+"man2",
+"",
+"Là Ben! Ben ở trong bụi cây.",
+1
+]
+]
