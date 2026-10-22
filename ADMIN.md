@@ -47,6 +47,7 @@ Chỉ gửi **link app**. **Không** gửi link Google Sheet (trong Sheet có em
 >
 > 1. Mở link: **https://minhtranlab.github.io/choioi/**
 >    Trên iPad / iPhone: bấm nút Chia sẻ → **Thêm vào MH chính** để mở như một app.
+>    Lần đầu, anh/chị mở app khi máy đang dùng **Wi-Fi** giúp em: app cần tải khoảng 10 MB trước bài đầu tiên (Wi-Fi vài giây, 4G có thể gần 1 phút), rồi tải tiếp từng bài trong lúc bé chơi. Từ lần sau mở gần như ngay. Anh/chị mở link bằng **Safari** (iPad/iPhone) hoặc **Chrome**, không mở ngay trong Zalo/Facebook (bấm "…" → "Mở bằng trình duyệt").
 > 2. Chọn **Đăng ký**, điền tên bé, năm sinh, **tên đăng nhập** (chữ thường không dấu, ví dụ `bin2021`), **mã PIN 4 số** và email của anh/chị.
 > 3. Ghi nhớ tên đăng nhập và PIN để mở trên máy khác: chọn **Đăng nhập** là tiến độ của bé tự tải về.
 >
@@ -93,9 +94,12 @@ Mở Google Sheet. Báo cáo tự cập nhật mỗi khi một bé chơi. Muốn
 | **Nhập sai PIN quá nhiều** | Sai 10 lần thì tài khoản khoá 15 phút. Đợi 15 phút, hoặc đặt lại PIN (mở khoá ngay). |
 | Phụ huynh **quên tên đăng nhập** | Tìm theo email hoặc tên bé trong bảng **Báo cáo** / **Accounts**. |
 | **Xoá một bé** | Xoá dòng của bé ở **Accounts** và các dòng của bé ở **Progress**, rồi menu **Chồi Ơi → Cập nhật báo cáo**. |
+| **"Chơi thử" bị mất tiến độ** | "Chơi thử" chỉ lưu tiến độ trên máy đó. Safari có thể xoá dữ liệu của trang không được mở trong 7 ngày (trừ khi đã Thêm vào MH chính). Dặn phụ huynh tạo tài khoản (**Settings → Tạo tài khoản để lưu tiến độ**), hoặc Thêm vào MH chính. |
 | **Đổi máy / cài lại** | Mở link → **Đăng nhập** → tên đăng nhập + PIN. Riêng các đoạn ghi âm giọng bé chỉ nằm trên máy cũ. |
 | **Sheet không có dữ liệu mới** | (1) App đã có địa chỉ `/exec` chưa: Settings → Tài khoản. (2) Bản triển khai có để *Bất kỳ ai* không. (3) Có lỡ tạo bản triển khai mới (địa chỉ đổi) không. (4) Mở link app trên GitHub Pages, không mở trong claude.ai: trang xem trước của claude.ai có thể chặn kết nối tới Google. |
-| **Chồi nói bằng giọng máy** | Lần đầu mở (hoặc sau mỗi lần cập nhật), app tải khoảng 26 MB giọng ghi âm; câu nào chưa tải kịp sẽ đọc bằng giọng máy. Để máy trên Wi-Fi vài phút rồi mở lại. |
+| **Màn chờ lâu khi mở lần đầu** | Trước bài đầu tiên app tải khoảng 10 MB giọng của ngôn ngữ đang chọn: Wi-Fi vài giây, 4G chậm khoảng 1 phút. Trong lúc chờ có thanh tiến độ và trò chạm bong bóng (không tính điểm). Mỗi bài sau chỉ tải thêm 2–4 MB, tải ngầm trong lúc bé chơi bài trước. Giọng đã tải được giữ trong máy, mở lại không tải lại. Cách xử lý: dặn phụ huynh mở lần đầu trên Wi-Fi. |
+| **Có câu chỉ hiện chữ, không có tiếng** | App không bao giờ đọc cả bài bằng giọng máy. Câu nào chưa tải kịp (mạng rất yếu hoặc mất mạng giữa chừng) thì hiện chữ, app vẫn tải tiếp, các câu sau có tiếng khi tải xong. Bật Wi-Fi hoặc chờ mạng ổn rồi chơi tiếp. |
+| **Mở trong Zalo không có tiếng / mất tiến độ** | Dặn phụ huynh mở bằng Safari/Chrome (trong Zalo: "…" → "Mở bằng trình duyệt"), rồi **Thêm vào MH chính**. |
 
 ---
 

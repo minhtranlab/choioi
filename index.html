@@ -1296,6 +1296,15 @@ html.paused *,html.paused *::before,html.paused *::after{animation-play-state:pa
 /* waiting for Chồi's voice before a level (bản 3, 21/10) */
 .vwait{display:grid;justify-items:center;gap:22px;padding:18px 0}
 .vwait .mascot{animation:vhop 1.1s ease-in-out infinite}
+.wplay{position:absolute;inset:0;z-index:3;overflow:hidden;border-radius:inherit;touch-action:none}
+.wbub{position:absolute;bottom:-14%;aspect-ratio:1;padding:0;border:3px solid rgba(58,27,73,.55);border-radius:50%;cursor:pointer;
+  background:radial-gradient(circle at 34% 30%,#fff 0 14%,transparent 15%),radial-gradient(circle at 50% 60%,rgba(255,255,255,.15),rgba(255,255,255,.55)),var(--c);opacity:.88;
+  animation:wrise var(--d) linear forwards,wsway 2.2s ease-in-out infinite alternate}
+.wbub.pop{animation:wpop .26s ease-out forwards}
+@keyframes wrise{to{bottom:112%}}@keyframes wsway{from{margin-left:-1.5%}to{margin-left:1.5%}}@keyframes wpop{to{transform:scale(1.5);opacity:0}}
+.wpolly{position:absolute;width:9%;min-width:46px;translate:-50% -50%;pointer-events:none;z-index:2;filter:drop-shadow(0 3px 0 rgba(58,27,73,.25))}
+.wpolly.left svg{transform:scaleX(-1)}
+.vwait{position:relative;z-index:4;pointer-events:none}
 .vbar{width:min(60vw,320px);height:18px;border-radius:12px;background:rgba(75,42,123,.12);overflow:hidden;box-shadow:inset 0 0 0 3px #fff}
 .vbar i{display:block;height:100%;width:4%;border-radius:12px;background:linear-gradient(90deg,#7cc35b,#ffc928);transition:width .4s ease}
 @keyframes vhop{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
@@ -2330,7 +2339,11 @@ async function askAgain(){ if(!RUN||RUN.aborted) return; const b=$('#askAgain');
    voice) waits for those files first, with a small happy waiting screen; then every line of it plays from them, never the device voice
    in the middle (a line not recorded yet shows its subtitle only). If the files can't load today, the device voice reads that whole
    level. Levels not in the new voice yet keep the older way: a missing line is read by the device voice. ---------------- */
-const VOICE={idx:{},bundles:{},loading:{},ready:{},init:{},cur:null,mode:null,missing:new Set()};
+const VOICE={idx:{},loading:{},ready:{},init:{},cur:null,mode:null,missing:new Set(),
+  // 22/10 (đo mở lần đầu): only the chosen language loads (active); a file once loaded is kept on the device (Cache Storage), so it never
+  // loads twice; only the files the next level needs load in the background; a few files stay in memory (mem, the newest last)
+  active:null,ctl:{},mem:new Map(),have:new Set(),fp:{},failAt:{},cacheOK:null};
+const VCACHE_NAME='choioi-voice-1', VMEM_MAX=18;
 const VSPEEDS={s:'Chậm',m:'Vừa',f:'Nhanh'};
 const vSpeed=()=>VSPEEDS[S.vspeed]?S.vspeed:'m';
 /** the set to read in this language: the chosen speed when its files exist, else the usual one */
@@ -2338,14 +2351,44 @@ const vSet=lang=>{ const sp=vSpeed(); if(sp==='m') return lang; const k=lang+'-'
 const gapNow=()=>{ const sp=vSet(isVi()?'vi':'en').split('-')[1]||'m'; return ({s:800,m:GAP,f:520})[sp] };   // the pause after a line follows the speed
 function vKey(text,slow){ let t=String(text).replace(/\s+/g,' ').trim(); const n=S.child&&S.child.name&&S.child.name.trim(); if(n){ try{ t=t.replace(new RegExp('(^|[^\\p{L}])'+n.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?![\\p{L}])','gu'),'$1{N}') }catch(e){} } return (slow?'~':'')+t }
 function vHash(s){ let h=2166136261; for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619) } return (h>>>0).toString(36) }
-function vBundle(set,b){ const k=set+'/'+b; if(VOICE.bundles[k]) return Promise.resolve(VOICE.bundles[k]);
-  return VOICE.loading[k]||(VOICE.loading[k]=fetch(`voice/${set}-${String(b).padStart(2,'0')}.mp3`).then(r=>{ if(!r.ok) throw new Error('voice '+r.status); return r.arrayBuffer() }).then(buf=>{ delete VOICE.loading[k]; return (VOICE.bundles[k]=buf) }).catch(e=>{ delete VOICE.loading[k]; throw e })) }
-/** load a set's index (the promise resolves once the index is here); its bundles then come quietly, the next level's first */
-function voiceInit(set){ if(VOICE.ready[set]!==undefined) return VOICE.init[set]; VOICE.ready[set]=false; return VOICE.init[set]=voiceLoad(set) }
-async function voiceLoad(set){
-  try{ const r=await fetch(`voice/${set}.json`); if(!r.ok) throw 0; VOICE.idx[set]=await r.json(); VOICE.ready[set]=true }catch(e){ VOICE.ready[set]=null; return }
-  (async()=>{ const I=VOICE.idx[set], first=vNeed(set,Math.min(S.lesson||0,7))||[];
-    for(const b of new Set([...first,...Array.from({length:I.n},(_,i)=>i)])){ try{ await vBundle(set,b) }catch(e){} } })() }
+/** the device's own store of voice files (Cache Storage), or null when this browser can't keep one */
+let _vc=null;
+function vCache(){ if(_vc) return _vc; _vc=(async()=>{ try{ if(!('caches' in window)) throw 0; const c=await caches.open(VCACHE_NAME); VOICE.cacheOK=true; return c }catch(e){ VOICE.cacheOK=false; return null } })(); return _vc }
+/** a fingerprint of what a file holds (from the index): it changes when the file is packed again, so an old copy kept on the device is never used */
+function vPrints(I){ if(Array.isArray(I.h)) return I.h.map(String); const L=Array.from({length:I.n},()=>[]); for(const e of Object.values(I.c)){ if(L[e[0]]) L[e[0]].push(e[1]+':'+e[2]) }
+  return L.map(x=>vHash(x.sort((p,q)=>parseInt(p)-parseInt(q)).join(','))) }
+const vUrl=(set,b)=>`voice/${set}-${String(b).padStart(2,'0')}.mp3?v=${(VOICE.fp[set]||[])[b]||0}`;
+function vMemPut(k,buf){ VOICE.mem.delete(k); VOICE.mem.set(k,buf); const max=VOICE.cacheOK===false?999:VMEM_MAX; while(VOICE.mem.size>max) VOICE.mem.delete(VOICE.mem.keys().next().value) }
+const vHas=(set,b)=>VOICE.mem.has(set+'/'+b)||VOICE.have.has(set+'/'+b);
+/** a voice file: from memory, else from the device's store, else from the network (then kept on the device) */
+function vBundle(set,b){ const k=set+'/'+b; const m=VOICE.mem.get(k); if(m){ vMemPut(k,m); return Promise.resolve(m) }
+  return VOICE.loading[k]||(VOICE.loading[k]=(async()=>{ const url=vUrl(set,b), c=await vCache(); let buf=null;
+    if(c){ try{ const r=await c.match(url); if(r) buf=await r.arrayBuffer() }catch(e){} }
+    if(!buf){ const ctl=VOICE.ctl[set]||(VOICE.ctl[set]=new AbortController()); const r=await fetch(url,{signal:ctl.signal}); if(!r.ok) throw new Error('voice '+r.status); buf=await r.arrayBuffer();
+      if(c){ c.put(url,new Response(buf.slice(0),{headers:{'Content-Type':'audio/mpeg'}})).then(()=>{ VOICE.have.add(k) },()=>{});   // kept on the device, without holding up the next file
+        if(!vBundle.asked&&navigator.storage&&navigator.storage.persist){ vBundle.asked=1; navigator.storage.persist().catch(()=>{}) } } }
+    else VOICE.have.add(k);
+    vMemPut(k,buf); return buf })().finally(()=>{ delete VOICE.loading[k] })) }
+/** the language the child hears now: its files load; the other language stops loading and leaves memory (22/10) */
+function voiceWant(){ if(FAST||HASH==='time') return; const set=vSet(isVi()?'vi':'en'); if(VOICE.active===set) return; VOICE.active=set;
+  for(const [k,ctl] of Object.entries(VOICE.ctl)) if(k!==set){ try{ ctl.abort() }catch(e){} delete VOICE.ctl[k] }
+  for(const k of [...VOICE.mem.keys()]) if(!k.startsWith(set+'/')) VOICE.mem.delete(k);
+  voiceInit(set).then(()=>{ if(VOICE.ready[set]) vPrefetch(set,Math.min(S.lesson||0,7)); else if(set!==(isVi()?'vi':'en')){ VOICE.active=null; voiceWant() } }) }
+/** load a set's index (the promise resolves once the index is here); a failed index is tried again after a moment */
+function voiceInit(set){ if(VOICE.ready[set]===null&&Date.now()-(VOICE.failAt[set]||0)>8000) VOICE.ready[set]=undefined;
+  if(VOICE.ready[set]!==undefined) return VOICE.init[set]; VOICE.ready[set]=false; return VOICE.init[set]=voiceLoad(set) }
+/** the index: from the network (and kept on the device); with no network, the copy kept on the device */
+async function voiceLoad(set){ const url=`voice/${set}.json`, c=await vCache();
+  const net=fetch(url,{cache:'no-cache'}).then(async r=>{ if(!r.ok) throw 0; const t=await r.text(); if(c) c.put(url,new Response(t,{headers:{'Content-Type':'application/json'}})).catch(()=>{}); return t });
+  let t=null; try{ t=await Promise.race([net,rawWait(5000).then(()=>{ throw 'slow' })]) }catch(e){ net.catch(()=>{}); if(c){ try{ const r=await c.match(url); if(r) t=await r.text() }catch(_){} } if(!t&&e==='slow'){ try{ t=await net }catch(_){} } }
+  if(!t){ VOICE.ready[set]=null; VOICE.failAt[set]=Date.now(); return }
+  try{ VOICE.idx[set]=JSON.parse(t) }catch(e){ VOICE.ready[set]=null; VOICE.failAt[set]=Date.now(); return }
+  const I=VOICE.idx[set]; VOICE.fp[set]=vPrints(I); VOICE.ready[set]=true;
+  // what this device already keeps (and old copies of files packed again are thrown away)
+  if(c){ try{ for(const req of await c.keys()){ const u=new URL(req.url), m=u.pathname.match(/voice\/([a-z]{2}(?:-[sf])?)-(\d+)\.mp3$/); if(!m||m[1]!==set) continue;
+      const b=+m[2]; if(b<I.n&&u.searchParams.get('v')===String(VOICE.fp[set][b])) VOICE.have.add(set+'/'+b); else c.delete(req).catch(()=>{}) } }catch(e){} } }
+/** in the background, one by one: the files a level needs (only that level; 22/10) */
+async function vPrefetch(set,li){ const need=vNeed(set,li)||[]; for(const b of need){ if(VOICE.active!==set) return; if(vHas(set,b)) continue; try{ await vBundle(set,b) }catch(e){ if(VOICE.active!==set) return; await rawWait(2000) } } }
 /** the bundles a level needs (shared lines + the level's own), or null when that level is not in the new voice yet */
 function vNeed(set,li){ const I=VOICE.idx[set]; const P=I&&I.p; if(!P||!P.chung||!P['man'+li]) return null; return [...new Set([...P.chung,...P['man'+li]])] }
 const VCACHE=new Map();
@@ -2360,7 +2403,7 @@ function vEntry(set,text,slow,kid){ const I=VOICE.idx[set]; if(!I) return null; 
 /** a line's clip: an AudioBuffer, null (never recorded) or 'fail' (its file would not load) */
 async function vClip(set,text,slow,kid){ const f=vEntry(set,text,slow,kid); if(!f) return null; const e=f.e;
   const ck=set+e.join(','); if(VCACHE.has(ck)) return VCACHE.get(ck);
-  const buf=await Promise.race([vBundle(set,e[0]).catch(()=>null),rawWait(9000).then(()=>null)]); if(!buf) return 'fail';
+  const buf=await Promise.race([vBundle(set,e[0]).catch(()=>null),rawWait(vHas(set,e[0])?6000:1500).then(()=>null)]); if(!buf) return 'fail';   // not here yet: the subtitle now, the file goes on loading
   const a=ac(); if(!a) return 'fail'; const data=buf.slice(e[1],e[1]+e[2]);
   const ab=await new Promise((res,rej)=>{ try{ const p=a.decodeAudioData(data,res,rej); if(p&&p.then) p.then(res,rej) }catch(err){ rej(err) } }).catch(()=>null); if(!ab) return 'fail';
   ab._own=f.own; VCACHE.set(ck,ab); if(VCACHE.size>80) VCACHE.delete(VCACHE.keys().next().value); return ab }
@@ -2368,22 +2411,41 @@ async function vClip(set,text,slow,kid){ const f=vEntry(set,text,slow,kid); if(!
    mode 'rec': play only recordings · 'device': the files would not load, the device voice reads this whole level · null: the older way */
 async function voiceGate(li){
   VOICE.mode=null; if(FAST||AUTO||HASH==='time'||(inDev()&&DEV.mute)) return;   // test and auto runs: as before
-  const lang=isVi()?'vi':'en'; let set=vSet(lang);
-  await Promise.race([voiceInit(set),rawWait(8000)]); if(VOICE.ready[set]===null&&set!==lang){ set=lang; await Promise.race([voiceInit(set),rawWait(8000)]) }
-  if(!VOICE.ready[set]){ if(VOICE.ready[set]===null) VOICE.mode='device'; return }   // no index today: the device voice, the whole level
-  const need=vNeed(set,li); if(!need) return;   // this level is not in the new voice yet
-  let shown=false, bar=null, n=need.filter(b=>VOICE.bundles[set+'/'+b]).length;
+  voiceWant(); const lang=isVi()?'vi':'en'; let set=vSet(lang);
+  // 22/10: never the device voice for a whole level. What is not here in time shows its subtitle, and goes on loading.
+  // The waiting screen stays while files keep coming (a little game when it takes a while); when nothing comes for 25 s (no network), the level starts anyway.
+  let shown=false, bar=null, n=0, total=1, stopPlay=null, last=Date.now(), pt=null;
+  const prog=()=>{ if(bar) bar.style.width=Math.max(4,Math.round(100*n/total))+'%' };
   const show=()=>{ if(shown||!RUN||RUN.aborted) return; shown=true; const c=card();
     const w=el(`<div class="vwait fade"><div class="mascot" data-mood="happy" style="width:min(30vh,170px)">${mascotSVG()}</div><div class="vbar"><i></i></div></div>`); c.append(w); bar=$('.vbar i',w);
-    setCaption(...(isVi()?['Chồi đang chuẩn bị, con đợi một chút nhé…','Getting ready…']:['Getting ready…','Chồi đang chuẩn bị, con đợi một chút nhé…'])); prog() };
-  const prog=()=>{ if(bar) bar.style.width=Math.max(4,Math.round(100*n/need.length))+'%' };
+    setCaption(...(isVi()?['Chồi đang chuẩn bị, con đợi một chút nhé…','Getting ready…']:['Getting ready…','Chồi đang chuẩn bị, con đợi một chút nhé…'])); prog();
+    pt=setTimeout(()=>{ if(RUN&&!RUN.aborted&&w.isConnected) stopPlay=waitPlay(c) },2500) };   // a long wait: bubbles to pop, Polly after the finger
   const tm=setTimeout(show,350);
-  const load=async()=>{ for(const b of need){ if(VOICE.bundles[set+'/'+b]) continue; let ok=false;
-    for(let t=0;t<3&&!ok;t++){ try{ await vBundle(set,b); ok=true }catch(e){ await rawWait(800*(t+1)) } }
-    if(!ok) throw new Error('voice file'); n++; prog() } };
-  try{ await Promise.race([load(),rawWait(90000).then(()=>{ throw new Error('slow') })]); VOICE.mode='rec'; if(bar){ bar.style.width='100%'; await rawWait(250) } }
-  catch(e){ VOICE.mode='device' }   // the recorded voice could not load today: the device voice reads this whole level (never a mix)
-  clearTimeout(tm); if(shown){ card(); setCaption('','') } }
+  const alive=()=>RUN&&!RUN.aborted;
+  while(!VOICE.ready[set]&&alive()&&Date.now()-last<25000){ await Promise.race([voiceInit(set),rawWait(1500)]); if(!VOICE.ready[set]){ await rawWait(800); set=vSet(lang) } }
+  const need=VOICE.ready[set]?vNeed(set,li):null;
+  if(VOICE.ready[set]&&!need) VOICE.mode=null;   // this level is not in the new voice yet: the older way
+  else { VOICE.mode='rec';
+    if(need){ total=need.length; n=need.filter(b=>vHas(set,b)).length; prog();
+      const load=(async()=>{ for(const b of need){ if(vHas(set,b)) continue;
+        for(;;){ try{ await vBundle(set,b); break }catch(e){ if(!alive()||VOICE.active!==set) return; await rawWait(1500) } }   // keeps trying, also after the level has started
+        n++; last=Date.now(); prog() } if(alive()&&VOICE.active===set) vPrefetch(set,Math.min(li+1,7)) })();   // then only the next level, in the background
+      while(n<total&&alive()&&Date.now()-last<25000) await Promise.race([load,rawWait(400)]) } }
+  clearTimeout(tm); clearTimeout(pt); if(stopPlay) stopPlay(); if(shown){ if(bar){ bar.style.width=Math.max(4,Math.round(100*n/total))+'%'; await rawWait(250) } card(); setCaption('','') } }
+/** while the voice loads (22/10): bubbles float up, a tap pops one (a little sound made here, nothing to load); Polly flies after the finger.
+ *  Nothing is counted. Returns a function that ends it. */
+function waitPlay(host){ const f=el(`<div class="wplay" aria-hidden="true"></div>`); host.append(f);
+  const pol=el(`<div class="wpolly flying">${pollySVG(false)}</div>`); f.append(pol);
+  let px=78, py=30, tx=78, ty=30, alive=true, tmr=null;
+  const aim=e=>{ const r=f.getBoundingClientRect(); if(!r.width) return; tx=Math.max(6,Math.min(94,(e.clientX-r.left)/r.width*100)); ty=Math.max(8,Math.min(88,(e.clientY-r.top)/r.height*100)) };
+  f.addEventListener('pointermove',aim); f.addEventListener('pointerdown',aim);
+  const stopR=rafLoop(dt=>{ const k=Math.min(1,dt*2.6); px+=(tx-px)*k; py+=(ty-py)*k+Math.sin(performance.now()/260)*.06; pol.style.left=px+'%'; pol.style.top=py+'%'; pol.classList.toggle('left',tx<px-.5) });
+  const pop=b=>{ if(b.classList.contains('pop')) return; b.classList.add('pop'); tone(560+Math.random()*500,.09,'sine',.07,0,1250); burst(center(b),{n:5}); setTimeout(()=>b.remove(),260) };
+  const COL=['#9ED8F0','#F7A9C4','#FFE59A','#B8E6A8','#D7C4F2'];
+  const bub=()=>{ if(!alive) return; if(f.querySelectorAll('.wbub:not(.pop)').length<6){ const sz=7+Math.random()*5, b=el(`<button class="wbub" tabindex="-1" style="left:${6+Math.random()*82}%;width:${sz}%;--d:${(5.5+Math.random()*3).toFixed(1)}s;--c:${pick(COL)}"><i></i></button>`);
+      b.addEventListener('pointerdown',()=>pop(b)); b.addEventListener('animationend',e=>{ if(e.animationName==='wrise') b.remove() }); f.append(b) }
+    tmr=setTimeout(bub,650) };
+  bub(); return ()=>{ alive=false; clearTimeout(tmr); stopR(); f.remove() } }
 function voiceStop(){ const c=VOICE.cur; VOICE.cur=null; if(c){ try{ c.src.onended=null; c.src.stop() }catch(e){} if(c.fin) c.fin() } }
 let SAYN=0;
 /* "Watch me first!", "Now it’s your turn!" and a review's "Remember: …" wait for the next question, so they are said
@@ -2428,7 +2490,7 @@ function say(en,vi,opt={}){
       return }
     const set=vSet(lang); const ip=voiceInit(set);
     (VOICE.ready[set]===false&&ip?Promise.race([ip,rawWait(2500)]):Promise.resolve()).then(()=>{ if(done) return 'dev'; if(!VOICE.ready[set]){ device(); return 'dev' }
-      voiceStop(); try{ speechSynthesis.cancel() }catch(e){} return vClip(set,text,slow,opt.kid||false) }).then(buf=>{ if(done||buf==='dev') return; if(!buf||buf==='fail') return device(); const a=ac(); if(!a||a.state!=='running') return device();
+      voiceStop(); try{ speechSynthesis.cancel() }catch(e){} return vClip(set,text,slow,opt.kid||false) }).then(buf=>{ if(done||buf==='dev') return; if(!buf) return device(); if(buf==='fail') return setTimeout(fin,readMs);   // 22/10: recorded but not loaded in time: the subtitle, it goes on loading const a=ac(); if(!a||a.state!=='running') return device();
       play(buf,a) }).catch(()=>device());
   });
 }
@@ -4787,7 +4849,7 @@ function drawMapOld(){
     if(limitReached()){ limitOverlay(false).then(c=>{ b.classList.remove('go'); if(c==='more') setTimeout(()=>runSession(i),200) }); return }
     setTimeout(()=>runSession(i),260) });
 }
-function renderHome(){ document.body.classList.remove('dimbg');
+function renderHome(){ document.body.classList.remove('dimbg'); try{ voiceWant() }catch(e){}   // after a login the language may have changed (22/10)
   const m=S.lastMission&&S.lastMission.d===today()&&MISSIONS[S.lastMission.id];
   root.className='kid';
   root.innerHTML=SCENE+`<div class="wrap-kid map">${topbar(false,'<div></div>')}
@@ -4872,13 +4934,13 @@ function renderParent(tab){
   root.querySelectorAll('[data-clip]').forEach(b=>b.onclick=async()=>{ const blob=await getClip(b.dataset.clip); if(blob) playBlob(blob) });
   if(PTAB!=='settings') return;
   wireAcctPanel(()=>renderParent('settings'));
-  $('#setLang').querySelectorAll('button').forEach(b=>b.onclick=()=>{ S.lang=b.dataset.v; save(); renderParent() });
+  $('#setLang').querySelectorAll('button').forEach(b=>b.onclick=()=>{ S.lang=b.dataset.v; save(); voiceWant(); renderParent() });
   $('#setMusic').querySelectorAll('button').forEach(b=>b.onclick=()=>{ S.music=b.dataset.v==='1'; save(); renderParent() });
   // the speed row shows once the slow and the fast recordings exist for this language (voice/<lang>-s.json, voice/<lang>-f.json)
   { const L=S.lang==='vi'?'vi':'en', row=$('#vspRow');
     if(row) Promise.all(['s','f'].map(k=>fetch(`voice/${L}-${k}.json`,{method:'HEAD'}).then(r=>r.ok).catch(()=>false))).then(ok=>{ if(ok.every(Boolean)&&row.isConnected) row.style.display='' });
     const vspTry=async()=>{ const n=$('#vspNote'); ac(); const set=vSet(L); try{ if(n) n.textContent='Đang tải giọng…'; await voiceInit(set); if(!VOICE.ready[set]) throw 0; if(n) n.textContent='Tốc độ '+VSPEEDS[vSpeed()].toLowerCase(); voiceStop(); await say('Hello! Let’s play together!','Xin chào! Mình cùng chơi nhé!') }catch(e){ if(n) n.textContent='Chưa tải được giọng. Kiểm tra mạng rồi thử lại.' } };
-    if($('#setVsp')) $('#setVsp').querySelectorAll('button').forEach(b=>b.onclick=()=>{ S.vspeed=b.dataset.v; save(); $('#setVsp').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); vspTry() });
+    if($('#setVsp')) $('#setVsp').querySelectorAll('button').forEach(b=>b.onclick=()=>{ S.vspeed=b.dataset.v; save(); voiceWant(); $('#setVsp').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b)); vspTry() });
     if($('#vspTry')) $('#vspTry').onclick=vspTry }
   const micMsg=ok=>ok?'Đang bật':(micState==='none'?'Trình duyệt này không có micro':'Micro bị chặn. Cho phép micro trong cài đặt trình duyệt, hoặc mở bản web của app');
   $('#micAgain').onclick=async()=>{ S.consentMic=true; const ok=await getMic(true); if(!ok) S.consentMic=false; save(); $('#micStatus2').textContent=micMsg(ok) };
@@ -4966,7 +5028,7 @@ function renderDev(){
   $('#tourAll').onclick=()=>tour(0);
   root.querySelectorAll('[data-tour]').forEach(b=>b.onclick=()=>tour(+b.dataset.tour));
   let armedF=false; $('#freshStart').onclick=async()=>{ if(!armedF){ armedF=true; $('#freshMsg').textContent='Bấm lần nữa để xoá tiến độ, thành phố và ghi âm trên máy này.'; return } try{localStorage.removeItem(KEY)}catch(e){} await clearClips(); S=fresh(); renderSetup() };
-  root.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>{ S.lang=b.dataset.lang; save(); renderDev() });
+  root.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>{ S.lang=b.dataset.lang; save(); voiceWant(); renderDev() });
   root.querySelectorAll('[data-act]').forEach(b=>b.onclick=()=>{ const sk=SK[b.dataset.act]; DEV.fmt=b.dataset.fmt==='—'?null:b.dataset.fmt;
     devRun(async()=>{ ptip(sk); await gameCard(sk.game); await GAMES[sk.game](sk,ROUNDS); confetti(); await sleep(800) }) });
   root.querySelectorAll('[data-lesson]').forEach(b=>b.onclick=()=>devRun(async()=>{ const li=+b.dataset.lesson; S.lesson=Math.max(S.lesson,li); if(li>0) S.introSeen[CHAPTER.id]=true; else S.introSeen={};
@@ -10346,7 +10408,7 @@ window.__choi={get state(){return S},SKILLS,status,planSession,
   demo(id){ RUN={aborted:false,start:Date.now()}; renderPlay(); const sk=SK[id]; ptip(sk); return GAMES[sk.game](sk,ROUNDS).catch(e=>{ if(e!==ABORT) console.error(e) }) },
   mission(id){ RUN={aborted:false,start:Date.now()}; renderPlay(); return giveMission(SK[id]).catch(()=>{}) }};
 if(S.tv){ S.tv=false; save() } document.documentElement.classList.remove('tv');
-if(!FAST&&HASH!=='dev'&&HASH!=='time') setTimeout(()=>{ const L=S.lang==='vi'?'vi':'en'; voiceInit(vSet(L)).then(()=>{ if(!VOICE.ready[vSet(L)]) voiceInit(L) }) },200);   // load the recorded voice early (the chosen speed, else the usual set)
+if(!FAST&&HASH!=='dev'&&HASH!=='time') setTimeout(voiceWant,200);   // load the recorded voice early: only the chosen language, only what the next level needs (22/10)   // load the recorded voice early (the chosen speed, else the usual set)
 onTurn();
 if(HASH==='new'){ try{localStorage.removeItem(KEY)}catch(e){} clearClips(); S=fresh(); renderSetup() } else if(HASH==='dev'){ if(!S.child){ S.child={name:'Bin',birthYear:new Date().getFullYear()-5}; save() } renderDev() } else if(!S.child) renderSetup(); else { renderHome(); if(S.acct){ syncPull().then(ch=>{ if(ch&&!RUN&&$('#pathmap')) renderHome() }); if(S.acct.pending) syncSoon(1500) } }
 </script>
