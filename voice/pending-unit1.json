@@ -1,1 +1,18 @@
-[]
+[
+ {
+  "part": "man0",
+  "en": "A car!",
+  "vi": "Ô tô!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "A bike!",
+  "vi": "Xe đạp!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ }
+]
