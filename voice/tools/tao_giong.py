@@ -43,7 +43,7 @@ def vkey(t, slow=False):
 
 # ---------------------------------------------------------------- text the engine reads
 KEYPFX = re.compile(r'^@(?:[A-Za-z]+:)?')   # "@câu" (bạn nhỏ chung, cũ) hoặc "@Lam:câu" (đúng bạn đó)
-SYL_KEEP = {'bye-bye', 'ding-dong', 'kee-ow', 'đô-mi-nô', 'roly-poly'}   # real words with hyphens, read as one word
+SYL_KEEP = {'bye-bye', 'ding-dong', 'kee-ow', 'đô-mi-nô', 'roly-poly', 'heave-ho'}   # real words with hyphens, read as one word
 def syllables(m):
     """a clapping drill (ba-na-na, ap - pull): each sound said on its own, with a small pause between"""
     w = m.group(0)

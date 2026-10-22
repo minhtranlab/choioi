@@ -11388,6 +11388,41 @@
 "part": "man7",
 "who": "chồi",
 "g": "man7"
+},
+"13ne406": {
+"k": "We’re at the top! Oh, this door is locked too.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"18chtzg": {
+"k": "It’s dark in the cave… Look! Something is shining!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1jsy8aj": {
+"k": "It’s the treasure chest! Heave-ho, let’s carry it out!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"179tge2": {
+"k": "We carried the treasure chest out of the cave!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1osrydl": {
+"k": "Now we can see the chest!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
 }
 }
 }
