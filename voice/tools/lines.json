@@ -2299,6 +2299,18 @@
 },
 {
 "lang": "en",
+"key": "A car!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "A bike!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
 "key": "Here we are at the park! It’s so windy today.",
 "who": "chồi",
 "part": "man1"
@@ -11065,6 +11077,18 @@
 },
 {
 "lang": "vi",
+"key": "Ô tô!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Xe đạp!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
 "key": "Mình tới công viên rồi! Hôm nay gió to quá.",
 "who": "chồi",
 "part": "man1"
@@ -17485,26 +17509,716 @@
 },
 {
 "lang": "en",
-"key": "A car!",
-"who": "chồi",
-"part": "man0"
+"key": "@Lam:Yes!",
+"who": "Lam",
+"part": "chung"
 },
 {
 "lang": "vi",
-"key": "Ô tô!",
-"who": "chồi",
-"part": "man0"
+"key": "@Lam:Ừ!",
+"who": "Lam",
+"part": "chung"
 },
 {
 "lang": "en",
-"key": "A bike!",
-"who": "chồi",
-"part": "man0"
+"key": "@Na:Yes!",
+"who": "Na",
+"part": "chung"
 },
 {
 "lang": "vi",
-"key": "Xe đạp!",
-"who": "chồi",
-"part": "man0"
+"key": "@Na:Ừ!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Yes!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Ừ!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Yes.",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Ừ.",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Yes.",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Ừ.",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Yes.",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Ừ.",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:I feel happy!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Tớ thấy vui!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:I feel happy!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Tớ thấy vui!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:I feel happy!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Tớ thấy vui!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:I feel sad.",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Tớ thấy buồn.",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:I feel sad.",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Tớ thấy buồn.",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:I feel sad.",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Tớ thấy buồn.",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:I feel excited!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Tớ thấy háo hức quá!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:I feel excited!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Tớ thấy háo hức quá!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:I feel excited!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Tớ thấy háo hức quá!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:I feel proud!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Tớ thấy tự hào!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:I feel proud!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Tớ thấy tự hào!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:I feel proud!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Tớ thấy tự hào!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Mình thấy tự hào!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Mình thấy tự hào!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Mình thấy tự hào!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Oh! Butterflies!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Ồ! Bươm bướm!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Oh! Butterflies!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Ồ! Bươm bướm!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Oh! Butterflies!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Ồ! Bươm bướm!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Oh! Sweets!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Ồ! Kẹo!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Oh! Sweets!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Ồ! Kẹo!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Oh! Sweets!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Ồ! Kẹo!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Let’s play a drum game!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Mình chơi trò gõ trống nhé!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Let’s play a drum game!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Mình chơi trò gõ trống nhé!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Let’s play a drum game!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Mình chơi trò gõ trống nhé!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Mmm! Slurp!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Ngon quá! Sụp sụp!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Mmm! Slurp!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Ngon quá! Sụp sụp!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Mmm! Slurp!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Ngon quá! Sụp sụp!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Yum! I love bananas! Thank you!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Yum! I love bananas! Thank you!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Yum! I love bananas! Thank you!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Hee hee! Meat? I’m not a lion!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Hi hi! Thịt á? Tớ đâu phải sư tử!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Hee hee! Meat? I’m not a lion!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Hi hi! Thịt á? Tớ đâu phải sư tử!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Hee hee! Meat? I’m not a lion!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Hi hi! Thịt á? Tớ đâu phải sư tử!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Hee hee! Fish? I’m not a penguin!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Hi hi! Cá á? Tớ đâu phải chim cánh cụt!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Hee hee! Fish? I’m not a penguin!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Hi hi! Cá á? Tớ đâu phải chim cánh cụt!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Hee hee! Fish? I’m not a penguin!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Hi hi! Cá á? Tớ đâu phải chim cánh cụt!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Hee hee! Hay? I’m not a zebra!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Hi hi! Cỏ khô á? Tớ đâu phải ngựa vằn!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Hee hee! Hay? I’m not a zebra!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Hi hi! Cỏ khô á? Tớ đâu phải ngựa vằn!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Hee hee! Hay? I’m not a zebra!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Hi hi! Cỏ khô á? Tớ đâu phải ngựa vằn!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Yum! I love watermelon! Thank you!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Ngon quá! Tớ thích dưa hấu lắm! Cảm ơn bạn!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Yum! I love watermelon! Thank you!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Ngon quá! Tớ thích dưa hấu lắm! Cảm ơn bạn!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Yum! I love watermelon! Thank you!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Ngon quá! Tớ thích dưa hấu lắm! Cảm ơn bạn!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Hee hee! Bamboo? I’m not a panda!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Hi hi! Tre á? Tớ đâu phải gấu trúc!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Hee hee! Bamboo? I’m not a panda!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Hi hi! Tre á? Tớ đâu phải gấu trúc!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Hee hee! Bamboo? I’m not a panda!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Hi hi! Tre á? Tớ đâu phải gấu trúc!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Hee hee! Leaves? I’m not a giraffe!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Hi hi! Lá cây á? Tớ đâu phải hươu cao cổ!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Hee hee! Leaves? I’m not a giraffe!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Hi hi! Lá cây á? Tớ đâu phải hươu cao cổ!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Hee hee! Leaves? I’m not a giraffe!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Hi hi! Lá cây á? Tớ đâu phải hươu cao cổ!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:Hi! I’m Lam!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Chào bạn! Mình là Lam!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Lam:I want to catch one!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Lam:Tớ muốn bắt một con!",
+"who": "Lam",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:Hi! I’m Na!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Chào bạn! Mình là Na!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Na:They look like tiny stars!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Na:Trông như những ngôi sao tí hon!",
+"who": "Na",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Hi! I’m Ben!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Chào bạn! Mình là Ben!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Ben:Look! A firefly is on my nose!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Ben:Nhìn này! Một chú đom đóm đậu trên mũi tớ!",
+"who": "Ben",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "@Bac:I’m busy building this tower. Help me finish it, then I can bring the hook down!",
+"who": "Bac",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "@Bac:Bác đang bận xây cái tháp này. Con giúp bác xây xong, rồi bác hạ móc xuống cho nhé!",
+"who": "Bac",
+"part": "chung"
 }
 ]

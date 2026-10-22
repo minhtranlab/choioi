@@ -48,3 +48,11 @@ python3 tao_giong.py page                   # voice/nghe-thu.html: nghe từng c
 2. **Không lẫn giọng máy giữa màn.** Trong màn đó, câu thiếu bản ghi chỉ hiện chữ (`console.warn`); không tải được giọng thì cả màn đọc bằng giọng máy. Màn chưa có trong `p` giữ cách cũ.
 3. **Giọng bạn nhỏ.** App tìm khoá `"@" + khoá câu` (hash của chuỗi đó) cho câu của Lam, Na, Ben trước; có thì phát nguyên tốc độ, chưa có thì dùng bản của Chồi nâng 1.12. Polly giữ 1.32. Khi ghi giọng `kid`, `pack` cần ghi câu đó dưới khoá có `@`.
 4. **Tốc độ Chậm / Vừa / Nhanh.** App đọc `voice/<lang>-s.json` với `voice/<lang>-s-NN.mp3` (Chậm), `voice/<lang>-f.json` với `voice/<lang>-f-NN.mp3` (Nhanh), cùng định dạng `en.json` (có khoá `p`); Vừa là bộ hiện có. Nghỉ sau câu 800 / 650 / 520 ms. Dòng chọn tốc độ trong Cài đặt chỉ hiện khi có đủ bộ Chậm và Nhanh.
+
+## Giọng các bạn nhỏ (chốt 22/10)
+- Mỗi người nói một giọng riêng, khoá `"@" + tên + ":" + câu` (`@Lam:Yes!`, `@Na:Ừ.`, `@Bac:…`). Danh sách câu: `cau-ban-nho.json`, tạo bằng `ban_nho.py`: câu chung `ANY` ghi cho cả ba bạn; câu riêng `OWN` ghi cho đúng người đó; câu sở thú lấy từ dữ liệu app. Thêm câu mới cho bạn nhỏ thì sửa `ban_nho.py`, chạy lại, rồi `lines` → `make` → `pack`.
+- Tiếng Anh (`kokoro_kid`): Kokoro đọc ở tốc độ thường, không có từ mồi. Sau đó thu nhỏ khoang giọng (`formant`) và nâng cao độ (`pitch`) thành giọng trẻ 5 tuổi. Lam: `af_river` 1.15 / 1.45; Na: `af_sky` 1.15 / 1.55; Ben: `bf_isabella` (Anh-Anh) 1.12 / 1.25.
+- Tiếng Việt (`vieneu_clone`): VieNeu đọc theo giọng mẫu trẻ con trong `kid-ref/` (mẫu làm từ giọng VieNeu Hải Đăng, Trúc Ly, Minh Đức đổi khoang giọng và cao độ). Giọng ra do mô hình đọc, không xử lý sau.
+- Câu của bạn nhỏ được đọc liền một hơi khi máy nghe đủ rõ; nếu không thì đọc từng câu nhỏ, nghỉ 0,4 giây.
+- Bác lái cần cẩu (`Bac`): Kokoro `am_michael`, VieNeu `Hải Đăng`.
+- App cần sửa để tìm các khoá này: xem `claude/prompt-chat-chinh-giong-ban-nho.md` trong Project.

@@ -3,10 +3,23 @@
  "gap": 0.6,
  "en": {
   "chồi": {"engine": "kokoro", "voice": "af_heart", "speed": 0.70},
-  "kid":  {"engine": "kokoro", "voice": "af_sky",   "speed": 0.85}
+  "kid":  {"engine": "kokoro", "voice": "af_sky",   "speed": 0.85},
+  "Lam":  {"engine": "kokoro_kid", "voice": "af_river",    "lang": "en-us", "speed": 1.0, "formant": 1.15, "pitch": 1.45, "gap": 0.4},
+  "Na":   {"engine": "kokoro_kid", "voice": "af_sky",      "lang": "en-us", "speed": 1.0, "formant": 1.15, "pitch": 1.55, "gap": 0.4},
+  "Ben":  {"engine": "kokoro_kid", "voice": "bf_isabella", "lang": "en-gb", "speed": 1.0, "formant": 1.12, "pitch": 1.25, "gap": 0.4},
+  "Bac":  {"engine": "kokoro", "voice": "am_michael", "speed": 0.80}
  },
  "vi": {
   "chồi": {"engine": "vieneu", "voice": "Đoan Trang"},
-  "kid":  {"engine": "vieneu", "voice": "Trúc Ly"}
+  "kid":  {"engine": "vieneu", "voice": "Trúc Ly"},
+  "Lam":  {"engine": "vieneu_clone", "voice": "kid-ref/vi-Lam.wav", "gap": 0.4},
+  "Na":   {"engine": "vieneu_clone", "voice": "kid-ref/vi-Na.wav",  "gap": 0.4},
+  "Ben":  {"engine": "vieneu_clone", "voice": "kid-ref/vi-Ben.wav", "gap": 0.4},
+  "Bac":  {"engine": "vieneu", "voice": "Hải Đăng"}
+ },
+ "_ghi_chú": {
+  "kid": "giọng bạn nhỏ chung cũ (khoá @câu), giữ cho tới khi app tìm khoá @Tên:câu",
+  "Lam/Na/Ben": "chốt 22/10. Tiếng Anh: Kokoro đọc ở tốc độ thường, không từ mồi, rồi thu nhỏ khoang giọng (formant) và nâng cao độ (pitch) thành giọng trẻ 5 tuổi. Tiếng Việt: VieNeu đọc theo giọng mẫu trẻ con trong kid-ref/ (mẫu = giọng VieNeu Hải Đăng / Trúc Ly / Minh Đức đổi khoang giọng và cao độ).",
+  "Bac": "bác lái cần cẩu (người lớn)"
  }
 }

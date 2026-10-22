@@ -1212,6 +1212,354 @@
 "part": "chung",
 "who": "chồi"
 },
+"dc100p": {
+"k": "@Lam:Yes!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1eukgey": {
+"k": "@Na:Yes!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"dcy7ww": {
+"k": "@Ben:Yes!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"ftxf9g": {
+"k": "@Lam:Yes.",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1b8pmeb": {
+"k": "@Na:Yes.",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"his9bh": {
+"k": "@Ben:Yes.",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1pzjc7z": {
+"k": "@Lam:I feel happy!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"ybjgci": {
+"k": "@Na:I feel happy!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"lzr970": {
+"k": "@Ben:I feel happy!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1gn7tp4": {
+"k": "@Lam:I feel sad.",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1flhu51": {
+"k": "@Na:I feel sad.",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"dzn7vr": {
+"k": "@Ben:I feel sad.",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"9p5xuz": {
+"k": "@Lam:I feel excited!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"61wfpu": {
+"k": "@Na:I feel excited!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"dxu8dk": {
+"k": "@Ben:I feel excited!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"12q7xhv": {
+"k": "@Lam:I feel proud!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"5w577u": {
+"k": "@Na:I feel proud!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"11tyx8c": {
+"k": "@Ben:I feel proud!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1cxxxmf": {
+"k": "@Lam:Oh! Butterflies!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1apt6qo": {
+"k": "@Na:Oh! Butterflies!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"ykup52": {
+"k": "@Ben:Oh! Butterflies!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"16rmq1v": {
+"k": "@Lam:Oh! Sweets!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"r7fvo6": {
+"k": "@Na:Oh! Sweets!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"p7uu04": {
+"k": "@Ben:Oh! Sweets!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"dxt3fa": {
+"k": "@Lam:Let’s play a drum game!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1e0rr0z": {
+"k": "@Na:Let’s play a drum game!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"hnod2d": {
+"k": "@Ben:Let’s play a drum game!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1mdi4a": {
+"k": "@Lam:Mmm! Slurp!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"fyvhjn": {
+"k": "@Na:Mmm! Slurp!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"gephpl": {
+"k": "@Ben:Mmm! Slurp!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1nq8ykh": {
+"k": "@Lam:Yum! I love bananas! Thank you!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"6iwju0": {
+"k": "@Na:Yum! I love bananas! Thank you!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"1ibktga": {
+"k": "@Ben:Yum! I love bananas! Thank you!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"15b1w1i": {
+"k": "@Lam:Hee hee! Meat? I’m not a lion!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1ebw1tl": {
+"k": "@Na:Hee hee! Meat? I’m not a lion!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"im1hm7": {
+"k": "@Ben:Hee hee! Meat? I’m not a lion!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"yikjtr": {
+"k": "@Lam:Hee hee! Fish? I’m not a penguin!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"18kw5eq": {
+"k": "@Na:Hee hee! Fish? I’m not a penguin!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"7h2mm8": {
+"k": "@Ben:Hee hee! Fish? I’m not a penguin!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1jzzw4z": {
+"k": "@Lam:Hee hee! Hay? I’m not a zebra!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1la0pcw": {
+"k": "@Na:Hee hee! Hay? I’m not a zebra!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"q0l0k2": {
+"k": "@Ben:Hee hee! Hay? I’m not a zebra!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"139wcw5": {
+"k": "@Lam:Yum! I love watermelon! Thank you!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"y4jfo6": {
+"k": "@Na:Yum! I love watermelon! Thank you!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"q5x5r8": {
+"k": "@Ben:Yum! I love watermelon! Thank you!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1ms52jd": {
+"k": "@Lam:Hee hee! Bamboo? I’m not a panda!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"f1b90s": {
+"k": "@Na:Hee hee! Bamboo? I’m not a panda!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"ib9xoq": {
+"k": "@Ben:Hee hee! Bamboo? I’m not a panda!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1u5wvt5": {
+"k": "@Lam:Hee hee! Leaves? I’m not a giraffe!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1k21090": {
+"k": "@Na:Hee hee! Leaves? I’m not a giraffe!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"14jgnpi": {
+"k": "@Ben:Hee hee! Leaves? I’m not a giraffe!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"fopi67": {
+"k": "@Lam:Hi! I’m Lam!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"160akpx": {
+"k": "@Lam:I want to catch one!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1hfrulj": {
+"k": "@Na:Hi! I’m Na!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"25wcx6": {
+"k": "@Na:They look like tiny stars!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"19cr6vb": {
+"k": "@Ben:Hi! I’m Ben!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"ddo4zt": {
+"k": "@Ben:Look! A firefly is on my nose!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1wyeaqs": {
+"k": "@Bac:I’m busy building this tower. Help me finish it, then I can bring the hook down!",
+"s": "kokoro|am_michael|0.8|gap0.6|v3",
+"part": "chung",
+"who": "Bac"
+},
 "1uc8vmr": {
 "k": "Hello! I’m Chồi. Look, there’s something old on the bookshelf.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",

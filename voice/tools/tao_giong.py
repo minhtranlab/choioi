@@ -43,6 +43,7 @@ def vkey(t, slow=False):
     return ('~' if slow else '') + re.sub(r'\s+', ' ', str(t)).strip()
 
 # ---------------------------------------------------------------- text the engine reads
+KEYPFX = re.compile(r'^@(?:[A-Za-z]+:)?')   # "@câu" (bạn nhỏ chung, cũ) hoặc "@Lam:câu" (đúng bạn đó)
 SYL_KEEP = {'bye-bye', 'ding-dong', 'kee-ow', 'đô-mi-nô', 'roly-poly'}   # real words with hyphens, read as one word
 def syllables(m):
     """a clapping drill (ba-na-na, ap - pull): each sound said on its own, with a small pause between"""
@@ -52,7 +53,7 @@ def syllables(m):
     return ', '.join(x.strip() for x in w.split('-'))
 def spoken(key, lang):
     """the app swaps the child's name for {N}; the recording leaves the name out (it can't know it)"""
-    t = key.lstrip('@').lstrip('~')
+    t = KEYPFX.sub('', key).lstrip('~')
     t = re.sub(r'[\wÀ-ỹ]+(?:\s*-\s*[\wÀ-ỹ]+)+', syllables, t)
     t = re.sub(r',\s*\{N\}(?=[!?.,…]|$)', '', t)          # "Great job, {N}!" -> "Great job!"
     t = re.sub(r'\{N\},\s*', '', t)                        # "{N}, look!" -> "look!"
@@ -73,7 +74,7 @@ def sentences(t):
 
 # ---------------------------------------------------------------- checking by ear (a recognizer)
 NUM = {'0':'zero','1':'one','2':'two','3':'three','4':'four','5':'five','6':'six','7':'seven','8':'eight','9':'nine','10':'ten'}
-UK = {'bên': 'ben', 'bèn': 'ben', 'poly': 'polly', 'pô': 'polly', 'lamb': 'lam', 'nah': 'na', 'whoa': 'whoosh', 'nhá': 'nhé', 'kĩ': 'kỹ', 'colour': 'color', 'colours': 'colors', 'favourite': 'favorite', 'mum': 'mom', 'grey': 'gray', 'okay': 'ok'}
+UK = {'he': 'hee', 'sweet': 'sweets', 'bên': 'ben', 'bèn': 'ben', 'poly': 'polly', 'pô': 'polly', 'lamb': 'lam', 'nah': 'na', 'whoa': 'whoosh', 'nhá': 'nhé', 'kĩ': 'kỹ', 'colour': 'color', 'colours': 'colors', 'favourite': 'favorite', 'mum': 'mom', 'grey': 'gray', 'okay': 'ok'}
 def words(t):
     t = t.lower().replace('’', "'")
     t = re.sub(r"\b(\d+)\b", lambda m: NUM.get(m.group(1), m.group(1)), t)
@@ -185,14 +186,43 @@ class VieNeuVI:
             if len(a) / sr > 1.2 + n * 0.55: continue          # it went on talking: try again
             yield a, sr
 
+def shift_voice(a, sr, formant=1.0, pitch=1.0):
+    """a child's voice from an adult one: smaller vocal tract (formant scale) and higher pitch, set apart
+    (two rubberband passes: the first moves pitch and formants together, the second moves pitch only)"""
+    import tempfile
+    f = []
+    if formant != 1.0: f.append(f'rubberband=pitch={formant}:formant=shifted:pitchq=quality')
+    if abs(pitch / formant - 1) > 1e-6: f.append(f'rubberband=pitch={pitch / formant}:formant=preserved:pitchq=quality')
+    if not f: return a
+    with tempfile.TemporaryDirectory() as d:
+        sf.write(d + '/i.wav', a, sr); subprocess.run(['ffmpeg', '-loglevel', 'error', '-y', '-i', d + '/i.wav', '-af', ','.join(f), d + '/o.wav'], check=True)
+        b, _ = sf.read(d + '/o.wav', dtype='float32')
+    return b
+class KokoroKid:
+    """a child's English voice: Kokoro at normal speed (no carrier word, so no "uh"), then made a child's voice"""
+    def __init__(self): self.K = engine('kokoro').K
+    def candidates(self, s, c, speed):
+        for sp in (speed, speed * 0.95, speed * 1.05, speed * 0.9):
+            a, sr = self.K.create(s, voice=c['voice'], speed=sp, lang=c.get('lang', 'en-us'))
+            yield trim(shift_voice(trim(a, sr, th=0.012), sr, c.get('formant', 1), c.get('pitch', 1)), sr, th=0.012), sr
+class VieNeuClone:
+    """a child's Vietnamese voice: VieNeu reads in the voice of a short reference clip (kid-ref/)"""
+    def __init__(self): self.V = engine('vieneu').V
+    def candidates(self, s, c, speed, tries=6):
+        n = len(re.findall(r'\w+', s)); ref = os.path.join(HERE, c['voice'])
+        for _ in range(tries):
+            a = trim(np.asarray(self.V.infer(s, ref_audio=ref, denoise=False), dtype=np.float32), 48000, th=0.012)
+            if len(a) / 48000 > 1.0 + n * 0.5: continue
+            yield a, 48000
 ENG = {}
 def engine(name):
-    if name not in ENG: ENG[name] = {'kokoro': KokoroEN, 'vieneu': VieNeuVI}[name]()
+    if name not in ENG: ENG[name] = {'kokoro': KokoroEN, 'vieneu': VieNeuVI, 'kokoro_kid': KokoroKid, 'vieneu_clone': VieNeuClone}[name]()
     return ENG[name]
 
 # ---------------------------------------------------------------- lines
 def sig(lang, who):
-    c = CFG[lang][who]; return f"{c['engine']}|{c['voice']}|{c.get('speed', 1)}|gap{CFG['gap']}|v{CFG['version']}"
+    c = CFG[lang][who]; extra = ''.join(f"|{k}{c[k]}" for k in ('formant', 'pitch', 'gap') if k in c)
+    return f"{c['engine']}|{c['voice']}|{c.get('speed', 1)}|gap{CFG['gap']}|v{CFG['version']}" + extra
 def lines_path(): return os.path.join(HERE, 'lines.json')
 def cmd_lines(a):
     """what to record: every line already in the new voice (kept), the parts of voice/pending-unit1.json,
@@ -208,6 +238,11 @@ def cmd_lines(a):
     for x in pend:
         if parts and x['part'] not in parts: continue
         add('en', x['en'], x.get('slow'), 'chồi', x['part']); add('vi', x['vi'], x.get('slow'), 'chồi', x['part'])
+    kp = os.path.join(HERE, 'cau-ban-nho.json')   # each child's own voice: "@Lam:" + the line (ban_nho.py)
+    if os.path.exists(kp):
+        for x in json.load(open(kp, encoding='utf-8')):
+            for lang in ('en', 'vi'):
+                add(lang, None, None, x['who'], 'chung', key=f"@{x['who']}:" + vkey(x[lang]))
     for f in (a.log or []):
         for li, en, vi, rate, *rest in json.load(open(f, encoding='utf-8')):
             if a.name:   # the test child's name -> {N}, as the app does
@@ -229,13 +264,28 @@ def manifest(lang):
     p = os.path.join(HERE, f'manifest-{lang}.json')
     return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else {'c': {}}
 def cache_path(lang, h, s): return os.path.join(CACHE, lang, hashlib.sha1((s + h).encode()).hexdigest()[:16] + '.wav')
+def pick_best(e, c, s, lang, speed, whole):
+    best = None
+    for a, sr in (e.candidates(s, c, speed) if whole else e.candidates(s, c['voice'], speed)):
+        heard = transcribe(a, sr, lang); sc = score(s, heard)
+        if lang == 'vi' and sc < 0.999:
+            h2 = transcribe(a, sr, lang, 'w'); s2 = score(s, h2)
+            if s2 > sc: sc, heard = s2, 'W: ' + h2
+        if best is None or sc > best[0]: best = (sc, to_sr(a, sr), heard)
+        if sc >= 0.999: break
+    return best
 def make_line(o):
     lang, c = o['lang'], CFG[o['lang']][o['who']]; e = engine(c['engine']); text = spoken(o['key'], lang)
-    speed = c.get('speed', 1) * (0.85 if o['key'].lstrip('@').startswith('~') else 1)
+    speed = c.get('speed', 1) * (0.85 if KEYPFX.sub('', o['key']).startswith('~') else 1)
+    whole = c['engine'] in ('kokoro_kid', 'vieneu_clone')   # these take the whole config
     parts, info = [], []
-    for s in sentences(text):
+    groups = sentences(text)
+    if whole and len(groups) > 1:   # a child says the line in one breath when it comes out clear; else sentence by sentence
+        b = pick_best(e, c, text, lang, speed, whole)
+        if b and b[0] >= 0.8: return loud(b[1]), [[round(b[0], 2), text, b[2]]]
+    for s in groups:
         best = None
-        for a, sr in e.candidates(s, c['voice'], speed):
+        for a, sr in (e.candidates(s, c, speed) if whole else e.candidates(s, c['voice'], speed)):
             if lang == 'vi' and re.search(r'"[A-Za-z][^"]*"', s):   # English words inside a Vietnamese line: the recognizer can't judge it
                 best = (1.0, to_sr(a, sr), '(có tiếng Anh, không kiểm)'); break
             heard = transcribe(a, sr, lang); sc = score(s, heard)
@@ -245,7 +295,7 @@ def make_line(o):
             if best is None or sc > best[0]: best = (sc, to_sr(a, sr), heard)
             if sc >= 0.999: break
         if best is None: raise RuntimeError('no audio for ' + s)
-        info.append([round(best[0], 2), s, best[2]]); parts += [best[1], np.zeros(int(CFG['gap'] * SR_OUT), np.float32)]
+        info.append([round(best[0], 2), s, best[2]]); parts += [best[1], np.zeros(int(c.get('gap', CFG['gap']) * SR_OUT), np.float32)]
     return loud(np.concatenate(parts[:-1])), info
 def cmd_make(a):
     L = json.load(open(lines_path(), encoding='utf-8'))

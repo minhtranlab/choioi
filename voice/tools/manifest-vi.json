@@ -1200,6 +1200,372 @@
 "part": "chung",
 "who": "chồi"
 },
+"4i835m": {
+"k": "@Lam:Ừ!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1cjfapt": {
+"k": "@Na:Ừ!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"9mw9fj": {
+"k": "@Ben:Ừ!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"wd94z": {
+"k": "@Lam:Ừ.",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1ali2v0": {
+"k": "@Na:Ừ.",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"b0u9we": {
+"k": "@Ben:Ừ.",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"m2q24f": {
+"k": "@Lam:Tớ thấy vui!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"176mt68": {
+"k": "@Na:Tớ thấy vui!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"qybnsq": {
+"k": "@Ben:Tớ thấy vui!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"18trwe2": {
+"k": "@Lam:Tớ thấy buồn.",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1en4pbj": {
+"k": "@Na:Tớ thấy buồn.",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"isuyqx": {
+"k": "@Ben:Tớ thấy buồn.",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"6qy890": {
+"k": "@Lam:Tớ thấy háo hức quá!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"ebfw6z": {
+"k": "@Na:Tớ thấy háo hức quá!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"rpbdt5": {
+"k": "@Ben:Tớ thấy háo hức quá!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"lw7zfh": {
+"k": "@Lam:Tớ thấy tự hào!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"zk7bwk": {
+"k": "@Na:Tớ thấy tự hào!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"1y4y2cy": {
+"k": "@Ben:Tớ thấy tự hào!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"16wanu7": {
+"k": "@Lam:Mình thấy tự hào!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"aduwqm": {
+"k": "@Na:Mình thấy tự hào!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"ws9nv0": {
+"k": "@Ben:Mình thấy tự hào!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1hb5x3j": {
+"k": "@Lam:Ồ! Bươm bướm!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"109b1sm": {
+"k": "@Na:Ồ! Bươm bướm!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"eu6kgc": {
+"k": "@Ben:Ồ! Bươm bướm!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"4rrdwq": {
+"k": "@Lam:Ồ! Kẹo!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1usomhz": {
+"k": "@Na:Ồ! Kẹo!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"yezlqh": {
+"k": "@Ben:Ồ! Kẹo!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"qiog33": {
+"k": "@Lam:Mình chơi trò gõ trống nhé!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"186hxey": {
+"k": "@Na:Mình chơi trò gõ trống nhé!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"161jbtg": {
+"k": "@Ben:Mình chơi trò gõ trống nhé!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1ixxcwa": {
+"k": "@Lam:Ngon quá! Sụp sụp!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1yidglt": {
+"k": "@Na:Ngon quá! Sụp sụp!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"1hd2tgz": {
+"k": "@Ben:Ngon quá! Sụp sụp!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1uxz3df": {
+"k": "@Lam:Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"15j7a4m": {
+"k": "@Na:Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"cxi2hs": {
+"k": "@Ben:Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"fu0r9j": {
+"k": "@Lam:Hi hi! Thịt á? Tớ đâu phải sư tử!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1ht1fxe": {
+"k": "@Na:Hi hi! Thịt á? Tớ đâu phải sư tử!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"1xx238w": {
+"k": "@Ben:Hi hi! Thịt á? Tớ đâu phải sư tử!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"nbqyzp": {
+"k": "@Lam:Hi hi! Cá á? Tớ đâu phải chim cánh cụt!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1bpjrp4": {
+"k": "@Na:Hi hi! Cá á? Tớ đâu phải chim cánh cụt!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"y99ymq": {
+"k": "@Ben:Hi hi! Cá á? Tớ đâu phải chim cánh cụt!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1w511bd": {
+"k": "@Lam:Hi hi! Cỏ khô á? Tớ đâu phải ngựa vằn!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1otjffm": {
+"k": "@Na:Hi hi! Cỏ khô á? Tớ đâu phải ngựa vằn!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"14luskg": {
+"k": "@Ben:Hi hi! Cỏ khô á? Tớ đâu phải ngựa vằn!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1x96ryg": {
+"k": "@Lam:Ngon quá! Tớ thích dưa hấu lắm! Cảm ơn bạn!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1w88zct": {
+"k": "@Na:Ngon quá! Tớ thích dưa hấu lắm! Cảm ơn bạn!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"1cmcdsr": {
+"k": "@Ben:Ngon quá! Tớ thích dưa hấu lắm! Cảm ơn bạn!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"12hpk0n": {
+"k": "@Lam:Hi hi! Tre á? Tớ đâu phải gấu trúc!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"22gwhe": {
+"k": "@Na:Hi hi! Tre á? Tớ đâu phải gấu trúc!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"1ntye2c": {
+"k": "@Ben:Hi hi! Tre á? Tớ đâu phải gấu trúc!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1rq7g1u": {
+"k": "@Lam:Hi hi! Lá cây á? Tớ đâu phải hươu cao cổ!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1tye7mb": {
+"k": "@Na:Hi hi! Lá cây á? Tớ đâu phải hươu cao cổ!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"136gytx": {
+"k": "@Ben:Hi hi! Lá cây á? Tớ đâu phải hươu cao cổ!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"1j39bnb": {
+"k": "@Lam:Chào bạn! Mình là Lam!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"1cqv2bz": {
+"k": "@Lam:Tớ muốn bắt một con!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Lam"
+},
+"du762b": {
+"k": "@Na:Chào bạn! Mình là Na!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"17x7829": {
+"k": "@Na:Trông như những ngôi sao tí hon!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Na"
+},
+"1frxcuv": {
+"k": "@Ben:Chào bạn! Mình là Ben!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"dqcgkh": {
+"k": "@Ben:Nhìn này! Một chú đom đóm đậu trên mũi tớ!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "chung",
+"who": "Ben"
+},
+"5aoxp5": {
+"k": "@Bac:Bác đang bận xây cái tháp này. Con giúp bác xây xong, rồi bác hạ móc xuống cho nhé!",
+"s": "vieneu|Hải Đăng|1|gap0.6|v3",
+"part": "chung",
+"who": "Bac"
+},
 "n8senc": {
 "k": "Xin chào! Chồi đây. Nhìn kìa, trên tủ sách có một thứ gì cũ cũ.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",

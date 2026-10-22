@@ -1,0 +1,307 @@
+[
+{
+"who": "Lam",
+"en": "Yes!",
+"vi": "Ừ!"
+},
+{
+"who": "Na",
+"en": "Yes!",
+"vi": "Ừ!"
+},
+{
+"who": "Ben",
+"en": "Yes!",
+"vi": "Ừ!"
+},
+{
+"who": "Lam",
+"en": "Yes.",
+"vi": "Ừ."
+},
+{
+"who": "Na",
+"en": "Yes.",
+"vi": "Ừ."
+},
+{
+"who": "Ben",
+"en": "Yes.",
+"vi": "Ừ."
+},
+{
+"who": "Lam",
+"en": "I feel happy!",
+"vi": "Tớ thấy vui!"
+},
+{
+"who": "Na",
+"en": "I feel happy!",
+"vi": "Tớ thấy vui!"
+},
+{
+"who": "Ben",
+"en": "I feel happy!",
+"vi": "Tớ thấy vui!"
+},
+{
+"who": "Lam",
+"en": "I feel sad.",
+"vi": "Tớ thấy buồn."
+},
+{
+"who": "Na",
+"en": "I feel sad.",
+"vi": "Tớ thấy buồn."
+},
+{
+"who": "Ben",
+"en": "I feel sad.",
+"vi": "Tớ thấy buồn."
+},
+{
+"who": "Lam",
+"en": "I feel excited!",
+"vi": "Tớ thấy háo hức quá!"
+},
+{
+"who": "Na",
+"en": "I feel excited!",
+"vi": "Tớ thấy háo hức quá!"
+},
+{
+"who": "Ben",
+"en": "I feel excited!",
+"vi": "Tớ thấy háo hức quá!"
+},
+{
+"who": "Lam",
+"en": "I feel proud!",
+"vi": "Tớ thấy tự hào!"
+},
+{
+"who": "Na",
+"en": "I feel proud!",
+"vi": "Tớ thấy tự hào!"
+},
+{
+"who": "Ben",
+"en": "I feel proud!",
+"vi": "Tớ thấy tự hào!"
+},
+{
+"who": "Lam",
+"en": "I feel proud!",
+"vi": "Mình thấy tự hào!"
+},
+{
+"who": "Na",
+"en": "I feel proud!",
+"vi": "Mình thấy tự hào!"
+},
+{
+"who": "Ben",
+"en": "I feel proud!",
+"vi": "Mình thấy tự hào!"
+},
+{
+"who": "Lam",
+"en": "Oh! Butterflies!",
+"vi": "Ồ! Bươm bướm!"
+},
+{
+"who": "Na",
+"en": "Oh! Butterflies!",
+"vi": "Ồ! Bươm bướm!"
+},
+{
+"who": "Ben",
+"en": "Oh! Butterflies!",
+"vi": "Ồ! Bươm bướm!"
+},
+{
+"who": "Lam",
+"en": "Oh! Sweets!",
+"vi": "Ồ! Kẹo!"
+},
+{
+"who": "Na",
+"en": "Oh! Sweets!",
+"vi": "Ồ! Kẹo!"
+},
+{
+"who": "Ben",
+"en": "Oh! Sweets!",
+"vi": "Ồ! Kẹo!"
+},
+{
+"who": "Lam",
+"en": "Let’s play a drum game!",
+"vi": "Mình chơi trò gõ trống nhé!"
+},
+{
+"who": "Na",
+"en": "Let’s play a drum game!",
+"vi": "Mình chơi trò gõ trống nhé!"
+},
+{
+"who": "Ben",
+"en": "Let’s play a drum game!",
+"vi": "Mình chơi trò gõ trống nhé!"
+},
+{
+"who": "Lam",
+"en": "Mmm! Slurp!",
+"vi": "Ngon quá! Sụp sụp!"
+},
+{
+"who": "Na",
+"en": "Mmm! Slurp!",
+"vi": "Ngon quá! Sụp sụp!"
+},
+{
+"who": "Ben",
+"en": "Mmm! Slurp!",
+"vi": "Ngon quá! Sụp sụp!"
+},
+{
+"who": "Lam",
+"en": "Yum! I love bananas! Thank you!",
+"vi": "Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!"
+},
+{
+"who": "Na",
+"en": "Yum! I love bananas! Thank you!",
+"vi": "Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!"
+},
+{
+"who": "Ben",
+"en": "Yum! I love bananas! Thank you!",
+"vi": "Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!"
+},
+{
+"who": "Lam",
+"en": "Hee hee! Meat? I’m not a lion!",
+"vi": "Hi hi! Thịt á? Tớ đâu phải sư tử!"
+},
+{
+"who": "Na",
+"en": "Hee hee! Meat? I’m not a lion!",
+"vi": "Hi hi! Thịt á? Tớ đâu phải sư tử!"
+},
+{
+"who": "Ben",
+"en": "Hee hee! Meat? I’m not a lion!",
+"vi": "Hi hi! Thịt á? Tớ đâu phải sư tử!"
+},
+{
+"who": "Lam",
+"en": "Hee hee! Fish? I’m not a penguin!",
+"vi": "Hi hi! Cá á? Tớ đâu phải chim cánh cụt!"
+},
+{
+"who": "Na",
+"en": "Hee hee! Fish? I’m not a penguin!",
+"vi": "Hi hi! Cá á? Tớ đâu phải chim cánh cụt!"
+},
+{
+"who": "Ben",
+"en": "Hee hee! Fish? I’m not a penguin!",
+"vi": "Hi hi! Cá á? Tớ đâu phải chim cánh cụt!"
+},
+{
+"who": "Lam",
+"en": "Hee hee! Hay? I’m not a zebra!",
+"vi": "Hi hi! Cỏ khô á? Tớ đâu phải ngựa vằn!"
+},
+{
+"who": "Na",
+"en": "Hee hee! Hay? I’m not a zebra!",
+"vi": "Hi hi! Cỏ khô á? Tớ đâu phải ngựa vằn!"
+},
+{
+"who": "Ben",
+"en": "Hee hee! Hay? I’m not a zebra!",
+"vi": "Hi hi! Cỏ khô á? Tớ đâu phải ngựa vằn!"
+},
+{
+"who": "Lam",
+"en": "Yum! I love watermelon! Thank you!",
+"vi": "Ngon quá! Tớ thích dưa hấu lắm! Cảm ơn bạn!"
+},
+{
+"who": "Na",
+"en": "Yum! I love watermelon! Thank you!",
+"vi": "Ngon quá! Tớ thích dưa hấu lắm! Cảm ơn bạn!"
+},
+{
+"who": "Ben",
+"en": "Yum! I love watermelon! Thank you!",
+"vi": "Ngon quá! Tớ thích dưa hấu lắm! Cảm ơn bạn!"
+},
+{
+"who": "Lam",
+"en": "Hee hee! Bamboo? I’m not a panda!",
+"vi": "Hi hi! Tre á? Tớ đâu phải gấu trúc!"
+},
+{
+"who": "Na",
+"en": "Hee hee! Bamboo? I’m not a panda!",
+"vi": "Hi hi! Tre á? Tớ đâu phải gấu trúc!"
+},
+{
+"who": "Ben",
+"en": "Hee hee! Bamboo? I’m not a panda!",
+"vi": "Hi hi! Tre á? Tớ đâu phải gấu trúc!"
+},
+{
+"who": "Lam",
+"en": "Hee hee! Leaves? I’m not a giraffe!",
+"vi": "Hi hi! Lá cây á? Tớ đâu phải hươu cao cổ!"
+},
+{
+"who": "Na",
+"en": "Hee hee! Leaves? I’m not a giraffe!",
+"vi": "Hi hi! Lá cây á? Tớ đâu phải hươu cao cổ!"
+},
+{
+"who": "Ben",
+"en": "Hee hee! Leaves? I’m not a giraffe!",
+"vi": "Hi hi! Lá cây á? Tớ đâu phải hươu cao cổ!"
+},
+{
+"who": "Lam",
+"en": "Hi! I’m Lam!",
+"vi": "Chào bạn! Mình là Lam!"
+},
+{
+"who": "Lam",
+"en": "I want to catch one!",
+"vi": "Tớ muốn bắt một con!"
+},
+{
+"who": "Na",
+"en": "Hi! I’m Na!",
+"vi": "Chào bạn! Mình là Na!"
+},
+{
+"who": "Na",
+"en": "They look like tiny stars!",
+"vi": "Trông như những ngôi sao tí hon!"
+},
+{
+"who": "Ben",
+"en": "Hi! I’m Ben!",
+"vi": "Chào bạn! Mình là Ben!"
+},
+{
+"who": "Ben",
+"en": "Look! A firefly is on my nose!",
+"vi": "Nhìn này! Một chú đom đóm đậu trên mũi tớ!"
+},
+{
+"who": "Bac",
+"en": "I’m busy building this tower. Help me finish it, then I can bring the hook down!",
+"vi": "Bác đang bận xây cái tháp này. Con giúp bác xây xong, rồi bác hạ móc xuống cho nhé!"
+}
+]
