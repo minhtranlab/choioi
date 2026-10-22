@@ -78,7 +78,7 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 | `the-tranh/mot-ngay-sang.svg`, `-chieu.svg`, `-toi.svg` | Màn 6 · ba thẻ tranh để xếp một ngày (khung 120×90, góc bo, có viền): sáng = bàn ăn có khăn kẻ, bát cháo bốc hơi, nải chuối, cốc sữa bên cửa sổ có mặt trời mọc (vẽ lại 21/10); chiều = công viên nắng chiều có lối đạp xe; tối = cửa sổ có trăng và cái giường nhìn ngang (đầu giường cao, gối, chăn kẻ sọc) (vẽ lại 21/10). Na do game vẽ (21/10) | — | thẻ | — |
 | `bep.svg` | Màn 6 · bữa sáng | 96 | toàn cảnh | — |
 | `bep-tron.svg` | Màn 6 · bếp, sân khấu: quầy bếp ngắn lại về mép trái, bỏ nồi cơm, đĩa quả (21/10) | 96 | sân khấu: bữa sáng, vỗ tay ba-na-na | — |
-| `doc-cau-qua-kenh.svg` | Màn 6 · kẻ đường xuống dốc tới trường. 22/10: cầu sắt đơn giản hình thang: hai dốc thẳng, mặt cầu phẳng ở giữa, dốc dừng ngay chỗ chạm cỏ (chân trái x −14, chân phải x 214); bỏ vòm và các thanh dưới cầu, bỏ đoạn phẳng kéo dài hai bên. Lan can trắng nằm trong nhóm `<g class="bridge-rail">` để game lấy ra đặt trước Na. 22/10 chiều: đường đi bộ lát gạch dọc bờ gần, từ mép trái tới chân dốc trái (y 108,6–117); dốc phải đổ xuống **ngay cổng trường** (hai trụ x 200 và 230, vòm xanh ngọc ở trên, không biển tên), tường trường chạy tiếp sang phải từ x 226. Na đi: lối bộ (y 112) → dốc trái → mặt cầu (y 85) → dốc phải → khe cổng x 205–225, y 112 | mặt cầu 85 (giữa, x 46–154) → 112 (hai chân) | toàn cảnh | — |
+| `doc-cau-qua-kenh.svg` | Màn 6 · kẻ đường xuống dốc tới trường. 22/10: cầu sắt đơn giản hình thang: hai dốc thẳng, mặt cầu phẳng ở giữa, dốc dừng ngay chỗ chạm cỏ (chân trái x −14, chân phải x 214); bỏ vòm và các thanh dưới cầu, bỏ đoạn phẳng kéo dài hai bên. Lan can trắng nằm trong nhóm `<g class="bridge-rail">` để game lấy ra đặt trước Na | mặt cầu 85 (giữa, x 46–154) → 112 (hai chân) | toàn cảnh | — |
 | `duong-toi-truong.svg` (+ `-chieu`, `-toi`) | Màn 6 · đường tới trường sáng/chiều/tối. **21/10: bỏ xe ôm vẽ sẵn** (xe lấy từ `art/props/xe/`), vỉa hè gần trơn | 128 (vỉa hè gần), làn xe 104–128 (xa 104–116, gần 116–128) | toàn cảnh: trang đầu, kẻ đường tới trường | — |
 | `duong-toi-truong-tron.svg` (+ `-chieu-tron`, `-toi-tron`) | như trên, sân khấu (21/10): không đèn giao thông, không vạch qua đường, không tường cổng ở giữa, cây chỉ ở hai mép | như trên | sân khấu: ếch qua đường, xếp tranh sáng/chiều/tối, mọi trang có xe chạy | — |
 | `cong-vien-chieu.svg` | Màn 6 · chiều Na đạp xe | 92 | toàn cảnh | — |
@@ -112,10 +112,10 @@ Cùng khung với bản đồ đang có trong app (`viewBox="0 0 220 150"`, 8 ô
 
 | File | Nội dung |
 |---|---|
-| `ban-do.svg` | Cả tấm bản đồ: biển xanh, đất liền cho mảnh 1–7 (1 trường học, 2 công viên, 3 khu vườn, 4 nhà Na, 5 cửa hàng, 6 công trường, 7 một ngày của Na), **Đảo Kho Báu (mảnh 8, ô dưới cùng bên trái) là đảo riêng, có biển bao quanh tách khỏi đất liền**; trên đảo có cây dừa, hải đăng nhỏ, rương và dấu X đỏ. Một chiếc thuyền nhỏ ở eo biển giữa đất liền và đảo. Không có đường chấm đỏ. |
+| `ban-do.svg` | Cả tấm bản đồ: biển xanh, đất liền cho mảnh 1–7 (1 trường học, 2 công viên, 3 khu vườn, 4 nhà Na, 5 cửa hàng, 6 công trường, 7 một ngày của Na), **Đảo Kho Báu (mảnh 8, ô dưới cùng bên trái) là đảo riêng, có biển bao quanh tách khỏi đất liền**; trên đảo có cây dừa, hải đăng nhỏ, rương nhỏ và **một dấu X đỏ nhỏ nhưng rõ (nét đậm có viền tối), tâm (39, 101)**. Một chiếc thuyền nhỏ ở eo biển giữa đất liền và đảo. Không có đường chấm đỏ. |
 | `duong-1.svg` … `duong-7.svg` | Đường chấm đỏ từng đoạn, cùng khung 220×150: `duong-k` đi từ tâm mảnh k tới tâm mảnh k+1 (`duong-7` từ mảnh 7 qua thuyền ra đảo). Khi bé có mảnh mới nhất là n, đặt chồng `duong-1` … `duong-(n-1)`; không vẽ trước tới mảnh chưa có. |
 
-Tâm các mảnh (điểm đầu, cuối của đường): 1 (38, 43), 2 (86, 43), 3 (134, 43), 4 (182, 43), 5 (182, 101), 6 (134, 101), 7 (86, 101), 8 (37, 108).
+Tâm các mảnh (điểm đầu, cuối của đường): 1 (38, 43), 2 (86, 43), 3 (134, 43), 4 (182, 43), 5 (182, 101), 6 (134, 101), 7 (86, 101), 8 (39, 101) (đúng dấu X).
 
 ## `do-choi/` · đồ chơi sân trường, để game đặt riêng (đồ vật, đứng trên mặt đất; tỉ lệ khoảng 32 đơn vị = 1 m)
 | File | Gợi ý dùng |
