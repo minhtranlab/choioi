@@ -92,6 +92,11 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 | `dao-hai-dang.svg` | Màn 7 · trên đảo: hải đăng, cầu gỗ | ≈ 98 | toàn cảnh | — |
 | `dao-hai-dang-tron.svg` | Màn 7 · hải đăng, sân khấu: bỏ cầu gỗ (21/10) | ≈ 98 | sân khấu: khoá hải đăng | — |
 | `hang-kho-bau.svg` | Màn 7 · chỗ đặt rương | 112 | toàn cảnh | — |
+| `dao-bai-cat-hai-dang.svg` (+ `-tron`) | Màn 7 · thuyền cập bãi cát; hải đăng cùng hòn đảo (22/10): bãi cát phía trước, đồi xanh nhô lên ngay từ bãi ở bên phải, **hải đăng trên đỉnh đồi (chân tháp, cửa ở (186, 54))**, đường mòn sáng màu nối từ bãi cát **(110, 112)** lên tới cửa hải đăng. Biển ở trái phía sau. Bản `-tron` bỏ một cây dừa, vỏ sò | cát ≈ 100; chân đồi 104 | toàn cảnh / sân khấu: thuyền cập bến ở bên trái (mép nước y ≈ 98) | — |
+| `duong-len-hai-dang.svg` | Màn 7 · cảnh xa đi lên hải đăng (22/10): đồi xanh, đường mòn có đá viền, hải đăng to ở trên. **Các điểm của đường (đi theo thứ tự): (8, 134) → (88, 118) → (56, 104) → (126, 92) → (104, 80) → (158, 68)**; cửa hải đăng ở (160, 68) | theo đường mòn | các bạn đi theo đường lên tới cửa | — |
+| `hai-dang-cat-doc.svg` | Màn 7 · hải đăng cắt dọc, kiểu nhà Na (22/10). **Cửa 1 (tầng trệt, tường trái): x 67–74, y 107–128.** Cầu thang 1: từ (86, 128) lên (116, 102) (sàn tầng giữa y 98). Cầu thang 2: từ (116, 98) lên (88, 72) (sàn tầng trên y 68). **Cửa 2 (tầng trên, tường phải, ra ban công): x 126–133, y 49–68** — chỉ để xem, game mở cửa rồi sang cảnh nhìn từ cửa sổ. Phòng đèn trên đỉnh | đất 128; tầng giữa 98; tầng trên 68 | các bạn đi cầu thang lên cửa thứ hai | — |
+| `nhin-tu-cua-so.svg` | Màn 7 · nhìn từ cửa sổ hải đăng xuống bãi biển (22/10): khung cửa vòm gỗ, ngoài là biển, bãi cát, vách đá có cửa hang ở bên phải. **Hòn đá to: tâm (111, 90), x 94–130, y 76–102; dấu X đỏ cạnh đá: tâm (120, 110); cửa hang: x 136–162, y 88–112.** Dấu chân trên cát từ trái tới | — | cảnh nhìn (game có thể nhấp nháy dấu X) | — |
+| `cua-hang.svg` | Màn 7 · cửa hang ở cuối bãi biển (22/10), trước khi lật thẻ: vách đá bên phải, **miệng hang x 118–194 (lòng tối x 130–182), chân ở y 100**, một lối cát sáng dẫn vào hang. Cây dừa ở mép trái | cát 100 | đi vào hang → lật thẻ → rương (`hang-kho-bau`) | — |
 
 ## Quyết định 21/10 (trang "Chọn phương án hình")
 - Màu: **C**, giữ như hiện tại (luật 3 đã sửa theo). Thư mục `thu-mau/` đã xoá.

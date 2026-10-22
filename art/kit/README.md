@@ -42,3 +42,12 @@ Mỗi bạn một thư mục: `choi/`, `lam/`, `na/`, `ben/`, `polly/`. Tên fil
 - `chi-tay`: đầu ngón tay ở (191, 150) (Chồi: (131, 94)).
 - Huy chương: tâm huy chương Lam, Na, Ben (100, 188); Chồi (60, 122); Polly (100, 180).
 - `ngu`: nằm ngang trong cùng khung, đầu ở bên trái (bản `-phai`).
+
+## `do-vat/` · đồ vật (22/10)
+Cùng luật chung: 1 m ≈ 12 đơn vị, chân chạm cạnh dưới, có `-phai` / `-trai`.
+
+| Tên (thêm `-phai` / `-trai`) | Khung W×H | Ghi chú |
+|---|---|---|
+| `da-to-dau-x` | 64×30 | Màn 7 · trạm cuối của con cua: hòn đá to xám (x 3–46) và **dấu X đỏ vẽ trên cát ngay cạnh, tâm (56, 26)** (bản `-trai`: tâm (8, 26)) |
+| `bang-go-mui-ten` | 26×28 | Màn 7 · bảng gỗ hình mũi tên cắm trên cát, dùng sau mỗi trạm ("đi lối này"); `-phai` mũi tên chỉ sang phải |
+| `bang-go-hang` | 30×32 | Màn 7 · bảng gỗ cắm cạnh dấu X, vẽ một mũi tên đỏ và hình cái hang (không chữ) |
