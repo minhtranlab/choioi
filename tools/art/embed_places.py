@@ -22,7 +22,9 @@ PROPS = ['places/do-choi/cau-truot-phai', 'places/do-choi/cay-cau'] + [f'props/x
          'xe-om-xanh-thung', 'xe-om-vang-thung', 'taxi-xanh-ngoc', 'taxi-xanh-ngoc-suv', 'xe-buyt-xanh-duong', 'xe-buyt-dien-xanh-la', 'xe-dua-don') for d in ('phai', 'trai')]
 PROPS += ['props/xe/xe-dua-don-can', 'props/xe/xe-dua-don-can-trai']
 PROPS += ['places/do-choi/doc-co'] + [f'props/nguoi/cong-an-giao-thong{t}' for t in ('', '-khen', '-dat-tay')]   # 21/10 (lần 2): the slope under the slide; the traffic police officer (frog crossing)   # Màn 0: the close-up school bus for the seating game (240×136, 4 windows for faces)
-PROPS += [f'props/xe/{n}-{d}' for n in ('o-to-con-trang', 'o-to-gia-dinh-bac', 'o-to-nho-cam', 'xe-may-thuong', 'xe-may-me-cho-be', 'xe-dap') for d in ('phai', 'trai')] + [f'props/nguoi/nguoi-di-bo-dat-be-{d}' for d in ('phai', 'trai')]   # 22/10 (lần 3): ordinary traffic and the walkers on the far pavement
+PROPS += [f'props/xe/{n}-{d}' for n in ('o-to-con-trang', 'o-to-gia-dinh-bac', 'o-to-nho-cam', 'xe-may-thuong', 'xe-may-me-cho-be', 'xe-dap') for d in ('phai', 'trai')]   # 22/10 (lần 3): ordinary traffic and the walkers on the far pavement
+PROPS += [f'props/nguoi/cong-an-giao-thong-buoc-chan-{d}' for d in ('trai', 'phai')]   # 22/10 (lần 4): the officer's two walking steps (faces right)
+PROPS += [f'kit/nguoi/{n}-{d}' for n in ('nguoi-di-bo-dat-be', 'ba-cu-chong-gay', 'hoc-sinh-deo-cap', 'nguoi-doi-non-la', 'nguoi-xach-gio-di-cho') for d in ('phai', 'trai')]   # 22/10 (lần 4): the walkers (art/kit/nguoi/)
 PROPS += [f'places/the-tranh/mot-ngay-{t}' for t in ('sang', 'chieu', 'toi')]   # Màn 6: the three day cards (120×90); the game draws Na on them
 # things taken out of a picture for the app (asked after a play-test), without changing the file in art/places/
 TRIM = {**{n: [r'<rect x="170.6" y="9.2"[^>]*/>', r'<path d="M173.6 12.4 V31"[^>]*/>', r'<path d="M173.6 31 v2.4[^"]*"[^>]*/>'] for n in ('cong-truong-xay', 'cong-truong-xay-tron')},   # the game draws the trolley-less hook that swings
