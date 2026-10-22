@@ -68,6 +68,31 @@ def spoken(key, lang):
     t = re.sub(r'\s+', ' ', t).strip()
     if t and t[0].islower(): t = t[0].upper() + t[1:]
     return t
+# English words in a Vietnamese-mode line (Minh, 22/10: phương án B): read by Chồi's English voice (af_heart), the rest by VieNeu
+EN_WORDS = {'cat', 'fish', 'star', 'buh', 'loon', 'pre', 'zent', 'ap', 'pull', 'egg', 'tus', 'but', 'ter', 'fly', 'land', 'nut', 'banana'}
+EN_ALONE = {'ba', 'na', 'co', 'lo', 'go', 'man', 'is'}     # also Vietnamese-looking: English only as a slow syllable on its own ("~ba")
+VI_SYL = {'hoa', 'sen', 'con'}                             # Vietnamese clapping syllables written without marks
+SPAN = re.compile(r'"([^"]*[A-Za-z][^"]*)"|\b([A-Za-z]+(?:\s*-\s*[A-Za-z]+)+)\b|\b([A-Za-z]+)\b')
+def vi_spans(raw):
+    """[(lang, text)] for one sentence of a Vietnamese line"""
+    out, i = [], 0
+    for m in SPAN.finditer(raw):
+        q, drill, w = m.groups()
+        en = (q is not None and not re.search(r'[À-ỹđĐ]', q)) or \
+             (drill is not None and not all(x.strip().lower() in VI_SYL for x in drill.split('-'))) or \
+             (w is not None and w.lower() in EN_WORDS)
+        if not en: continue
+        if raw[i:m.start()].strip(' :,'): out.append(('vi', raw[i:m.start()].strip()))
+        tail = re.match(r'[!?.…]*', raw[m.end():]).group(0)
+        out.append(('en', (q if q is not None else m.group(0)) + tail)); i = m.end() + len(tail)
+    if raw[i:].strip(' .,:'): out.append(('vi', raw[i:].strip()))
+    return out or [('vi', raw)]
+def mixed(key, lang, who):
+    """a Vietnamese line of Chồi's with English words in it"""
+    if lang != 'vi' or who != 'chồi': return False
+    t = KEYPFX.sub('', key)
+    if t.startswith('~') and t[1:].lower() in EN_ALONE: return True
+    return any(l == 'en' for s in sentences(t.lstrip('~')) for l, _ in vi_spans(s))
 def sentences(t):
     return [s for s in re.split(r'(?<=[.!?])\s+', t.strip()) if s] or [t]
 
@@ -219,8 +244,9 @@ def engine(name):
     return ENG[name]
 
 # ---------------------------------------------------------------- lines
-def sig(lang, who):
+def sig(lang, who, key=None):
     c = CFG[lang][who]; extra = ''.join(f"|{k}{c[k]}" for k in ('formant', 'pitch', 'gap') if k in c)
+    if key is not None and mixed(key, lang, who): extra += f"|en:{CFG['en']['chồi']['voice']}"   # its English words in Chồi's English voice
     return f"{c['engine']}|{c['voice']}|{c.get('speed', 1)}|gap{CFG['gap']}|v{CFG['version']}" + extra
 def lines_path(): return os.path.join(HERE, 'lines.json')
 def cmd_lines(a):
@@ -278,6 +304,7 @@ def make_line(o):
     speed = c.get('speed', 1) * (0.85 if KEYPFX.sub('', o['key']).startswith('~') else 1)
     whole = c['engine'] in ('kokoro_kid', 'vieneu_clone')   # these take the whole config
     parts, info = [], []
+    if mixed(o['key'], lang, o['who']): return make_mixed(o, speed)
     groups = sentences(text)
     if whole and len(groups) > 1:   # a child says the line in one breath when it comes out clear; else sentence by sentence
         b = pick_best(e, c, text, lang, speed, whole)
@@ -296,6 +323,23 @@ def make_line(o):
         if best is None: raise RuntimeError('no audio for ' + s)
         info.append([round(best[0], 2), s, best[2]]); parts += [best[1], np.zeros(int(c.get('gap', CFG['gap']) * SR_OUT), np.float32)]
     return loud(np.concatenate(parts[:-1])), info
+def make_mixed(o, slow_speed):
+    """Vietnamese sentence parts by VieNeu, English words by Kokoro af_heart (Chồi's English voice), 0.15 s apart inside a sentence"""
+    t = KEYPFX.sub('', o['key']); slow = t.startswith('~'); t = t.lstrip('~')
+    ce, cv = CFG['en']['chồi'], CFG['vi']['chồi']; sp_en = ce.get('speed', 1) * (0.85 if slow else 1)
+    if t.lower() in EN_ALONE: sents = [[('en', t)]]
+    else: sents = [vi_spans(x) for x in sentences(t)]
+    parts, info = [], []
+    for k, segs in enumerate(sents):
+        for j, (l, x) in enumerate(segs):
+            txt = spoken(x, l)
+            if j and l == 'vi' and txt[:1].isupper() and not x[:1].isupper(): txt = txt[0].lower() + txt[1:]
+            e, c, sp = (engine('kokoro'), ce, sp_en) if l == 'en' else (engine('vieneu'), cv, cv.get('speed', 1))
+            b = pick_best(e, c, txt, l, sp, False)
+            if b is None: raise RuntimeError('no audio for ' + txt)
+            info.append([round(b[0], 2), f'{l}: {txt}', b[2]]); parts += [loud(b[1]), np.zeros(int(0.15 * SR_OUT), np.float32)]
+        parts[-1] = np.zeros(int(CFG['gap'] * SR_OUT), np.float32)
+    return loud(np.concatenate(parts[:-1])), info
 def cmd_make(a):
     L = json.load(open(lines_path(), encoding='utf-8'))
     redo = re.compile(a.redo) if a.redo else None
@@ -303,7 +347,7 @@ def cmd_make(a):
         M = manifest(lang); todo = []
         for o in L:
             if o['lang'] != lang: continue
-            h = vhash(o['key']); s = sig(lang, o['who'])
+            h = vhash(o['key']); s = sig(lang, o['who'], o['key'])
             if redo and redo.search(o['key']): todo.append(o); continue   # made again on purpose (the way of reading it changed)
             if M['c'].get(h, {}).get('s') == s and M['c'][h].get('k') == o['key']: continue   # already in the bundles
             if os.path.exists(cache_path(lang, h, s)): continue
@@ -311,7 +355,7 @@ def cmd_make(a):
         todo.sort(key=lambda o: ORDER.get(o['part'], 99))   # common lines and the first levels first
         print(lang, 'to make', len(todo), flush=True); t0 = time.time(); low = []
         for i, o in enumerate(todo):
-            h = vhash(o['key']); s = sig(lang, o['who']); p = cache_path(lang, h, s); os.makedirs(os.path.dirname(p), exist_ok=True)
+            h = vhash(o['key']); s = sig(lang, o['who'], o['key']); p = cache_path(lang, h, s); os.makedirs(os.path.dirname(p), exist_ok=True)
             au, info = make_line(o); sf.write(p, au, SR_OUT)
             json.dump({'key': o['key'], 'who': o['who'], 'info': info}, open(p[:-4] + '.json', 'w', encoding='utf-8'), ensure_ascii=False)
             if min(x[0] for x in info) < 0.8: low.append((o['key'], info))
@@ -383,8 +427,8 @@ def layout(lang, M):
         else: g = 'ngoai'
         G[g].append((seen.get(h, (99, 9)), idx, h))
     return {g: [h for _, _, h in sorted(v)] for g, v in G.items()}, U, T
-def wav_for(lang, h, who):
-    p = cache_path(lang, h, sig(lang, who)); q = os.path.join(os.path.dirname(p), 'packed', os.path.basename(p))
+def wav_for(lang, h, s):
+    p = cache_path(lang, h, s); q = os.path.join(os.path.dirname(p), 'packed', os.path.basename(p))
     return p if os.path.exists(p) else (q if os.path.exists(q) else None)
 def cmd_pack(a):
     """Write the files the app reads. By default only new or changed lines are added, in new mp3 files at the end
@@ -399,7 +443,7 @@ def cmd_pack(a):
             return cache[b][off:off + ln]
         newM, fresh, missing, done = collections.OrderedDict(), {}, 0, []
         for o in sorted((o for o in L if o['lang'] == lang), key=lambda o: ORDER.get(o['part'], 99)):
-            h = vhash(o['key']); s = sig(lang, o['who']); p = cache_path(lang, h, s)
+            h = vhash(o['key']); s = sig(lang, o['who'], o['key']); p = cache_path(lang, h, s)
             ok = M['c'].get(h, {}).get('s') == s and M['c'][h].get('k') == o['key'] and h in I['c']
             if os.path.exists(p): fresh[h] = p; done.append(p)                # made since the last pack (new, changed, or redone)
             elif not ok: missing += 1; print('  missing (run make):', lang, o['key']); continue
@@ -408,7 +452,7 @@ def cmd_pack(a):
         old = [h for h in I['c'] if h not in newM]                          # older voice, still not remade
         if a.compact:
             def data(h):
-                w = fresh.get(h) or wav_for(lang, h, newM[h]['who'])
+                w = fresh.get(h) or wav_for(lang, h, newM[h]['s'])
                 if not w: print('  no wav, kept the packed clip:', lang, newM[h]['k'])
                 return mp3(w, lang) if w else clip(h)
             plan = [(g, [(h, data(h)) for h in G[g]]) for g in GROUPS if g != 'cu']
@@ -433,6 +477,13 @@ def cmd_pack(a):
         for i, d in enumerate(bufs): open(os.path.join(VOICE, f'{lang}-{start + i:02d}.mp3'), 'wb').write(d)
         I['n'] = start + len(bufs)
         I['p'] = {g: I['p'][g] for g in GROUPS if I['p'].get(g)}
+        if not a.compact:   # a group's files in the order their lines are said (its first file stays first: the start of the level)
+            for g, fs in I['p'].items():
+                rank = {}
+                for i, h in enumerate(G[g]):
+                    f = I['c'][h][0] if h in I['c'] else None
+                    if f in fs: rank[f] = min(rank.get(f, i), i)
+                I['p'][g] = fs[:1] + sorted(fs[1:], key=lambda f: rank.get(f, 1e9))
         for g in GROUPS:
             for h in G[g]: newM[h]['g'] = g
         # h: a short fingerprint of each file's bytes (the app asks for voice/en-07.mp3?v=<h>, so a file changed on GitHub is fetched again)

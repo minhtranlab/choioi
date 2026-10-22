@@ -114,7 +114,7 @@
 },
 "oafak8": {
 "k": "Nhớ nhé: \"They are all…\"",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "chung",
 "who": "chồi",
 "g": "man5"
@@ -457,14 +457,14 @@
 },
 "jx1nn7": {
 "k": "Nhớ nhé: \"who\" là ai, \"where\" là ở đâu.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "chung",
 "who": "chồi",
 "g": "ngoai"
 },
 "168ak6m": {
 "k": "Nhớ nhé: \"I feel…\"",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "chung",
 "who": "chồi",
 "g": "ngoai"
@@ -1990,7 +1990,7 @@
 },
 "19nsjoj": {
 "k": "~cat",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "chung",
 "who": "chồi",
 "g": "ngoai"
@@ -2011,7 +2011,7 @@
 },
 "tdwe87": {
 "k": "~fish",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "chung",
 "who": "chồi",
 "g": "ngoai"
@@ -2032,7 +2032,7 @@
 },
 "rqfotx": {
 "k": "~star",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "chung",
 "who": "chồi",
 "g": "ngoai"
@@ -2053,14 +2053,14 @@
 },
 "356x0k": {
 "k": "~buh",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "chung",
 "who": "chồi",
 "g": "ngoai"
 },
 "t5m381": {
 "k": "~loon",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "chung",
 "who": "chồi",
 "g": "ngoai"
@@ -2081,14 +2081,14 @@
 },
 "1wz3icy": {
 "k": "~pre",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "chung",
 "who": "chồi",
 "g": "ngoai"
 },
 "afta52": {
 "k": "~zent",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "chung",
 "who": "chồi",
 "g": "ngoai"
@@ -8430,35 +8430,35 @@
 },
 "y7rvp3": {
 "k": "ba - na - na. Ba tiếng!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "e60y9c": {
 "k": "ba - na - na. Ba bước!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1phlouu": {
 "k": "Ba bước! ba - na - na.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "u6tfki": {
 "k": "~ba - na - na.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1jzhu8l": {
 "k": "Giờ con vỗ tay nhé: ba - na - na! Mỗi tiếng con chạm vào đôi bàn tay một lần.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -8472,28 +8472,28 @@
 },
 "11p4c38": {
 "k": "ap - pull. Hai tiếng!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "snnluj": {
 "k": "Hai bước! ap - pull.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1nixw7k": {
 "k": "~ap - pull.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "zfnbxd": {
 "k": "Giờ con vỗ tay nhé: ap - pull! Mỗi tiếng con chạm vào đôi bàn tay một lần.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -8514,42 +8514,42 @@
 },
 "13loqua": {
 "k": "~egg",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "19kcaec": {
 "k": "egg. Một tiếng!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1p0bhxt": {
 "k": "egg. Một bước!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "jdxe7j": {
 "k": "Một bước! egg.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "yfd3qc": {
 "k": "~egg.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "3evcqh": {
 "k": "Giờ con vỗ tay nhé: egg! Mỗi tiếng con chạm vào đôi bàn tay một lần.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -8570,49 +8570,49 @@
 },
 "1yki0wz": {
 "k": "~man",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1yf3q1z": {
 "k": "~go",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "3d17v4": {
 "k": "man - go. Hai tiếng!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "x164d1": {
 "k": "man - go. Hai bước!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "10107c5": {
 "k": "Hai bước! man - go.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1im40c4": {
 "k": "~man - go.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "h3jetn": {
 "k": "Giờ con vỗ tay nhé: man - go! Mỗi tiếng con chạm vào đôi bàn tay một lần.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -8626,28 +8626,28 @@
 },
 "1k6p4ex": {
 "k": "fish. Một tiếng!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "uql9li": {
 "k": "Một bước! fish.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1quht3f": {
 "k": "~fish.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "s1gq7w": {
 "k": "Giờ con vỗ tay nhé: fish! Mỗi tiếng con chạm vào đôi bàn tay một lần.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -8668,49 +8668,49 @@
 },
 "1yfs05k": {
 "k": "~lo",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1ljq6yv": {
 "k": "~tus",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "12t3bjt": {
 "k": "lo - tus. Hai tiếng!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1lvaki6": {
 "k": "lo - tus. Hai bước!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "wprjt2": {
 "k": "Hai bước! lo - tus.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "q98733": {
 "k": "~lo - tus.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "pog9o8": {
 "k": "Giờ con vỗ tay nhé: lo - tus! Mỗi tiếng con chạm vào đôi bàn tay một lần.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -8724,28 +8724,28 @@
 },
 "1ssgfp5": {
 "k": "but - ter - fly. Ba tiếng!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "bwiw0": {
 "k": "Ba bước! but - ter - fly.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1nyo2lw": {
 "k": "~but - ter - fly.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1m1xdh9": {
 "k": "Giờ con vỗ tay nhé: but - ter - fly! Mỗi tiếng con chạm vào đôi bàn tay một lần.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -9081,14 +9081,14 @@
 },
 "15t4ogl": {
 "k": "Nhìn này, quả chuối! Banana có ba tiếng. Mỗi tiếng vỗ tay một cái.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "domp17": {
 "k": "Ba tiếng! Ba - na - na.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -9473,14 +9473,14 @@
 },
 "1yytgy0": {
 "k": "~ba",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "26shpw": {
 "k": "~na",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -9494,14 +9494,14 @@
 },
 "1psx4k0": {
 "k": "~ap",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "epr4xe": {
 "k": "~pull",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -9522,28 +9522,28 @@
 },
 "495bsg": {
 "k": "~but",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1l85ih0": {
 "k": "~ter",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "1ksvsty": {
 "k": "~fly",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "49itu6": {
 "k": "but - ter - fly. Ba bước!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -9781,14 +9781,14 @@
 },
 "19vfvsx": {
 "k": "ap - pull. Hai bước!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
 },
 "ns17u6": {
 "k": "fish. Một bước!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
 "g": "man6"
@@ -9844,28 +9844,28 @@
 },
 "1v3h0c1": {
 "k": "~is",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man7",
 "who": "chồi",
 "g": "man7"
 },
 "10mkp8g": {
 "k": "~land",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man7",
 "who": "chồi",
 "g": "man7"
 },
 "1veadl1": {
 "k": "is - land. Hai cái!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man7",
 "who": "chồi",
 "g": "man7"
 },
 "cuoxb7": {
 "k": "~is - land.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man7",
 "who": "chồi",
 "g": "man7"
@@ -9879,28 +9879,28 @@
 },
 "1pj3tuz": {
 "k": "~co",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man7",
 "who": "chồi",
 "g": "man7"
 },
 "ga7qn8": {
 "k": "~nut",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man7",
 "who": "chồi",
 "g": "man7"
 },
 "1r2xend": {
 "k": "co - co - nut. Ba cái!",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man7",
 "who": "chồi",
 "g": "man7"
 },
 "1j7t8fw": {
 "k": "~co - co - nut.",
-"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man7",
 "who": "chồi",
 "g": "man7"

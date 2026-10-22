@@ -14,9 +14,10 @@ Cấu hình nằm trong `config.json`. Đổi giọng, tốc độ hoặc `gap` 
 1. Tên bé trong app được thay bằng `{N}`. Bản ghi bỏ tên đi: "Great job, {N}!" đọc thành "Great job!", "Chào {N}!" thành "Chào con!".
 2. Câu được tách thành từng câu nhỏ (ở `.`, `!`, `?`). Mỗi câu nhỏ đọc riêng rồi ghép lại, giữa các câu nghỉ 0,6 giây.
 3. Tốc độ do mô hình đọc, không kéo giãn hay nâng giọng sau khi đọc.
-4. Kokoro đọc chậm hay chèn một tiếng "ơ" trước từ đầu câu. Vì vậy câu được đọc sau một từ mồi ("Okay.") rồi cắt bỏ từ mồi ở chỗ ngắt đầu tiên.
-5. Máy nghe lại từng câu nhỏ (Whisper base.en cho tiếng Anh, Zipformer tiếng Việt). Bản nghe đúng chữ nhất được giữ. Câu nghe chưa thật đúng sẽ được in ra để người nghe lại.
-6. Mọi câu được chỉnh cùng độ to, rồi lưu mp3 mono 24 kHz: tiếng Anh 48 kbit/s, tiếng Việt 32 kbit/s (`mp3_kbps` trong `config.json`, chốt 22/10).
+4. **Từ tiếng Anh trong câu tiếng Việt** (phương án B, Minh chốt 22/10): phần tiếng Việt do VieNeu đọc, từ tiếng Anh (trong ngoặc kép, chuỗi tách tiếng như `lo - tus`, các từ trong `EN_WORDS`, tiếng đọc chậm đứng riêng như `~ba`) do giọng Anh của Chồi (`af_heart`) đọc; trong một câu, hai phần cách nhau 0,15 giây. Xem `vi_spans()` trong `tao_giong.py`.
+5. Kokoro đọc chậm hay chèn một tiếng "ơ" trước từ đầu câu. Vì vậy câu được đọc sau một từ mồi ("Okay.") rồi cắt bỏ từ mồi ở chỗ ngắt đầu tiên.
+6. Máy nghe lại từng câu nhỏ (Whisper base.en cho tiếng Anh, Zipformer tiếng Việt). Bản nghe đúng chữ nhất được giữ. Câu nghe chưa thật đúng sẽ được in ra để người nghe lại.
+7. Mọi câu được chỉnh cùng độ to, rồi lưu mp3 mono 24 kHz: tiếng Anh 48 kbit/s, tiếng Việt 32 kbit/s (`mp3_kbps` trong `config.json`, chốt 22/10).
 
 ## Chạy
 Cần: Python 3.10+, `ffmpeg`, `pip install kokoro-onnx vieneu sherpa-onnx soundfile soxr numpy`, và các mô hình trong `~/models` (đổi bằng biến `CHOI_MODELS`):
@@ -37,7 +38,7 @@ python3 tao_giong.py page                   # voice/nghe-thu.html: nghe từng c
 - `lines` giữ mọi câu đã có giọng mới (`manifest-<lang>.json`), thêm câu trong `voice/pending-unit1.json` (các phần trong `--parts`, bỏ trống là tất cả), và mọi câu trong các file `--log`.
 - `thu_cau.py` cho app tự chơi các màn trong trình duyệt không đầu và ghi lại mọi câu Chồi nói, để không sót câu nào không có trong `pending-unit1.json` (vd. "See you next time!"): `python3 thu_cau.py 8 0,1,2,3 thu-cau.json` (cần `python3 -m http.server 8765` ở thư mục gốc repo và `pip install playwright`). Kết quả đã chạy cho cả 8 màn: `thu-cau.json` (có cả câu của các bạn nhỏ, cờ `k`). `thu_mix.py` chơi hết 8 màn rồi chơi Fun Mix 3 lần (có trò thưởng): `thu-mix.json`.
 - `so_thu.py` liệt kê mọi câu cho thú ăn ở sở thú (8 loài × 7 món), lấy từ dữ liệu của app: `so-thu.json`.
-- `pack` mặc định chỉ thêm, không ghi đè file mp3 cũ: câu mới hoặc câu đã sửa nằm trong file mới ở cuối, mỗi file chỉ chứa câu của một nhóm, và số file được nối vào cuối nhóm đó trong khoá `p`. `pack --compact` ghi lại toàn bộ theo cấu trúc ở mục dưới (chạy lần đầu 22/10; chạy lại khi đã sửa nhiều lời, để bỏ các đoạn câu cũ đã bị thay).
+- `pack` mặc định chỉ thêm, không ghi đè file mp3 cũ: câu mới hoặc câu đã sửa nằm trong file mới ở cuối, mỗi file chỉ chứa câu của một nhóm, và số file được xếp vào nhóm đó trong khoá `p` theo thứ tự câu được nói (file đầu của nhóm luôn giữ nguyên, vẫn là đầu màn). `pack --compact` ghi lại toàn bộ theo cấu trúc ở mục dưới (chạy lần đầu 22/10; chạy lại khi đã sửa nhiều lời, để bỏ các đoạn câu cũ đã bị thay).
 - `thu_thu_tu.py` cho app tự chơi 8 màn × 8 lần và ghi lại thứ tự câu nói (`thu-thu-tu.json`); `pack` dùng file này để xếp câu theo thứ tự nói và chia nhóm. Có màn mới hoặc đổi nhiều lời thì chạy lại trước `pack --compact`.
 - `make --redo '<mẫu>'` tạo lại những câu khớp mẫu (vd. khi đổi cách đọc câu vỗ tay), rồi `pack` thay bản cũ.
 - `pack` chỉ đóng gói clip đang chờ trong `~/.cache/choi-voice/<lang>/`; clip đã đóng gói chuyển sang `…/packed/`.
@@ -45,7 +46,7 @@ python3 tao_giong.py page                   # voice/nghe-thu.html: nghe từng c
 ## Cấu trúc file giọng (đóng gói theo màn, 22/10)
 `voice/en.json`, `voice/vi.json`: `{"n": số file, "c": {hash: [file, vị trí byte, độ dài]}, "p": {nhóm: [các file, theo thứ tự]}, "h": [dấu vân tay từng file]}`. File mp3: `voice/en-00.mp3` … (2 chữ số, quá 99 thì 3 chữ số).
 
-Mỗi nhóm là các file liền nhau, mỗi file khoảng 400 KB. Trong nhóm, câu xếp theo thứ tự được nói (lấy từ 64 lần app tự chơi). Ai cũng tải được mọi câu: câu nào nằm ở file chưa tải thì app tải file đó khi cần.
+Mỗi nhóm là các file ghi trong `p`, mỗi file khoảng 400 KB: sau `pack --compact` là các file liền nhau; câu thêm hoặc sửa sau đó nằm ở file mới cuối bộ, được xếp vào đúng chỗ trong `p` của nhóm. App luôn đọc thứ tự file theo `p`, không theo số file. Trong nhóm, câu xếp theo thứ tự được nói (lấy từ 64 lần app tự chơi). Ai cũng tải được mọi câu: câu nào nằm ở file chưa tải thì app tải file đó khi cần.
 
 | Nhóm (`p`) | Gồm | EN (48 kbit/s) | VI (32 kbit/s) |
 |---|---|---|---|
