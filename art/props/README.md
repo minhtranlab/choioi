@@ -53,7 +53,9 @@ Vẽ theo nét các bạn nhỏ trong app (`kidSVG`): viền #3A1B49 dày 4,5, �
 | `cong-an-giao-thong.svg` | ra hiệu dừng, thổi còi | tay giơ thẳng lên, lòng bàn tay ra trước (mọi xe dừng); còi ở miệng, má phồng; gậy cầm xuôi ở tay kia |
 | `cong-an-giao-thong-khen.svg` | giơ ngón cái khen | cười to; gậy cầm xuôi ở tay kia; còi treo ở túi áo |
 | `cong-an-giao-thong-dat-tay.svg` | dắt tay | một tay đưa thấp, mở ra để nắm tay ếch: **bàn tay ở khoảng x 186, y 296** của khung (gần mép phải, cao bằng con ếch); tay kia giơ gậy chéo lên chỉ đường |
+| `cong-an-giao-thong-buoc-chan-trai.svg` | đi bộ, chân trái bước trước (22/10) | **mặt quay sang phải** (nhìn nghiêng ba phần tư), tay đánh ngược chân, gậy ở tay phải; cùng khung 200×340, đế giày ở y 328 như 3 tư thế kia. Đi sang trái thì app lật ngang |
+| `cong-an-giao-thong-buoc-chan-phai.svg` | đi bộ, chân phải bước trước (22/10) | như trên; thay phiên hai file này là thành dáng đi |
 
 Ba file cùng khung, cùng chỗ đứng: đổi file là đổi tư thế, không cần dời vị trí. Muốn quay sang phía kia thì lật ngang (`scale(-1,1)`).
 
-**Người đi bộ cho vỉa hè phía xa** (22/10): `nguoi-di-bo-dat-be-phai.svg` / `-trai.svg`, khung **24×20**. Vẽ **cùng tỉ lệ với xe trong `xe/` (1 m ≈ 12 đơn vị)**, không theo cỡ các bạn nhỏ: người lớn cao khoảng 1,6 m (19 đơn vị), bé khoảng 1 m (12 đơn vị), chân chạm cạnh dưới. Người lớn áo xanh lá đi sau, bé áo cam đi trước, hai người nắm tay, dáng đang bước. Đặt trên vỉa hè xa với cùng hệ số như làn xe xa (ví dụ 0,9 như trên `duong-toi-truong`).
+**Người đi bộ** đã chuyển sang thư viện dùng chung `art/kit/nguoi/` (22/10), xem `art/kit/README.md`.
