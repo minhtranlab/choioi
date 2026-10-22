@@ -40,5 +40,5 @@ Mỗi bạn một thư mục: `choi/`, `lam/`, `na/`, `ben/`, `polly/`. Tên fil
 **Toạ độ để game đặt đồ** (khung của từng bạn):
 - `cam-do` (Lam, Na, Ben): hai bàn tay ở (93, 188) và (107, 188); tâm đồ cầm khoảng (100, 182), đặt đồ trước người, cao không quá y 150 để không che mặt. Chồi: hai tay ở (53, 120) và (67, 120), tâm đồ khoảng (60, 116).
 - `chi-tay`: đầu ngón tay ở (191, 150) (Chồi: (131, 94)).
-- Huy chương: Lam, Na, Ben tâm huy chương (100, 182); Chồi (60, 118); Polly (100, 174).
+- Huy chương: tâm huy chương Lam, Na, Ben (100, 188); Chồi (60, 122); Polly (100, 180).
 - `ngu`: nằm ngang trong cùng khung, đầu ở bên trái (bản `-phai`).
