@@ -1561,6 +1561,24 @@
 },
 {
 "lang": "en",
+"key": "A tree!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "A rock!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "A pond!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
 "key": "Hello! I’m Chồi. Look, there’s something old on the bookshelf.",
 "who": "chồi",
 "part": "man0"
@@ -2659,6 +2677,78 @@
 },
 {
 "lang": "en",
+"key": "Oh no, it’s torn! Only one piece is left.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Look, it’s our school. We are here!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Seven pieces are missing. Each piece shows a new place.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "A new piece must be there! Let’s go and tell my friends.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Chồi is already on the bus. Let’s help Lam, Na and Ben get on!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "How many friends got on?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Three friends got on! Off we go!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "We’re at the garden gate! Tap each friend to help them get off. Count with me!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Four friends got off! Let’s go into the garden.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "We found a new piece! Polly wants to cheer with you.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "The second map piece was in the bush with the X!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Tap each friend to help them get off!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
 "key": "Here we are at the park! It’s so windy today.",
 "who": "chồi",
 "part": "man1"
@@ -3506,6 +3596,12 @@
 {
 "lang": "en",
 "key": "How does Lam feel? Tap the face!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "The third map piece was tied to the red balloon!",
 "who": "chồi",
 "part": "man1"
 },
@@ -4519,6 +4615,12 @@
 },
 {
 "lang": "en",
+"key": "We found the fourth piece, in the dark garden!",
+"who": "chồi",
+"part": "man2"
+},
+{
+"lang": "en",
 "key": "The map shows a house. It’s Na’s house! Na shows us her room.",
 "who": "chồi",
 "part": "man3"
@@ -5419,6 +5521,12 @@
 },
 {
 "lang": "en",
+"key": "The fifth piece fell from Na’s shelf!",
+"who": "chồi",
+"part": "man3"
+},
+{
+"lang": "en",
 "key": "Find the number one!",
 "who": "chồi",
 "part": "man4"
@@ -5991,6 +6099,12 @@
 "lang": "en",
 "key": "@I feel excited!",
 "who": "kid",
+"part": "man4"
+},
+{
+"lang": "en",
+"key": "The sixth piece rode the belt at the shop!",
+"who": "chồi",
 "part": "man4"
 },
 {
@@ -6801,6 +6915,12 @@
 "lang": "en",
 "key": "@I’m busy building this tower. Help me finish it, then I can bring the hook down!",
 "who": "kid",
+"part": "man5"
+},
+{
+"lang": "en",
+"key": "The seventh piece came down on the crane’s hook!",
+"who": "chồi",
 "part": "man5"
 },
 {
@@ -7874,6 +7994,48 @@
 {
 "lang": "en",
 "key": "Green light! Now they cross together.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "en",
+"key": "Na opens her book. There is a little frog in the pond. It jumps once for each sound!",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "en",
+"key": "Na is in bed. She thinks about her whole day.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "en",
+"key": "Let’s help Na put her day in order!",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "en",
+"key": "The last piece was Na’s bookmark!",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "en",
+"key": "Look! This piece shows Treasure Island.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "en",
+"key": "The map is finished! Look, the red path goes from our school all the way to Treasure Island!",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "en",
+"key": "Next time, let’s sail to Treasure Island!",
 "who": "chồi",
 "part": "man6"
 },
@@ -9111,6 +9273,138 @@
 "lang": "en",
 "key": "@Over here! A big X, and a cave behind the rocks!",
 "who": "kid",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Our map is finished! Look where the red path goes.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "It’s an island! The red X is on Treasure Island. The treasure is there!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Off we go! Goodbye, river!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Look! A lighthouse on the hill. There’s a path up to it!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Let’s walk up to the lighthouse!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Up the path we go, all the way to the lighthouse!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Here’s the lighthouse!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "The door is open! Let’s climb the stairs, all the way to the top!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "We’re at the top! Tap the door to open it!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Let’s look out at the island!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "I see a red X, next to the big rock!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "And there’s a cave near the rock. Let’s go down to the beach and find the X!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Look, an arrow! Let’s go this way.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "A little crab wants to go to the X. Let’s help it!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "The crab walks sideways to the big rock. Draw a line across, all the way to the X!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "The crab found the X!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Look! A sign by the X, with an arrow and a cave. The treasure is in the cave!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Here’s the cave! Let’s go in.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Look! The treasure chest!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Gold medals for everyone! Look at the medals. What is the same?",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "And a golden key!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "In the bucket!",
+"who": "chồi",
 "part": "man7"
 },
 {
@@ -10681,6 +10975,24 @@
 },
 {
 "lang": "vi",
+"key": "Cái cây!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Hòn đá!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Cái ao!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
 "key": "Xin chào! Chồi đây. Nhìn kìa, trên tủ sách có một thứ gì cũ cũ.",
 "who": "chồi",
 "part": "man0"
@@ -11803,6 +12115,84 @@
 },
 {
 "lang": "vi",
+"key": "Ôi, bản đồ bị rách rồi! Chỉ còn một mảnh thôi.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, đây là trường mình. Mình đang ở đây!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Còn thiếu bảy mảnh. Mỗi mảnh vẽ một nơi mới.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chắc một mảnh mới ở đó! Mình đi kể cho các bạn nhé.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Chồi đã ngồi trên xe rồi. Mình giúp Lam, Na và Ben lên xe nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Có mấy bạn đã lên xe?",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ba bạn đã lên xe! Xe chạy thôi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Tới cổng vườn rồi! Con chạm vào từng bạn để giúp các bạn xuống xe nhé. Đếm cùng Chồi nào!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bốn bạn đã xuống xe! Mình vào vườn thôi.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình tìm được một mảnh mới! Polly muốn reo hò cùng con.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mảnh bản đồ thứ hai ở trong bụi cây có dấu X!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ơ, đó là bốn.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào từng bạn để giúp các bạn xuống xe nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
 "key": "Mình tới công viên rồi! Hôm nay gió to quá.",
 "who": "chồi",
 "part": "man1"
@@ -12662,6 +13052,12 @@
 {
 "lang": "vi",
 "key": "Ben thấy có gì đó trong bụi lau cạnh ao. Đó là một cái hộp, và nó đang động đậy!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mảnh bản đồ thứ ba được buộc vào quả bóng đỏ!",
 "who": "chồi",
 "part": "man1"
 },
@@ -13657,6 +14053,12 @@
 },
 {
 "lang": "vi",
+"key": "Mình tìm được mảnh thứ tư, trong khu vườn tối!",
+"who": "chồi",
+"part": "man2"
+},
+{
+"lang": "vi",
 "key": "Bản đồ vẽ một ngôi nhà. Đó là nhà của Na! Na cho mình xem phòng của bạn ấy.",
 "who": "chồi",
 "part": "man3"
@@ -14509,6 +14911,12 @@
 },
 {
 "lang": "vi",
+"key": "Mảnh thứ năm rơi từ trên kệ của Na!",
+"who": "chồi",
+"part": "man3"
+},
+{
+"lang": "vi",
 "key": "Con tìm số một nhé!",
 "who": "chồi",
 "part": "man4"
@@ -15069,6 +15477,12 @@
 "lang": "vi",
 "key": "@Tớ thấy háo hức quá!",
 "who": "kid",
+"part": "man4"
+},
+{
+"lang": "vi",
+"key": "Mảnh thứ sáu đi trên băng chuyền ở cửa hàng!",
+"who": "chồi",
 "part": "man4"
 },
 {
@@ -15867,6 +16281,12 @@
 "lang": "vi",
 "key": "@Bác đang bận xây cái tháp này. Con giúp bác xây xong, rồi bác hạ móc xuống cho nhé!",
 "who": "kid",
+"part": "man5"
+},
+{
+"lang": "vi",
+"key": "Mảnh thứ bảy theo móc cần cẩu xuống!",
+"who": "chồi",
 "part": "man5"
 },
 {
@@ -16982,6 +17402,42 @@
 {
 "lang": "vi",
 "key": "Đèn xanh rồi! Giờ chú và ếch cùng qua đường.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Na nằm trên giường. Bạn ấy nhớ lại cả một ngày.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Mình giúp Na xếp một ngày theo thứ tự nhé!",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Mảnh cuối cùng là cái kẹp sách của Na!",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Nhìn này! Mảnh này vẽ Đảo Kho Báu.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Bản đồ đủ rồi! Nhìn này, đường đỏ đi từ trường mình tới tận Đảo Kho Báu!",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Lần sau mình đi thuyền ra Đảo Kho Báu nhé!",
 "who": "chồi",
 "part": "man6"
 },
@@ -18222,344 +18678,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "A tree!",
-"who": "chồi",
-"part": "chung"
-},
-{
-"lang": "vi",
-"key": "Cái cây!",
-"who": "chồi",
-"part": "chung"
-},
-{
-"lang": "en",
-"key": "A rock!",
-"who": "chồi",
-"part": "chung"
-},
-{
-"lang": "vi",
-"key": "Hòn đá!",
-"who": "chồi",
-"part": "chung"
-},
-{
-"lang": "en",
-"key": "A pond!",
-"who": "chồi",
-"part": "chung"
-},
-{
-"lang": "vi",
-"key": "Cái ao!",
-"who": "chồi",
-"part": "chung"
-},
-{
-"lang": "en",
-"key": "Oh no, it’s torn! Only one piece is left.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Ôi, bản đồ bị rách rồi! Chỉ còn một mảnh thôi.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "Look, it’s our school. We are here!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Nhìn này, đây là trường mình. Mình đang ở đây!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "Seven pieces are missing. Each piece shows a new place.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Còn thiếu bảy mảnh. Mỗi mảnh vẽ một nơi mới.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "A new piece must be there! Let’s go and tell my friends.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Chắc một mảnh mới ở đó! Mình đi kể cho các bạn nhé.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "Chồi is already on the bus. Let’s help Lam, Na and Ben get on!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Chồi đã ngồi trên xe rồi. Mình giúp Lam, Na và Ben lên xe nhé!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "How many friends got on?",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Có mấy bạn đã lên xe?",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "Three friends got on! Off we go!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Ba bạn đã lên xe! Xe chạy thôi!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "We’re at the garden gate! Tap each friend to help them get off. Count with me!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Tới cổng vườn rồi! Con chạm vào từng bạn để giúp các bạn xuống xe nhé. Đếm cùng Chồi nào!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "Four friends got off! Let’s go into the garden.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Bốn bạn đã xuống xe! Mình vào vườn thôi.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "We found a new piece! Polly wants to cheer with you.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Mình tìm được một mảnh mới! Polly muốn reo hò cùng con.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "The second map piece was in the bush with the X!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Mảnh bản đồ thứ hai ở trong bụi cây có dấu X!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Ơ, đó là bốn.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "Tap each friend to help them get off!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Con chạm vào từng bạn để giúp các bạn xuống xe nhé!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "The third map piece was tied to the red balloon!",
-"who": "chồi",
-"part": "man1"
-},
-{
-"lang": "vi",
-"key": "Mảnh bản đồ thứ ba được buộc vào quả bóng đỏ!",
-"who": "chồi",
-"part": "man1"
-},
-{
-"lang": "en",
-"key": "We found the fourth piece, in the dark garden!",
-"who": "chồi",
-"part": "man2"
-},
-{
-"lang": "vi",
-"key": "Mình tìm được mảnh thứ tư, trong khu vườn tối!",
-"who": "chồi",
-"part": "man2"
-},
-{
-"lang": "en",
-"key": "The fifth piece fell from Na’s shelf!",
-"who": "chồi",
-"part": "man3"
-},
-{
-"lang": "vi",
-"key": "Mảnh thứ năm rơi từ trên kệ của Na!",
-"who": "chồi",
-"part": "man3"
-},
-{
-"lang": "en",
-"key": "The sixth piece rode the belt at the shop!",
-"who": "chồi",
-"part": "man4"
-},
-{
-"lang": "vi",
-"key": "Mảnh thứ sáu đi trên băng chuyền ở cửa hàng!",
-"who": "chồi",
-"part": "man4"
-},
-{
-"lang": "en",
-"key": "The seventh piece came down on the crane’s hook!",
-"who": "chồi",
-"part": "man5"
-},
-{
-"lang": "vi",
-"key": "Mảnh thứ bảy theo móc cần cẩu xuống!",
-"who": "chồi",
-"part": "man5"
-},
-{
-"lang": "en",
-"key": "Na opens her book. There is a little frog in the pond. It jumps once for each sound!",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "en",
-"key": "Na is in bed. She thinks about her whole day.",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "vi",
-"key": "Na nằm trên giường. Bạn ấy nhớ lại cả một ngày.",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "en",
-"key": "Let’s help Na put her day in order!",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "vi",
-"key": "Mình giúp Na xếp một ngày theo thứ tự nhé!",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "en",
-"key": "The last piece was Na’s bookmark!",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "vi",
-"key": "Mảnh cuối cùng là cái kẹp sách của Na!",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "en",
-"key": "Look! This piece shows Treasure Island.",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "vi",
-"key": "Nhìn này! Mảnh này vẽ Đảo Kho Báu.",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "en",
-"key": "The map is finished! Look, the red path goes from our school all the way to Treasure Island!",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "vi",
-"key": "Bản đồ đủ rồi! Nhìn này, đường đỏ đi từ trường mình tới tận Đảo Kho Báu!",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "en",
-"key": "Next time, let’s sail to Treasure Island!",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "vi",
-"key": "Lần sau mình đi thuyền ra Đảo Kho Báu nhé!",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "en",
-"key": "Our map is finished! Look where the red path goes.",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Bản đồ của mình đủ rồi! Nhìn xem đường đỏ đi tới đâu nào.",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "It’s an island! The red X is on Treasure Island. The treasure is there!",
 "who": "chồi",
 "part": "man7"
 },
@@ -18570,20 +18690,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "Off we go! Goodbye, river!",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Xuất phát! Tạm biệt dòng sông!",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "Look! A lighthouse on the hill. There’s a path up to it!",
 "who": "chồi",
 "part": "man7"
 },
@@ -18594,20 +18702,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "Let’s walk up to the lighthouse!",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Mình đi lên ngọn hải đăng nào!",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "Up the path we go, all the way to the lighthouse!",
 "who": "chồi",
 "part": "man7"
 },
@@ -18618,20 +18714,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "Here’s the lighthouse!",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Ngọn hải đăng đây rồi!",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "The door is open! Let’s climb the stairs, all the way to the top!",
 "who": "chồi",
 "part": "man7"
 },
@@ -18642,20 +18726,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "We’re at the top! Tap the door to open it!",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Mình lên tới đỉnh rồi! Con chạm vào cánh cửa để mở nhé!",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "Let’s look out at the island!",
 "who": "chồi",
 "part": "man7"
 },
@@ -18666,20 +18738,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "I see a red X, next to the big rock!",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Tớ thấy một dấu X đỏ, cạnh hòn đá to!",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "And there’s a cave near the rock. Let’s go down to the beach and find the X!",
 "who": "chồi",
 "part": "man7"
 },
@@ -18690,20 +18750,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "Look, an arrow! Let’s go this way.",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Nhìn kìa, một mũi tên! Mình đi lối này nhé.",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "A little crab wants to go to the X. Let’s help it!",
 "who": "chồi",
 "part": "man7"
 },
@@ -18714,20 +18762,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "The crab walks sideways to the big rock. Draw a line across, all the way to the X!",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Bạn cua đi ngang tới hòn đá to. Con vẽ một đường ngang, tới tận dấu X nhé!",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "The crab found the X!",
 "who": "chồi",
 "part": "man7"
 },
@@ -18738,20 +18774,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "Look! A sign by the X, with an arrow and a cave. The treasure is in the cave!",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Nhìn kìa! Cạnh dấu X có một tấm bảng, vẽ mũi tên và cái hang. Kho báu ở trong hang!",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "Here’s the cave! Let’s go in.",
 "who": "chồi",
 "part": "man7"
 },
@@ -18762,20 +18786,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "Look! The treasure chest!",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Nhìn kìa! Rương kho báu!",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "Gold medals for everyone! Look at the medals. What is the same?",
 "who": "chồi",
 "part": "man7"
 },
@@ -18786,20 +18798,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "And a golden key!",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Và một chiếc chìa khoá vàng!",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "In the bucket!",
 "who": "chồi",
 "part": "man7"
 },
@@ -18808,5 +18808,101 @@
 "key": "Trong cái xô!",
 "who": "chồi",
 "part": "man7"
+},
+{
+"lang": "en",
+"key": "Treasure chest!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Rương kho báu!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Catch the big toys!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Bắt các đồ chơi to nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Put four red things in the cart!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con bỏ bốn thứ màu đỏ vào xe nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Put four blue things in the cart!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con bỏ bốn thứ màu xanh dương vào xe nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Put four yellow things in the cart!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con bỏ bốn thứ màu vàng vào xe nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Put five red things in the cart!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con bỏ năm thứ màu đỏ vào xe nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Put five blue things in the cart!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con bỏ năm thứ màu xanh dương vào xe nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Put five yellow things in the cart!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con bỏ năm thứ màu vàng vào xe nhé!",
+"who": "chồi",
+"part": "chung"
 }
 ]
