@@ -35,6 +35,8 @@ Mỗi bạn một thư mục: `choi/`, `lam/`, `na/`, `ben/`, `polly/`. Tên fil
 
 **Tư thế của Chồi, Lam, Na, Ben** (13): `dung` đứng · `vay-chao` vẫy chào · `vo-tay-mo` vỗ tay, hai tay mở · `vo-tay-cham` vỗ tay, hai tay chạm · `chi-tay` chỉ tay sang phải (bản `-trai` chỉ sang trái) · `cam-do` hai tay ngang bụng để cầm đồ · `nhay` nhảy vui · `buon` buồn cúi đầu · `ngoi` ngồi · `ngu` nằm ngủ có chăn · `buoc-1`, `buoc-2` hai tư thế bước (mặt quay theo hướng đi; thay phiên là thành dáng đi) · `deo-huy-chuong` đeo huy chương vàng.
 
+**Thêm cho Lam và Ben:** `khieng-1`, `khieng-2` (22/10 tối) · khiêng rương: dáng bước đi như `buoc-1`/`buoc-2`, mặt quay theo hướng đi, hai tay đưa ra trước ngang bụng để đỡ vật; **hai bàn tay ở (144, 190) và (158, 188)** (bản `-phai`; bản `-trai` lật: (56, 190), (42, 188)). Rương đặt giữa hai bạn, cạnh trên rương khoảng y 184 của khung.
+
 **Thêm cho Ben:** `ben-ngu-tui-ngu` · Ben ngủ trong túi ngủ xanh lá (22/10, thay cảnh xoay người + tấm chăn cũ): nằm dưới đất, đầu nằm nghiêng trong mũ trùm (đỉnh đầu về bên trái), túi kéo tới cằm, zzz. Cùng khung 200×260, đáy y 246; túi trống là `do-vat/tui-ngu`.
 
 **Tư thế của Polly** (5): `dung` · `noi` (mở mỏ) · `bay-1`, `bay-2` (bay như hiệu ứng trong app: thân nhấc lên, chân co, chỉ cánh vỗ; `bay-2` cánh hất lên 28°) · `deo-huy-chuong`.
