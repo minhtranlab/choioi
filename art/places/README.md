@@ -101,6 +101,16 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 - Xe: xem `art/props/README.md`.
 - Vòng 2 (21/10 chiều): đồng ý vườn trường mới, đường tới trường + bản sân khấu, đường ven công viên, taxi, xe chở hàng, cầu trượt và cây cầu. Cổng trường bản sân khấu sửa lại: giữ nguyên thiết kế cổng, chỉ dịu màu một chút (cổng là chỗ ai cũng nhận ra).
 
+## `ban-do/` · bản đồ kho báu 8 mảnh (22/10)
+Cùng khung với bản đồ đang có trong app (`viewBox="0 0 220 150"`, 8 ô 48×58 bắt đầu từ x 14, y 14, `MAP_CELLS` như cũ: hàng trên trái → phải là mảnh 1–4, hàng dưới phải → trái là mảnh 5–8), nên thay thẳng cho `islandArt()`; cắt từng mảnh bằng `mapJag(k)` như hiện nay.
+
+| File | Nội dung |
+|---|---|
+| `ban-do.svg` | Cả tấm bản đồ: biển xanh, đất liền cho mảnh 1–7 (1 trường học, 2 công viên, 3 khu vườn, 4 nhà Na, 5 cửa hàng, 6 công trường, 7 một ngày của Na), **Đảo Kho Báu (mảnh 8, ô dưới cùng bên trái) là đảo riêng, có biển bao quanh tách khỏi đất liền**; trên đảo có cây dừa, hải đăng nhỏ, rương và dấu X đỏ. Một chiếc thuyền nhỏ ở eo biển giữa đất liền và đảo. Không có đường chấm đỏ. |
+| `duong-1.svg` … `duong-7.svg` | Đường chấm đỏ từng đoạn, cùng khung 220×150: `duong-k` đi từ tâm mảnh k tới tâm mảnh k+1 (`duong-7` từ mảnh 7 qua thuyền ra đảo). Khi bé có mảnh mới nhất là n, đặt chồng `duong-1` … `duong-(n-1)`; không vẽ trước tới mảnh chưa có. |
+
+Tâm các mảnh (điểm đầu, cuối của đường): 1 (38, 43), 2 (86, 43), 3 (134, 43), 4 (182, 43), 5 (182, 101), 6 (134, 101), 7 (86, 101), 8 (37, 108).
+
 ## `do-choi/` · đồ chơi sân trường, để game đặt riêng (đồ vật, đứng trên mặt đất; tỉ lệ khoảng 32 đơn vị = 1 m)
 | File | Gợi ý dùng |
 |---|---|
