@@ -67,7 +67,7 @@ Mỗi nhóm là các file ghi trong `p`, mỗi file khoảng 400 KB: sau `pack -
 3. Câu nằm ở file chưa tải: tải ngay file đó (app hiện đã làm vậy, chờ 1,5 giây rồi hiện chữ).
 
 ## Phần trong index.html (đã làm 21/10, commit 186183a; chat U1 sửa lại 22/10, commit 1c80eaf)
-1. **Tải trước theo màn, có màn chờ.** Màn có `I.p['chung']` và `I.p['man'+li]`: app chờ các file đó trước khi vào màn (màn chờ có trò chạm bong bóng), rồi tải ngầm màn kế tiếp. Giọng đã tải được giữ trong máy (Cache Storage, theo `h`).
+1. **Tải trước theo màn, có màn chờ.** Màn có `I.p['chung']` và `I.p['man'+li]`: app chỉ chờ `p.chung` và file đầu `p['man'+li][0]` (22/10 tối, chat U1), màn chờ có thanh "Đang tải giọng nói của bài" với bóng bay và trò chạm bong bóng. Sau đó tải ngầm lần lượt: phần còn lại của màn, `sothu`, file đầu của màn kế tiếp, rồi `ngoai`; vào thành phố thì tải `sothu`, vào My Games / Fun Mix / hộp nhạc thì tải `ngoai`. Không tải trước `cu`. Giọng đã tải được giữ trong máy (Cache Storage, theo `h`).
 2. **Không lẫn giọng máy.** Câu thiếu bản ghi hoặc chưa tải kịp chỉ hiện chữ; không bao giờ đọc cả màn bằng giọng máy (bỏ từ 22/10).
 3. **Giọng bạn nhỏ.** App tìm khoá `"@" + khoá câu` (hash của chuỗi đó) cho câu của Lam, Na, Ben trước; có thì phát nguyên tốc độ, chưa có thì dùng bản của Chồi nâng 1.12. Polly giữ 1.32. Khi ghi giọng `kid`, `pack` cần ghi câu đó dưới khoá có `@`.
 4. **Tốc độ Chậm / Vừa / Nhanh (hoãn 22/10, chưa có bộ nào).** App đọc `voice/<lang>-s.json` với `voice/<lang>-s-NN.mp3` (Chậm), `voice/<lang>-f.json` với `voice/<lang>-f-NN.mp3` (Nhanh), cùng định dạng `en.json` (có khoá `p`); Vừa là bộ hiện có. Nghỉ sau câu 800 / 650 / 520 ms. Dòng chọn tốc độ trong Cài đặt chỉ hiện khi có đủ bộ Chậm và Nhanh.

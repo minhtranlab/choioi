@@ -18,7 +18,9 @@ USED = ['lop-hoc', 'san-truong', 'vuon-truong', 'cong-vien', 'vuon-nha-na-chieu'
         'vuon-nha-na-dem-can-ban', 'vuon-nha-na-dem-can-la', 'vuon-nha-na-dem-truoc-leu', 'phong-na-can-ban', 'phong-na-can-but', 'phong-na-can-san',
         'sieu-thi-can-ghe', 'cong-truong-can-cua-so', 'cong-truong-can-nha-xe', 'ra-khoi-can', 'vuon-truong-tron-ho', 'cong-vao-truong-tron-xe',
         # 22/10 (after Minh played the whole of Unit 1): the bus road round the school; Màn 7 from the boat up the lighthouse, the window, the cave
-        'duong-quanh-truong', 'duong-quanh-truong-tron', 'dao-bai-cat-hai-dang', 'dao-bai-cat-hai-dang-tron', 'duong-len-hai-dang', 'hai-dang-cat-doc', 'nhin-tu-cua-so', 'cua-hang']
+        'duong-quanh-truong', 'duong-quanh-truong-tron', 'dao-bai-cat-hai-dang', 'dao-bai-cat-hai-dang-tron', 'duong-len-hai-dang', 'hai-dang-cat-doc', 'nhin-tu-cua-so', 'cua-hang',
+        # 22/10 tối: the third road of the My Games frog trip (the road to school in the afternoon)
+        'duong-toi-truong-chieu-tron']
 # things a game puts on a background, drawn once and used on every page (art/places/do-choi/, art/props/): copied into PROP, keyed by file name
 PROPS = ['places/do-choi/cau-truot-phai', 'places/do-choi/cay-cau'] + [f'props/xe/{n}-{d}' for n in ('xe-om-xanh', 'xe-om-vang', 'xe-om-xanh-cho-khach', 'xe-om-vang-cho-khach',
          'xe-om-xanh-thung', 'xe-om-vang-thung', 'taxi-xanh-ngoc', 'taxi-xanh-ngoc-suv', 'xe-buyt-xanh-duong', 'xe-buyt-dien-xanh-la', 'xe-dua-don') for d in ('phai', 'trai')]
