@@ -1,64 +1,40 @@
 [
  {
-  "part": "chung",
-  "en": "Treasure chest!",
-  "vi": "Rương kho báu!",
+  "part": "man7",
+  "en": "We’re at the top! Oh, this door is locked too.",
+  "vi": "Mình lên tới đỉnh rồi! Ơ, cửa này cũng bị khoá.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
-  "part": "chung",
-  "en": "Catch the big toys!",
-  "vi": "Bắt các đồ chơi to nhé!",
+  "part": "man7",
+  "en": "It’s dark in the cave… Look! Something is shining!",
+  "vi": "Trong hang tối quá… Nhìn kìa! Có gì đó lấp lánh!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
-  "part": "chung",
-  "en": "Put four red things in the cart!",
-  "vi": "Con bỏ bốn thứ màu đỏ vào xe nhé!",
+  "part": "man7",
+  "en": "It’s the treasure chest! Heave-ho, let’s carry it out!",
+  "vi": "Rương kho báu đó! Hò dô, mình khiêng ra nào!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
-  "part": "chung",
-  "en": "Put four blue things in the cart!",
-  "vi": "Con bỏ bốn thứ màu xanh dương vào xe nhé!",
+  "part": "man7",
+  "en": "We carried the treasure chest out of the cave!",
+  "vi": "Mình khiêng rương kho báu ra khỏi hang rồi!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
-  "part": "chung",
-  "en": "Put four yellow things in the cart!",
-  "vi": "Con bỏ bốn thứ màu vàng vào xe nhé!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Put five red things in the cart!",
-  "vi": "Con bỏ năm thứ màu đỏ vào xe nhé!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Put five blue things in the cart!",
-  "vi": "Con bỏ năm thứ màu xanh dương vào xe nhé!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Put five yellow things in the cart!",
-  "vi": "Con bỏ năm thứ màu vàng vào xe nhé!",
+  "part": "man7",
+  "en": "Now we can see the chest!",
+  "vi": "Giờ mình nhìn rõ cái rương rồi!",
   "needEn": true,
   "needVi": true,
   "slow": false
