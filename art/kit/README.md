@@ -19,3 +19,26 @@ Tất cả đang bước đi (một chân trước, một chân sau, tay đánh 
 | `hoc-sinh-deo-cap` | 13×16 | bạn học sinh áo trắng, quần xanh đậm, khăn quàng đỏ nhỏ, đeo cặp cam sau lưng (khoảng 1,3 m) |
 | `nguoi-doi-non-la` | 15×23 | người đội nón lá, áo xanh nhạt (khoảng 1,6 m; khung cao hơn vì chóp nón) |
 | `nguoi-xach-gio-di-cho` | 15×20 | người đi chợ xách giỏ nhựa hồng có rau và đuôi cá thò ra (khoảng 1,6 m) |
+
+## `nhan-vat/` · đội bạn nhỏ (22/10, Minh đã duyệt)
+Khác với `nguoi/`: các bạn vẽ **theo cỡ nhân vật của app**, không theo tỉ lệ 1 m ≈ 12 đơn vị. Nét và khung giống hình các bạn đang có trong app (`kidSVG`, `mascotSVG`, `pollySVG`), nên thay thẳng được.
+
+Mỗi bạn một thư mục: `choi/`, `lam/`, `na/`, `ben/`, `polly/`. Tên file: `<bạn>-<tư thế>-phai.svg` và `-trai.svg` (bản lật ngang). Mọi tư thế của một bạn **cùng khung, cùng chỗ chân**, nên đổi tư thế chỉ cần đổi file, không dời chỗ.
+
+| Bạn | Khung | Chân / đáy | Trang phục (màu riêng, giữ suốt app) | Đồ riêng (đeo, chỉ cầm khi dùng) |
+|---|---|---|---|---|
+| Chồi | 120×140 | đáy thân y 137 | mầm cây xanh như trong app | — |
+| Lam | 200×260 | đế giày y 246 | áo thám hiểm xanh lá không tay (cổ áo, 2 túi), quần soóc kaki, mũ thám hiểm băng xanh lá, giày nâu | ống nhòm đeo dây trước ngực |
+| Na | 200×260 | đế giày y 246 | váy yếm cam đỏ không tay, tóc đuôi ngựa buộc dây xanh, giày hồng | kính lúp đeo dây trên ngực |
+| Ben | 200×260 | đế giày y 246 | áo xanh dương có tay, quần soóc kaki, kính tròn, giày trắng | túi nhỏ đeo chéo, bản đồ cuộn ló ra khỏi túi |
+| Polly | 200×260 | chân y 252 | vẹt xanh lá, cánh xanh dương, mào đỏ | — |
+
+**Tư thế của Chồi, Lam, Na, Ben** (13): `dung` đứng · `vay-chao` vẫy chào · `vo-tay-mo` vỗ tay, hai tay mở · `vo-tay-cham` vỗ tay, hai tay chạm · `chi-tay` chỉ tay sang phải (bản `-trai` chỉ sang trái) · `cam-do` hai tay ngang bụng để cầm đồ · `nhay` nhảy vui · `buon` buồn cúi đầu · `ngoi` ngồi · `ngu` nằm ngủ có chăn · `buoc-1`, `buoc-2` hai tư thế bước (mặt quay theo hướng đi; thay phiên là thành dáng đi) · `deo-huy-chuong` đeo huy chương vàng.
+
+**Tư thế của Polly** (5): `dung` · `noi` (mở mỏ) · `bay-1`, `bay-2` (bay như hiệu ứng trong app: thân nhấc lên, chân co, chỉ cánh vỗ; `bay-2` cánh hất lên 28°) · `deo-huy-chuong`.
+
+**Toạ độ để game đặt đồ** (khung của từng bạn):
+- `cam-do` (Lam, Na, Ben): hai bàn tay ở (93, 188) và (107, 188); tâm đồ cầm khoảng (100, 182), đặt đồ trước người, cao không quá y 150 để không che mặt. Chồi: hai tay ở (53, 120) và (67, 120), tâm đồ khoảng (60, 116).
+- `chi-tay`: đầu ngón tay ở (191, 150) (Chồi: (131, 94)).
+- Huy chương: Lam, Na, Ben tâm huy chương (100, 182); Chồi (60, 118); Polly (100, 174).
+- `ngu`: nằm ngang trong cùng khung, đầu ở bên trái (bản `-phai`).
