@@ -1560,6 +1560,24 @@
 "part": "chung",
 "who": "Bac"
 },
+"p2ud73": {
+"k": "A tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"veqnoc": {
+"k": "A rock!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"4a8sqe": {
+"k": "A pond!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
 "1uc8vmr": {
 "k": "Hello! I’m Chồi. Look, there’s something old on the bookshelf.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -2658,6 +2676,78 @@
 "part": "man0",
 "who": "chồi"
 },
+"nyshtt": {
+"k": "Oh no, it’s torn! Only one piece is left.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1ai1ra2": {
+"k": "Look, it’s our school. We are here!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"lnug0k": {
+"k": "Seven pieces are missing. Each piece shows a new place.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"129imrv": {
+"k": "A new piece must be there! Let’s go and tell my friends.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"x2n9fj": {
+"k": "Chồi is already on the bus. Let’s help Lam, Na and Ben get on!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1jedq71": {
+"k": "How many friends got on?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1smcu1e": {
+"k": "Three friends got on! Off we go!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1a68n1z": {
+"k": "We’re at the garden gate! Tap each friend to help them get off. Count with me!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1hakglx": {
+"k": "Four friends got off! Let’s go into the garden.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"18jpcvl": {
+"k": "We found a new piece! Polly wants to cheer with you.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"rgyqit": {
+"k": "The second map piece was in the bush with the X!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1syis0r": {
+"k": "Tap each friend to help them get off!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
 "oo9sol": {
 "k": "Here we are at the park! It’s so windy today.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -3506,6 +3596,12 @@
 },
 "ghgwhb": {
 "k": "How does Lam feel? Tap the face!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"zh2cq3": {
+"k": "The third map piece was tied to the red balloon!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man1",
 "who": "chồi"
@@ -4518,6 +4614,12 @@
 "part": "man2",
 "who": "chồi"
 },
+"u7er6c": {
+"k": "We found the fourth piece, in the dark garden!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
 "tfjlfd": {
 "k": "The map shows a house. It’s Na’s house! Na shows us her room.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -5418,6 +5520,12 @@
 "part": "man3",
 "who": "chồi"
 },
+"1ey7oc8": {
+"k": "The fifth piece fell from Na’s shelf!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
 "1xhv1d5": {
 "k": "Find the number one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -5993,6 +6101,12 @@
 "s": "kokoro|af_sky|0.85|gap0.6|v3",
 "part": "man4",
 "who": "kid"
+},
+"1hv7nlj": {
+"k": "The sixth piece rode the belt at the shop!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi"
 },
 "6e6iti": {
 "k": "Bang, bang! A hammer!",
@@ -6803,6 +6917,12 @@
 "s": "kokoro|af_sky|0.85|gap0.6|v3",
 "part": "man5",
 "who": "kid"
+},
+"1a40mva": {
+"k": "The seventh piece came down on the crane’s hook!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi"
 },
 "k7otd": {
 "k": "Look, a banana!",
@@ -7874,6 +7994,48 @@
 },
 "1tgxud7": {
 "k": "Green light! Now they cross together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"1aeejam": {
+"k": "Na opens her book. There is a little frog in the pond. It jumps once for each sound!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"15jaiek": {
+"k": "Na is in bed. She thinks about her whole day.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"1pfstmg": {
+"k": "Let’s help Na put her day in order!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"5gtcen": {
+"k": "The last piece was Na’s bookmark!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"18e8mq1": {
+"k": "Look! This piece shows Treasure Island.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"4uacca": {
+"k": "The map is finished! Look, the red path goes from our school all the way to Treasure Island!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"1hikoy1": {
+"k": "Next time, let’s sail to Treasure Island!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man6",
 "who": "chồi"
@@ -9113,6 +9275,138 @@
 "s": "kokoro|af_sky|0.85|gap0.6|v3",
 "part": "man7",
 "who": "kid"
+},
+"b10u9j": {
+"k": "Our map is finished! Look where the red path goes.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"om2c3r": {
+"k": "It’s an island! The red X is on Treasure Island. The treasure is there!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"q09s65": {
+"k": "Off we go! Goodbye, river!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1fx3hjn": {
+"k": "Look! A lighthouse on the hill. There’s a path up to it!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"jlx735": {
+"k": "Let’s walk up to the lighthouse!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1mor43k": {
+"k": "Up the path we go, all the way to the lighthouse!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1oy7ssv": {
+"k": "Here’s the lighthouse!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"162zp3l": {
+"k": "The door is open! Let’s climb the stairs, all the way to the top!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1h7j5bq": {
+"k": "We’re at the top! Tap the door to open it!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"z77e91": {
+"k": "Let’s look out at the island!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"bkcpze": {
+"k": "I see a red X, next to the big rock!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"i7wfpm": {
+"k": "And there’s a cave near the rock. Let’s go down to the beach and find the X!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1alk2zj": {
+"k": "Look, an arrow! Let’s go this way.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"30fl7k": {
+"k": "A little crab wants to go to the X. Let’s help it!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"19yua20": {
+"k": "The crab walks sideways to the big rock. Draw a line across, all the way to the X!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"v3m0qk": {
+"k": "The crab found the X!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"cmwn5c": {
+"k": "Look! A sign by the X, with an arrow and a cave. The treasure is in the cave!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"2r8hi": {
+"k": "Here’s the cave! Let’s go in.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"wr3lsp": {
+"k": "Look! The treasure chest!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"e7ku7d": {
+"k": "Gold medals for everyone! Look at the medals. What is the same?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1qmkwjk": {
+"k": "And a golden key!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1nzgc28": {
+"k": "In the bucket!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
 }
 }
 }

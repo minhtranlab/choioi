@@ -1566,6 +1566,24 @@
 "part": "chung",
 "who": "Bac"
 },
+"16gn0kr": {
+"k": "Cái cây!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"zx4etq": {
+"k": "Hòn đá!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
+"1hprvv3": {
+"k": "Cái ao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "chung",
+"who": "chồi"
+},
 "n8senc": {
 "k": "Xin chào! Chồi đây. Nhìn kìa, trên tủ sách có một thứ gì cũ cũ.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -2688,6 +2706,84 @@
 "part": "man0",
 "who": "chồi"
 },
+"1jqmrot": {
+"k": "Ôi, bản đồ bị rách rồi! Chỉ còn một mảnh thôi.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"zjufjj": {
+"k": "Nhìn này, đây là trường mình. Mình đang ở đây!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"ckntpg": {
+"k": "Còn thiếu bảy mảnh. Mỗi mảnh vẽ một nơi mới.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"xyiwud": {
+"k": "Chắc một mảnh mới ở đó! Mình đi kể cho các bạn nhé.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"4y41a6": {
+"k": "Chồi đã ngồi trên xe rồi. Mình giúp Lam, Na và Ben lên xe nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1siis9h": {
+"k": "Có mấy bạn đã lên xe?",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"11ua9eb": {
+"k": "Ba bạn đã lên xe! Xe chạy thôi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"2gus3q": {
+"k": "Tới cổng vườn rồi! Con chạm vào từng bạn để giúp các bạn xuống xe nhé. Đếm cùng Chồi nào!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"1ql028c": {
+"k": "Bốn bạn đã xuống xe! Mình vào vườn thôi.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"9n0kbi": {
+"k": "Mình tìm được một mảnh mới! Polly muốn reo hò cùng con.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"14hs907": {
+"k": "Mảnh bản đồ thứ hai ở trong bụi cây có dấu X!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"u23haa": {
+"k": "Ơ, đó là bốn.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
+"xep0j4": {
+"k": "Con chạm vào từng bạn để giúp các bạn xuống xe nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi"
+},
 "1ze9zk": {
 "k": "Mình tới công viên rồi! Hôm nay gió to quá.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -3548,6 +3644,12 @@
 },
 "1amij35": {
 "k": "Ben thấy có gì đó trong bụi lau cạnh ao. Đó là một cái hộp, và nó đang động đậy!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man1",
+"who": "chồi"
+},
+"2m3nef": {
+"k": "Mảnh bản đồ thứ ba được buộc vào quả bóng đỏ!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man1",
 "who": "chồi"
@@ -4542,6 +4644,12 @@
 "part": "man2",
 "who": "chồi"
 },
+"ylicnl": {
+"k": "Mình tìm được mảnh thứ tư, trong khu vườn tối!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi"
+},
 "jqgrmk": {
 "k": "Bản đồ vẽ một ngôi nhà. Đó là nhà của Na! Na cho mình xem phòng của bạn ấy.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -5394,6 +5502,12 @@
 "part": "man3",
 "who": "chồi"
 },
+"1572icm": {
+"k": "Mảnh thứ năm rơi từ trên kệ của Na!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi"
+},
 "1vxhfv6": {
 "k": "Con tìm số một nhé!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -5957,6 +6071,12 @@
 "s": "vieneu|Trúc Ly|1|gap0.6|v3",
 "part": "man4",
 "who": "kid"
+},
+"p3v1uh": {
+"k": "Mảnh thứ sáu đi trên băng chuyền ở cửa hàng!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi"
 },
 "kd25x9": {
 "k": "Cộc, cộc! Cái búa!",
@@ -6755,6 +6875,12 @@
 "s": "vieneu|Trúc Ly|1|gap0.6|v3",
 "part": "man5",
 "who": "kid"
+},
+"1woqlmc": {
+"k": "Mảnh thứ bảy theo móc cần cẩu xuống!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi"
 },
 "1xjklki": {
 "k": "Nhìn này, quả chuối!",
@@ -7868,6 +7994,42 @@
 },
 "103zf3o": {
 "k": "Đèn xanh rồi! Giờ chú và ếch cùng qua đường.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"wnb2be": {
+"k": "Na nằm trên giường. Bạn ấy nhớ lại cả một ngày.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"1xf9slq": {
+"k": "Mình giúp Na xếp một ngày theo thứ tự nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"11ob15p": {
+"k": "Mảnh cuối cùng là cái kẹp sách của Na!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"eenmr9": {
+"k": "Nhìn này! Mảnh này vẽ Đảo Kho Báu.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"1pa2jrv": {
+"k": "Bản đồ đủ rồi! Nhìn này, đường đỏ đi từ trường mình tới tận Đảo Kho Báu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi"
+},
+"u34efy": {
+"k": "Lần sau mình đi thuyền ra Đảo Kho Báu nhé!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man6",
 "who": "chồi"
@@ -9107,6 +9269,138 @@
 "s": "vieneu|Trúc Ly|1|gap0.6|v3",
 "part": "man7",
 "who": "kid"
+},
+"1jmh41t": {
+"k": "Bản đồ của mình đủ rồi! Nhìn xem đường đỏ đi tới đâu nào.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"4l3hmh": {
+"k": "Đó là một hòn đảo! Dấu X đỏ ở trên Đảo Kho Báu. Kho báu ở đó!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1cdtuxh": {
+"k": "Xuất phát! Tạm biệt dòng sông!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"helgcg": {
+"k": "Nhìn kìa! Một ngọn hải đăng trên đồi. Có đường đi lên tới đó!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"17qzcb3": {
+"k": "Mình đi lên ngọn hải đăng nào!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"q0n5us": {
+"k": "Mình đi theo con đường, lên tận ngọn hải đăng!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1ujgo3n": {
+"k": "Ngọn hải đăng đây rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1uny3m6": {
+"k": "Cửa mở rồi! Mình leo cầu thang lên tận đỉnh nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1s25vh0": {
+"k": "Mình lên tới đỉnh rồi! Con chạm vào cánh cửa để mở nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"rvaw8": {
+"k": "Mình nhìn ra hòn đảo nào!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1ahr002": {
+"k": "Tớ thấy một dấu X đỏ, cạnh hòn đá to!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"ke3ox7": {
+"k": "Và có một cái hang gần hòn đá. Mình xuống bãi biển tìm dấu X nào!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"qi3ena": {
+"k": "Nhìn kìa, một mũi tên! Mình đi lối này nhé.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"fdju4r": {
+"k": "Một bạn cua nhỏ muốn đi tới dấu X. Mình giúp bạn ấy nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"oh4q0b": {
+"k": "Bạn cua đi ngang tới hòn đá to. Con vẽ một đường ngang, tới tận dấu X nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"12w26pe": {
+"k": "Bạn cua tìm ra dấu X rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"rlz1s9": {
+"k": "Nhìn kìa! Cạnh dấu X có một tấm bảng, vẽ mũi tên và cái hang. Kho báu ở trong hang!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1son023": {
+"k": "Hang đây rồi! Mình vào hang nào.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"1d0hlr7": {
+"k": "Nhìn kìa! Rương kho báu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"f5h8mu": {
+"k": "Huy chương vàng cho mọi người! Nhìn các huy chương nào. Chúng giống nhau ở điểm nào?",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"n50j4a": {
+"k": "Và một chiếc chìa khoá vàng!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
+},
+"128rb7f": {
+"k": "Trong cái xô!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi"
 }
 }
 }
