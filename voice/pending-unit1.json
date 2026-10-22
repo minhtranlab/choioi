@@ -1,42 +1,247 @@
 [
  {
+  "part": "man6",
+  "en": "Look, a banana! Banana has three sounds. One clap for each sound.",
+  "vi": "Nhìn này, quả chuối! Tiếng Anh là banana. Banana có ba tiếng: ba - na - na. Mỗi tiếng vỗ tay một cái.",
+  "needEn": false,
+  "needVi": true,
+  "slow": false,
+  "tiengAnhTrongCauViet": [
+   "banana",
+   "ba - na - na"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Ba-na-na!",
+  "vi": "Ba-na-na!",
+  "needEn": false,
+  "needVi": true,
+  "slow": false,
+  "tiengAnhTrongCauViet": [
+   "Ba-na-na"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Banana.",
+  "vi": "Banana.",
+  "needEn": false,
+  "needVi": true,
+  "slow": true,
+  "tiengAnhTrongCauViet": [
+   "Banana"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Look, a banana!",
+  "vi": "Nhìn này, quả chuối! Tiếng Anh là banana.",
+  "needEn": false,
+  "needVi": true,
+  "slow": false,
+  "tiengAnhTrongCauViet": [
+   "banana"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Apple.",
+  "vi": "Apple.",
+  "needEn": false,
+  "needVi": true,
+  "slow": true,
+  "tiengAnhTrongCauViet": [
+   "Apple"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Na wants an apple, too.",
+  "vi": "Na muốn ăn cả quả táo nữa. Tiếng Anh là apple.",
+  "needEn": false,
+  "needVi": true,
+  "slow": false,
+  "tiengAnhTrongCauViet": [
+   "apple"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Egg.",
+  "vi": "Egg.",
+  "needEn": false,
+  "needVi": true,
+  "slow": true,
+  "tiengAnhTrongCauViet": [
+   "Egg"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Look, an egg!",
+  "vi": "Nhìn này, quả trứng! Tiếng Anh là egg.",
+  "needEn": false,
+  "needVi": true,
+  "slow": false,
+  "tiengAnhTrongCauViet": [
+   "egg"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Mango.",
+  "vi": "Mango.",
+  "needEn": false,
+  "needVi": true,
+  "slow": true,
+  "tiengAnhTrongCauViet": [
+   "Mango"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Look, a mango!",
+  "vi": "Nhìn này, quả xoài! Tiếng Anh là mango.",
+  "needEn": false,
+  "needVi": true,
+  "slow": false,
+  "tiengAnhTrongCauViet": [
+   "mango"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Fish.",
+  "vi": "Fish.",
+  "needEn": false,
+  "needVi": true,
+  "slow": true,
+  "tiengAnhTrongCauViet": [
+   "Fish"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Look, a fish!",
+  "vi": "Nhìn này, con cá! Tiếng Anh là fish.",
+  "needEn": false,
+  "needVi": true,
+  "slow": false,
+  "tiengAnhTrongCauViet": [
+   "fish"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Lotus.",
+  "vi": "Lotus.",
+  "needEn": false,
+  "needVi": true,
+  "slow": true,
+  "tiengAnhTrongCauViet": [
+   "Lotus"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "The frog wants a lotus flower. Lotus!",
+  "vi": "Ếch muốn tìm hoa sen. Tiếng Anh là lotus.",
+  "needEn": false,
+  "needVi": true,
+  "slow": false,
+  "tiengAnhTrongCauViet": [
+   "lotus"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Butterfly.",
+  "vi": "Butterfly.",
+  "needEn": false,
+  "needVi": true,
+  "slow": true,
+  "tiengAnhTrongCauViet": [
+   "Butterfly"
+  ]
+ },
+ {
+  "part": "man6",
+  "en": "Now the frog wants to see the butterfly. Butterfly!",
+  "vi": "Giờ ếch muốn gặp bạn bươm bướm. Tiếng Anh là butterfly.",
+  "needEn": false,
+  "needVi": true,
+  "slow": false,
+  "tiengAnhTrongCauViet": [
+   "butterfly"
+  ]
+ },
+ {
   "part": "man7",
-  "en": "We’re at the top! Oh, this door is locked too.",
-  "vi": "Mình lên tới đỉnh rồi! Ơ, cửa này cũng bị khoá.",
+  "en": "And Na makes a square door and a triangle flag.",
+  "vi": "Và Na làm cái cửa hình vuông và lá cờ hình tam giác.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man7",
-  "en": "It’s dark in the cave… Look! Something is shining!",
-  "vi": "Trong hang tối quá… Nhìn kìa! Có gì đó lấp lánh!",
+  "en": "And Na makes a round window and a triangle flag.",
+  "vi": "Và Na làm cửa sổ hình tròn và lá cờ hình tam giác.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man7",
-  "en": "It’s the treasure chest! Heave-ho, let’s carry it out!",
-  "vi": "Rương kho báu đó! Hò dô, mình khiêng ra nào!",
+  "en": "And Na makes a round window and a square door.",
+  "vi": "Và Na làm cửa sổ hình tròn và cái cửa hình vuông.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man7",
-  "en": "We carried the treasure chest out of the cave!",
-  "vi": "Mình khiêng rương kho báu ra khỏi hang rồi!",
-  "needEn": true,
+  "en": "Island.",
+  "vi": "Island.",
+  "needEn": false,
   "needVi": true,
-  "slow": false
+  "slow": true,
+  "tiengAnhTrongCauViet": [
+   "Island"
+  ]
  },
  {
   "part": "man7",
-  "en": "Now we can see the chest!",
-  "vi": "Giờ mình nhìn rõ cái rương rồi!",
+  "en": "Look, an island!",
+  "vi": "Nhìn này, hòn đảo! Tiếng Anh là island.",
   "needEn": true,
   "needVi": true,
-  "slow": false
+  "slow": false,
+  "tiengAnhTrongCauViet": [
+   "island"
+  ]
+ },
+ {
+  "part": "man7",
+  "en": "Coconut.",
+  "vi": "Coconut.",
+  "needEn": false,
+  "needVi": true,
+  "slow": true,
+  "tiengAnhTrongCauViet": [
+   "Coconut"
+  ]
+ },
+ {
+  "part": "man7",
+  "en": "Look, a coconut!",
+  "vi": "Nhìn này, quả dừa! Tiếng Anh là coconut.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "tiengAnhTrongCauViet": [
+   "coconut"
+  ]
  }
 ]

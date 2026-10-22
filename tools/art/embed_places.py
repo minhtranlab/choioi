@@ -20,7 +20,9 @@ USED = ['lop-hoc', 'san-truong', 'vuon-truong', 'cong-vien', 'vuon-nha-na-chieu'
         # 22/10 (after Minh played the whole of Unit 1): the bus road round the school; Màn 7 from the boat up the lighthouse, the window, the cave
         'duong-quanh-truong', 'duong-quanh-truong-tron', 'dao-bai-cat-hai-dang', 'dao-bai-cat-hai-dang-tron', 'duong-len-hai-dang', 'hai-dang-cat-doc', 'nhin-tu-cua-so', 'cua-hang',
         # 22/10 tối: the third road of the My Games frog trip (the road to school in the afternoon)
-        'duong-toi-truong-chieu-tron']
+        'duong-toi-truong-chieu-tron',
+        # 22/10 tối (Minh, vòng 2): the view from the lighthouse balcony, through the railing
+        'nhin-tu-ban-cong']
 # things a game puts on a background, drawn once and used on every page (art/places/do-choi/, art/props/): copied into PROP, keyed by file name
 PROPS = ['places/do-choi/cau-truot-phai', 'places/do-choi/cay-cau'] + [f'props/xe/{n}-{d}' for n in ('xe-om-xanh', 'xe-om-vang', 'xe-om-xanh-cho-khach', 'xe-om-vang-cho-khach',
          'xe-om-xanh-thung', 'xe-om-vang-thung', 'taxi-xanh-ngoc', 'taxi-xanh-ngoc-suv', 'xe-buyt-xanh-duong', 'xe-buyt-dien-xanh-la', 'xe-dua-don') for d in ('phai', 'trai')]
@@ -35,6 +37,7 @@ PROPS += ['places/ban-do/ban-do'] + [f'places/ban-do/duong-{k}' for k in range(1
 NV_POSES = ('dung', 'vay-chao', 'vo-tay-mo', 'vo-tay-cham', 'chi-tay', 'cam-do', 'nhay', 'buon', 'ngoi', 'ngu', 'buoc-1', 'buoc-2', 'deo-huy-chuong')
 PROPS += [f'kit/nhan-vat/{b}/{b}-{t}-phai' for b in ('choi', 'lam', 'na', 'ben') for t in NV_POSES] + ['kit/nhan-vat/ben/ben-ngu-tui-ngu-phai']
 PROPS += [f'kit/nhan-vat/polly/polly-{t}-phai' for t in ('dung', 'noi', 'bay-1', 'bay-2', 'deo-huy-chuong')]
+PROPS += [f'kit/nhan-vat/{b}/{b}-khieng-{k}-phai' for b in ('lam', 'ben') for k in (1, 2)]   # 22/10 tối: Lam and Ben carry the chest out of the cave (two steps)
 # things (art/kit/do-vat/): Màn 7 signs and the stone with the X, the treasure, the starfish, Ben's sleeping bag
 PROPS += [f'kit/do-vat/{n}-{d}' for n in ('da-to-dau-x', 'bang-go-mui-ten', 'bang-go-hang', 'ruong-kho-bau-dong', 'ruong-kho-bau-mo', 'huy-chuong-vang', 'chia-khoa-vang', 'sao-bien', 'tui-ngu') for d in ('phai', 'trai')]
 PROPS += [f'places/the-tranh/mot-ngay-{t}' for t in ('sang', 'chieu', 'toi')]   # Màn 6: the three day cards (120×90); the game draws Na on them
