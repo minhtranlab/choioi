@@ -65,6 +65,7 @@ def spoken(key, lang):
     t = t.replace('’', "'").replace('“', '"').replace('”', '"')
     t = t.replace('…', '.').replace('"', '')
     if lang == 'en': t = t.replace('Chồi', 'Choy')
+    if t.lower() == 'ap': t = 'App'   # the first sound of apple on its own: "Ap" comes out 0.2 s, almost nothing (Minh, 22/10)
     t = re.sub(r'\s+', ' ', t).strip()
     if t and t[0].islower(): t = t[0].upper() + t[1:]
     return t
