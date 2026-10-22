@@ -320,15 +320,16 @@ def cmd_make(a):
         for k, info in low[:40]: print('  ?', k, '|', ' / '.join(x[2] for x in info))
 
 # ---------------------------------------------------------------- pack (write the files the app reads)
-def kbps(): return int(CFG.get('mp3_kbps', 48))
-def mp3(path):
-    return subprocess.run(['ffmpeg', '-loglevel', 'error', '-i', path, '-ac', '1', '-ar', str(SR_OUT), '-c:a', 'libmp3lame', '-b:a', f'{kbps()}k', '-f', 'mp3', '-'], capture_output=True, check=True).stdout
+def kbps(lang):
+    k = CFG.get('mp3_kbps', 48); return int(k.get(lang, 48) if isinstance(k, dict) else k)
+def mp3(path, lang):
+    return subprocess.run(['ffmpeg', '-loglevel', 'error', '-i', path, '-ac', '1', '-ar', str(SR_OUT), '-c:a', 'libmp3lame', '-b:a', f'{kbps(lang)}k', '-f', 'mp3', '-'], capture_output=True, check=True).stdout
 ORDER = {p: i for i, p in enumerate(['chung'] + [f'man{i}' for i in range(8)])}
 
 # ---------------------------------------------------------------- pack (the files the app reads)
 # Gói theo nhóm (khoá p trong en.json / vi.json), mỗi nhóm là các file mp3 liền nhau, theo thứ tự câu được nói:
-#   chung   câu dùng ở từ 2 màn trở lên (khen, nhắc…), câu của Polly, câu các bạn nhỏ nói trong màn
-#   man0 … man7   câu chỉ màn đó dùng, theo thứ tự nói (file đầu = đầu màn)
+#   chung   câu dùng ở từ 2 màn trở lên (khen, nhắc, Polly và các bạn nhỏ nói ở nhiều màn), câu bạn nhỏ khi bé chạm vào bạn ấy
+#   man0 … man7   câu chỉ màn đó dùng (kể cả câu Polly, câu bạn nhỏ chỉ có ở màn đó), theo thứ tự nói (file đầu = đầu màn)
 #   sothu   phần cuối mỗi màn: thành phố, sở thú, cho thú ăn (Chồi và các bạn nhỏ)
 #   ngoai   câu các lần máy tự chơi 8 màn không gặp: câu ít gặp (giảng lại khi bé sai nhiều…), Fun Mix, My Games, hộp nhạc…
 #   cu      giọng cũ chưa được thay, và giọng bạn nhỏ chung cũ (@câu): không tải trước, chỉ tải khi cần
@@ -374,7 +375,7 @@ def layout(lang, M):
         elif not U.get(h) and (h in T or text in zoo): g = 'sothu'; seen[h] = (0, T.get(h, 9))
         elif U.get(h):
             lv = U[h]
-            g = 'chung' if (len(lv) > 1 or kid or h in polly) else next(iter(lv))
+            g = 'chung' if len(lv) > 1 else next(iter(lv))           # one level only (Polly's and the friends' lines too): with that level
             seen[h] = min((LEVELS.index(l), x) for l, x in lv.items()) if g == 'chung' else (0, lv[g])
         elif kid: g = 'chung'
         elif h in OLD: g = next(iter(OLD[h])) if len(OLD[h]) == 1 else 'chung'   # met only in the older test runs (thu-cau.json)
@@ -388,7 +389,7 @@ def wav_for(lang, h, who):
 def cmd_pack(a):
     """Write the files the app reads. By default only new or changed lines are added, in new mp3 files at the end
     (the files already on GitHub stay as they are), each new file holding one group. --compact rewrites every file,
-    group by group in the order the lines are said, and re-encodes every new-voice line at mp3_kbps (config.json)."""
+    group by group in the order the lines are said, and re-encodes every new-voice line at mp3_kbps (config.json, per language)."""
     L = json.load(open(lines_path(), encoding='utf-8'))
     for lang in a.lang.split(','):
         ip = os.path.join(VOICE, f'{lang}.json'); I = json.load(open(ip)); M = manifest(lang); cache = {}
@@ -408,12 +409,13 @@ def cmd_pack(a):
         if a.compact:
             def data(h):
                 w = fresh.get(h) or wav_for(lang, h, newM[h]['who'])
-                return mp3(w) if w else clip(h)
+                if not w: print('  no wav, kept the packed clip:', lang, newM[h]['k'])
+                return mp3(w, lang) if w else clip(h)
             plan = [(g, [(h, data(h)) for h in G[g]]) for g in GROUPS if g != 'cu']
             plan.append(('cu', [(h, data(h)) for h in G['cu']] + [(h, clip(h)) for h in old]))
             start = 0; I['c'] = {}; I['p'] = {}
         else:
-            plan = [(g, [(h, mp3(fresh[h])) for h in G[g] if h in fresh]) for g in GROUPS]
+            plan = [(g, [(h, mp3(fresh[h], lang)) for h in G[g] if h in fresh]) for g in GROUPS]
             start = I['n']; I.setdefault('p', {})
         bufs, pos = [], {}
         for g, items in plan:
@@ -433,14 +435,16 @@ def cmd_pack(a):
         I['p'] = {g: I['p'][g] for g in GROUPS if I['p'].get(g)}
         for g in GROUPS:
             for h in G[g]: newM[h]['g'] = g
-        json.dump({'n': I['n'], 'c': I['c'], 'p': I['p']}, open(ip, 'w'), separators=(',', ':'))
+        # h: a short fingerprint of each file's bytes (the app asks for voice/en-07.mp3?v=<h>, so a file changed on GitHub is fetched again)
+        I['h'] = [hashlib.sha1(open(os.path.join(VOICE, f'{lang}-{b:02d}.mp3'), 'rb').read()).hexdigest()[:8] for b in range(I['n'])]
+        json.dump({'n': I['n'], 'c': I['c'], 'p': I['p'], 'h': I['h']}, open(ip, 'w'), separators=(',', ':'))
         json.dump({'c': newM}, open(os.path.join(HERE, f'manifest-{lang}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
         for p in done:   # packed: keep a copy aside, so the next pack doesn't add it again
             d = os.path.join(os.path.dirname(p), 'packed'); os.makedirs(d, exist_ok=True)
             for ext in ('.wav', '.json'):
                 if os.path.exists(p[:-4] + ext): os.replace(p[:-4] + ext, os.path.join(d, os.path.basename(p)[:-4] + ext))
         size = lambda fs: sum(os.path.getsize(os.path.join(VOICE, f'{lang}-{b:02d}.mp3')) for b in fs)
-        print(lang, f'{kbps()}k' if a.compact else '', 'new-voice lines', len(newM), '(new now', len(fresh), ') files', I['n'], 'written', len(bufs),
+        print(lang, f'{kbps(lang)}k' if a.compact else '', 'new-voice lines', len(newM), '(new now', len(fresh), ') files', I['n'], 'written', len(bufs),
               'all MB', round(size(range(I['n'])) / 1e6, 1), 'missing', missing)
         for g, fs in I['p'].items(): print(f'   {g:6s} files {fs[0]:>2}–{fs[-1]:<2} ({len(fs):>2})  {size(fs) / 1e6:5.2f} MB  first file {size(fs[:1]) / 1e3:4.0f} KB')
         heard = set(U) | set(T); heard_old = [h for h in heard if h not in newM and h in I['c']]; none = [h for h in heard if h not in I['c']]
