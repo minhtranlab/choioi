@@ -2281,6 +2281,24 @@
 },
 {
 "lang": "en",
+"key": "How does Na feel? Tap the face!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "How does Ben feel? Tap the face!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Lam feels proud.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
 "key": "Here we are at the park! It’s so windy today.",
 "who": "chồi",
 "part": "man1"
@@ -3122,6 +3140,12 @@
 {
 "lang": "en",
 "key": "This blue balloon is for the friend who looks excited. Who looks excited? Tap the friend!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "How does Lam feel? Tap the face!",
 "who": "chồi",
 "part": "man1"
 },
@@ -4123,6 +4147,18 @@
 },
 {
 "lang": "en",
+"key": "Lam, Na and Ben are playing hide and seek!",
+"who": "chồi",
+"part": "man2"
+},
+{
+"lang": "en",
+"key": "Where is Ben? Tap Ben!",
+"who": "chồi",
+"part": "man2"
+},
+{
+"lang": "en",
 "key": "The map shows a house. It’s Na’s house! Na shows us her room.",
 "who": "chồi",
 "part": "man3"
@@ -4995,6 +5031,30 @@
 "lang": "en",
 "key": "@I feel sad.",
 "who": "kid",
+"part": "man3"
+},
+{
+"lang": "en",
+"key": "Hmm, that face looks angry.",
+"who": "chồi",
+"part": "man3"
+},
+{
+"lang": "en",
+"key": "Lam feels sad.",
+"who": "chồi",
+"part": "man3"
+},
+{
+"lang": "en",
+"key": "Three big toys!",
+"who": "chồi",
+"part": "man3"
+},
+{
+"lang": "en",
+"key": "Three small toys!",
+"who": "chồi",
 "part": "man3"
 },
 {
@@ -7430,6 +7490,30 @@
 {
 "lang": "en",
 "key": "A rectangle has two long sides and two short sides.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "en",
+"key": "Stop! The light is red. Wait for the green light.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "en",
+"key": "Here comes the police officer. He holds the frog’s hand.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "en",
+"key": "They wait for the green light.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "en",
+"key": "Green light! Now they cross together.",
 "who": "chồi",
 "part": "man6"
 },
@@ -10963,6 +11047,24 @@
 },
 {
 "lang": "vi",
+"key": "Na thấy thế nào? Con chạm vào khuôn mặt nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben thấy thế nào? Con chạm vào khuôn mặt nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Lam thấy tự hào.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
 "key": "Mình tới công viên rồi! Hôm nay gió to quá.",
 "who": "chồi",
 "part": "man1"
@@ -11810,6 +11912,18 @@
 {
 "lang": "vi",
 "key": "Quả bóng xanh này dành cho bạn đang háo hức. Bạn nào đang háo hức? Con chạm vào bạn ấy nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Lam thấy thế nào? Con chạm vào khuôn mặt nhé!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Ben thấy có gì đó trong bụi lau cạnh ao. Đó là một cái hộp, và nó đang động đậy!",
 "who": "chồi",
 "part": "man1"
 },
@@ -12793,6 +12907,18 @@
 },
 {
 "lang": "vi",
+"key": "Lam, Na và Ben đang chơi trốn tìm!",
+"who": "chồi",
+"part": "man2"
+},
+{
+"lang": "vi",
+"key": "Ben đâu rồi? Con chạm vào Ben nhé!",
+"who": "chồi",
+"part": "man2"
+},
+{
+"lang": "vi",
 "key": "Bản đồ vẽ một ngôi nhà. Đó là nhà của Na! Na cho mình xem phòng của bạn ấy.",
 "who": "chồi",
 "part": "man3"
@@ -13623,6 +13749,24 @@
 "lang": "vi",
 "key": "@Tớ thấy buồn.",
 "who": "kid",
+"part": "man3"
+},
+{
+"lang": "vi",
+"key": "Lam thấy buồn.",
+"who": "chồi",
+"part": "man3"
+},
+{
+"lang": "vi",
+"key": "Ba đồ chơi to!",
+"who": "chồi",
+"part": "man3"
+},
+{
+"lang": "vi",
+"key": "Ba đồ chơi nhỏ!",
+"who": "chồi",
 "part": "man3"
 },
 {
@@ -16081,6 +16225,30 @@
 },
 {
 "lang": "vi",
+"key": "Dừng lại! Đèn đỏ rồi. Chờ đèn xanh nhé.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Chú công an đến rồi. Chú nắm tay ếch.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Chú và ếch cùng chờ đèn xanh.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Đèn xanh rồi! Giờ chú và ếch cùng qua đường.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
 "key": "Con nhìn ra một con cá heo thật nhanh!",
 "who": "chồi",
 "part": "man7"
@@ -17317,170 +17485,26 @@
 },
 {
 "lang": "en",
-"key": "How does Na feel? Tap the face!",
+"key": "A car!",
 "who": "chồi",
 "part": "man0"
 },
 {
 "lang": "vi",
-"key": "Na thấy thế nào? Con chạm vào khuôn mặt nhé!",
+"key": "Ô tô!",
 "who": "chồi",
 "part": "man0"
 },
 {
 "lang": "en",
-"key": "How does Ben feel? Tap the face!",
+"key": "A bike!",
 "who": "chồi",
 "part": "man0"
 },
 {
 "lang": "vi",
-"key": "Ben thấy thế nào? Con chạm vào khuôn mặt nhé!",
+"key": "Xe đạp!",
 "who": "chồi",
 "part": "man0"
-},
-{
-"lang": "en",
-"key": "Lam feels proud.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Lam thấy tự hào.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "How does Lam feel? Tap the face!",
-"who": "chồi",
-"part": "man1"
-},
-{
-"lang": "vi",
-"key": "Lam thấy thế nào? Con chạm vào khuôn mặt nhé!",
-"who": "chồi",
-"part": "man1"
-},
-{
-"lang": "vi",
-"key": "Ben thấy có gì đó trong bụi lau cạnh ao. Đó là một cái hộp, và nó đang động đậy!",
-"who": "chồi",
-"part": "man1"
-},
-{
-"lang": "en",
-"key": "Lam, Na and Ben are playing hide and seek!",
-"who": "chồi",
-"part": "man2"
-},
-{
-"lang": "vi",
-"key": "Lam, Na và Ben đang chơi trốn tìm!",
-"who": "chồi",
-"part": "man2"
-},
-{
-"lang": "en",
-"key": "Where is Ben? Tap Ben!",
-"who": "chồi",
-"part": "man2"
-},
-{
-"lang": "vi",
-"key": "Ben đâu rồi? Con chạm vào Ben nhé!",
-"who": "chồi",
-"part": "man2"
-},
-{
-"lang": "en",
-"key": "Hmm, that face looks angry.",
-"who": "chồi",
-"part": "man3"
-},
-{
-"lang": "en",
-"key": "Lam feels sad.",
-"who": "chồi",
-"part": "man3"
-},
-{
-"lang": "vi",
-"key": "Lam thấy buồn.",
-"who": "chồi",
-"part": "man3"
-},
-{
-"lang": "en",
-"key": "Three big toys!",
-"who": "chồi",
-"part": "man3"
-},
-{
-"lang": "vi",
-"key": "Ba đồ chơi to!",
-"who": "chồi",
-"part": "man3"
-},
-{
-"lang": "en",
-"key": "Three small toys!",
-"who": "chồi",
-"part": "man3"
-},
-{
-"lang": "vi",
-"key": "Ba đồ chơi nhỏ!",
-"who": "chồi",
-"part": "man3"
-},
-{
-"lang": "en",
-"key": "Stop! The light is red. Wait for the green light.",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "vi",
-"key": "Dừng lại! Đèn đỏ rồi. Chờ đèn xanh nhé.",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "en",
-"key": "Here comes the police officer. He holds the frog’s hand.",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "vi",
-"key": "Chú công an đến rồi. Chú nắm tay ếch.",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "en",
-"key": "They wait for the green light.",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "vi",
-"key": "Chú và ếch cùng chờ đèn xanh.",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "en",
-"key": "Green light! Now they cross together.",
-"who": "chồi",
-"part": "man6"
-},
-{
-"lang": "vi",
-"key": "Đèn xanh rồi! Giờ chú và ếch cùng qua đường.",
-"who": "chồi",
-"part": "man6"
 }
 ]
