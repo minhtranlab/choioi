@@ -51,3 +51,8 @@ Cùng luật chung: 1 m ≈ 12 đơn vị, chân chạm cạnh dưới, có `-ph
 | `da-to-dau-x` | 64×30 | Màn 7 · trạm cuối của con cua: hòn đá to xám (x 3–46) và **dấu X đỏ vẽ trên cát ngay cạnh, tâm (56, 26)** (bản `-trai`: tâm (8, 26)) |
 | `bang-go-mui-ten` | 26×28 | Màn 7 · bảng gỗ hình mũi tên cắm trên cát, dùng sau mỗi trạm ("đi lối này"); `-phai` mũi tên chỉ sang phải |
 | `bang-go-hang` | 30×32 | Màn 7 · bảng gỗ cắm cạnh dấu X, vẽ một mũi tên đỏ và hình cái hang (không chữ) |
+| `huy-chuong-vang` | 40×58 | Kho báu · một huy chương vàng có dây đỏ đeo cổ (vòng dây ở trên, đĩa vàng có ngôi sao, tâm đĩa (20, 44)). Cùng kiểu với huy chương trong tư thế `deo-huy-chuong` của các bạn, nên bay tới cổ bạn nào thì đổi sang tư thế đó. **Đồ cận, không theo tỉ lệ 12 đơn vị/m** |
+| `chia-khoa-vang` | 52×22 | Kho báu · chìa khoá vàng (vòng tròn bên trái, răng chìa bên phải). Đồ cận |
+| `ruong-kho-bau-dong` | 64×48 | Kho báu · rương gỗ đóng, đai vàng, ổ khoá giữa (lỗ khoá ở (32, 24)). Đồ cận |
+| `ruong-kho-bau-mo` | 64×60 | Kho báu · rương mở: nắp lật ra sau, ánh vàng, **5 huy chương vàng** và chìa khoá vàng nằm trên. Đồ cận; đáy ở cạnh dưới giống rương đóng, nên đổi file là mở rương |
+
