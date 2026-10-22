@@ -16,7 +16,9 @@ USED = ['lop-hoc', 'san-truong', 'vuon-truong', 'cong-vien', 'vuon-nha-na-chieu'
         'san-truong-tron', 'cong-vien-tron', 'vuon-nha-na-chieu-tron', 'vuon-nha-na-dem-tron', 'phong-na-tron', 'sieu-thi-tron', 'cong-truong-xay-tron',
         'phong-nha-moi-tron', 'bep-tron', 'cong-vien-chieu-tron', 'phong-na-toi-tron', 'phong-na-dem-tron', 'roi-ben-tron', 'dao-bai-cat-tron', 'dao-hai-dang-tron',
         'vuon-nha-na-dem-can-ban', 'vuon-nha-na-dem-can-la', 'vuon-nha-na-dem-truoc-leu', 'phong-na-can-ban', 'phong-na-can-but', 'phong-na-can-san',
-        'sieu-thi-can-ghe', 'cong-truong-can-cua-so', 'cong-truong-can-nha-xe', 'ra-khoi-can', 'vuon-truong-tron-ho', 'cong-vao-truong-tron-xe']
+        'sieu-thi-can-ghe', 'cong-truong-can-cua-so', 'cong-truong-can-nha-xe', 'ra-khoi-can', 'vuon-truong-tron-ho', 'cong-vao-truong-tron-xe',
+        # 22/10 (after Minh played the whole of Unit 1): the bus road round the school; Màn 7 from the boat up the lighthouse, the window, the cave
+        'duong-quanh-truong', 'duong-quanh-truong-tron', 'dao-bai-cat-hai-dang', 'dao-bai-cat-hai-dang-tron', 'duong-len-hai-dang', 'hai-dang-cat-doc', 'nhin-tu-cua-so', 'cua-hang']
 # things a game puts on a background, drawn once and used on every page (art/places/do-choi/, art/props/): copied into PROP, keyed by file name
 PROPS = ['places/do-choi/cau-truot-phai', 'places/do-choi/cay-cau'] + [f'props/xe/{n}-{d}' for n in ('xe-om-xanh', 'xe-om-vang', 'xe-om-xanh-cho-khach', 'xe-om-vang-cho-khach',
          'xe-om-xanh-thung', 'xe-om-vang-thung', 'taxi-xanh-ngoc', 'taxi-xanh-ngoc-suv', 'xe-buyt-xanh-duong', 'xe-buyt-dien-xanh-la', 'xe-dua-don') for d in ('phai', 'trai')]
@@ -25,6 +27,14 @@ PROPS += ['places/do-choi/doc-co'] + [f'props/nguoi/cong-an-giao-thong{t}' for t
 PROPS += [f'props/xe/{n}-{d}' for n in ('o-to-con-trang', 'o-to-gia-dinh-bac', 'o-to-nho-cam', 'xe-may-thuong', 'xe-may-me-cho-be', 'xe-dap') for d in ('phai', 'trai')]   # 22/10 (lần 3): ordinary traffic and the walkers on the far pavement
 PROPS += [f'props/nguoi/cong-an-giao-thong-buoc-chan-{d}' for d in ('trai', 'phai')]   # 22/10 (lần 4): the officer's two walking steps (faces right)
 PROPS += [f'kit/nguoi/{n}-{d}' for n in ('nguoi-di-bo-dat-be', 'ba-cu-chong-gay', 'hoc-sinh-deo-cap', 'nguoi-doi-non-la', 'nguoi-xach-gio-di-cho') for d in ('phai', 'trai')]   # 22/10 (lần 4): the walkers (art/kit/nguoi/)
+# 22/10 (after the whole of Unit 1): the 8-piece map and its red path, piece by piece (art/places/ban-do/)
+PROPS += ['places/ban-do/ban-do'] + [f'places/ban-do/duong-{k}' for k in range(1, 8)]
+# the team in every pose (art/kit/nhan-vat/): only the -phai files; the game flips them for -trai (the -trai files are the same drawing, flipped)
+NV_POSES = ('dung', 'vay-chao', 'vo-tay-mo', 'vo-tay-cham', 'chi-tay', 'cam-do', 'nhay', 'buon', 'ngoi', 'ngu', 'buoc-1', 'buoc-2', 'deo-huy-chuong')
+PROPS += [f'kit/nhan-vat/{b}/{b}-{t}-phai' for b in ('choi', 'lam', 'na', 'ben') for t in NV_POSES] + ['kit/nhan-vat/ben/ben-ngu-tui-ngu-phai']
+PROPS += [f'kit/nhan-vat/polly/polly-{t}-phai' for t in ('dung', 'noi', 'bay-1', 'bay-2', 'deo-huy-chuong')]
+# things (art/kit/do-vat/): Màn 7 signs and the stone with the X, the treasure, the starfish, Ben's sleeping bag
+PROPS += [f'kit/do-vat/{n}-{d}' for n in ('da-to-dau-x', 'bang-go-mui-ten', 'bang-go-hang', 'ruong-kho-bau-dong', 'ruong-kho-bau-mo', 'huy-chuong-vang', 'chia-khoa-vang', 'sao-bien', 'tui-ngu') for d in ('phai', 'trai')]
 PROPS += [f'places/the-tranh/mot-ngay-{t}' for t in ('sang', 'chieu', 'toi')]   # Màn 6: the three day cards (120×90); the game draws Na on them
 # things taken out of a picture for the app (asked after a play-test), without changing the file in art/places/
 TRIM = {**{n: [r'<rect x="170.6" y="9.2"[^>]*/>', r'<path d="M173.6 12.4 V31"[^>]*/>', r'<path d="M173.6 31 v2.4[^"]*"[^>]*/>'] for n in ('cong-truong-xay', 'cong-truong-xay-tron')},   # the game draws the trolley-less hook that swings

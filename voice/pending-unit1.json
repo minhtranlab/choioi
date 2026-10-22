@@ -1,16 +1,400 @@
 [
  {
-  "part": "man0",
-  "en": "A car!",
-  "vi": "Ô tô!",
+  "part": "chung",
+  "en": "A tree!",
+  "vi": "Cái cây!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "A rock!",
+  "vi": "Hòn đá!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "A pond!",
+  "vi": "Cái ao!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man0",
-  "en": "A bike!",
-  "vi": "Xe đạp!",
+  "en": "Oh no, it’s torn! Only one piece is left.",
+  "vi": "Ôi, bản đồ bị rách rồi! Chỉ còn một mảnh thôi.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Look, it’s our school. We are here!",
+  "vi": "Nhìn này, đây là trường mình. Mình đang ở đây!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Seven pieces are missing. Each piece shows a new place.",
+  "vi": "Còn thiếu bảy mảnh. Mỗi mảnh vẽ một nơi mới.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "A new piece must be there! Let’s go and tell my friends.",
+  "vi": "Chắc một mảnh mới ở đó! Mình đi kể cho các bạn nhé.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Chồi is already on the bus. Let’s help Lam, Na and Ben get on!",
+  "vi": "Chồi đã ngồi trên xe rồi. Mình giúp Lam, Na và Ben lên xe nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "How many friends got on?",
+  "vi": "Có mấy bạn đã lên xe?",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Three friends got on! Off we go!",
+  "vi": "Ba bạn đã lên xe! Xe chạy thôi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "We’re at the garden gate! Tap each friend to help them get off. Count with me!",
+  "vi": "Tới cổng vườn rồi! Con chạm vào từng bạn để giúp các bạn xuống xe nhé. Đếm cùng Chồi nào!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Four friends got off! Let’s go into the garden.",
+  "vi": "Bốn bạn đã xuống xe! Mình vào vườn thôi.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "We found a new piece! Polly wants to cheer with you.",
+  "vi": "Mình tìm được một mảnh mới! Polly muốn reo hò cùng con.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "The second map piece was in the bush with the X!",
+  "vi": "Mảnh bản đồ thứ hai ở trong bụi cây có dấu X!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Hmm, that’s four.",
+  "vi": "Ơ, đó là bốn.",
+  "needEn": false,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Tap each friend to help them get off!",
+  "vi": "Con chạm vào từng bạn để giúp các bạn xuống xe nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man1",
+  "en": "The third map piece was tied to the red balloon!",
+  "vi": "Mảnh bản đồ thứ ba được buộc vào quả bóng đỏ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man2",
+  "en": "We found the fourth piece, in the dark garden!",
+  "vi": "Mình tìm được mảnh thứ tư, trong khu vườn tối!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man3",
+  "en": "The fifth piece fell from Na’s shelf!",
+  "vi": "Mảnh thứ năm rơi từ trên kệ của Na!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man4",
+  "en": "The sixth piece rode the belt at the shop!",
+  "vi": "Mảnh thứ sáu đi trên băng chuyền ở cửa hàng!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man5",
+  "en": "The seventh piece came down on the crane’s hook!",
+  "vi": "Mảnh thứ bảy theo móc cần cẩu xuống!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man6",
+  "en": "Na opens her book. There is a little frog in the pond. It jumps once for each sound!",
+  "vi": "Na mở sách. Trong ao có một chú ếch nhỏ. Ếch nhảy mỗi tiếng một bước!",
+  "needEn": true,
+  "needVi": false,
+  "slow": false
+ },
+ {
+  "part": "man6",
+  "en": "Na is in bed. She thinks about her whole day.",
+  "vi": "Na nằm trên giường. Bạn ấy nhớ lại cả một ngày.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man6",
+  "en": "Let’s help Na put her day in order!",
+  "vi": "Mình giúp Na xếp một ngày theo thứ tự nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man6",
+  "en": "The last piece was Na’s bookmark!",
+  "vi": "Mảnh cuối cùng là cái kẹp sách của Na!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man6",
+  "en": "Look! This piece shows Treasure Island.",
+  "vi": "Nhìn này! Mảnh này vẽ Đảo Kho Báu.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man6",
+  "en": "The map is finished! Look, the red path goes from our school all the way to Treasure Island!",
+  "vi": "Bản đồ đủ rồi! Nhìn này, đường đỏ đi từ trường mình tới tận Đảo Kho Báu!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man6",
+  "en": "Next time, let’s sail to Treasure Island!",
+  "vi": "Lần sau mình đi thuyền ra Đảo Kho Báu nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Our map is finished! Look where the red path goes.",
+  "vi": "Bản đồ của mình đủ rồi! Nhìn xem đường đỏ đi tới đâu nào.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "It’s an island! The red X is on Treasure Island. The treasure is there!",
+  "vi": "Đó là một hòn đảo! Dấu X đỏ ở trên Đảo Kho Báu. Kho báu ở đó!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Off we go! Goodbye, river!",
+  "vi": "Xuất phát! Tạm biệt dòng sông!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Look! A lighthouse on the hill. There’s a path up to it!",
+  "vi": "Nhìn kìa! Một ngọn hải đăng trên đồi. Có đường đi lên tới đó!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Let’s walk up to the lighthouse!",
+  "vi": "Mình đi lên ngọn hải đăng nào!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Up the path we go, all the way to the lighthouse!",
+  "vi": "Mình đi theo con đường, lên tận ngọn hải đăng!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Here’s the lighthouse!",
+  "vi": "Ngọn hải đăng đây rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "The door is open! Let’s climb the stairs, all the way to the top!",
+  "vi": "Cửa mở rồi! Mình leo cầu thang lên tận đỉnh nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "We’re at the top! Tap the door to open it!",
+  "vi": "Mình lên tới đỉnh rồi! Con chạm vào cánh cửa để mở nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Let’s look out at the island!",
+  "vi": "Mình nhìn ra hòn đảo nào!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "I see a red X, next to the big rock!",
+  "vi": "Tớ thấy một dấu X đỏ, cạnh hòn đá to!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "And there’s a cave near the rock. Let’s go down to the beach and find the X!",
+  "vi": "Và có một cái hang gần hòn đá. Mình xuống bãi biển tìm dấu X nào!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Look, an arrow! Let’s go this way.",
+  "vi": "Nhìn kìa, một mũi tên! Mình đi lối này nhé.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "A little crab wants to go to the X. Let’s help it!",
+  "vi": "Một bạn cua nhỏ muốn đi tới dấu X. Mình giúp bạn ấy nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "The crab walks sideways to the big rock. Draw a line across, all the way to the X!",
+  "vi": "Bạn cua đi ngang tới hòn đá to. Con vẽ một đường ngang, tới tận dấu X nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "The crab found the X!",
+  "vi": "Bạn cua tìm ra dấu X rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Look! A sign by the X, with an arrow and a cave. The treasure is in the cave!",
+  "vi": "Nhìn kìa! Cạnh dấu X có một tấm bảng, vẽ mũi tên và cái hang. Kho báu ở trong hang!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Here’s the cave! Let’s go in.",
+  "vi": "Hang đây rồi! Mình vào hang nào.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Look! The treasure chest!",
+  "vi": "Nhìn kìa! Rương kho báu!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Gold medals for everyone! Look at the medals. What is the same?",
+  "vi": "Huy chương vàng cho mọi người! Nhìn các huy chương nào. Chúng giống nhau ở điểm nào?",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "And a golden key!",
+  "vi": "Và một chiếc chìa khoá vàng!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "In the bucket!",
+  "vi": "Trong cái xô!",
   "needEn": true,
   "needVi": true,
   "slow": false
