@@ -35,6 +35,8 @@ Mỗi bạn một thư mục: `choi/`, `lam/`, `na/`, `ben/`, `polly/`. Tên fil
 
 **Tư thế của Chồi, Lam, Na, Ben** (13): `dung` đứng · `vay-chao` vẫy chào · `vo-tay-mo` vỗ tay, hai tay mở · `vo-tay-cham` vỗ tay, hai tay chạm · `chi-tay` chỉ tay sang phải (bản `-trai` chỉ sang trái) · `cam-do` hai tay ngang bụng để cầm đồ · `nhay` nhảy vui · `buon` buồn cúi đầu · `ngoi` ngồi · `ngu` nằm ngủ có chăn · `buoc-1`, `buoc-2` hai tư thế bước (mặt quay theo hướng đi; thay phiên là thành dáng đi) · `deo-huy-chuong` đeo huy chương vàng.
 
+**Thêm cho Ben:** `ben-ngu-tui-ngu` · Ben ngủ trong túi ngủ xanh lá (22/10, thay cảnh xoay người + tấm chăn cũ): nằm dưới đất, mặt trong mũ trùm, túi kéo tới cằm, zzz. Cùng khung 200×260, đáy y 246; túi trống là `do-vat/tui-ngu`.
+
 **Tư thế của Polly** (5): `dung` · `noi` (mở mỏ) · `bay-1`, `bay-2` (bay như hiệu ứng trong app: thân nhấc lên, chân co, chỉ cánh vỗ; `bay-2` cánh hất lên 28°) · `deo-huy-chuong`.
 
 **Toạ độ để game đặt đồ** (khung của từng bạn):
@@ -55,4 +57,6 @@ Cùng luật chung: 1 m ≈ 12 đơn vị, chân chạm cạnh dưới, có `-ph
 | `chia-khoa-vang` | 52×22 | Kho báu · chìa khoá vàng (vòng tròn bên trái, răng chìa bên phải). Đồ cận |
 | `ruong-kho-bau-dong` | 64×48 | Kho báu · rương gỗ đóng, đai vàng, ổ khoá giữa (lỗ khoá ở (32, 24)). Đồ cận |
 | `ruong-kho-bau-mo` | 64×60 | Kho báu · rương mở: nắp lật ra sau, ánh vàng, **5 huy chương vàng** và chìa khoá vàng nằm trên. Đồ cận; đáy ở cạnh dưới giống rương đóng, nên đổi file là mở rương |
+| `sao-bien` | 44×42 | Màn 7 · con sao biển (22/10, vẽ lại): con vật biển màu cam, năm cánh tròn mập, gai sần (chấm sáng), mặt cười dễ thương. Nằm phẳng trên cát. Đồ cận |
+| `tui-ngu` | 200×260 | Màn 2 · túi ngủ xanh lá còn trống, nằm dưới đất, mũ trùm ở bên trái. Cùng khung, cùng đáy (y 246) với tư thế của các bạn, nên đặt chồng đúng chỗ `ben-ngu-tui-ngu` |
 
