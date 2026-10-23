@@ -19,14 +19,14 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "man7"
+"g": "chung"
 },
 "1p2ozcd": {
 "k": "Nhớ nhé: nhìn kỹ khuôn mặt.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "man6"
+"g": "chung"
 },
 "kqlcsb": {
 "k": "Voi không ăn dưa hấu đâu. Thử món khác nhé!",
@@ -2205,6 +2205,27 @@
 "who": "chồi",
 "g": "ngoai"
 },
+"97fyry": {
+"k": "Con đã chơi hết các trò trong Fun Mix!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"1t6bsvf": {
+"k": "Chờ tớ với!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"5vcpb": {
+"k": "Vèo!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
 "n8senc": {
 "k": "Xin chào! Chồi đây. Nhìn kìa, trên tủ sách có một thứ gì cũ cũ.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -3043,7 +3064,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man2"
+"g": "chung"
 },
 "1a0imau": {
 "k": "Giờ chạm vào các bạn đang giận nhé!",
@@ -3141,7 +3162,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man0"
+"g": "chung"
 },
 "1bvbfxe": {
 "k": "Mình đếm lại nhé. Con chạm vào từng cái!",
@@ -3169,7 +3190,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man2"
+"g": "chung"
 },
 "1ixwlhp": {
 "k": "Chú voi sẽ ở đâu nhỉ? Con chạm vào một chỗ nhé!",
@@ -3708,7 +3729,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man0"
+"g": "chung"
 },
 "wno1lf": {
 "k": "Con đi theo các chấm đỏ, tới tận dấu X!",
@@ -6207,7 +6228,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man2",
 "who": "chồi",
-"g": "man7"
+"g": "chung"
 },
 "1o9a29w": {
 "k": "Ơ, đó là Na.",
@@ -6435,6 +6456,342 @@
 },
 "1e545p6": {
 "k": "Con ôm Lam thật chặt. Giờ Lam thấy dễ chịu hơn rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"4jehjh": {
+"k": "Con nghe lại và tìm ra bản nhạc háo hức. Nhảy nhót và nhanh!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"jmjn8a": {
+"k": "Con nhìn lại và tìm ra mặt ngạc nhiên của Lam! Bạn ấy không biết bên trong có bươm bướm.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1r2v6iv": {
+"k": "Con nhìn ra một chấm và gõ trống một cái!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"16nuqo5": {
+"k": "Con nhìn lại và gõ trống một cái!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1w95a4p": {
+"k": "Con nhìn lại và thấy một chấm!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"130sbvr": {
+"k": "Con nhìn ra hai chấm và gõ trống hai cái!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"mh1689": {
+"k": "Con nhìn lại và gõ trống hai cái!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1hn1w1x": {
+"k": "Con nhìn lại và thấy hai chấm!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"o51s11": {
+"k": "Con nhìn ra ba chấm và gõ trống ba cái!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"58h86m": {
+"k": "Con nhìn lại và gõ trống ba cái!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1gzg6p4": {
+"k": "Con nhìn lại và thấy ba chấm!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"pxn2oj": {
+"k": "Con tìm ra Lam rồi! Lam ở trong bụi cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"b27mwn": {
+"k": "Con nhìn lại và tìm ra Lam rồi! Lam ở trong bụi cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1h1j652": {
+"k": "Con tìm ra Lam rồi! Lam ở dưới gốc cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1fcoe3u": {
+"k": "Con nhìn lại và tìm ra Lam rồi! Lam ở dưới gốc cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"14q9wth": {
+"k": "Con tìm ra Lam rồi! Lam ở trong cái hộp.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"ggc4w1": {
+"k": "Con nhìn lại và tìm ra Lam rồi! Lam ở trong cái hộp.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"o0qqwv": {
+"k": "Con tìm ra Lam rồi! Lam ở trên cầu trượt.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"gwuw37": {
+"k": "Con nhìn lại và tìm ra Lam rồi! Lam ở trên cầu trượt.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"u19yoh": {
+"k": "Con tìm ra Na rồi! Na ở trong bụi cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"am7w91": {
+"k": "Con nhìn lại và tìm ra Na rồi! Na ở trong bụi cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1g3jh4w": {
+"k": "Con tìm ra Na rồi! Na ở dưới gốc cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"395xl0": {
+"k": "Con nhìn lại và tìm ra Na rồi! Na ở dưới gốc cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1hqvjbn": {
+"k": "Con tìm ra Na rồi! Na ở trong cái hộp.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"12g4r0f": {
+"k": "Con nhìn lại và tìm ra Na rồi! Na ở trong cái hộp.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"pskwq1": {
+"k": "Con tìm ra Na rồi! Na ở trên cầu trượt.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"ro7ot": {
+"k": "Con nhìn lại và tìm ra Na rồi! Na ở trên cầu trượt.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"d4l3jd": {
+"k": "Con tìm ra Ben rồi! Ben ở trong bụi cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1878165": {
+"k": "Con nhìn lại và tìm ra Ben rồi! Ben ở trong bụi cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"o45l6g": {
+"k": "Con tìm ra Ben rồi! Ben ở dưới gốc cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"12sqlos": {
+"k": "Con nhìn lại và tìm ra Ben rồi! Ben ở dưới gốc cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1vwjw57": {
+"k": "Con tìm ra Ben rồi! Ben ở trong cái hộp.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1x1be5z": {
+"k": "Con nhìn lại và tìm ra Ben rồi! Ben ở trong cái hộp.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"4ndfbl": {
+"k": "Con tìm ra Ben rồi! Ben ở trên cầu trượt.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1oedog5": {
+"k": "Con nhìn lại và tìm ra Ben rồi! Ben ở trên cầu trượt.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"rz8asn": {
+"k": "Con đặt mèo trên cái bàn rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"ns4na8": {
+"k": "Con thử lại và đặt mèo trên cái bàn rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1kqrv9v": {
+"k": "Con đặt mèo dưới gầm bàn rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"592dg8": {
+"k": "Con thử lại và đặt mèo dưới gầm bàn rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1msdwdg": {
+"k": "Con đặt mèo trong cái hộp rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1l6gzup": {
+"k": "Con thử lại và đặt mèo trong cái hộp rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"zjy2sw": {
+"k": "Con tìm ra mặt sợ! Lam thấy sợ.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"b3t4th": {
+"k": "Con tìm ra mặt mệt! Ben thấy mệt.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"wjgb5l": {
+"k": "Con nhìn lại và tìm ra mặt mệt! Ben thấy mệt.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"7894a3": {
+"k": "Con nghe và tìm ra bản nhạc háo hức. Nhảy nhót và nhanh!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"j90r6u": {
+"k": "Con tìm ra mặt ngạc nhiên của Lam! Bạn ấy không biết bên trong có bươm bướm.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1qj59u3": {
+"k": "Con giúp Ben chui vào túi ngủ. Chúc Ben ngủ ngon!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1439bkp": {
+"k": "Khi mệt, mình đi ngủ nhé.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man2",
 "who": "chồi",
@@ -7285,7 +7642,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man3",
 "who": "chồi",
-"g": "chung"
+"g": "man3"
 },
 "17952f8": {
 "k": "Phòng gọn gàng rồi! Đồ to trong hộp to, đồ nhỏ trong hộp nhỏ.",
@@ -7450,6 +7807,335 @@
 },
 "10v647q": {
 "k": "Bánh quy!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"14ysedv": {
+"k": "Con nhìn lại và tìm ra một chấm!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1qhhqfr": {
+"k": "Con nhìn lại và tìm ra hai chấm!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"11hqkoy": {
+"k": "Con nhìn lại và tìm ra ba chấm!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"grggl8": {
+"k": "Ú òa! Con tìm ra mèo con trên giường rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1vgae8e": {
+"k": "Ú òa! Con nhìn lại và tìm ra mèo con trên giường!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"poh017": {
+"k": "Ú òa! Con tìm ra mèo con dưới gầm giường rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"bm8k9p": {
+"k": "Ú òa! Con nhìn lại và tìm ra mèo con dưới gầm giường!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"ak2xx4": {
+"k": "Ú òa! Con tìm ra mèo con trong cái giỏ rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1lu1sei": {
+"k": "Ú òa! Con nhìn lại và tìm ra mèo con trong cái giỏ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1mamof6": {
+"k": "Bút đỏ ở cùng nhau, bút xanh dương ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"y876e2": {
+"k": "Bút đỏ ở cùng nhau, bút vàng ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"9o5u7n": {
+"k": "Bút đỏ ở cùng nhau, bút xanh lá ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"dbm9h5": {
+"k": "Bút xanh dương ở cùng nhau, bút vàng ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"uah1pm": {
+"k": "Bút xanh dương ở cùng nhau, bút xanh lá ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"yyd0j6": {
+"k": "Bút vàng ở cùng nhau, bút xanh lá ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"crff7y": {
+"k": "Bút xanh dương ở cùng nhau, bút đỏ ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"q91f4m": {
+"k": "Bút vàng ở cùng nhau, bút đỏ ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"12pfqvv": {
+"k": "Bút xanh lá ở cùng nhau, bút đỏ ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"14oqbu1": {
+"k": "Bút vàng ở cùng nhau, bút xanh dương ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1g56omg": {
+"k": "Bút xanh lá ở cùng nhau, bút xanh dương ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"19pfzfs": {
+"k": "Bút xanh lá ở cùng nhau, bút vàng ở cùng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"t6xhwr": {
+"k": "Con cho từng bút màu vào cốc cùng màu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1ycrdtz": {
+"k": "Con nhìn lại và cho từng bút màu vào cốc cùng màu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"x4wb1e": {
+"k": "Con cất từng đồ chơi vào đúng hộp. Phòng gọn gàng rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1v02spi": {
+"k": "Con nhìn lại và cất từng đồ chơi vào đúng hộp. Phòng gọn gàng rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1l66zse": {
+"k": "Con nghe nhạc và tìm ra mặt sợ. Nhạc rón ra rón rén!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1aojylc": {
+"k": "Con nghe lại và tìm ra mặt sợ. Nhạc rón ra rón rén!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"63gn6": {
+"k": "Con nghe nhạc và tìm ra mặt mệt. Nhạc nghe buồn ngủ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1659hgs": {
+"k": "Con nghe lại và tìm ra mặt mệt. Nhạc nghe buồn ngủ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"7f8bhn": {
+"k": "Con tìm ra chú gấu nhỏ rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1fynhxj": {
+"k": "Con nhìn lại và tìm ra chú gấu nhỏ rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1pmwo3": {
+"k": "Con tìm ra chú gấu to rồi! Gấu to, gấu nhỏ.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1dlzkm5": {
+"k": "Con nhìn lại và tìm ra chú gấu to! Gấu to, gấu nhỏ.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"6jxl93": {
+"k": "Con bắt được ba đồ chơi to!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"764s2b": {
+"k": "Con nhìn lại và bắt được ba đồ chơi to!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"s3cban": {
+"k": "Con bắt được ba đồ chơi nhỏ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"fu7wur": {
+"k": "Con nhìn lại và bắt được ba đồ chơi nhỏ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1b8lvot": {
+"k": "Con bắt được bốn đồ chơi to!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"dmymwp": {
+"k": "Con nhìn lại và bắt được bốn đồ chơi to!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"ky3m4s": {
+"k": "Con bắt được năm đồ chơi nhỏ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1e53z2g": {
+"k": "Con nhìn lại và bắt được năm đồ chơi nhỏ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1927403": {
+"k": "Đồ chơi về lại hộp rồi.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"uc5p3g": {
+"k": "Phòng gọn gàng rồi.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1w36st1": {
+"k": "Con nhìn lại và tìm ra mặt vui! Na thấy vui.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1nwwe8g": {
+"k": "Con tìm ra mặt buồn! Lam thấy buồn.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"n642dn": {
+"k": "Chồi di cái giỏ tới dưới một đồ chơi to.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"ihd109": {
+"k": "Con nhìn lại và tìm ra chú gấu nhỏ!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man3",
 "who": "chồi",
@@ -8164,6 +8850,377 @@
 },
 "ztzl3r": {
 "k": "Màu vàng! Màu vàng!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"i7tly9": {
+"k": "Con tìm ra số một: một quả dứa!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"fk5c8l": {
+"k": "Con nhìn lại và tìm ra số một: một quả dứa!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1bkb2c1": {
+"k": "Con tìm ra số hai: hai quả xoài!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"3oo9gt": {
+"k": "Con nhìn lại và tìm ra số hai: hai quả xoài!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"o1es2n": {
+"k": "Con tìm ra số ba: ba quả chuối!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1wbgxgj": {
+"k": "Con nhìn lại và tìm ra số ba: ba quả chuối!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"r8afah": {
+"k": "Con tìm ra số bốn: bốn quả táo!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"i4kucl": {
+"k": "Con nhìn lại và tìm ra số bốn: bốn quả táo!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1xr8s0r": {
+"k": "Con tìm ra số năm: năm quả dâu tây!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"ao54e7": {
+"k": "Con nhìn lại và tìm ra số năm: năm quả dâu tây!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"k9gt5k": {
+"k": "Con cho từng quả vào giỏ cùng màu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1juqqkk": {
+"k": "Con nhìn lại và cho từng quả vào giỏ cùng màu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1jepbx9": {
+"k": "Con nghe ra đó là cái chuông! Leng keng!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"nk6wlc": {
+"k": "Con nghe lại và nhận ra đó là cái chuông! Leng keng!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"177aj71": {
+"k": "Con nghe ra đó là cái trống! Tùng, tùng!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"4ccjvw": {
+"k": "Con nghe lại và nhận ra đó là cái trống! Tùng, tùng!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"tudkgk": {
+"k": "Con nghe ra đó là xe ô tô đồ chơi! Brừm, bim bim!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"koja1v": {
+"k": "Con nghe lại và nhận ra đó là xe ô tô đồ chơi! Brừm, bim bim!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"uzhqcw": {
+"k": "Con tìm ra chú gấu to rồi! Cho vào xe đẩy nào!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1lk1mro": {
+"k": "Con nhìn lại và tìm ra chú gấu to rồi! Cho vào xe đẩy nào!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"ejofkh": {
+"k": "Con tìm ra quả bóng nhỏ rồi! Của bạn đây, Lam!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"mlacyl": {
+"k": "Con nhìn lại và tìm ra quả bóng nhỏ rồi! Của bạn đây, Lam!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1tkxygu": {
+"k": "Con bỏ một thứ màu đỏ vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"19ezy02": {
+"k": "Con nhìn lại và bỏ một thứ màu đỏ vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"pw9pui": {
+"k": "Con bỏ hai thứ màu đỏ vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"kbcrum": {
+"k": "Con nhìn lại và bỏ hai thứ màu đỏ vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"7wd65j": {
+"k": "Con bỏ ba thứ màu đỏ vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1tfpzlv": {
+"k": "Con nhìn lại và bỏ ba thứ màu đỏ vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1sjb89f": {
+"k": "Con bỏ bốn thứ màu đỏ vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"ixnv3z": {
+"k": "Con nhìn lại và bỏ bốn thứ màu đỏ vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"13lcd32": {
+"k": "Con bỏ năm thứ màu đỏ vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1gfi1iq": {
+"k": "Con nhìn lại và bỏ năm thứ màu đỏ vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"17j3ekv": {
+"k": "Con bỏ một thứ màu xanh dương vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"ahmryj": {
+"k": "Con nhìn lại và bỏ một thứ màu xanh dương vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1l4srbn": {
+"k": "Con bỏ hai thứ màu xanh dương vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1bkbowf": {
+"k": "Con nhìn lại và bỏ hai thứ màu xanh dương vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"94hagm": {
+"k": "Con bỏ ba thứ màu xanh dương vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"wgga1m": {
+"k": "Con nhìn lại và bỏ ba thứ màu xanh dương vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"129zre": {
+"k": "Con bỏ bốn thứ màu xanh dương vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1m3wgam": {
+"k": "Con nhìn lại và bỏ bốn thứ màu xanh dương vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1t8dd73": {
+"k": "Con bỏ năm thứ màu xanh dương vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"pbth7": {
+"k": "Con nhìn lại và bỏ năm thứ màu xanh dương vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1m3ca5j": {
+"k": "Con bỏ một thứ màu vàng vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"19vdcij": {
+"k": "Con nhìn lại và bỏ một thứ màu vàng vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1dpfjrn": {
+"k": "Con bỏ hai thứ màu vàng vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"sgd3c7": {
+"k": "Con nhìn lại và bỏ hai thứ màu vàng vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"12rxc2e": {
+"k": "Con bỏ ba thứ màu vàng vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"17b30ci": {
+"k": "Con nhìn lại và bỏ ba thứ màu vàng vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"19xn0cy": {
+"k": "Con bỏ bốn thứ màu vàng vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"95i81a": {
+"k": "Con nhìn lại và bỏ bốn thứ màu vàng vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"2p0fs7": {
+"k": "Con bỏ năm thứ màu vàng vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"ji6fvv": {
+"k": "Con nhìn lại và bỏ năm thứ màu vàng vào xe, đúng bằng con số!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"18tzqk0": {
+"k": "Con nghe từng tiếng và tìm ra từng món đồ chơi!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man4",
 "who": "chồi",
@@ -9114,6 +10171,279 @@
 "who": "chồi",
 "g": "man5"
 },
+"p2sgz6": {
+"k": "Con tìm ra số một: một viên gạch!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1ot5ece": {
+"k": "Con nhìn lại và tìm ra số một: một viên gạch!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"pydpt6": {
+"k": "Con tìm ra số hai: hai viên gạch!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"137gaeu": {
+"k": "Con nhìn lại và tìm ra số hai: hai viên gạch!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1duc0dy": {
+"k": "Con tìm ra số ba: ba viên gạch!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"wizw2q": {
+"k": "Con nhìn lại và tìm ra số ba: ba viên gạch!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"w2qqas": {
+"k": "Con tìm ra số bốn: bốn viên gạch!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"yun85s": {
+"k": "Con nhìn lại và tìm ra số bốn: bốn viên gạch!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"uwzew2": {
+"k": "Con tìm ra số năm: năm viên gạch!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1dvxbni": {
+"k": "Con nhìn lại và tìm ra số năm: năm viên gạch!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1wa6yut": {
+"k": "Con đặt cửa sổ tròn vào lỗ tròn! Còn cửa sổ vuông vào lỗ vuông.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1hsryc1": {
+"k": "Con nhìn lại và đặt cửa sổ tròn vào lỗ tròn! Còn cửa sổ vuông vào lỗ vuông.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1m6v0n5": {
+"k": "Con thử lại và làm được hình chữ nhật rồi! Hai cạnh dài và hai cạnh ngắn.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"45fcg0": {
+"k": "Con nghe ra đó là cái búa! Cộc, cộc!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"dfozd": {
+"k": "Con nghe lại và nhận ra đó là cái búa! Cộc, cộc!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"gik6j1": {
+"k": "Con nghe ra đó là cái cưa! Xoẹt, xoẹt!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"4vzn1o": {
+"k": "Con nghe lại và nhận ra đó là cái cưa! Xoẹt, xoẹt!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1iytrob": {
+"k": "Con nghe ra đó là cái bay! Quẹt, quẹt!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"15zmha": {
+"k": "Con nghe lại và nhận ra đó là cái bay! Quẹt, quẹt!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"153z3rx": {
+"k": "Con đặt từng hình vào đúng chỗ, và xây xong nhà để xe!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1b22jzt": {
+"k": "Con nhìn lại và đặt từng hình vào đúng chỗ, và xây xong nhà để xe!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"4hgosm": {
+"k": "Con tìm ra hình chữ nhật rồi! Hai cạnh dài và hai cạnh ngắn.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1qm7lei": {
+"k": "Con nhìn lại và tìm ra hình chữ nhật rồi! Hai cạnh dài và hai cạnh ngắn.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"3cltp9": {
+"k": "Con tìm ra hình vuông rồi! Bốn cạnh bằng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"gzbd4p": {
+"k": "Con nhìn lại và tìm ra hình vuông rồi! Bốn cạnh bằng nhau.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"10yk7r1": {
+"k": "Con thả từng khối trúng ngay đỉnh tháp: tháp cao toàn hình vuông và hình chữ nhật!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"190ty6n": {
+"k": "Con chăm chú nhìn cần cẩu và xây được tháp cao toàn hình vuông và hình chữ nhật!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1lufesf": {
+"k": "Con tìm ra cửa sổ vuông rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"xrishv": {
+"k": "Con nhìn lại và tìm ra cửa sổ vuông rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1cm2udt": {
+"k": "Con tìm ra cửa sổ tròn rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1g7kyqt": {
+"k": "Con nhìn lại và tìm ra cửa sổ tròn rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1izmcjt": {
+"k": "Con tìm ra cửa sổ tam giác rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"jou1p1": {
+"k": "Con nhìn lại và tìm ra cửa sổ tam giác rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"em5gwy": {
+"k": "Con tìm ra mặt giận! Lam thấy giận.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"fxjlxc": {
+"k": "Con tìm ra mặt tự hào! Lam thấy tự hào.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"8785f9": {
+"k": "Con nghe từng tiếng và tìm ra từng dụng cụ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1hm9tlg": {
+"k": "Mình xây tháp cao bằng cần cẩu nhé! Chồi chạm khi khối ở ngay trên tháp.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"18bdzlv": {
+"k": "Con tìm ra cửa sổ hình tam giác rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"y5oxfd": {
+"k": "Con tìm ra cửa sổ hình vuông rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
 "1xjklki": {
 "k": "Nhìn này, quả chuối!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -9574,7 +10904,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man6",
 "who": "chồi",
-"g": "man7"
+"g": "chung"
 },
 "1qe3vsq": {
 "k": "Na thức dậy. Bây giờ là buổi sáng hay buổi tối?",
@@ -10148,7 +11478,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man6",
 "who": "chồi",
-"g": "chung"
+"g": "man6"
 },
 "1pc5shp": {
 "k": "Buổi chiều!",
@@ -10600,6 +11930,160 @@
 },
 "1xgfeb8": {
 "k": "~Quả trứng.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"z9l7by": {
+"k": "Con tìm ra việc Na làm buổi sáng: Na ăn sáng!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1j4czze": {
+"k": "Con nhìn lại và tìm ra việc Na làm buổi sáng: Na ăn sáng!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"15z8hxy": {
+"k": "Con tìm ra việc Na làm buổi chiều: Na đạp xe!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"11r3coq": {
+"k": "Con nhìn lại và tìm ra việc Na làm buổi chiều: Na đạp xe!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"jbh2ep": {
+"k": "Con tìm ra việc Na làm buổi tối: Na đi ngủ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"18sih5h": {
+"k": "Con nhìn lại và tìm ra việc Na làm buổi tối: Na đi ngủ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1nzs8ic": {
+"k": "Con tìm ra mặt tự hào! Na tự làm được.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1pzak6o": {
+"k": "Con nhìn lại và tìm ra mặt tự hào! Na tự làm được.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"a3e07q": {
+"k": "Con tìm ra quyển sách hình chữ nhật rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1uy8csy": {
+"k": "Con nhìn lại và tìm ra quyển sách hình chữ nhật rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1gcxabe": {
+"k": "Con tìm ra quyển sách hình chữ nhật cho Polly rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1gcnvl2": {
+"k": "Con nhìn lại và tìm ra quyển sách hình chữ nhật cho Polly rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"vppu2a": {
+"k": "Con chọn buổi sáng! Mặt trời lên rồi. Chào buổi sáng, Na!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"ov60mu": {
+"k": "Con nhìn lại và chọn buổi sáng! Mặt trời lên rồi. Chào buổi sáng, Na!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1ytijlj": {
+"k": "Con chọn buổi tối! Mặt trăng lên rồi. Chúc Na ngủ ngon!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"uvrp03": {
+"k": "Con nhìn lại và chọn buổi tối! Mặt trăng lên rồi. Chúc Na ngủ ngon!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1mkti9o": {
+"k": "Con nhìn bầu trời: buổi sáng rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"a58wa": {
+"k": "Con nhìn lại: buổi sáng rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1h4d1kj": {
+"k": "Con nhìn bầu trời: buổi tối rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"peq7sc": {
+"k": "Con vỗ tay mỗi tiếng một cái!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1xotia8": {
+"k": "Con nghe lại và vỗ tay mỗi tiếng một cái!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"orqvdw": {
+"k": "Con nghe lại và giúp ếch nhảy mỗi tiếng một bước!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man6",
 "who": "chồi",
@@ -12462,6 +13946,335 @@
 },
 "1z0iy1k": {
 "k": "Có mấy con sao biển? Con chạm từng con và đếm nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"ja0xap": {
+"k": "Con nhìn lại: buổi tối rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"qxn0xt": {
+"k": "Con nhìn bầu trời: buổi sáng, đúng lúc ra khơi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"uy4j8z": {
+"k": "Con nhìn lại: buổi sáng, đúng lúc ra khơi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"2jw3dp": {
+"k": "Con nghe lại và chèo mỗi tiếng một cái!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1uukh5o": {
+"k": "Con nghe ra đó là con tàu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"eg1zb1": {
+"k": "Con nghe lại và nhận ra đó là con tàu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"s0k6at": {
+"k": "Con nghe ra đó là cái chuông!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1tr0o96": {
+"k": "Con nghe lại và nhận ra đó là cái chuông!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1srex2y": {
+"k": "Con nghe ra đó là con hải âu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"73bc65": {
+"k": "Con nghe lại và nhận ra đó là con hải âu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"155z8qe": {
+"k": "Con nhìn lại và thấy một con cá heo!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1fz93iq": {
+"k": "Con nhìn lại và thấy hai con cá heo!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1o1ifuz": {
+"k": "Con nhìn lại và thấy ba con cá heo!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"axsy3d": {
+"k": "Con thử lại và đặt cua trong cái xô rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"mbpu6o": {
+"k": "Con thử lại và đặt cua trên tảng đá rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1sy7as3": {
+"k": "Con thử lại và đặt cua dưới cái ô rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1knoka9": {
+"k": "Con chạm từng con và đếm được ba con sao biển!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"ib9jr7": {
+"k": "Con đếm lại và tìm ra ba con sao biển!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"ycohkl": {
+"k": "Con chạm từng con và đếm được bốn con sao biển!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"zxyi0f": {
+"k": "Con đếm lại và tìm ra bốn con sao biển!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"ztzjhe": {
+"k": "Con chạm từng con và đếm được năm con sao biển!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1akhoos": {
+"k": "Con đếm lại và tìm ra năm con sao biển!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"tjseo6": {
+"k": "Con nhìn lại và cho từng vỏ sò vào xô cùng màu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"stouae": {
+"k": "Con nhìn lại và tìm ra quả dừa to!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"o71u9o": {
+"k": "Con nhìn lại và tìm ra quả dừa nhỏ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"e3e76s": {
+"k": "Con nhìn lại và tìm ra hình tròn!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"13jfqnk": {
+"k": "Con nhìn lại và tìm ra hình vuông!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1r65dss": {
+"k": "Con nhìn lại và tìm ra hình tam giác!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1vxt7uq": {
+"k": "Con đếm chấm và tìm ra số một!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"t84qzp": {
+"k": "Con đếm lại và tìm ra số một!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"18g8ldq": {
+"k": "Con đếm chấm và tìm ra số hai!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"khqe49": {
+"k": "Con đếm lại và tìm ra số hai!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"diyv51": {
+"k": "Con đếm chấm và tìm ra số ba!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1i3yz7c": {
+"k": "Con đếm lại và tìm ra số ba!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"13hxk2z": {
+"k": "Con đếm chấm và tìm ra số bốn!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"4fita4": {
+"k": "Con đếm lại và tìm ra số bốn!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1l6m27q": {
+"k": "Con đếm chấm và tìm ra số năm!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1evk3v1": {
+"k": "Con đếm lại và tìm ra số năm!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"c5oqer": {
+"k": "Con tìm ra chìa vừa ổ khoá: hình chữ nhật!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"u2e25b": {
+"k": "Con nhìn lại và tìm ra chìa vừa ổ khoá: hình chữ nhật!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1gvld5g": {
+"k": "Con tìm ra bạn còn thiếu: Ben!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"pqbonc": {
+"k": "Con nhìn lại và tìm ra bạn còn thiếu: Ben!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1h235if": {
+"k": "Con giúp bạn cua đi tới tận dấu X!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"2d884v": {
+"k": "Con thử lại và giúp bạn cua đi tới dấu X!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1nodyau": {
+"k": "Con lật thêm thẻ và ghép được hết các khuôn mặt!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"5rdim1": {
+"k": "Nhìn kìa, tấm bảng chỉ vào cái hang.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"rx6yc1": {
+"k": "Chiếc chìa nào vừa ổ khoá? Con chạm vào nhé!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man7",
 "who": "chồi",

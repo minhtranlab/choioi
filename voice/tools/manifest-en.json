@@ -19,14 +19,14 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "man7"
+"g": "chung"
 },
 "15sd26u": {
 "k": "Remember: look at the face.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "man6"
+"g": "chung"
 },
 "1pvggns": {
 "k": "Elephants don’t eat watermelon. Try another one!",
@@ -2128,6 +2128,27 @@
 "who": "chồi",
 "g": "ngoai"
 },
+"19p62jo": {
+"k": "You played every game in the Fun Mix!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"2a3s16": {
+"k": "Wait for me!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"12173te": {
+"k": "Wheee!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
 "1uc8vmr": {
 "k": "Hello! I’m Chồi. Look, there’s something old on the bookshelf.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -2938,7 +2959,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man2"
+"g": "chung"
 },
 "wcjby9": {
 "k": "Now tap the friends who look angry!",
@@ -3036,14 +3057,14 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man0"
+"g": "chung"
 },
 "1mdqz3s": {
 "k": "Let’s count again. Tap each one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man0"
+"g": "chung"
 },
 "dgdjnl": {
 "k": "Try again!",
@@ -3064,7 +3085,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man2"
+"g": "chung"
 },
 "war7rn": {
 "k": "Where should the elephant live? Tap a spot!",
@@ -3589,7 +3610,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man0"
+"g": "chung"
 },
 "1osgisi": {
 "k": "You followed the red dots, all the way to the X!",
@@ -6081,7 +6102,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man2",
 "who": "chồi",
-"g": "man7"
+"g": "chung"
 },
 "d5oqt5": {
 "k": "Hmm, that’s Na.",
@@ -6309,6 +6330,342 @@
 },
 "18jejum": {
 "k": "You gave Lam a big hug. Now Lam feels better!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"aj5cf8": {
+"k": "You listened again, and found the excited music. Bouncy and quick!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"9o3w9y": {
+"k": "You looked again, and found Lam’s surprised face! He didn’t know butterflies were inside.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1yzsten": {
+"k": "You saw one dot, and banged the drum once!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1abvln": {
+"k": "You looked again, and banged the drum once!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1b5skf5": {
+"k": "You looked again, and saw one spot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1owbvd9": {
+"k": "You saw two dots, and banged the drum twice!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1f7x4my": {
+"k": "You looked again, and banged the drum twice!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"4rme8s": {
+"k": "You looked again, and saw two spots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"7bj4z5": {
+"k": "You saw three dots, and banged the drum three times!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"y1yz2c": {
+"k": "You looked again, and banged the drum three times!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"4csoye": {
+"k": "You looked again, and saw three spots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1xvkawv": {
+"k": "You found Lam! Lam is in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1qtzuuq": {
+"k": "You looked again, and found Lam! Lam is in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1dcdvma": {
+"k": "You found Lam! Lam is under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1ko7ve9": {
+"k": "You looked again, and found Lam! Lam is under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"18dgw4c": {
+"k": "You found Lam! Lam is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"kc9vjz": {
+"k": "You looked again, and found Lam! Lam is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"674vuy": {
+"k": "You found Lam! Lam is on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"xwbi4p": {
+"k": "You looked again, and found Lam! Lam is on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"pqkdp": {
+"k": "You found Na! Na is in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"34bf0k": {
+"k": "You looked again, and found Na! Na is in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1lii21g": {
+"k": "You found Na! Na is under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"s6z6bj": {
+"k": "You looked again, and found Na! Na is under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"osc0z2": {
+"k": "You found Na! Na is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1lokkfp": {
+"k": "You looked again, and found Na! Na is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1h44uxo": {
+"k": "You found Na! Na is on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"13v7nu7": {
+"k": "You looked again, and found Na! Na is on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"51o6pp": {
+"k": "You found Ben! Ben is in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"16zy2fg": {
+"k": "You looked again, and found Ben! Ben is in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"7ymqv8": {
+"k": "You found Ben! Ben is under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"coqvav": {
+"k": "You looked again, and found Ben! Ben is under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"134ic8u": {
+"k": "You found Ben! Ben is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"wqjlnh": {
+"k": "You looked again, and found Ben! Ben is in the box.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"hxsdm4": {
+"k": "You found Ben! Ben is on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"13z688n": {
+"k": "You looked again, and found Ben! Ben is on the slide.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"ty5jng": {
+"k": "You put the kitten on the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"4uiuzr": {
+"k": "You tried again, and put the kitten on the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1turftv": {
+"k": "You put the kitten under the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1fgnfbe": {
+"k": "You tried again, and put the kitten under the table!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1r3vlr9": {
+"k": "You put the kitten in the box!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"q3mc1q": {
+"k": "You tried again, and put the kitten in the box!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"zgr0po": {
+"k": "You found the scared face! Lam feels scared.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1rnkcn": {
+"k": "You found the tired face! Ben feels tired.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"11zt33y": {
+"k": "You looked again, and found the tired face! Ben feels tired.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"1w8s0hc": {
+"k": "You listened, and found the excited music. Bouncy and quick!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"m7h6r1": {
+"k": "You found Lam’s surprised face! He didn’t know butterflies were inside.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"z8vcim": {
+"k": "You helped Ben into the sleeping bag. Good night, Ben!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"ian5mn": {
+"k": "When we feel tired, we go to sleep.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man2",
 "who": "chồi",
@@ -7201,7 +7558,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man3",
 "who": "chồi",
-"g": "chung"
+"g": "man3"
 },
 "1rrfpvk": {
 "k": "The room is tidy! Big toys in the big box, small toys in the small box.",
@@ -7385,6 +7742,328 @@
 "who": "chồi",
 "g": "man3"
 },
+"4n9zx7": {
+"k": "You looked again, and found one dot!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"6kk2oa": {
+"k": "You looked again, and found two dots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"11r0zx8": {
+"k": "You looked again, and found three dots!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"689udh": {
+"k": "Peekaboo! You found the kitten on the bed!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"ozpa5s": {
+"k": "Peekaboo! You looked again, and found the kitten on the bed!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"8078oi": {
+"k": "Peekaboo! You found the kitten under the bed!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1k32epd": {
+"k": "Peekaboo! You looked again, and found the kitten under the bed!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"mj487i": {
+"k": "Peekaboo! You found the kitten in the basket!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"spzhv1": {
+"k": "Peekaboo! You looked again, and found the kitten in the basket!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"19qfkr": {
+"k": "The red crayons are together, and the blue crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"12hdd97": {
+"k": "The red crayons are together, and the yellow crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"uey1n4": {
+"k": "The red crayons are together, and the green crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"n0tzme": {
+"k": "The blue crayons are together, and the yellow crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1nb52pb": {
+"k": "The blue crayons are together, and the green crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"alu8u3": {
+"k": "The yellow crayons are together, and the green crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1519dov": {
+"k": "The blue crayons are together, and the red crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"34bdyz": {
+"k": "The yellow crayons are together, and the red crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"yqrj8o": {
+"k": "The green crayons are together, and the red crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1d5ozv6": {
+"k": "The yellow crayons are together, and the blue crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"fszg4n": {
+"k": "The green crayons are together, and the blue crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"10jltav": {
+"k": "The green crayons are together, and the yellow crayons are together.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1y0x6j0": {
+"k": "You put each crayon in the cup of its colour!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"ii1if3": {
+"k": "You looked again, and put each crayon in the cup of its colour!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1iqqyy8": {
+"k": "You put each toy in the right box. The room is tidy!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"z6l571": {
+"k": "You looked again, and put each toy in the right box. The room is tidy!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"5asvp0": {
+"k": "You listened, and found the scared face. A sneaky, creepy tune!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"l80qso": {
+"k": "You listened again, and found the scared face. A sneaky, creepy tune!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1anqyoo": {
+"k": "You listened, and found the tired face. That music sounds sleepy!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"9q9lg4": {
+"k": "You listened again, and found the tired face. That music sounds sleepy!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1n523sd": {
+"k": "You found the small bear!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1j0zar6": {
+"k": "You looked again, and found the small bear!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"7igmyf": {
+"k": "You found the big bear! Big bear, small bear.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1kv57wc": {
+"k": "You looked again, and found the big bear! Big bear, small bear.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"5382tq": {
+"k": "You caught three big toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1k3d65j": {
+"k": "You looked again, and caught three big toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"qh46lb": {
+"k": "You caught three small toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"15b0vxy": {
+"k": "You looked again, and caught three small toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"oqlybu": {
+"k": "You caught four big toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"cmlj2t": {
+"k": "You looked again, and caught four big toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"18ota7r": {
+"k": "You caught five small toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1dc339w": {
+"k": "You looked again, and caught five small toys!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"mlixsb": {
+"k": "The toys are back in the boxes.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"ztbus3": {
+"k": "The room is tidy.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"1d24y8m": {
+"k": "You looked again, and found the happy face! Na feels happy.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"kshqpi": {
+"k": "You found the sad face! Lam feels sad.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
+"j444n": {
+"k": "I move the basket under a big toy.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man3",
+"who": "chồi",
+"g": "man3"
+},
 "1xhv1d5": {
 "k": "Find the number one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -7446,7 +8125,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man4",
 "who": "chồi",
-"g": "man4"
+"g": "chung"
 },
 "1407y81": {
 "k": "Find the number four!",
@@ -8101,6 +8780,377 @@
 },
 "qtivpj": {
 "k": "All yellow! All yellow!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"ioqf3v": {
+"k": "You found the number one: one pineapple!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"knp9d2": {
+"k": "You looked again, and found the number one: one pineapple!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1b138ej": {
+"k": "You found the number two: two mangoes!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"3i47am": {
+"k": "You looked again, and found the number two: two mangoes!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"t8sxqv": {
+"k": "You found the number three: three bananas!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"ptazya": {
+"k": "You looked again, and found the number three: three bananas!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"qsfq72": {
+"k": "You found the number four: four apples!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1jq6yg5": {
+"k": "You looked again, and found the number four: four apples!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"n6xfva": {
+"k": "You found the number five: five strawberries!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1rasy9h": {
+"k": "You looked again, and found the number five: five strawberries!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1jea0ia": {
+"k": "You put each fruit in the basket of its colour!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1jl9d2p": {
+"k": "You looked again, and put each fruit in the basket of its colour!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"jbo6y0": {
+"k": "You heard a bell! Ding, ding!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"43vmcf": {
+"k": "You listened again, and heard a bell! Ding, ding!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1eqvgtv": {
+"k": "You heard a drum! Boom, boom!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1od91yw": {
+"k": "You listened again, and heard a drum! Boom, boom!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1vyxaju": {
+"k": "You heard a toy car! Vroom, beep beep!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1mms3xn": {
+"k": "You listened again, and heard a toy car! Vroom, beep beep!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1bcouh2": {
+"k": "You found the big teddy! Into the cart!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1it1nzd": {
+"k": "You looked again, and found the big teddy! Into the cart!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"bksnte": {
+"k": "You found the small ball! Here you are, Lam!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"quxvgf": {
+"k": "You looked again, and found the small ball! Here you are, Lam!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"d823mh": {
+"k": "You put one red things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"z9j9z2": {
+"k": "You looked again, and put one red things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"5zn8cn": {
+"k": "You put two red things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"18xqpew": {
+"k": "You looked again, and put two red things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"v9sq61": {
+"k": "You put three red things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"wc4gti": {
+"k": "You looked again, and put three red things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"2jvs6j": {
+"k": "You put four red things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1kfcgfa": {
+"k": "You looked again, and put four red things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"8r1ydr": {
+"k": "You put five red things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"rkjb72": {
+"k": "You looked again, and put five red things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"dorpi4": {
+"k": "You put one blue things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"vc6f3t": {
+"k": "You looked again, and put one blue things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1s0flfy": {
+"k": "You put two blue things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1bhhmbj": {
+"k": "You looked again, and put two blue things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"m9ndoc": {
+"k": "You put three blue things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"l37xk1": {
+"k": "You looked again, and put three blue things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"dcakiq": {
+"k": "You put four blue things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1wyc1pd": {
+"k": "You looked again, and put four blue things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"gfxkhi": {
+"k": "You put five blue things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"f5mqyx": {
+"k": "You looked again, and put five blue things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"i9b6a4": {
+"k": "You put one yellow things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"ydmfsp": {
+"k": "You looked again, and put one yellow things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"6zgjui": {
+"k": "You put two yellow things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"mtzfnv": {
+"k": "You looked again, and put two yellow things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1bql2gc": {
+"k": "You put three yellow things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"79l12p": {
+"k": "You looked again, and put three yellow things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"y9wtny": {
+"k": "You put four yellow things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1as5xv5": {
+"k": "You looked again, and put four yellow things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1dt74sy": {
+"k": "You put five yellow things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1fevcyx": {
+"k": "You looked again, and put five yellow things in the cart, just like the number!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1l0luw3": {
+"k": "You heard each sound, and found each toy!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man4",
 "who": "chồi",
@@ -9065,6 +10115,265 @@
 "who": "chồi",
 "g": "man5"
 },
+"5dptn3": {
+"k": "You found the number one: one bricks!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"18yr8mg": {
+"k": "You looked again, and found the number one: one bricks!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"18dfqr": {
+"k": "You found the number two: two bricks!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"bc8dd0": {
+"k": "You looked again, and found the number two: two bricks!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"dgzkej": {
+"k": "You found the number three: three bricks!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1afy2q0": {
+"k": "You looked again, and found the number three: three bricks!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"ucf1kn": {
+"k": "You found the number four: four bricks!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"kymdyk": {
+"k": "You looked again, and found the number four: four bricks!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"14zvabv": {
+"k": "You found the number five: five bricks!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1j1l2xk": {
+"k": "You looked again, and found the number five: five bricks!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"uk5rt": {
+"k": "You put the round window in the round hole! And the square window goes in the square hole.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"ufp6r4": {
+"k": "You looked again, and put the round window in the round hole! And the square window goes in the square hole.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"18hampm": {
+"k": "You tried again, and made a rectangle! Two long sides and two short sides.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"zrjbrp": {
+"k": "You heard a hammer! Bang, bang!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1bd6m46": {
+"k": "You listened again, and heard a hammer! Bang, bang!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1pgoxji": {
+"k": "You heard a saw! Swish, swish!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1tajnov": {
+"k": "You listened again, and heard a saw! Swish, swish!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"8lnkvs": {
+"k": "You heard a trowel! Scrape, scrape!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1x6ui73": {
+"k": "You listened again, and heard a trowel! Scrape, scrape!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1njsnnz": {
+"k": "You put each shape in its place, and built the garage!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"glozoi": {
+"k": "You looked again, and put each shape in its place, and built the garage!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"yc6sgc": {
+"k": "You found the rectangle! Two long sides and two short sides.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"i8rmql": {
+"k": "You looked again, and found the rectangle! Two long sides and two short sides.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"n9lgt5": {
+"k": "You found the square! Four sides, all the same.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"13ukpga": {
+"k": "You looked again, and found the square! Four sides, all the same.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"zzrdo7": {
+"k": "You dropped each block right on the tower: a tall tower of squares and rectangles!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1coiay": {
+"k": "You watched the crane again and again, and built a tall tower of squares and rectangles!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"epup7d": {
+"k": "You found the square window!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"5rkow8": {
+"k": "You looked again, and found the square window!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1hd0moy": {
+"k": "You found the circle window!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"nl0c67": {
+"k": "You looked again, and found the circle window!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"t82ytq": {
+"k": "You found the triangle window!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"2elznb": {
+"k": "You looked again, and found the triangle window!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1yqb7ve": {
+"k": "You found the angry face! Lam feels angry.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"o5j25i": {
+"k": "You found the proud face! Lam feels proud.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"1u0ss0x": {
+"k": "You heard each sound, and found each tool!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"g38u72": {
+"k": "Let’s build a tall tower with the crane! I tap when the block is over the tower.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
 "k7otd": {
 "k": "Look, a banana!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -9525,7 +10834,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man6",
 "who": "chồi",
-"g": "man7"
+"g": "chung"
 },
 "18kqyzx": {
 "k": "Na wakes up. Is it morning or night?",
@@ -10390,6 +11699,153 @@
 },
 "nzlu1o": {
 "k": "fish. One jump!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1luoilp": {
+"k": "You found what Na does in the morning: she eats breakfast!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"t7sqqk": {
+"k": "You looked again, and found what Na does in the morning: she eats breakfast!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"qiy7rw": {
+"k": "You found what Na does in the afternoon: she rides her bike!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"caz01h": {
+"k": "You looked again, and found what Na does in the afternoon: she rides her bike!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"b2eyx8": {
+"k": "You found what Na does at night: she goes to sleep!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"n0jn33": {
+"k": "You looked again, and found what Na does at night: she goes to sleep!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"t8n25h": {
+"k": "You found the proud face! Na did it all by herself.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"w551gm": {
+"k": "You looked again, and found the proud face! Na did it all by herself.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1nkh7di": {
+"k": "You found the rectangle book!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"16bjfql": {
+"k": "You looked again, and found the rectangle book!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1klb4tn": {
+"k": "You found a rectangle book for Polly!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1rahwl4": {
+"k": "You looked again, and found a rectangle book for Polly!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1repyp0": {
+"k": "You chose morning! The sun is up. Good morning, Na!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"ua5glb": {
+"k": "You looked again, and chose morning! The sun is up. Good morning, Na!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"pufgpc": {
+"k": "You chose night! The moon is out. Good night, Na!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"14ocuvf": {
+"k": "You looked again, and chose night! The moon is out. Good night, Na!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"pz74wd": {
+"k": "You looked at the sky: it’s morning!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1ruqe4g": {
+"k": "You looked again: it’s morning!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1p8rzbf": {
+"k": "You looked at the sky: it’s night!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"tyo2j3": {
+"k": "You listened again, and clapped once for each sound!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"165sjhw": {
+"k": "You listened again, and made the frog jump once for each sound!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man6",
 "who": "chồi",
@@ -12238,6 +13694,286 @@
 },
 "pddw4j": {
 "k": "Your yellow key opened a new island!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"19flzey": {
+"k": "You looked again: it’s night!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"15udik0": {
+"k": "You looked at the sky: it’s morning, a good time to sail!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1ovjw7v": {
+"k": "You looked again: it’s morning, a good time to sail!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"37ljj9": {
+"k": "You listened again, and rowed once for each sound!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1cmbwoh": {
+"k": "You listened again, and heard the ship!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"k1hha0": {
+"k": "You listened again, and heard the bell!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1tznkg2": {
+"k": "You listened again, and heard the seagull!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"neewn5": {
+"k": "You looked again, and saw one dolphin!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1vre83k": {
+"k": "You looked again, and saw two dolphins!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"6c78li": {
+"k": "You looked again, and saw three dolphins!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1h6pnic": {
+"k": "You tried again, and put the crab in the bucket!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"cr32vr": {
+"k": "You tried again, and put the crab on the rock!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"wwqwwt": {
+"k": "You tried again, and put the crab under the umbrella!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"devyfu": {
+"k": "You counted again, and found three starfish!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"4hvxlg": {
+"k": "You counted again, and found four starfish!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1i9yqn8": {
+"k": "You counted again, and found five starfish!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"130xee5": {
+"k": "You looked again, and put each shell in the bucket of its colour!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"180kyoc": {
+"k": "You looked again, and found the big coconut!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"43prsr": {
+"k": "You looked again, and found the small coconut!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1m6yeyj": {
+"k": "You looked again, and found a circle!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1qudurq": {
+"k": "You looked again, and found a square!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"gqu8j7": {
+"k": "You looked again, and found a triangle!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"b2e2dr": {
+"k": "You counted the dots, and found the number one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"8x7hn4": {
+"k": "You counted again, and found the number one!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"4znu41": {
+"k": "You counted the dots, and found the number two!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"t9xei6": {
+"k": "You counted again, and found the number two!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"m8mcd7": {
+"k": "You counted the dots, and found the number three!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1fm1jsg": {
+"k": "You counted again, and found the number three!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"bqebtz": {
+"k": "You counted the dots, and found the number four!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"vca9v6": {
+"k": "You counted again, and found the number four!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"sgpho3": {
+"k": "You counted the dots, and found the number five!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1c89jvi": {
+"k": "You counted again, and found the number five!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"140tm90": {
+"k": "You found the key that fits: a rectangle!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"xbxu7j": {
+"k": "You looked again, and found the key that fits: a rectangle!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"15qodjq": {
+"k": "You found who is missing: Ben!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1a9x5kz": {
+"k": "You looked again, and found who is missing: Ben!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"jab3jo": {
+"k": "You helped the crab walk all the way to the X!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1psa2qo": {
+"k": "You tried again, and helped the crab walk to the X!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1hy85yq": {
+"k": "You turned more cards, and matched all the faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1jbtxxo": {
+"k": "Look, the sign points to the cave.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man7",
 "who": "chồi",
