@@ -59,6 +59,14 @@ Cùng luật chung: 1 m ≈ 12 đơn vị, chân chạm cạnh dưới, có `-ph
 | `chia-khoa-vang` | 52×22 | Kho báu · chìa khoá vàng (vòng tròn bên trái, răng chìa bên phải). Đồ cận |
 | `ruong-kho-bau-dong` | 64×48 | Kho báu · rương gỗ đóng, đai vàng, ổ khoá giữa (lỗ khoá ở (32, 24)). Đồ cận |
 | `ruong-kho-bau-mo` | 64×60 | Kho báu · rương mở: nắp lật ra sau, ánh vàng, **5 huy chương vàng** và chìa khoá vàng nằm trên. Đồ cận; đáy ở cạnh dưới giống rương đóng, nên đổi file là mở rương |
+| `da-nho` | 34×16 | Màn 7 · tảng đá nhỏ trên bãi cát, có ít cát vun quanh chân (23/10). **Đỉnh đá phẳng y 3, x 10–24, tâm đỉnh (17, 3)**: con cua đứng ở đó (trò "on the rock") |
 | `sao-bien` | 44×42 | Màn 7 · con sao biển (22/10, vẽ lại): con vật biển màu cam, năm cánh tròn mập, gai sần (chấm sáng), mặt cười dễ thương. Nằm phẳng trên cát. Đồ cận |
 | `tui-ngu` | 200×260 | Màn 2 · túi ngủ xanh lá còn trống, nằm dưới đất, mũ trùm ở bên trái. Cùng khung, cùng đáy (y 246) với tư thế của các bạn, nên đặt chồng đúng chỗ `ben-ngu-tui-ngu` |
+
+## `cay/` · cây (23/10)
+Cùng luật chung (1 m ≈ 12 đơn vị, chân chạm cạnh dưới, có `-phai` / `-trai`), cùng nét và màu lá với cây trong các cảnh thành phố (`bigTree`: xanh lá đậm, đốm sáng, nét cong nhỏ).
+
+| Tên (thêm `-phai` / `-trai`) | Khung W×H | Ghi chú |
+|---|---|---|
+| `bui-cay` | 40×24 | bụi cây tròn, đáy chạm cạnh dưới. Sở thú: chạm bụi cây, Polly nói "A bush!" |
 
