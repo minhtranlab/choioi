@@ -7223,7 +7223,7 @@ ${treeG(12,98,1)}${treeG(190,98,1.1)}${treeG(-50,100,1.2)}${treeG(250,100,1.1)}<
    xeEl(name, dir, k, lane bottom %): a vehicle on a 200×140 picture, k = units on the picture for one unit of the drawing.
    ========================================================= */
 const XE={'xe-om-xanh':[26,24,'moto'],'xe-om-vang':[26,24,'moto'],'xe-om-xanh-cho-khach':[28,25,'moto'],'xe-om-vang-cho-khach':[28,25,'moto'],'xe-om-xanh-thung':[30,24,'moto'],'xe-om-vang-thung':[30,24,'moto'],
-  'taxi-xanh-ngoc':[46,22,'taxi'],'taxi-xanh-ngoc-suv':[52,23,'taxi'],'xe-buyt-xanh-duong':[134,40,'bus'],'xe-buyt-dien-xanh-la':[98,36,'bus'],'xe-dua-don':[90,42,'schoolbus'],
+  'taxi-xanh-ngoc':[46,22,'taxi'],'taxi-xanh-ngoc-suv':[52,23,'taxi'],'xe-buyt-xanh-duong':[134,40,'bus'],'xe-buyt-dien-xanh-la':[98,36,'bus'],'xe-dua-don':[90,42,'schoolbus'],'xe-dua-don-bac-tai':[90,42,'schoolbus'],
   // 22/10 (D1): ordinary traffic, about a third of the vehicles on every street (not only taxis, ride-hailing bikes and buses)
   'o-to-con-trang':[56,18,'car'],'o-to-gia-dinh-bac':[56,21,'car'],'o-to-nho-cam':[44,18,'car'],'xe-may-thuong':[26,24,'moto'],'xe-may-me-cho-be':[28,25,'moto'],'xe-dap':[22,24,'bike']};
 const XE_NAME={moto:['A motorbike!','Xe máy!'],taxi:['A taxi!','Taxi!'],bus:['A bus!','Xe buýt!'],schoolbus:['The school bus!','Xe buýt của trường!'],car:['A car!','Ô tô!'],bike:['A bike!','Xe đạp!']};
@@ -7311,7 +7311,7 @@ async function streetIntro0(){
   while(taps<3&&performance.now()-t0<12000*Math.max(.05,SPEED)) await sleep(250);
   hh(); calm(); turn(null); while(talking) await sleep(100);
   // the school bus: the near lane lets the last cars drive away, the yellow bus comes in behind them and stops at the gate
-  T.endLane(1); const drive=T.arrive('xe-dua-don',1,50); honk('bus');
+  T.endLane(1); const drive=T.arrive('xe-dua-don-bac-tai',1,50); honk('bus');   // 23/10 tối (chat chính, vòng 6): the bus drives in with the driver at the wheel; a tap opens the door (xe-dua-don-mo)
   await say('Here comes my school bus!','Xe buýt của trường Chồi tới rồi!',{q:false}); const bus=await drive;
   // 23/10 (the new opening): the child taps the yellow bus: beep beep, the door opens, the driver waves
   const be=bus.e; be.style.pointerEvents='auto'; be.style.cursor='pointer'; be.classList.add('zoomme'); be.style.setProperty('--zs','1.06'); be.dataset.ok='1';
