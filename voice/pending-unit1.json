@@ -1,343 +1,242 @@
 [
  {
-  "part": "man6",
-  "en": "Look, a banana! Banana has three sounds. One clap for each sound.",
-  "vi": "Nhìn này, quả chuối! Tiếng Anh là banana. Banana có ba tiếng: ba - na - na. Mỗi tiếng vỗ tay một cái.",
+  "part": "chung",
+  "en": "Look, it’s a cat.",
+  "vi": "Nhìn này, con mèo. Tiếng Anh là cat.",
   "needEn": false,
   "needVi": true,
-  "slow": false,
-  "tiengAnhTrongCauViet": [
-   "banana",
-   "ba - na - na"
-  ]
+  "slow": false
  },
  {
-  "part": "man6",
-  "en": "Ba-na-na!",
-  "vi": "Ba-na-na!",
+  "part": "chung",
+  "en": "Cat.",
+  "vi": "Cat.",
   "needEn": false,
   "needVi": true,
-  "slow": false,
-  "tiengAnhTrongCauViet": [
-   "Ba-na-na"
-  ]
+  "slow": true
  },
  {
-  "part": "man6",
-  "en": "Banana.",
-  "vi": "Banana.",
+  "part": "chung",
+  "en": "Look, it’s a star.",
+  "vi": "Nhìn này, ngôi sao. Tiếng Anh là star.",
   "needEn": false,
   "needVi": true,
-  "slow": true,
-  "tiengAnhTrongCauViet": [
-   "Banana"
-  ]
+  "slow": false
  },
  {
-  "part": "man6",
-  "en": "Look, a banana!",
-  "vi": "Nhìn này, quả chuối! Tiếng Anh là banana.",
+  "part": "chung",
+  "en": "Star.",
+  "vi": "Star.",
   "needEn": false,
   "needVi": true,
-  "slow": false,
-  "tiengAnhTrongCauViet": [
-   "banana"
-  ]
+  "slow": true
  },
  {
-  "part": "man6",
-  "en": "Apple.",
-  "vi": "Apple.",
+  "part": "chung",
+  "en": "Look, it’s a balloon.",
+  "vi": "Nhìn này, bóng bay. Tiếng Anh là balloon.",
   "needEn": false,
   "needVi": true,
-  "slow": true,
-  "tiengAnhTrongCauViet": [
-   "Apple"
-  ]
+  "slow": false
  },
  {
-  "part": "man6",
-  "en": "Na wants an apple, too.",
-  "vi": "Na muốn ăn cả quả táo nữa. Tiếng Anh là apple.",
+  "part": "chung",
+  "en": "Balloon.",
+  "vi": "Balloon.",
   "needEn": false,
   "needVi": true,
-  "slow": false,
-  "tiengAnhTrongCauViet": [
-   "apple"
-  ]
+  "slow": true
+ },
+ {
+  "part": "chung",
+  "en": "Look, it’s a present.",
+  "vi": "Nhìn này, hộp quà. Tiếng Anh là present.",
+  "needEn": false,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "chung",
+  "en": "Present.",
+  "vi": "Present.",
+  "needEn": false,
+  "needVi": true,
+  "slow": true
+ },
+ {
+  "part": "man0",
+  "en": "Hello! I’m Chồi!",
+  "vi": "Xin chào! Chồi đây!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Hi hi!",
+  "vi": "Hi hi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "This is my school!",
+  "vi": "Đây là trường của Chồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Beep beep!",
+  "vi": "Bíp bíp!",
+  "needEn": false,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Let’s go in!",
+  "vi": "Mình vào thôi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Look, there’s something old on the bookshelf. Tap it!",
+  "vi": "Nhìn kìa, trên tủ sách có một thứ gì cũ cũ. Con chạm vào nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "It’s a map!",
+  "vi": "Một tấm bản đồ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man0",
+  "en": "Tap the school bus!",
+  "vi": "Con chạm vào xe buýt của trường nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
  },
  {
   "part": "man6",
   "en": "Egg.",
-  "vi": "Egg.",
+  "vi": "Quả trứng.",
   "needEn": false,
   "needVi": true,
-  "slow": true,
-  "tiengAnhTrongCauViet": [
-   "Egg"
-  ]
- },
- {
-  "part": "man6",
-  "en": "Look, an egg!",
-  "vi": "Nhìn này, quả trứng! Tiếng Anh là egg.",
-  "needEn": false,
-  "needVi": true,
-  "slow": false,
-  "tiengAnhTrongCauViet": [
-   "egg"
-  ]
- },
- {
-  "part": "man6",
-  "en": "Mango.",
-  "vi": "Mango.",
-  "needEn": false,
-  "needVi": true,
-  "slow": true,
-  "tiengAnhTrongCauViet": [
-   "Mango"
-  ]
- },
- {
-  "part": "man6",
-  "en": "Look, a mango!",
-  "vi": "Nhìn này, quả xoài! Tiếng Anh là mango.",
-  "needEn": false,
-  "needVi": true,
-  "slow": false,
-  "tiengAnhTrongCauViet": [
-   "mango"
-  ]
- },
- {
-  "part": "man6",
-  "en": "Fish.",
-  "vi": "Fish.",
-  "needEn": false,
-  "needVi": true,
-  "slow": true,
-  "tiengAnhTrongCauViet": [
-   "Fish"
-  ]
- },
- {
-  "part": "man6",
-  "en": "Look, a fish!",
-  "vi": "Nhìn này, con cá! Tiếng Anh là fish.",
-  "needEn": false,
-  "needVi": true,
-  "slow": false,
-  "tiengAnhTrongCauViet": [
-   "fish"
-  ]
- },
- {
-  "part": "man6",
-  "en": "Lotus.",
-  "vi": "Lotus.",
-  "needEn": false,
-  "needVi": true,
-  "slow": true,
-  "tiengAnhTrongCauViet": [
-   "Lotus"
-  ]
- },
- {
-  "part": "man6",
-  "en": "The frog wants a lotus flower. Lotus!",
-  "vi": "Ếch muốn tìm hoa sen. Tiếng Anh là lotus.",
-  "needEn": false,
-  "needVi": true,
-  "slow": false,
-  "tiengAnhTrongCauViet": [
-   "lotus"
-  ]
- },
- {
-  "part": "man6",
-  "en": "Butterfly.",
-  "vi": "Butterfly.",
-  "needEn": false,
-  "needVi": true,
-  "slow": true,
-  "tiengAnhTrongCauViet": [
-   "Butterfly"
-  ]
- },
- {
-  "part": "man6",
-  "en": "Now the frog wants to see the butterfly. Butterfly!",
-  "vi": "Giờ ếch muốn gặp bạn bươm bướm. Tiếng Anh là butterfly.",
-  "needEn": false,
-  "needVi": true,
-  "slow": false,
-  "tiengAnhTrongCauViet": [
-   "butterfly"
-  ]
+  "slow": true
  },
  {
   "part": "man7",
-  "en": "And Na makes a square door and a triangle flag.",
-  "vi": "Và Na làm cái cửa hình vuông và lá cờ hình tam giác.",
+  "en": "Which key fits the lock? Tap it!",
+  "vi": "Chìa nào vừa ổ khoá? Con chạm vào nhé!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man7",
-  "en": "And Na makes a round window and a triangle flag.",
-  "vi": "Và Na làm cửa sổ hình tròn và lá cờ hình tam giác.",
+  "en": "Yes! It’s a rectangle!",
+  "vi": "Đúng rồi! Đó là hình chữ nhật!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man7",
-  "en": "And Na makes a round window and a square door.",
-  "vi": "Và Na làm cửa sổ hình tròn và cái cửa hình vuông.",
+  "en": "How many dots are there? Tap the key!",
+  "vi": "Có bao nhiêu chấm? Con chạm vào chiếc chìa nhé!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man7",
-  "en": "Island.",
-  "vi": "Island.",
-  "needEn": false,
-  "needVi": true,
-  "slow": true,
-  "tiengAnhTrongCauViet": [
-   "Island"
-  ]
- },
- {
-  "part": "man7",
-  "en": "Look, an island!",
-  "vi": "Nhìn này, hòn đảo! Tiếng Anh là island.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false,
-  "tiengAnhTrongCauViet": [
-   "island"
-  ]
- },
- {
-  "part": "man7",
-  "en": "Coconut.",
-  "vi": "Coconut.",
-  "needEn": false,
-  "needVi": true,
-  "slow": true,
-  "tiengAnhTrongCauViet": [
-   "Coconut"
-  ]
- },
- {
-  "part": "man7",
-  "en": "Look, a coconut!",
-  "vi": "Nhìn này, quả dừa! Tiếng Anh là coconut.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false,
-  "tiengAnhTrongCauViet": [
-   "coconut"
-  ]
- },
- {
-  "part": "man7",
-  "en": "The door is open! Let’s count the steps as we climb. Count with me!",
-  "vi": "Cửa mở rồi! Mình vừa leo vừa đếm bậc thang nhé. Đếm cùng Chồi nào!",
+  "en": "Let’s count the steps!",
+  "vi": "Mình đếm bậc thang nhé!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man7",
-  "en": "We’re on the beach! Here’s Lam. Here’s Na.",
-  "vi": "Mình xuống tới bãi biển rồi! Lam đây. Na đây.",
+  "en": "Help the crab walk to the X! Draw a line across.",
+  "vi": "Giúp bạn cua đi tới dấu X nhé! Con vẽ một đường ngang.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man7",
-  "en": "Who is missing? Tap!",
-  "vi": "Còn thiếu bạn nào nhỉ? Con chạm nhé!",
+  "en": "The crab found the X! Look, the sign points to the cave.",
+  "vi": "Bạn cua tìm ra dấu X rồi! Nhìn kìa, tấm bảng chỉ vào cái hang.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man7",
-  "en": "Ben!",
-  "vi": "Ben!",
+  "en": "This music is called Ode to Joy.",
+  "vi": "Bản nhạc này tên là Khúc hoan ca.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man7",
-  "en": "Wait for me!",
-  "vi": "Chờ tớ với!",
+  "en": "And a yellow key!",
+  "vi": "Và một chiếc chìa khoá vàng!",
   "needEn": true,
-  "needVi": true,
-  "slow": false,
-  "who": "Ben"
+  "needVi": false,
+  "slow": false
  },
  {
   "part": "man7",
-  "en": "Now we’re all here. Let’s look around the beach!",
-  "vi": "Đủ cả rồi. Mình tìm quanh bãi biển nhé!",
+  "en": "Now let’s see what the yellow key can open!",
+  "vi": "Giờ mình xem chìa khoá vàng mở được gì nhé!",
+  "needEn": true,
+  "needVi": false,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "The yellow key is magic! Let’s open a cloudy island!",
+  "vi": "Chìa khoá vàng có phép màu! Mình cùng mở một hòn đảo trong mây nhé!",
+  "needEn": true,
+  "needVi": false,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Your yellow key opened a new island!",
+  "vi": "Chìa khoá vàng của con đã mở một hòn đảo mới!",
+  "needEn": true,
+  "needVi": false,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "On the rock!",
+  "vi": "Trên tảng đá!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man7",
-  "en": "Tap the slide, the swing or the seesaw!",
-  "vi": "Con chạm vào cầu trượt, xích đu hoặc bập bênh nhé!",
+  "en": "Under the umbrella!",
+  "vi": "Dưới cái ô!",
   "needEn": true,
   "needVi": true,
   "slow": false
- },
- {
-  "part": "man7",
-  "en": "Wheee!",
-  "vi": "Vèo!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false,
-  "who": "Lam",
-  "ghiChu": "Lam trượt cầu trượt. Cuối Màn 7 (chìa khoá mở Sân chơi) và trong thành phố"
- },
- {
-  "part": "man7",
-  "en": "Up I go!",
-  "vi": "Lên cao nào!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false,
-  "who": "Na",
-  "ghiChu": "Na chơi xích đu. Cuối Màn 7 và trong thành phố"
- },
- {
-  "part": "man7",
-  "en": "Up and down!",
-  "vi": "Lên rồi xuống!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false,
-  "who": "Ben",
-  "ghiChu": "Ben chơi bập bênh. Cuối Màn 7 và trong thành phố"
- },
- {
-  "part": "ngoai",
-  "en": "A bush!",
-  "vi": "Bụi cây!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false,
-  "ghiChu": "Polly nói khi bé chạm bụi cây ở sở thú, như \"A tree!\": dùng bản ghi của Chồi, app nâng giọng"
  }
 ]
