@@ -27,7 +27,9 @@ Mỗi xe có hai file: `-phai.svg` (đầu xe quay sang phải, chạy từ trá
 | `xe-may-me-cho-be` | 28×25 | xe tay ga xanh nhạt, mẹ áo hồng mũ xanh nhạt, bé ngồi sau áo cam đội mũ bảo hiểm hồng (22/10) |
 | `xe-dap` | 22×24 | xe đạp xanh dương, người đạp áo trắng, mũ bảo hiểm cam (22/10) |
 
-Bảng tuyến xe buýt để trống (dải tối, không chữ, không số). Ô tô gia đình không có đèn taxi, không chữ, không logo; màu khác hẳn taxi xanh ngọc.
+Bảng tuyến xe buýt để trống (dải tối, không chữ, không số).
+
+**Xe đưa đón cửa mở, bác tài vẫy tay** (vòng 4, 23/10, cho mở đầu Màn 0 mới: bé chạm xe thì cửa mở, bác tài vẫy): `xe-dua-don-mo-phai.svg` / `-trai.svg` (90×42, cùng khung, cùng chỗ bánh với `xe-dua-don`; cửa mở là khe tối có bậc lên, hai cánh gập sang hai bên, x 73,5–82,5, y 19,5–35 trong khung bản `-phai`; một bác tài nhỏ sau kính lái giơ tay vẫy) và `xe-dua-don-can-mo.svg` / `-mo-trai.svg` (240×136, cùng khung với `xe-dua-don-can`; **cửa mở x 188–216, y 66–118, bậc y 111–118**; bác tài giơ tay trái vẫy, bàn tay ở (209, 33)). Đổi file là mở cửa. Ô tô gia đình không có đèn taxi, không chữ, không logo; màu khác hẳn taxi xanh ngọc.
 
 ### Xe đưa đón, bản cận (trò xếp bạn lên xe, Màn 0, tối 21/10)
 `xe-dua-don-can.svg` (đầu xe quay phải) và `xe-dua-don-can-trai.svg` (bản lật). Khung **240×136**, bánh chạm cạnh dưới. Cùng dáng và màu với `xe-dua-don` (vàng, mui tròn, mũi dốc, sọc hồng và xanh, cửa lên xuống dưới kính lái), vẽ to, **không theo tỉ lệ 12 đơn vị/m** (đây là cảnh cận). Bác tài ngồi sau kính lái, hai tay cầm vô lăng, tóc ngắn, áo xanh nhạt, không chữ, không logo.

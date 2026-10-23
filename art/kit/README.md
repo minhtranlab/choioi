@@ -60,13 +60,33 @@ Cùng luật chung: 1 m ≈ 12 đơn vị, chân chạm cạnh dưới, có `-ph
 | `ruong-kho-bau-dong` | 64×48 | Kho báu · rương gỗ đóng, đai vàng, ổ khoá giữa (lỗ khoá ở (32, 24)). Đồ cận |
 | `ruong-kho-bau-mo` | 64×60 | Kho báu · rương mở: nắp lật ra sau, ánh vàng, **5 huy chương vàng** và chìa khoá vàng nằm trên. Đồ cận; đáy ở cạnh dưới giống rương đóng, nên đổi file là mở rương |
 | `da-nho` | 34×16 | Màn 7 · tảng đá nhỏ trên bãi cát, có ít cát vun quanh chân (23/10). **Đỉnh đá phẳng y 3, x 10–24, tâm đỉnh (17, 3)**: con cua đứng ở đó (trò "on the rock") |
+| `o-khoa-so` | 120×170 | Hải đăng · ổ khoá số (vòng 4): quai xám, thân vàng, **ô kem để game đặt chấm (1–5): x 20–100, y 76–138**; lỗ khoá nhỏ ở (60, 148). Gợi ý chỗ chấm: 1 chấm (60, 107); 2–5 chấm ở các góc (40, 92), (80, 122), (40, 122), (80, 92), r 7. Vẽ to được tới ô đứng cao gần bằng hải đăng |
+| `o-khoa-hinh` | 120×170 | Hải đăng · ổ khoá có **lỗ hình chữ nhật: x 36–84, y 92–124** (lỗ tối, viền vàng sẫm). Cùng thân với ổ khoá số |
+| `chia-khoa-trong` | 160×70 | Hải đăng · chìa khoá vàng có **đầu chìa để trống: đĩa kem tâm (36, 35), bán kính 23** (bản `-trai`: tâm (124, 35)); game đặt số hoặc hình (chữ nhật, vuông, tam giác…) vào đó. Mỗi đáp án là một chìa |
 | `sao-bien` | 44×42 | Màn 7 · con sao biển (22/10, vẽ lại): con vật biển màu cam, năm cánh tròn mập, gai sần (chấm sáng), mặt cười dễ thương. Nằm phẳng trên cát. Đồ cận |
 | `tui-ngu` | 200×260 | Màn 2 · túi ngủ xanh lá còn trống, nằm dưới đất, mũ trùm ở bên trái. Cùng khung, cùng đáy (y 246) với tư thế của các bạn, nên đặt chồng đúng chỗ `ben-ngu-tui-ngu` |
 
 ## `cay/` · cây (23/10)
-Cùng luật chung (1 m ≈ 12 đơn vị, chân chạm cạnh dưới, có `-phai` / `-trai`), cùng nét và màu lá với cây trong các cảnh thành phố (`bigTree`: xanh lá đậm, đốm sáng, nét cong nhỏ).
+Cùng luật chung (1 m ≈ 12 đơn vị, chân chạm cạnh dưới, có `-phai` / `-trai`). Dùng trên đảo khối của thành phố nên vẽ kiểu khối như `dao-khoi/` (từ vòng 4).
 
 | Tên (thêm `-phai` / `-trai`) | Khung W×H | Ghi chú |
 |---|---|---|
-| `bui-cay` | 40×24 | bụi cây tròn, đáy chạm cạnh dưới. Sở thú: chạm bụi cây, Polly nói "A bush!" |
+| `bui-cay` | 40×24 | bụi cây, đáy chạm cạnh dưới. Sở thú: chạm bụi cây, Polly nói "A bush!". **Vòng 4 (23/10): vẽ lại kiểu khối như đảo (ba khối tròn có mặt sáng, mặt tối, bóng dưới chân, không nét viền)**, cùng tên, cùng khung |
+
+## `dao-khoi/` · đồ trên đảo khối của thành phố (vòng 4, 23/10)
+Kiểu khối như đảo và cây hình nón: **khối đặc, không nét viền đen**, sáng từ trên bên trái (mặt trái, mặt trên sáng; mặt phải, mặt dưới sẫm), bóng mờ dưới chân. **Giữ đúng `viewBox` app đang dùng cho từng món**, nên thay thẳng hình cũ. Đồ trên đảo vẽ theo một hướng nhìn cố định nên không có `-trai`. Các bạn, thú, đồ ăn vẫn là sticker (có viền trắng).
+
+| File | viewBox | Ghi chú |
+|---|---|---|
+| `cau-truot.svg` | 0 0 130 120 | cầu trượt: thang xanh bên phải, bục vàng (mặt trên x 86–126, y 12–22), máng hồng từ đỉnh (khoảng (92, 26)) cong xuống chân trái (khoảng (8, 112)) |
+| `xich-du.svg` | 0 0 130 110 | xích đu: khung chữ A đỏ hai bên, xà ngang trên (y 6–18), dây nâu, ghế vàng (mặt ghế y 68–73, x 48–84); điểm treo (65, 14) |
+| `bap-benh.svg` | 0 0 130 70 | bập bênh: trụ tam giác tím, tấm ván xanh (mặt trên y 34, x 6–126), hai tay nắm vàng ở x 14 và 114; điểm tựa (65, 38) |
+| `qua-bong.svg` | 0 0 40 40 | quả bóng cam, tâm (20, 19), bán kính 16 |
+| `cay-tron.svg` | 0 0 90 130 | cây tán tròn: thân nâu (gốc (45, 124)), tán ba khối tròn |
+| `cay-sao.svg` | -6 -10 132 190 | cây sao của Chồi ở quảng trường: thân, tán khối to, **12 ngôi sao `class="sao"`, `data-k` 1–12**, đúng 12 chỗ cũ của app; trong file tất cả đều chưa sáng (#7FCCA4), game tô vàng (#FFD21F) n ngôi đầu |
+| `cau-truot-lam.svg` | 0 0 130 120 | cầu trượt có **Lam ngồi ở đỉnh máng**, trong nhóm `<g class="tp-slide">` (Lam: tư thế `ngoi`, quay trái, x 74, y −16, rộng 34) để game cho Lam trượt xuống |
+| `xich-du-na.svg` | 0 0 130 110 | xích đu có **Na ngồi trên ghế**; nhóm `<g class="tp-swing">` gồm dây, ghế, Na, đung đưa quanh (65, 14) |
+| `bap-benh-ben-lam.svg` | 0 0 130 70 | bập bênh có **Ben (trái) và Lam (phải) ngồi hai đầu**; nhóm `<g class="tp-saw">` gồm tấm ván và hai bạn, lên xuống quanh (65, 38) |
+
+Các bạn trên đồ chơi là sticker (tư thế `ngoi` của `nhan-vat/`, viền trắng bằng bộ lọc riêng trong từng file, id `p195-<tên file>-stk`).
 
