@@ -40,6 +40,7 @@ PROPS += [f'kit/nhan-vat/polly/polly-{t}-phai' for t in ('dung', 'noi', 'bay-1',
 PROPS += [f'kit/nhan-vat/{b}/{b}-khieng-{k}-phai' for b in ('lam', 'ben') for k in (1, 2)]   # 22/10 tối: Lam and Ben carry the chest out of the cave (two steps)
 # things (art/kit/do-vat/): Màn 7 signs and the stone with the X, the treasure, the starfish, Ben's sleeping bag
 PROPS += [f'kit/do-vat/{n}-{d}' for n in ('da-to-dau-x', 'bang-go-mui-ten', 'bang-go-hang', 'ruong-kho-bau-dong', 'ruong-kho-bau-mo', 'huy-chuong-vang', 'chia-khoa-vang', 'sao-bien', 'tui-ngu') for d in ('phai', 'trai')]
+PROPS += [f'kit/do-vat/da-nho-{d}' for d in ('phai', 'trai')] + [f'kit/cay/bui-cay-{d}' for d in ('phai', 'trai')]   # 23/10 (vòng 3): the crab's little rock (Màn 7), the bush in the zoo ("A bush!")
 PROPS += [f'places/the-tranh/mot-ngay-{t}' for t in ('sang', 'chieu', 'toi')]   # Màn 6: the three day cards (120×90); the game draws Na on them
 # things taken out of a picture for the app (asked after a play-test), without changing the file in art/places/
 TRIM = {**{n: [r'<rect x="170.6" y="9.2"[^>]*/>', r'<path d="M173.6 12.4 V31"[^>]*/>', r'<path d="M173.6 31 v2.4[^"]*"[^>]*/>'] for n in ('cong-truong-xay', 'cong-truong-xay-tron')},   # the game draws the trolley-less hook that swings

@@ -243,5 +243,101 @@
   "tiengAnhTrongCauViet": [
    "coconut"
   ]
+ },
+ {
+  "part": "man7",
+  "en": "The door is open! Let’s count the steps as we climb. Count with me!",
+  "vi": "Cửa mở rồi! Mình vừa leo vừa đếm bậc thang nhé. Đếm cùng Chồi nào!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "We’re on the beach! Here’s Lam. Here’s Na.",
+  "vi": "Mình xuống tới bãi biển rồi! Lam đây. Na đây.",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Who is missing? Tap!",
+  "vi": "Còn thiếu bạn nào nhỉ? Con chạm nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Ben!",
+  "vi": "Ben!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Wait for me!",
+  "vi": "Chờ tớ với!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "who": "Ben"
+ },
+ {
+  "part": "man7",
+  "en": "Now we’re all here. Let’s look around the beach!",
+  "vi": "Đủ cả rồi. Mình tìm quanh bãi biển nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Tap the slide, the swing or the seesaw!",
+  "vi": "Con chạm vào cầu trượt, xích đu hoặc bập bênh nhé!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Wheee!",
+  "vi": "Vèo!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "who": "Lam",
+  "ghiChu": "Lam trượt cầu trượt. Cuối Màn 7 (chìa khoá mở Sân chơi) và trong thành phố"
+ },
+ {
+  "part": "man7",
+  "en": "Up I go!",
+  "vi": "Lên cao nào!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "who": "Na",
+  "ghiChu": "Na chơi xích đu. Cuối Màn 7 và trong thành phố"
+ },
+ {
+  "part": "man7",
+  "en": "Up and down!",
+  "vi": "Lên rồi xuống!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "who": "Ben",
+  "ghiChu": "Ben chơi bập bênh. Cuối Màn 7 và trong thành phố"
+ },
+ {
+  "part": "ngoai",
+  "en": "A bush!",
+  "vi": "Bụi cây!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "ghiChu": "Polly nói khi bé chạm bụi cây ở sở thú, như \"A tree!\": dùng bản ghi của Chồi, app nâng giọng"
  }
 ]
