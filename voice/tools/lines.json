@@ -9762,6 +9762,132 @@
 "part": "man7"
 },
 {
+"lang": "en",
+"key": "We’re at the top! Oh, this door is locked too.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "It’s dark in the cave… Look! Something is shining!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "It’s the treasure chest! Heave-ho, let’s carry it out!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "We carried the treasure chest out of the cave!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Now we can see the chest!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "And Na makes a square door and a triangle flag.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "And Na makes a round window and a triangle flag.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "And Na makes a round window and a square door.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Look, an island!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Look, a coconut!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "The door is open! Let’s count the steps as we climb. Count with me!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "We’re on the beach! Here’s Lam. Here’s Na.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Who is missing? Tap!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Ben!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "@Ben:Wait for me!",
+"who": "Ben",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Now we’re all here. Let’s look around the beach!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Tap the slide, the swing or the seesaw!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "@Lam:Wheee!",
+"who": "Lam",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "@Na:Up I go!",
+"who": "Na",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "@Ben:Up and down!",
+"who": "Ben",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "A bush!",
+"who": "chồi",
+"part": "ngoai"
+},
+{
 "lang": "vi",
 "key": "Con sẵn sàng chưa? Giờ đến lượt con!",
 "who": "chồi",
@@ -18157,6 +18283,102 @@
 },
 {
 "lang": "vi",
+"key": "Nhìn này, quả chuối! Tiếng Anh là banana. Banana có ba tiếng: ba - na - na. Mỗi tiếng vỗ tay một cái.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Ba-na-na!",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "~Banana.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, quả chuối! Tiếng Anh là banana.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "~Apple.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Na muốn ăn cả quả táo nữa. Tiếng Anh là apple.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "~Egg.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, quả trứng! Tiếng Anh là egg.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "~Mango.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, quả xoài! Tiếng Anh là mango.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "~Fish.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, con cá! Tiếng Anh là fish.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "~Lotus.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Ếch muốn tìm hoa sen. Tiếng Anh là lotus.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "~Butterfly.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
+"key": "Giờ ếch muốn gặp bạn bươm bướm. Tiếng Anh là butterfly.",
+"who": "chồi",
+"part": "man6"
+},
+{
+"lang": "vi",
 "key": "Con nhìn ra một con cá heo thật nhanh!",
 "who": "chồi",
 "part": "man7"
@@ -19542,20 +19764,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "We’re at the top! Oh, this door is locked too.",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Mình lên tới đỉnh rồi! Ơ, cửa này cũng bị khoá.",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "It’s dark in the cave… Look! Something is shining!",
 "who": "chồi",
 "part": "man7"
 },
@@ -19566,20 +19776,8 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "It’s the treasure chest! Heave-ho, let’s carry it out!",
-"who": "chồi",
-"part": "man7"
-},
-{
 "lang": "vi",
 "key": "Rương kho báu đó! Hò dô, mình khiêng ra nào!",
-"who": "chồi",
-"part": "man7"
-},
-{
-"lang": "en",
-"key": "We carried the treasure chest out of the cave!",
 "who": "chồi",
 "part": "man7"
 },
@@ -19590,14 +19788,140 @@
 "part": "man7"
 },
 {
-"lang": "en",
-"key": "Now we can see the chest!",
+"lang": "vi",
+"key": "Giờ mình nhìn rõ cái rương rồi!",
 "who": "chồi",
 "part": "man7"
 },
 {
 "lang": "vi",
-"key": "Giờ mình nhìn rõ cái rương rồi!",
+"key": "Và Na làm cái cửa hình vuông và lá cờ hình tam giác.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Và Na làm cửa sổ hình tròn và lá cờ hình tam giác.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Và Na làm cửa sổ hình tròn và cái cửa hình vuông.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "~Island.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, hòn đảo! Tiếng Anh là island.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "~Coconut.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, quả dừa! Tiếng Anh là coconut.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Cửa mở rồi! Mình vừa leo vừa đếm bậc thang nhé. Đếm cùng Chồi nào!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Mình xuống tới bãi biển rồi! Lam đây. Na đây.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Còn thiếu bạn nào nhỉ? Con chạm nhé!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Ben!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "@Ben:Chờ tớ với!",
+"who": "Ben",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Đủ cả rồi. Mình tìm quanh bãi biển nhé!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào cầu trượt, xích đu hoặc bập bênh nhé!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "@Lam:Vèo!",
+"who": "Lam",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "@Na:Lên cao nào!",
+"who": "Na",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "@Ben:Lên rồi xuống!",
+"who": "Ben",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Bụi cây!",
+"who": "chồi",
+"part": "ngoai"
+},
+{
+"lang": "vi",
+"key": "bảy",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "tám",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "chín",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "mười",
 "who": "chồi",
 "part": "man7"
 }

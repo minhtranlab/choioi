@@ -68,7 +68,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "man3"
+"g": "chung"
 },
 "1xxeq1t": {
 "k": "Remember: just look. No need to count!",
@@ -2994,14 +2994,14 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man0"
 },
 "1mdqz3s": {
 "k": "Let’s count again. Tap each one!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man0"
 },
 "dgdjnl": {
 "k": "Try again!",
@@ -5472,7 +5472,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man2",
 "who": "chồi",
-"g": "man7"
+"g": "chung"
 },
 "1eesss4": {
 "k": "It’s Ben! Ben is under the tree.",
@@ -8902,7 +8902,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man6",
 "who": "chồi",
-"g": "man6"
+"g": "man7"
 },
 "18kqyzx": {
 "k": "Na wakes up. Is it morning or night?",
@@ -11423,6 +11423,118 @@
 "part": "man7",
 "who": "chồi",
 "g": "man7"
+},
+"itvi4g": {
+"k": "And Na makes a square door and a triangle flag.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1dzixx": {
+"k": "And Na makes a round window and a triangle flag.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1ne1vig": {
+"k": "And Na makes a round window and a square door.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"9w3485": {
+"k": "Look, an island!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"28agg9": {
+"k": "Look, a coconut!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"lfryu": {
+"k": "The door is open! Let’s count the steps as we climb. Count with me!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1wg5kba": {
+"k": "We’re on the beach! Here’s Lam. Here’s Na.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1e0wfnq": {
+"k": "Who is missing? Tap!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"dynqsx": {
+"k": "Ben!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"yvsnm1": {
+"k": "@Ben:Wait for me!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "man7",
+"who": "Ben",
+"g": "man7"
+},
+"ctugrm": {
+"k": "Now we’re all here. Let’s look around the beach!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"yj26x2": {
+"k": "Tap the slide, the swing or the seesaw!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"134duk0": {
+"k": "@Lam:Wheee!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "man7",
+"who": "Lam",
+"g": "man7"
+},
+"1hmev7n": {
+"k": "@Na:Up I go!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "man7",
+"who": "Na",
+"g": "chung"
+},
+"wqyyqt": {
+"k": "@Ben:Up and down!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "man7",
+"who": "Ben",
+"g": "chung"
+},
+"3ekiml": {
+"k": "A bush!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
 }
 }
 }

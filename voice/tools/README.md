@@ -33,7 +33,9 @@ python3 tao_giong.py pack --lang en,vi      # thêm câu mới/đã sửa vào v
 python3 tao_giong.py page                   # voice/nghe-thu.html: nghe từng câu giọng mới
 ```
 
-**Khi có câu mới hoặc câu sửa:** cập nhật `voice/pending-unit1.json`, chạy lại 4 lệnh trên. Chỉ câu mới/đã đổi được tạo; các file mp3 đã có trên GitHub giữ nguyên, câu mới nằm trong file mp3 mới ở cuối.
+**Khi có câu mới hoặc câu sửa:** cập nhật `voice/pending-unit1.json`, chạy lại 4 lệnh trên.
+- Trong `pending-unit1.json`, câu của một bạn nhỏ ghi thêm `"who": "Lam"` (hoặc Na, Ben, Bac): câu được tạo bằng giọng bạn đó, khoá `@Lam:` + câu.
+- Câu tiếng Việt có từ tiếng Anh ghi thêm `"tiengAnhTrongCauViet": ["banana", "ba - na - na"]`: chỉ các chữ đó do giọng Anh của Chồi đọc (phương án B). Danh sách được giữ lại trong `tieng-anh-trong-cau-viet.json` (theo khoá câu), để lần tạo sau vẫn đọc đúng. Câu không ghi danh sách thì công cụ tự đoán (chữ trong ngoặc kép, chuỗi tách tiếng, từ trong `EN_WORDS`). Chỉ câu mới/đã đổi được tạo; các file mp3 đã có trên GitHub giữ nguyên, câu mới nằm trong file mp3 mới ở cuối.
 
 - `lines` giữ mọi câu đã có giọng mới (`manifest-<lang>.json`), thêm câu trong `voice/pending-unit1.json` (các phần trong `--parts`, bỏ trống là tất cả), và mọi câu trong các file `--log`.
 - `thu_cau.py` cho app tự chơi các màn trong trình duyệt không đầu và ghi lại mọi câu Chồi nói, để không sót câu nào không có trong `pending-unit1.json` (vd. "See you next time!"): `python3 thu_cau.py 8 0,1,2,3 thu-cau.json` (cần `python3 -m http.server 8765` ở thư mục gốc repo và `pip install playwright`). Kết quả đã chạy cho cả 8 màn: `thu-cau.json` (có cả câu của các bạn nhỏ, cờ `k`). `thu_mix.py` chơi hết 8 màn rồi chơi Fun Mix 3 lần (có trò thưởng): `thu-mix.json`.

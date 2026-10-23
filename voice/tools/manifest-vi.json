@@ -68,7 +68,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "man3"
+"g": "chung"
 },
 "v05kx0": {
 "k": "Nhớ nhé: chỉ nhìn thôi, không cần đếm!",
@@ -1181,7 +1181,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "man7"
 },
 "5xntlz": {
 "k": "~xoài",
@@ -3043,7 +3043,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man0"
 },
 "1bvbfxe": {
 "k": "Mình đếm lại nhé. Con chạm vào từng cái!",
@@ -4905,14 +4905,14 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man2",
 "who": "chồi",
-"g": "chung"
+"g": "man2"
 },
 "f41pi1": {
 "k": "Ơ, thẻ đó có hai chấm.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man2",
 "who": "chồi",
-"g": "chung"
+"g": "man2"
 },
 "1hw86su": {
 "k": "Hai! Con nhìn một cái là biết!",
@@ -5017,7 +5017,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man2",
 "who": "chồi",
-"g": "chung"
+"g": "man2"
 },
 "6t0vr5": {
 "k": "Lần sau con chỉ cần nhìn. Ba!",
@@ -5528,7 +5528,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man2",
 "who": "chồi",
-"g": "man7"
+"g": "chung"
 },
 "182zrwu": {
 "k": "Là Ben! Ben ở dưới gốc cây.",
@@ -6823,7 +6823,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man4",
 "who": "chồi",
-"g": "man4"
+"g": "chung"
 },
 "ay1p7": {
 "k": "Con tìm số bốn nhé!",
@@ -8881,7 +8881,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man6",
 "who": "chồi",
-"g": "man6"
+"g": "man7"
 },
 "1qe3vsq": {
 "k": "Na thức dậy. Bây giờ là buổi sáng hay buổi tối?",
@@ -9788,6 +9788,118 @@
 },
 "ns17u6": {
 "k": "fish. Một bước!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"tq4e3v": {
+"k": "Nhìn này, quả chuối! Tiếng Anh là banana. Banana có ba tiếng: ba - na - na. Mỗi tiếng vỗ tay một cái.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"oj9ih7": {
+"k": "Ba-na-na!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1ybo1ye": {
+"k": "~Banana.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"vk2xkt": {
+"k": "Nhìn này, quả chuối! Tiếng Anh là banana.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1rkq44n": {
+"k": "~Apple.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"vn2uj9": {
+"k": "Na muốn ăn cả quả táo nữa. Tiếng Anh là apple.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1xw6wp0": {
+"k": "~Egg.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"11rto1n": {
+"k": "Nhìn này, quả trứng! Tiếng Anh là egg.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"cubjud": {
+"k": "~Mango.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"o1857o": {
+"k": "Nhìn này, quả xoài! Tiếng Anh là mango.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1b4bazv": {
+"k": "~Fish.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"11bbhlf": {
+"k": "Nhìn này, con cá! Tiếng Anh là fish.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"jph97u": {
+"k": "~Lotus.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"tganx9": {
+"k": "Ếch muốn tìm hoa sen. Tiếng Anh là lotus.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"2lh56q": {
+"k": "~Butterfly.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
+"1qt3os5": {
+"k": "Giờ ếch muốn gặp bạn bươm bướm. Tiếng Anh là butterfly.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
 "part": "man6",
 "who": "chồi",
@@ -11444,6 +11556,160 @@
 "part": "man7",
 "who": "chồi",
 "g": "man7"
+},
+"11ra88g": {
+"k": "Và Na làm cái cửa hình vuông và lá cờ hình tam giác.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"18gc0uz": {
+"k": "Và Na làm cửa sổ hình tròn và lá cờ hình tam giác.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"11z2n2": {
+"k": "Và Na làm cửa sổ hình tròn và cái cửa hình vuông.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"gjg8e2": {
+"k": "~Island.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"yqwbrv": {
+"k": "Nhìn này, hòn đảo! Tiếng Anh là island.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"n47iw2": {
+"k": "~Coconut.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1wrghmb": {
+"k": "Nhìn này, quả dừa! Tiếng Anh là coconut.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1pyknni": {
+"k": "Cửa mở rồi! Mình vừa leo vừa đếm bậc thang nhé. Đếm cùng Chồi nào!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"13vdzqd": {
+"k": "Mình xuống tới bãi biển rồi! Lam đây. Na đây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"qicguc": {
+"k": "Còn thiếu bạn nào nhỉ? Con chạm nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"dynqsx": {
+"k": "Ben!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"18l7sza": {
+"k": "@Ben:Chờ tớ với!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "man7",
+"who": "Ben",
+"g": "man7"
+},
+"1gsdj3b": {
+"k": "Đủ cả rồi. Mình tìm quanh bãi biển nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"5pddmn": {
+"k": "Con chạm vào cầu trượt, xích đu hoặc bập bênh nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"15wptmx": {
+"k": "@Lam:Vèo!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "man7",
+"who": "Lam",
+"g": "man7"
+},
+"ak1fe9": {
+"k": "@Na:Lên cao nào!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "man7",
+"who": "Na",
+"g": "chung"
+},
+"1ptxybc": {
+"k": "@Ben:Lên rồi xuống!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "man7",
+"who": "Ben",
+"g": "chung"
+},
+"xaif4h": {
+"k": "bảy",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"181h51t": {
+"k": "tám",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1c4ahn9": {
+"k": "chín",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1d8fgjm": {
+"k": "mười",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1xayhga": {
+"k": "Bụi cây!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
 }
 }
 }

@@ -70,16 +70,21 @@ def spoken(key, lang):
     if t and t[0].islower(): t = t[0].upper() + t[1:]
     return t
 # English words in a Vietnamese-mode line (Minh, 22/10: phương án B): read by Chồi's English voice (af_heart), the rest by VieNeu
-EN_WORDS = {'cat', 'fish', 'star', 'buh', 'loon', 'pre', 'zent', 'ap', 'pull', 'egg', 'tus', 'but', 'ter', 'fly', 'land', 'nut', 'banana'}
+EN_WORDS = {'cat', 'fish', 'star', 'buh', 'loon', 'pre', 'zent', 'ap', 'pull', 'egg', 'tus', 'but', 'ter', 'fly', 'land', 'nut', 'banana',
+            'apple', 'mango', 'lotus', 'butterfly', 'island', 'coconut'}
 EN_ALONE = {'ba', 'na', 'co', 'lo', 'go', 'man', 'is'}     # also Vietnamese-looking: English only as a slow syllable on its own ("~ba")
 VI_SYL = {'hoa', 'sen', 'con'}                             # Vietnamese clapping syllables written without marks
 SPAN = re.compile(r'"([^"]*[A-Za-z][^"]*)"|\b([A-Za-z]+(?:\s*-\s*[A-Za-z]+)+)\b|\b([A-Za-z]+)\b')
-def vi_spans(raw):
-    """[(lang, text)] for one sentence of a Vietnamese line"""
+# the English words of a Vietnamese line, as chat U1 writes them in pending-unit1.json ("tiengAnhTrongCauViet"), kept by key
+HINTS_PATH = os.path.join(HERE, 'tieng-anh-trong-cau-viet.json')
+HINTS = json.load(open(HINTS_PATH, encoding='utf-8')) if os.path.exists(HINTS_PATH) else {}
+def vi_spans(raw, phrases=None):
+    """[(lang, text)] for one sentence of a Vietnamese line; with phrases (chat U1's list) only those are English"""
     out, i = [], 0
-    for m in SPAN.finditer(raw):
-        q, drill, w = m.groups()
-        en = (q is not None and not re.search(r'[À-ỹđĐ]', q)) or \
+    rx = re.compile('|'.join(r'(?<![\wÀ-ỹ])' + re.escape(x) + r'(?![\wÀ-ỹ])' for x in sorted(phrases, key=len, reverse=True)), re.I) if phrases else SPAN
+    for m in rx.finditer(raw):
+        q, drill, w = m.groups() if not phrases else (None, None, None)
+        en = bool(phrases) or (q is not None and not re.search(r'[À-ỹđĐ]', q)) or \
              (drill is not None and not all(x.strip().lower() in VI_SYL for x in drill.split('-'))) or \
              (w is not None and w.lower() in EN_WORDS)
         if not en: continue
@@ -93,13 +98,13 @@ def mixed(key, lang, who):
     if lang != 'vi' or who != 'chồi': return False
     t = KEYPFX.sub('', key)
     if t.startswith('~') and t[1:].lower() in EN_ALONE: return True
-    return any(l == 'en' for s in sentences(t.lstrip('~')) for l, _ in vi_spans(s))
+    return any(l == 'en' for s in sentences(t.lstrip('~')) for l, _ in vi_spans(s, HINTS.get(key)))
 def sentences(t):
     return [s for s in re.split(r'(?<=[.!?])\s+', t.strip()) if s] or [t]
 
 # ---------------------------------------------------------------- checking by ear (a recognizer)
 NUM = {'0':'zero','1':'one','2':'two','3':'three','4':'four','5':'five','6':'six','7':'seven','8':'eight','9':'nine','10':'ten'}
-UK = {'he': 'hee', 'sweet': 'sweets', 'bên': 'ben', 'bèn': 'ben', 'poly': 'polly', 'pô': 'polly', 'lamb': 'lam', 'nah': 'na', 'whoa': 'whoosh', 'nhá': 'nhé', 'kĩ': 'kỹ', 'colour': 'color', 'colours': 'colors', 'favourite': 'favorite', 'mum': 'mom', 'grey': 'gray', 'okay': 'ok'}
+UK = {'he': 'hee', 'sweet': 'sweets', 'bên': 'ben', 'bèn': 'ben', 'poly': 'polly', 'pô': 'polly', 'lamb': 'lam', 'nah': 'na', 'whoa': 'whoosh', 'nhá': 'nhé', 'kĩ': 'kỹ', 'colour': 'color', 'colours': 'colors', 'favourite': 'favorite', 'mum': 'mom', 'grey': 'gray', 'okay': 'ok', 'ireland': 'island'}
 def words(t):
     t = t.lower().replace('’', "'")
     t = re.sub(r"\b(\d+)\b", lambda m: NUM.get(m.group(1), m.group(1)), t)
@@ -112,7 +117,7 @@ def lev(a, b):
         p = c
     return p[-1]
 STRAY = {'ok', 'k', 'yes', 'so', 'hmm', 'a', 'uh', 'and', 'i', 'oh', 'um'}
-ONO = {'vù', 'vèo', 'brừm', 'grừ', 'bụp', 'bùm', 'tõm', 'whoosh', 'grrr', 'brrm', 'vroom', 'pop', 'boing', 'ồ', 'oa', 'hì', 'hihi', 'ha'}   # sounds: a recognizer can't judge them
+ONO = {'vù', 'vèo', 'brừm', 'grừ', 'bụp', 'bùm', 'tõm', 'whoosh', 'grrr', 'brrm', 'vroom', 'pop', 'boing', 'ồ', 'oa', 'hì', 'hihi', 'ha', 'wheee', 'vèo'}   # sounds: a recognizer can't judge them
 def score(expected, heard):
     """share of words heard right; a stray word before the first one (the carrier, an "uh") costs extra"""
     a, b = [w for w in words(expected) if w not in ONO], words(heard)
@@ -263,7 +268,11 @@ def cmd_lines(a):
         for h, m in manifest(lang)['c'].items(): add(lang, None, None, m['who'], m['part'], key=m['k'])
     for x in pend:
         if parts and x['part'] not in parts: continue
-        add('en', x['en'], x.get('slow'), 'chồi', x['part']); add('vi', x['vi'], x.get('slow'), 'chồi', x['part'])
+        who = x.get('who') or 'chồi'   # a friend's line (Lam, Na, Ben): in that friend's own voice, keyed "@Lam:" + the line
+        for lang in ('en', 'vi'):
+            add(lang, None, None, who, x['part'], key=(f'@{who}:' if who != 'chồi' else '') + vkey(x[lang], x.get('slow')))
+        if x.get('tiengAnhTrongCauViet'): HINTS[vkey(x['vi'], x.get('slow'))] = x['tiengAnhTrongCauViet']
+    json.dump(HINTS, open(HINTS_PATH, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
     kp = os.path.join(HERE, 'cau-ban-nho.json')   # each child's own voice: "@Lam:" + the line (ban_nho.py)
     if os.path.exists(kp):
         for x in json.load(open(kp, encoding='utf-8')):
@@ -329,7 +338,7 @@ def make_mixed(o, slow_speed):
     t = KEYPFX.sub('', o['key']); slow = t.startswith('~'); t = t.lstrip('~')
     ce, cv = CFG['en']['chồi'], CFG['vi']['chồi']; sp_en = ce.get('speed', 1) * (0.85 if slow else 1)
     if t.lower() in EN_ALONE: sents = [[('en', t)]]
-    else: sents = [vi_spans(x) for x in sentences(t)]
+    else: sents = [vi_spans(x, HINTS.get(o['key'])) for x in sentences(t)]
     parts, info = [], []
     for k, segs in enumerate(sents):
         for j, (l, x) in enumerate(segs):
