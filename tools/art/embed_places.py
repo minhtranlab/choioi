@@ -22,7 +22,7 @@ USED = ['lop-hoc', 'san-truong', 'vuon-truong', 'cong-vien', 'vuon-nha-na-chieu'
         # 22/10 tối: the third road of the My Games frog trip (the road to school in the afternoon)
         'duong-toi-truong-chieu-tron',
         # 22/10 tối (Minh, vòng 2): the view from the lighthouse balcony, through the railing
-        'nhin-tu-ban-cong']
+        'nhin-tu-ban-cong', 'lop-hoc-ban-do', 'lop-hoc-ban-do-tron']
 # things a game puts on a background, drawn once and used on every page (art/places/do-choi/, art/props/): copied into PROP, keyed by file name
 PROPS = ['places/do-choi/cau-truot-phai', 'places/do-choi/cay-cau'] + [f'props/xe/{n}-{d}' for n in ('xe-om-xanh', 'xe-om-vang', 'xe-om-xanh-cho-khach', 'xe-om-vang-cho-khach',
          'xe-om-xanh-thung', 'xe-om-vang-thung', 'taxi-xanh-ngoc', 'taxi-xanh-ngoc-suv', 'xe-buyt-xanh-duong', 'xe-buyt-dien-xanh-la', 'xe-dua-don') for d in ('phai', 'trai')]
@@ -43,12 +43,13 @@ PROPS += [f'kit/do-vat/{n}-{d}' for n in ('da-to-dau-x', 'bang-go-mui-ten', 'ban
 PROPS += [f'kit/dao-khoi/{n}' for n in ('cau-truot', 'xich-du', 'bap-benh', 'qua-bong', 'cay-tron', 'cay-sao', 'cau-truot-lam', 'xich-du-na', 'bap-benh-ben-lam')]   # 23/10 (vòng 4): the city's things in the block style; the friends playing
 PROPS += [f'kit/do-vat/{n}-{d}' for n in ('o-khoa-so', 'o-khoa-hinh', 'chia-khoa-trong') for d in ('phai', 'trai')]   # 23/10 (vòng 4): the lighthouse locks and the keys
 PROPS += [f'props/xe/{n}' for n in ('xe-dua-don-mo-phai', 'xe-dua-don-mo-trai', 'xe-dua-don-can-mo', 'xe-dua-don-can-mo-trai')]   # 23/10 (vòng 4): the school bus with its door open, the driver waving (Màn 0)
+PROPS += [f'props/xe/xe-dua-don-bac-tai-{d}' for d in ('phai', 'trai')]   # 23/10 (vòng 5): the side-view school bus, door shut, the driver at the wheel
 PROPS += [f'kit/do-vat/da-nho-{d}' for d in ('phai', 'trai')] + [f'kit/cay/bui-cay-{d}' for d in ('phai', 'trai')]   # 23/10 (vòng 3): the crab's little rock (Màn 7), the bush in the zoo ("A bush!")
 PROPS += [f'places/the-tranh/mot-ngay-{t}' for t in ('sang', 'chieu', 'toi')]   # Màn 6: the three day cards (120×90); the game draws Na on them
 # things taken out of a picture for the app (asked after a play-test), without changing the file in art/places/
 TRIM = {**{n: [r'<rect x="170.6" y="9.2"[^>]*/>', r'<path d="M173.6 12.4 V31"[^>]*/>', r'<path d="M173.6 31 v2.4[^"]*"[^>]*/>'] for n in ('cong-truong-xay', 'cong-truong-xay-tron')},   # the game draws the trolley-less hook that swings
         # the boat's wake (Màn 7): the game draws the team's boat from the side, with its own foam behind it
-        **{n: [r'<path d="M64 140 Q90 122 106 104 M150 140 Q128 122 116 104"[^>]*/>'] for n in ('roi-ben', 'ra-khoi')},
+        **{n: [r'<path d="M25 167 L64 140 Q90 122 106 104 M189 167 L150 140 Q128 122 116 104"[^>]*/>'] for n in ('roi-ben', 'ra-khoi')},   # vòng 5 (5af3283): the wake now runs on past the bottom edge
         # two tiny shells on the beach (Màn 7): the games put their own shells, starfish and shapes on the sand
         'dao-bai-cat': [r'<path d="M60 126 q4 -6 8 0z"[^>]*/>', r'<path d="M120 120 l3 -5 3 5z"[^>]*/>']}   # name -> [regex, ...] cut out (each must match once). The far crane's own hook: the game hangs its own (Màn 5)
 A, B = '/* PLACES:BEGIN (made by tools/art/embed_places.py from art/places/, do not edit by hand) */', '/* PLACES:END */'
