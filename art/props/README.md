@@ -29,9 +29,22 @@ Mỗi xe có hai file: `-phai.svg` (đầu xe quay sang phải, chạy từ trá
 
 Bảng tuyến xe buýt để trống (dải tối, không chữ, không số).
 
-**Xe đưa đón cửa mở, bác tài vẫy tay** (vòng 4, 23/10, cho mở đầu Màn 0 mới: bé chạm xe thì cửa mở, bác tài vẫy): `xe-dua-don-mo-phai.svg` / `-trai.svg` (90×42, cùng khung, cùng chỗ bánh với `xe-dua-don`; cửa mở là khe tối có bậc lên, hai cánh gập sang hai bên, x 73,5–82,5, y 19,5–35 trong khung bản `-phai`; một bác tài nhỏ sau kính lái giơ tay vẫy) và `xe-dua-don-can-mo.svg` / `-mo-trai.svg` (240×136, cùng khung với `xe-dua-don-can`; **cửa mở x 188–216, y 66–118, bậc y 111–118**; bác tài giơ tay trái vẫy, bàn tay ở (209, 33)). Đổi file là mở cửa.
+**Xe đưa đón nhìn ngang: MỘT MẪU CHUNG cho ba hình** (vòng 6, 23/10 tối; thay bản 5 cửa sổ của vòng 4–5). Vẽ theo xe cận cảnh `xe-dua-don-can`: cùng dáng, **4 cửa sổ khách + ô kính lái**, cửa lên xuống ngay dưới kính lái, sọc hồng và xanh, **cùng một bác tài** (khuôn mặt, tóc nâu, áo xanh nhạt). Khung **90×42**, đáy bánh chạm cạnh dưới (bánh tâm x 20,3 và 60, y 36,2, bán kính 5,6), đầu xe quay phải ở bản `-phai`; bản `-trai` là bản lật.
 
-**Xe đưa đón cửa đóng, có bác tài sau kính lái** (vòng 5, 23/10): `xe-dua-don-bac-tai-phai.svg` / `-trai.svg` (90×42, cùng khung, cùng chỗ bánh với `xe-dua-don` và `xe-dua-don-mo`; cửa đóng; bác tài ngồi sau kính lái, hai tay cầm vô lăng). Đổi sang `xe-dua-don-mo-*` là cửa mở và bác tài vẫy. **Tâm 5 cửa sổ hành khách (cùng cho `xe-dua-don`, `-bac-tai`, `-mo`; mỗi ô 9 × 12):** bản `-phai`: (16,5, 12), (28,5, 12), (40,5, 12), (52,5, 12), (64,5, 12), tính từ đuôi xe ra đầu xe; bản `-trai`: (73,5, 12), (61,5, 12), (49,5, 12), (37,5, 12), (25,5, 12). Kính lái (chỗ bác tài) ở x 73,5–83, y 6–18 bản `-phai`. Ô tô gia đình không có đèn taxi, không chữ, không logo; màu khác hẳn taxi xanh ngọc.
+| File (`-phai` / `-trai`) | Trạng thái |
+|---|---|
+| `xe-dua-don` | cửa đóng, ghế lái trống |
+| `xe-dua-don-bac-tai` | cửa đóng, bác tài ngồi sau kính lái, hai tay cầm vô lăng |
+| `xe-dua-don-mo` | cửa mở (khe tối, hai cánh gập hai bên, bậc lên), bác tài giơ tay vẫy |
+
+- **Tâm 4 cửa sổ khách** (giống nhau ở cả ba hình; mỗi ô 13,5 × 13,4), tính từ đuôi xe ra đầu xe: bản `-phai`: **(13,5, 12), (29,3, 12), (45, 12), (60,8, 12)**; bản `-trai`: **(76,5, 12), (60,7, 12), (45, 12), (29,2, 12)**. Bạn thứ nhất ngồi ô gần bác tài hay ô cuối là tuỳ game.
+- Kính lái (chỗ bác tài): x 69,8–80,6, y 5,3–16,9 bản `-phai` (bản `-trai`: x 9,4–20,2).
+- Cửa lên xuống: x 70,5–81, y 18,6–35,4 bản `-phai` (bản `-trai`: x 9–19,5); bậc (khi mở) y 33,1–35,4.
+- **Tay vẫy của bác tài (bản `-mo`)**: nhóm riêng `<g id="tay-bac-tai" class="tay-bac-tai">` (cánh tay và bàn tay), toạ độ vẽ thẳng theo khung 90×42. **Điểm xoay (vai): (73,9, 14,9)** bản `-phai`; bản `-trai`: (16,1, 14,9) trên màn hình. Ở bản `-trai`, nhóm nằm trong lớp lật `translate(90 0) scale(-1 1)`, nên cách chắc nhất cho cả hai bản là đặt thuộc tính SVG `transform="rotate(góc 73.9 14.9)"` lên nhóm (toạ độ trong nhóm giống hệt nhau ở hai bản). Bàn tay ở khoảng (77,2, 8,2). Gợi ý: xoay qua lại khoảng ±20°. Id `tay-bac-tai` trùng giữa hai bản `-phai` và `-trai` theo yêu cầu, vì mỗi trang chỉ có một chiếc xe; nếu một trang có cả hai thì tìm theo class.
+
+Xe cận cảnh cửa mở: `xe-dua-don-can-mo.svg` / `-mo-trai.svg` (240×136, cùng khung với `xe-dua-don-can`; **cửa mở x 188–216, y 66–118, bậc y 111–118**; bác tài giơ tay trái vẫy, bàn tay ở (209, 33)). Đổi file là mở cửa.
+
+Ô tô gia đình không có đèn taxi, không chữ, không logo; màu khác hẳn taxi xanh ngọc.
 
 ### Xe đưa đón, bản cận (trò xếp bạn lên xe, Màn 0, tối 21/10)
 `xe-dua-don-can.svg` (đầu xe quay phải) và `xe-dua-don-can-trai.svg` (bản lật). Khung **240×136**, bánh chạm cạnh dưới. Cùng dáng và màu với `xe-dua-don` (vàng, mui tròn, mũi dốc, sọc hồng và xanh, cửa lên xuống dưới kính lái), vẽ to, **không theo tỉ lệ 12 đơn vị/m** (đây là cảnh cận). Bác tài ngồi sau kính lái, hai tay cầm vô lăng, tóc ngắn, áo xanh nhạt, không chữ, không logo.

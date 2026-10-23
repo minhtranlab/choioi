@@ -52,7 +52,7 @@ Cùng luật chung: 1 m ≈ 12 đơn vị, chân chạm cạnh dưới, có `-ph
 
 | Tên (thêm `-phai` / `-trai`) | Khung W×H | Ghi chú |
 |---|---|---|
-| `da-to-dau-x` | 64×30 | Màn 7 · trạm cuối của con cua: hòn đá to xám (x 3–46) và **dấu X đỏ vẽ trên cát ngay cạnh, tâm (56, 26)** (bản `-trai`: tâm (8, 26)) |
+| `da-to-dau-x` | 64×40 | Màn 7 · trạm cuối của con cua. **Vòng 6 (23/10 tối): vẽ lại cho cua, dấu X và hòn đá thành hình tam giác:** hòn đá nhỏ hơn, dời lên cao (nhìn như ở phía sau, xa hơn), chân đá y 22, x 26–58 (thêm viên sỏi tới x 62), đỉnh y 1, bóng mờ dưới chân; **dấu X đỏ nằm riêng trên cát, phía trước bên trái hòn đá (phía cua đi tới), tâm (12, 33)**, hai nét dài 13. Bản `-trai`: X tâm (52, 33), đá x 6–38. Đường ngang của cua tới X dừng ở X, không chạm hòn đá. Chỗ đặt trên bãi biển: xem `art/places/README.md` (dòng `dao-bai-cat-tron`) |
 | `bang-go-mui-ten` | 26×28 | Màn 7 · bảng gỗ hình mũi tên cắm trên cát, dùng sau mỗi trạm ("đi lối này"); `-phai` mũi tên chỉ sang phải |
 | `bang-go-hang` | 30×32 | Màn 7 · bảng gỗ cắm cạnh dấu X, vẽ một mũi tên đỏ và hình cái hang (không chữ) |
 | `huy-chuong-vang` | 40×58 | Kho báu · một huy chương vàng có dây đỏ đeo cổ (vòng dây ở trên, đĩa vàng có ngôi sao, tâm đĩa (20, 44)). Cùng kiểu với huy chương trong tư thế `deo-huy-chuong` của các bạn, nên bay tới cổ bạn nào thì đổi sang tư thế đó. **Đồ cận, không theo tỉ lệ 12 đơn vị/m** |

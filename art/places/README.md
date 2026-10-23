@@ -152,3 +152,8 @@ Tâm các mảnh (điểm đầu, cuối của đường): 1 (38, 43), 2 (86, 43
 | `ra-khoi.svg`, `roi-ben.svg` | vệt sóng sau thuyền cụt ở mép dưới | vệt sóng kéo dài ra ngoài khung |
 | `nhin-tu-ban-cong.svg` | sàn ban công chỉ tới y 157 | sàn tới y 400 |
 
+**Trò cua tới dấu X trên `dao-bai-cat-tron` (vòng 6, 23/10 tối).** Cua, dấu X và hòn đá thành hình tam giác; đường ngang của cua không đi qua hòn đá. Toạ độ trong khung 200×140 (mép cát ở x 160 khoảng y 93):
+- **Chấm xanh (chỗ cua bắt đầu): (36, 110).**
+- **Dấu X: tâm (141,3, 110)**, trên cát. Đường thẳng ngang y 110 từ chấm xanh tới X.
+- **Hòn đá: chân y 99,6, x 154–184 (viên sỏi tới x 188), đỉnh khoảng y 80**: cao hơn đường của cua khoảng 10 đơn vị, ở sau và bên phải dấu X, nên đường không chạm đá.
+- Cách đặt: hình `kit/do-vat/da-to-dau-x-phai.svg` (64×40) vẽ rộng 60, góc trên trái ở (130, 79) (tức hệ số 0,9375; đáy hình y 116,5). Theo phần trăm khung: trái 65 %, đáy 16,8 % (tính từ dưới), rộng 30 %; X ở x 70,6 %, y 78,6 % từ trên; chấm xanh x 18 %, y 78,6 %.
