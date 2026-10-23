@@ -2742,5 +2742,13 @@
   "needEn": true,
   "needVi": true,
   "slow": false
+ },
+ {
+  "part": "man7",
+  "en": "Which key fits the lock? Tap it!",
+  "vi": "Chiếc chìa nào vừa ổ khoá? Con chạm vào nhé!",
+  "needEn": false,
+  "needVi": true,
+  "slow": false
  }
 ]

@@ -9972,7 +9972,7 @@ async function lighthouse7({kind=null,mix=false}={}){
   const lock=async(type,want,ks,side)=>{ const sk=SK[type==='shape'?'L2.M.SHAPE.02':'L2.M.NUM.03'];
     const set=el(`<div class="l7set ${side}"><div class="l7lock">${lockArt(type,want)}</div></div>`); const [row,opts]=optRow(ks.map(k=>keyArt(type,k)),'l7key'); row.classList.add('l7keys'); set.append(row);
     box.append(set); await sleep(450); await reveal(opts);
-    const ask=type==='shape'?()=>say('Which key fits the lock? Tap it!','Chìa nào vừa ổ khoá? Con chạm vào nhé!',{q:true})
+    const ask=type==='shape'?()=>say('Which key fits the lock? Tap it!','Chiếc chìa nào vừa ổ khoá? Con chạm vào nhé!',{q:true})   /* 23/10 (chat Giọng đề xuất): "Chiếc chìa" nghe rõ hơn "Chìa" đầu câu */
       :()=>say('How many dots are there? Tap the key!','Có bao nhiêu chấm? Con chạm vào chiếc chìa nhé!',{q:true});
     turn('kid'); const first=await stepPick(sk,opts,ks.indexOf(want),{ask,concept:type==='shape'?'shape:'+want:'numeral:'+want,
       labels:ks.map(k=>type==='shape'?[`that key is ${SN[k][0]}`,`chìa đó là ${SN[k][1]}`]:[`that’s the number ${W[k]}`,`đó là số ${VI_N[k]}`]),
