@@ -19897,12 +19897,6 @@
 },
 {
 "lang": "vi",
-"key": "Bụi cây!",
-"who": "chồi",
-"part": "ngoai"
-},
-{
-"lang": "vi",
 "key": "bảy",
 "who": "chồi",
 "part": "man7"
@@ -19924,5 +19918,269 @@
 "key": "mười",
 "who": "chồi",
 "part": "man7"
+},
+{
+"lang": "vi",
+"key": "Bụi cây!",
+"who": "chồi",
+"part": "ngoai"
+},
+{
+"lang": "en",
+"key": "Hello! I’m Chồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Xin chào! Chồi đây!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Hi hi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Hi hi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "This is my school!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Đây là trường của Chồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Beep beep!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Bíp bíp!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s go in!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình vào thôi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Tap the school bus!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào xe buýt của trường nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "How many dots are there? Tap the key!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Có bao nhiêu chấm? Con chạm vào chiếc chìa nhé!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Let’s count the steps!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Mình đếm bậc thang nhé!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Which key fits the lock? Tap it!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Chìa nào vừa ổ khoá? Con chạm vào nhé!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Yes! It’s a rectangle!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Đúng rồi! Đó là hình chữ nhật!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Help the crab walk to the X! Draw a line across.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Giúp bạn cua đi tới dấu X nhé! Con vẽ một đường ngang.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "The crab found the X! Look, the sign points to the cave.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Bạn cua tìm ra dấu X rồi! Nhìn kìa, tấm bảng chỉ vào cái hang.",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "On the rock!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Trên tảng đá!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Under the umbrella!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Dưới cái ô!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "How many starfish? Tap each starfish and count!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Có mấy con sao biển? Con chạm từng con và đếm nhé!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "And a yellow key!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Now let’s see what the yellow key can open!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "The yellow key is magic! Let’s open a cloudy island!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "en",
+"key": "Your yellow key opened a new island!",
+"who": "chồi",
+"part": "man7"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, con mèo. Tiếng Anh là cat.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "~Cat.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, ngôi sao. Tiếng Anh là star.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "~Star.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, bóng bay. Tiếng Anh là balloon.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "~Balloon.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn này, hộp quà. Tiếng Anh là present.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "~Present.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "~Quả trứng.",
+"who": "chồi",
+"part": "man6"
 }
 ]

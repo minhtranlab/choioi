@@ -65,6 +65,7 @@ def spoken(key, lang):
     t = t.replace('’', "'").replace('“', '"').replace('”', '"')
     t = t.replace('…', '.').replace('"', '')
     if lang == 'en': t = t.replace('Chồi', 'Choy')
+    if lang == 'en': t = re.sub(r'\bHi hi\b', 'Hee hee', t)   # Chồi's giggle (the Vietnamese line says "Hi hi!" too): not "hi, hi"
     if t.lower() == 'ap': t = 'App'   # the first sound of apple on its own: "Ap" comes out 0.2 s, almost nothing (Minh, 22/10)
     t = re.sub(r'\s+', ' ', t).strip()
     if t and t[0].islower(): t = t[0].upper() + t[1:]
@@ -104,7 +105,7 @@ def sentences(t):
 
 # ---------------------------------------------------------------- checking by ear (a recognizer)
 NUM = {'0':'zero','1':'one','2':'two','3':'three','4':'four','5':'five','6':'six','7':'seven','8':'eight','9':'nine','10':'ten'}
-UK = {'he': 'hee', 'sweet': 'sweets', 'bên': 'ben', 'bèn': 'ben', 'poly': 'polly', 'pô': 'polly', 'lamb': 'lam', 'nah': 'na', 'whoa': 'whoosh', 'nhá': 'nhé', 'kĩ': 'kỹ', 'colour': 'color', 'colours': 'colors', 'favourite': 'favorite', 'mum': 'mom', 'grey': 'gray', 'okay': 'ok', 'ireland': 'island'}
+UK = {'he': 'hee', 'sweet': 'sweets', 'bên': 'ben', 'bèn': 'ben', 'poly': 'polly', 'pô': 'polly', 'lamb': 'lam', 'nah': 'na', 'whoa': 'whoosh', 'nhá': 'nhé', 'kĩ': 'kỹ', 'colour': 'color', 'colours': 'colors', 'favourite': 'favorite', 'mum': 'mom', 'grey': 'gray', 'okay': 'ok', 'ireland': 'island', 'naa': 'na'}
 def words(t):
     t = t.lower().replace('’', "'")
     t = re.sub(r"\b(\d+)\b", lambda m: NUM.get(m.group(1), m.group(1)), t)
@@ -494,6 +495,8 @@ def cmd_pack(a):
                     f = I['c'][h][0] if h in I['c'] else None
                     if f in fs: rank[f] = min(rank.get(f, i), i)
                 I['p'][g] = fs[:1] + sorted(fs[1:], key=lambda f: rank.get(f, 1e9))
+                if g in (a.dau or '').split(','):   # --dau man0: the new lines are the start of the level, so their file goes first
+                    new = [f for f in I['p'][g] if f >= start]; I['p'][g] = new + [f for f in I['p'][g] if f < start]
         for g in GROUPS:
             for h in G[g]: newM[h]['g'] = g
         # h: a short fingerprint of each file's bytes (the app asks for voice/en-07.mp3?v=<h>, so a file changed on GitHub is fetched again)
@@ -525,6 +528,6 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest='cmd', required=True)
     p = sp.add_parser('lines'); p.add_argument('--parts', default='', help='e.g. chung,man0 (empty = all)'); p.add_argument('--log', nargs='*'); p.add_argument('--name', default='Bin', help='the child name used in the test run')
     p = sp.add_parser('make'); p.add_argument('--lang', default='en,vi'); p.add_argument('--redo', default='', help='regex: make these lines again even if they exist')
-    p = sp.add_parser('pack'); p.add_argument('--lang', default='en,vi'); p.add_argument('--compact', action='store_true')
+    p = sp.add_parser('pack'); p.add_argument('--lang', default='en,vi'); p.add_argument('--compact', action='store_true'); p.add_argument('--dau', default='', help='groups whose new lines are said first in the level, e.g. man0')
     sp.add_parser('page')
     a = ap.parse_args(); {'lines': cmd_lines, 'make': cmd_make, 'pack': cmd_pack, 'page': cmd_page}[a.cmd](a)

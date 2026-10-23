@@ -2107,6 +2107,62 @@
 "who": "chồi",
 "g": "ngoai"
 },
+"avi028": {
+"k": "Nhìn này, con mèo. Tiếng Anh là cat.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"7wif2v": {
+"k": "~Cat.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"18xkiv7": {
+"k": "Nhìn này, ngôi sao. Tiếng Anh là star.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"bd6h7l": {
+"k": "~Star.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"2ai223": {
+"k": "Nhìn này, bóng bay. Tiếng Anh là balloon.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"i6caaa": {
+"k": "~Balloon.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"pxwtai": {
+"k": "Nhìn này, hộp quà. Tiếng Anh là present.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"3t875m": {
+"k": "~Present.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3|en:af_heart",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
 "n8senc": {
 "k": "Xin chào! Chồi đây. Nhìn kìa, trên tủ sách có một thứ gì cũ cũ.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -3516,6 +3572,48 @@
 },
 "1rb8n03": {
 "k": "Con làm xong rồi! Chọn một bạn thú mới cho sở thú nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"19z34s1": {
+"k": "Xin chào! Chồi đây!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"px20o0": {
+"k": "Hi hi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1n8mtoj": {
+"k": "Đây là trường của Chồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"d8iaq6": {
+"k": "Bíp bíp!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"2fjf1z": {
+"k": "Mình vào thôi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1yi0bq1": {
+"k": "Con chạm vào xe buýt của trường nhé!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
@@ -9905,6 +10003,13 @@
 "who": "chồi",
 "g": "man6"
 },
+"1xgfeb8": {
+"k": "~Quả trứng.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man6",
+"who": "chồi",
+"g": "man6"
+},
 "1ttv3bx": {
 "k": "Con nhìn ra một con cá heo thật nhanh!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -11699,6 +11804,69 @@
 },
 "1d8fgjm": {
 "k": "mười",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"qyi51z": {
+"k": "Có bao nhiêu chấm? Con chạm vào chiếc chìa nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"u3fzdd": {
+"k": "Mình đếm bậc thang nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1vx8uap": {
+"k": "Chìa nào vừa ổ khoá? Con chạm vào nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"scehwy": {
+"k": "Đúng rồi! Đó là hình chữ nhật!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1d0327o": {
+"k": "Giúp bạn cua đi tới dấu X nhé! Con vẽ một đường ngang.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"fv48x6": {
+"k": "Bạn cua tìm ra dấu X rồi! Nhìn kìa, tấm bảng chỉ vào cái hang.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"9gh27u": {
+"k": "Trên tảng đá!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1801g0t": {
+"k": "Dưới cái ô!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man7",
+"who": "chồi",
+"g": "man7"
+},
+"1z0iy1k": {
+"k": "Có mấy con sao biển? Con chạm từng con và đếm nhé!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man7",
 "who": "chồi",
