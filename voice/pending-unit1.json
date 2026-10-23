@@ -1,70 +1,6 @@
 [
  {
   "part": "chung",
-  "en": "Look, it’s a cat.",
-  "vi": "Nhìn này, con mèo. Tiếng Anh là cat.",
-  "needEn": false,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Cat.",
-  "vi": "Cat.",
-  "needEn": false,
-  "needVi": true,
-  "slow": true
- },
- {
-  "part": "chung",
-  "en": "Look, it’s a star.",
-  "vi": "Nhìn này, ngôi sao. Tiếng Anh là star.",
-  "needEn": false,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Star.",
-  "vi": "Star.",
-  "needEn": false,
-  "needVi": true,
-  "slow": true
- },
- {
-  "part": "chung",
-  "en": "Look, it’s a balloon.",
-  "vi": "Nhìn này, bóng bay. Tiếng Anh là balloon.",
-  "needEn": false,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Balloon.",
-  "vi": "Balloon.",
-  "needEn": false,
-  "needVi": true,
-  "slow": true
- },
- {
-  "part": "chung",
-  "en": "Look, it’s a present.",
-  "vi": "Nhìn này, hộp quà. Tiếng Anh là present.",
-  "needEn": false,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Present.",
-  "vi": "Present.",
-  "needEn": false,
-  "needVi": true,
-  "slow": true
- },
- {
-  "part": "chung",
   "en": "You looked again, and found the sad face! Ben feels sad.",
   "vi": "Con nhìn lại và tìm ra mặt buồn! Ben thấy buồn.",
   "needEn": true,
@@ -131,46 +67,6 @@
   "part": "chung",
   "en": "Wheee!",
   "vi": "Vèo!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Hello! I’m Chồi!",
-  "vi": "Xin chào! Chồi đây!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Hi hi!",
-  "vi": "Hi hi!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "This is my school!",
-  "vi": "Đây là trường của Chồi!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Beep beep!",
-  "vi": "Bíp bíp!",
-  "needEn": false,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Let’s go in!",
-  "vi": "Mình vào thôi!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -2305,14 +2201,6 @@
  },
  {
   "part": "man6",
-  "en": "Egg.",
-  "vi": "Quả trứng.",
-  "needEn": false,
-  "needVi": true,
-  "slow": true
- },
- {
-  "part": "man6",
   "en": "You found what Na does in the morning: she eats breakfast!",
   "vi": "Con tìm ra việc Na làm buổi sáng: Na ăn sáng!",
   "needEn": true,
@@ -2483,22 +2371,6 @@
   "part": "man6",
   "en": "You listened again, and made the frog jump once for each sound!",
   "vi": "Con nghe lại và giúp ếch nhảy mỗi tiếng một bước!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man7",
-  "en": "On the rock!",
-  "vi": "Trên tảng đá!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man7",
-  "en": "Under the umbrella!",
-  "vi": "Dưới cái ô!",
   "needEn": true,
   "needVi": true,
   "slow": false
@@ -2865,66 +2737,10 @@
  },
  {
   "part": "man7",
-  "en": "How many dots are there? Tap the key!",
-  "vi": "Có bao nhiêu chấm? Con chạm vào chiếc chìa nhé!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man7",
-  "en": "Let’s count the steps!",
-  "vi": "Mình đếm bậc thang nhé!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man7",
-  "en": "Which key fits the lock? Tap it!",
-  "vi": "Chìa nào vừa ổ khoá? Con chạm vào nhé!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man7",
-  "en": "Help the crab walk to the X! Draw a line across.",
-  "vi": "Giúp bạn cua đi tới dấu X nhé! Con vẽ một đường ngang.",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man7",
   "en": "Look, the sign points to the cave.",
   "vi": "Nhìn kìa, tấm bảng chỉ vào cái hang.",
   "needEn": true,
   "needVi": true,
-  "slow": false
- },
- {
-  "part": "man7",
-  "en": "And a yellow key!",
-  "vi": "Và một chiếc chìa khoá vàng!",
-  "needEn": true,
-  "needVi": false,
-  "slow": false
- },
- {
-  "part": "man7",
-  "en": "Now let’s see what the yellow key can open!",
-  "vi": "Giờ mình xem chìa khoá vàng mở được gì nhé!",
-  "needEn": true,
-  "needVi": false,
-  "slow": false
- },
- {
-  "part": "man7",
-  "en": "Your yellow key opened a new island!",
-  "vi": "Chìa khoá vàng của con đã mở một hòn đảo mới!",
-  "needEn": true,
-  "needVi": false,
   "slow": false
  }
 ]
