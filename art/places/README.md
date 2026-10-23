@@ -23,6 +23,7 @@ Cảnh nào sửa thì thay file **cùng tên**, nên bên app chỉ cần chạ
 - Bãi cỏ cắt sọc đậm nhạt xen kẽ như sân bóng (dải rộng dần khi gần), để bé thấy ngay đây là cỏ và là mặt đất phẳng (21/10).
 - Nét trang trí (đường gạch, đường kẻ) không bao giờ đè lên viền đen.
 - **Lớp xa không bao giờ đè nét đen của lớp gần** (22/10): nhóm `bg-far` vẽ trước mọi thứ ở gần; chỗ nào đồ xa đứng chạm đường sàn hay đường chân trời thì vẽ lại đường đen đó sau lớp xa. Áp dụng cho mọi bản toàn cảnh và `-tron` (đã soát hết; chỉ `sieu-thi-tron` bị, đã sửa).
+- **Đất, đồi, đường, nước, sàn và lớp phủ đổi cảnh vẽ tràn hẳn ra ngoài khung, tối thiểu tới y 300 ở dưới** (luật chung từ 23/10, vòng 5). Đường mòn, lối đi, kênh chạy thẳng ra khỏi mép dưới, không cụt ở y 140. Đã soát toàn bộ 75 cảnh 200×140 trong `art/places/` và `sau/` (danh sách cảnh đã sửa ở mục *Vòng 5* cuối file).
 - Lớp gần vẽ đè lớp xa: viền mép cỏ (đường chân trời) nằm trên chân đồ xa (22/10).
 - Cây to (thân nâu, tán tròn): nét đáy thân đậm bằng nét hai bên thân (22/10, đã sửa ở mọi nền có loại cây này).
 - Không có mặt trời, không chữ, không số, không biển tên, không logo (riêng cổng sở thú có chữ ZOO). Không có mặt trẻ thật.
@@ -36,6 +37,7 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 |---|---|---|---|---|
 | `lop-hoc.svg` | Màn 0 · trong lớp (bản đồ trên kệ trái, y ≈ 38–50) | 96 | toàn cảnh: mọi trang | `BG.classroom` |
 | `lop-hoc-tron.svg` | Màn 0 · lớp học, sân khấu: bỏ kệ nhà, bàn ghế; giữ cửa sổ, đồng hồ, tủ ở hai mép (21/10) | 96 | sân khấu | — |
+| `lop-hoc-ban-do.svg` (+ `-tron`) | Màn 0 · **cả đội vào lớp, thấy bản đồ to trên tường** (vòng 5, 23/10; thay trang tủ sách). Bản đồ giấy treo bằng dây trên đinh, hai thanh gỗ trên dưới (x 24–176); **tờ giấy x 28–172, y 12–72**. Bên trái là trường (khối kem, mái hồng, tam giác kính), bên phải là vườn (cây tròn, nhà nấm, hố cát, khung leo), hàng rào gỗ ở x 96 có khe cho đường đi qua. **Chấm "We are here" (chấm xanh viền trắng, quầng nhạt, không chữ): tâm (62, 60), r 4,2.** **Đường chấm đỏ, các điểm theo thứ tự: (62, 60) → (82, 64) → (100, 57) → (118, 62) → (134, 53) → (146, 48)**, chấm r 1,4 cách nhau 4,4. **Dấu X đỏ ở vườn: tâm (150, 46)**, hai nét dài 11. Đồng hồ (12, 34); tủ đồ chơi bếp x 180–236, kệ hộp x −94…−4 ở hai mép; bản toàn cảnh thêm cửa sổ ở x 242–312 và ba hình dán ở y 26–34. Bản `-tron` bỏ cửa sổ, hình dán | sàn 96; các bạn đứng y 124–132, x 20–180, đầu không cao quá y 76 nên không che bản đồ | bé di ngón tay từ chấm "We are here" theo đường chấm tới X → "Let's go!" | trang tủ sách |
 | `san-truong.svg` | Màn 0 · sân trường | 92 | toàn cảnh: mọi trang | `BG.school` |
 | `san-truong-tron.svg` | Màn 0 · sân trường, sân khấu: hàng rào cây dời ra mép phải (21/10) | 92 | sân khấu: ba chuyện cảm xúc, giúp bạn | — |
 | `cong-vao-truong.svg` | Màn 0 mở đầu, cuối Màn 6 · cổng | 104 (vỉa hè), đường 117 | toàn cảnh: trang đầu, trang kể chuyện | — |
@@ -94,7 +96,7 @@ Cột **Mặt đất** là y (trong khung 200×140) nơi nhân vật đứng. C�
 | `dao-hai-dang-tron.svg` | Màn 7 · hải đăng, sân khấu: bỏ cầu gỗ (21/10) | ≈ 98 | sân khấu: khoá hải đăng | — |
 | `hang-kho-bau.svg` | Màn 7 · chỗ đặt rương | 112 | toàn cảnh | — |
 | `dao-bai-cat-hai-dang.svg` (+ `-tron`) | Màn 7 · thuyền tới đảo (`land7`). Cầu tàu ngắn chìa từ bãi cát ra biển (23/10). **Vòng 4 (23/10 chiều): vẽ đẹp hơn: mặt cầu là ván gỗ phẳng, hai đường nâu chạy dọc theo ván, không thanh ngang; ván không đè nét viền đen; mép trước sẫm màu.** Mặt cầu tàu y 106 (ván y 106–114), x 66 → 99; đầu cầu tàu x 66, giữa mặt nước; cọc dài ngoài biển x 70 (xuống tới y 131); cọc ngắn chỗ vào cát x 91 (tới y 118); cọc buộc thuyền ở đầu cầu (x 67, y 100–106). **Thuyền của game (rộng khoảng 80, mũi quay phải, vào từ bên trái) đậu bên trái cầu tàu, mũi chạm đầu cầu: mặt nước y 124, thuyền x −14 → 66.** Chân đường mòn trên cát (126, 100), đường dừng ở cửa hải đăng (186, 54). Bản `-tron` bỏ vỏ sò | cát ≈ 101–104; mặt cầu tàu 106; mặt nước 124 | thuyền đậu → bước lên đầu cầu tàu (66, 106) → đi vào bãi cát → chân đường mòn → lên hải đăng | — |
-| `duong-len-hai-dang.svg` | Màn 7 · cảnh xa đi lên hải đăng. **Vòng 4 (23/10 chiều): bỏ dải biển; chỉ có đồi xanh, đường mòn ngắn từ chân đồi lên cửa hải đăng.** **Các điểm của đường (đi theo thứ tự): (44, 134) → (112, 112) → (86, 94) → (160, 69)**; cửa ở (160, 68). Đường mọc ra từ mép dưới tranh ở x 44 | theo đường mòn | các bạn đi theo đường lên tới cửa | — |
+| `duong-len-hai-dang.svg` | Màn 7 · cảnh xa đi lên hải đăng. Vòng 4 (23/10): bỏ dải biển; chỉ có đồi xanh, đường mòn từ chân đồi lên cửa hải đăng. **Vòng 5 (23/10 chiều): đồi tràn xuống tới y 400; đường mòn chạy thẳng đứng ra khỏi mép dưới ở x 44 (vẽ tới y 330), không cụt.** **Các điểm của đường (đi theo thứ tự): (44, 330) ngoài khung → (44, 134) → (112, 112) → (86, 94) → (160, 69)**; cửa ở (160, 68). Các bạn có thể bắt đầu ngoài khung, ví dụ (44, 170), đi thẳng lên (44, 134) | theo đường mòn | các bạn đi theo đường lên tới cửa | — |
 | `hai-dang-cat-doc.svg` | Màn 7 · hải đăng cắt dọc, kiểu nhà Na (22/10). **Cửa 1 (tầng trệt, tường trái): x 67–74, y 107–128.** Cầu thang 1: từ (86, 128) lên (116, 102) (sàn tầng giữa y 98). Cầu thang 2: từ (116, 98) lên (88, 72) (sàn tầng trên y 68). **Cửa 2 (tầng trên, tường phải, ra ban công): x 126–133, y 49–68** — chỉ để xem, game mở cửa rồi sang cảnh trên ban công (`nhin-tu-ban-cong`). Phòng đèn trên đỉnh. **Cửa hai trạng thái (22/10 tối), mỗi trạng thái một nhóm riêng: `<g class="cua-1-dong">`, `<g class="cua-1-mo">`, `<g class="cua-2-dong">`, `<g class="cua-2-mo">`.** Mặc định hai nhóm đóng hiện, hai nhóm mở có `display="none"`; game đặt CSS `display` để đổi (CSS thắng thuộc tính). Cửa 1 mở: khe tối trong tường, cánh cửa lật vào trong áp tường, cánh ở x 74–79, y 107–128. Cửa 2 mở: ô sáng màu trời (ban công), cánh lật ra ngoài ban công, cánh ở x 133–138, y 49–68 | đất 128; tầng giữa 98; tầng trên 68 | các bạn đi cầu thang lên cửa thứ hai | — |
 | `nhin-tu-cua-so.svg` | Màn 7 · nhìn từ cửa sổ hải đăng xuống bãi biển (22/10): khung cửa vòm gỗ, ngoài là biển, bãi cát, vách đá có cửa hang ở bên phải. **Hòn đá to: tâm (111, 90), x 94–130, y 76–102; dấu X đỏ cạnh đá: tâm (120, 110); cửa hang: x 136–162, y 88–112.** Dấu chân trên cát từ trái tới | — | cảnh nhìn (game có thể nhấp nháy dấu X) | — |
 | `nhin-tu-ban-cong.svg` | Màn 7 · trên đỉnh hải đăng, đứng ở ban công (cửa 2), **nhìn qua lan can song sắt** xuống bãi biển (22/10 tối, thay cho `nhin-tu-cua-so`). Song sắt dọc cách nhau 30 (x = 10 + 30k, tức … 70, 100, 130, 160 …), tay vịn trên y 64–71, thanh dưới y 132–137, sàn ban công từ y 137. **Hòn đá to: tâm (82, 90), x 66–98, y 76–100. Dấu X đỏ: tâm (115, 104), nằm gọn giữa hai song x 100 và 130. Cửa hang: x 133–157, y 88–112, nằm gọn giữa hai song x 130 và 160.** Dấu chân trên cát từ trái tới, biển ở trên | — | cảnh nhìn; vòng sáng nhấp nháy đặt lên X và cửa hang | — |
@@ -132,3 +134,21 @@ Tâm các mảnh (điểm đầu, cuối của đường): 1 (38, 43), 2 (86, 43
 
 ## `sau/` · địa danh, chưa dùng trong Unit 1
 `buu-dien.svg`, `thao-cam-vien.svg` (cổng sắt), `nha-tho-duc-ba.svg`, `cho-ben-thanh.svg`, `metro.svg`, `pho-di-bo.svg` (nhìn về Bitexco).
+
+## Vòng 5 (23/10 chiều): soát đáy, tràn ra ngoài khung
+Đã xem lại 75 cảnh 200×140 (`art/places/` và `sau/`) ở khung mở rộng x −100…300, y 0…320. Cảnh đã đạt sẵn (đất, sàn, nước tràn tới y 300 trở xuống) giữ nguyên. **Các cảnh bị hụt đáy hoặc đường cụt, đã sửa (giữ tên file, toạ độ trong khung không đổi):**
+
+| File | Bị gì | Sửa |
+|---|---|---|
+| `duong-len-hai-dang.svg` | đồi dừng ở y 140, đường mòn cụt | đồi tới y 400; đường mòn thẳng xuống ra khỏi mép dưới ở x 44 (tới y 330), thêm hai viên đá |
+| `dao-hai-dang.svg`, `-tron` | biển dừng ở y 140, dưới là trời | biển tới y 500; bãi cát đảo kéo theo mép xiên xuống tới y 400 |
+| `duong-quanh-truong.svg`, `-tron` | dải cỏ gần chỉ tới y 150 | cỏ tới y 400 |
+| `dao-bai-cat-hai-dang.svg`, `-tron` | mép cát và bọt sóng gãy thẳng đứng dưới khung | mép cát và bọt sóng chạy xiên tiếp tới (−100, 400); biển vẫn tràn bên trái |
+| `cua-hang.svg` | lối cát sáng vào hang cụt ở y 140 | lối cát loe rộng dần tới y 400 |
+| `doc-cau-qua-kenh.svg` | kênh và bờ kênh cụt ở y 141 | kênh và bờ kênh chạy tiếp tới y 400 theo phối cảnh |
+| `san-truong.svg`, `-tron`; `cong-vao-truong.svg`, `-tron` | dải cỏ sáng dẫn vào sảnh cụt ở y 140 | dải sáng loe tiếp tới y 400 |
+| `sau/thao-cam-vien.svg` | lối đi từ cổng cụt ở y 140 | lối đi loe tiếp tới y 400 |
+| `sau/pho-di-bo.svg` | đường kẻ gạch lát tỏa ra cụt ở y 141 | đường kẻ chạy tiếp tới y 400 |
+| `ra-khoi.svg`, `roi-ben.svg` | vệt sóng sau thuyền cụt ở mép dưới | vệt sóng kéo dài ra ngoài khung |
+| `nhin-tu-ban-cong.svg` | sàn ban công chỉ tới y 157 | sàn tới y 400 |
+
