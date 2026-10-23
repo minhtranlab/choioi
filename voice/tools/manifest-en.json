@@ -19,14 +19,14 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "chung"
+"g": "man7"
 },
 "15sd26u": {
 "k": "Remember: look at the face.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "chung"
+"g": "man6"
 },
 "1pvggns": {
 "k": "Elephants don’t eat watermelon. Try another one!",
@@ -369,7 +369,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "chung"
+"g": "man0"
 },
 "1aly2rd": {
 "k": "There’s Lam! Lam looks angry.",
@@ -411,7 +411,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "man1"
+"g": "chung"
 },
 "cg691q": {
 "k": "There’s Ben! Ben looks happy.",
@@ -1426,7 +1426,7 @@
 "s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
 "part": "chung",
 "who": "Na",
-"g": "man0"
+"g": "chung"
 },
 "dcy7ww": {
 "k": "@Ben:Yes!",
@@ -1454,7 +1454,7 @@
 "s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
 "part": "chung",
 "who": "Ben",
-"g": "chung"
+"g": "man2"
 },
 "1pzjc7z": {
 "k": "@Lam:I feel happy!",
@@ -1776,7 +1776,7 @@
 "s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
 "part": "chung",
 "who": "Lam",
-"g": "chung"
+"g": "man0"
 },
 "160akpx": {
 "k": "@Lam:I want to catch one!",
@@ -1790,7 +1790,7 @@
 "s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
 "part": "chung",
 "who": "Na",
-"g": "chung"
+"g": "man0"
 },
 "25wcx6": {
 "k": "@Na:They look like tiny stars!",
@@ -1804,7 +1804,7 @@
 "s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
 "part": "chung",
 "who": "Ben",
-"g": "chung"
+"g": "man0"
 },
 "ddo4zt": {
 "k": "@Ben:Look! A firefly is on my nose!",
@@ -2086,6 +2086,48 @@
 "who": "chồi",
 "g": "ngoai"
 },
+"1ka98ly": {
+"k": "You looked again, and found the sad face! Ben feels sad.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"tt15sz": {
+"k": "You looked again, and found the angry face! Lam feels angry.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"1tukfay": {
+"k": "You found the excited face! Lam feels excited.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"1hjg18l": {
+"k": "You looked again, and found the scared face! Lam feels scared.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"j1z0t3": {
+"k": "You looked again, and found the sad face! Lam feels sad.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
+"16dvt5j": {
+"k": "You looked again, and found the proud face! Lam feels proud.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "ngoai"
+},
 "1uc8vmr": {
 "k": "Hello! I’m Chồi. Look, there’s something old on the bookshelf.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -2203,7 +2245,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man1"
 },
 "xwpc4t": {
 "k": "Na shares her cookies with everyone. Lam has one too.",
@@ -2623,7 +2665,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man1"
+"g": "man0"
 },
 "1otfsvu": {
 "k": "Ben looks happy.",
@@ -2770,21 +2812,21 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man5"
 },
 "i0eo7w": {
 "k": "Are you angry, Lam?",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man5"
 },
 "1szbwn9": {
 "k": "Let’s breathe slowly with Lam. Press and hold to breathe in.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man5"
 },
 "1ipdgqq": {
 "k": "Lam feels better now. Thank you!",
@@ -2896,7 +2938,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man2"
 },
 "wcjby9": {
 "k": "Now tap the friends who look angry!",
@@ -3022,7 +3064,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man2"
 },
 "war7rn": {
 "k": "Where should the elephant live? Tap a spot!",
@@ -3495,6 +3537,349 @@
 },
 "9aw2d0": {
 "k": "Tap the school bus!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1jtcsx4": {
+"k": "Here’s my team: Lam, Na and Ben! Tap each friend.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1rn2lrl": {
+"k": "Ben’s mum goes to work. Ben feels sad.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"cs3vfs": {
+"k": "You gave Ben a big hug. Now Ben feels better!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"11k4iqw": {
+"k": "Look! The teacher gives Na a box of cookies. Na feels happy!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"6zpvef": {
+"k": "You clapped three times for Na. Na is so happy!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1aeiy38": {
+"k": "Oh no! Polly took Lam’s cookie! Lam feels angry.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"12jeprm": {
+"k": "You breathed slowly with Lam. Now Lam feels calm!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1osgisi": {
+"k": "You followed the red dots, all the way to the X!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"10xpdmi": {
+"k": "There’s an X in the garden behind our school!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"hwvy0n": {
+"k": "Look! An old map fell down. It’s torn: only one piece is left.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1o1uujw": {
+"k": "Seven pieces are missing. Maybe one is at the X!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"foje63": {
+"k": "Let’s go!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"4rkhry": {
+"k": "Here comes the school bus! Tap each friend to get on.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1vnkc1i": {
+"k": "You helped three friends get on the bus! Off we go!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"jg5rri": {
+"k": "You helped four friends get off! Let’s go into the garden.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"c7t1og": {
+"k": "You touched each one, and counted five flags!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"nbt581": {
+"k": "This way!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1wqjzlm": {
+"k": "You found all the happy friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"d0ar6j": {
+"k": "You found all the angry friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"vrirbl": {
+"k": "You looked again, and found Ben!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1deltkz": {
+"k": "You looked again, and found Na!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1htl1yw": {
+"k": "You looked again, and found Lam!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1ryabd5": {
+"k": "You counted again, and found five flags!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1jyxo5z": {
+"k": "You found the sad face! Ben feels sad.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1japhr5": {
+"k": "You found the happy face! Na feels happy.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"ado7g8": {
+"k": "You touched each one, and counted four flags!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"k5czt4": {
+"k": "You touched each one, and counted three flags!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1g7sjf3": {
+"k": "You counted again, and found three flags!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"kq56t5": {
+"k": "You counted again, and found four flags!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"oqw62w": {
+"k": "You touched each one, and counted six flags!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"fccm33": {
+"k": "You counted again, and found six flags!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"six0lr": {
+"k": "You looked again, and found all the happy friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"7jvwqk": {
+"k": "You found all the sad friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1w21t6x": {
+"k": "You looked again, and found all the sad friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"i3aawi": {
+"k": "You looked again, and found all the angry friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1ulq4sc": {
+"k": "You found all the scared friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"dpa64j": {
+"k": "You looked again, and found all the scared friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1s8gs2a": {
+"k": "You found all the tired friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"jiboob": {
+"k": "You looked again, and found all the tired friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1rdj8bu": {
+"k": "You found all the excited friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"l7svjf": {
+"k": "You looked again, and found all the excited friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"opte1f": {
+"k": "You found all the surprised friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"381exi": {
+"k": "You looked again, and found all the surprised friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1x4myfi": {
+"k": "You found all the proud friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"14sj38n": {
+"k": "You looked again, and found all the proud friends!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"3qpzz5": {
+"k": "You tried again, and drew a line straight down!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"vndbtm": {
+"k": "You tried again, and drew a line straight across!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1tjibul": {
+"k": "We followed the red dots together, all the way to the X!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"xrkqrx": {
+"k": "You clapped three times for Ben. Ben is so happy!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
@@ -4514,6 +4899,195 @@
 "part": "man1",
 "who": "chồi",
 "g": "man1"
+},
+"1y4is6a": {
+"k": "You looked again, and found three happy faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"q2oz9s": {
+"k": "You looked again, and found three sad faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"1vjbdiv": {
+"k": "You looked again, and found three angry faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"81c775": {
+"k": "You found three scared faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"11lcvfy": {
+"k": "You looked again, and found three scared faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"94r5y3": {
+"k": "You found three tired faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"atcxxy": {
+"k": "You looked again, and found three tired faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"553qn2": {
+"k": "You looked again, and found three excited faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"m38rbn": {
+"k": "You looked again, and found three surprised faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"vdof3b": {
+"k": "You found three proud faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"59sif6": {
+"k": "You looked again, and found three proud faces!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"n2gl3b": {
+"k": "You clapped three times for Lam. Lam is so happy!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"zxk6e9": {
+"k": "You looked again, and found the friend who looks excited!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"dddn14": {
+"k": "You looked again, and found the friend who looks surprised!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"18y6gsj": {
+"k": "You popped one balloons, and counted them all!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"igtyyp": {
+"k": "You counted again, and popped all one balloons!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"n8k2gt": {
+"k": "You popped two balloons, and counted them all!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"x3fsaj": {
+"k": "You counted again, and popped all two balloons!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"1keztj3": {
+"k": "You popped three balloons, and counted them all!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"xpfcnt": {
+"k": "You counted again, and popped all three balloons!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"sphju9": {
+"k": "You counted again, and popped all four balloons!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"k4kn6x": {
+"k": "You counted again, and popped all five balloons!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"1m1stnb": {
+"k": "You counted again, and found ten balloons!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"1g63qg3": {
+"k": "You looked again, and found the excited face! Lam feels excited.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"esjhwv": {
+"k": "You found the surprised face! Ben feels surprised.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"17pqdna": {
+"k": "You looked again, and found the surprised face! Ben feels surprised.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
+},
+"1fuuvl1": {
+"k": "Hi, {N}! Let’s play!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "chung"
 },
 "jzhibo": {
 "k": "The map shows a garden. Tonight, we’re camping in Na’s garden!",
@@ -5728,6 +6302,13 @@
 },
 "4x7r0t": {
 "k": "It’s Ben! Ben is in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man2",
+"who": "chồi",
+"g": "man2"
+},
+"18jejum": {
+"k": "You gave Lam a big hug. Now Lam feels better!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man2",
 "who": "chồi",

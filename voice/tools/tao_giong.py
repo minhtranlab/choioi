@@ -423,10 +423,12 @@ def layout(lang, M):
     for li, en, vi, rate, *_ in json.load(open(os.path.join(HERE, 'thu-cau.json'), encoding='utf-8')):
         t = en if lang == 'en' else vi
         if t: OLD[vhash(vkey(nm.sub(r'\1{N}', t), bool(rate) and rate < .65))].add(f'man{li}')
+    fp = os.path.join(HERE, 'nhom-co-dinh.json'); FIX = json.load(open(fp, encoding='utf-8')) if os.path.exists(fp) else {}
     G = {g: [] for g in GROUPS}; seen = {}
     for idx, (h, m) in enumerate(M.items()):
         k = m['k']; kid = bool(re.match(r'^@[A-Za-z]+:', k)); text = KEYPFX.sub('', k)
-        if k.startswith('@') and not kid: g = 'cu'                     # the old shared kid voice: never asked for now
+        if k in FIX: g = FIX[k]; seen[h] = (-1, 0)                   # nhom-co-dinh.json: a line whose place is known (the greeting of every level: chung, first)
+        elif k.startswith('@') and not kid: g = 'cu'                   # the old shared kid voice: never asked for now
         elif not U.get(h) and (h in T or text in zoo): g = 'sothu'; seen[h] = (0, T.get(h, 9))
         elif U.get(h):
             lv = U[h]
@@ -461,7 +463,17 @@ def cmd_pack(a):
             newM[h] = {'k': o['key'], 's': s, 'part': o['part'], 'who': o['who']}
         G, U, T = layout(lang, newM)
         old = [h for h in I['c'] if h not in newM]                          # older voice, still not remade
-        if a.compact:
+        def data(h):
+            w = fresh.get(h) or wav_for(lang, h, newM[h]['s'])
+            if not w: print('  no wav, kept the packed clip:', lang, newM[h]['k'])
+            return mp3(w, lang) if w else clip(h)
+        regroup = [g for g in (a.nhom or '').split(',') if g] if not a.compact else []
+        if regroup:   # --nhom man0,man1: write these groups again in new files, in the order they are said (other files stay)
+            plan = [(g, [(h, data(h)) for h in G[g]]) for g in regroup]
+            plan += [(g, [(h, mp3(fresh[h], lang)) for h in G[g] if h in fresh]) for g in GROUPS if g not in regroup]
+            start = I['n']; I.setdefault('p', {})
+            for g in regroup: I['p'][g] = []
+        elif a.compact:
             def data(h):
                 w = fresh.get(h) or wav_for(lang, h, newM[h]['s'])
                 if not w: print('  no wav, kept the packed clip:', lang, newM[h]['k'])
@@ -469,7 +481,7 @@ def cmd_pack(a):
             plan = [(g, [(h, data(h)) for h in G[g]]) for g in GROUPS if g != 'cu']
             plan.append(('cu', [(h, data(h)) for h in G['cu']] + [(h, clip(h)) for h in old]))
             start = 0; I['c'] = {}; I['p'] = {}
-        else:
+        if not regroup and not a.compact:
             plan = [(g, [(h, mp3(fresh[h], lang)) for h in G[g] if h in fresh]) for g in GROUPS]
             start = I['n']; I.setdefault('p', {})
         bufs, pos = [], {}
@@ -488,8 +500,9 @@ def cmd_pack(a):
         for i, d in enumerate(bufs): open(os.path.join(VOICE, f'{lang}-{start + i:02d}.mp3'), 'wb').write(d)
         I['n'] = start + len(bufs)
         I['p'] = {g: I['p'][g] for g in GROUPS if I['p'].get(g)}
-        if not a.compact:   # a group's files in the order their lines are said (its first file stays first: the start of the level)
+        if not a.compact:   # a group's files in the order their lines are said (a regrouped group is already in order) (its first file stays first: the start of the level)
             for g, fs in I['p'].items():
+                if g in regroup: continue
                 rank = {}
                 for i, h in enumerate(G[g]):
                     f = I['c'][h][0] if h in I['c'] else None
@@ -528,6 +541,6 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest='cmd', required=True)
     p = sp.add_parser('lines'); p.add_argument('--parts', default='', help='e.g. chung,man0 (empty = all)'); p.add_argument('--log', nargs='*'); p.add_argument('--name', default='Bin', help='the child name used in the test run')
     p = sp.add_parser('make'); p.add_argument('--lang', default='en,vi'); p.add_argument('--redo', default='', help='regex: make these lines again even if they exist')
-    p = sp.add_parser('pack'); p.add_argument('--lang', default='en,vi'); p.add_argument('--compact', action='store_true'); p.add_argument('--dau', default='', help='groups whose new lines are said first in the level, e.g. man0')
+    p = sp.add_parser('pack'); p.add_argument('--lang', default='en,vi'); p.add_argument('--compact', action='store_true'); p.add_argument('--nhom', default='', help='write these groups again, in the order they are said, e.g. man0,man1'); p.add_argument('--dau', default='', help='groups whose new lines are said first in the level, e.g. man0')
     sp.add_parser('page')
     a = ap.parse_args(); {'lines': cmd_lines, 'make': cmd_make, 'pack': cmd_pack, 'page': cmd_page}[a.cmd](a)
