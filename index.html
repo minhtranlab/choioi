@@ -10704,13 +10704,18 @@ function renderSetup(mode){
   setMode(mode);
 }
 /* after a trial player finishes Màn 0 (24/10): a note for the parents on the map, "Lưu tiến độ của bé? Tạo tài khoản".
-   Parents' buttons: hold 1 second, like Progress and Settings, so a child's tap does nothing. "Để sau" hides it for good
-   (Settings still has "Tạo tài khoản để lưu tiến độ"). Making the account keeps everything played so far. */
-function saveAsk(){ if(S.acct||!S.child||!(S.done&&S.done[0])||S.saveAsk||!root.classList.contains('kid')) return;
+   Parents' buttons: hold 1 second, like Progress and Settings, so a child's tap does nothing. Making the account keeps everything
+   played so far. "Để sau" (chat chính 24/10 14:15): asked ONE more time, once the child has finished Màn 2 after the first "Để sau"
+   (if Màn 2 was already done by then: after the next level); the second "Để sau" hides it for good. Settings always has
+   "Tạo tài khoản để lưu tiến độ". S.saveAsk = {n: times skipped, skip: day, need: the level whose end brings it back}. */
+function saveAskDue(){ if(S.acct||!S.child||!S.done||!S.done[0]) return false; const a=S.saveAsk; if(!a) return true;
+  const n=a.n||1; return n<2&&!!S.done[a.need!=null?a.need:2] }
+function saveAsk(){ if(!saveAskDue()||!root.classList.contains('kid')) return;
   const b=el(`<div class="saveask" role="group" aria-label="Dành cho ba mẹ"><span class="sa-ic">${ICON.parent}</span><div class="sa-t"><b>Lưu tiến độ của bé?</b><small>Ba mẹ nhấn giữ 1 giây</small></div><button class="sa-btn sa-make" id="saMake" type="button"><span>Tạo tài khoản</span><i class="pfill"></i></button><button class="sa-btn sa-skip" id="saSkip" type="button"><span>Để sau</span><i class="pfill"></i></button></div>`);
   root.append(b);
   wireHold($('#saMake'),()=>{ SFX.chime(); renderSetup('dk') });
-  wireHold($('#saSkip'),()=>{ SFX.soft(); S.saveAsk={skip:today()}; save(); b.classList.add('gone'); setTimeout(()=>b.remove(),400) });
+  wireHold($('#saSkip'),()=>{ SFX.soft(); const n=S.saveAsk?(S.saveAsk.n||1)+1:1, top=Math.max(-1,...Object.keys(S.done||{}).map(Number));
+    S.saveAsk={n,skip:today(),need:Math.max(2,top+1)}; save(); b.classList.add('gone'); setTimeout(()=>b.remove(),400) });
 }
 /* the account box in Settings */
 function acctPanelHTML(){ const a=S.acct, si=S.syncInfo||{};

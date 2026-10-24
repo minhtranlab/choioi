@@ -66,7 +66,7 @@ Mở link lần đầu là thấy **trang chào**: tranh cả đội ở công v
   2. Vào **Settings → Đăng xuất** để máy của admin không giữ tài khoản của bé.
   3. Gửi **tên đăng nhập + PIN** cho phụ huynh. Phụ huynh mở link, chọn **Đăng nhập**.
 - **Chơi thử** (ô Tên bé + nút **Chơi ngay**): bé vào Màn 0 luôn. Tiến độ chỉ lưu trên máy đó, Sheet không biết gì.
-  - Chơi xong Màn 0, trên bản đồ hiện lời nhắc cho ba mẹ **"Lưu tiến độ của bé? Tạo tài khoản"**. Hai nút phải **nhấn giữ 1 giây** (như Progress, Settings), nên bé chạm nhầm không sao. **Tạo tài khoản** thì phần đã chơi được giữ và gửi lên. **Để sau** thì lời nhắc tắt hẳn, không hỏi lại.
+  - Chơi xong Màn 0, trên bản đồ hiện lời nhắc cho ba mẹ **"Lưu tiến độ của bé? Tạo tài khoản"**. Hai nút phải **nhấn giữ 1 giây** (như Progress, Settings), nên bé chạm nhầm không sao. **Tạo tài khoản** thì phần đã chơi được giữ và gửi lên. **Để sau** thì lời nhắc tắt, và hiện lại **một lần nữa** khi bé chơi thử xong Màn 2 (cùng ô, cùng cách nhấn giữ); bấm **Để sau** lần hai thì không nhắc nữa.
   - Lúc nào cũng tạo được ở **Settings → Tạo tài khoản để lưu tiến độ**.
 - **Lần mở sau** (đã chơi thử hoặc đã đăng nhập): app vào thẳng bản đồ màn chơi, không hiện lại trang chào. **Settings → Đăng xuất** thì máy xoá dữ liệu của bé và hiện lại trang chào (cả những lần mở sau).
 - **Mỗi tài khoản là một bé.** Nhà có hai bé thì đăng ký hai tên đăng nhập; số Zalo có thể trùng.
