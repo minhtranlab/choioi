@@ -2,29 +2,41 @@
 
 Đây là trang ba mẹ thấy khi mở link lần đầu. Hướng đã chốt ở `claude/chot-trang-chao-24-10.md`. Chỉ là thiết kế: chưa gắn vào `index.html`.
 
+**Vòng 2 (24/10 trưa, góp ý của Minh):** chọn thiết kế A (bộ cả đội: Lam, Na, Ben, Polly, Chồi). Bỏ tấm bản đồ, vì bản đồ phải mở mới thấy. Đổi cảnh nền sang một trong các cảnh đẹp đã vẽ, Minh chọn một trong sáu cảnh. Bỏ B (đảo khối: chỉ là một phần của trò chơi, chưa đại diện) và C (xe buýt: nhiều thứ quá, hơi nhiễu).
+Sửa chữ trong khung:
+- "10 phút mỗi ngày cho bé 4–6 tuổi" xuống thành dòng nhỏ riêng, dưới "Toán · Khám phá · Tiếng Anh".
+- Ghi chú dưới nút Chơi ngay chỉ còn: "Tiến độ của bé được lưu trong 7 ngày."
+
 | File | Là gì |
 |---|---|
-| `xem-thu.html` | Trang xem thử cho Minh: cả ba thiết kế, mỗi cái có khung iPad ngang 1180×820 và điện thoại dọc 390×844, trước và sau khi bấm **Đăng ký**. Các khung bấm thử được |
-| `a.html` | Thiết kế **A · Bản đồ kho báu**, chạy riêng cả màn hình (thêm `?dk` vào cuối link để mở sẵn trạng thái Đăng ký) |
-| `b.html` | Thiết kế **B · Thành phố đảo khối** |
-| `c.html` | Thiết kế **C · Xe buýt tới trường** |
-| `anh/` | Ảnh chụp: `<a/b/c>-ipad.png`, `-ipad-dang-ky.png`, `-dt.png` (điện thoại), `-dt-dang-ky.png` |
+| `xem-thu.html` | Trang xem thử cho Minh: khung chữ đã sửa (điện thoại, trước và sau khi bấm Đăng ký), rồi sáu cảnh nền, mỗi cảnh có iPad ngang 1180×820 và điện thoại dọc 390×844. Các khung bấm thử được |
+| `a1.html` … `a6.html` | Từng cảnh, chạy riêng cả màn hình (thêm `?dk` vào cuối link để mở sẵn Đăng ký) |
+| `anh/` | Ảnh chụp: `a1-ipad.png` … `a6-ipad.png`, `a1-dt.png` … `a6-dt.png`, và `a1-ipad-dang-ky.png`, `a1-dt-dang-ky.png` |
 
-## Ba ý
-- **A · Bản đồ kho báu:** Lam, Na, Ben quanh tấm bản đồ 8 mảnh trải trên cỏ; Chồi nhún nhảy bên cạnh; Polly bay về phía Đảo Kho Báu ở xa (đảo có dấu X: đây là X duy nhất, đúng luật một dấu X). Ý: phiêu lưu, mỗi ngày một mảnh bản đồ.
-- **B · Thành phố đảo khối:** nhìn từ trên cao theo đúng kiểu đảo khối của app (code đảo, cầu, cây lấy từ `isoIsland`, `isoBridge`, `isoTree`; thú lấy từ `zAnimal`). Có các đảo: sở thú, sân chơi, cây sao của Chồi (12 sao sáng), trường, bãi biển có hải đăng. Cả đội đứng ở đảo giữa. Ý: một thế giới lớn dần cùng bé.
-- **C · Xe buýt tới trường:** xe cận cảnh `xe-dua-don-can-mo` đỗ trước cổng trường (`cong-vao-truong-tron`). Bốn ô cửa sổ, mỗi ô một bạn: Ben, Na, Lam và Chồi ngồi sát bác tài. Bác tài vẫy, Polly bay trên xe. Ý: đi học vui, gần đời thật.
+## Sáu cảnh nền (cả đội đứng ở cùng một chỗ trên mặt đất phía trước)
+| | File | Cảnh | Lấy từ |
+|---|---|---|---|
+| 1 | `a1.html` | Bãi biển đảo hải đăng: bãi cát có cầu tàu, đồi xanh, hải đăng trên đỉnh | `dao-bai-cat-hai-dang` (Màn 7) |
+| 2 | `a2.html` | Đảo hải đăng: đảo cát, đồi tròn, hải đăng đỏ trắng, cầu gỗ, cây dừa | `dao-hai-dang` (Màn 7) |
+| 3 | `a3.html` | Đồi lên hải đăng: đồi xanh, đường mòn uốn lên hải đăng | `duong-len-hai-dang` (Màn 7) |
+| 4 | `a4.html` | Bãi cát hàng dừa | `dao-bai-cat` (Màn 7) |
+| 5 | `a5.html` | Công viên chiều ven sông, thành phố xa | `cong-vien-chieu` (Màn 6) |
+| 6 | `a6.html` | Vườn nhà Na đêm trăng sao | `vuon-nha-na-dem` (Màn 2) |
 
-Tranh ghép từ `art/kit/` và `art/places/`, đúng kiểu vẽ của app. Các bạn là sticker: viền trắng và bóng tím mờ, bộ lọc `#tc-stk`.
+Bố cục cả đội trong khung 200×140:
+- Lam (chỉ tay) ở x 98 và Ben (vẫy) ở x 152, chân y 122.
+- Na (vỗ tay) ở x 125, chân y 120.
+- Chồi (nhún) ở x 180, chân y 132.
+- Polly bay khoảng y 30, x 96–132 tuỳ cảnh, để không che hải đăng hay mặt trăng.
 
 ## Bố cục chung (giống nhau ở cả ba)
 - Một khối `.tc` có `container: tc / size`. Bố cục đổi theo **container query**, nên cùng một đoạn HTML chạy được cả toàn màn hình lẫn trong khung xem thử.
 - **Ngang (iPad):** tranh phủ cả màn hình (`preserveAspectRatio="xMidYMid slice"`). Khung chữ trắng mờ nằm bên trái: rộng `min(390px, 32cqw)`, cách mép trái `3cqw`. Các bạn đứng ở 65% bên phải nên chữ không che mặt.
-- **Dọc (điện thoại):** tranh ở trên, cao `50cqh`, cắt quanh các bạn bằng hai biến: `--R` là tỉ lệ khung tranh, `--fx` là chỗ các bạn theo chiều ngang (A 0,68 · B 0,62 · C 0,66). Khung chữ là tấm trắng bên dưới, mép trên chồm lên tranh `3cqh`.
+- **Dọc (điện thoại):** tranh ở trên, cao `50cqh`, cắt quanh các bạn bằng hai biến: `--R` là tỉ lệ khung tranh, `--fx` là chỗ các bạn theo chiều ngang (0,685 cho cả sáu cảnh). Khung chữ là tấm trắng bên dưới, mép trên chồm lên tranh `3cqh`.
 - Thứ tự trong khung chữ:
-  1. "Chồi Ơi" và dòng cho ba mẹ.
+  1. "Chồi Ơi", dòng "Toán · Khám phá · Tiếng Anh", dòng nhỏ "10 phút mỗi ngày cho bé 4–6 tuổi".
   2. Ô **Tên bé** và nút vàng to **Chơi ngay**.
-  3. Ghi chú nhỏ "Chơi thử lưu trên máy này. Không mở 7 ngày có thể mất. Tạo tài khoản để giữ tiến độ."
+  3. Ghi chú nhỏ "Tiến độ của bé được lưu trong 7 ngày."
   4. "hoặc", rồi nút phụ **Đăng ký** (viền xanh).
   5. Dòng nhỏ "Đã có tài khoản? Đăng nhập".
 - **Trạng thái Đăng ký:** thêm class `dk` vào `.tc`.
@@ -42,12 +54,10 @@ Tranh ghép từ `art/kit/` và `art/places/`, đúng kiểu vẽ của app. Cá
 - `.tc-choi`: Chồi nhún (nén xuống rồi bật lên), 1,8 giây một lần.
 - `.tc-polly`: Polly bay lượn nhẹ. Hai hình `polly-bay-1` và `polly-bay-2` thay nhau 0,25 giây một lần, nên trông như vỗ cánh.
 - `.tc-cloud`: mây trôi qua lại rất chậm.
-- B: `.tc-star`, 12 ngôi sao trên cây sao lấp lánh so le.
-- C: `.tc-bus`, xe rung rất nhẹ như đang nổ máy.
 - Tiếng: chỉ phát sau lần chạm đầu (trình duyệt chặn tự phát), nên trang chào không có tiếng.
 
 ## Khi dựng vào app (chat U1)
-- Lấy khối `.tc`, CSS và đoạn JS trong file của thiết kế đã chọn (`a.html`, `b.html` hoặc `c.html`).
+- Lấy khối `.tc`, CSS và đoạn JS trong file của cảnh Minh chọn (`a1.html` … `a6.html`).
   - Nút **Chơi ngay** nối vào luồng chơi thử.
   - Nút **Tạo tài khoản** nối vào đăng ký (cột Zalo thay email, bỏ năm sinh).
   - Link **Đăng nhập** mở trang đăng nhập cũ.
