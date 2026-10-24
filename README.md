@@ -10,7 +10,7 @@ App chơi tại nhà cho bé 4–5 tuổi, Chương 1 "Me and My Feelings" (Fun 
 - Trang ba mẹ: nhấn giữ nút Progress hoặc Settings 1 giây.
 
 ## Tài khoản và lưu tiến độ
-- Lần đầu mở app: Đăng ký (tên bé, năm sinh, tên đăng nhập, mã PIN 4 số, email ba mẹ), Đăng nhập, hoặc Chơi thử (chỉ lưu trên máy).
+- Lần đầu mở app: trang chào (tranh cả đội ở công viên ven sông). **Chơi ngay** (ô Tên bé: chơi thử, chỉ lưu trên máy, vào Màn 0 luôn), **Đăng ký** (tên đăng nhập, tên bé, mã PIN 4 số, số Zalo ba mẹ; không hỏi năm sinh, email), hoặc **Đã có tài khoản? Đăng nhập**. Lần mở sau vào thẳng bản đồ; Settings → Đăng xuất thì hiện lại trang chào.
 - Tiến độ luôn lưu trên máy, và được gửi lên Google Sheet nếu app có địa chỉ máy chủ (Apps Script). Đăng nhập ở máy khác thì tiến độ được tải về.
 - Mã PIN không được gửi đi: app chỉ gửi mã băm SHA-256. Sai PIN 10 lần thì tài khoản bị khoá 15 phút.
 

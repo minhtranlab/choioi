@@ -39,7 +39,9 @@ Tiến độ luôn được lưu trên máy của bé trước, vài giây sau m
 
 ## 3. Gửi app cho phụ huynh
 
-Chỉ gửi **link app**. **Không** gửi link Google Sheet (trong Sheet có email của mọi người).
+Chỉ gửi **link app**. **Không** gửi link Google Sheet (trong Sheet có số Zalo của mọi người).
+
+Mở link lần đầu là thấy **trang chào**: tranh cả đội ở công viên ven sông, ô **Tên bé** với nút vàng **Chơi ngay**, nút **Đăng ký**, và dòng **Đã có tài khoản? Đăng nhập**.
 
 ### Tin nhắn mẫu (sao chép rồi gửi)
 
@@ -47,8 +49,9 @@ Chỉ gửi **link app**. **Không** gửi link Google Sheet (trong Sheet có em
 >
 > 1. Mở link: **https://minhtranlab.github.io/choioi/**
 >    Trên iPad / iPhone: bấm nút Chia sẻ → **Thêm vào MH chính** để mở như một app.
-> 2. Chọn **Đăng ký**, điền tên bé, năm sinh, **tên đăng nhập** (chữ thường không dấu, ví dụ `bin2021`), **mã PIN 4 số** và email của anh/chị.
-> 3. Ghi nhớ tên đăng nhập và PIN để mở trên máy khác: chọn **Đăng nhập** là tiến độ của bé tự tải về.
+> 2. Muốn cho bé chơi thử ngay: điền **tên bé**, bấm **Chơi ngay**.
+>    Muốn giữ tiến độ lâu dài: bấm **Đăng ký**, điền **tên đăng nhập** (chữ thường không dấu, ví dụ `nhabin`), tên bé, **mã PIN 4 số** và **số Zalo** của anh/chị.
+> 3. Ghi nhớ tên đăng nhập và PIN để mở trên máy khác: bấm **Đã có tài khoản? Đăng nhập** là tiến độ của bé tự tải về. Quên tên đăng nhập hoặc PIN thì anh/chị nhắn Fun Academy qua Zalo.
 >
 > Mỗi ngày bé chơi khoảng 10–15 phút là đủ. Trang dành cho ba mẹ (xem tiến độ, đổi ngôn ngữ, bật micro): nhấn giữ nút **Progress** hoặc **Settings** khoảng 1 giây. Cần hỗ trợ, anh/chị nhắn lại cho Fun Academy nhé.
 
@@ -56,13 +59,17 @@ Chỉ gửi **link app**. **Không** gửi link Google Sheet (trong Sheet có em
 
 ## 4. Đăng ký hoạt động thế nào
 
-- **Phụ huynh tự đăng ký** ngay trong app. Admin không cần làm gì, không cần duyệt. Tài khoản xuất hiện trong Sheet ngay khi đăng ký xong.
+- **Phụ huynh tự đăng ký** ngay trong app: trang chào → **Đăng ký** → tên đăng nhập, tên bé, mã PIN 4 số (4 ô), số Zalo ba mẹ → **Tạo tài khoản**. Không hỏi năm sinh, không hỏi email. Admin không cần làm gì, không cần duyệt. Tài khoản xuất hiện trong Sheet ngay khi đăng ký xong.
+- **Tên đăng nhập** chỉ gồm chữ thường không dấu, số, dấu chấm hoặc gạch (3–20 ký tự). Phụ huynh gõ "Nhà Bin" thì app tự đổi thành `nhabin`.
 - **Admin đăng ký hộ** (khi phụ huynh nhờ):
-  1. Mở link app, chọn Đăng ký, điền thông tin của bé.
+  1. Mở link app, bấm Đăng ký, điền thông tin của bé (số Zalo của phụ huynh).
   2. Vào **Settings → Đăng xuất** để máy của admin không giữ tài khoản của bé.
   3. Gửi **tên đăng nhập + PIN** cho phụ huynh. Phụ huynh mở link, chọn **Đăng nhập**.
-- **Chơi thử** (nút "Chơi thử, không cần tài khoản"): tiến độ chỉ lưu trên máy đó, Sheet không biết gì. Sau này vào **Settings → Tạo tài khoản để lưu tiến độ** thì phần đã chơi được giữ và gửi lên.
-- **Mỗi tài khoản là một bé.** Nhà có hai bé thì đăng ký hai tên đăng nhập; email có thể trùng.
+- **Chơi thử** (ô Tên bé + nút **Chơi ngay**): bé vào Màn 0 luôn. Tiến độ chỉ lưu trên máy đó, Sheet không biết gì.
+  - Chơi xong Màn 0, trên bản đồ hiện lời nhắc cho ba mẹ **"Lưu tiến độ của bé? Tạo tài khoản"**. Hai nút phải **nhấn giữ 1 giây** (như Progress, Settings), nên bé chạm nhầm không sao. **Tạo tài khoản** thì phần đã chơi được giữ và gửi lên. **Để sau** thì lời nhắc tắt hẳn, không hỏi lại.
+  - Lúc nào cũng tạo được ở **Settings → Tạo tài khoản để lưu tiến độ**.
+- **Lần mở sau** (đã chơi thử hoặc đã đăng nhập): app vào thẳng bản đồ màn chơi, không hiện lại trang chào. **Settings → Đăng xuất** thì máy xoá dữ liệu của bé và hiện lại trang chào (cả những lần mở sau).
+- **Mỗi tài khoản là một bé.** Nhà có hai bé thì đăng ký hai tên đăng nhập; số Zalo có thể trùng.
 - **Tên đăng nhập không đổi được** sau khi tạo. Tên bé thì đổi được trong Settings.
 
 ---
@@ -73,7 +80,7 @@ Mở Google Sheet. Báo cáo tự cập nhật mỗi khi một bé chơi. Muốn
 
 | Bảng | Có gì |
 |---|---|
-| **Báo cáo** | Phía trên là số liệu chung: số bé đã đăng ký, số bé chơi trong 7 ngày qua, trung bình số màn đã xong, tỉ lệ đúng chung. Bên dưới mỗi bé một dòng: đang học màn nào, số màn đã xong (/8), mảnh bản đồ, số ngày đã chơi, phút chơi 7 ngày qua, số kỹ năng đã vững / đang luyện / chưa học, tỉ lệ đúng, **kỹ năng nên ôn thêm** (dưới 75%, yếu nhất trước), số kỹ năng đến hạn ôn, số lần chơi Fun Mix. Sắp xếp: bé chơi gần đây nhất ở trên. |
+| **Báo cáo** | Phía trên là số liệu chung: số bé đã đăng ký, số bé chơi trong 7 ngày qua, trung bình số màn đã xong, tỉ lệ đúng chung. Bên dưới mỗi bé một dòng: tên bé, tên đăng nhập, **số Zalo ba mẹ**, ngày đăng ký, đang học màn nào, số màn đã xong (/8), mảnh bản đồ, số ngày đã chơi, phút chơi 7 ngày qua, số kỹ năng đã vững / đang luyện / chưa học, tỉ lệ đúng, **kỹ năng nên ôn thêm** (dưới 75%, yếu nhất trước), số kỹ năng đến hạn ôn, số lần chơi Fun Mix. Sắp xếp: bé chơi gần đây nhất ở trên. |
 | **Theo kỹ năng** | Mỗi kỹ năng một dòng: bao nhiêu bé đã vững, đang luyện, chưa học, tổng lượt, tỉ lệ đúng. Dùng để biết phần nào các bé hay vấp, cần dạy thêm ở lớp. |
 | **Accounts** | Dữ liệu tài khoản. **Đừng sửa tay** cột `pin_hash` và `state_1 … state_8` (toàn bộ tiến độ của bé). |
 | **Progress** | Chi tiết từng bé × từng kỹ năng. |
@@ -91,9 +98,9 @@ Mở Google Sheet. Báo cáo tự cập nhật mỗi khi một bé chơi. Muốn
 |---|---|
 | Phụ huynh **quên PIN** | Sheet → menu **Chồi Ơi → Đặt lại mã PIN cho một bé** → nhập tên đăng nhập và PIN mới → gửi PIN mới cho phụ huynh. Admin không xem được PIN cũ (Sheet chỉ lưu mã băm). |
 | **Nhập sai PIN quá nhiều** | Sai 10 lần thì tài khoản khoá 15 phút. Đợi 15 phút, hoặc đặt lại PIN (mở khoá ngay). |
-| Phụ huynh **quên tên đăng nhập** | Tìm theo email hoặc tên bé trong bảng **Báo cáo** / **Accounts**. |
+| Phụ huynh **quên tên đăng nhập** | Sheet → menu **Chồi Ơi → Tìm tên đăng nhập theo số Zalo** → nhập số Zalo phụ huynh nhắn tới (có số 0, không có số 0 hay +84 đều được) → Sheet báo tên đăng nhập, tên bé, ngày đăng ký → gửi lại tên đăng nhập cho phụ huynh. Cách khác: Ctrl+F (Cmd+F) số Zalo trong bảng **Báo cáo**, cột *Số Zalo ba mẹ*. Quên cả PIN thì đặt lại PIN (dòng trên). |
 | **Xoá một bé** | Xoá dòng của bé ở **Accounts** và các dòng của bé ở **Progress**, rồi menu **Chồi Ơi → Cập nhật báo cáo**. |
-| **"Chơi thử" bị mất tiến độ** | "Chơi thử" chỉ lưu tiến độ trên máy đó. Safari có thể xoá dữ liệu của trang không được mở trong 7 ngày (trừ khi đã Thêm vào MH chính). Dặn phụ huynh tạo tài khoản (**Settings → Tạo tài khoản để lưu tiến độ**), hoặc Thêm vào MH chính. |
+| **"Chơi thử" bị mất tiến độ** | "Chơi thử" chỉ lưu tiến độ trên máy đó. Safari có thể xoá dữ liệu của trang không được mở trong 7 ngày (trừ khi đã Thêm vào MH chính). Dặn phụ huynh tạo tài khoản (lời nhắc sau Màn 0, hoặc **Settings → Tạo tài khoản để lưu tiến độ**), hoặc Thêm vào MH chính. |
 | **Đổi máy / cài lại** | Mở link → **Đăng nhập** → tên đăng nhập + PIN. Riêng các đoạn ghi âm giọng bé chỉ nằm trên máy cũ. |
 | **Sheet không có dữ liệu mới** | (1) App đã có địa chỉ `/exec` chưa: Settings → Tài khoản. (2) Bản triển khai có để *Bất kỳ ai* không. (3) Có lỡ tạo bản triển khai mới (địa chỉ đổi) không. (4) Mở link app trên GitHub Pages, không mở trong claude.ai: trang xem trước của claude.ai có thể chặn kết nối tới Google. |
 | **Màn chờ khi mở lần đầu** | Trước mỗi bài, app chỉ chờ phần giọng đầu bài (tiếng Anh khoảng 2 MB, tiếng Việt khoảng 1,6 MB): Wi-Fi gần như ngay, 4G chậm khoảng 5–8 giây. Màn chờ có thanh báo "Đang tải giọng nói của bài" kèm bóng bay, và trò chạm bong bóng. Phần còn lại tải trong lúc bé chơi. Giọng đã tải được giữ trong máy, mở lại không tải lại. Không cần dặn phụ huynh trước. |
@@ -108,6 +115,8 @@ Mở Google Sheet. Báo cáo tự cập nhật mỗi khi một bé chơi. Muốn
 2. Đẩy `index.html`, `voice/`, `music/` mới lên repo này (nhánh `main`). GitHub Pages tự cập nhật sau 1–2 phút.
 3. Nếu `apps-script/Code.gs` thay đổi: dán lại vào Apps Script → Lưu → **Quản lý các bản triển khai → Phiên bản mới** (giữ địa chỉ cũ) → chạy `setupSheets` một lần để làm mới bảng Hướng dẫn và Báo cáo.
 
+**Đợt 24/10 (trang chào, Zalo thay email):** `Code.gs` đổi. Bảng **Accounts** bỏ cột `birth_year`, cột `email` thành `zalo`; bảng **Báo cáo** bỏ *Năm sinh*, *Email ba mẹ*, thêm *Số Zalo ba mẹ*. Bảng Accounts cũ tự đổi cột một lần (lúc chạy `setupSheets` hoặc lần đầu app gửi dữ liệu); các tài khoản cũ vẫn đăng nhập được, chỉ ô Zalo để trống. Sau khi dán và triển khai, tải lại Sheet để thấy mục menu mới **Tìm tên đăng nhập theo số Zalo**.
+
 **Bật GitHub Pages (nếu chưa bật):** repo → Settings → Pages → Source: *Deploy from a branch* → Branch: `main`, thư mục `/ (root)` → Save.
 
 ---
@@ -118,3 +127,4 @@ Mở Google Sheet. Báo cáo tự cập nhật mỗi khi một bé chơi. Muốn
 - PIN không bao giờ được gửi đi; app chỉ gửi mã băm SHA-256.
 - Ai biết địa chỉ `/exec` cũng chỉ đăng ký được tài khoản mới hoặc mở tài khoản mà họ biết tên đăng nhập **và** PIN.
 - Ghi âm giọng bé (khi bé nói vào micro) chỉ lưu trên máy của bé, không gửi lên Sheet.
+- App không hỏi năm sinh, không hỏi email. Số Zalo của phụ huynh chỉ admin xem được trong Sheet, dùng để liên lạc và tìm lại tên đăng nhập.
