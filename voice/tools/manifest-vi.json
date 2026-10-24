@@ -509,7 +509,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1g8our5": {
 "k": "Hi hi! Thịt á? Tớ đâu phải sư tử!",
@@ -523,7 +523,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1y0450z": {
 "k": "Hi hi! Cá á? Tớ đâu phải chim cánh cụt!",
@@ -537,7 +537,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "hjkocr": {
 "k": "Hi hi! Cỏ khô á? Tớ đâu phải ngựa vằn!",
@@ -551,14 +551,14 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "zk6t2o": {
 "k": "Cây không ăn dưa hấu đâu. Cây uống nước thôi!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "om5v0t": {
 "k": "Hi hi! Tre á? Tớ đâu phải gấu trúc!",
@@ -572,7 +572,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1ty66u8": {
 "k": "Hi hi! Lá cây á? Tớ đâu phải hươu cao cổ!",
@@ -586,7 +586,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "zey1i1": {
 "k": "Ngon quá! Tớ thích chuối lắm! Cảm ơn bạn!",
@@ -600,28 +600,28 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "165hrdo": {
 "k": "Không, không! Polly thích hoa quả cơ!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1ve1huw": {
 "k": "Cảm ơn con! Nhưng Chồi chỉ uống nắng và nước thôi.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1okccu1": {
 "k": "Con đưa thức ăn cho một con vật nhé!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1g7571v": {
 "k": "Có mấy lá cờ? Con chạm từng lá và đếm nhé!",
@@ -705,7 +705,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "jcehdf": {
 "k": "Con xoay ngang điện thoại nhé!",
@@ -1832,21 +1832,21 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "zx4etq": {
 "k": "Hòn đá!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1hprvv3": {
 "k": "Cái ao!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1lrr6z8": {
 "k": "Rương kho báu!",
@@ -13970,7 +13970,7 @@
 "s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
 "part": "man7",
 "who": "Lam",
-"g": "man7"
+"g": "chung"
 },
 "ak1fe9": {
 "k": "@Na:Lên cao nào!",
@@ -14411,7 +14411,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "ngoai",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "x96bud": {
 "k": "Là Polly! Polly ở trong bụi cây.",
@@ -14422,6 +14422,398 @@
 },
 "19tr910": {
 "k": "Là Polly! Polly ở dưới gốc cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1i830qb": {
+"k": "Con học được điều mới, cây sao lại sáng thêm!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"aax8ej": {
+"k": "Sắp có chỗ mới ở đây đấy!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1n8lgwf": {
+"k": "Nhìn kìa! Lam thấy một chú chim!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"3ya459": {
+"k": "Chào bạn! Na yêu các bạn thú lắm!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1ispi2q": {
+"k": "Xin chào! Bản đồ của Ben có những chỗ mới, sắp mở rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1wz8cx1": {
+"k": "Chú voi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"uek2zt": {
+"k": "Chú sư tử!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1wuuq5c": {
+"k": "Chú chim cánh cụt!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1nfy1rt": {
+"k": "Chú khỉ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"os1tya": {
+"k": "Bạn hươu cao cổ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"zvh00h": {
+"k": "Bạn gấu trúc!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"zppg7p": {
+"k": "Bạn ngựa vằn!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"oswo8d": {
+"k": "Bạn hà mã!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"vedeo5": {
+"k": "Chìa khoá vàng của con sẽ mở hòn đảo này ở chủ đề sau!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"b8hlf9": {
+"k": "Sân chơi! Sắp có trò chơi mới ở đây đấy!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"z2saov": {
+"k": "Xin chào! Xin chào!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"2xx5ff": {
+"k": "Chú voi?",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"sqmgtz": {
+"k": "Chú sư tử?",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"65eqze": {
+"k": "Chú chim cánh cụt?",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1unnpt3": {
+"k": "Chú khỉ?",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"kw7e8o": {
+"k": "Bạn hươu cao cổ?",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"12nd0y7": {
+"k": "Bạn gấu trúc?",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"vtv0i3": {
+"k": "Bạn ngựa vằn?",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"gh8lf7": {
+"k": "Bạn hà mã?",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"v75xnu": {
+"k": "Giờ con đã đếm được đến năm đồ vật rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"fdjuc4": {
+"k": "Giờ con đã nhận ra vui, buồn và giận rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1pf5hss": {
+"k": "Giờ con đã đếm được đến mười rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"15jvubo": {
+"k": "Giờ con đã gọi tên được nhiều cảm xúc rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"ux2kd7": {
+"k": "Giờ con đã nhìn thoáng là biết một, hai, ba rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"14xuob0": {
+"k": "Giờ con đã trả lời được ai và ở đâu rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1cg1b1h": {
+"k": "Giờ con đã phân loại được to và nhỏ rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1ffro9g": {
+"k": "Giờ con đã phân biệt được âm thanh rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"cpzyus": {
+"k": "Giờ con đã tìm được hình chữ nhật rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1y8id5j": {
+"k": "Giờ con đã vỗ tay theo nhịp của từ rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"132wkhw": {
+"k": "Giờ con đã phân biệt sáng, chiều, tối rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1f5376q": {
+"k": "Giờ con đã vẽ được đường thẳng rồi! Cây sao có thêm một ngôi sao!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1g90nrp": {
+"k": "Ú òa bụi cây!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"r3u4r9": {
+"k": "Chọc bóng bay!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"11supjl": {
+"k": "Đèn pin!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"egfw26": {
+"k": "Bắt đồ chơi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"68imhq": {
+"k": "Xe đẩy!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1kv3wxf": {
+"k": "Cần cẩu!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"nqp3a7": {
+"k": "Ếch qua đường!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"oumrj": {
+"k": "Có một món quà đang chờ con!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"ookuxc": {
+"k": "Chơi xong màn đó để mở trò này nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"66mcd1": {
+"k": "Vui quá! Chơi trò khác nhé?",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"bbeu42": {
+"k": "Sở thú của con đầy ắp rồi! Sở thú to quá!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"zg6lwy": {
+"k": "Nhìn sở thú của con này!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"12rhvpa": {
+"k": "Trường học!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"18a4zwx": {
+"k": "Công viên!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"kfbr4p": {
+"k": "Khu vườn!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"jvg8iq": {
+"k": "Ngôi nhà!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1i035im": {
+"k": "Cửa hàng!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1ne6f9o": {
+"k": "Công trường!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1l96mvc": {
+"k": "Mặt trời và mặt trăng: cả một ngày của Na!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1hx219g": {
+"k": "Đảo Kho Báu!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "ngoai",
 "who": "chồi",

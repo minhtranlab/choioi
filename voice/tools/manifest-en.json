@@ -509,7 +509,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "labvq0": {
 "k": "Hee hee! Meat? I’m not a lion!",
@@ -523,7 +523,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "18hl3ax": {
 "k": "Hee hee! Fish? I’m not a penguin!",
@@ -537,7 +537,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "kb42e1": {
 "k": "Hee hee! Hay? I’m not a zebra!",
@@ -551,14 +551,14 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "gkrn8z": {
 "k": "Trees don’t eat watermelon. Trees drink water!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "vnmooz": {
 "k": "Hee hee! Bamboo? I’m not a panda!",
@@ -572,7 +572,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "671k3z": {
 "k": "Hee hee! Leaves? I’m not a giraffe!",
@@ -586,7 +586,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1r2athb": {
 "k": "Yum! I love bananas! Thank you!",
@@ -600,28 +600,28 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "nur4d5": {
 "k": "No, no! Polly likes fruit!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "m52s3m": {
 "k": "Thank you! But I drink sunshine and water.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1ep649q": {
 "k": "Give the food to an animal!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "kjcnix": {
 "k": "How many flags? Tap each flag and count!",
@@ -705,7 +705,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1um81i7": {
 "k": "Turn your phone sideways!",
@@ -1825,21 +1825,21 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "veqnoc": {
 "k": "A rock!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "4a8sqe": {
 "k": "A pond!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1mpj4qw": {
 "k": "Treasure chest!",
@@ -13690,7 +13690,7 @@
 "s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
 "part": "man7",
 "who": "Lam",
-"g": "man7"
+"g": "chung"
 },
 "1hmev7n": {
 "k": "@Na:Up I go!",
@@ -14082,7 +14082,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "ngoai",
 "who": "chồi",
-"g": "ngoai"
+"g": "sothu"
 },
 "1t5276z": {
 "k": "It’s Polly! Polly is in the bush.",
@@ -14093,6 +14093,398 @@
 },
 "521ada": {
 "k": "It’s Polly! Polly is under the tree.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1t1xcxc": {
+"k": "Learn new things, and our star tree shines!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1ywn5io": {
+"k": "Something new will be here soon!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1sc01ju": {
+"k": "Look! I can see a bird!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"3wsfwz": {
+"k": "Hi! I love the animals!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1iwdeob": {
+"k": "Hello! My map shows new places, coming soon!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"14g8ohi": {
+"k": "An elephant!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"231zal": {
+"k": "A lion!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1eu6e7b": {
+"k": "A penguin!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1bxs8no": {
+"k": "A monkey!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"10b1w0r": {
+"k": "A giraffe!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"10n2fqn": {
+"k": "A panda!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"mdh6cv": {
+"k": "A zebra!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1c9y6kz": {
+"k": "A hippo!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"13fkwib": {
+"k": "Your yellow key will open this island in the next chapter!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1x7ko5w": {
+"k": "The playground! New games will be here soon!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1lgjoix": {
+"k": "Hello! Hello!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"12sb2bo": {
+"k": "An elephant?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1sshygj": {
+"k": "A lion?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"17mgq61": {
+"k": "A penguin?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"14q2kme": {
+"k": "A monkey?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"vb91j9": {
+"k": "A giraffe?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"xv6esx": {
+"k": "A panda?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"jll5f5": {
+"k": "A zebra?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1klm9e5": {
+"k": "A hippo?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"jzx31x": {
+"k": "You can count up to five things now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1k8hhg2": {
+"k": "You can tell happy, sad and angry now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1nn6j2m": {
+"k": "You can count to ten now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"zot11u": {
+"k": "You can name lots of feelings now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"19k9ldo": {
+"k": "You can see one, two, three in a flash now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1elfb8h": {
+"k": "You can answer who and where now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"h6pf9h": {
+"k": "You can sort big and small now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"ss0nmm": {
+"k": "You can tell sounds apart now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"jfhfrm": {
+"k": "You can find rectangles now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"cthnv": {
+"k": "You can clap the beats in words now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1xvkv2z": {
+"k": "You can tell morning, afternoon and night now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"gp0fw2": {
+"k": "You can draw straight lines now! A new star for your star tree!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"pcm8q6": {
+"k": "Peekaboo!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1ohghz2": {
+"k": "Balloon pop!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1rwqxxy": {
+"k": "Flashlight!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1c0ov1z": {
+"k": "Toy catch!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"dklsfk": {
+"k": "Shopping cart!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1gauuxe": {
+"k": "Crane tower!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"kwgkc4": {
+"k": "Frog crossing!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1o9mk51": {
+"k": "A present is waiting for you!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1tf064v": {
+"k": "Finish that level to open this game!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1l1wly0": {
+"k": "Fun! Want to play another one?",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1t1o8ag": {
+"k": "Your zoo is full! What a big zoo!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"oauf3d": {
+"k": "Look at your zoo!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "sothu",
+"who": "chồi",
+"g": "sothu"
+},
+"1b3kcsr": {
+"k": "The school!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1v1he87": {
+"k": "The park!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1v3sllw": {
+"k": "The garden!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1advj9n": {
+"k": "The house!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1ua5t9n": {
+"k": "The shop!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1l9t4b6": {
+"k": "The building site!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"15b769a": {
+"k": "The sun and the moon: Na’s whole day!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1tnns4w": {
+"k": "Treasure Island!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "ngoai",
 "who": "chồi",
