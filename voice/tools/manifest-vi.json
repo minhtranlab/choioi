@@ -2226,6 +2226,27 @@
 "who": "chồi",
 "g": "ngoai"
 },
+"ewkpry": {
+"k": "Con chạm vào Chồi nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "chung"
+},
+"1lsg7rk": {
+"k": "Con chạm vào mảnh bản đồ nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "chung"
+},
+"uygts8": {
+"k": "Nhìn sở thú của con này! Con cho các bạn thú ăn, hoặc chạm vào bất cứ đâu nhé. Xong thì con chạm vào ngôi nhà.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "sothu"
+},
 "n8senc": {
 "k": "Xin chào! Chồi đây. Nhìn kìa, trên tủ sách có một thứ gì cũ cũ.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -2756,7 +2777,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man0"
 },
 "rl1ob8": {
 "k": "Ơ, đó là Lam, bạn ấy đang giận.",
@@ -4025,6 +4046,34 @@
 "who": "chồi",
 "g": "man0"
 },
+"1m7bvfi": {
+"k": "Mình vỗ tay chúc mừng Na nhé! Con chạm vào Na ba lần.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"4rg5ma": {
+"k": "Mình cùng Lam hít thở thật chậm nhé. Con nhấn giữ vào Lam!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"16gfoyl": {
+"k": "Nhìn kìa, trên tủ sách có một thứ gì cũ cũ. Con chạm vào nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1ajrx53": {
+"k": "Mình vẽ đường cho xe buýt nhé. Con di ngón tay theo đường kẻ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
 "1ze9zk": {
 "k": "Mình tới công viên rồi! Hôm nay gió to quá.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
@@ -5256,6 +5305,13 @@
 "part": "man1",
 "who": "chồi",
 "g": "chung"
+},
+"182fm0k": {
+"k": "Mình vỗ tay chúc mừng Lam nhé! Con chạm vào Lam ba lần.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
 },
 "1m1eqsr": {
 "k": "Bản đồ vẽ một khu vườn. Tối nay mình cắm trại trong vườn nhà Na!",
@@ -10439,6 +10495,34 @@
 },
 "y5oxfd": {
 "k": "Con tìm ra cửa sổ hình vuông rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"9doel3": {
+"k": "Con tìm ra cửa sổ hình tròn rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"9gxy0z": {
+"k": "Con nhìn lại và tìm ra cửa sổ hình tròn rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"whvgb9": {
+"k": "Con nhìn lại và tìm ra cửa sổ hình vuông rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man5",
+"who": "chồi",
+"g": "man5"
+},
+"h54i7b": {
+"k": "Con nhìn lại và tìm ra cửa sổ hình tam giác rồi!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man5",
 "who": "chồi",

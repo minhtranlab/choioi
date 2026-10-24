@@ -2149,6 +2149,27 @@
 "who": "chồi",
 "g": "ngoai"
 },
+"yt963r": {
+"k": "Tap me!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "chung"
+},
+"y3obuk": {
+"k": "Tap the map piece!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "chung"
+},
+"19sj20m": {
+"k": "Look at your zoo! Feed the animals, or tap anything you like. Tap the house when you’re done.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "chung",
+"who": "chồi",
+"g": "sothu"
+},
 "1uc8vmr": {
 "k": "Hello! I’m Chồi. Look, there’s something old on the bookshelf.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -2679,7 +2700,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man0"
 },
 "1viokld": {
 "k": "Oops, that’s Lam. He looks angry.",
@@ -3906,6 +3927,34 @@
 "who": "chồi",
 "g": "man0"
 },
+"wqrb1l": {
+"k": "Let’s clap for Na! Tap Na three times.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"8szmsz": {
+"k": "Let’s breathe slowly with Lam. Press and hold Lam!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1t5u8ct": {
+"k": "Look, there’s something old on the bookshelf. Tap it!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"t5rt8d": {
+"k": "Let’s draw a road for the bus. Move your finger along the line!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
 "oo9sol": {
 "k": "Here we are at the park! It’s so windy today.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
@@ -5109,6 +5158,13 @@
 "part": "man1",
 "who": "chồi",
 "g": "chung"
+},
+"12dsek1": {
+"k": "Let’s clap for Lam! Tap Lam three times.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man1",
+"who": "chồi",
+"g": "man1"
 },
 "jzhibo": {
 "k": "The map shows a garden. Tonight, we’re camping in Na’s garden!",
