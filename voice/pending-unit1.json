@@ -1,97 +1,49 @@
 [
  {
-  "part": "chung",
-  "en": "Tap me!",
-  "vi": "Con chạm vào Chồi nhé!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Tap the map piece!",
-  "vi": "Con chạm vào mảnh bản đồ nhé!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "chung",
-  "en": "Look at your zoo! Feed the animals, or tap anything you like. Tap the house when you’re done.",
-  "vi": "Nhìn sở thú của con này! Con cho các bạn thú ăn, hoặc chạm vào bất cứ đâu nhé. Xong thì con chạm vào ngôi nhà.",
+  "part": "man0",
+  "en": "The red path goes to the garden behind our school.",
+  "vi": "Đường đỏ dẫn tới khu vườn sau trường mình.",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man0",
-  "en": "Let’s clap for Na! Tap Na three times.",
-  "vi": "Mình vỗ tay chúc mừng Na nhé! Con chạm vào Na ba lần.",
+  "en": "Seven pieces are missing. Maybe one is in the garden!",
+  "vi": "Còn thiếu bảy mảnh. Có khi một mảnh ở trong vườn đấy!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man0",
-  "en": "Let’s breathe slowly with Lam. Press and hold Lam!",
-  "vi": "Mình cùng Lam hít thở thật chậm nhé. Con nhấn giữ vào Lam!",
+  "en": "Now Ben walks over the little bridge to the big bush. Draw a line across!",
+  "vi": "Giờ Ben đi qua cây cầu nhỏ tới bụi cây to. Con vẽ đường ngang nhé!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man0",
-  "en": "Look, there’s something old on the bookshelf. Tap it!",
-  "vi": "Nhìn kìa, trên tủ sách có một thứ gì cũ cũ. Con chạm vào nhé!",
+  "en": "Ben is at the big bush!",
+  "vi": "Ben tới bụi cây to rồi!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
   "part": "man0",
-  "en": "Let’s draw a road for the bus. Move your finger along the line!",
-  "vi": "Mình vẽ đường cho xe buýt nhé. Con di ngón tay theo đường kẻ!",
+  "en": "Look! The big bush is shaking. Something is inside. Tap the bush!",
+  "vi": "Nhìn kìa! Bụi cây to đang rung. Có gì ở trong. Con chạm vào bụi cây nhé!",
   "needEn": true,
   "needVi": true,
   "slow": false
  },
  {
-  "part": "man1",
-  "en": "Let’s clap for Lam! Tap Lam three times.",
-  "vi": "Mình vỗ tay chúc mừng Lam nhé! Con chạm vào Lam ba lần.",
+  "part": "man0",
+  "en": "The second map piece was in the big bush!",
+  "vi": "Mảnh bản đồ thứ hai ở trong bụi cây to!",
   "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
-  "en": "You found the circle window!",
-  "vi": "Con tìm ra cửa sổ hình tròn rồi!",
-  "needEn": false,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
-  "en": "You looked again, and found the circle window!",
-  "vi": "Con nhìn lại và tìm ra cửa sổ hình tròn rồi!",
-  "needEn": false,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
-  "en": "You looked again, and found the square window!",
-  "vi": "Con nhìn lại và tìm ra cửa sổ hình vuông rồi!",
-  "needEn": false,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man5",
-  "en": "You looked again, and found the triangle window!",
-  "vi": "Con nhìn lại và tìm ra cửa sổ hình tam giác rồi!",
-  "needEn": false,
   "needVi": true,
   "slow": false
  }
