@@ -24,7 +24,7 @@ Sửa chữ trong khung:
 - Cửa sổ các toà nhà lên đèn.
 - Thuyền buồm nhỏ trên sông (x 164–176, giữa hai cột đèn), chỉ dập dềnh tại chỗ; thêm một thuyền nữa ở x 44, sau khung chữ.
 - Đàn chim nhỏ.
-- Polly bay bên phải (x 162), tránh toà nhà cao Landmark.
+- Polly bay bên phải, tránh toà nhà cao Landmark (từ 24/10 chiều: x 176, y 60 trong lớp cả đội).
 - Không có cầu, không có đèn ông sao, không có dây đèn.
 
 **BẢN CUỐI, Minh chọn (24/10, 13:33): `trang-chao.html`**
