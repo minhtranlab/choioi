@@ -27,21 +27,18 @@ Sửa chữ trong khung:
 - Polly bay bên phải (x 162), tránh toà nhà cao Landmark.
 - Không có cầu, không có đèn ông sao, không có dây đèn.
 
-**Vòng 5 (24/10, 13:21, Minh):** chọn màu trời và loại thuyền. Các trang thử nằm trong `chon/`.
-- Màu trời, cùng thuyền buồm:
-  - `troi-tim.html`: chiều tím hồng, màu đang dùng;
-  - `troi-cam.html`: hoàng hôn cam vàng;
-  - `troi-hong.html`: hồng phấn;
-  - `troi-lam.html`: chạng vạng xanh;
-  - `troi-xanh.html`: trời xanh ban ngày.
-- Thuyền, cùng trời tím: `thuyen-buom.html`, `thuyen-du.html` (du thuyền), `thuyen-cont.html` (tàu container).
-- Ảnh chụp: `anh/<tên>-ipad.png`, `anh/<tên>-dt.png`.
-- Ghép được bất kỳ màu trời nào với bất kỳ thuyền nào (`sceneParkFinal(trời, thuyền)` trong script vẽ). Khi Minh chọn xong, `trang-chao.html` sẽ được làm lại theo lựa chọn.
+**BẢN CUỐI, Minh chọn (24/10, 13:33): `trang-chao.html`**
+- Vòng 5: Minh chọn **trời xanh ban ngày** và **du thuyền**, trong năm màu trời và ba loại thuyền.
+- Nền là `places/cong-vien-chieu.svg`, đổi thành ban ngày: dải trời xanh thay cho nền cam, mây trắng.
+- Du thuyền trắng hai tầng có cờ đỏ, trên sông ở x 150–174 (giữa hai cột đèn), chỉ dập dềnh tại chỗ.
+- Đàn chim nhỏ. Toà Landmark và các toà nhà giữ nguyên.
+- Polly bay ở x 162, tránh toà nhà cao.
+- Không có cầu, không có đèn, không có bản đồ.
 
 | File | Là gì |
 |---|---|
-| `xem-thu.html` | Trang xem thử: bản cuối ở iPad ngang 1180×820 và điện thoại dọc 390×844, trước và sau khi bấm Đăng ký |
 | `trang-chao.html` | Bản cuối chạy riêng cả màn hình; thêm `?dk` vào cuối link để mở sẵn Đăng ký |
+| `xem-thu.html` | Trang xem thử: bản cuối ở iPad ngang 1180×820 và điện thoại dọc 390×844, trước và sau khi bấm Đăng ký |
 | `anh/` | `ipad.png`, `ipad-dang-ky.png`, `dt.png`, `dt-dang-ky.png` |
 
 Cả đội trong khung 200×140:
@@ -49,6 +46,13 @@ Cả đội trong khung 200×140:
 - Na (vỗ tay) ở x 125, chân y 120.
 - Chồi (vẫy) ở x 180, chân y 132.
 - Polly bay ở x 162, khoảng y 30.
+
+Các vòng trước:
+1. Ba thiết kế: A cả đội quanh bản đồ, B thành phố đảo khối, C xe buýt. Minh chọn A, bỏ bản đồ.
+2. Sáu cảnh nền: công viên chiều cao nhất, 7 điểm.
+3. Bốn phương án công viên chiều: đèn ông sao 8 điểm, thích màu trời; thuyền của bản sông Sài Gòn hay.
+4. Ghép thuyền buồm, bỏ cầu và đèn, Polly sang phải.
+5. Chọn trời xanh và du thuyền.
 
 ## Bố cục chung (giống nhau ở cả ba)
 - Một khối `.tc` có `container: tc / size`. Bố cục đổi theo **container query**, nên cùng một đoạn HTML chạy được cả toàn màn hình lẫn trong khung xem thử.
@@ -75,7 +79,7 @@ Cả đội trong khung 200×140:
 - `.tc-choi`: Chồi nhún (nén xuống rồi bật lên), 1,8 giây một lần.
 - `.tc-polly`: Polly bay lượn nhẹ. Hai hình `polly-bay-1` và `polly-bay-2` thay nhau 0,25 giây một lần, nên trông như vỗ cánh.
 - `.tc-cloud`: mây trôi qua lại rất chậm.
-- `.tc-boat`: thuyền dập dềnh tại chỗ (không đi lại).
+- `.tc-boat`: du thuyền dập dềnh tại chỗ (không đi lại).
 - Tiếng: chỉ phát sau lần chạm đầu (trình duyệt chặn tự phát), nên trang chào không có tiếng.
 
 ## Khi dựng vào app (chat U1)
