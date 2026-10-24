@@ -32,7 +32,7 @@ Sửa chữ trong khung:
 - Nền là `places/cong-vien-chieu.svg`, đổi thành ban ngày: dải trời xanh thay cho nền cam, mây trắng.
 - Du thuyền trắng hai tầng có cờ đỏ, trên sông ở x 150–174 (giữa hai cột đèn), chỉ dập dềnh tại chỗ.
 - Đàn chim nhỏ. Toà Landmark và các toà nhà giữ nguyên.
-- Polly bay ở x 162, tránh toà nhà cao.
+- Polly bay ngay trên Ben và Chồi (x 176, y 60), trong lớp cả đội.
 - Không có cầu, không có đèn, không có bản đồ.
 
 | File | Là gì |
