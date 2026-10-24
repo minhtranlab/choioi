@@ -1843,6 +1843,24 @@
 },
 {
 "lang": "en",
+"key": "Tap me!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Tap the map piece!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
+"key": "Look at your zoo! Feed the animals, or tap anything you like. Tap the house when you’re done.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "en",
 "key": "Hello! I’m Chồi. Look, there’s something old on the bookshelf.",
 "who": "chồi",
 "part": "man0"
@@ -3349,6 +3367,66 @@
 },
 {
 "lang": "en",
+"key": "Let’s clap for Na! Tap Na three times.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s breathe slowly with Lam. Press and hold Lam!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Look, there’s something old on the bookshelf. Tap it!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Let’s draw a road for the bus. Move your finger along the line!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "The red path goes to the garden behind our school.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Seven pieces are missing. Maybe one is in the garden!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Now Ben walks over the little bridge to the big bush. Draw a line across!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Ben is at the big bush!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "Look! The big bush is shaking. Something is inside. Tap the bush!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
+"key": "The second map piece was in the big bush!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "en",
 "key": "Here we are at the park! It’s so windy today.",
 "who": "chồi",
 "part": "man1"
@@ -4376,6 +4454,12 @@
 {
 "lang": "en",
 "key": "Hi, {N}! Let’s play!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "en",
+"key": "Let’s clap for Lam! Tap Lam three times.",
 "who": "chồi",
 "part": "man1"
 },
@@ -13897,6 +13981,24 @@
 },
 {
 "lang": "vi",
+"key": "Con chạm vào Chồi nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Con chạm vào mảnh bản đồ nhé!",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
+"key": "Nhìn sở thú của con này! Con cho các bạn thú ăn, hoặc chạm vào bất cứ đâu nhé. Xong thì con chạm vào ngôi nhà.",
+"who": "chồi",
+"part": "chung"
+},
+{
+"lang": "vi",
 "key": "Xin chào! Chồi đây. Nhìn kìa, trên tủ sách có một thứ gì cũ cũ.",
 "who": "chồi",
 "part": "man0"
@@ -15439,6 +15541,66 @@
 },
 {
 "lang": "vi",
+"key": "Mình vỗ tay chúc mừng Na nhé! Con chạm vào Na ba lần.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình cùng Lam hít thở thật chậm nhé. Con nhấn giữ vào Lam!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa, trên tủ sách có một thứ gì cũ cũ. Con chạm vào nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mình vẽ đường cho xe buýt nhé. Con di ngón tay theo đường kẻ!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Đường đỏ dẫn tới khu vườn sau trường mình.",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Còn thiếu bảy mảnh. Có khi một mảnh ở trong vườn đấy!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Giờ Ben đi qua cây cầu nhỏ tới bụi cây to. Con vẽ đường ngang nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Ben tới bụi cây to rồi!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Nhìn kìa! Bụi cây to đang rung. Có gì ở trong. Con chạm vào bụi cây nhé!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
+"key": "Mảnh bản đồ thứ hai ở trong bụi cây to!",
+"who": "chồi",
+"part": "man0"
+},
+{
+"lang": "vi",
 "key": "Mình tới công viên rồi! Hôm nay gió to quá.",
 "who": "chồi",
 "part": "man1"
@@ -16490,6 +16652,12 @@
 {
 "lang": "vi",
 "key": "Chào {N}! Mình cùng chơi nào!",
+"who": "chồi",
+"part": "man1"
+},
+{
+"lang": "vi",
+"key": "Mình vỗ tay chúc mừng Lam nhé! Con chạm vào Lam ba lần.",
 "who": "chồi",
 "part": "man1"
 },
@@ -20941,6 +21109,30 @@
 },
 {
 "lang": "vi",
+"key": "Con tìm ra cửa sổ hình tròn rồi!",
+"who": "chồi",
+"part": "man5"
+},
+{
+"lang": "vi",
+"key": "Con nhìn lại và tìm ra cửa sổ hình tròn rồi!",
+"who": "chồi",
+"part": "man5"
+},
+{
+"lang": "vi",
+"key": "Con nhìn lại và tìm ra cửa sổ hình vuông rồi!",
+"who": "chồi",
+"part": "man5"
+},
+{
+"lang": "vi",
+"key": "Con nhìn lại và tìm ra cửa sổ hình tam giác rồi!",
+"who": "chồi",
+"part": "man5"
+},
+{
+"lang": "vi",
 "key": "Nhìn này, quả chuối!",
 "who": "chồi",
 "part": "man6"
@@ -24235,122 +24427,26 @@
 },
 {
 "lang": "en",
-"key": "Tap me!",
+"key": "It’s Polly! Polly is in the bush.",
 "who": "chồi",
-"part": "chung"
+"part": "ngoai"
 },
 {
 "lang": "vi",
-"key": "Con chạm vào Chồi nhé!",
+"key": "Là Polly! Polly ở trong bụi cây.",
 "who": "chồi",
-"part": "chung"
+"part": "ngoai"
 },
 {
 "lang": "en",
-"key": "Tap the map piece!",
+"key": "It’s Polly! Polly is under the tree.",
 "who": "chồi",
-"part": "chung"
+"part": "ngoai"
 },
 {
 "lang": "vi",
-"key": "Con chạm vào mảnh bản đồ nhé!",
+"key": "Là Polly! Polly ở dưới gốc cây.",
 "who": "chồi",
-"part": "chung"
-},
-{
-"lang": "en",
-"key": "Look at your zoo! Feed the animals, or tap anything you like. Tap the house when you’re done.",
-"who": "chồi",
-"part": "chung"
-},
-{
-"lang": "vi",
-"key": "Nhìn sở thú của con này! Con cho các bạn thú ăn, hoặc chạm vào bất cứ đâu nhé. Xong thì con chạm vào ngôi nhà.",
-"who": "chồi",
-"part": "chung"
-},
-{
-"lang": "en",
-"key": "Let’s clap for Na! Tap Na three times.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Mình vỗ tay chúc mừng Na nhé! Con chạm vào Na ba lần.",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "Let’s breathe slowly with Lam. Press and hold Lam!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Mình cùng Lam hít thở thật chậm nhé. Con nhấn giữ vào Lam!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "Look, there’s something old on the bookshelf. Tap it!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Nhìn kìa, trên tủ sách có một thứ gì cũ cũ. Con chạm vào nhé!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "Let’s draw a road for the bus. Move your finger along the line!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "vi",
-"key": "Mình vẽ đường cho xe buýt nhé. Con di ngón tay theo đường kẻ!",
-"who": "chồi",
-"part": "man0"
-},
-{
-"lang": "en",
-"key": "Let’s clap for Lam! Tap Lam three times.",
-"who": "chồi",
-"part": "man1"
-},
-{
-"lang": "vi",
-"key": "Mình vỗ tay chúc mừng Lam nhé! Con chạm vào Lam ba lần.",
-"who": "chồi",
-"part": "man1"
-},
-{
-"lang": "vi",
-"key": "Con tìm ra cửa sổ hình tròn rồi!",
-"who": "chồi",
-"part": "man5"
-},
-{
-"lang": "vi",
-"key": "Con nhìn lại và tìm ra cửa sổ hình tròn rồi!",
-"who": "chồi",
-"part": "man5"
-},
-{
-"lang": "vi",
-"key": "Con nhìn lại và tìm ra cửa sổ hình vuông rồi!",
-"who": "chồi",
-"part": "man5"
-},
-{
-"lang": "vi",
-"key": "Con nhìn lại và tìm ra cửa sổ hình tam giác rồi!",
-"who": "chồi",
-"part": "man5"
+"part": "ngoai"
 }
 ]

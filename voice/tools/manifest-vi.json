@@ -145,14 +145,14 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "man0"
 },
 "opyu8i": {
 "k": "Nhìn khuôn mặt này nhé. Mặt này đang giận.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "man0"
 },
 "7jokyt": {
 "k": "Nhìn khuôn mặt này nhé. Mặt này đang sợ.",
@@ -446,7 +446,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "chung"
+"g": "man1"
 },
 "1xevz34": {
 "k": "Nhớ nhé: sáng, chiều, tối.",
@@ -1909,14 +1909,14 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "man0"
 },
 "9mzghh": {
 "k": "Quả bóng làm đổ tháp của Lam. Bạn ấy thấy giận.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "man0"
 },
 "cpsxkp": {
 "k": "Ầm! Sấm nổ! Ben thấy sợ.",
@@ -2700,7 +2700,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man0"
 },
 "spn66l": {
 "k": "Na đang vui.",
@@ -2777,7 +2777,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man0"
+"g": "chung"
 },
 "rl1ob8": {
 "k": "Ơ, đó là Lam, bạn ấy đang giận.",
@@ -4069,6 +4069,48 @@
 },
 "1ajrx53": {
 "k": "Mình vẽ đường cho xe buýt nhé. Con di ngón tay theo đường kẻ!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"3oj39t": {
+"k": "Đường đỏ dẫn tới khu vườn sau trường mình.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"jpg66l": {
+"k": "Còn thiếu bảy mảnh. Có khi một mảnh ở trong vườn đấy!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"7o2pmq": {
+"k": "Giờ Ben đi qua cây cầu nhỏ tới bụi cây to. Con vẽ đường ngang nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "chung"
+},
+"1ib8jp4": {
+"k": "Ben tới bụi cây to rồi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "chung"
+},
+"1a5gfco": {
+"k": "Nhìn kìa! Bụi cây to đang rung. Có gì ở trong. Con chạm vào bụi cây nhé!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"6s1n2s": {
+"k": "Mảnh bản đồ thứ hai ở trong bụi cây to!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
@@ -14366,6 +14408,20 @@
 },
 "1xayhga": {
 "k": "Bụi cây!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"x96bud": {
+"k": "Là Polly! Polly ở trong bụi cây.",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"19tr910": {
+"k": "Là Polly! Polly ở dưới gốc cây.",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "ngoai",
 "who": "chồi",

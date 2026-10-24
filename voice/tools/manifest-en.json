@@ -145,14 +145,14 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "man0"
 },
 "1736t2p": {
 "k": "Look at the face. This face looks angry.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "man0"
 },
 "25m1ie": {
 "k": "Look at the face. This face looks scared.",
@@ -446,7 +446,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "chung"
+"g": "man1"
 },
 "g60fo": {
 "k": "Remember: morning, afternoon, night.",
@@ -1902,14 +1902,14 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "man0"
 },
 "zps9rw": {
 "k": "The ball knocked down Lam’s tower. He feels angry.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "chung",
 "who": "chồi",
-"g": "ngoai"
+"g": "man0"
 },
 "1pmjgg4": {
 "k": "Boom! Thunder! Ben feels scared.",
@@ -2623,7 +2623,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "chung"
+"g": "man0"
 },
 "gsy9qo": {
 "k": "Na looks happy.",
@@ -2700,7 +2700,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
-"g": "man0"
+"g": "chung"
 },
 "1viokld": {
 "k": "Oops, that’s Lam. He looks angry.",
@@ -3950,6 +3950,48 @@
 },
 "t5rt8d": {
 "k": "Let’s draw a road for the bus. Move your finger along the line!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"2kw28h": {
+"k": "The red path goes to the garden behind our school.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"gam1zr": {
+"k": "Seven pieces are missing. Maybe one is in the garden!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"1mzt4nt": {
+"k": "Now Ben walks over the little bridge to the big bush. Draw a line across!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "chung"
+},
+"1c6mmov": {
+"k": "Ben is at the big bush!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "chung"
+},
+"13ake98": {
+"k": "Look! The big bush is shaking. Something is inside. Tap the bush!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man0",
+"who": "chồi",
+"g": "man0"
+},
+"c4zbcs": {
+"k": "The second map piece was in the big bush!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man0",
 "who": "chồi",
@@ -14037,6 +14079,20 @@
 },
 "3ekiml": {
 "k": "A bush!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"1t5276z": {
+"k": "It’s Polly! Polly is in the bush.",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"521ada": {
+"k": "It’s Polly! Polly is under the tree.",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "ngoai",
 "who": "chồi",
