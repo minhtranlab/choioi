@@ -27,6 +27,17 @@ Sửa chữ trong khung:
 - Polly bay bên phải (x 162), tránh toà nhà cao Landmark.
 - Không có cầu, không có đèn ông sao, không có dây đèn.
 
+**Vòng 5 (24/10, 13:21, Minh):** chọn màu trời và loại thuyền. Các trang thử nằm trong `chon/`.
+- Màu trời, cùng thuyền buồm:
+  - `troi-tim.html`: chiều tím hồng, màu đang dùng;
+  - `troi-cam.html`: hoàng hôn cam vàng;
+  - `troi-hong.html`: hồng phấn;
+  - `troi-lam.html`: chạng vạng xanh;
+  - `troi-xanh.html`: trời xanh ban ngày.
+- Thuyền, cùng trời tím: `thuyen-buom.html`, `thuyen-du.html` (du thuyền), `thuyen-cont.html` (tàu container).
+- Ảnh chụp: `anh/<tên>-ipad.png`, `anh/<tên>-dt.png`.
+- Ghép được bất kỳ màu trời nào với bất kỳ thuyền nào (`sceneParkFinal(trời, thuyền)` trong script vẽ). Khi Minh chọn xong, `trang-chao.html` sẽ được làm lại theo lựa chọn.
+
 | File | Là gì |
 |---|---|
 | `xem-thu.html` | Trang xem thử: bản cuối ở iPad ngang 1180×820 và điện thoại dọc 390×844, trước và sau khi bấm Đăng ký |
