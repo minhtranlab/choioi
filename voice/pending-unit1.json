@@ -1,49 +1,44 @@
 [
  {
-  "part": "man0",
-  "en": "The red path goes to the garden behind our school.",
-  "vi": "Đường đỏ dẫn tới khu vườn sau trường mình.",
+  "part": "sothu",
+  "en": "Look! I can see a bird!",
+  "vi": "Nhìn kìa! Tớ thấy một chú chim!",
   "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "who": "Lam"
+ },
+ {
+  "part": "sothu",
+  "en": "Hi! I love the animals!",
+  "vi": "Chào bạn! Tớ yêu các bạn thú lắm!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "who": "Na"
+ },
+ {
+  "part": "sothu",
+  "en": "Hello! My map shows new places, coming soon!",
+  "vi": "Xin chào! Bản đồ của tớ có những chỗ mới, sắp mở rồi!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "who": "Ben"
+ },
+ {
+  "part": "ngoai",
+  "en": "Frog crossing!",
+  "vi": "Chú ếch qua đường!",
+  "needEn": false,
   "needVi": true,
   "slow": false
  },
  {
-  "part": "man0",
-  "en": "Seven pieces are missing. Maybe one is in the garden!",
-  "vi": "Còn thiếu bảy mảnh. Có khi một mảnh ở trong vườn đấy!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Now Ben walks over the little bridge to the big bush. Draw a line across!",
-  "vi": "Giờ Ben đi qua cây cầu nhỏ tới bụi cây to. Con vẽ đường ngang nhé!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Ben is at the big bush!",
-  "vi": "Ben tới bụi cây to rồi!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "Look! The big bush is shaking. Something is inside. Tap the bush!",
-  "vi": "Nhìn kìa! Bụi cây to đang rung. Có gì ở trong. Con chạm vào bụi cây nhé!",
-  "needEn": true,
-  "needVi": true,
-  "slow": false
- },
- {
-  "part": "man0",
-  "en": "The second map piece was in the big bush!",
-  "vi": "Mảnh bản đồ thứ hai ở trong bụi cây to!",
-  "needEn": true,
+  "part": "ngoai",
+  "en": "Now a game: Frog crossing!",
+  "vi": "Giờ chơi trò Chú ếch qua đường!",
+  "needEn": false,
   "needVi": true,
   "slow": false
  }

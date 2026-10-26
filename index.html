@@ -6244,9 +6244,10 @@ function isoTap(W,o){
   if(o.toy){ toyPlay(W,o); if(W.onToy) W.onToy(o); return }   // 23/10: a friend plays on it
   { const NM={tree:['A tree!','Cái cây!'],rock:['A rock!','Hòn đá!'],pond:['A pond!','Cái ao!'],bush:['A bush!','Bụi cây!']}, k=/^tree\d/.test(o.id)?'tree':NM[o.id]?o.id:null;
     if(k){ W.anim(o,k==='pond'?'ijump':'ishake',550); W.bubble(o,NM[k][isVi()?1:0]); tone(900,.1,'square',.04,0,1300); say(...NM[k],{polly:true,gap:0,q:false}).catch(()=>{}); return } }   // 22/10: Polly says the name, no right or wrong
-  if(o.id==='lam'){ W.anim(o,'ijump',650); W.bubble(o,'A bird!'); say('Look! I can see a bird!','Nhìn kìa! Lam thấy một chú chim!',{gap:0,q:false}).catch(()=>{}); W.fx(x+60,y-150,`<path d="M-14 0 q7 -10 14 0 q7 -10 14 0" stroke="${CK_PL}" stroke-width="4" fill="none" stroke-linecap="round"/>`,'ifxu',1400); return }
-  if(o.id==='na'){ W.anim(o,'ijump',650); W.bubble(o,'Hi!'); say('Hi! I love the animals!','Chào bạn! Na yêu các bạn thú lắm!',{gap:0,q:false}).catch(()=>{}); return }
-  if(o.id==='ben'){ W.anim(o,'ijump',650); W.bubble(o,'Hello!'); say('Hello! My map shows new places, coming soon!','Xin chào! Bản đồ của Ben có những chỗ mới, sắp mở rồi!',{gap:0,q:false}).catch(()=>{}); return }
+  // 26/10 (chat chính, theo chat Giọng): the friends speak for themselves, in their own voices (kid), "tớ" in Vietnamese
+  if(o.id==='lam'){ W.anim(o,'ijump',650); W.bubble(o,isVi()?'Chim kìa!':'A bird!'); say('Look! I can see a bird!','Nhìn kìa! Tớ thấy một chú chim!',{kid:'Lam',gap:0,q:false}).catch(()=>{}); W.fx(x+60,y-150,`<path d="M-14 0 q7 -10 14 0 q7 -10 14 0" stroke="${CK_PL}" stroke-width="4" fill="none" stroke-linecap="round"/>`,'ifxu',1400); return }
+  if(o.id==='na'){ W.anim(o,'ijump',650); W.bubble(o,isVi()?'Chào bạn!':'Hi!'); say('Hi! I love the animals!','Chào bạn! Tớ yêu các bạn thú lắm!',{kid:'Na',gap:0,q:false}).catch(()=>{}); return }
+  if(o.id==='ben'){ W.anim(o,'ijump',650); W.bubble(o,isVi()?'Xin chào!':'Hello!'); say('Hello! My map shows new places, coming soon!','Xin chào! Bản đồ của tớ có những chỗ mới, sắp mở rồi!',{kid:'Ben',gap:0,q:false}).catch(()=>{}); return }
   if(o.id==='choi'||o.id==='star'){ W.anim(W.spr.choi,'ijump',650); W.anim(W.spr.star,'igrow',600); SFX.chime(); say('Learn new things, and our star tree shines!','Con học được điều mới, cây sao lại sáng thêm!',{gap:0,q:false}).catch(()=>{}); return }
   if(o.isl||(o.soon&&!isoShut(IISL.find(z=>z.id===o.soon)))){ const I=IISL.find(z=>z.id===(o.isl||o.soon)); if(o.el) W.anim(o,'ijump',650); SFX.pop(); say(`The ${I.en.toLowerCase()}! New games will be here soon!`,`${I.vi}! Sắp có trò chơi mới ở đây đấy!`,{gap:0,q:false}).catch(()=>{}); return }
   if(o.soon){ W.anim(W.spr['q'+o.soon]||o,'ishake',550); SFX.soft(); if(S.goldKey&&o.soon==='s1') say('Your yellow key will open this island in the next chapter!','Chìa khoá vàng của con sẽ mở hòn đảo này ở chủ đề sau!',{gap:0,q:false}).catch(()=>{}); else say('Something new will be here soon!','Sắp có chỗ mới ở đây đấy!',{gap:0,q:false}).catch(()=>{}); return }
@@ -6938,7 +6939,7 @@ Object.assign(REWARD,{
   3:{name:'Bắt đồ chơi',vi:'Bắt đồ chơi',en:'Toy catch',art:()=>ART.basket(),run:()=>toyCatch()},
   4:{name:'Xe đẩy',vi:'Xe đẩy',en:'Shopping cart',art:()=>`<svg viewBox="0 0 120 90"><path d="M6 10 H22 L34 62 H100 L112 22 H28" fill="none" stroke="${INK}" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/><path d="M28 22 H112 L100 62 H34Z" fill="#E8484F" opacity=".8"/><circle cx="44" cy="78" r="8" fill="#fff" stroke="${INK}" stroke-width="5"/><circle cx="92" cy="78" r="8" fill="#fff" stroke="${INK}" stroke-width="5"/></svg>`,run:()=>shopCart()},
   5:{name:'Cần cẩu',vi:'Cần cẩu',en:'Crane tower',art:()=>ART.blocks(),run:()=>craneStack()},
-  6:{name:'Ếch qua đường',vi:'Ếch qua đường',en:'Frog crossing',art:()=>ART.frog(),run:()=>frogCross({reward:true}),play:()=>frogTrip()},   // play: My Games (22/10; 22/10 tối: a trip over three roads to the pond)
+  6:{name:'Chú ếch qua đường',vi:'Chú ếch qua đường',en:'Frog crossing',art:()=>ART.frog(),run:()=>frogCross({reward:true}),play:()=>frogTrip()},   // play: My Games (22/10; 22/10 tối: a trip over three roads to the pond)
   7:{name:'Rương kho báu',vi:'Rương kho báu',en:'Treasure chest',art:()=>CHEST_SVG(),run:()=>cave7({reward:true})}
 });
 
