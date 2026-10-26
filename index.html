@@ -2572,6 +2572,17 @@ function waitPlay(host){ const f=el(`<div class="wplay" aria-hidden="true"></div
   bub(); return ()=>{ alive=false; clearTimeout(tmr); stopR(); f.remove() } }
 function voiceStop(){ const c=VOICE.cur; VOICE.cur=null; if(c){ try{ c.src.onended=null; c.src.stop() }catch(e){} if(c.fin) c.fin() } }
 let SAYN=0;
+/* 26/10 (Minh: some of Lam's lines in Màn 0 had no sound). A friend's line that the child asks for with a tap ("Hi! I’m Lam!", the
+   friends in the city, the playground) used to be cut off by Chồi's next line (every line stops the one playing), or dropped when Chồi
+   was still talking. On the team page Lam, the first friend, was usually tapped while Chồi was still talking, so Lam said nothing,
+   then Na and Ben were heard. Now: a friend's line is never cut by Chồi: Chồi's next line waits for it (a short line, at most 3 s);
+   a tap while someone is talking keeps that friend's line and plays it right after (one waiting line, at most 4 s old). */
+let KIDP=null, KIDQ=null;
+function friendLine(en,vi,o){ if(KIDP) return;   // a friend is talking already: this tap only waves
+  if(SAYN){ KIDQ={en,vi,o,t:performance.now(),run:RUN}; return }
+  let end; KIDP=new Promise(r=>end=r); const done=()=>{ if(!end) return; const e=end; end=null; KIDP=null; e() };
+  say(en,vi,{q:false,gap:0,...o,free:true}).then(done,done); setTimeout(done,3000) }
+function kidQFlush(){ const q=KIDQ; KIDQ=null; if(q&&!KIDP&&!SAYN&&q.run===RUN&&!(RUN&&RUN.aborted)&&performance.now()-q.t<4000) friendLine(q.en,q.vi,q.o) }
 /* "Watch me first!", "Now it’s your turn!" and a review's "Remember: …" wait for the next question, so they are said
    over the new scene, right before the thing to do (never over an empty card) */
 function pendingPre(){ if(!RUN) return []; const out=(RUN.preQ||[]).splice(0); if(RUN.remindQ&&!RUN.inDemo){ out.push(RUN.remindQ); RUN.remindQ=null } return out }
@@ -2586,6 +2597,7 @@ const isBrief=()=>!!(RUN&&!RUN.games&&(RUN.lesson===0||RUN.lesson===7||RUN.mode=
    words stay out. A replayed level says the command as well. */
 const briefSkip=(en,opt)=>isBrief()&&!opt.kid&&!opt.polly&&!opt.replay&&!isQline(en,opt)&&((RUN.inDemo&&!opt.one)||(!RUN.gate&&!opt._pre&&!opt.one));
 function say(en,vi,opt={}){
+  if(KIDP&&!opt.free){ const r=RUN; return KIDP.then(()=>{ if(r&&r.aborted) throw ABORT; return say(en,vi,opt) }) }   // 26/10: never over a friend's tapped line
   if(briefSkip(en,opt)){ (window.__briefSkipped=window.__briefSkipped||[]).push(en); return Promise.resolve() }
   if(RUN&&!opt._pre&&!opt.replay&&!opt.kid&&!opt.polly&&((RUN.preQ&&RUN.preQ.length)||(RUN.remindQ&&!RUN.inDemo))&&isQline(en,opt)){ const pre=pendingPre(); return pre.reduce((p,l)=>p.then(()=>say(l[0],l[1],{_pre:1,gap:200})).then(()=>l[2]?sleep(l[2]):0),Promise.resolve()).then(()=>say(en,vi,{...opt,_pre:1})) }
   if(RUN&&!RUN.gate&&!RUN.inDemo&&!opt.kid&&!opt.polly&&!opt.replay&&isQline(en,opt)) RUN.gate=true;   // 23/10 (vòng 5): after the question, the page talks to the child (counting, praise, what happens)
@@ -2594,7 +2606,7 @@ function say(en,vi,opt={}){
   setCaption((V&&opt.showVi)||opt.show||text,sub===text?(opt.show?'':''):sub);   // show: how to write what is said ("ap-ple" for the voice's "ap-pull"); showVi: the same in the Vietnamese mode
   return new Promise((res,rej)=>{
     let done=false;
-    SAYN++; const fin=()=>{ if(done) return; done=true; SAYN=Math.max(0,SAYN-1); Music.level(1); if(!opt.keepMood) mood('idle'); setTimeout(()=>{ abortFns.delete(ab); if(RUN&&RUN.aborted) rej(ABORT); else res() }, FAST?5:(opt.gap??gapNow())) };
+    SAYN++; const fin=()=>{ if(done) return; done=true; SAYN=Math.max(0,SAYN-1); if(!SAYN&&KIDQ) kidQFlush(); Music.level(1); if(!opt.keepMood) mood('idle'); setTimeout(()=>{ abortFns.delete(ab); if(RUN&&RUN.aborted) rej(ABORT); else res() }, FAST?5:(opt.gap??gapNow())) };
     const ab=()=>{ try{speechSynthesis.cancel()}catch(e){} voiceStop(); if(!done) SAYN=Math.max(0,SAYN-1); done=true; rej(ABORT) }; abortFns.add(ab);
     const rate=Math.min(2,(V?Math.min(1,(opt.rate||RATE)+.18):(opt.rate||RATE))*(inDev()&&DEV.fast?1.6:1)), est=(700+text.length*85)/rate;
     if(FAST){ setTimeout(fin,10); return }
@@ -5584,8 +5596,8 @@ function sceneTap(e){
   const anim=(n,cls,ms=800)=>{ n.classList.remove(cls); void n.getBoundingClientRect(); n.classList.add(cls); setTimeout(()=>n.classList.remove(cls),ms) };
   const talk=(en,vi,o={})=>{ if(!SAYN) say(en,vi,{q:false,gap:0,...o}).catch(()=>{}) };
   if(a){ const w=a.dataset.who; anim(a,'tapped',700);
-    if(CAST.includes(w)){ SFX.pop(); talk(`Hi! I’m ${w}!`,`Chào bạn! Mình là ${w}!`,{kid:w}); poseFor(a,'vay-chao',1400) }   // 22/10: they wave when they say hello
-    else if(w==='Polly'){ poseFor(a,'noi',1200); talk('Hello! Hello!','Xin chào! Xin chào!',{polly:true}) ; if(SAYN) tone(900,.12,'square',.05,0,1300) }
+    if(CAST.includes(w)){ SFX.pop(); friendLine(`Hi! I’m ${w}!`,`Chào bạn! Mình là ${w}!`,{kid:w}); poseFor(a,'vay-chao',1400) }   // 22/10: they wave when they say hello
+    else if(w==='Polly'){ poseFor(a,'noi',1200); if(SAYN) tone(900,.12,'square',.05,0,1300); friendLine('Hello! Hello!','Xin chào! Xin chào!',{polly:true}) }
     else if(w==='Chồi'){ SFX.pop(); talk('Hi! I’m Chồi!','Chào bạn! Chồi đây!'); poseFor(a,'vay-chao',1400) }
     else { SFX.pop() }
     return true }
@@ -6150,7 +6162,7 @@ async function toyPlay(W,o){ const T=ITOY[o.toy]; if(!T||o.playing) return; o.pl
   const sv=o.el.querySelector('svg'), keep=sv.innerHTML, hid=T.who.map(n=>W.spr[n.toLowerCase()]).filter(Boolean);
   hid.forEach(k=>k.el.style.visibility='hidden'); sv.innerHTML=T.play(); SFX.pop();
   const g=sv.querySelector('.tp-slide,.tp-swing,.tp-saw'), M=TOYMOVE[o.toy]; if(g&&M) g.animate(M[0],{...M[1],duration:M[1].duration*SPEED});
-  W.bubble(o,T.line[isVi()?1:0]); say(...T.line,{kid:T.who[0],gap:0,q:false}).catch(()=>{});
+  W.bubble(o,T.line[isVi()?1:0]); friendLine(...T.line,{kid:T.who[0]});
   await sleep(T.ms); if(o.el&&o.el.isConnected) sv.innerHTML=keep; hid.forEach(k=>k.el.style.visibility=''); o.playing=false }
 const IBALL={vb:'0 0 40 40',w:26,h:26,s:unwrap(PROP['qua-bong']||'')};   // 23/10 (vòng 4): art/kit/dao-khoi/qua-bong
 // the garden island waits for Chapter 5 (Plants)
@@ -6245,9 +6257,9 @@ function isoTap(W,o){
   { const NM={tree:['A tree!','Cái cây!'],rock:['A rock!','Hòn đá!'],pond:['A pond!','Cái ao!'],bush:['A bush!','Bụi cây!']}, k=/^tree\d/.test(o.id)?'tree':NM[o.id]?o.id:null;
     if(k){ W.anim(o,k==='pond'?'ijump':'ishake',550); W.bubble(o,NM[k][isVi()?1:0]); tone(900,.1,'square',.04,0,1300); say(...NM[k],{polly:true,gap:0,q:false}).catch(()=>{}); return } }   // 22/10: Polly says the name, no right or wrong
   // 26/10 (chat chính, theo chat Giọng): the friends speak for themselves, in their own voices (kid), "tớ" in Vietnamese
-  if(o.id==='lam'){ W.anim(o,'ijump',650); W.bubble(o,isVi()?'Chim kìa!':'A bird!'); say('Look! I can see a bird!','Nhìn kìa! Tớ thấy một chú chim!',{kid:'Lam',gap:0,q:false}).catch(()=>{}); W.fx(x+60,y-150,`<path d="M-14 0 q7 -10 14 0 q7 -10 14 0" stroke="${CK_PL}" stroke-width="4" fill="none" stroke-linecap="round"/>`,'ifxu',1400); return }
-  if(o.id==='na'){ W.anim(o,'ijump',650); W.bubble(o,isVi()?'Chào bạn!':'Hi!'); say('Hi! I love the animals!','Chào bạn! Tớ yêu các bạn thú lắm!',{kid:'Na',gap:0,q:false}).catch(()=>{}); return }
-  if(o.id==='ben'){ W.anim(o,'ijump',650); W.bubble(o,isVi()?'Xin chào!':'Hello!'); say('Hello! My map shows new places, coming soon!','Xin chào! Bản đồ của tớ có những chỗ mới, sắp mở rồi!',{kid:'Ben',gap:0,q:false}).catch(()=>{}); return }
+  if(o.id==='lam'){ W.anim(o,'ijump',650); W.bubble(o,isVi()?'Chim kìa!':'A bird!'); friendLine('Look! I can see a bird!','Nhìn kìa! Tớ thấy một chú chim!',{kid:'Lam'}); W.fx(x+60,y-150,`<path d="M-14 0 q7 -10 14 0 q7 -10 14 0" stroke="${CK_PL}" stroke-width="4" fill="none" stroke-linecap="round"/>`,'ifxu',1400); return }
+  if(o.id==='na'){ W.anim(o,'ijump',650); W.bubble(o,isVi()?'Chào bạn!':'Hi!'); friendLine('Hi! I love the animals!','Chào bạn! Tớ yêu các bạn thú lắm!',{kid:'Na'}); return }
+  if(o.id==='ben'){ W.anim(o,'ijump',650); W.bubble(o,isVi()?'Xin chào!':'Hello!'); friendLine('Hello! My map shows new places, coming soon!','Xin chào! Bản đồ của tớ có những chỗ mới, sắp mở rồi!',{kid:'Ben'}); return }
   if(o.id==='choi'||o.id==='star'){ W.anim(W.spr.choi,'ijump',650); W.anim(W.spr.star,'igrow',600); SFX.chime(); say('Learn new things, and our star tree shines!','Con học được điều mới, cây sao lại sáng thêm!',{gap:0,q:false}).catch(()=>{}); return }
   if(o.isl||(o.soon&&!isoShut(IISL.find(z=>z.id===o.soon)))){ const I=IISL.find(z=>z.id===(o.isl||o.soon)); if(o.el) W.anim(o,'ijump',650); SFX.pop(); say(`The ${I.en.toLowerCase()}! New games will be here soon!`,`${I.vi}! Sắp có trò chơi mới ở đây đấy!`,{gap:0,q:false}).catch(()=>{}); return }
   if(o.soon){ W.anim(W.spr['q'+o.soon]||o,'ishake',550); SFX.soft(); if(S.goldKey&&o.soon==='s1') say('Your yellow key will open this island in the next chapter!','Chìa khoá vàng của con sẽ mở hòn đảo này ở chủ đề sau!',{gap:0,q:false}).catch(()=>{}); else say('Something new will be here soon!','Sắp có chỗ mới ở đây đấy!',{gap:0,q:false}).catch(()=>{}); return }
@@ -6325,8 +6337,8 @@ async function isoGiveOther(W,o){ const f=W.sel, g=W.hold, F=ZFOOD[f]; W.hold=nu
   if(g&&to){ const fr={x:parseFloat(g.style.left)||to.x,y:parseFloat(g.style.top)||to.y}; await g.animate([{left:fr.x+'px',top:fr.y+'px'},{left:to.x+'px',top:to.y+'px'}],{duration:380,easing:'ease-in',fill:'forwards'}).finished.catch(()=>{}) }
   const kid={lam:'Lam',na:'Na',ben:'Ben'}[o.id], V=isVi(), q={gap:0,q:false}; let eat=false;
   if(kid){ W.anim(o,'ijump',650);
-    if(KID_FOOD.includes(f)){ eat=true; W.heart(o); W.bubble(o,V?'Ngon!':'Yum!'); say(`Yum! I love ${F.en}! Thank you!`,`Ngon quá! Tớ thích ${F.vi} lắm! Cảm ơn bạn!`,{...q,kid}).catch(()=>{}) }
-    else { const a=ZA[FOOD_FOR[f]]; W.bubble(o,V?'Hi hi!':'Hee hee!'); say(`Hee hee! ${cap(F.en)}? I’m not a ${a.en}!`,`Hi hi! ${cap(F.vi)} á? Tớ đâu phải ${a.vi.replace(/^(chú|bạn) /,'')}!`,{...q,kid}).catch(()=>{}) } }
+    if(KID_FOOD.includes(f)){ eat=true; W.heart(o); W.bubble(o,V?'Ngon!':'Yum!'); friendLine(`Yum! I love ${F.en}! Thank you!`,`Ngon quá! Tớ thích ${F.vi} lắm! Cảm ơn bạn!`,{kid}) }
+    else { const a=ZA[FOOD_FOR[f]]; W.bubble(o,V?'Hi hi!':'Hee hee!'); friendLine(`Hee hee! ${cap(F.en)}? I’m not a ${a.en}!`,`Hi hi! ${cap(F.vi)} á? Tớ đâu phải ${a.vi.replace(/^(chú|bạn) /,'')}!`,{kid}) } }
   else if(o.id==='polly'){ W.pollyStop=performance.now()+2200;
     if(KID_FOOD.includes(f)){ eat=true; const nm=f==='banana'?['Banana','Chuối']:['Watermelon','Dưa hấu']; say(`Yum! ${nm[0]}! ${nm[0]}!`,`Ngon! ${nm[1]}! ${nm[1]}!`,{...q,polly:true}).catch(()=>{}) } else say('No, no! Polly likes fruit!','Không, không! Polly thích hoa quả cơ!',{...q,polly:true}).catch(()=>{}) }
   else if(o.id==='choi'||o.id==='star'){ W.anim(W.spr.choi,'ijump',650); say('Thank you! But I drink sunshine and water.','Cảm ơn con! Nhưng Chồi chỉ uống nắng và nước thôi.',q).catch(()=>{}) }
