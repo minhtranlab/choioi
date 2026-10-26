@@ -14818,6 +14818,41 @@
 "part": "ngoai",
 "who": "chồi",
 "g": "ngoai"
+},
+"1plyjc0": {
+"k": "@Lam:Nhìn kìa! Tớ thấy một chú chim!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "sothu",
+"who": "Lam",
+"g": "sothu"
+},
+"wai8ze": {
+"k": "@Na:Chào bạn! Tớ yêu các bạn thú lắm!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "sothu",
+"who": "Na",
+"g": "sothu"
+},
+"1x10vm5": {
+"k": "@Ben:Xin chào! Bản đồ của tớ có những chỗ mới, sắp mở rồi!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "sothu",
+"who": "Ben",
+"g": "sothu"
+},
+"2r4yun": {
+"k": "Chú ếch qua đường!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
+},
+"5u675x": {
+"k": "Giờ chơi trò Chú ếch qua đường!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "ngoai",
+"who": "chồi",
+"g": "ngoai"
 }
 }
 }

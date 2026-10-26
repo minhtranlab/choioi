@@ -14489,6 +14489,27 @@
 "part": "ngoai",
 "who": "chồi",
 "g": "ngoai"
+},
+"14bk4w": {
+"k": "@Lam:Look! I can see a bird!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "sothu",
+"who": "Lam",
+"g": "sothu"
+},
+"x4s5k0": {
+"k": "@Na:Hi! I love the animals!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "sothu",
+"who": "Na",
+"g": "sothu"
+},
+"9uq7r8": {
+"k": "@Ben:Hello! My map shows new places, coming soon!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "sothu",
+"who": "Ben",
+"g": "sothu"
 }
 }
 }

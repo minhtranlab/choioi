@@ -542,9 +542,9 @@
 [
 "en",
 "Hello! My map shows new places, coming soon!",
-"Chồi",
+"Ben",
 "bản 3",
-"Hello! My map shows new places, coming soon!",
+"@Ben:Hello! My map shows new places, coming soon!",
 "sothu",
 "src"
 ],
@@ -623,9 +623,9 @@
 [
 "en",
 "Hi! I love the animals!",
-"Chồi",
+"Na",
 "bản 3",
-"Hi! I love the animals!",
+"@Na:Hi! I love the animals!",
 "sothu",
 "src"
 ],
@@ -785,9 +785,9 @@
 [
 "en",
 "Look! I can see a bird!",
-"Chồi",
+"Lam",
 "bản 3",
-"Look! I can see a bird!",
+"@Lam:Look! I can see a bird!",
 "sothu",
 "src"
 ],
@@ -2116,10 +2116,10 @@
 ],
 [
 "vi",
-"Chào bạn! Na yêu các bạn thú lắm!",
-"Chồi",
+"Chào bạn! Tớ yêu các bạn thú lắm!",
+"Na",
 "bản 3",
-"Chào bạn! Na yêu các bạn thú lắm!",
+"@Na:Chào bạn! Tớ yêu các bạn thú lắm!",
 "sothu",
 "src"
 ],
@@ -2341,6 +2341,15 @@
 ],
 [
 "vi",
+"Chú ếch qua đường!",
+"Chồi",
+"bản 3",
+"Chú ếch qua đường!",
+"ngoai",
+"games"
+],
+[
+"vi",
 "Chơi các màn để tìm thêm nhạc nhé!",
 "Chồi",
 "bản 3",
@@ -2593,6 +2602,15 @@
 ],
 [
 "vi",
+"Giờ chơi trò Chú ếch qua đường!",
+"Chồi",
+"bản 3",
+"Giờ chơi trò Chú ếch qua đường!",
+"ngoai",
+"mix"
+],
+[
+"vi",
 "Giờ chơi trò Chọc bóng bay!",
 "Chồi",
 "bản 3",
@@ -2642,15 +2660,6 @@
 "Chồi",
 "bản 3",
 "Giờ chơi trò Đèn pin!",
-"ngoai",
-"mix"
-],
-[
-"vi",
-"Giờ chơi trò Ếch qua đường!",
-"Chồi",
-"bản 3",
-"Giờ chơi trò Ếch qua đường!",
 "ngoai",
 "mix"
 ],
@@ -3421,20 +3430,20 @@
 ],
 [
 "vi",
-"Nhìn kìa! Lam thấy một chú chim!",
-"Chồi",
-"bản 3",
-"Nhìn kìa! Lam thấy một chú chim!",
-"sothu",
-"src"
-],
-[
-"vi",
 "Nhìn kìa! Một sân chơi!",
 "Chồi",
 "bản 3",
 "Nhìn kìa! Một sân chơi!",
 "man7",
+"src"
+],
+[
+"vi",
+"Nhìn kìa! Tớ thấy một chú chim!",
+"Lam",
+"bản 3",
+"@Lam:Nhìn kìa! Tớ thấy một chú chim!",
+"sothu",
 "src"
 ],
 [
@@ -3646,10 +3655,10 @@
 ],
 [
 "vi",
-"Xin chào! Bản đồ của Ben có những chỗ mới, sắp mở rồi!",
-"Chồi",
+"Xin chào! Bản đồ của tớ có những chỗ mới, sắp mở rồi!",
+"Ben",
 "bản 3",
-"Xin chào! Bản đồ của Ben có những chỗ mới, sắp mở rồi!",
+"@Ben:Xin chào! Bản đồ của tớ có những chỗ mới, sắp mở rồi!",
 "sothu",
 "src"
 ],
@@ -3697,14 +3706,5 @@
 "Đảo Kho Báu!",
 "ngoai",
 "mymap"
-],
-[
-"vi",
-"Ếch qua đường!",
-"Chồi",
-"bản 3",
-"Ếch qua đường!",
-"ngoai",
-"games"
 ]
 ]
