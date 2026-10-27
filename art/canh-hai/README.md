@@ -1,6 +1,8 @@
 # Cảnh hài Unit 1 (27/10) · bản mẫu animation
 
-Sáu cảnh hài ngắn đã chốt ở `claude/chot-canh-hai-unit1-27-10.md`. Do chat **[App] Cảnh hài** làm. Chưa gắn vào `index.html` (chat U1 gắn sau).
+Sáu cảnh hài ngắn đã chốt ở `claude/chot-canh-hai-unit1-27-10.md`. Do chat **[App] Cảnh hài** làm.
+
+**Đã gắn vào `index.html` (27/10, chat U1):** `python3 tools/art/embed_canh_hai.py` chép `canh-hai-chung.js`, `canh-hai-hinh.js`, `man-1.js` … `man-6.js` thành một khối `<script>` (`CANH-HAI:START` … `CANH-HAI:END`) ngay trước script của app. Sửa cảnh ở đây rồi chạy lại lệnh đó (chạy lại `dong_goi.py` trước nếu đổi hình). Trong app: `canhHai(li, box, o)` (gọi cảnh, chờ cả câu nói của cảnh), `canhHaiHere(li)` (chỉ trong màn, không Fun Mix / My Games, không khi máy bật giảm chuyển động, không ở `#fast`/`#auto`), `canhHaiAm` (bảng tiếng). Khác bản mẫu: **Màn 2** cành mọc từ thân cây sang **trái** (x 29, b 36, w 22, lật ngang; dơi ở .72, Polly đậu ở .4 tính từ đầu trái), vì bên phải thân cây là chỗ các bạn trốn và Polly treo ngược sẽ che mặt bạn; **Màn 5** các bạn đứng ở x 8, 21, 34 (thêm Ben), mái nằm ở x 64, b 2 trước ngôi nhà, `diXa` 5; **Màn 6** thùng rác ở góc **trái** (x 9), vì góc phải là nút vỗ tay.
 
 **Vòng 2 (27/10 chiều, chat chính chốt góp ý của Minh trên bản `1a8e55b`):** Màn 1, Màn 6 giữ nguyên. Màn 2: cành dơi treo mọc ra từ thân cây. Màn 3: mèo nhảy hẳn ra khỏi rổ, đội cái trống úp ngược (như cái xô), đứng cho bé nhìn rõ (vòng 3 đổi lại con vịt). Màn 4: thả nải chuối xong Polly nói "Big bananas! Big bananas!" rồi thở hổn hển (không dùng "Heavy", Unit 1 chưa dạy). Màn 5: Polly trốn sẵn dưới mái từ đầu; mái tự đi → mỗi bạn "Oh!" → mái nhấc lên, lộ Polly "Triangle! Triangle!" → bay đi → mái hạ; sau đó cần cẩu mới nhấc mái.
 

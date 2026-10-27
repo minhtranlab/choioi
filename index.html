@@ -883,7 +883,8 @@ html.tv .wrap-kid:not(.map) .ptip{display:none}
 
 /* ================= STICKER SKIN (chosen 16/10/2026): thick plum outlines, hard shadows, yellow dotted ground ================= */
 :root{--pl:#3A1B49;--stk-sun2:#FFD21F;--stk-sub:#FFE9A6}
-.stk{filter:drop-shadow(2.5px 0 0 #fff) drop-shadow(-2.5px 0 0 #fff) drop-shadow(0 2.5px 0 #fff) drop-shadow(0 -2.5px 0 #fff) drop-shadow(3px 4px 0 rgba(58,27,73,.9))}
+.stk,#card .ch-sp:not(.ch-muon) .ch-q{filter:drop-shadow(2.5px 0 0 #fff) drop-shadow(-2.5px 0 0 #fff) drop-shadow(0 2.5px 0 #fff) drop-shadow(0 -2.5px 0 #fff) drop-shadow(3px 4px 0 rgba(58,27,73,.9))}
+.ch-art{position:absolute;translate:-50% 0;pointer-events:none;line-height:0}.ch-art svg{display:block;width:100%;height:auto;overflow:visible}   /* 27/10: the comedy scenes' things placed by the app (branch, bat, table, bin) */
 .dock .mascot,.home .mascot{filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(4px 5px 0 rgba(58,27,73,.9))}
 .scene{background-color:#FBB516;background-image:radial-gradient(circle,#FFD866 4px,transparent 4.5px),radial-gradient(circle,#FFD866 4px,transparent 4.5px);background-size:36px 36px;background-position:0 0,18px 18px}
 .scene .hills,.scene .cloud{display:none}
@@ -2220,6 +2221,682 @@ body.tcpage #turnme{display:none!important}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="tc-stk" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB"><feMorphology in="SourceAlpha" operator="dilate" radius="7" result="d"/><feFlood flood-color="#FFFFFF"/><feComposite in2="d" operator="in" result="w"/><feOffset in="d" dx="5" dy="7" result="o"/><feFlood flood-color="#3A1B49" flood-opacity=".85"/><feComposite in2="o" operator="in" result="sh"/><feMerge><feMergeNode in="sh"/><feMergeNode in="w"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs></svg>
 <div id="root"></div>
 
+<script>/* CANH-HAI:START · the comedy scenes of Unit 1 (art/canh-hai, chat [App] Cảnh hài; Minh approved 8640864).
+   Made by tools/art/embed_canh_hai.py: do not edit here, edit art/canh-hai and run it again. */
+/* ---- art/canh-hai/canh-hai-chung.js ---- */
+/* Cảnh hài Unit 1 (27/10) · phần chung cho 6 cảnh (man-1.js … man-6.js).
+   Không dùng thư viện ngoài: chỉ Web Animations API (el.animate) và một ít CSS.
+   Cách gọi một cảnh: const r = await CanhHai.man1(box, {…});  box là khung cảnh (trong app là .sbox, tỉ lệ 200/140).
+   Mọi vị trí tính bằng % của box, giống kidAt(): x = tâm theo chiều ngang, b = đáy tính từ dưới lên, w = bề rộng.
+   Tuỳ chọn chung cho mọi cảnh:
+     speed   hệ số thời gian (1 = bình thường, 2 = chậm gấp đôi; trong app truyền SPEED)
+     signal  AbortSignal: huỷ giữa chừng (bấm lại) → dọn sạch, Promise vẫn resolve
+     am(key, chu, ai)  gọi ở mỗi chỗ có tiếng động / câu nói (app phát tiếng ở đây; ai = ai nói, vd. 'Lam'); xem bảng trong README
+     chu     true: hiện chữ nhỏ "[bụp]", "Triangle! Triangle!" (mặc định: true khi không có am)
+     giamChuyenDong  true/false: ép bật/tắt; mặc định theo máy (prefers-reduced-motion) → bật thì bỏ qua cảnh
+   Promise trả về { xong:true, xoa() } (xoa() gỡ mọi thứ cảnh còn để lại), hoặc { boQua:true } khi máy bật giảm chuyển động. */
+(function () {
+  'use strict';
+  const CH = window.CanhHai = window.CanhHai || {};
+  CH.HINH = CH.HINH || {};
+  const HUY = CH.HUY = { huy: true };
+
+  CH.giamChuyenDong = () => !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  CH.css = (id, text) => { if (document.getElementById(id)) return; const s = document.createElement('style'); s.id = id; s.textContent = text; document.head.append(s) };
+
+  CH.css('ch-chung', `
+.ch-sp{position:absolute;translate:-50% 0;pointer-events:none;z-index:6;line-height:0}
+.ch-sp>.ch-in{position:relative;transform-origin:50% 100%}
+.ch-q{position:relative}.ch-q.lat{transform:scaleX(-1)}
+.ch-sp svg{display:block;width:100%;height:auto;overflow:visible}
+.ch-pose>i{display:none}.ch-pose>i.on{display:block}
+.ch-lop{position:absolute;inset:0}.ch-lop>svg{position:absolute;left:0;top:0}
+.ch-bay .ch-pose>i.on{display:none}
+.ch-bay .ch-pose>i.f1,.ch-bay .ch-pose>i.f2{display:block}
+.ch-bay .ch-pose>i.f2{position:absolute;left:0;top:0;width:100%}
+.ch-bay .ch-pose>i.f1{animation:chVoA var(--ch-vo,.3s) steps(1) infinite}
+.ch-bay .ch-pose>i.f2{animation:chVoB var(--ch-vo,.3s) steps(1) infinite}
+@keyframes chVoA{0%{visibility:visible}50%{visibility:hidden}}
+@keyframes chVoB{0%{visibility:hidden}50%{visibility:visible}}
+.ch-bay .ch-lop.theo-bay{transform:translateY(-3.846%)}
+.ch-chu{position:absolute;z-index:30;translate:-50% 0;background:#fff;color:#361D46;font:900 clamp(10px,4cqh,18px)/1.15 Nunito,system-ui,sans-serif;padding:.22em .6em;border-radius:999px;border:2px solid #361D46;white-space:nowrap;pointer-events:none;box-shadow:0 2px 0 rgba(54,29,70,.25)}
+.ch-chu.loi{background:#FFF3C4}
+.ch-hat{position:absolute;pointer-events:none;z-index:9;border-radius:50%}
+`);
+
+  /** một lần chạy cảnh: hẹn giờ, chuyển động, hình tạm, dọn dẹp */
+  function ctx(box, o) {
+    const C = { box, o, sp: Math.max(.05, +o.speed || 1), anims: [], timers: [], rejs: [], els: [], back: [], dead: false };
+    C.chu = o.chu != null ? !!o.chu : !o.am;
+    const sig = o.signal;
+    const stop = () => { if (C.dead) return; C.dead = true; C.timers.forEach(clearTimeout); C.rejs.forEach(r => r(HUY)); C.anims.forEach(a => { try { a.cancel() } catch (e) {} }) };
+    if (sig) { if (sig.aborted) stop(); else sig.addEventListener('abort', stop, { once: true }) }
+    C.stop = stop;
+    C.ms = t => t * C.sp;
+    C.cho = t => new Promise((res, rej) => { if (C.dead) return rej(HUY); C.rejs.push(rej); C.timers.push(setTimeout(res, C.ms(t))) });
+    /** chạy một chuyển động trên el; chờ xong. giu: giữ trạng thái cuối */
+    C.an = (el, kf, t, { ez = 'ease-in-out', giu = false, lap = 1, tre = 0, dir } = {}) => {
+      if (C.dead) return Promise.reject(HUY);
+      const a = el.animate(kf, { duration: C.ms(t), easing: ez, fill: giu ? 'forwards' : 'none', iterations: lap, delay: C.ms(tre), direction: dir });
+      C.anims.push(a); return a.finished.catch(() => { throw HUY })
+    };
+    C.chay = (el, kf, t, opt) => { C.an(el, kf, t, opt).catch(() => {}) };   // chạy mà không chờ
+    /** khung box (px) */
+    C.R = () => box.getBoundingClientRect();
+    /** vị trí một phần tử trong box, theo %: x tâm, b đáy, w rộng, h cao */
+    C.rect = el => { const r = C.R(), q = el.getBoundingClientRect(); return { x: (q.left + q.width / 2 - r.left) / r.width * 100, b: (r.bottom - q.bottom) / r.height * 100, w: q.width / r.width * 100, h: q.height / r.height * 100 } };
+    /** một hình (svg hoặc tên trong CanhHai.HINH) đặt vào box; W×H là khung svg */
+    C.hinh = (art, { x = 50, b = 0, w = 10, z = 6, lat = false, cls = '' } = {}) => {
+      const svg = CH.HINH[art] || art;
+      const s = document.createElement('div'); s.className = 'ch-sp ' + cls;
+      s.innerHTML = `<div class="ch-in"><div class="ch-q${lat ? ' lat' : ''}">${svg}</div></div>`;
+      const vb = (svg.match(/viewBox="([^"]+)"/) || [, '0 0 100 100'])[1].split(/[\s,]+/).map(Number);
+      s.W = vb[2]; s.H = vb[3]; s.w = w; s.lat = lat;
+      C.dat(s, x, b); s.style.width = w + '%'; s.style.zIndex = z;
+      box.append(s); C.els.push(s); return s
+    };
+    C.dat = (s, x, b) => { s.x = x; s.b = b; s.style.left = x + '%'; s.style.bottom = b + '%' };
+    /** cao của hình s theo % box */
+    C.cao = s => s.w * (s.H / s.W) * (C.R().width / C.R().height);
+    /** đặt sao cho điểm (ax, ay) trong khung svg của s nằm ở (tx, tb) của box; trả {x, b} */
+    C.neo = (s, ax, ay, tx, tb) => { const axx = s.lat ? s.W - ax : ax; return { x: tx - (axx / s.W - .5) * s.w, b: tb - (1 - ay / s.H) * C.cao(s) } };
+    /** điểm (ax, ay) của khung svg s đang ở đâu trong box (%) */
+    C.diem = (s, ax, ay) => { const axx = s.lat ? s.W - ax : ax; return { x: s.x + (axx / s.W - .5) * s.w, b: s.b + (1 - ay / s.H) * C.cao(s) } };
+    /** di chuyển theo một hay nhiều điểm {x, b}; chờ xong */
+    C.di = async (s, pts, t, ez = 'ease-in-out') => {
+      pts = Array.isArray(pts) ? pts : [pts];
+      const kf = [{ left: s.x + '%', bottom: s.b + '%' }, ...pts.map(p => ({ left: (p.x ?? s.x) + '%', bottom: (p.b ?? s.b) + '%', ...(p.o != null ? { offset: p.o } : {}) }))];
+      const end = pts[pts.length - 1];
+      await C.an(s, kf, t, { ez, giu: true });
+      C.dat(s, end.x ?? s.x, end.b ?? s.b); C.anims.filter(a => a.effect && a.effect.target === s).forEach(a => { if (a.playState === 'finished') a.cancel() })
+    };
+    /** chuyển động trong (xoay, nhún, lắc) của hình s; không dời chỗ */
+    C.lam = (s, kf, t, opt) => C.an(s.firstElementChild, kf, t, opt);
+    /** lật mặt hình s (quay trái / phải) */
+    C.quay = (s, lat) => { s.lat = lat; s.querySelector('.ch-q').classList.toggle('lat', lat) };
+    /** tiếng động / câu nói: báo cho app (o.am), và hiện chữ nhỏ nếu cần. at: hình hoặc {x, b} */
+    C.am = (key, chu, at, { loi = false, t = 1300, ai } = {}) => {
+      try { o.am && o.am(key, chu, ai) } catch (e) {}
+      if (!C.chu || C.dead) return;
+      let x = 50, b = 70;
+      if (at && at.nodeType) { const r = C.rect(at); x = r.x; b = r.b + r.h + 2 } else if (at) { x = at.x; b = at.b }
+      const c = document.createElement('div'); c.className = 'ch-chu' + (loi ? ' loi' : ''); c.textContent = chu;
+      c.style.left = Math.max(10, Math.min(90, x)) + '%'; c.style.bottom = Math.min(90, b) + '%';
+      box.append(c); C.els.push(c);
+      const cw = c.getBoundingClientRect().width / C.R().width * 100;   // chữ không tràn ra ngoài khung
+      c.style.left = Math.max(cw / 2 + 1, Math.min(99 - cw / 2, x)) + '%';
+      c.animate([{ opacity: 0, transform: 'scale(.6)' }, { opacity: 1, transform: 'scale(1.08)', offset: .15 }, { opacity: 1, transform: 'scale(1)', offset: .3 }, { opacity: 1, offset: .8 }, { opacity: 0 }], { duration: C.ms(t) }).finished.then(() => c.remove(), () => c.remove())
+    };
+    /** mượn một phần tử có sẵn trong cảnh (rổ, mái nhà, mèo…): một bản sao đặt đúng chỗ để cảnh tự chuyển động; bản gốc ẩn tạm */
+    C.muon = (el, { z = 6 } = {}) => {
+      const r = C.rect(el), cl = el.cloneNode(true);
+      cl.removeAttribute('id'); cl.querySelectorAll('[id]').forEach(n => n.removeAttribute('id'));
+      cl.style.cssText += ';position:relative;left:auto;right:auto;top:auto;bottom:auto;inset:auto;translate:none;transform:none;rotate:none;scale:none;width:100%;height:auto;margin:0;animation:none;transition:none;visibility:visible;opacity:1';
+      const s = document.createElement('div'); s.className = 'ch-sp ch-muon';
+      const inn = document.createElement('div'); inn.className = 'ch-in'; const q = document.createElement('div'); q.className = 'ch-q'; q.append(cl); inn.append(q); s.append(inn);
+      s.W = 100; s.H = 100 * r.h / r.w * (C.R().height / C.R().width); s.w = r.w; s.lat = false;
+      C.dat(s, r.x, r.b); s.style.width = r.w + '%'; s.style.zIndex = z;
+      box.append(s); C.els.push(s);
+      const was = el.style.visibility; el.style.visibility = 'hidden'; C.back.push(() => { el.style.visibility = was });
+      s.goc = el; s.tra = () => { el.style.visibility = was; s.remove() };
+      return s
+    };
+    /** Polly: một hình có mọi tư thế cần (tu = 'dung', 'noi', 'bay' (vỗ cánh), 'treo-nguoc', 'ngu', 'tha', 'tho-1'…) */
+    C.polly = ({ x = 50, b = 50, w = 11, z = 7, lat = true, tu = 'bay', voMs = 300 } = {}) => {
+      const P = n => CH.HINH['polly-' + n] || '';
+      const poses = ['dung', 'noi', 'treo-nguoc', 'ngu', 'tho-1', 'tho-2'];
+      const s = C.hinh(`<div class="ch-pose">${poses.map(p => `<i data-p="${p}">${P(p)}</i>`).join('')}<i class="f1">${P('bay-1')}</i><i class="f2">${P('bay-2')}</i></div>`, { x, b, w, z, lat, cls: 'ch-polly' });
+      s.W = 200; s.H = 260;
+      s.tu = n => {
+        s._tu = n; const pose = s.querySelector('.ch-pose');
+        s.classList.toggle('ch-bay', n === 'bay' || n === 'tha');
+        if (n === 'tha') { pose.querySelector('.f1').innerHTML = P('tha-1'); pose.querySelector('.f2').innerHTML = P('tha-2') }
+        else if (n === 'bay') { pose.querySelector('.f1').innerHTML = P('bay-1'); pose.querySelector('.f2').innerHTML = P('bay-2') }
+        pose.querySelectorAll('i[data-p]').forEach(i => i.classList.toggle('on', i.dataset.p === n))
+      };
+      s.vo = msV => s.style.setProperty('--ch-vo', C.ms(msV) + 'ms');
+      /** một lớp phủ cùng khung Polly (bọt trên mỏ, vỏ chuối đội đầu…); theoBay: dời lên theo thân khi bay */
+      s.lop = (html, { theoBay = true, cls = '' } = {}) => { const l = document.createElement('div'); l.className = 'ch-lop ' + (theoBay ? 'theo-bay ' : '') + cls; l.innerHTML = html; s.querySelector('.ch-q').append(l); return l };
+      s.vo(voMs); s.tu(tu);
+      return s
+    };
+    /** mỏ Polly (đầu mỏ, khung 200×260): đứng (162, 118); bay cao hơn 10 */
+    C.mo = p => C.diem(p, 162, p._tu === 'bay' || p._tu === 'tha' ? 108 : 118);
+    /** vài hạt nhỏ bắn ra từ (x, b) (bọt, bụi): màu, số hạt, cỡ (% box) */
+    C.hat = (x, b, { n = 7, mau = '#fff', vien = '#361D46', co = 1.6, xa = 7, t = 600 } = {}) => {
+      const r = C.R();
+      for (let i = 0; i < n; i++) {
+        const d = document.createElement('i'); d.className = 'ch-hat';
+        const sz = co * (0.6 + Math.random() * .8) * r.width / 100;
+        d.style.cssText = `left:${x}%;bottom:${b}%;width:${sz}px;height:${sz}px;background:${mau};border:${vien ? `1.5px solid ${vien}` : 'none'};translate:-50% 50%`;
+        box.append(d); C.els.push(d);
+        const a = (i / n) * Math.PI * 2 + Math.random() * .6, dx = Math.cos(a) * xa * r.width / 100, dy = -Math.sin(a) * xa * r.width / 100;
+        d.animate([{ transform: 'translate(0,0) scale(1)', opacity: 1 }, { transform: `translate(${dx}px,${dy}px) scale(.4)`, opacity: 0 }], { duration: C.ms(t), easing: 'cubic-bezier(.2,.7,.4,1)', fill: 'forwards' }).finished.then(() => d.remove(), () => d.remove())
+      }
+    };
+    /** dọn: gỡ mọi hình tạm, trả lại phần tử đã mượn */
+    C.xoa = () => { C.stop(); C.els.forEach(e => e.remove()); C.els = []; C.back.reverse().forEach(f => f()); C.back = [] };
+    return C
+  }
+
+  /** chạy một cảnh: bỏ qua khi giảm chuyển động; dọn sạch khi bị huỷ */
+  CH.chay = async (box, o = {}, fn) => {
+    const giam = o.giamChuyenDong != null ? !!o.giamChuyenDong : CH.giamChuyenDong();
+    if (!box || giam) return { boQua: true, xoa() {} };
+    const C = ctx(box, o);
+    try { await fn(C) }
+    catch (e) { if (e !== HUY) { C.xoa(); throw e } C.xoa(); return { huy: true, xoa() {} } }
+    const xoa = () => C.xoa();
+    if (o.donCuoi) xoa();
+    return { xong: true, xoa }
+  };
+})();
+
+/* ---- art/canh-hai/canh-hai-hinh.js ---- */
+/* Hình kit cho 6 cảnh hài: TỰ SINH bởi dong_goi.py từ art/kit/ (đừng sửa tay). */
+(window.CanhHai = window.CanhHai || {}).HINH = Object.assign(window.CanhHai.HINH || {}, {
+"polly-dung": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 0)\"><path d=\"M104 210 L92 252 L104 246 L112 256 L114 214Z\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M86 226 v12 M108 226 v12\" stroke=\"#3A1B49\" stroke-width=\"5\" stroke-linecap=\"round\"/><ellipse cx=\"100\" cy=\"170\" rx=\"44\" ry=\"58\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M60 150 Q42 200 76 222 Q86 190 82 158Z\" fill=\"#3683C4\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M62 186 l14 -2 M66 202 l12 -2\" stroke=\"#2A5E96\" stroke-width=\"3.8\"/><ellipse cx=\"104\" cy=\"186\" rx=\"24\" ry=\"30\" fill=\"#FFE07A\" opacity=\".9\"/><circle cx=\"104\" cy=\"98\" r=\"46\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M88 56 q-4 -22 10 -30 q0 14 8 20 q4 -18 18 -18 q-6 14 -2 28\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M132 104 Q164 104 160 132 Q152 128 134 124Z\" fill=\"#FBB516\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><circle cx=\"116\" cy=\"94\" r=\"14\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"3.8\"/><circle cx=\"118\" cy=\"95\" r=\"7\" fill=\"#3A1B49\"/><circle cx=\"120\" cy=\"92\" r=\"2.6\" fill=\"#fff\"/><ellipse cx=\"96\" cy=\"118\" rx=\"8\" ry=\"5\" fill=\"#F7A9B8\"/></g></svg>",
+"polly-noi": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 0)\"><path d=\"M104 210 L92 252 L104 246 L112 256 L114 214Z\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M86 226 v12 M108 226 v12\" stroke=\"#3A1B49\" stroke-width=\"5\" stroke-linecap=\"round\"/><ellipse cx=\"100\" cy=\"170\" rx=\"44\" ry=\"58\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M60 150 Q42 200 76 222 Q86 190 82 158Z\" fill=\"#3683C4\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M62 186 l14 -2 M66 202 l12 -2\" stroke=\"#2A5E96\" stroke-width=\"3.8\"/><ellipse cx=\"104\" cy=\"186\" rx=\"24\" ry=\"30\" fill=\"#FFE07A\" opacity=\".9\"/><circle cx=\"104\" cy=\"98\" r=\"46\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M88 56 q-4 -22 10 -30 q0 14 8 20 q4 -18 18 -18 q-6 14 -2 28\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M134 120 Q154 124 152 140 Q142 138 132 128Z\" fill=\"#E59A12\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M132 98 Q166 92 164 120 Q154 116 134 116Z\" fill=\"#FBB516\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><circle cx=\"116\" cy=\"94\" r=\"14\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"3.8\"/><circle cx=\"118\" cy=\"95\" r=\"7\" fill=\"#3A1B49\"/><circle cx=\"120\" cy=\"92\" r=\"2.6\" fill=\"#fff\"/><ellipse cx=\"96\" cy=\"118\" rx=\"8\" ry=\"5\" fill=\"#F7A9B8\"/></g></svg>",
+"polly-bay-1": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 -10)\"><path d=\"M104 210 L92 252 L104 246 L112 256 L114 214Z\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M90 224 q-2 8 4 10 M108 224 q-2 8 4 10\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"5\" stroke-linecap=\"round\"/><ellipse cx=\"100\" cy=\"170\" rx=\"44\" ry=\"58\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M60 150 Q42 200 76 222 Q86 190 82 158Z\" fill=\"#3683C4\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M62 186 l14 -2 M66 202 l12 -2\" stroke=\"#2A5E96\" stroke-width=\"3.8\"/><ellipse cx=\"104\" cy=\"186\" rx=\"24\" ry=\"30\" fill=\"#FFE07A\" opacity=\".9\"/><circle cx=\"104\" cy=\"98\" r=\"46\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M88 56 q-4 -22 10 -30 q0 14 8 20 q4 -18 18 -18 q-6 14 -2 28\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M132 104 Q164 104 160 132 Q152 128 134 124Z\" fill=\"#FBB516\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><circle cx=\"116\" cy=\"94\" r=\"14\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"3.8\"/><circle cx=\"118\" cy=\"95\" r=\"7\" fill=\"#3A1B49\"/><circle cx=\"120\" cy=\"92\" r=\"2.6\" fill=\"#fff\"/><ellipse cx=\"96\" cy=\"118\" rx=\"8\" ry=\"5\" fill=\"#F7A9B8\"/></g><ellipse cx=\"100\" cy=\"250\" rx=\"34\" ry=\"4\" fill=\"#3A1B49\" opacity=\".1\"/></svg>",
+"polly-bay-2": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 -10)\"><path d=\"M104 210 L92 252 L104 246 L112 256 L114 214Z\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M90 224 q-2 8 4 10 M108 224 q-2 8 4 10\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"5\" stroke-linecap=\"round\"/><ellipse cx=\"100\" cy=\"170\" rx=\"44\" ry=\"58\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><g transform=\"rotate(-28 77 157)\"><path d=\"M60 150 Q42 200 76 222 Q86 190 82 158Z\" fill=\"#3683C4\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M62 186 l14 -2 M66 202 l12 -2\" stroke=\"#2A5E96\" stroke-width=\"3.8\"/></g><ellipse cx=\"104\" cy=\"186\" rx=\"24\" ry=\"30\" fill=\"#FFE07A\" opacity=\".9\"/><circle cx=\"104\" cy=\"98\" r=\"46\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M88 56 q-4 -22 10 -30 q0 14 8 20 q4 -18 18 -18 q-6 14 -2 28\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M132 104 Q164 104 160 132 Q152 128 134 124Z\" fill=\"#FBB516\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><circle cx=\"116\" cy=\"94\" r=\"14\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"3.8\"/><circle cx=\"118\" cy=\"95\" r=\"7\" fill=\"#3A1B49\"/><circle cx=\"120\" cy=\"92\" r=\"2.6\" fill=\"#fff\"/><ellipse cx=\"96\" cy=\"118\" rx=\"8\" ry=\"5\" fill=\"#F7A9B8\"/></g><ellipse cx=\"100\" cy=\"250\" rx=\"34\" ry=\"4\" fill=\"#3A1B49\" opacity=\".1\"/></svg>",
+"polly-treo-nguoc": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><path d=\"M86 34 V18 M108 34 V18\" stroke=\"#3A1B49\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M79 22 q1 -9 8 -8 q6 1 6 9 M101 22 q1 -9 8 -8 q6 1 6 9\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"4\" stroke-linecap=\"round\"/><g transform=\"translate(0 262) scale(1 -1)\"><g transform=\"rotate(-28 109 212)\"><path d=\"M104 210 L92 252 L104 246 L112 256 L114 214Z\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/></g><ellipse cx=\"100\" cy=\"170\" rx=\"44\" ry=\"58\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M60 150 Q42 200 76 222 Q86 190 82 158Z\" fill=\"#3683C4\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M62 186 l14 -2 M66 202 l12 -2\" stroke=\"#2A5E96\" stroke-width=\"3.8\"/><ellipse cx=\"104\" cy=\"186\" rx=\"24\" ry=\"30\" fill=\"#FFE07A\" opacity=\".9\"/><circle cx=\"104\" cy=\"98\" r=\"46\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M88 56 q-4 -22 10 -30 q0 14 8 20 q4 -18 18 -18 q-6 14 -2 28\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M132 104 Q164 104 160 132 Q152 128 134 124Z\" fill=\"#FBB516\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/></g><circle cx=\"116\" cy=\"168\" r=\"14\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"3.8\"/><circle cx=\"118\" cy=\"168\" r=\"7\" fill=\"#3A1B49\"/><circle cx=\"120\" cy=\"165\" r=\"2.6\" fill=\"#fff\"/><ellipse cx=\"96\" cy=\"146\" rx=\"8\" ry=\"5\" fill=\"#F7A9B8\"/></svg>",
+"polly-ngu": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><path d=\"M104 210 L92 252 L104 246 L112 256 L114 214Z\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M86 226 v12 M108 226 v12\" stroke=\"#3A1B49\" stroke-width=\"5\" stroke-linecap=\"round\"/><ellipse cx=\"100\" cy=\"172\" rx=\"47\" ry=\"56\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><ellipse cx=\"104\" cy=\"186\" rx=\"24\" ry=\"30\" fill=\"#FFE07A\" opacity=\".9\"/><circle cx=\"94\" cy=\"108\" r=\"44\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M72 74 q-18 -16 -10 -34 q8 12 16 14 q-4 -18 8 -26 q2 14 10 22\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M64 112 Q40 112 44 136 Q54 132 66 128Z\" fill=\"#FBB516\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M58 118 Q30 150 50 200 Q66 226 80 224 Q92 190 90 156 Q86 128 58 118Z\" fill=\"#3683C4\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M58 160 l16 -2 M60 178 l16 -2 M64 196 l14 -2\" stroke=\"#2A5E96\" stroke-width=\"3.8\"/><path d=\"M92 104 q9 8 18 0\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linecap=\"round\"/><ellipse cx=\"106\" cy=\"122\" rx=\"8\" ry=\"5\" fill=\"#F7A9B8\"/></svg>",
+"polly-tha-1": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 -10)\"><path d=\"M104 210 L92 252 L104 246 L112 256 L114 214Z\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M90 222 L94 248 M110 222 L106 248\" stroke=\"#3A1B49\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M86 254 q8 6 14 -2 M100 254 q8 6 14 -2\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"4\" stroke-linecap=\"round\"/><ellipse cx=\"100\" cy=\"170\" rx=\"44\" ry=\"58\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M60 150 Q42 200 76 222 Q86 190 82 158Z\" fill=\"#3683C4\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M62 186 l14 -2 M66 202 l12 -2\" stroke=\"#2A5E96\" stroke-width=\"3.8\"/><ellipse cx=\"104\" cy=\"186\" rx=\"24\" ry=\"30\" fill=\"#FFE07A\" opacity=\".9\"/><circle cx=\"104\" cy=\"98\" r=\"46\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M88 56 q-4 -22 10 -30 q0 14 8 20 q4 -18 18 -18 q-6 14 -2 28\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M132 104 Q164 104 160 132 Q152 128 134 124Z\" fill=\"#FBB516\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M108 86 L124 94 L108 102\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><ellipse cx=\"96\" cy=\"118\" rx=\"10\" ry=\"6.5\" fill=\"#F28A9A\" opacity=\".85\"/><path d=\"M136 116 h20\" stroke=\"#3A1B49\" stroke-width=\"3\"/></g><path d=\"M150 44 q-7.0 11.0 0 16.0 q7.0 -5.0 0 -16.0z\" fill=\"#BFE3FA\" stroke=\"#3683C4\" stroke-width=\"1.6\"/><path d=\"M162 64 q-5.6 8.8 0 12.8 q5.6 -4.0 0 -12.8z\" fill=\"#BFE3FA\" stroke=\"#3683C4\" stroke-width=\"1.6\"/></svg>",
+"polly-tha-2": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 -10)\"><path d=\"M104 210 L92 252 L104 246 L112 256 L114 214Z\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M90 222 L94 248 M110 222 L106 248\" stroke=\"#3A1B49\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M86 254 q8 6 14 -2 M100 254 q8 6 14 -2\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"4\" stroke-linecap=\"round\"/><ellipse cx=\"100\" cy=\"170\" rx=\"44\" ry=\"58\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><g transform=\"rotate(-28 77 157)\"><path d=\"M60 150 Q42 200 76 222 Q86 190 82 158Z\" fill=\"#3683C4\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M62 186 l14 -2 M66 202 l12 -2\" stroke=\"#2A5E96\" stroke-width=\"3.8\"/></g><ellipse cx=\"104\" cy=\"186\" rx=\"24\" ry=\"30\" fill=\"#FFE07A\" opacity=\".9\"/><circle cx=\"104\" cy=\"98\" r=\"46\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M88 56 q-4 -22 10 -30 q0 14 8 20 q4 -18 18 -18 q-6 14 -2 28\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M132 104 Q164 104 160 132 Q152 128 134 124Z\" fill=\"#FBB516\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M108 86 L124 94 L108 102\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><ellipse cx=\"96\" cy=\"118\" rx=\"10\" ry=\"6.5\" fill=\"#F28A9A\" opacity=\".85\"/><path d=\"M136 116 h20\" stroke=\"#3A1B49\" stroke-width=\"3\"/></g><path d=\"M150 44 q-7.0 11.0 0 16.0 q7.0 -5.0 0 -16.0z\" fill=\"#BFE3FA\" stroke=\"#3683C4\" stroke-width=\"1.6\"/><path d=\"M162 64 q-5.6 8.8 0 12.8 q5.6 -4.0 0 -12.8z\" fill=\"#BFE3FA\" stroke=\"#3683C4\" stroke-width=\"1.6\"/></svg>",
+"polly-tho-1": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><path d=\"M104 210 L92 252 L104 246 L112 256 L114 214Z\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M86 226 v12 M108 226 v12\" stroke=\"#3A1B49\" stroke-width=\"5\" stroke-linecap=\"round\"/><ellipse cx=\"100\" cy=\"170\" rx=\"44\" ry=\"58\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><g transform=\"rotate(14 80 156)\"><path d=\"M60 150 Q42 200 76 222 Q86 190 82 158Z\" fill=\"#3683C4\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M62 186 l14 -2 M66 202 l12 -2\" stroke=\"#2A5E96\" stroke-width=\"3.8\"/></g><ellipse cx=\"104\" cy=\"186\" rx=\"24\" ry=\"30\" fill=\"#FFE07A\" opacity=\".9\"/><circle cx=\"104\" cy=\"98\" r=\"46\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M88 56 q-4 -22 10 -30 q0 14 8 20 q4 -18 18 -18 q-6 14 -2 28\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M134 122 Q156 134 150 150 Q140 146 132 130Z\" fill=\"#E59A12\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><ellipse cx=\"144\" cy=\"128\" rx=\"7\" ry=\"4\" fill=\"#F28A9A\"/><path d=\"M132 98 Q166 92 164 120 Q154 116 134 116Z\" fill=\"#FBB516\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><circle cx=\"116\" cy=\"96\" r=\"13\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"3.8\"/><circle cx=\"118\" cy=\"100\" r=\"6.5\" fill=\"#3A1B49\"/><path d=\"M102 96 A14 14 0 0 1 130 96 Z\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\"/><ellipse cx=\"96\" cy=\"118\" rx=\"8\" ry=\"5\" fill=\"#F7A9B8\"/><path d=\"M150 40 q-7.0 11.0 0 16.0 q7.0 -5.0 0 -16.0z\" fill=\"#BFE3FA\" stroke=\"#3683C4\" stroke-width=\"1.6\"/><path d=\"M70 60 q-5.6 8.8 0 12.8 q5.6 -4.0 0 -12.8z\" fill=\"#BFE3FA\" stroke=\"#3683C4\" stroke-width=\"1.6\"/><path d=\"M164 66 q-4.9 7.7 0 11.2 q4.9 -3.5 0 -11.2z\" fill=\"#BFE3FA\" stroke=\"#3683C4\" stroke-width=\"1.6\"/></svg>",
+"polly-tho-2": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><path d=\"M104 210 L92 252 L104 246 L112 256 L114 214Z\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M86 226 v12 M108 226 v12\" stroke=\"#3A1B49\" stroke-width=\"5\" stroke-linecap=\"round\"/><ellipse cx=\"100\" cy=\"170\" rx=\"44\" ry=\"58\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><g transform=\"rotate(14 80 156)\"><path d=\"M60 150 Q42 200 76 222 Q86 190 82 158Z\" fill=\"#3683C4\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M62 186 l14 -2 M66 202 l12 -2\" stroke=\"#2A5E96\" stroke-width=\"3.8\"/></g><ellipse cx=\"104\" cy=\"186\" rx=\"24\" ry=\"30\" fill=\"#FFE07A\" opacity=\".9\"/><circle cx=\"104\" cy=\"98\" r=\"46\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M88 56 q-4 -22 10 -30 q0 14 8 20 q4 -18 18 -18 q-6 14 -2 28\" fill=\"#E8484F\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M134 120 Q154 124 152 140 Q142 138 132 128Z\" fill=\"#E59A12\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M132 98 Q166 92 164 120 Q154 116 134 116Z\" fill=\"#FBB516\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><circle cx=\"116\" cy=\"96\" r=\"13\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"3.8\"/><circle cx=\"118\" cy=\"100\" r=\"6.5\" fill=\"#3A1B49\"/><path d=\"M102 96 A14 14 0 0 1 130 96 Z\" fill=\"#4ECF62\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\"/><ellipse cx=\"96\" cy=\"118\" rx=\"8\" ry=\"5\" fill=\"#F7A9B8\"/><path d=\"M150 40 q-7.0 11.0 0 16.0 q7.0 -5.0 0 -16.0z\" fill=\"#BFE3FA\" stroke=\"#3683C4\" stroke-width=\"1.6\"/><path d=\"M70 60 q-5.6 8.8 0 12.8 q5.6 -4.0 0 -12.8z\" fill=\"#BFE3FA\" stroke=\"#3683C4\" stroke-width=\"1.6\"/><path d=\"M164 66 q-4.9 7.7 0 11.2 q4.9 -3.5 0 -11.2z\" fill=\"#BFE3FA\" stroke=\"#3683C4\" stroke-width=\"1.6\"/></svg>",
+"polly-chan-1": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><path d=\"M80 204 L80 246\" stroke=\"#3A1B49\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M66 249 L80 246 L94 249 M80 246 L84 254\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"6.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M116 204 L116 250\" stroke=\"#3A1B49\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M102 253 L116 250 L130 253 M116 250 L120 258\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"6.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+"polly-chan-2": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><path d=\"M90 204 L90 250\" stroke=\"#3A1B49\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M76 253 L90 250 L104 253 M90 250 L94 258\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"6.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M106 204 L106 246\" stroke=\"#3A1B49\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M92 249 L106 246 L120 249 M106 246 L110 254\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"6.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+"lam-dung": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 0)\"><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#D49E72\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#D49E72\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M75 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#8A5A36\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M99 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#8A5A36\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M72 184 H128 V208 H104 L100 200 L96 208 H72Z\" fill=\"#E2C27A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M72 150 Q100 138 128 150 L130 188 H70Z\" fill=\"#4FB862\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M86 148 L100 162 L114 148 L108 144 L100 152 L92 144Z\" fill=\"#3E9A4E\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M100 162 V186\" stroke=\"#3E9A4E\" stroke-width=\"2.6\"/><rect x=\"76\" y=\"166\" width=\"16\" height=\"14\" rx=\"3\" fill=\"#3E9A4E\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M76 171 H92\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><rect x=\"108\" y=\"166\" width=\"16\" height=\"14\" rx=\"3\" fill=\"#3E9A4E\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M108 171 H124\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><path d=\"M76 158 Q64 176 64 194\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M76 158 Q64 176 64 194\" fill=\"none\" stroke=\"#D49E72\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 158 Q136 176 136 194\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 158 Q136 176 136 194\" fill=\"none\" stroke=\"#D49E72\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"64\" cy=\"198\" r=\"8\" fill=\"#D49E72\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"136\" cy=\"198\" r=\"8\" fill=\"#D49E72\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M84 148 Q100 168 116 148\" fill=\"none\" stroke=\"#5A4A3A\" stroke-width=\"4.5\"/><rect x=\"86\" y=\"160\" width=\"12\" height=\"16\" rx=\"4\" fill=\"#4F4560\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><rect x=\"102\" y=\"160\" width=\"12\" height=\"16\" rx=\"4\" fill=\"#4F4560\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><rect x=\"96\" y=\"164\" width=\"8\" height=\"6\" fill=\"#4F4560\"/><circle cx=\"92\" cy=\"173\" r=\"3\" fill=\"#8FD8FF\"/><circle cx=\"108\" cy=\"173\" r=\"3\" fill=\"#8FD8FF\"/><g transform=\"\"><circle cx=\"42\" cy=\"102\" r=\"10\" fill=\"#D49E72\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"158\" cy=\"102\" r=\"10\" fill=\"#D49E72\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"100\" cy=\"96\" r=\"57\" fill=\"#E6B990\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M46 84 Q60 72 80 76 Q100 68 120 76 Q140 72 154 84 Q150 66 134 62 L66 62 Q50 66 46 84Z\" fill=\"#40203A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M22 66 Q100 50 178 66 Q172 76 100 72 Q28 76 22 66Z\" fill=\"#EACB86\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M54 62 Q56 20 100 18 Q144 20 146 62Z\" fill=\"#EACB86\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M56 54 H144\" stroke=\"#3E9A4E\" stroke-width=\"6\"/><g transform=\"translate(0 0)\"><ellipse cx=\"80\" cy=\"102\" rx=\"7\" ry=\"9\" fill=\"#3A1B49\"/><ellipse cx=\"120\" cy=\"102\" rx=\"7\" ry=\"9\" fill=\"#3A1B49\"/><circle cx=\"82.5\" cy=\"98.5\" r=\"2.8\" fill=\"#fff\"/><circle cx=\"122.5\" cy=\"98.5\" r=\"2.8\" fill=\"#fff\"/><ellipse cx=\"64\" cy=\"120\" rx=\"9\" ry=\"5.5\" fill=\"#F28A9A\" opacity=\"0.45\"/><ellipse cx=\"136\" cy=\"120\" rx=\"9\" ry=\"5.5\" fill=\"#F28A9A\" opacity=\"0.45\"/><path d=\"M90 121 Q100 127 110 121\" stroke=\"#3A1B49\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></g></g></g></svg>",
+"lam-ngac-nhien": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 0)\"><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#D49E72\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#D49E72\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M75 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#8A5A36\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M99 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#8A5A36\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M72 184 H128 V208 H104 L100 200 L96 208 H72Z\" fill=\"#E2C27A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M72 150 Q100 138 128 150 L130 188 H70Z\" fill=\"#4FB862\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M86 148 L100 162 L114 148 L108 144 L100 152 L92 144Z\" fill=\"#3E9A4E\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M100 162 V186\" stroke=\"#3E9A4E\" stroke-width=\"2.6\"/><rect x=\"76\" y=\"166\" width=\"16\" height=\"14\" rx=\"3\" fill=\"#3E9A4E\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M76 171 H92\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><rect x=\"108\" y=\"166\" width=\"16\" height=\"14\" rx=\"3\" fill=\"#3E9A4E\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M108 171 H124\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><path d=\"M76 160 Q54 162 50 142\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M76 160 Q54 162 50 142\" fill=\"none\" stroke=\"#D49E72\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 160 Q146 162 150 142\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 160 Q146 162 150 142\" fill=\"none\" stroke=\"#D49E72\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"50\" cy=\"138\" r=\"8\" fill=\"#D49E72\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"150\" cy=\"138\" r=\"8\" fill=\"#D49E72\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M84 148 Q100 168 116 148\" fill=\"none\" stroke=\"#5A4A3A\" stroke-width=\"4.5\"/><rect x=\"86\" y=\"160\" width=\"12\" height=\"16\" rx=\"4\" fill=\"#4F4560\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><rect x=\"102\" y=\"160\" width=\"12\" height=\"16\" rx=\"4\" fill=\"#4F4560\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><rect x=\"96\" y=\"164\" width=\"8\" height=\"6\" fill=\"#4F4560\"/><circle cx=\"92\" cy=\"173\" r=\"3\" fill=\"#8FD8FF\"/><circle cx=\"108\" cy=\"173\" r=\"3\" fill=\"#8FD8FF\"/><g transform=\"\"><circle cx=\"42\" cy=\"102\" r=\"10\" fill=\"#D49E72\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"158\" cy=\"102\" r=\"10\" fill=\"#D49E72\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"100\" cy=\"96\" r=\"57\" fill=\"#E6B990\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M46 84 Q60 72 80 76 Q100 68 120 76 Q140 72 154 84 Q150 66 134 62 L66 62 Q50 66 46 84Z\" fill=\"#40203A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M22 66 Q100 50 178 66 Q172 76 100 72 Q28 76 22 66Z\" fill=\"#EACB86\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M54 62 Q56 20 100 18 Q144 20 146 62Z\" fill=\"#EACB86\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><path d=\"M56 54 H144\" stroke=\"#3E9A4E\" stroke-width=\"6\"/><g transform=\"translate(0 0)\"><path d=\"M70 85 q10 -8 20 -2 M110 83 q10 -6 20 2\" stroke=\"#3A1B49\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"80\" cy=\"102\" r=\"9\" fill=\"#3A1B49\"/><circle cx=\"120\" cy=\"102\" r=\"9\" fill=\"#3A1B49\"/><circle cx=\"83\" cy=\"98\" r=\"3.2\" fill=\"#fff\"/><circle cx=\"123\" cy=\"98\" r=\"3.2\" fill=\"#fff\"/><ellipse cx=\"100\" cy=\"126\" rx=\"8\" ry=\"10\" fill=\"#3A1B49\"/></g></g></g></svg>",
+"na-dung": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 0)\"><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#F2BC96\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#F2BC96\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M75 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#E8607E\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M99 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#E8607E\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M76 176 H124 L136 210 Q100 218 64 210Z\" fill=\"#F0703C\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M72 150 Q100 138 128 150 L126 182 H74Z\" fill=\"#F0703C\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M84 154 H116 L117 180 H83Z\" fill=\"none\" stroke=\"#D2552A\" stroke-width=\"4.5\"/><path d=\"M84 154 L80 146 M116 154 L120 146\" stroke=\"#D2552A\" stroke-width=\"4.5\"/><circle cx=\"88\" cy=\"159\" r=\"3\" fill=\"#FFE29A\" stroke=\"#3A1B49\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"112\" cy=\"159\" r=\"3\" fill=\"#FFE29A\" stroke=\"#3A1B49\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M76 180 H124\" stroke=\"#D2552A\" stroke-width=\"4.5\"/><path d=\"M76 158 Q64 176 64 194\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M76 158 Q64 176 64 194\" fill=\"none\" stroke=\"#F2BC96\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 158 Q136 176 136 194\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 158 Q136 176 136 194\" fill=\"none\" stroke=\"#F2BC96\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"64\" cy=\"198\" r=\"8\" fill=\"#F2BC96\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"136\" cy=\"198\" r=\"8\" fill=\"#F2BC96\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M90 146 Q96 164 104 176\" fill=\"none\" stroke=\"#8A5A36\" stroke-width=\"2.4\"/><path d=\"M104 176 l4 6\" stroke=\"#8A5A36\" stroke-width=\"4.6\" stroke-linecap=\"round\"/><circle cx=\"111\" cy=\"189\" r=\"8.6\" fill=\"#DDF1F8\" stroke=\"#3A1B49\" stroke-width=\"3.4\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M107 186 q3 -3 6 -2\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><g transform=\"\"><path d=\"M130 40 Q172 30 176 66 Q178 96 162 112 Q166 82 150 66Z\" fill=\"#40203A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><circle cx=\"132\" cy=\"44\" r=\"9\" fill=\"#58B592\" stroke=\"#3A1B49\" stroke-width=\"3.8\"/><circle cx=\"44\" cy=\"102\" r=\"10\" fill=\"#F2BC96\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"156\" cy=\"102\" r=\"10\" fill=\"#F2BC96\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"100\" cy=\"94\" r=\"57\" fill=\"#FBD4B5\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M42 96 Q40 36 100 34 Q160 36 158 96 Q146 70 126 64 Q106 54 84 62 Q60 66 42 96Z\" fill=\"#40203A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><g transform=\"translate(0 0)\"><ellipse cx=\"80\" cy=\"104\" rx=\"7\" ry=\"9\" fill=\"#3A1B49\"/><ellipse cx=\"120\" cy=\"104\" rx=\"7\" ry=\"9\" fill=\"#3A1B49\"/><circle cx=\"82.5\" cy=\"100.5\" r=\"2.8\" fill=\"#fff\"/><circle cx=\"122.5\" cy=\"100.5\" r=\"2.8\" fill=\"#fff\"/><ellipse cx=\"64\" cy=\"122\" rx=\"9\" ry=\"5.5\" fill=\"#F28A9A\" opacity=\"0.45\"/><ellipse cx=\"136\" cy=\"122\" rx=\"9\" ry=\"5.5\" fill=\"#F28A9A\" opacity=\"0.45\"/><path d=\"M90 123 Q100 129 110 123\" stroke=\"#3A1B49\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></g></g></g></svg>",
+"na-ngac-nhien": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 0)\"><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#F2BC96\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#F2BC96\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M75 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#E8607E\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M99 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#E8607E\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M76 176 H124 L136 210 Q100 218 64 210Z\" fill=\"#F0703C\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M72 150 Q100 138 128 150 L126 182 H74Z\" fill=\"#F0703C\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M84 154 H116 L117 180 H83Z\" fill=\"none\" stroke=\"#D2552A\" stroke-width=\"4.5\"/><path d=\"M84 154 L80 146 M116 154 L120 146\" stroke=\"#D2552A\" stroke-width=\"4.5\"/><circle cx=\"88\" cy=\"159\" r=\"3\" fill=\"#FFE29A\" stroke=\"#3A1B49\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"112\" cy=\"159\" r=\"3\" fill=\"#FFE29A\" stroke=\"#3A1B49\" stroke-width=\"2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M76 180 H124\" stroke=\"#D2552A\" stroke-width=\"4.5\"/><path d=\"M76 160 Q54 162 50 142\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M76 160 Q54 162 50 142\" fill=\"none\" stroke=\"#F2BC96\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 160 Q146 162 150 142\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 160 Q146 162 150 142\" fill=\"none\" stroke=\"#F2BC96\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"50\" cy=\"138\" r=\"8\" fill=\"#F2BC96\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"150\" cy=\"138\" r=\"8\" fill=\"#F2BC96\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M90 146 Q96 164 104 176\" fill=\"none\" stroke=\"#8A5A36\" stroke-width=\"2.4\"/><path d=\"M104 176 l4 6\" stroke=\"#8A5A36\" stroke-width=\"4.6\" stroke-linecap=\"round\"/><circle cx=\"111\" cy=\"189\" r=\"8.6\" fill=\"#DDF1F8\" stroke=\"#3A1B49\" stroke-width=\"3.4\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M107 186 q3 -3 6 -2\" stroke=\"#fff\" stroke-width=\"2\" fill=\"none\"/><g transform=\"\"><path d=\"M130 40 Q172 30 176 66 Q178 96 162 112 Q166 82 150 66Z\" fill=\"#40203A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><circle cx=\"132\" cy=\"44\" r=\"9\" fill=\"#58B592\" stroke=\"#3A1B49\" stroke-width=\"3.8\"/><circle cx=\"44\" cy=\"102\" r=\"10\" fill=\"#F2BC96\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"156\" cy=\"102\" r=\"10\" fill=\"#F2BC96\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"100\" cy=\"94\" r=\"57\" fill=\"#FBD4B5\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M42 96 Q40 36 100 34 Q160 36 158 96 Q146 70 126 64 Q106 54 84 62 Q60 66 42 96Z\" fill=\"#40203A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><g transform=\"translate(0 0)\"><path d=\"M70 87 q10 -8 20 -2 M110 85 q10 -6 20 2\" stroke=\"#3A1B49\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"80\" cy=\"104\" r=\"9\" fill=\"#3A1B49\"/><circle cx=\"120\" cy=\"104\" r=\"9\" fill=\"#3A1B49\"/><circle cx=\"83\" cy=\"100\" r=\"3.2\" fill=\"#fff\"/><circle cx=\"123\" cy=\"100\" r=\"3.2\" fill=\"#fff\"/><ellipse cx=\"100\" cy=\"128\" rx=\"8\" ry=\"10\" fill=\"#3A1B49\"/></g></g></g></svg>",
+"ben-dung": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 0)\"><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#9E6A42\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#9E6A42\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M75 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M99 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M72 184 H128 V208 H104 L100 200 L96 208 H72Z\" fill=\"#E2C27A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M72 150 Q100 138 128 150 L130 188 H70Z\" fill=\"#4FA6E8\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M84 150 Q100 166 116 150\" stroke=\"#3A1B49\" stroke-width=\"4.5\" fill=\"none\"/><path d=\"M76 158 Q64 176 64 194\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M76 158 Q64 176 64 194\" fill=\"none\" stroke=\"#9E6A42\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M76 158 Q64 176 64 194\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"21\" stroke-dasharray=\"15 400\" stroke-linecap=\"round\"/><path d=\"M76 158 Q64 176 64 194\" fill=\"none\" stroke=\"#4FA6E8\" stroke-width=\"13\" stroke-dasharray=\"14 400\" stroke-linecap=\"round\"/><path d=\"M124 158 Q136 176 136 194\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 158 Q136 176 136 194\" fill=\"none\" stroke=\"#9E6A42\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 158 Q136 176 136 194\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"21\" stroke-dasharray=\"15 400\" stroke-linecap=\"round\"/><path d=\"M124 158 Q136 176 136 194\" fill=\"none\" stroke=\"#4FA6E8\" stroke-width=\"13\" stroke-dasharray=\"14 400\" stroke-linecap=\"round\"/><circle cx=\"64\" cy=\"198\" r=\"8\" fill=\"#9E6A42\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"136\" cy=\"198\" r=\"8\" fill=\"#9E6A42\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M84 148 L122 192\" stroke=\"#3A1B49\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M84 148 L122 192\" stroke=\"#F6A73E\" stroke-width=\"4\" stroke-linecap=\"round\"/><g transform=\"rotate(-18 128 172)\"><rect x=\"124\" y=\"150\" width=\"10\" height=\"30\" rx=\"5\" fill=\"#FFF4DC\" stroke=\"#3A1B49\" stroke-width=\"3.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M124 160 h10\" stroke=\"#E8484F\" stroke-width=\"2.6\"/></g><path d=\"M112 180 H138 Q140 180 140 184 V198 Q140 204 134 204 H116 Q110 204 110 198 V184 Q110 180 112 180Z\" fill=\"#F6A73E\" stroke=\"#3A1B49\" stroke-width=\"3.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M110 186 H140\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><g transform=\"\"><circle cx=\"42\" cy=\"102\" r=\"10\" fill=\"#9E6A42\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"158\" cy=\"102\" r=\"10\" fill=\"#9E6A42\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"100\" cy=\"96\" r=\"57\" fill=\"#AD7246\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M44 90 Q34 70 50 60 Q48 40 68 40 Q74 24 92 30 Q104 18 118 30 Q136 26 140 42 Q160 44 156 64 Q166 76 156 90 Q148 74 136 72 Q130 60 116 64 Q106 54 94 62 Q82 56 74 66 Q60 64 56 78 Q46 78 44 90Z\" fill=\"#40203A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><circle cx=\"80\" cy=\"104\" r=\"15\" fill=\"#fff\" fill-opacity=\".35\" stroke=\"#3A1B49\" stroke-width=\"3.5\"/><circle cx=\"120\" cy=\"104\" r=\"15\" fill=\"#fff\" fill-opacity=\".35\" stroke=\"#3A1B49\" stroke-width=\"3.5\"/><path d=\"M95 103 q5 -4 10 0\" stroke=\"#3A1B49\" stroke-width=\"3.5\" fill=\"none\"/><g transform=\"translate(0 0)\"><ellipse cx=\"80\" cy=\"104\" rx=\"7\" ry=\"9\" fill=\"#3A1B49\"/><ellipse cx=\"120\" cy=\"104\" rx=\"7\" ry=\"9\" fill=\"#3A1B49\"/><circle cx=\"82.5\" cy=\"100.5\" r=\"2.8\" fill=\"#fff\"/><circle cx=\"122.5\" cy=\"100.5\" r=\"2.8\" fill=\"#fff\"/><ellipse cx=\"64\" cy=\"122\" rx=\"9\" ry=\"5.5\" fill=\"#F28A9A\" opacity=\"0.45\"/><ellipse cx=\"136\" cy=\"122\" rx=\"9\" ry=\"5.5\" fill=\"#F28A9A\" opacity=\"0.45\"/><path d=\"M90 123 Q100 129 110 123\" stroke=\"#3A1B49\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/></g></g></g></svg>",
+"ben-ngac-nhien": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><g transform=\"translate(0 0)\"><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M90 198 V236\" fill=\"none\" stroke=\"#9E6A42\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M110 198 V236\" fill=\"none\" stroke=\"#9E6A42\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M75 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M99 246 q0 -10 13 -10 q13 0 13 10z\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M72 184 H128 V208 H104 L100 200 L96 208 H72Z\" fill=\"#E2C27A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M72 150 Q100 138 128 150 L130 188 H70Z\" fill=\"#4FA6E8\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M84 150 Q100 166 116 150\" stroke=\"#3A1B49\" stroke-width=\"4.5\" fill=\"none\"/><path d=\"M76 160 Q54 162 50 142\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M76 160 Q54 162 50 142\" fill=\"none\" stroke=\"#9E6A42\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M76 160 Q54 162 50 142\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"21\" stroke-dasharray=\"15 400\" stroke-linecap=\"round\"/><path d=\"M76 160 Q54 162 50 142\" fill=\"none\" stroke=\"#4FA6E8\" stroke-width=\"13\" stroke-dasharray=\"14 400\" stroke-linecap=\"round\"/><path d=\"M124 160 Q146 162 150 142\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"19\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 160 Q146 162 150 142\" fill=\"none\" stroke=\"#9E6A42\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M124 160 Q146 162 150 142\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"21\" stroke-dasharray=\"15 400\" stroke-linecap=\"round\"/><path d=\"M124 160 Q146 162 150 142\" fill=\"none\" stroke=\"#4FA6E8\" stroke-width=\"13\" stroke-dasharray=\"14 400\" stroke-linecap=\"round\"/><circle cx=\"50\" cy=\"138\" r=\"8\" fill=\"#9E6A42\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><circle cx=\"150\" cy=\"138\" r=\"8\" fill=\"#9E6A42\" stroke=\"#3A1B49\" stroke-width=\"3.8\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M84 148 L122 192\" stroke=\"#3A1B49\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M84 148 L122 192\" stroke=\"#F6A73E\" stroke-width=\"4\" stroke-linecap=\"round\"/><g transform=\"rotate(-18 128 172)\"><rect x=\"124\" y=\"150\" width=\"10\" height=\"30\" rx=\"5\" fill=\"#FFF4DC\" stroke=\"#3A1B49\" stroke-width=\"3.2\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M124 160 h10\" stroke=\"#E8484F\" stroke-width=\"2.6\"/></g><path d=\"M112 180 H138 Q140 180 140 184 V198 Q140 204 134 204 H116 Q110 204 110 198 V184 Q110 180 112 180Z\" fill=\"#F6A73E\" stroke=\"#3A1B49\" stroke-width=\"3.6\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M110 186 H140\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><g transform=\"\"><circle cx=\"42\" cy=\"102\" r=\"10\" fill=\"#9E6A42\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"158\" cy=\"102\" r=\"10\" fill=\"#9E6A42\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><circle cx=\"100\" cy=\"96\" r=\"57\" fill=\"#AD7246\" stroke=\"#3A1B49\" stroke-width=\"4.5\"/><path d=\"M44 90 Q34 70 50 60 Q48 40 68 40 Q74 24 92 30 Q104 18 118 30 Q136 26 140 42 Q160 44 156 64 Q166 76 156 90 Q148 74 136 72 Q130 60 116 64 Q106 54 94 62 Q82 56 74 66 Q60 64 56 78 Q46 78 44 90Z\" fill=\"#40203A\" stroke=\"#3A1B49\" stroke-width=\"4.5\" stroke-linejoin=\"round\"/><circle cx=\"80\" cy=\"104\" r=\"15\" fill=\"#fff\" fill-opacity=\".35\" stroke=\"#3A1B49\" stroke-width=\"3.5\"/><circle cx=\"120\" cy=\"104\" r=\"15\" fill=\"#fff\" fill-opacity=\".35\" stroke=\"#3A1B49\" stroke-width=\"3.5\"/><path d=\"M95 103 q5 -4 10 0\" stroke=\"#3A1B49\" stroke-width=\"3.5\" fill=\"none\"/><g transform=\"translate(0 0)\"><path d=\"M70 87 q10 -8 20 -2 M110 85 q10 -6 20 2\" stroke=\"#3A1B49\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"80\" cy=\"104\" r=\"9\" fill=\"#3A1B49\"/><circle cx=\"120\" cy=\"104\" r=\"9\" fill=\"#3A1B49\"/><circle cx=\"83\" cy=\"100\" r=\"3.2\" fill=\"#fff\"/><circle cx=\"123\" cy=\"100\" r=\"3.2\" fill=\"#fff\"/><ellipse cx=\"100\" cy=\"128\" rx=\"8\" ry=\"10\" fill=\"#3A1B49\"/></g></g></g></svg>",
+"bot-mo-polly": "<svg viewBox=\"0 0 200 260\" overflow=\"visible\"><circle cx=\"150\" cy=\"112\" r=\"16\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"166\" cy=\"124\" r=\"12\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"138\" cy=\"126\" r=\"13\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"156\" cy=\"138\" r=\"10\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"132\" cy=\"104\" r=\"10\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"170\" cy=\"102\" r=\"9\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"148\" cy=\"92\" r=\"9\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"124\" cy=\"62\" r=\"10\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"140\" cy=\"72\" r=\"7\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"108\" cy=\"56\" r=\"6\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"180\" cy=\"86\" r=\"5\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"120\" cy=\"140\" r=\"6\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"176\" cy=\"142\" r=\"5\" fill=\"#FFFFFF\" stroke=\"#3A1B49\" stroke-width=\"2.4\"/><circle cx=\"144.4\" cy=\"106.4\" r=\"4.5\" fill=\"#BFE3FA\"/><circle cx=\"161.8\" cy=\"119.8\" r=\"3.4\" fill=\"#BFE3FA\"/><circle cx=\"133.4\" cy=\"121.5\" r=\"3.6\" fill=\"#BFE3FA\"/><circle cx=\"152.5\" cy=\"134.5\" r=\"2.8\" fill=\"#BFE3FA\"/><circle cx=\"128.5\" cy=\"100.5\" r=\"2.8\" fill=\"#BFE3FA\"/><circle cx=\"166.8\" cy=\"98.8\" r=\"2.5\" fill=\"#BFE3FA\"/><circle cx=\"144.8\" cy=\"88.8\" r=\"2.5\" fill=\"#BFE3FA\"/><circle cx=\"120.5\" cy=\"58.5\" r=\"2.8\" fill=\"#BFE3FA\"/><circle cx=\"137.6\" cy=\"69.5\" r=\"2.0\" fill=\"#BFE3FA\"/><circle cx=\"105.9\" cy=\"53.9\" r=\"1.7\" fill=\"#BFE3FA\"/><circle cx=\"117.9\" cy=\"137.9\" r=\"1.7\" fill=\"#BFE3FA\"/></svg>",
+"doi-ngu-treo-nguoc": "<svg viewBox=\"0 0 100 146\" overflow=\"visible\"><path d=\"M42 16 V6 M58 16 V6\" stroke=\"#3A1B49\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><path d=\"M36 8 q2 -8 7 -6 M64 8 q-2 -8 -7 -6\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><path d=\"M34 128 L26 146 L46 134Z M66 128 L74 146 L54 134Z\" fill=\"#7E6CA3\" stroke=\"#3A1B49\" stroke-width=\"3.6\" stroke-linejoin=\"round\"/><path d=\"M33 134 L30 141 L39 136Z M67 134 L70 141 L61 136Z\" fill=\"#F7A9B8\"/><path d=\"M38 14 Q12 40 16 80 Q20 104 50 108 Q80 104 84 80 Q88 40 62 14Z\" fill=\"#5A4A7A\" stroke=\"#3A1B49\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M50 20 V102 M34 32 Q28 64 36 98 M66 32 Q72 64 64 98\" fill=\"none\" stroke=\"#3F325C\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M16 80 q8 -6 16 0 q8 -6 18 0 q10 -6 18 0 q8 -6 16 0\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"50\" cy=\"114\" r=\"22\" fill=\"#7E6CA3\" stroke=\"#3A1B49\" stroke-width=\"4\"/><path d=\"M37 118 q6 6 12 0 M51 118 q6 6 12 0\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><path d=\"M45 105 q5 -5 10 0\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"2.8\" stroke-linecap=\"round\"/><circle cx=\"36\" cy=\"108\" r=\"4\" fill=\"#F7A9B8\" opacity=\".8\"/><circle cx=\"64\" cy=\"108\" r=\"4\" fill=\"#F7A9B8\" opacity=\".8\"/></svg>",
+"canh-cay": "<svg viewBox=\"0 0 200 40\" overflow=\"visible\"><path d=\"M-6 10 Q60 8 120 14 Q160 16 198 13 L198 19 Q160 24 120 25 Q60 26 -6 32Z\" fill=\"#8A5A36\" stroke=\"#3A1B49\" stroke-width=\"3.6\" stroke-linejoin=\"round\"/><path d=\"M14 20 q20 -3 40 0 M84 19 q16 -2 30 0\" stroke=\"#6E4528\" stroke-width=\"2.4\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M150 17 q6 -10 18 -13\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"3.6\" stroke-linecap=\"round\"/><ellipse cx=\"34\" cy=\"2\" rx=\"11\" ry=\"6\" transform=\"rotate(-20 34 2)\" fill=\"#58B592\" stroke=\"#3A1B49\" stroke-width=\"2.6\"/><ellipse cx=\"96\" cy=\"4\" rx=\"11\" ry=\"6\" transform=\"rotate(18 96 4)\" fill=\"#58B592\" stroke=\"#3A1B49\" stroke-width=\"2.6\"/><ellipse cx=\"172\" cy=\"-2\" rx=\"11\" ry=\"6\" transform=\"rotate(-30 172 -2)\" fill=\"#58B592\" stroke=\"#3A1B49\" stroke-width=\"2.6\"/><ellipse cx=\"196\" cy=\"10\" rx=\"11\" ry=\"6\" transform=\"rotate(20 196 10)\" fill=\"#58B592\" stroke=\"#3A1B49\" stroke-width=\"2.6\"/><ellipse cx=\"6\" cy=\"36\" rx=\"11\" ry=\"6\" transform=\"rotate(25 6 36)\" fill=\"#58B592\" stroke=\"#3A1B49\" stroke-width=\"2.6\"/></svg>",
+"nai-chuoi-to": "<svg viewBox=\"0 0 126 102\" overflow=\"visible\"><g transform=\"translate(3 6)\"><g transform=\"translate(60 6) scale(-1 1) rotate(-2) translate(-25 -20)\"><path d=\"M20 26 C18 60 42 84 82 74 C86 72 84 66 80 66 C50 70 34 52 30 26 C30 20 20 20 20 26Z\" fill=\"#FCC93A\" stroke=\"#3A1B49\" stroke-width=\"3.5\" stroke-linejoin=\"round\"/><path d=\"M34 40 C38 56 50 64 66 66\" fill=\"none\" stroke=\"#E0A92E\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M78 66 l6 2 -2 6z\" fill=\"#6E4528\"/></g><g transform=\"translate(60 6) scale(-1 1) rotate(20) translate(-25 -20)\"><path d=\"M20 26 C18 60 42 84 82 74 C86 72 84 66 80 66 C50 70 34 52 30 26 C30 20 20 20 20 26Z\" fill=\"#FFD84A\" stroke=\"#3A1B49\" stroke-width=\"3.5\" stroke-linejoin=\"round\"/><path d=\"M34 40 C38 56 50 64 66 66\" fill=\"none\" stroke=\"#E0A92E\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M78 66 l6 2 -2 6z\" fill=\"#6E4528\"/></g><g transform=\"translate(60 6) scale(-1 1) rotate(40) translate(-25 -20)\"><path d=\"M20 26 C18 60 42 84 82 74 C86 72 84 66 80 66 C50 70 34 52 30 26 C30 20 20 20 20 26Z\" fill=\"#FFE066\" stroke=\"#3A1B49\" stroke-width=\"3.5\" stroke-linejoin=\"round\"/><path d=\"M34 40 C38 56 50 64 66 66\" fill=\"none\" stroke=\"#E0A92E\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M78 66 l6 2 -2 6z\" fill=\"#6E4528\"/></g><g transform=\"translate(60 6) rotate(-2) translate(-25 -20)\"><path d=\"M20 26 C18 60 42 84 82 74 C86 72 84 66 80 66 C50 70 34 52 30 26 C30 20 20 20 20 26Z\" fill=\"#FFD84A\" stroke=\"#3A1B49\" stroke-width=\"3.5\" stroke-linejoin=\"round\"/><path d=\"M34 40 C38 56 50 64 66 66\" fill=\"none\" stroke=\"#E0A92E\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M78 66 l6 2 -2 6z\" fill=\"#6E4528\"/></g><g transform=\"translate(60 6) rotate(20) translate(-25 -20)\"><path d=\"M20 26 C18 60 42 84 82 74 C86 72 84 66 80 66 C50 70 34 52 30 26 C30 20 20 20 20 26Z\" fill=\"#FCC93A\" stroke=\"#3A1B49\" stroke-width=\"3.5\" stroke-linejoin=\"round\"/><path d=\"M34 40 C38 56 50 64 66 66\" fill=\"none\" stroke=\"#E0A92E\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M78 66 l6 2 -2 6z\" fill=\"#6E4528\"/></g><g transform=\"translate(60 6) rotate(40) translate(-25 -20)\"><path d=\"M20 26 C18 60 42 84 82 74 C86 72 84 66 80 66 C50 70 34 52 30 26 C30 20 20 20 20 26Z\" fill=\"#FFE066\" stroke=\"#3A1B49\" stroke-width=\"3.5\" stroke-linejoin=\"round\"/><path d=\"M34 40 C38 56 50 64 66 66\" fill=\"none\" stroke=\"#E0A92E\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><path d=\"M78 66 l6 2 -2 6z\" fill=\"#6E4528\"/></g><path d=\"M52 10 L56 -6 L66 -6 L68 10 Q60 14 52 10Z\" fill=\"#9B6A45\" stroke=\"#3A1B49\" stroke-width=\"3.2\" stroke-linejoin=\"round\"/></g></svg>",
+"vo-chuoi": "<svg viewBox=\"0 0 80 76\" overflow=\"visible\"><g transform=\"translate(0 6)\"><path d=\"M36 6 L38 -6 L46 -5 L44 7Z\" fill=\"#9B6A45\" stroke=\"#3A1B49\" stroke-width=\"3\" stroke-linejoin=\"round\"/><path d=\"M44 16 Q66 26 72 50 Q66 56 60 50 Q56 32 40 22Z\" fill=\"#FFF1B0\" stroke=\"#3A1B49\" stroke-width=\"3.2\" stroke-linejoin=\"round\"/><path d=\"M36 16 Q12 28 6 52 Q12 58 18 52 Q24 32 42 22Z\" fill=\"#FFD84A\" stroke=\"#3A1B49\" stroke-width=\"3.2\" stroke-linejoin=\"round\"/><path d=\"M44 18 Q64 30 70 56 Q64 62 58 56 Q54 36 38 24Z\" fill=\"#FCC93A\" stroke=\"#3A1B49\" stroke-width=\"3.2\" stroke-linejoin=\"round\"/><path d=\"M36 20 Q28 42 34 62 Q40 68 46 62 Q46 40 44 20Z\" fill=\"#FFD84A\" stroke=\"#3A1B49\" stroke-width=\"3.2\" stroke-linejoin=\"round\"/><path d=\"M26 10 Q40 0 54 10 Q52 22 40 24 Q28 22 26 10Z\" fill=\"#FFD84A\" stroke=\"#3A1B49\" stroke-width=\"3.2\" stroke-linejoin=\"round\"/><path d=\"M8 50 l4 4 M66 54 l-4 4 M36 62 l4 3\" stroke=\"#6E4528\" stroke-width=\"3\" stroke-linecap=\"round\"/></g></svg>",
+"thung-rac": "<svg viewBox=\"0 0 64 92\" overflow=\"visible\"><path d=\"M10 26 L14 82 Q14 86 18 86 H50 Q54 86 54 82 L58 26Z\" fill=\"#7FCBA8\" stroke=\"#3A1B49\" stroke-width=\"3.6\" stroke-linejoin=\"round\"/><path d=\"M14 38 H54\" stroke=\"#58B592\" stroke-width=\"3\"/><path d=\"M26 50 V74 M34 50 V74 M42 50 V74\" stroke=\"#5FAE8C\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><rect x=\"38\" y=\"84\" width=\"16\" height=\"6\" rx=\"2\" fill=\"#B9C3CC\" stroke=\"#3A1B49\" stroke-width=\"2.8\"/><g class=\"nap\"><path d=\"M6 20 Q34 6 62 20 L62 26 H6Z\" fill=\"#58B592\" stroke=\"#3A1B49\" stroke-width=\"3.6\" stroke-linejoin=\"round\"/><path d=\"M28 13 Q34 9 40 13\" fill=\"none\" stroke=\"#3A1B49\" stroke-width=\"3\" stroke-linecap=\"round\"/></g></svg>",
+"ban-an": "<svg viewBox=\"0 0 120 64\" overflow=\"visible\"><path d=\"M12 14 V60 M108 14 V60\" stroke=\"#3A1B49\" stroke-width=\"11\" stroke-linecap=\"round\"/><path d=\"M12 14 V60 M108 14 V60\" stroke=\"#C98A52\" stroke-width=\"6\" stroke-linecap=\"round\"/><path d=\"M10 16 H110 V24 H10Z\" fill=\"#B5733E\" stroke=\"#3A1B49\" stroke-width=\"3.2\" stroke-linejoin=\"round\"/><rect x=\"2\" y=\"5\" width=\"116\" height=\"11\" rx=\"4\" fill=\"#E9AE76\" stroke=\"#3A1B49\" stroke-width=\"3.6\"/><path d=\"M10 9 H70\" stroke=\"#F6CFA0\" stroke-width=\"2.4\" stroke-linecap=\"round\"/></svg>"
+});
+
+/* ---- art/canh-hai/man-1.js ---- */
+/* Màn 1 · Công viên · "Bong bóng vỡ trên mỏ" (khoảng 6,5 giây)
+   Xong trò bong bóng có mặt: Polly bay ra mổ vỡ vài quả còn sót; quả cuối (to nhất) vỡ "bụp" ngay trên mỏ,
+   bọt trắng dính đầy, Polly đứng hình, lắc đầu cho văng bọt, rồi bay đi.
+   CanhHai.man1(box, { bongBong:[{x,b,w}…] (3 quả, quả cuối là quả to), bongBongSVG, vaoTu:{x,b}, raTai:{x,b}, …chung })
+   Tiếng (am): 'bup' ×2 "[bụp]", 'bup-to' "[BỤP!]", 'lac' "[phì phì]".
+   Kết thúc: không để lại gì (bong bóng vỡ hết, Polly bay khỏi khung). */
+(function () {
+  'use strict';
+  const CH = window.CanhHai;
+  const BONG = '<svg viewBox="0 0 40 40" overflow="visible"><circle cx="20" cy="20" r="18" fill="#DDF3FF" fill-opacity=".6" stroke="#3A1B49" stroke-width="2"/><path d="M9 15 q3 -7 11 -8" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round"/><circle cx="28" cy="28" r="2.6" fill="#fff" opacity=".85"/></svg>';
+
+  CH.man1 = (box, o = {}) => CH.chay(box, o, async C => {
+    const ds = o.bongBong || [{ x: 72, b: 46, w: 8 }, { x: 50, b: 56, w: 7 }, { x: 30, b: 42, w: 13 }];
+    const bs = ds.map(q => {
+      const s = C.hinh(o.bongBongSVG || BONG, { x: q.x, b: q.b, w: q.w, z: 5 });
+      C.chay(s, [{ opacity: 0 }, { opacity: 1 }], 300);
+      C.chay(s.firstElementChild, [{ transform: 'translateY(0)' }, { transform: 'translateY(-8%)' }], 900, { lap: Infinity, dir: 'alternate' });
+      return s
+    });
+    const tam = s => ({ x: s.x, b: s.b + C.cao(s) / 2 });
+    const vao = o.vaoTu || { x: 114, b: 70 };
+    const p = C.polly({ x: vao.x, b: vao.b, lat: true, tu: 'bay' });
+
+    // Polly bay tới, đầu mỏ chạm mép phải quả bóng
+    const toi = async (s, t, sat = .42) => { const c = tam(s), d = C.neo(p, 162, 108, c.x + s.w * sat, c.b); await C.di(p, d, t) };
+    const vo = s => {
+      const c = tam(s); s.firstElementChild.getAnimations().forEach(a => a.cancel());
+      C.chay(s, [{ transform: 'scale(1)', opacity: 1 }, { transform: 'scale(1.4)', opacity: 0 }], 160, { giu: true, ez: 'ease-out' });
+      C.hat(c.x, c.b, { n: 8, mau: '#DDF3FF', co: 1.2 + s.w / 10, xa: s.w * .9, t: 450 });
+      setTimeout(() => s.remove(), C.ms(200))
+    };
+    const mo = () => C.lam(p, [{ transform: 'none' }, { transform: 'translateX(-14%) rotate(-14deg)', offset: .5 }, { transform: 'none' }], 280);
+
+    await C.cho(250);
+    for (let i = 0; i < bs.length - 1; i++) {
+      await toi(bs[i], i ? 700 : 950);
+      const m = mo(); await C.cho(140); vo(bs[i]); C.am('bup', '[bụp]', tam(bs[i])); await m; await C.cho(120)
+    }
+    // quả cuối: to, vỡ ngay trên mỏ
+    const big = bs[bs.length - 1];
+    await toi(big, 800, .2);
+    await C.cho(180);
+    const m = mo(); await C.cho(140);
+    vo(big); C.am('bup-to', '[BỤP!]', { x: big.x, b: tam(big).b + C.cao(big) * .7 }, { t: 1500 });
+    const bot = p.lop(`<div style="position:absolute;inset:0;transform:scale(1.25);transform-origin:76% 45%">${CH.HINH['bot-mo-polly']}</div>`);
+    C.chay(bot, [{ opacity: 0, transform: 'scale(.4)', transformOrigin: '80% 45%' }, { opacity: 1, transform: 'scale(1.1)', transformOrigin: '80% 45%', offset: .6 }, { opacity: 1, transform: 'scale(1)', transformOrigin: '80% 45%' }], 260);
+    await m;
+    // đứng hình: thôi vỗ cánh, tụt xuống một chút
+    p.tu('dung'); await C.di(p, { b: p.b - 3 }, 380, 'ease-in'); await C.cho(260);
+    p.tu('bay');
+    // lắc đầu, bọt văng ra
+    C.am('lac', '[phì phì]', p, { t: 1100 });
+    const sh = C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(14deg)' }, { transform: 'rotate(-14deg)' }, { transform: 'rotate(12deg)' }, { transform: 'rotate(-10deg)' }, { transform: 'rotate(0)' }], 850);
+    await C.cho(200); let mm = C.mo(p); C.hat(mm.x, mm.b, { n: 6, co: 1.4, xa: 6 });
+    await C.cho(380); mm = C.mo(p); C.hat(mm.x, mm.b, { n: 6, co: 1.2, xa: 6 });
+    await sh;
+    // bay đi (bọt vẫn còn dính trên mỏ)
+    const ra = o.raTai || { x: -16, b: 96 };
+    await C.di(p, ra, 1100, 'ease-in');
+    p.remove()
+  });
+})();
+
+/* ---- art/canh-hai/man-2.js ---- */
+/* Màn 2 · Vườn đêm · "Polly tập ngủ như dơi" (khoảng 8,5 giây)
+   Xong trò đèn pin: Polly bay tới đậu trên cành cạnh con dơi đang ngủ treo ngược, thử treo ngược như dơi,
+   chóng mặt (sao quay quanh đầu), lật lại đứng thẳng, ngáp "Tired! Tired!", rồi rúc đầu vào cánh ngủ kiểu vẹt.
+   CanhHai.man2(box, { canh: {x,b,w} | phần tử cành (khung kit 200×40), doi: phần tử dơi (nếu cảnh đã có),
+                       doiTai: 0..1 (chỗ dơi treo dọc cành, mặc định .58), dauTai: 0..1 (chỗ Polly đậu, .84), doiW, vaoTu, …chung })
+   Không có cành / dơi thì cảnh tự vẽ (art/kit/do-vat/canh-cay, con-vat/doi-ngu-treo-nguoc).
+   Tiếng (am): 'vut' "[vụt]" ×2, 'tired' "Tired! Tired!" (Polly; câu "Tired!" đã có bản ghi), 'ngu' "[khò… khò…]".
+   Kết thúc: cành, dơi và Polly đang ngủ VẪN Ở LẠI (trang sau thay cả khung thì tự mất; muốn gỡ ngay: r.xoa()). */
+(function () {
+  'use strict';
+  const CH = window.CanhHai;
+  CH.css('ch-man2', `
+.ch-sao{position:absolute;z-index:9;pointer-events:none;translate:-50% 50%;width:9%;aspect-ratio:1}
+.ch-sao>i{position:absolute;inset:0;animation:chSaoQuay var(--t,900ms) linear infinite}
+.ch-sao>i::before{content:'';position:absolute;left:42%;top:-8%;width:22%;aspect-ratio:1;background:#FFD21F;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+@keyframes chSaoQuay{to{transform:rotate(360deg)}}
+.ch-z{position:absolute;z-index:9;pointer-events:none;font:900 clamp(10px,5cqh,22px)/1 Nunito,system-ui,sans-serif;color:#C9B4F0;-webkit-text-stroke:1px #3A1B49}
+`);
+
+  CH.man2 = (box, o = {}) => CH.chay(box, o, async C => {
+    // cành: tự vẽ hoặc đo phần tử có sẵn (coi như khung kit 200×40: mặt trên y 14, mặt dưới y 24)
+    let cs;
+    if (o.canh && o.canh.nodeType) { const r = C.rect(o.canh); cs = { x: r.x, b: r.b, w: r.w, W: 200, H: 40, lat: false } }
+    else { const q = o.canh || { x: 60, b: 58, w: 40 }; cs = C.hinh('canh-cay', { x: q.x, b: q.b, w: q.w, z: 5 }) }
+    const treo = C.diem(cs, 200 * (o.doiTai ?? .58), 23);
+    if (!o.doi) { const d = C.hinh('doi-ngu-treo-nguoc', { w: o.doiW || 6, z: 5 }); const n = C.neo(d, 50, 5, treo.x, treo.b); C.dat(d, n.x, n.b);
+      d.firstElementChild.style.transformOrigin = '50% 3%'; C.chay(d.firstElementChild, [{ transform: 'rotate(-3deg)' }, { transform: 'rotate(3deg)' }], 1400, { lap: Infinity, dir: 'alternate' }) }
+
+    const vao = o.vaoTu || { x: 114, b: 82 };
+    const p = C.polly({ x: vao.x, b: vao.b, lat: true, tu: 'bay' });
+    const tren = C.diem(cs, 200 * (o.dauTai ?? .84), 14), duoi = C.diem(cs, 200 * (o.dauTai ?? .84), 23);
+    const inn = p.firstElementChild;
+
+    // 1. bay tới, đậu trên cành cạnh dơi
+    const dau = C.neo(p, 97, 241, tren.x, tren.b);
+    await C.di(p, [{ x: (vao.x + dau.x) / 2, b: dau.b + 14 }, { x: dau.x, b: dau.b + 3 }], 1200);
+    p.tu('dung'); C.dat(p, dau.x, dau.b);
+    await C.lam(p, [{ transform: 'scaleY(1)' }, { transform: 'scaleY(.9)' }, { transform: 'scaleY(1)' }], 220);
+    // 2. nhìn con dơi, nghiêng đầu
+    inn.style.transformOrigin = '50% 100%';
+    await C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(-12deg)', offset: .3 }, { transform: 'rotate(-12deg)', offset: .7 }, { transform: 'rotate(0)' }], 900);
+    // 3. lật xuống treo ngược như dơi
+    C.am('vut', '[vụt]', p);
+    await C.lam(p, [{ transform: 'scaleY(1)' }, { transform: 'scaleY(.05)' }], 150, { giu: true, ez: 'ease-in' });
+    p.tu('treo-nguoc'); const ng = C.neo(p, 97, 20, duoi.x, duoi.b); C.dat(p, ng.x, ng.b);
+    inn.getAnimations().forEach(a => a.cancel()); inn.style.transformOrigin = '50% 4%';
+    await C.lam(p, [{ transform: 'scaleY(.05)' }, { transform: 'scaleY(1.06)' }, { transform: 'scaleY(1)' }], 260, { ez: 'ease-out' });
+    // đung đưa, chóng mặt: sao quay quanh đầu (đầu đang ở dưới)
+    const sao = document.createElement('div'); sao.className = 'ch-sao'; sao.innerHTML = '<i></i><i style="animation-delay:-300ms"></i><i style="animation-delay:-600ms"></i>';
+    sao.style.setProperty('--t', C.ms(900) + 'ms'); box.append(sao); C.els.push(sao);
+    const datSao = () => { const h = C.diem(p, 104, p._tu === 'treo-nguoc' ? 170 : 92); sao.style.left = h.x + '%'; sao.style.bottom = h.b + '%' };
+    datSao(); C.chay(sao, [{ opacity: 0 }, { opacity: 1 }], 300);
+    await C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(12deg)' }, { transform: 'rotate(-12deg)' }, { transform: 'rotate(9deg)' }, { transform: 'rotate(-6deg)' }, { transform: 'rotate(0)' }], 1500);
+    // 4. lật lại đứng thẳng, loạng choạng
+    C.am('vut', '[vụt]', p);
+    await C.lam(p, [{ transform: 'scaleY(1)' }, { transform: 'scaleY(.05)' }], 150, { giu: true, ez: 'ease-in' });
+    p.tu('dung'); C.dat(p, dau.x, dau.b); datSao();
+    inn.getAnimations().forEach(a => a.cancel()); inn.style.transformOrigin = '50% 96%';
+    await C.lam(p, [{ transform: 'scaleY(.05)' }, { transform: 'scaleY(1)' }], 200, { ez: 'ease-out' });
+    await C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(-13deg)' }, { transform: 'rotate(11deg)' }, { transform: 'rotate(-7deg)' }, { transform: 'rotate(4deg)' }, { transform: 'rotate(0)' }], 1000);
+    C.an(sao, [{ opacity: 1 }, { opacity: 0 }], 400, { giu: true }).catch(() => {});
+    // 5. ngáp "Tired! Tired!"
+    p.tu('noi'); C.am('tired', 'Tired! Tired!', p, { loi: true, t: 1400 });
+    await C.lam(p, [{ transform: 'scale(1)' }, { transform: 'scale(1.05,.96)', offset: .5 }, { transform: 'scale(1)' }], 900);
+    // 6. rúc đầu vào cánh ngủ (vẹt ngủ đứng, không treo ngược)
+    p.tu('ngu');
+    await C.lam(p, [{ transform: 'scaleY(1)' }, { transform: 'scaleY(.93)' }, { transform: 'scaleY(.97)' }], 500, { giu: true });
+    C.am('ngu', '[khò… khò…]', p, { t: 1600 });
+    const head = C.diem(p, 120, 70);
+    for (let i = 0; i < 3; i++) {
+      const z = document.createElement('b'); z.className = 'ch-z'; z.textContent = 'z'; z.style.left = head.x + '%'; z.style.bottom = head.b + '%';
+      box.append(z); C.els.push(z);
+      C.chay(z, [{ opacity: 0, transform: 'translate(0,0) scale(.6)' }, { opacity: 1, offset: .25 }, { opacity: 0, transform: 'translate(120%,-180%) scale(1.2)' }], 1300, { tre: i * 420, giu: true })
+    }
+    await C.cho(1900)
+  });
+})();
+
+/* ---- art/canh-hai/man-3.js ---- */
+/* Màn 3 · Nhà Na · "Mèo con đội vịt" (khoảng 6,5 giây)
+   Xong trò bắt đồ chơi rơi: mèo con trên kệ nhìn cái rổ, lấy đà, nhảy vèo vào rổ, rổ lắc lục cục, trong rổ kêu "chít" (vịt cao su),
+   rồi mèo nhảy HẲN ra khỏi rổ, đáp xuống sàn cạnh rổ, đầu đội con vịt cao su (đồ chơi vừa rơi) làm mũ, đứng nghiêng đầu cho bé nhìn rõ.
+   (Vòng 3, Minh: cái trống úp ngược trông không rõ, đổi lại con vịt.)
+   CanhHai.man3(box, { meo: phần tử mèo (bắt buộc), ro: phần tử rổ (bắt buộc),
+                       mu: svg làm mũ (mặc định con vịt của app ART.duck),
+                       raDat: {x, b} chỗ mèo đáp (mặc định ngay cạnh rổ, phía giữa phòng), toRa: mèo to lên khi ra trước (1,35),
+                       vanhRo: 0..1 (miệng rổ cách đỉnh rổ bao nhiêu phần chiều cao, mặc định .4 = ART.basket),
+                       dauMeo: 0..1 (đỉnh đầu mèo, tính từ trên, mặc định .18 = CAT_SVG), …chung })
+   Tiếng (am): 'meo' "[meo!]" ×2, 'bich' "[bịch]" ×2, 'luc-cuc' "[lục cục]", 'chit' "[chít!]" (vịt cao su).
+   Kết thúc: mèo đội vịt ĐỨNG LẠI trên sàn cạnh rổ (bản sao mèo; mèo gốc đang ẩn; rổ đã trả lại). r.xoa() trả lại như cũ. */
+(function () {
+  'use strict';
+  const CH = window.CanhHai;
+  const INK = '#361D46', OL = `stroke="${INK}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"`;
+  // con vịt cao su của app (ART.duck)
+  const VIT = `<svg viewBox="0 0 64 64" overflow="visible"><path d="M10 38 C10 52 24 58 36 56 C50 54 56 44 54 36 C46 40 40 38 36 32 L24 34 C18 32 12 32 10 38Z" fill="#FCB515" ${OL}/><circle cx="40" cy="22" r="11" fill="#FCB515" ${OL}/><path d="M50 22 l10 3 -10 3z" fill="#F28C38" ${OL}/><circle cx="43" cy="19" r="2.2" fill="${INK}"/></svg>`;
+
+  CH.man3 = (box, o = {}) => CH.chay(box, o, async C => {
+    if (!o.meo || !o.ro) throw new Error('man3: cần o.meo và o.ro');
+    const vanh = o.vanhRo ?? .4, dau = o.dauMeo ?? .18;
+    const roSau = C.muon(o.ro, { z: 5 });                        // rổ (phía sau)
+    const roTruoc = C.muon(o.ro, { z: 8 });                      // thân rổ phía trước: che phần mèo nằm trong rổ
+    roTruoc.querySelector('.ch-q').style.clipPath = `inset(${vanh * 100}% 0 0 0)`;
+    const m = C.muon(o.meo, { z: 6 });
+    const mi = m.firstElementChild; mi.style.transformOrigin = '50% 100%';
+    const hR = C.cao(roSau), hM = C.cao(m), mieng = roSau.b + hR * (1 - vanh);
+    const veTrai = roSau.x < m.x;                                  // mèo nhảy sang trái?
+
+    // 1. nhìn cái rổ, lấy đà
+    await C.lam(m, [{ transform: 'rotate(0)' }, { transform: `rotate(${veTrai ? -14 : 14}deg)` }, { transform: 'rotate(0)' }], 600);
+    await C.lam(m, [{ transform: 'scaleY(1)' }, { transform: 'scale(1.08,.8)' }], 260, { giu: true });
+    // 2. nhảy vèo vào rổ
+    C.am('meo', '[meo!]', m);
+    const tren = { x: roSau.x, b: mieng + 4 }, dinh = { x: (m.x + roSau.x) / 2, b: Math.max(m.b, mieng) + 18 };
+    mi.getAnimations().forEach(a => a.cancel());
+    C.chay(mi, [{ transform: 'scale(.9,1.12) rotate(0)' }, { transform: `scale(1) rotate(${veTrai ? -20 : 20}deg)`, offset: .5 }, { transform: 'scale(1) rotate(0)' }], 760);
+    await C.di(m, [{ x: dinh.x, b: dinh.b, o: .45 }, tren], 760, 'cubic-bezier(.3,.1,.5,1)');
+    await C.di(m, { b: Math.max(roSau.b + 1, mieng - hM * .95) }, 220, 'ease-in');
+    C.am('bich', '[bịch]', roSau);
+    const nhun = [{ transform: 'scale(1,1)' }, { transform: 'scale(1.1,.86)' }, { transform: 'scale(.97,1.04)' }, { transform: 'scale(1)' }];
+    C.chay(roSau.firstElementChild, nhun, 380); await C.lam(roTruoc, nhun, 380);
+    // 3. rổ lắc lục cục, trong rổ kêu "chít" (mèo vừa đội con vịt)
+    C.am('luc-cuc', '[lục cục]', roSau);
+    const lac = [{ transform: 'rotate(0)' }, { transform: 'rotate(-6deg)' }, { transform: 'rotate(5deg)' }, { transform: 'rotate(-4deg)' }, { transform: 'rotate(0)' }];
+    for (const r of [roSau, roTruoc]) r.firstElementChild.style.transformOrigin = '50% 100%';
+    C.chay(roSau.firstElementChild, lac, 800); await C.lam(roTruoc, lac, 800);
+    C.am('chit', '[chít!]', { x: roSau.x, b: mieng + 8 });
+    C.chay(roSau.firstElementChild, nhun, 300); await C.lam(roTruoc, nhun, 300);
+    await C.cho(150);
+    // 4. nhảy hẳn ra khỏi rổ, đầu đội con vịt
+    const mu = document.createElement('div');
+    mu.style.cssText = `position:absolute;left:6%;bottom:${(1 - dau) * 100 - 9}%;width:88%;transform:rotate(-6deg);transform-origin:50% 100%`;
+    mu.innerHTML = o.mu || VIT; m.querySelector('.ch-q').append(mu);
+    m.style.zIndex = 9;                                            // ra trước thân rổ
+    const sangPhai = o.raDat ? o.raDat.x > roSau.x : roSau.x <= 50;
+    const dat = o.raDat || { x: roSau.x + (sangPhai ? 1 : -1) * (roSau.w / 2 + m.w * .9), b: roSau.b };
+    C.am('meo', '[meo!]', { x: roSau.x, b: mieng + hM + 6 });
+    m.style.transformOrigin = '50% 100%';                         // ra phía trước, to hơn một chút cho bé nhìn rõ
+    C.chay(m, [{ scale: '1' }, { scale: String(o.toRa ?? 1.35) }], 780, { giu: true });
+    C.chay(mi, [{ transform: 'rotate(0)' }, { transform: `rotate(${sangPhai ? 14 : -14}deg)`, offset: .5 }, { transform: 'rotate(0)' }], 780);
+    await C.di(m, [{ x: roSau.x, b: mieng + hM * .2, o: .2 }, { x: (roSau.x + dat.x) / 2, b: mieng + hM * .9, o: .55 }, dat], 780, 'cubic-bezier(.3,.1,.5,1)');
+    m.style.scale = String(o.toRa ?? 1.35);
+    C.am('bich', '[bịch]', { x: dat.x, b: dat.b + hM * 1.6 });
+    await C.lam(m, [{ transform: 'scale(1)' }, { transform: 'scale(1.12,.84)' }, { transform: 'scale(.96,1.06)' }, { transform: 'scale(1)' }], 320);
+    roTruoc.tra(); roSau.tra();                                    // rổ xong việc: trả lại rổ gốc (đúng thứ tự ngược lúc mượn)
+    // 5. đứng cho bé nhìn rõ: nghiêng đầu, con vịt lắc lư
+    C.chay(mu, [{ transform: 'rotate(-6deg)' }, { transform: 'rotate(6deg)' }, { transform: 'rotate(-6deg)' }], 700, { lap: 2 });
+    await C.lam(m, [{ transform: 'rotate(0)' }, { transform: 'rotate(-10deg)', offset: .25 }, { transform: 'rotate(-10deg)', offset: .45 }, { transform: 'rotate(9deg)', offset: .7 }, { transform: 'rotate(0)' }], 1300);
+    await C.cho(500)
+  });
+})();
+
+/* ---- art/canh-hai/man-4.js ---- */
+/* Màn 4 · Cửa hàng · "Polly tha nải chuối" (khoảng 9 giây)
+   Xong trò xe đẩy: Polly cố tha cả một nải chuối to tới xe; nặng quá, vỗ cánh phành phạch, bay lên từng nấc
+   (lên một chút lại tụt), tới trên xe thì thả "bịch" vào xe, đậu lên tay đẩy, nói "Big bananas! Big bananas!",
+   rồi thở hổn hển, xong bay đi.
+   CanhHai.man4(box, { xe: phần tử xe đẩy (bắt buộc),
+                       xeTrong: {x, mieng, day, tayX, tayY} các tỉ lệ 0..1 trong khung xe (mặc định theo SHOPCART_SVG 120×90:
+                                 lòng xe x .58, miệng y .25, đáy lòng y .64, tay đẩy (.1, .12)),
+                       vaoTu, raTai, naiW (bề rộng nải chuối, % box; mặc định 1,35 × Polly),
+                       moTrongXe (độ rõ phần nải chuối nằm dưới miệng xe, mặc định .4), …chung })
+   Tiếng (am): 'vo-canh' "[phành phạch]", 'bich' "[bịch!]", 'big-bananas' "Big bananas! Big bananas!" (Polly; CHƯA CÓ BẢN GHI),
+   'tho' "[hộc hộc]".
+   Kết thúc: nải chuối NẰM LẠI trong xe (bản sao xe + hình nải chuối); Polly đã bay đi. r.xoa() trả lại như cũ. */
+(function () {
+  'use strict';
+  const CH = window.CanhHai;
+
+  CH.man4 = (box, o = {}) => CH.chay(box, o, async C => {
+    if (!o.xe) throw new Error('man4: cần o.xe');
+    const T = Object.assign({ x: .58, mieng: .25, day: .64, tayX: .1, tayY: .12 }, o.xeTrong || {});
+    const xe = C.muon(o.xe, { z: 6 }); xe.firstElementChild.style.transformOrigin = '50% 100%';
+    const hX = C.cao(xe), trai = xe.x - xe.w / 2;
+    const longX = trai + T.x * xe.w, mieng = xe.b + (1 - T.mieng) * hX, day = xe.b + (1 - T.day) * hX;
+    const tay = { x: trai + T.tayX * xe.w, b: xe.b + (1 - T.tayY) * hX };
+
+    const W = 11, vao = o.vaoTu || { x: 116, b: 14 };
+    const p = C.polly({ x: vao.x, b: vao.b, w: W, lat: true, tu: 'tha', voMs: 130 });
+    // nải chuối treo dưới chân Polly (cuống ở chỗ chân quặp (100, 244) của khung Polly)
+    const naiTi = (o.naiW || W * 1.35) / W;
+    const nai = p.lop(`<div style="position:absolute;left:${50 - naiTi * 50}%;top:91.5%;width:${naiTi * 100}%">${CH.HINH['nai-chuoi-to']}</div>`, { theoBay: false });
+    const hP = C.cao(p), hN = naiTi * W * (102 / 126) * (C.R().width / C.R().height);
+    const duoiNai = () => p.b - (hN - (hP * .085));                 // đáy nải chuối (% box)
+    const bTheo = dn => dn + (hN - hP * .085);                      // Polly ở đâu để đáy nải ở dn
+
+    // 1. lết vào sát mặt đất, nặng trĩu, chập chờn
+    C.am('vo-canh', '[phành phạch]', { x: 80, b: 40 });
+    const xToi = longX + 20, b0 = bTheo(4);
+    await C.di(p, [{ x: (vao.x + xToi) / 2, b: b0 + 3, o: .3 }, { x: (vao.x + xToi) / 2 - 6, b: b0, o: .55 }, { x: xToi + 4, b: b0 + 3, o: .8 }, { x: xToi, b: b0 }], 1500);
+    // 2. bay lên từng nấc: lên một chút, tụt lại một ít
+    const bDich = bTheo(mieng + 3), nac = 3, buoc = (bDich - b0) / nac;
+    for (let i = 1; i <= nac; i++) {
+      C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(6deg)' }, { transform: 'rotate(-4deg)' }, { transform: 'rotate(0)' }], 400).catch(() => {});
+      await C.di(p, { b: b0 + buoc * i + 3 }, 380, 'ease-out');
+      await C.di(p, { b: b0 + buoc * i - (i < nac ? 1.5 : 0) }, 220, 'ease-in')
+    }
+    if (C.dead) return;
+    // 3. kéo sang, tới ngay trên lòng xe
+    await C.di(p, { x: longX }, 650);
+    await C.cho(150);
+    // 4. thả "bịch"
+    const r = C.rect(nai.firstElementChild);
+    nai.remove();
+    const n = C.hinh('nai-chuoi-to', { x: r.x, b: r.b, w: r.w, z: 7 });
+    p.tu('bay'); p.vo(300);
+    C.di(p, { b: p.b + 9 }, 380, 'ease-out').catch(() => {});
+    await C.di(n, { b: day }, 300, 'ease-in');
+    C.am('bich', '[bịch!]', xe);
+    // nằm trong lòng xe: phần dưới miệng xe mờ đi (như nhìn qua lưới xe), phần nhô lên trên miệng xe rõ.
+    // (Không đặt nải chuối sau xe: viền sticker trắng của xe làm lòng xe đục, che mất nải chuối.)
+    const cut = Math.max(0, Math.min(1, (mieng - day) / C.cao(n)));
+    const tren = C.hinh('nai-chuoi-to', { x: n.x, b: n.b, w: n.w, z: 7 });
+    tren.style.clipPath = `inset(-30% -30% ${cut * 100}% -30%)`;
+    n.style.clipPath = `inset(${(1 - cut) * 100}% -30% -30% -30%)`; n.style.opacity = o.moTrongXe ?? .4;
+    const nhun = [{ transform: 'scale(1)' }, { transform: 'scale(1.06,.9)' }, { transform: 'scale(1)' }];
+    C.chay(n.firstElementChild, nhun, 300); C.chay(tren.firstElementChild, nhun, 300);
+    await C.lam(xe, [{ transform: 'scale(1)' }, { transform: 'scale(1.05,.9)' }, { transform: 'scale(.98,1.03)' }, { transform: 'scale(1)' }], 380);
+    // 5. đậu lên tay đẩy, nói "Big bananas! Big bananas!", rồi thở hổn hển
+    C.quay(p, false);
+    const dau = C.neo(p, 97, 241, tay.x, tay.b);
+    await C.di(p, [{ x: (p.x + dau.x) / 2, b: Math.max(p.b, dau.b) + 6 }, { x: dau.x, b: dau.b + 2 }], 600);
+    p.tu('noi'); C.dat(p, dau.x, dau.b);
+    p.firstElementChild.style.transformOrigin = '50% 100%';
+    C.am('big-bananas', 'Big bananas! Big bananas!', p, { loi: true, t: 1700 });
+    await C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(10deg)' }, { transform: 'rotate(0)' }, { transform: 'rotate(10deg)' }, { transform: 'rotate(0)' }], 1500);
+    C.am('tho', '[hộc hộc]', p, { t: 1300 });
+    for (let i = 0; i < 4; i++) {
+      p.tu(i % 2 ? 'tho-2' : 'tho-1');
+      await C.lam(p, [{ transform: 'scale(1)' }, { transform: i % 2 ? 'scale(.97,1.02)' : 'scale(1.04,.95)' }], 260, { giu: true })
+    }
+    p.firstElementChild.getAnimations().forEach(a => a.cancel());
+    // 6. bay đi
+    p.tu('bay');
+    const ra = o.raTai || { x: -16, b: 92 };
+    C.quay(p, ra.x < p.x);
+    await C.di(p, ra, 900, 'ease-in');
+    p.remove()
+  });
+})();
+
+/* ---- art/canh-hai/man-5.js ---- */
+/* Màn 5 · Công trường · "Mái nhà biết đi" (khoảng 7 giây)
+   Đầu trang, mái nhà tam giác nằm sẵn dưới đất; Polly đã trốn sẵn bên dưới (bé không thấy Polly chui vào).
+   Cái mái tự nhấc lên, lòi ra hai chân vẹt, đi lạch bạch qua rồi đi lại. Cả đội mặt rất ngạc nhiên, mỗi bạn "Oh!".
+   Mái nhấc lên một bên, lộ ra Polly: "Triangle! Triangle!", Polly bay đi, mái hạ xuống "cộp" đúng chỗ cũ.
+   Sau đó app cho cần cẩu nhấc mái lên, trò cũ chạy tiếp.
+   CanhHai.man5(box, { mai: phần tử mái nhà (bắt buộc, đang nằm dưới đất), ban: [phần tử Lam, Na, Ben…],
+                       doiMat(el, 'surprised' | null): đổi mặt một bạn (app: setKidFace); mặc định đổi hình kit <ten>-ngac-nhien
+                       nếu phần tử có data-kit="lam|na|ben", diXa (% box mái đi, mặc định 8), raTai, …chung })
+   Tiếng (am): 'lach-bach' "[lạch bạch]" ×2, 'oh' "Oh!" mỗi bạn một lần (am nhận thêm tên bạn: 'Lam', 'Na', 'Ben';
+   CHƯA CÓ BẢN GHI), 'triangle' "Triangle! Triangle!" (Polly; đã có bản ghi "Triangle!"), 'cop' "[cộp]".
+   Kết thúc: mái về đúng chỗ cũ (bản gốc hiện lại), mặt các bạn trở lại như trước, Polly đã bay đi. Không để lại gì. */
+(function () {
+  'use strict';
+  const CH = window.CanhHai;
+  const TEN = { lam: 'Lam', na: 'Na', ben: 'Ben', choi: 'Chồi' };
+
+  CH.man5 = (box, o = {}) => CH.chay(box, o, async C => {
+    if (!o.mai) throw new Error('man5: cần o.mai');
+    const m = C.muon(o.mai, { z: 8 }), mi = m.firstElementChild;
+    const dat0 = { x: m.x, b: m.b }, hM = C.cao(m);
+    const ban = o.ban || [];
+    const tenOf = el => el.dataset.who || TEN[el.dataset.kit] || '';
+    const doiMat = o.doiMat || ((el, f) => {
+      const k = el.dataset.kit, sv = el.querySelector('.ch-kit') || el; if (!k) return;
+      if (f) { if (sv._was == null) { sv._was = sv.innerHTML; C.back.push(() => { if (sv._was != null) { sv.innerHTML = sv._was; sv._was = null } }) } sv.innerHTML = CH.HINH[k + '-ngac-nhien'] }
+      else if (sv._was != null) { sv.innerHTML = sv._was; sv._was = null }
+    });
+    // Polly trốn sẵn dưới mái: có mặt nhưng ẩn, đứng giữa mái
+    const p = C.polly({ x: m.x, b: m.b, lat: false, tu: 'dung', z: 6 });
+    p.style.visibility = 'hidden';
+
+    await C.cho(400);
+    // 1. cái mái nhúc nhích, rồi tự nhấc lên, lòi hai chân vẹt
+    await C.lam(m, [{ transform: 'rotate(0)' }, { transform: 'rotate(-2deg)' }, { transform: 'rotate(2deg)' }, { transform: 'rotate(0)' }], 300);
+    await C.cho(200);
+    const nhac = Math.max(3, hM * .22);
+    await C.di(m, { b: dat0.b + nhac }, 220, 'ease-out');
+    const chan = C.hinh('polly-chan-1', { w: p.w * 2.4, z: 7 });
+    const datChan = () => { const n = C.neo(chan, 98, 252, m.x, dat0.b); C.dat(chan, n.x, n.b) };
+    datChan();
+    C.chay(chan, [{ opacity: 0 }, { opacity: 1 }], 120);
+    let k = 0; const buoc = setInterval(() => { k++; chan.querySelector('.ch-q').innerHTML = CH.HINH[k % 2 ? 'polly-chan-2' : 'polly-chan-1'] }, C.ms(170));
+    C.timers.push(buoc); C.back.push(() => clearInterval(buoc));
+    // 2. đi lạch bạch sang một bên rồi đi lại
+    const xa = o.diXa ?? 8;
+    const di = async (dx) => {
+      C.am('lach-bach', '[lạch bạch]', { x: m.x, b: dat0.b + hM + 6 });
+      const lac = C.lam(m, [{ transform: 'rotate(0) translateY(0)' }, { transform: 'rotate(-4deg) translateY(-6%)' }, { transform: 'rotate(0) translateY(0)' }, { transform: 'rotate(4deg) translateY(-6%)' }, { transform: 'rotate(0) translateY(0)' }], 560, { lap: 2 });
+      const lacA = C.anims[C.anims.length - 1];   // bước đi theo thời gian của chính chuyển động lắc lư: app tạm dừng (Pause) thì mái cũng đứng yên
+      const tg = m.x + dx, x0 = m.x, dur = C.ms(1120);
+      const theo = () => { if (C.dead) return; const t = lacA && lacA.currentTime != null ? +lacA.currentTime : dur; const f = Math.min(1, t / dur); C.dat(m, x0 + (tg - x0) * f, m.b); datChan(); if (f < 1) requestAnimationFrame(theo) };
+      requestAnimationFrame(theo); await lac; C.dat(m, tg, m.b); datChan()
+    };
+    const ve = ban.length && C.rect(ban[0]).x < m.x ? -1 : 1;     // đi về phía các bạn trước
+    const diDau = di(ve * xa);
+    // 3. cả đội mặt rất ngạc nhiên, mỗi bạn "Oh!"
+    await C.cho(450);
+    for (const el of ban) {
+      doiMat(el, 'surprised');
+      C.chay(el, [{ transform: 'translateY(0)' }, { transform: 'translateY(-8%)' }, { transform: 'translateY(0)' }], 340);
+      C.am('oh', 'Oh!', el, { loi: true, ai: tenOf(el), t: 1100 });
+      await C.cho(260)
+    }
+    await diDau;
+    await di(-ve * xa);
+    clearInterval(buoc);
+    // 4. mái nhấc lên một bên, lộ ra Polly: "Triangle! Triangle!"
+    mi.style.transformOrigin = '2% 100%';
+    const mo = C.lam(m, [{ transform: 'rotate(0)' }, { transform: 'rotate(-20deg)' }], 320, { giu: true, ez: 'ease-out' });
+    C.chay(chan, [{ opacity: 1 }, { opacity: 0 }], 150, { giu: true });
+    C.dat(p, C.neo(p, 97, 250, m.x + m.w * .3, dat0.b).x, dat0.b);
+    p.tu('noi'); p.style.visibility = '';
+    C.chay(p, [{ opacity: 0 }, { opacity: 1 }], 150);
+    await mo;
+    const ngoai = C.neo(p, 97, 250, m.x + m.w / 2 + 3, dat0.b);
+    await C.di(p, ngoai, 260, 'cubic-bezier(.3,1.5,.5,1)');
+    chan.remove();
+    C.am('triangle', 'Triangle! Triangle!', p, { loi: true, t: 1600 });
+    p.firstElementChild.style.transformOrigin = '50% 100%';
+    await C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(8deg)' }, { transform: 'rotate(0)' }, { transform: 'rotate(8deg)' }, { transform: 'rotate(0)' }], 1100);
+    // 5. Polly bay đi, mái hạ xuống "cộp"
+    p.tu('bay'); const ra = o.raTai || { x: 116, b: 92 };
+    C.di(p, ra, 900, 'ease-in').then(() => p.remove(), () => {});
+    await C.cho(250);
+    mi.getAnimations().forEach(a => a.cancel());
+    await C.lam(m, [{ transform: 'rotate(-20deg)' }, { transform: 'rotate(0)' }], 200, { ez: 'ease-in' });
+    await C.di(m, { b: dat0.b }, 120, 'ease-in');
+    C.am('cop', '[cộp]', m);
+    C.hat(m.x - m.w * .45, dat0.b + 1, { n: 4, mau: '#D9C7A8', vien: '', co: 1.6, xa: 4 });
+    C.hat(m.x + m.w * .45, dat0.b + 1, { n: 4, mau: '#D9C7A8', vien: '', co: 1.6, xa: 4 });
+    await C.lam(m, [{ transform: 'scale(1)' }, { transform: 'scale(1.03,.92)' }, { transform: 'scale(1)' }], 220);
+    await C.cho(600);
+    ban.forEach(el => doiMat(el, null));
+    m.tra();
+    await C.cho(300)
+  });
+})();
+
+/* ---- art/canh-hai/man-6.js ---- */
+/* Màn 6 · Một ngày · "Mũ vỏ chuối" (khoảng 7 giây)
+   Bữa sáng ba-na-na: Na ăn chuối xong, Polly bay xuống nhặt vỏ chuối, đội lên đầu làm mũ: "Ba-na-na!" (nhún ba cái
+   theo ba tiếng), rồi bay tới thùng rác trong bếp, nắp mở "cạch", thả vỏ vào, nắp đóng "cạch", bay đi.
+   CanhHai.man6(box, { vo: {x, b, w} chỗ vỏ chuối nằm (mặc định trên quầy, chỗ đĩa chuối của app: x 30, b 46, w 7),
+                       thung: phần tử thùng rác có <g class="nap"> (art/kit/do-vat/thung-rac) | {x, b, w} để cảnh tự vẽ,
+                       na: phần tử Na (nhún theo), vaoTu, raTai, …chung })
+   Tiếng (am): 'banana' "Ba-na-na!" (Polly; câu đã có bản ghi), 'cach' "[cạch]" ×2.
+   Kết thúc: vỏ chuối đã vào thùng, Polly bay đi; thùng rác (nếu cảnh tự vẽ) VẪN Ở LẠI. r.xoa() gỡ. */
+(function () {
+  'use strict';
+  const CH = window.CanhHai;
+
+  CH.man6 = (box, o = {}) => CH.chay(box, o, async C => {
+    const vq = o.vo || { x: 30, b: 46, w: 7 };
+    const v = C.hinh('vo-chuoi', { x: vq.x, b: vq.b, w: vq.w, z: 6 });
+    C.chay(v, [{ opacity: 0 }, { opacity: 1 }], 250);
+    let t;
+    if (o.thung && o.thung.nodeType) t = C.muon(o.thung, { z: 6 });
+    else { const q = o.thung || { x: 88, b: 3, w: 9 }; t = C.hinh('thung-rac', { x: q.x, b: q.b, w: q.w, z: 6 }) }
+    const nap = t.querySelector('g.nap'); if (nap) { nap.style.transformBox = 'view-box'; nap.style.transformOrigin = '6px 22px' }
+    const hT = C.cao(t);
+
+    // 1. Polly bay xuống, đáp cạnh vỏ chuối
+    const vao = o.vaoTu || { x: 112, b: 88 };
+    const p = C.polly({ x: vao.x, b: vao.b, lat: true, tu: 'bay' });
+    const dat = C.neo(p, 97, 250, v.x + v.w * .5 + 5, v.b);
+    await C.di(p, [{ x: (vao.x + dat.x) / 2, b: dat.b + 20 }, { x: dat.x, b: dat.b + 3 }], 1000);
+    p.tu('dung'); C.dat(p, dat.x, dat.b);
+    p.firstElementChild.style.transformOrigin = '50% 100%';
+    await C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(-16deg)', offset: .4 }, { transform: 'rotate(-16deg)', offset: .7 }, { transform: 'rotate(0)' }], 650);
+    // 2. hất vỏ chuối lên, rơi đúng lên đầu thành cái mũ
+    const dau = C.diem(p, 104, 34);
+    const hv = C.cao(v);
+    await C.di(v, [{ x: (v.x + dau.x) / 2, b: dau.b + hv * 1.4, o: .55 }, { x: dau.x, b: dau.b - hv * .25 }], 520, 'ease-out');
+    v.remove();
+    const mu = p.lop(`<div style="position:absolute;left:28%;top:-5%;width:48%;transform:rotate(-8deg)">${CH.HINH['vo-chuoi']}</div>`);
+    C.chay(mu, [{ transform: 'translateY(-4%)' }, { transform: 'translateY(1%)' }, { transform: 'translateY(0)' }], 220);
+    await C.cho(200);
+    // 3. "Ba-na-na!" nhún ba cái
+    p.tu('noi'); C.am('banana', 'Ba-na-na!', p, { loi: true, t: 1500 });
+    if (o.na) C.chay(o.na, [{ transform: 'translateY(0)' }, { transform: 'translateY(-6%)' }, { transform: 'translateY(0)' }], 300, { lap: 3, tre: 60 });
+    for (let i = 0; i < 3; i++) await C.lam(p, [{ transform: 'translateY(0) scale(1)' }, { transform: 'translateY(-12%) scale(.96,1.05)' }, { transform: 'translateY(0) scale(1.05,.94)', offset: .85 }, { transform: 'translateY(0) scale(1)' }], 320);
+    await C.cho(150);
+    // 4. bay tới thùng rác, nắp mở, thả vỏ vào, nắp đóng
+    p.tu('bay'); C.quay(p, t.x < p.x);
+    const tren = { x: t.x, b: t.b + hT + 4 };
+    await C.di(p, [{ x: (p.x + tren.x) / 2, b: Math.max(p.b, tren.b) + 12 }, tren], 950);
+    if (nap) await C.an(nap, [{ transform: 'rotate(0)' }, { transform: 'rotate(-80deg)' }], 220, { giu: true, ez: 'ease-out' });
+    C.am('cach', '[cạch]', t);
+    await C.cho(150);
+    const r = C.rect(mu.firstElementChild); mu.remove();
+    const roi = C.hinh('vo-chuoi', { x: r.x, b: r.b, w: r.w, z: 5 });
+    C.chay(roi.firstElementChild, [{ transform: 'rotate(-8deg)' }, { transform: 'rotate(20deg)' }], 320, { giu: true });
+    C.di(p, { b: p.b + 5 }, 300, 'ease-out').catch(() => {});
+    await C.di(roi, { x: t.x, b: t.b + hT * .25 }, 320, 'ease-in');
+    roi.remove();
+    await C.cho(120);
+    if (nap) await C.an(nap, [{ transform: 'rotate(-80deg)' }, { transform: 'rotate(0)' }], 170, { giu: true, ez: 'ease-in' });
+    C.am('cach', '[cạch]', t);
+    C.lam(t, [{ transform: 'scale(1)' }, { transform: 'scale(1.04,.95)' }, { transform: 'scale(1)' }], 200).catch(() => {});
+    // 5. bay đi
+    const ra = o.raTai || { x: 116, b: 96 };
+    C.quay(p, ra.x < p.x);
+    await C.di(p, ra, 900, 'ease-in');
+    p.remove();
+    if (t.tra) t.tra()
+  });
+})();
+/* CANH-HAI:END */</script>
 <script>
 "use strict";
 /* ---- pause: while PAUSED, timers that come due wait in a queue; intervals skip; sound and animations freeze ---- */
@@ -5929,6 +6606,51 @@ async function pollyEcho(word,vi){
   try{ for(let i=0;i<en.length;i++){ b.textContent=en.slice(0,i+1).join(' '); await say(en[i],vv.length===en.length?vv[i]:(i?'':vv.join(' ')),{polly:true,q:false,gap:i<en.length-1?520:150}) } await sleep(500) }catch(e){ p.remove(); back(); throw e }
   p.classList.add('bye'); setTimeout(()=>{ p.remove(); back() },500);
 }
+/* =========================================================
+   27/10 COMEDY SCENES of Unit 1 (art/canh-hai, chat [App] Cảnh hài; Minh approved the preview 8640864; claude/chot-canh-hai-unit1-27-10.md).
+   A short surprise the child only watches (6.5–9 s): nothing to tap, no command; the app waits for it, then goes on.
+   Only inside the levels: never in the Fun Mix or My Games. Skipped when the device asks for less motion, and in the fast test runs.
+   The scene's noises are the app's own sounds; its words are recorded lines (Polly: Chồi's recording raised; the friends: their own voices).
+   Màn 1 after the faces bubbles · Màn 2 the bat in the flashlight game, Polly after it · Màn 3 after the toy catch · Màn 4 after the cart
+   · Màn 5 the roof on the ground at the start (Polly hides under it), then the crane lifts it · Màn 6 after the breakfast claps. Not Màn 0, 7.
+   ========================================================= */
+const canhHaiHere=li=>!!(RUN&&!RUN.aborted&&RUN.lesson===li&&!RUN.mix&&!RUN.games&&!inMix()&&!FAST&&window.CanhHai&&CanhHai['man'+li]&&!CanhHai.giamChuyenDong());
+let SCENE_VOICE=Promise.resolve();
+/** the scene's words, one after another (they never cut each other, and the app's next line waits for them) */
+/** a scene line not recorded yet is left out (no subtitle, no wait): the scene goes on without that sound. A friend's line needs a friend's voice */
+const sceneHas=(en,vi,o)=>{ if(VOICE.mode!=='rec') return true; const V=isVi()&&!!vi, f=vEntry(vSet(V?'vi':'en'),V?vi:en,false,o.kid||false); return !!(f&&(!o.kid||f.own)) };
+const sceneSay=(en,vi,o={})=>{ const r=RUN; if(!sceneHas(en,vi,o)) return; SCENE_VOICE=SCENE_VOICE.then(()=>r&&r.aborted?null:say(en,vi,{q:false,gap:80,...o,free:true}).catch(()=>{})) };
+function canhHaiAm(k,chu,ai){ try{ switch(k){
+  case 'bup': SFX.pop(); break;
+  case 'bup-to': SFX.pop(); noise(.14,.35,0,1600); break;
+  case 'lac': noise(.2,.15,0,2500); break;
+  case 'vut': tone(700,.12,'sine',.08,0,300); break;
+  case 'tired': sceneSay('Tired!','Mệt!',{polly:true,gap:420}); sceneSay('Tired!','Mệt!',{polly:true}); break;
+  case 'ngu': noise(.35,.04,0,450); noise(.35,.04,.7,450); break;
+  case 'meo': tone(620,.2,'sine',.07,0,950); break;
+  case 'bich': SFX.soft(); if(RUN&&RUN.lesson===4) tone(120,.15,'sine',.1); break;
+  case 'luc-cuc': noise(.3,.1,0,600); break;
+  case 'chit': tone(1400,.08,'square',.05); break;
+  case 'vo-canh': for(let i=0;i<4;i++) noise(.05,.12,i*.09,2200); break;
+  case 'big-bananas': sceneSay('Big bananas!','Chuối to!',{polly:true,gap:420}); sceneSay('Big bananas!','Chuối to!',{polly:true}); break;
+  case 'tho': noise(.15,.1,0,1200); noise(.15,.1,.32,1200); break;
+  case 'lach-bach': tone(330,.06,'triangle',.06); tone(392,.06,'triangle',.06,.28); break;
+  case 'oh': if(ai&&['Lam','Na','Ben'].includes(ai)) sceneSay('Oh!','Ồ!',{kid:ai,gap:0}); break;
+  case 'triangle': sceneSay('Triangle!','Tam giác!',{polly:true,gap:420}); sceneSay('Triangle!','Tam giác!',{polly:true}); break;
+  case 'cop': SFX.soft(); noise(.1,.3,0,400); break;
+  case 'banana': sceneSay('Ba-na-na!','Ba-na-na!',{polly:true}); break;
+  case 'cach': tone(900,.05,'square',.05); break } }catch(e){} }
+/** fn(k) on every frame for ms milliseconds (k from 0 to 1); stands still while the app is paused; stops when the level stops */
+const rafFor=(ms,fn)=>new Promise(res=>{ let t=0, last=null; const st=now=>{ if(last!=null&&!PAUSED) t+=now-last; last=now; const k=Math.min(1,t/Math.max(1,ms)); fn(k); if(k<1&&!(RUN&&RUN.aborted)) requestAnimationFrame(st); else res() }; requestAnimationFrame(st) });
+/** run the comedy scene of level li in the picture box; returns the scene's result (null when it does not run here) */
+async function canhHai(li,box,o={}){ if(!box||!canhHaiHere(li)) return null;
+  const ctl=new AbortController(), ab=()=>ctl.abort(); abortFns.add(ab);
+  const c=$('#card'), pol=c?[...c.querySelectorAll('.tpolly,.actor.polly,.b7polly,.polly-pop')].filter(e=>e.style.visibility!=='hidden'):[]; pol.forEach(e=>{ e.style.visibility='hidden' }); setCaption('','');   // only one Polly on the screen; the last instruction's subtitle goes away (the child only watches)
+  let r=null; const t0=performance.now();
+  try{ r=await CanhHai['man'+li](box,{...o,speed:SPEED,signal:ctl.signal,am:canhHaiAm}) }catch(e){ console.error('canhHai',li,e) }
+  finally{ abortFns.delete(ab); pol.forEach(e=>{ e.style.visibility='' }) }
+  await SCENE_VOICE; (window.__canhHai=window.__canhHai||[]).push({li,ms:Math.round(performance.now()-t0),ok:!!(r&&r.xong)});
+  if(RUN&&RUN.aborted) throw ABORT; return r }
 /** 23/10 (vòng 4, Minh): Polly's corner and her speech bubble must not cover a friend's face; if they would, she pops up in the top corner */
 function pollyOffFaces(c,p){ const b=$('.pbub',p); if(!b) return; const hit=()=>{ const rs=[p.querySelector('svg'),b].filter(Boolean).map(e=>e.getBoundingClientRect());
     return [...c.querySelectorAll('.skid,.s6bike,.sthing.kit')].filter(k=>k.style.visibility!=='hidden'&&k.offsetParent).some(k=>{ const q=k.getBoundingClientRect(), h={left:q.left,right:q.right,top:q.top,bottom:q.top+q.height*.5};   // the top half: the face
@@ -6707,6 +7429,14 @@ async function flashlightGame({piece=0,mix=false}={}){
     const b=el(`<button class="fspot" style="left:${S0.x}%;bottom:${S0.b}%;width:${S0.w}%"><span class="hid stk">${S0.art()}</span></button>`); box.append(b); b._pe=pe; return b });
   const place=(k,html)=>{ spots[k]._pe.innerHTML=html };
   who.forEach((n,i)=>place(order[i],kidSVG(n,'happy'))); place(order[3],piece?`<span class="ppc">${mapPieceSVG(piece)}</span>`:pollySVG(false));
+  // 27/10 (comedy scene, Màn 2 only): a bat sleeps upside down on a branch growing out of the tree trunk, to the LEFT (between the bush and the trunk
+  // nobody hides, so Polly hanging upside down there covers no friend's face; the root of the branch is behind the trunk). The light finds the bat
+  // during the game; after the game Polly tries to sleep like the bat. The branch art is drawn root-left, so it is mirrored here.
+  let batBranch=null, bat=null; const BAT_AT=.72, POLLY_AT=.4;   // along the branch, from its left (tip) end
+  if(!mix&&canhHaiHere(2)){ batBranch=el(`<div class="ch-art stk" style="left:29%;bottom:36%;width:22%;z-index:1;transform:scaleX(-1)">${CanhHai.HINH['canh-cay']}</div>`); box.append(batBranch);
+    const br=box.getBoundingClientRect(), q=batBranch.getBoundingClientRect();
+    if(br.width&&q.width){ const ux=(q.left-br.left+q.width*BAT_AT)/br.width*100, uy=(br.bottom-(q.top+q.height*23/40))/br.height*100, bw=5, bh=bw*(146/100)*(br.width/br.height);
+      bat=el(`<div class="ch-art stk" style="left:${ux}%;bottom:${uy-(1-5/146)*bh}%;width:${bw}%;z-index:3">${CanhHai.HINH['doi-ngu-treo-nguoc']}</div>`); box.append(bat) } }
   if(SPOTS[order[3]].inside) spots[order[3]]._pe.style.bottom=(SPOTS[order[3]].pb+6)+'%';   // the piece (or Polly) is small: it sits higher, so it still shows above the box or the bush
   const shineAt=async k=>{ const S0=SPOTS[k]; setLight(S0.px,100-S0.pb-14); await sleep(500) };
   const hitSpot=(e)=>{ const t=e.target.closest('.fspot,.fpeek'); if(!t) return -1; return t.classList.contains('fpeek')?spots.findIndex(b=>b._pe===t):spots.indexOf(t) };
@@ -6744,6 +7474,7 @@ async function flashlightGame({piece=0,mix=false}={}){
       await say(`You found our map piece! It was ${SPOTS[k].en}.`,`Con tìm thấy mảnh bản đồ rồi! Nó ở ${SPOTS[k].vi}.`) }   // 21/10: the piece is what the whole level looks for, so it is named
     else { await reveal1(k); await say(`It’s Polly! Polly is ${SPOTS[k].en}.`,`Là Polly! Polly ở ${SPOTS[k].vi}.`) } }
   turn(null); rec(sk,wrong===0,performance.now()-t0,'pos:all'); dark.classList.add('off'); confetti();
+  if(batBranch) await canhHai(2,box,{canh:batBranch,doi:bat,doiTai:BAT_AT,dauTai:POLLY_AT});   // 27/10: Polly tries to sleep upside down like the bat, then sleeps like a parrot
   await say(piece?'And you found everyone in the dark!':'You found everyone in the dark!',piece?'Con còn tìm thấy mọi người trong bóng tối nữa!':'Con tìm thấy mọi người trong bóng tối rồi!');
 }
 
@@ -6804,6 +7535,7 @@ async function toyCatch({piece=0,kitten=false,mix=false}={}){
       const fr=f.getBoundingClientRect(), r=bk.getBoundingClientRect(); await pieceDropAt(f,r.left-fr.left+r.width/2,r.top-fr.top,piece) }
   }catch(e){ if(e!=='mixdone') throw e } finally { stop(); ro.disconnect() }
   turn(null); rec(sk,wrong<=1,performance.now()-t0,mix?'size:'+want:'size:all'); confetti();
+  if(kitten&&!mix) await canhHai(3,f,{meo:f.querySelector('.kcat'),ro:bk});   // 27/10: the kitten jumps into the basket and comes out wearing the duck
 }
 
 /* =========================================================
@@ -6853,6 +7585,7 @@ async function shopCart({piece=0,rounds=2,sayRule=false}={}){
     await tapOnce([it]); it.style.animationPlayState='paused'; beep(); const fr=f.getBoundingClientRect(), r=it.getBoundingClientRect(); $('.ppc',it).style.visibility='hidden'; it.classList.add('opened');
     await pieceDropAt(f,r.left-fr.left+r.width/2,r.top-fr.top,piece) }
   turn(null); rec(sk,wrong<=1,performance.now()-t0,null); confetti();
+  if(piece) await canhHai(4,f,{xe:cart});   // 27/10: Polly carries a big bunch of bananas into the cart
 }
 
 /* =========================================================
@@ -7878,7 +8611,8 @@ async function bubbleFaces({rounds=2,polly=true}={}){ const sk=SK['L2.W.FEEL.01'
     make:{cls:'bubble',art:f=>faceSVG(f),others:t=>base.filter(f=>f!==t)},bg:()=>BG.park()+`<div class="bman stk">${manSVG({arm:'wand',bunch:true})}</div>`,from:BMAN_FROM,
     ask:t=>say(`Pop the ${t} faces! Find three!`,`Chọc vỡ các mặt ${VI_FEEL[t]} nhé! Tìm ba cái!`),label:(v,vi)=>vi?`mặt đó đang ${VI_FEEL[v]}`:`that face looks ${v}`,
     answer:t=>[`You found three ${t} faces!`,`Con tìm được ba mặt ${VI_FEEL[t]}!`],
-    between:polly?async(r,field)=>{ const [w,vi,who]=SAY[r%2]; await sayLikePolly(field,w,vi,{sk:SK['L2.W.FEEL.02'],art:kidHead(who,w)}) }:null}) }
+    between:polly?async(r,field)=>{ const [w,vi,who]=SAY[r%2]; await sayLikePolly(field,w,vi,{sk:SK['L2.W.FEEL.02'],art:kidHead(who,w)}) }:null});
+  await canhHai(1,[...document.querySelectorAll('#card .popfield')].pop()) }   // 27/10: Polly pops the last bubbles, the big one on her beak
 
 /* ---- 5 and 9: count to ten out loud. Each number the child says (a burst of voice) moves something: a duck swims in, Polly pulls the balloon down.
    At least 0.6 s between two (a two-part word like "se-ven" moves one duck, not two). No microphone, or nothing heard: Chồi counts
@@ -8696,15 +9430,25 @@ const stuckPiece=box=>{ const p=el(`<div class="s5stuck"><i class="s5knot"></i><
 async function siteArrive(){ const sk=SK['L2.M.SHAPE.01'], teach=RUN.mode==='teach'; const remind=RUN.remindQ; RUN.remindQ=null;   // the reminder goes with the window question
   let box=sbox('site5',BG.site());
   const house=el(`<div class="sthing s5tap s5house" style="left:64%;bottom:12%;width:40%">${HOUSE5_SVG()}</div>`); box.append(house);
-  const roof=el(`<button class="s5roof" style="left:64%;bottom:70%;width:44%">${ROOF5_SVG()}</button>`); box.append(roof);
-  const rope=craneRope(box,64); const ropeTo=()=>{ const b=parseFloat(roof.style.bottom); rope.set(Math.max(0,100-b-19-JIB_TOP+1)) }; ropeTo();
-  let lam=kidAt('Lam','happy',11,3,14), na=kidAt('Na','happy',28,3,14); box.append(lam,na);
+  // 27/10 (comedy scene): the roof starts on the ground (Polly hides under it); after the scene the crane comes down and lifts it up.
+  // Without the scene (less motion, fast test runs) the crane holds the roof from the start, as before.
+  const comedy=canhHaiHere(5), R0=comedy?2:70;
+  const roof=el(`<button class="s5roof" style="left:64%;bottom:${R0}%;width:44%">${ROOF5_SVG()}</button>`); box.append(roof);
+  const rope=craneRope(box,64); const ropeH=b=>Math.max(0,100-b-19-JIB_TOP+1), ropeTo=()=>rope.set(ropeH(parseFloat(roof.style.bottom))); if(comedy) rope.set(0); else ropeTo();
+  let lam=kidAt('Lam','happy',8,3,13), na=kidAt('Na','happy',21,3,13), ben=kidAt('Ben','happy',34,3,13); box.append(lam,na,ben);   // 27/10: Ben is here too
   const mapA=el(`<div class="smap stk bob">${mapTornSVG(6)}</div>`); box.append(mapA);
   const wsq=el(`<div class="s5win sq stk" style="width:8%">${WIN_SQ()}</div>`), wci=el(`<div class="s5win ci stk" style="width:8%">${WIN_CI()}</div>`); box.append(wsq,wci);
   const inHand=(k,w)=>{ const br=box.getBoundingClientRect(), h=handOf(k,br,br.width*.64); if(!h||!br.width) return; const big=box.classList.contains('wincan');
     if(big) w.style.width='17%'; w.style.left=(h.x/br.width*100+(big?7:0))+'%'; w.style.bottom=((br.height-h.y)/br.height*100-(big?11:5.7))+'%' };   // close up: held at the side, not in front of the face
   await sleep(60); inHand(lam,wsq); inHand(na,wci);
   await tell('The map shows a building site! The builders are making a new house.','Bản đồ vẽ một công trường! Các bác thợ đang xây một ngôi nhà mới.'); mapA.classList.add('away');
+  if(comedy){ await canhHai(5,box,{mai:roof,ban:[lam,na,ben],diXa:5,doiMat:(e,f)=>setKidFace(e,e.dataset.who,f||'happy')});   // the roof walks on two parrot feet
+    // the crane's hook comes down to the roof and lifts it up (the old start of the game)
+    const H=ropeH(R0); tone(260,.8,'sawtooth',.025,0,200);
+    await rafFor(900*SPEED,k=>rope.set(H*(1-Math.pow(1-k,2))));
+    tone(500,.06,'square',.05); await sleep(250); tone(300,1.3,'sawtooth',.03,0,520);
+    await rafFor(1600*SPEED,k=>{ const q=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2; roof.style.bottom=(R0+(70-R0)*q)+'%'; ropeTo() });
+    if(RUN&&RUN.aborted) throw ABORT; roof.style.bottom='70%'; ropeTo() }
   roof.classList.add('swing'); tone(300,.6,'sine',.05,0,200);
   await say('The crane is holding the roof. Tap the roof to put it on the house!','Cần cẩu đang giữ mái nhà. Con chạm vào mái để đặt lên nhà nhé!',{q:true});
   turn('kid'); roof.dataset.ok='1'; await tapOnce([roof]); turn(null); roof.classList.remove('swing');
@@ -9156,8 +9900,10 @@ const sayBeat=(w,k)=>say(sylOf(w)[k],sylOf(w)[k],{rate:.6,gap:250,show:sylShow(w
 const beatLine=(w,tail,tailVi)=>{ const n=sylOf(w).length; return [`${sylOf(w).join('-')}. ${cap(W[n])} ${n>1?tail+'s':tail}!`,`${sylOf(w).join(' - ')}. ${cap(VI_N[n])} ${tailVi}!`,`${sylShow(w).join('-')}. ${cap(W[n])} ${n>1?tail+'s':tail}!`,`${sylShow(w).join(' - ')}. ${cap(VI_N[n])} ${tailVi}!`] };
 async function bananaClap({mix=false}={}){ const sk=SK['L2.E.PH.03'];
   const box=sbox('kitchen6',BG.kitchen6());
+  // 27/10: a little table (art/kit/do-vat/ban-an; its top at b ≈ 21) holds the food (it used to float), and a bin stands in the left corner (the clap button is in the right one)
+  const table=el(`<div class="ch-art stk" style="left:32%;bottom:2%;width:28%;z-index:2">${(window.CanhHai&&CanhHai.HINH['ban-an'])||''}</div>`), bin=el(`<div class="ch-art stk" style="left:9%;bottom:4%;width:9%;z-index:2">${(window.CanhHai&&CanhHai.HINH['thung-rac'])||''}</div>`); box.append(table,bin);
   const na=kidAt('Na','happy',58,2,15); box.append(na);
-  const food=el(`<div class="sthing c6food" style="left:30%;bottom:46%;width:12%"></div>`), beats=el(`<div class="c6beats"></div>`), btn=el(`<button class="c6clap" aria-label="Vỗ tay">${CLAPHANDS_SVG()}</button>`);
+  const food=el(`<div class="sthing c6food" style="left:30%;bottom:21%;width:12%"></div>`), beats=el(`<div class="c6beats"></div>`), btn=el(`<button class="c6clap" aria-label="Vỗ tay">${CLAPHANDS_SVG()}</button>`);
   box.append(food,beats,btn);
   const show=w=>{ food.innerHTML=w.art(); food.style.visibility=''; food.classList.remove('pop'); void food.offsetWidth; food.classList.add('pop'); beats.innerHTML='' };
   const beat=(w,k)=>{ btn.classList.remove('hit'); void btn.offsetWidth; btn.classList.add('hit'); clapHit(); clapOnce(na); const t=w&&k<sylShow(w).length?sylShow(w)[k]:''; beats.append(el(`<i class="${t?'':'x'}">${esc(t)}</i>`)) };
@@ -9167,7 +9913,7 @@ async function bananaClap({mix=false}={}){ const sk=SK['L2.E.PH.03'];
   const name=w=>say(`${cap(w.w)}.`,`${cap(w.w)}.`,{rate:.55,gap:450});   // the English word, slowly, in both modes
   const eat=async w=>{ const r=na.querySelector('svg').getBoundingClientRect(), br=box.getBoundingClientRect(); food.classList.remove('pop');
     await placeAt(food,box,(r.left-br.left+r.width*.82)/br.width*100,(br.bottom-r.top-r.height*.58)/br.height*100,{ms:600,z:4}); tone(700,.08,'sine',.06); noise(.06,.2,0,1400);
-    na.classList.add('eat'); setKidFace(na,'Na','happy'); await sleep(700); food.style.visibility='hidden'; na.classList.remove('eat'); food.style.left='30%'; food.style.bottom='46%' };
+    na.classList.add('eat'); setKidFace(na,'Na','happy'); await sleep(700); food.style.visibility='hidden'; na.classList.remove('eat'); food.style.left='30%'; food.style.bottom='21%' };
   const round=async(w,first)=>{ const n=sylOf(w).length; if(!first){ show(w); await say(w.f,w.fv); await name(w); await say('Listen:','Nghe nhé:',{gap:150}); await listenIt(w) } else beats.innerHTML='';
     await say(first?`Now you clap it: ${sylShow(w).join('-')}! Tap the hands for each sound.`:'Now you. One clap for each sound!',first?`Giờ con vỗ tay nhé: ${sylShow(w).join(' - ')}! Mỗi tiếng con chạm vào đôi bàn tay một lần.`:'Giờ đến con. Mỗi tiếng vỗ tay một cái nhé!',{q:true,show:first?`Now you clap it: ${sylShow(w).join('-')}! Tap the hands for each sound.`:undefined,showVi:first?`Giờ con vỗ tay nhé: ${sylShow(w).join(' - ')}! Mỗi tiếng con chạm vào đôi bàn tay một lần.`:undefined});
     RUN.qfn=async()=>{ await name(w); await say('Tap the hands for each sound!','Mỗi tiếng con chạm vào đôi bàn tay một lần nhé!') };
@@ -9184,7 +9930,9 @@ async function bananaClap({mix=false}={}){ const sk=SK['L2.E.PH.03'];
   const B=CLAP6[0]; show(B); await say('Look, a banana! Banana has three sounds. One clap for each sound.','Nhìn này, quả chuối! Tiếng Anh là banana. Banana có ba tiếng: ba - na - na. Mỗi tiếng vỗ tay một cái.');
   if(wantDemo('clap6')){ await watchMe(); await clapIt(B,{hand:true}); await say('Three claps! Ba-na-na.','Ba tiếng! Ba - na - na.'); beats.innerHTML=''; await yourTurn() } else turn('kid');
   await round(B,true); turn('kid'); await round(CLAP6[1],false); await reteachPending();
-  await pollyEcho('Ba-na-na! Ba-na-na!','Ba-na-na! Ba-na-na!');
+  // 27/10: Polly picks up the banana peel from the table, wears it as a hat ("Ba-na-na!"), and drops it in the bin (instead of the echo)
+  const sc=await canhHai(6,box,{vo:{x:27,b:21,w:7},thung:bin,na});
+  if(!(sc&&sc.xong)) await pollyEcho('Ba-na-na! Ba-na-na!','Ba-na-na! Ba-na-na!');
   confetti(); await nextPage(box) }
 
 /* ---- 3. 🔁 lines down and across, on the way to school (the canal bridge): Polly wants to go too — draw a line straight down from Polly

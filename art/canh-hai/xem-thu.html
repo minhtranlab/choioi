@@ -612,8 +612,9 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
     const di = async (dx) => {
       C.am('lach-bach', '[lạch bạch]', { x: m.x, b: dat0.b + hM + 6 });
       const lac = C.lam(m, [{ transform: 'rotate(0) translateY(0)' }, { transform: 'rotate(-4deg) translateY(-6%)' }, { transform: 'rotate(0) translateY(0)' }, { transform: 'rotate(4deg) translateY(-6%)' }, { transform: 'rotate(0) translateY(0)' }], 560, { lap: 2 });
-      const tg = m.x + dx, x0 = m.x, t0 = performance.now(), dur = C.ms(1120);
-      const theo = () => { if (C.dead) return; const f = Math.min(1, (performance.now() - t0) / dur); C.dat(m, x0 + (tg - x0) * f, m.b); datChan(); if (f < 1) requestAnimationFrame(theo) };
+      const lacA = C.anims[C.anims.length - 1];   // bước đi theo thời gian của chính chuyển động lắc lư: app tạm dừng (Pause) thì mái cũng đứng yên
+      const tg = m.x + dx, x0 = m.x, dur = C.ms(1120);
+      const theo = () => { if (C.dead) return; const t = lacA && lacA.currentTime != null ? +lacA.currentTime : dur; const f = Math.min(1, t / dur); C.dat(m, x0 + (tg - x0) * f, m.b); datChan(); if (f < 1) requestAnimationFrame(theo) };
       requestAnimationFrame(theo); await lac; C.dat(m, tg, m.b); datChan()
     };
     const ve = ban.length && C.rect(ban[0]).x < m.x ? -1 : 1;     // đi về phía các bạn trước

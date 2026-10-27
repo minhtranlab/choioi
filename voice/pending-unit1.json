@@ -1,1 +1,41 @@
-[]
+[
+ {
+  "part": "man5",
+  "en": "Oh!",
+  "vi": "Ồ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "who": "Lam",
+  "ghiChu": "Lam ngạc nhiên khi cái mái nhà tự đi (cảnh hài Màn 5, đầu trang công trường). Ngắn"
+ },
+ {
+  "part": "man5",
+  "en": "Oh!",
+  "vi": "Ồ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "who": "Na",
+  "ghiChu": "Na ngạc nhiên khi cái mái nhà tự đi (cảnh hài Màn 5, đầu trang công trường). Ngắn"
+ },
+ {
+  "part": "man5",
+  "en": "Oh!",
+  "vi": "Ồ!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "who": "Ben",
+  "ghiChu": "Ben ngạc nhiên khi cái mái nhà tự đi (cảnh hài Màn 5, đầu trang công trường). Ngắn"
+ },
+ {
+  "part": "man4",
+  "en": "Big bananas!",
+  "vi": "Chuối to!",
+  "needEn": true,
+  "needVi": true,
+  "slow": false,
+  "ghiChu": "Polly nói khi thả nải chuối vào xe (cảnh hài Màn 4): dùng bản ghi của Chồi, app nâng giọng 1,32 như mọi câu của Polly và nói hai lần (\"Big bananas! Big bananas!\" / \"Chuối to! Chuối to!\")"
+ }
+]
