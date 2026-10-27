@@ -8202,7 +8202,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man4",
 "who": "chồi",
-"g": "chung"
+"g": "man4"
 },
 "1m8f701": {
 "k": "Find the number three!",
@@ -8244,7 +8244,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man4",
 "who": "chồi",
-"g": "chung"
+"g": "man5"
 },
 "1j9yizd": {
 "k": "Find the number five!",
@@ -8265,7 +8265,7 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man4",
 "who": "chồi",
-"g": "chung"
+"g": "man4"
 },
 "1uhqwyh": {
 "k": "That one is red. It goes in the red basket.",
@@ -9249,6 +9249,13 @@
 },
 "1l0luw3": {
 "k": "You heard each sound, and found each toy!",
+"s": "kokoro|af_heart|0.7|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"7tk4k6": {
+"k": "Big bananas!",
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man4",
 "who": "chồi",
@@ -10470,6 +10477,27 @@
 "s": "kokoro|af_heart|0.7|gap0.6|v3",
 "part": "man5",
 "who": "chồi",
+"g": "man5"
+},
+"1ypcfff": {
+"k": "@Lam:Oh!",
+"s": "kokoro_kid|af_river|1.0|gap0.6|v3|formant1.15|pitch1.45|gap0.4",
+"part": "man5",
+"who": "Lam",
+"g": "man5"
+},
+"1sp6rem": {
+"k": "@Na:Oh!",
+"s": "kokoro_kid|af_sky|1.0|gap0.6|v3|formant1.15|pitch1.55|gap0.4",
+"part": "man5",
+"who": "Na",
+"g": "man5"
+},
+"x3dxoo": {
+"k": "@Ben:Oh!",
+"s": "kokoro_kid|bf_isabella|1.0|gap0.6|v3|formant1.12|pitch1.25|gap0.4",
+"part": "man5",
+"who": "Ben",
 "g": "man5"
 },
 "k7otd": {

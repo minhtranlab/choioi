@@ -12420,6 +12420,24 @@
 "part": "ngoai"
 },
 {
+"lang": "en",
+"key": "@Lam:Look! I can see a bird!",
+"who": "Lam",
+"part": "sothu"
+},
+{
+"lang": "en",
+"key": "@Na:Hi! I love the animals!",
+"who": "Na",
+"part": "sothu"
+},
+{
+"lang": "en",
+"key": "@Ben:Hello! My map shows new places, coming soon!",
+"who": "Ben",
+"part": "sothu"
+},
+{
 "lang": "vi",
 "key": "Con sẵn sàng chưa? Giờ đến lượt con!",
 "who": "chồi",
@@ -25122,33 +25140,15 @@
 "part": "ngoai"
 },
 {
-"lang": "en",
-"key": "@Lam:Look! I can see a bird!",
-"who": "Lam",
-"part": "sothu"
-},
-{
 "lang": "vi",
 "key": "@Lam:Nhìn kìa! Tớ thấy một chú chim!",
 "who": "Lam",
 "part": "sothu"
 },
 {
-"lang": "en",
-"key": "@Na:Hi! I love the animals!",
-"who": "Na",
-"part": "sothu"
-},
-{
 "lang": "vi",
 "key": "@Na:Chào bạn! Tớ yêu các bạn thú lắm!",
 "who": "Na",
-"part": "sothu"
-},
-{
-"lang": "en",
-"key": "@Ben:Hello! My map shows new places, coming soon!",
-"who": "Ben",
 "part": "sothu"
 },
 {
@@ -25168,5 +25168,53 @@
 "key": "Giờ chơi trò Chú ếch qua đường!",
 "who": "chồi",
 "part": "ngoai"
+},
+{
+"lang": "en",
+"key": "@Lam:Oh!",
+"who": "Lam",
+"part": "man5"
+},
+{
+"lang": "vi",
+"key": "@Lam:Ồ!",
+"who": "Lam",
+"part": "man5"
+},
+{
+"lang": "en",
+"key": "@Na:Oh!",
+"who": "Na",
+"part": "man5"
+},
+{
+"lang": "vi",
+"key": "@Na:Ồ!",
+"who": "Na",
+"part": "man5"
+},
+{
+"lang": "en",
+"key": "@Ben:Oh!",
+"who": "Ben",
+"part": "man5"
+},
+{
+"lang": "vi",
+"key": "@Ben:Ồ!",
+"who": "Ben",
+"part": "man5"
+},
+{
+"lang": "en",
+"key": "Big bananas!",
+"who": "chồi",
+"part": "man4"
+},
+{
+"lang": "vi",
+"key": "Chuối to!",
+"who": "chồi",
+"part": "man4"
 }
 ]

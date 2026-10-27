@@ -8342,7 +8342,7 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man4",
 "who": "chồi",
-"g": "chung"
+"g": "man4"
 },
 "4tllk9": {
 "k": "Quả đó màu đỏ. Nó vào giỏ màu đỏ.",
@@ -9319,6 +9319,13 @@
 },
 "18tzqk0": {
 "k": "Con nghe từng tiếng và tìm ra từng món đồ chơi!",
+"s": "vieneu|Đoan Trang|1|gap0.6|v3",
+"part": "man4",
+"who": "chồi",
+"g": "man4"
+},
+"1ychwwj": {
+"k": "Chuối to!",
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man4",
 "who": "chồi",
@@ -10568,6 +10575,27 @@
 "s": "vieneu|Đoan Trang|1|gap0.6|v3",
 "part": "man5",
 "who": "chồi",
+"g": "man5"
+},
+"1q73s8i": {
+"k": "@Lam:Ồ!",
+"s": "vieneu_clone|kid-ref/vi-Lam.wav|1|gap0.6|v3|gap0.4",
+"part": "man5",
+"who": "Lam",
+"g": "man5"
+},
+"8lu615": {
+"k": "@Na:Ồ!",
+"s": "vieneu_clone|kid-ref/vi-Na.wav|1|gap0.6|v3|gap0.4",
+"part": "man5",
+"who": "Na",
+"g": "man5"
+},
+"mw0obr": {
+"k": "@Ben:Ồ!",
+"s": "vieneu_clone|kid-ref/vi-Ben.wav|1|gap0.6|v3|gap0.4",
+"part": "man5",
+"who": "Ben",
 "g": "man5"
 },
 "1xjklki": {
