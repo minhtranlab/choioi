@@ -118,3 +118,4 @@ Do chat **[App] Cảnh hài** vẽ cho 6 cảnh hài (`art/canh-hai/`). Cùng n�
 | `nai-chuoi-to` | 126×102 | nải chuối to 6 quả, **cuống ở trên (63, 4)** (chỗ Polly quặp) |
 | `vo-chuoi` | 80×76 | vỏ chuối đứng, bốn vạt rủ xuống, cuống trên (40, 4). Đặt trên quầy, hoặc chồng lên đầu Polly làm mũ |
 | `thung-rac` | 64×92 | thùng rác đạp chân trong bếp (xanh bạc hà, bàn đạp xám). **Nắp là nhóm `<g class="nap">`, bản lề ở (6, 22)**: xoay quanh điểm đó (khoảng −80°) là mở nắp. Đáy ở cạnh dưới |
+| `ban-an` | 120×64 | bàn ăn gỗ nhỏ trong bếp (Màn 6, vòng 3: để vỏ chuối, nải chuối nằm trên bàn, không lơ lửng). **Mặt bàn y 6**: đồ đặt lên bàn có đáy ở y 6. Đáy chân bàn ở cạnh dưới |

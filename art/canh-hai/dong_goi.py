@@ -22,6 +22,7 @@ HINH = {
     'nai-chuoi-to': 'do-vat/nai-chuoi-to-phai.svg',
     'vo-chuoi': 'do-vat/vo-chuoi-phai.svg',
     'thung-rac': 'do-vat/thung-rac-phai.svg',
+    'ban-an': 'do-vat/ban-an-phai.svg',
 }
 JS = ['canh-hai-chung.js', 'canh-hai-hinh.js'] + [f'man-{i}.js' for i in range(1, 7)]
 NEN = ['cong-vien-tron', 'vuon-nha-na-dem-tron', 'phong-na-tron', 'sieu-thi-tron', 'cong-truong-xay-tron', 'bep-tron']

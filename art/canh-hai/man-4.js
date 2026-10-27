@@ -5,7 +5,8 @@
    CanhHai.man4(box, { xe: phần tử xe đẩy (bắt buộc),
                        xeTrong: {x, mieng, day, tayX, tayY} các tỉ lệ 0..1 trong khung xe (mặc định theo SHOPCART_SVG 120×90:
                                  lòng xe x .58, miệng y .25, đáy lòng y .64, tay đẩy (.1, .12)),
-                       vaoTu, raTai, naiW (bề rộng nải chuối, % box; mặc định 1,35 × Polly), …chung })
+                       vaoTu, raTai, naiW (bề rộng nải chuối, % box; mặc định 1,35 × Polly),
+                       moTrongXe (độ rõ phần nải chuối nằm dưới miệng xe, mặc định .4), …chung })
    Tiếng (am): 'vo-canh' "[phành phạch]", 'bich' "[bịch!]", 'big-bananas' "Big bananas! Big bananas!" (Polly; CHƯA CÓ BẢN GHI),
    'tho' "[hộc hộc]".
    Kết thúc: nải chuối NẰM LẠI trong xe (bản sao xe + hình nải chuối); Polly đã bay đi. r.xoa() trả lại như cũ. */
@@ -53,7 +54,14 @@
     C.di(p, { b: p.b + 9 }, 380, 'ease-out').catch(() => {});
     await C.di(n, { b: day }, 300, 'ease-in');
     C.am('bich', '[bịch!]', xe);
-    C.chay(n.firstElementChild, [{ transform: 'scale(1)' }, { transform: 'scale(1.08,.88) rotate(-4deg)' }, { transform: 'scale(1) rotate(-6deg)' }], 300, { giu: true });
+    // nằm trong lòng xe: phần dưới miệng xe mờ đi (như nhìn qua lưới xe), phần nhô lên trên miệng xe rõ.
+    // (Không đặt nải chuối sau xe: viền sticker trắng của xe làm lòng xe đục, che mất nải chuối.)
+    const cut = Math.max(0, Math.min(1, (mieng - day) / C.cao(n)));
+    const tren = C.hinh('nai-chuoi-to', { x: n.x, b: n.b, w: n.w, z: 7 });
+    tren.style.clipPath = `inset(-30% -30% ${cut * 100}% -30%)`;
+    n.style.clipPath = `inset(${(1 - cut) * 100}% -30% -30% -30%)`; n.style.opacity = o.moTrongXe ?? .4;
+    const nhun = [{ transform: 'scale(1)' }, { transform: 'scale(1.06,.9)' }, { transform: 'scale(1)' }];
+    C.chay(n.firstElementChild, nhun, 300); C.chay(tren.firstElementChild, nhun, 300);
     await C.lam(xe, [{ transform: 'scale(1)' }, { transform: 'scale(1.05,.9)' }, { transform: 'scale(.98,1.03)' }, { transform: 'scale(1)' }], 380);
     // 5. đậu lên tay đẩy, nói "Big bananas! Big bananas!", rồi thở hổn hển
     C.quay(p, false);

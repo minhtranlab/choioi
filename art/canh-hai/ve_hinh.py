@@ -160,6 +160,14 @@ thung = (f'<path d="M10 26 L14 82 Q14 86 18 86 H50 Q54 86 54 82 L58 26Z" fill="#
          f'<path d="M28 13 Q34 9 40 13" fill="none" stroke="{INK}" stroke-width="3" stroke-linecap="round"/></g>')
 save('do-vat/thung-rac', 64, 92, thung)
 
+# 11b. Bàn ăn nhỏ trong bếp (Màn 6, vòng 3): mặt bàn gỗ, hai chân. **Mặt bàn y 6** (đồ đặt lên bàn có đáy ở y 6). Đồ cận
+ban = (f'<path d="M12 14 V60 M108 14 V60" stroke="{INK}" stroke-width="11" stroke-linecap="round"/>'
+       '<path d="M12 14 V60 M108 14 V60" stroke="#C98A52" stroke-width="6" stroke-linecap="round"/>'
+       f'<path d="M10 16 H110 V24 H10Z" fill="#B5733E" stroke="{INK}" stroke-width="3.2" stroke-linejoin="round"/>'
+       f'<rect x="2" y="5" width="116" height="11" rx="4" fill="#E9AE76" stroke="{INK}" stroke-width="3.6"/>'
+       '<path d="M10 9 H70" stroke="#F6CFA0" stroke-width="2.4" stroke-linecap="round"/>')
+save('do-vat/ban-an', 120, 64, ban)
+
 # ---------- 12. mặt ngạc nhiên của Lam, Na, Ben: thân đứng, hai tay giơ lên cạnh má, mặt "surprised" giống hệt app (kidFace) ----------
 CK_EY = {'lam': 102, 'na': 104, 'ben': 104}
 def surprised(ey):
