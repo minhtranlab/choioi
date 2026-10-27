@@ -1,11 +1,13 @@
-/* Màn 4 · Cửa hàng · "Polly tha nải chuối" (khoảng 8 giây)
+/* Màn 4 · Cửa hàng · "Polly tha nải chuối" (khoảng 9 giây)
    Xong trò xe đẩy: Polly cố tha cả một nải chuối to tới xe; nặng quá, vỗ cánh phành phạch, bay lên từng nấc
-   (lên một chút lại tụt), tới trên xe thì thả "bịch" vào xe, rồi đậu lên tay đẩy thở hổn hển, xong bay đi.
+   (lên một chút lại tụt), tới trên xe thì thả "bịch" vào xe, đậu lên tay đẩy, nói "Big bananas! Big bananas!",
+   rồi thở hổn hển, xong bay đi.
    CanhHai.man4(box, { xe: phần tử xe đẩy (bắt buộc),
                        xeTrong: {x, mieng, day, tayX, tayY} các tỉ lệ 0..1 trong khung xe (mặc định theo SHOPCART_SVG 120×90:
                                  lòng xe x .58, miệng y .25, đáy lòng y .64, tay đẩy (.1, .12)),
-                       vaoTu, raTai, naiW (bề rộng nải chuối, % box; mặc định .9 × Polly), …chung })
-   Tiếng (am): 'vo-canh' "[phành phạch]", 'bich' "[bịch!]", 'tho' "[hộc hộc]".
+                       vaoTu, raTai, naiW (bề rộng nải chuối, % box; mặc định 1,35 × Polly), …chung })
+   Tiếng (am): 'vo-canh' "[phành phạch]", 'bich' "[bịch!]", 'big-bananas' "Big bananas! Big bananas!" (Polly; CHƯA CÓ BẢN GHI),
+   'tho' "[hộc hộc]".
    Kết thúc: nải chuối NẰM LẠI trong xe (bản sao xe + hình nải chuối); Polly đã bay đi. r.xoa() trả lại như cũ. */
 (function () {
   'use strict';
@@ -31,7 +33,7 @@
     // 1. lết vào sát mặt đất, nặng trĩu, chập chờn
     C.am('vo-canh', '[phành phạch]', { x: 80, b: 40 });
     const xToi = longX + 20, b0 = bTheo(4);
-    await C.di(p, [{ x: (vao.x + xToi) / 2, b: b0 + 3, o: .3 }, { x: (vao.x + xToi) / 2 - 6, b: b0, o: .55 }, { x: xToi + 4, b: b0 + 3, o: .8 }, { x: xToi, b: b0 }], 1700);
+    await C.di(p, [{ x: (vao.x + xToi) / 2, b: b0 + 3, o: .3 }, { x: (vao.x + xToi) / 2 - 6, b: b0, o: .55 }, { x: xToi + 4, b: b0 + 3, o: .8 }, { x: xToi, b: b0 }], 1500);
     // 2. bay lên từng nấc: lên một chút, tụt lại một ít
     const bDich = bTheo(mieng + 3), nac = 3, buoc = (bDich - b0) / nac;
     for (let i = 1; i <= nac; i++) {
@@ -53,14 +55,16 @@
     C.am('bich', '[bịch!]', xe);
     C.chay(n.firstElementChild, [{ transform: 'scale(1)' }, { transform: 'scale(1.08,.88) rotate(-4deg)' }, { transform: 'scale(1) rotate(-6deg)' }], 300, { giu: true });
     await C.lam(xe, [{ transform: 'scale(1)' }, { transform: 'scale(1.05,.9)' }, { transform: 'scale(.98,1.03)' }, { transform: 'scale(1)' }], 380);
-    // 5. đậu lên tay đẩy, thở hổn hển
+    // 5. đậu lên tay đẩy, nói "Big bananas! Big bananas!", rồi thở hổn hển
     C.quay(p, false);
     const dau = C.neo(p, 97, 241, tay.x, tay.b);
-    await C.di(p, [{ x: (p.x + dau.x) / 2, b: Math.max(p.b, dau.b) + 6 }, { x: dau.x, b: dau.b + 2 }], 700);
-    p.tu('tho-1'); C.dat(p, dau.x, dau.b);
-    C.am('tho', '[hộc hộc]', p, { t: 1700 });
+    await C.di(p, [{ x: (p.x + dau.x) / 2, b: Math.max(p.b, dau.b) + 6 }, { x: dau.x, b: dau.b + 2 }], 600);
+    p.tu('noi'); C.dat(p, dau.x, dau.b);
     p.firstElementChild.style.transformOrigin = '50% 100%';
-    for (let i = 0; i < 6; i++) {
+    C.am('big-bananas', 'Big bananas! Big bananas!', p, { loi: true, t: 1700 });
+    await C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(10deg)' }, { transform: 'rotate(0)' }, { transform: 'rotate(10deg)' }, { transform: 'rotate(0)' }], 1500);
+    C.am('tho', '[hộc hộc]', p, { t: 1300 });
+    for (let i = 0; i < 4; i++) {
       p.tu(i % 2 ? 'tho-2' : 'tho-1');
       await C.lam(p, [{ transform: 'scale(1)' }, { transform: i % 2 ? 'scale(.97,1.02)' : 'scale(1.04,.95)' }], 260, { giu: true })
     }
@@ -69,7 +73,7 @@
     p.tu('bay');
     const ra = o.raTai || { x: -16, b: 92 };
     C.quay(p, ra.x < p.x);
-    await C.di(p, ra, 1000, 'ease-in');
+    await C.di(p, ra, 900, 'ease-in');
     p.remove()
   });
 })();

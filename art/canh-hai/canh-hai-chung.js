@@ -5,7 +5,7 @@
    Tuỳ chọn chung cho mọi cảnh:
      speed   hệ số thời gian (1 = bình thường, 2 = chậm gấp đôi; trong app truyền SPEED)
      signal  AbortSignal: huỷ giữa chừng (bấm lại) → dọn sạch, Promise vẫn resolve
-     am(key, chu)  gọi ở mỗi chỗ có tiếng động / câu nói (app phát tiếng ở đây); xem bảng trong README
+     am(key, chu, ai)  gọi ở mỗi chỗ có tiếng động / câu nói (app phát tiếng ở đây; ai = ai nói, vd. 'Lam'); xem bảng trong README
      chu     true: hiện chữ nhỏ "[bụp]", "Triangle! Triangle!" (mặc định: true khi không có am)
      giamChuyenDong  true/false: ép bật/tắt; mặc định theo máy (prefers-reduced-motion) → bật thì bỏ qua cảnh
    Promise trả về { xong:true, xoa() } (xoa() gỡ mọi thứ cảnh còn để lại), hoặc { boQua:true } khi máy bật giảm chuyển động. */
@@ -89,14 +89,16 @@
     /** lật mặt hình s (quay trái / phải) */
     C.quay = (s, lat) => { s.lat = lat; s.querySelector('.ch-q').classList.toggle('lat', lat) };
     /** tiếng động / câu nói: báo cho app (o.am), và hiện chữ nhỏ nếu cần. at: hình hoặc {x, b} */
-    C.am = (key, chu, at, { loi = false, t = 1300 } = {}) => {
-      try { o.am && o.am(key, chu) } catch (e) {}
+    C.am = (key, chu, at, { loi = false, t = 1300, ai } = {}) => {
+      try { o.am && o.am(key, chu, ai) } catch (e) {}
       if (!C.chu || C.dead) return;
       let x = 50, b = 70;
       if (at && at.nodeType) { const r = C.rect(at); x = r.x; b = r.b + r.h + 2 } else if (at) { x = at.x; b = at.b }
       const c = document.createElement('div'); c.className = 'ch-chu' + (loi ? ' loi' : ''); c.textContent = chu;
       c.style.left = Math.max(10, Math.min(90, x)) + '%'; c.style.bottom = Math.min(90, b) + '%';
       box.append(c); C.els.push(c);
+      const cw = c.getBoundingClientRect().width / C.R().width * 100;   // chữ không tràn ra ngoài khung
+      c.style.left = Math.max(cw / 2 + 1, Math.min(99 - cw / 2, x)) + '%';
       c.animate([{ opacity: 0, transform: 'scale(.6)' }, { opacity: 1, transform: 'scale(1.08)', offset: .15 }, { opacity: 1, transform: 'scale(1)', offset: .3 }, { opacity: 1, offset: .8 }, { opacity: 0 }], { duration: C.ms(t) }).finished.then(() => c.remove(), () => c.remove())
     };
     /** mượn một phần tử có sẵn trong cảnh (rổ, mái nhà, mèo…): một bản sao đặt đúng chỗ để cảnh tự chuyển động; bản gốc ẩn tạm */

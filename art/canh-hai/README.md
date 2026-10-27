@@ -2,8 +2,21 @@
 
 Sáu cảnh hài ngắn đã chốt ở `claude/chot-canh-hai-unit1-27-10.md`. Do chat **[App] Cảnh hài** làm. Chưa gắn vào `index.html` (chat U1 gắn sau).
 
-- Xem thử: mở `xem-thu.html` (một file, chạy riêng). 6 nút Màn 1–6, bấm là chạy, bấm lại là chạy lại; công tắc **Chậm (x0,5)**; công tắc **Thử "giảm chuyển động"**. Chưa có tiếng: chỗ có tiếng hiện chữ nhỏ.
-- Luật đã giữ: bé chỉ xem; mỗi cảnh 5,6–9 giây; diễn ngay trong cảnh đang có; không làm mẫu việc nguy hiểm; Polly chỉ nói đúng từ đang dạy ("Triangle!", "Ba-na-na!", "Tired!"); không thu giọng mới, trừ "Oh!" (xem bảng tiếng).
+**Vòng 2 (27/10 chiều, chat chính chốt góp ý của Minh trên bản `1a8e55b`):** Màn 1, Màn 6 giữ nguyên. Màn 2: cành dơi treo mọc ra từ thân cây. Màn 3: mèo nhảy hẳn ra khỏi rổ, đội cái trống úp ngược (như cái xô), đứng cho bé nhìn rõ. Màn 4: thả nải chuối xong Polly nói "Big bananas! Big bananas!" rồi thở hổn hển (không dùng "Heavy", Unit 1 chưa dạy). Màn 5: Polly trốn sẵn dưới mái từ đầu; mái tự đi → mỗi bạn "Oh!" → mái nhấc lên, lộ Polly "Triangle! Triangle!" → bay đi → mái hạ; sau đó cần cẩu mới nhấc mái.
+
+- Xem thử: mở `xem-thu.html` (một file, chạy riêng). 6 nút Màn 1–6, bấm là chạy, bấm lại là chạy lại; công tắc **Chậm (x0,5)**; công tắc **Thử "giảm chuyển động"**.
+- **Chữ tiếng động ("[bụp]", "[cạch]", "Oh!"…) CHỈ CÓ Ở TRANG XEM THỬ**, thay cho tiếng. Trong app **không hiện chữ**: mỗi chỗ đó phát tiếng thật, dùng tiếng có sẵn của app (`SFX.pop()`, `SFX.soft()`, `tone()`, `noise()`) hoặc câu đã thu (xem bảng). Trong app truyền `am` thì mặc định không có chữ.
+- Luật đã giữ: bé chỉ xem; mỗi cảnh 6,5–9 giây; diễn ngay trong cảnh đang có; không làm mẫu việc nguy hiểm; Polly chỉ nói từ đã dạy ("Triangle!", "Ba-na-na!", "Tired!", "Big bananas!" (Màn 4 dạy to/nhỏ, chuối)).
+
+## Câu cần thu mới (cho chat Giọng)
+| Câu | Ai nói | Dùng ở | Ghi chú |
+|---|---|---|---|
+| "Oh!" | Lam (`@Lam:Oh!`) | Màn 5 | ngạc nhiên, ngắn |
+| "Oh!" | Na (`@Na:Oh!`) | Màn 5 | ngạc nhiên, ngắn |
+| "Oh!" | Ben (`@Ben:Oh!`) | Màn 5 | ngạc nhiên, ngắn |
+| "Big bananas!" | Polly | Màn 4 | Polly dùng giọng Chồi nâng 1,32 (như mọi câu của Polly), nên thu một câu "Big bananas!" giọng Chồi; app phát **hai lần** thành "Big bananas! Big bananas!" (như `pollyEcho`) |
+
+Các câu khác đã có bản ghi: "Tired!" (Màn 2), "Triangle!" (Màn 5), "Ba-na-na!" (Màn 6). Chưa thu xong thì app tạm bỏ tiếng ở chỗ đó, cảnh vẫn chạy.
 
 ## File
 
@@ -27,7 +40,7 @@ const r = await CanhHai.man3(box, { meo, ro, speed: SPEED, am: amCanhHai });
 
 - `box`: khung cảnh đang có (trong app là `.sbox` / `.popfield` / `rfield`). Vị trí đều tính theo **% của box** như `kidAt()`: `x` là tâm, `b` là đáy tính từ dưới, `w` là bề rộng.
 - `speed`: hệ số thời gian, truyền `SPEED` của app (1 = bình thường, 2 = chậm x0,5).
-- `am(key, chu)`: được gọi ở mỗi chỗ có tiếng động hay câu nói; app phát tiếng ở đây (bảng dưới). Có `am` thì mặc định **không** hiện chữ; muốn hiện thêm chữ thì truyền `chu: true`.
+- `am(key, chu, ai)`: được gọi ở mỗi chỗ có tiếng động hay câu nói; app phát tiếng ở đây (bảng dưới). `ai` là tên người nói khi có (vd. `'Lam'` cho "Oh!"). Có `am` thì mặc định **không** hiện chữ (đúng ý Minh); `chu: true` chỉ dùng khi thử.
 - `signal`: `AbortSignal` để huỷ giữa chừng (bé bấm Tiếp, đổi trang). Huỷ thì cảnh tự dọn sạch, Promise vẫn trả về.
 - **Giảm chuyển động:** máy bật `prefers-reduced-motion` thì cảnh không chạy, trả về ngay `{boQua:true}`, app đi tiếp. Ép bằng `giamChuyenDong: true/false` (trang xem thử ép `false` để Minh xem được cả khi máy bật; công tắc "Thử giảm chuyển động" ép `true`).
 - Chế độ `#fast` / `#auto` của app: nên bỏ qua cảnh (`giamChuyenDong: FAST`), vì `SPEED` 0,04 làm cảnh chớp qua.
@@ -40,10 +53,10 @@ const r = await CanhHai.man3(box, { meo, ro, speed: SPEED, am: amCanhHai });
 | Màn | Gọi | Dài (x1) | Cần truyền | Tiếng (`am` key → gợi ý trong app) | Cuối cảnh |
 |---|---|---|---|---|---|
 | 1 Công viên · bong bóng vỡ trên mỏ | `CanhHai.man1(box, o)` | 6,6 s | không bắt buộc. `bongBong:[{x,b,w}…]` 3 quả (quả cuối to), mặc định (72,46,8) (50,56,7) (30,42,13) | `bup` ×2 → `SFX.pop()` · `bup-to` → `SFX.pop()` to hơn hoặc `noise(.12,.5)` · `lac` "[phì phì]" → `noise(.2,.15,0,2500)` | không để lại gì |
-| 2 Vườn đêm · Polly tập ngủ như dơi | `CanhHai.man2(box, o)` | 9,0 s | `canh` (phần tử cành kit `do-vat/canh-cay`, hoặc `{x,b,w}`), `doi` (phần tử dơi; không có thì cảnh tự vẽ), `doiTai` .58, `dauTai` .84 | `vut` ×2 → `tone(700,.12,'sine',.08,0,300)` · `tired` → Polly nói "Tired!" hai lần (`say('Tired!','Mệt!',{polly:true})` ×2, câu đã có bản ghi) · `ngu` "[khò… khò…]" → `noise` nhỏ hoặc bỏ | để lại cành, dơi, Polly đang ngủ |
-| 3 Nhà Na · mèo đội mũ đồ chơi | `CanhHai.man3(box, o)` | 5,6 s | **bắt buộc** `meo` (`.kcat`), `ro` (`.tbasket`); `vanhRo` .4, `dauMeo` .18 (đúng `ART.basket`, `CAT_SVG`), `mu` svg mũ (mặc định vịt `ART.duck`) | `meo` → tiếng mèo nhỏ (tone trượt lên) · `bich` → `SFX.soft()` · `luc-cuc` → `noise(.3,.1,0,600)` · `chit` (vịt cao su) → `tone(1400,.08,'square',.05)` | để lại mèo đội mũ thò đầu trong rổ |
-| 4 Cửa hàng · Polly tha nải chuối | `CanhHai.man4(box, o)` | 8,4 s | **bắt buộc** `xe` (`.cart`); `xeTrong` = tỉ lệ trong khung xe: lòng `x` .58, `mieng` .25, `day` .64, tay đẩy `tayX` .1 `tayY` .12 (theo `SHOPCART_SVG`; xe của `shopCart` vẽ khác thì chỉnh) | `vo-canh` → `noise` ngắn lặp · `bich` → `SFX.soft()` + `tone(120,.15)` · `tho` "[hộc hộc]" → hai `noise(.15,.1)` | để lại nải chuối trong xe |
-| 5 Công trường · mái nhà biết đi | `CanhHai.man5(box, o)` | 9,0 s | **bắt buộc** `mai` (`.s5roof`, đang nằm dưới đất); `ban` [Lam, Na…]; `doiMat(el,f)` → trong app: `setKidFace(el, el.dataset.who, f||'happy')` | `lach-bach` ×2 → `tone` ngắn xen kẽ · `oh` "Oh!" → **chưa có bản ghi** (cần chat Giọng thu "@Lam:Oh!", "@Na:Oh!", "@Ben:Oh!" hoặc "@Oh!" giọng kid; tạm thời bỏ hoặc dùng `tone`) · `triangle` → Polly nói "Triangle!" hai lần (đã có bản ghi) · `cop` → `SFX.soft()` + `noise(.1,.3,0,400)` | mái về đúng chỗ cũ, mặt các bạn như cũ |
+| 2 Vườn đêm · Polly tập ngủ như dơi | `CanhHai.man2(box, o)` | 9,0 s | `canh` (phần tử cành kit `do-vat/canh-cay`, gốc cành đặt **sau thân cây** để cành mọc ra từ thân; hoặc `{x,b,w}`), `doi` (phần tử dơi; không có thì cảnh tự vẽ), `doiTai` .58, `dauTai` .84 | `vut` ×2 → `tone(700,.12,'sine',.08,0,300)` · `tired` → Polly nói "Tired!" hai lần (`say('Tired!','Mệt!',{polly:true})` ×2, câu đã có bản ghi) · `ngu` "[khò… khò…]" → `noise` nhỏ hoặc bỏ | để lại cành, dơi, Polly đang ngủ |
+| 3 Nhà Na · mèo đội trống | `CanhHai.man3(box, o)` | 6,5 s | **bắt buộc** `meo` (`.kcat`), `ro` (`.tbasket`); `vanhRo` .4, `dauMeo` .18 (đúng `ART.basket`, `CAT_SVG`); `mu` svg mũ (mặc định cái trống `ART.drum` bỏ dùi, úp ngược); `raDat` chỗ mèo đáp (mặc định cạnh rổ, phía giữa phòng); `toRa` 1,35 (mèo to lên khi ra trước) | `meo` ×2 → tiếng mèo nhỏ (tone trượt lên) · `bich` ×2 → `SFX.soft()` · `luc-cuc` → `noise(.3,.1,0,600)` · `tung` → tiếng trống app đang dùng (`tone(150,.3,'sine',.45,0,50)`) | để lại mèo đội trống đứng trên sàn cạnh rổ (rổ đã trả lại) |
+| 4 Cửa hàng · Polly tha nải chuối | `CanhHai.man4(box, o)` | 9,0 s | **bắt buộc** `xe` (`.cart`); `xeTrong` = tỉ lệ trong khung xe: lòng `x` .58, `mieng` .25, `day` .64, tay đẩy `tayX` .1 `tayY` .12 (theo `SHOPCART_SVG`; xe của `shopCart` vẽ khác thì chỉnh) | `vo-canh` → `noise` ngắn lặp · `bich` → `SFX.soft()` + `tone(120,.15)` · `big-bananas` → Polly nói "Big bananas!" hai lần (**chưa có bản ghi**, xem *Câu cần thu mới*) · `tho` "[hộc hộc]" → hai `noise(.15,.1)` | để lại nải chuối trong xe |
+| 5 Công trường · mái nhà biết đi | `CanhHai.man5(box, o)` | 7,0 s | **bắt buộc** `mai` (`.s5roof`, đang nằm dưới đất); `ban` [Lam, Na, Ben] (mỗi bạn lần lượt "Oh!"); `doiMat(el,f)` → trong app: `setKidFace(el, el.dataset.who, f||'happy')`. Polly do cảnh tự vẽ, trốn sẵn dưới mái từ đầu | `lach-bach` ×2 → `tone` ngắn xen kẽ · `oh` "Oh!" ×3, `ai` = 'Lam' / 'Na' / 'Ben' → `friendSays(el,'Oh!')` khi đã thu (**chưa có bản ghi**) · `triangle` → Polly nói "Triangle!" hai lần (đã có bản ghi) · `cop` → `SFX.soft()` + `noise(.1,.3,0,400)` | mái về đúng chỗ cũ, mặt các bạn như cũ |
 | 6 Một ngày · mũ vỏ chuối | `CanhHai.man6(box, o)` | 6,5 s | `vo:{x,b,w}` chỗ vỏ chuối (mặc định 30, 46, 7 = chỗ đĩa chuối `.c6food`), `thung` (phần tử thùng rác kit `do-vat/thung-rac`, hoặc `{x,b,w}` để cảnh tự vẽ), `na` (phần tử Na, nhún theo) | `banana` → Polly nói "Ba-na-na!" (đã có bản ghi) · `cach` ×2 → `tone(900,.05,'square',.05)` | để lại thùng rác (nếu cảnh tự vẽ) |
 
 ## Gợi ý chèn vào app (cho chat U1)
@@ -51,13 +64,12 @@ const r = await CanhHai.man3(box, { meo, ro, speed: SPEED, am: amCanhHai });
 Dòng là của `index.html` ngày 27/10 (commit `9f1bb2c`). Không đổi luồng trò: chỉ thêm một `await` trước khi trang đi tiếp.
 
 1. **Màn 1** · `EP[1]` dòng 10466 `reviewIt(…bubbleFaces())`. Trong `bubbleFaces` (7874), sau `await popStream(…)`: chạy `man1` trên khung `.popfield` cuối cùng (vẫn là công viên có chú bán bóng). Bong bóng sót của app đã mờ đi (`.away`), cảnh tự vẽ 3 quả mới, không có mặt (bong bóng trơn).
-2. **Màn 2** · `flashlightGame` (6700), `EP[2]` dòng 10483. **Thêm từ đầu trang:** cành kit `canh-cay` chìa ra từ tán cây ở chỗ `tree` (khoảng x 56, b 50, w 34) và con dơi kit `doi-ngu-treo-nguoc` treo dưới cành, để đèn pin soi thấy dơi trong lúc chơi. Chạy `man2(box,{canh, doi})` sau dòng 6749 (`dark.classList.add('off'); confetti()`), trước câu cuối.
-3. **Màn 3** · `toyCatch` (6754), `EP[3]` dòng 10497 (có `kitten:true`). Chạy `man3(field,{meo: .kcat, ro: .tbasket})` sau dòng 6808 (`confetti()`), trước khi hàm trả về.
+2. **Màn 2** · `flashlightGame` (6700), `EP[2]` dòng 10483. **Thêm từ đầu trang:** cành kit `canh-cay` **mọc ra từ thân cây** ở chỗ `tree` (cây x 40, b 6, w 24: đặt cành khoảng x 60, b 28, w 40, z-index thấp hơn cây để gốc cành nằm sau thân; không cắm vào tán lá) và con dơi kit `doi-ngu-treo-nguoc` treo dưới cành (rộng 6, chân bám ở mặt dưới cành, chỗ .58 dọc cành), để đèn pin soi thấy dơi trong lúc chơi. Chạy `man2(box,{canh, doi})` sau dòng 6749 (`dark.classList.add('off'); confetti()`), trước câu cuối.
+3. **Màn 3** · `toyCatch` (6754), `EP[3]` dòng 10497 (có `kitten:true`). Chạy `man3(field,{meo: .kcat, ro: .tbasket})` sau dòng 6808 (`confetti()`), trước khi hàm trả về. Cái trống là một trong bốn đồ rơi của trò (`TOYS`: bóng, ô tô, vịt, trống).
 4. **Màn 4** · `shopCart` (6816), `EP[4]` dòng 10508. Chạy `man4(field,{xe: .cart})` sau dòng 6854 (`confetti()`). Kiểm lại `xeTrong` với hình xe của trang này.
-5. **Màn 5** · `siteArrive` (8696), trang đầu Màn 5 (`EP[5]` dòng 10512). **Khác với chốt:** trong app mái nhà treo sẵn ở cần cẩu (bottom 70%) chứ không nằm dưới đất. Đề xuất: lúc mở trang đặt mái `.s5roof` dưới đất (bottom khoảng 3%, dây cần cẩu ẩn), chạy `man5(box,{mai, ban:[Lam, Na], doiMat})`, xong thì móc cần cẩu hạ xuống nhấc mái lên chỗ 70% (một bước nhỏ mới), rồi trò chạy như cũ. Trang này chỉ có Lam và Na (Ben không có): "cả đội" là hai bạn đó. **Minh duyệt hướng này trước khi U1 gắn.**
+5. **Màn 5** · `siteArrive` (8696), trang đầu Màn 5 (`EP[5]` dòng 10512). **Đã chốt:** đầu trang mái tam giác `.s5roof` nằm sẵn dưới đất (bottom khoảng 3%, dây cần cẩu ẩn); hiện app đang treo mái ở cần cẩu (bottom 70%), nên U1 đổi chỗ đặt mái lúc mở trang. Chạy `man5(box,{mai, ban:[Lam, Na, Ben], doiMat})` (Polly trốn sẵn dưới mái do cảnh tự vẽ, bé không thấy Polly chui vào). Xong thì móc cần cẩu hạ xuống nhấc mái lên chỗ 70% (một bước nhỏ mới), rồi trò chạy như cũ. Trang này hiện chỉ có Lam và Na: **thêm Ben** đứng cạnh (vd. `kidAt('Ben','happy',45,3,14)`) để cả ba bạn cùng "Oh!".
 6. **Màn 6** · `bananaClap` (9157), `EP[6]` dòng 10526. **Thêm từ đầu trang:** thùng rác kit `thung-rac` ở góc bếp (khoảng x 87, b 4, w 9). Cuối trò, trước `confetti(); nextPage(box)` (dòng 9191): ẩn đĩa chuối `.c6food` (Na đã ăn), chạy `man6(box,{vo:{x:30,b:46,w:7}, thung, na})`.
 
-## Ghi chú cho Minh
-- **Màn 2:** Polly treo ngược trên cành chỉ một lát rồi chóng mặt, lật lại ngay và chọn ngủ kiểu vẹt. Bé thấy treo ngược làm Polly chóng mặt; nếu Minh vẫn ngại bé bắt chước, có thể bỏ đoạn treo ngược, giữ đoạn ngáp và rúc đầu ngủ (cảnh còn khoảng 5 giây).
-- **Màn 3:** mèo nhảy từ kệ vào rổ. Nếu Minh ngại bé bắt chước trèo kệ, cho mèo bắt đầu từ sàn cạnh rổ (chỉ đổi chỗ mèo, cảnh tự tính đường nhảy).
-- **Màn 5:** cần Minh chọn cách đặt mái dưới đất lúc đầu (mục 5 ở trên).
+## Ghi chú
+- **Màn 2:** Minh đã đồng ý đoạn Polly treo ngược (một lát, rồi chóng mặt, lật lại).
+- **Màn 3:** nếu sau này ngại bé bắt chước trèo kệ, cho mèo bắt đầu từ sàn cạnh rổ (chỉ đổi chỗ mèo, cảnh tự tính đường nhảy).

@@ -114,7 +114,7 @@ Do chat **[App] Cảnh hài** vẽ cho 6 cảnh hài (`art/canh-hai/`). Cùng n�
 | Tên | Khung | Ghi chú |
 |---|---|---|
 | `bot-mo-polly` | 200×260 | bọt xà phòng dính trên mỏ và đầu Polly: **lớp phủ cùng khung Polly**, đặt chồng đúng lên Polly (`dung`, `noi`; khi bay thì dời lên 10) |
-| `canh-cay` | 200×40 | cành cây vươn ngang từ trái (gốc ở mép trái, đặt cắm vào tán cây), vài lá. **Mặt trên y ≈ 14 (chỗ đậu), mặt dưới y ≈ 23 (chỗ treo)** |
+| `canh-cay` | 200×40 | cành cây vươn ngang từ trái, vài lá. **Gốc cành ở mép trái: đặt gốc nằm sau thân cây (z-index thấp hơn cây) để cành mọc ra từ thân, không cắm vào tán lá** (góp ý Minh 27/10). **Mặt trên y ≈ 14 (chỗ đậu), mặt dưới y ≈ 23 (chỗ treo)** |
 | `nai-chuoi-to` | 126×102 | nải chuối to 6 quả, **cuống ở trên (63, 4)** (chỗ Polly quặp) |
 | `vo-chuoi` | 80×76 | vỏ chuối đứng, bốn vạt rủ xuống, cuống trên (40, 4). Đặt trên quầy, hoặc chồng lên đầu Polly làm mũ |
 | `thung-rac` | 64×92 | thùng rác đạp chân trong bếp (xanh bạc hà, bàn đạp xám). **Nắp là nhóm `<g class="nap">`, bản lề ở (6, 22)**: xoay quanh điểm đó (khoảng −80°) là mở nắp. Đáy ở cạnh dưới |

@@ -48,7 +48,7 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
 <div class="wrap">
   <header>
     <h1>Cảnh hài Unit 1 · bản mẫu</h1>
-    <p>Bé chỉ xem, không chạm. Chưa có tiếng: chỗ có tiếng hiện chữ nhỏ.</p>
+    <p>Bé chỉ xem, không chạm. Chữ nhỏ chỉ có ở trang này, thay cho tiếng; trong app là tiếng thật, không hiện chữ.</p>
   </header>
   <div class="stage-card"><div class="stage" id="stage"></div></div>
   <div class="controls" id="nut"></div>
@@ -72,7 +72,7 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
    Tuỳ chọn chung cho mọi cảnh:
      speed   hệ số thời gian (1 = bình thường, 2 = chậm gấp đôi; trong app truyền SPEED)
      signal  AbortSignal: huỷ giữa chừng (bấm lại) → dọn sạch, Promise vẫn resolve
-     am(key, chu)  gọi ở mỗi chỗ có tiếng động / câu nói (app phát tiếng ở đây); xem bảng trong README
+     am(key, chu, ai)  gọi ở mỗi chỗ có tiếng động / câu nói (app phát tiếng ở đây; ai = ai nói, vd. 'Lam'); xem bảng trong README
      chu     true: hiện chữ nhỏ "[bụp]", "Triangle! Triangle!" (mặc định: true khi không có am)
      giamChuyenDong  true/false: ép bật/tắt; mặc định theo máy (prefers-reduced-motion) → bật thì bỏ qua cảnh
    Promise trả về { xong:true, xoa() } (xoa() gỡ mọi thứ cảnh còn để lại), hoặc { boQua:true } khi máy bật giảm chuyển động. */
@@ -156,14 +156,16 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
     /** lật mặt hình s (quay trái / phải) */
     C.quay = (s, lat) => { s.lat = lat; s.querySelector('.ch-q').classList.toggle('lat', lat) };
     /** tiếng động / câu nói: báo cho app (o.am), và hiện chữ nhỏ nếu cần. at: hình hoặc {x, b} */
-    C.am = (key, chu, at, { loi = false, t = 1300 } = {}) => {
-      try { o.am && o.am(key, chu) } catch (e) {}
+    C.am = (key, chu, at, { loi = false, t = 1300, ai } = {}) => {
+      try { o.am && o.am(key, chu, ai) } catch (e) {}
       if (!C.chu || C.dead) return;
       let x = 50, b = 70;
       if (at && at.nodeType) { const r = C.rect(at); x = r.x; b = r.b + r.h + 2 } else if (at) { x = at.x; b = at.b }
       const c = document.createElement('div'); c.className = 'ch-chu' + (loi ? ' loi' : ''); c.textContent = chu;
       c.style.left = Math.max(10, Math.min(90, x)) + '%'; c.style.bottom = Math.min(90, b) + '%';
       box.append(c); C.els.push(c);
+      const cw = c.getBoundingClientRect().width / C.R().width * 100;   // chữ không tràn ra ngoài khung
+      c.style.left = Math.max(cw / 2 + 1, Math.min(99 - cw / 2, x)) + '%';
       c.animate([{ opacity: 0, transform: 'scale(.6)' }, { opacity: 1, transform: 'scale(1.08)', offset: .15 }, { opacity: 1, transform: 'scale(1)', offset: .3 }, { opacity: 1, offset: .8 }, { opacity: 0 }], { duration: C.ms(t) }).finished.then(() => c.remove(), () => c.remove())
     };
     /** mượn một phần tử có sẵn trong cảnh (rổ, mái nhà, mèo…): một bản sao đặt đúng chỗ để cảnh tự chuyển động; bản gốc ẩn tạm */
@@ -400,19 +402,22 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
   });
 })();
 
-/* Màn 3 · Nhà Na · "Mèo con đội mũ đồ chơi" (khoảng 6 giây)
-   Xong trò bắt đồ chơi rơi: mèo con trên kệ nhìn cái rổ, lấy đà, nhảy vèo vào rổ, rổ lắc lục cục,
-   rồi mèo thò đầu ra, đội một món đồ chơi vừa rơi (vịt cao su) làm mũ, nghiêng đầu.
-   CanhHai.man3(box, { meo: phần tử mèo (bắt buộc), ro: phần tử rổ (bắt buộc), mu: svg đồ chơi làm mũ (mặc định vịt của app),
+/* Màn 3 · Nhà Na · "Mèo con đội trống" (khoảng 6,5 giây)
+   Xong trò bắt đồ chơi rơi: mèo con trên kệ nhìn cái rổ, lấy đà, nhảy vèo vào rổ, rổ lắc lục cục, trong rổ kêu "tùng",
+   rồi mèo nhảy HẲN ra khỏi rổ, đáp xuống sàn cạnh rổ, đầu đội cái trống úp ngược (như cái xô), đứng nghiêng đầu cho bé nhìn rõ.
+   CanhHai.man3(box, { meo: phần tử mèo (bắt buộc), ro: phần tử rổ (bắt buộc),
+                       mu: svg làm mũ (mặc định cái trống của app ART.drum, bỏ dùi, úp ngược),
+                       raDat: {x, b} chỗ mèo đáp (mặc định ngay cạnh rổ, phía giữa phòng), toRa: mèo to lên khi ra trước (1,35),
                        vanhRo: 0..1 (miệng rổ cách đỉnh rổ bao nhiêu phần chiều cao, mặc định .4 = ART.basket),
                        dauMeo: 0..1 (đỉnh đầu mèo, tính từ trên, mặc định .18 = CAT_SVG), …chung })
-   Tiếng (am): 'meo' "[meo!]", 'bich' "[bịch]", 'luc-cuc' "[lục cục]", 'chit' "[chít!]" (vịt cao su).
-   Kết thúc: mèo đội mũ VẪN THÒ ĐẦU trong rổ (bản sao của mèo và rổ; mèo, rổ gốc đang ẩn). r.xoa() trả lại như cũ. */
+   Tiếng (am): 'meo' "[meo!]" ×2, 'bich' "[bịch]" ×2, 'luc-cuc' "[lục cục]", 'tung' "[tùng!]" (trống).
+   Kết thúc: mèo đội trống ĐỨNG LẠI trên sàn cạnh rổ (bản sao mèo; mèo gốc đang ẩn; rổ đã trả lại). r.xoa() trả lại như cũ. */
 (function () {
   'use strict';
   const CH = window.CanhHai;
   const INK = '#361D46', OL = `stroke="${INK}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"`;
-  const VIT = `<svg viewBox="0 0 64 64"><path d="M10 38 C10 52 24 58 36 56 C50 54 56 44 54 36 C46 40 40 38 36 32 L24 34 C18 32 12 32 10 38Z" fill="#FCB515" ${OL}/><circle cx="40" cy="22" r="11" fill="#FCB515" ${OL}/><path d="M50 22 l10 3 -10 3z" fill="#F28C38" ${OL}/><circle cx="43" cy="19" r="2.2" fill="${INK}"/></svg>`;
+  // cái trống của app (ART.drum) bỏ dùi, úp ngược: mặt trống ở dưới (đội lên đầu), thân đỏ ở trên
+  const TRONG = `<svg viewBox="14 24 72 62" overflow="visible"><g transform="translate(0 110) scale(1 -1)"><path d="M18 40 V74 C18 82 82 82 82 74 V40" fill="#E8607E" ${OL}/><ellipse cx="50" cy="40" rx="32" ry="10" fill="#FFF3D6" ${OL}/><path d="M18 52 L34 76 L50 52 L66 76 L82 52" fill="none" stroke="#FCB515" stroke-width="3"/></g></svg>`;
 
   CH.man3 = (box, o = {}) => CH.chay(box, o, async C => {
     if (!o.meo || !o.ro) throw new Error('man3: cần o.meo và o.ro');
@@ -423,47 +428,62 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
     const m = C.muon(o.meo, { z: 6 });
     const mi = m.firstElementChild; mi.style.transformOrigin = '50% 100%';
     const hR = C.cao(roSau), hM = C.cao(m), mieng = roSau.b + hR * (1 - vanh);
+    const veTrai = roSau.x < m.x;                                  // mèo nhảy sang trái?
 
     // 1. nhìn cái rổ, lấy đà
-    await C.lam(m, [{ transform: 'rotate(0)' }, { transform: `rotate(${roSau.x < m.x ? -14 : 14}deg)` }, { transform: 'rotate(0)' }], 600);
+    await C.lam(m, [{ transform: 'rotate(0)' }, { transform: `rotate(${veTrai ? -14 : 14}deg)` }, { transform: 'rotate(0)' }], 600);
     await C.lam(m, [{ transform: 'scaleY(1)' }, { transform: 'scale(1.08,.8)' }], 260, { giu: true });
     // 2. nhảy vèo vào rổ
     C.am('meo', '[meo!]', m);
     const tren = { x: roSau.x, b: mieng + 4 }, dinh = { x: (m.x + roSau.x) / 2, b: Math.max(m.b, mieng) + 18 };
     mi.getAnimations().forEach(a => a.cancel());
-    C.chay(mi, [{ transform: 'scale(.9,1.12) rotate(0)' }, { transform: `scale(1) rotate(${roSau.x < m.x ? -20 : 20}deg)`, offset: .5 }, { transform: 'scale(1) rotate(0)' }], 760);
+    C.chay(mi, [{ transform: 'scale(.9,1.12) rotate(0)' }, { transform: `scale(1) rotate(${veTrai ? -20 : 20}deg)`, offset: .5 }, { transform: 'scale(1) rotate(0)' }], 760);
     await C.di(m, [{ x: dinh.x, b: dinh.b, o: .45 }, tren], 760, 'cubic-bezier(.3,.1,.5,1)');
-    const day = Math.max(roSau.b + 1, mieng - hM * .95);
-    await C.di(m, { b: day }, 220, 'ease-in');
+    await C.di(m, { b: Math.max(roSau.b + 1, mieng - hM * .95) }, 220, 'ease-in');
     C.am('bich', '[bịch]', roSau);
     const nhun = [{ transform: 'scale(1,1)' }, { transform: 'scale(1.1,.86)' }, { transform: 'scale(.97,1.04)' }, { transform: 'scale(1)' }];
     C.chay(roSau.firstElementChild, nhun, 380); await C.lam(roTruoc, nhun, 380);
-    // 3. rổ lắc lục cục (mèo đang lục bên trong)
+    // 3. rổ lắc lục cục, trong rổ kêu "tùng" (mèo vừa đội cái trống)
     C.am('luc-cuc', '[lục cục]', roSau);
     const lac = [{ transform: 'rotate(0)' }, { transform: 'rotate(-6deg)' }, { transform: 'rotate(5deg)' }, { transform: 'rotate(-4deg)' }, { transform: 'rotate(0)' }];
     for (const r of [roSau, roTruoc]) r.firstElementChild.style.transformOrigin = '50% 100%';
     C.chay(roSau.firstElementChild, lac, 800); await C.lam(roTruoc, lac, 800);
-    await C.cho(250);
-    // 4. thò đầu ra, đội món đồ chơi làm mũ
+    C.am('tung', '[tùng!]', { x: roSau.x, b: mieng + 8 });
+    C.chay(roSau.firstElementChild, nhun, 300); await C.lam(roTruoc, nhun, 300);
+    await C.cho(150);
+    // 4. nhảy hẳn ra khỏi rổ, đầu đội cái trống úp ngược
     const mu = document.createElement('div');
-    mu.style.cssText = `position:absolute;left:4%;bottom:${(1 - dau) * 100 - 8}%;width:92%;transform:rotate(-12deg);transform-origin:50% 100%`;
-    mu.innerHTML = o.mu || VIT; m.querySelector('.ch-q').append(mu);
-    C.am('chit', '[chít!]', { x: roSau.x, b: mieng + hM * .8 + 6 });
-    await C.di(m, { b: mieng - hM * .4 }, 340, 'cubic-bezier(.3,1.6,.5,1)');
-    await C.lam(m, [{ transform: 'rotate(0)' }, { transform: 'rotate(-12deg)' }, { transform: 'rotate(-12deg)', offset: .4 }, { transform: 'rotate(10deg)', offset: .7 }, { transform: 'rotate(0)' }], 1300);
-    C.chay(mu, [{ transform: 'rotate(-12deg)' }, { transform: 'rotate(-4deg)' }, { transform: 'rotate(-12deg)' }], 600, { lap: 2 });
-    await C.cho(600)
+    mu.style.cssText = `position:absolute;left:10%;bottom:${(1 - dau) * 100 - 12}%;width:80%;transform:rotate(-6deg);transform-origin:50% 100%`;
+    mu.innerHTML = o.mu || TRONG; m.querySelector('.ch-q').append(mu);
+    m.style.zIndex = 9;                                            // ra trước thân rổ
+    const sangPhai = o.raDat ? o.raDat.x > roSau.x : roSau.x <= 50;
+    const dat = o.raDat || { x: roSau.x + (sangPhai ? 1 : -1) * (roSau.w / 2 + m.w * .9), b: roSau.b };
+    C.am('meo', '[meo!]', { x: roSau.x, b: mieng + hM + 6 });
+    m.style.transformOrigin = '50% 100%';                         // ra phía trước, to hơn một chút cho bé nhìn rõ
+    C.chay(m, [{ scale: '1' }, { scale: String(o.toRa ?? 1.35) }], 780, { giu: true });
+    C.chay(mi, [{ transform: 'rotate(0)' }, { transform: `rotate(${sangPhai ? 14 : -14}deg)`, offset: .5 }, { transform: 'rotate(0)' }], 780);
+    await C.di(m, [{ x: roSau.x, b: mieng + hM * .2, o: .2 }, { x: (roSau.x + dat.x) / 2, b: mieng + hM * .9, o: .55 }, dat], 780, 'cubic-bezier(.3,.1,.5,1)');
+    m.style.scale = String(o.toRa ?? 1.35);
+    C.am('bich', '[bịch]', { x: dat.x, b: dat.b + hM * 1.6 });
+    await C.lam(m, [{ transform: 'scale(1)' }, { transform: 'scale(1.12,.84)' }, { transform: 'scale(.96,1.06)' }, { transform: 'scale(1)' }], 320);
+    roTruoc.tra(); roSau.tra();                                    // rổ xong việc: trả lại rổ gốc (đúng thứ tự ngược lúc mượn)
+    // 5. đứng cho bé nhìn rõ: nghiêng đầu, cái trống lắc lư
+    C.chay(mu, [{ transform: 'rotate(-6deg)' }, { transform: 'rotate(6deg)' }, { transform: 'rotate(-6deg)' }], 700, { lap: 2 });
+    await C.lam(m, [{ transform: 'rotate(0)' }, { transform: 'rotate(-10deg)', offset: .25 }, { transform: 'rotate(-10deg)', offset: .45 }, { transform: 'rotate(9deg)', offset: .7 }, { transform: 'rotate(0)' }], 1300);
+    await C.cho(500)
   });
 })();
 
-/* Màn 4 · Cửa hàng · "Polly tha nải chuối" (khoảng 8 giây)
+/* Màn 4 · Cửa hàng · "Polly tha nải chuối" (khoảng 9 giây)
    Xong trò xe đẩy: Polly cố tha cả một nải chuối to tới xe; nặng quá, vỗ cánh phành phạch, bay lên từng nấc
-   (lên một chút lại tụt), tới trên xe thì thả "bịch" vào xe, rồi đậu lên tay đẩy thở hổn hển, xong bay đi.
+   (lên một chút lại tụt), tới trên xe thì thả "bịch" vào xe, đậu lên tay đẩy, nói "Big bananas! Big bananas!",
+   rồi thở hổn hển, xong bay đi.
    CanhHai.man4(box, { xe: phần tử xe đẩy (bắt buộc),
                        xeTrong: {x, mieng, day, tayX, tayY} các tỉ lệ 0..1 trong khung xe (mặc định theo SHOPCART_SVG 120×90:
                                  lòng xe x .58, miệng y .25, đáy lòng y .64, tay đẩy (.1, .12)),
-                       vaoTu, raTai, naiW (bề rộng nải chuối, % box; mặc định .9 × Polly), …chung })
-   Tiếng (am): 'vo-canh' "[phành phạch]", 'bich' "[bịch!]", 'tho' "[hộc hộc]".
+                       vaoTu, raTai, naiW (bề rộng nải chuối, % box; mặc định 1,35 × Polly), …chung })
+   Tiếng (am): 'vo-canh' "[phành phạch]", 'bich' "[bịch!]", 'big-bananas' "Big bananas! Big bananas!" (Polly; CHƯA CÓ BẢN GHI),
+   'tho' "[hộc hộc]".
    Kết thúc: nải chuối NẰM LẠI trong xe (bản sao xe + hình nải chuối); Polly đã bay đi. r.xoa() trả lại như cũ. */
 (function () {
   'use strict';
@@ -489,7 +509,7 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
     // 1. lết vào sát mặt đất, nặng trĩu, chập chờn
     C.am('vo-canh', '[phành phạch]', { x: 80, b: 40 });
     const xToi = longX + 20, b0 = bTheo(4);
-    await C.di(p, [{ x: (vao.x + xToi) / 2, b: b0 + 3, o: .3 }, { x: (vao.x + xToi) / 2 - 6, b: b0, o: .55 }, { x: xToi + 4, b: b0 + 3, o: .8 }, { x: xToi, b: b0 }], 1700);
+    await C.di(p, [{ x: (vao.x + xToi) / 2, b: b0 + 3, o: .3 }, { x: (vao.x + xToi) / 2 - 6, b: b0, o: .55 }, { x: xToi + 4, b: b0 + 3, o: .8 }, { x: xToi, b: b0 }], 1500);
     // 2. bay lên từng nấc: lên một chút, tụt lại một ít
     const bDich = bTheo(mieng + 3), nac = 3, buoc = (bDich - b0) / nac;
     for (let i = 1; i <= nac; i++) {
@@ -511,14 +531,16 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
     C.am('bich', '[bịch!]', xe);
     C.chay(n.firstElementChild, [{ transform: 'scale(1)' }, { transform: 'scale(1.08,.88) rotate(-4deg)' }, { transform: 'scale(1) rotate(-6deg)' }], 300, { giu: true });
     await C.lam(xe, [{ transform: 'scale(1)' }, { transform: 'scale(1.05,.9)' }, { transform: 'scale(.98,1.03)' }, { transform: 'scale(1)' }], 380);
-    // 5. đậu lên tay đẩy, thở hổn hển
+    // 5. đậu lên tay đẩy, nói "Big bananas! Big bananas!", rồi thở hổn hển
     C.quay(p, false);
     const dau = C.neo(p, 97, 241, tay.x, tay.b);
-    await C.di(p, [{ x: (p.x + dau.x) / 2, b: Math.max(p.b, dau.b) + 6 }, { x: dau.x, b: dau.b + 2 }], 700);
-    p.tu('tho-1'); C.dat(p, dau.x, dau.b);
-    C.am('tho', '[hộc hộc]', p, { t: 1700 });
+    await C.di(p, [{ x: (p.x + dau.x) / 2, b: Math.max(p.b, dau.b) + 6 }, { x: dau.x, b: dau.b + 2 }], 600);
+    p.tu('noi'); C.dat(p, dau.x, dau.b);
     p.firstElementChild.style.transformOrigin = '50% 100%';
-    for (let i = 0; i < 6; i++) {
+    C.am('big-bananas', 'Big bananas! Big bananas!', p, { loi: true, t: 1700 });
+    await C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(10deg)' }, { transform: 'rotate(0)' }, { transform: 'rotate(10deg)' }, { transform: 'rotate(0)' }], 1500);
+    C.am('tho', '[hộc hộc]', p, { t: 1300 });
+    for (let i = 0; i < 4; i++) {
       p.tu(i % 2 ? 'tho-2' : 'tho-1');
       await C.lam(p, [{ transform: 'scale(1)' }, { transform: i % 2 ? 'scale(.97,1.02)' : 'scale(1.04,.95)' }], 260, { giu: true })
     }
@@ -527,59 +549,56 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
     p.tu('bay');
     const ra = o.raTai || { x: -16, b: 92 };
     C.quay(p, ra.x < p.x);
-    await C.di(p, ra, 1000, 'ease-in');
+    await C.di(p, ra, 900, 'ease-in');
     p.remove()
   });
 })();
 
-/* Màn 5 · Công trường · "Mái nhà biết đi" (khoảng 8 giây)
-   Mở đầu, lúc mái nhà tam giác còn nằm dưới đất: Polly bay xuống, chui vào dưới mái; cái mái tự đi lạch bạch
-   (lòi ra hai chân vẹt), đi qua rồi đi lại. Cả đội ngạc nhiên "Oh!". Mái nhấc lên một bên, Polly thò ra:
-   "Triangle! Triangle!" rồi bay đi; mái hạ xuống lại đúng chỗ cũ (để trò cần cẩu đặt mái chạy như cũ).
+/* Màn 5 · Công trường · "Mái nhà biết đi" (khoảng 7 giây)
+   Đầu trang, mái nhà tam giác nằm sẵn dưới đất; Polly đã trốn sẵn bên dưới (bé không thấy Polly chui vào).
+   Cái mái tự nhấc lên, lòi ra hai chân vẹt, đi lạch bạch qua rồi đi lại. Cả đội mặt rất ngạc nhiên, mỗi bạn "Oh!".
+   Mái nhấc lên một bên, lộ ra Polly: "Triangle! Triangle!", Polly bay đi, mái hạ xuống "cộp" đúng chỗ cũ.
+   Sau đó app cho cần cẩu nhấc mái lên, trò cũ chạy tiếp.
    CanhHai.man5(box, { mai: phần tử mái nhà (bắt buộc, đang nằm dưới đất), ban: [phần tử Lam, Na, Ben…],
                        doiMat(el, 'surprised' | null): đổi mặt một bạn (app: setKidFace); mặc định đổi hình kit <ten>-ngac-nhien
-                       nếu phần tử có data-kit="lam|na|ben", diXa (% box mái đi, mặc định 9), vaoTu, raTai, …chung })
-   Tiếng (am): 'lach-bach' "[lạch bạch]" ×2, 'oh' "Oh!" (cả đội), 'triangle' "Triangle! Triangle!" (Polly), 'cop' "[cộp]".
+                       nếu phần tử có data-kit="lam|na|ben", diXa (% box mái đi, mặc định 8), raTai, …chung })
+   Tiếng (am): 'lach-bach' "[lạch bạch]" ×2, 'oh' "Oh!" mỗi bạn một lần (am nhận thêm tên bạn: 'Lam', 'Na', 'Ben';
+   CHƯA CÓ BẢN GHI), 'triangle' "Triangle! Triangle!" (Polly; đã có bản ghi "Triangle!"), 'cop' "[cộp]".
    Kết thúc: mái về đúng chỗ cũ (bản gốc hiện lại), mặt các bạn trở lại như trước, Polly đã bay đi. Không để lại gì. */
 (function () {
   'use strict';
   const CH = window.CanhHai;
+  const TEN = { lam: 'Lam', na: 'Na', ben: 'Ben', choi: 'Chồi' };
 
   CH.man5 = (box, o = {}) => CH.chay(box, o, async C => {
     if (!o.mai) throw new Error('man5: cần o.mai');
     const m = C.muon(o.mai, { z: 8 }), mi = m.firstElementChild;
     const dat0 = { x: m.x, b: m.b }, hM = C.cao(m);
     const ban = o.ban || [];
+    const tenOf = el => el.dataset.who || TEN[el.dataset.kit] || '';
     const doiMat = o.doiMat || ((el, f) => {
       const k = el.dataset.kit, sv = el.querySelector('.ch-kit') || el; if (!k) return;
       if (f) { if (sv._was == null) { sv._was = sv.innerHTML; C.back.push(() => { if (sv._was != null) { sv.innerHTML = sv._was; sv._was = null } }) } sv.innerHTML = CH.HINH[k + '-ngac-nhien'] }
       else if (sv._was != null) { sv.innerHTML = sv._was; sv._was = null }
     });
-
-    // 1. Polly bay xuống, đáp bên phải cái mái
-    const vao = o.vaoTu || { x: 114, b: 66 };
-    const p = C.polly({ x: vao.x, b: vao.b, lat: true, tu: 'bay', z: 6 });
-    const dat = C.neo(p, 97, 250, m.x + m.w / 2 + 6, m.b);
-    await C.di(p, [{ x: (vao.x + dat.x) / 2 + 4, b: dat.b + 16 }, { x: dat.x, b: dat.b + 3 }], 1000);
-    p.tu('dung'); C.dat(p, dat.x, dat.b);
-    // nhìn cái mái, nghiêng đầu
-    await C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(-10deg)', offset: .3 }, { transform: 'rotate(-10deg)', offset: .7 }, { transform: 'rotate(0)' }], 700);
-    // 2. nhảy lò cò tới mép mái rồi chui vào dưới
-    const sat = m.x + m.w * .36;
-    await C.di(p, [{ x: (p.x + sat) / 2, b: p.b + 4 }, { x: (p.x + sat) / 2 - 1, b: p.b }, { x: sat + 1, b: p.b + 3 }, { x: sat, b: p.b }], 520);
-    await C.lam(p, [{ transform: 'translateX(0) scale(1)', opacity: 1 }, { transform: 'translateX(-70%) scale(.5,.3)', opacity: 0 }], 260, { giu: true, ez: 'ease-in' });
+    // Polly trốn sẵn dưới mái: có mặt nhưng ẩn, đứng giữa mái
+    const p = C.polly({ x: m.x, b: m.b, lat: false, tu: 'dung', z: 6 });
     p.style.visibility = 'hidden';
-    C.lam(m, [{ transform: 'translateY(0)' }, { transform: 'translateY(-14%)' }, { transform: 'translateY(0)' }], 220).catch(() => {});
-    await C.cho(350);
-    // 3. mái nhấc lên, lòi hai chân vẹt, đi lạch bạch sang trái rồi quay lại
+
+    await C.cho(400);
+    // 1. cái mái nhúc nhích, rồi tự nhấc lên, lòi hai chân vẹt
+    await C.lam(m, [{ transform: 'rotate(0)' }, { transform: 'rotate(-2deg)' }, { transform: 'rotate(2deg)' }, { transform: 'rotate(0)' }], 300);
+    await C.cho(200);
     const nhac = Math.max(3, hM * .22);
     await C.di(m, { b: dat0.b + nhac }, 220, 'ease-out');
     const chan = C.hinh('polly-chan-1', { w: p.w * 2.4, z: 7 });
     const datChan = () => { const n = C.neo(chan, 98, 252, m.x, dat0.b); C.dat(chan, n.x, n.b) };
     datChan();
+    C.chay(chan, [{ opacity: 0 }, { opacity: 1 }], 120);
     let k = 0; const buoc = setInterval(() => { k++; chan.querySelector('.ch-q').innerHTML = CH.HINH[k % 2 ? 'polly-chan-2' : 'polly-chan-1'] }, C.ms(170));
     C.timers.push(buoc); C.back.push(() => clearInterval(buoc));
-    const xa = o.diXa ?? 9;
+    // 2. đi lạch bạch sang một bên rồi đi lại
+    const xa = o.diXa ?? 8;
     const di = async (dx) => {
       C.am('lach-bach', '[lạch bạch]', { x: m.x, b: dat0.b + hM + 6 });
       const lac = C.lam(m, [{ transform: 'rotate(0) translateY(0)' }, { transform: 'rotate(-4deg) translateY(-6%)' }, { transform: 'rotate(0) translateY(0)' }, { transform: 'rotate(4deg) translateY(-6%)' }, { transform: 'rotate(0) translateY(0)' }], 560, { lap: 2 });
@@ -587,21 +606,30 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
       const theo = () => { if (C.dead) return; const f = Math.min(1, (performance.now() - t0) / dur); C.dat(m, x0 + (tg - x0) * f, m.b); datChan(); if (f < 1) requestAnimationFrame(theo) };
       requestAnimationFrame(theo); await lac; C.dat(m, tg, m.b); datChan()
     };
-    await di(-xa);
-    // cả đội ngạc nhiên
-    ban.forEach((el, i) => { doiMat(el, 'surprised'); C.chay(el, [{ transform: 'translateY(0)' }, { transform: 'translateY(-7%)' }, { transform: 'translateY(0)' }], 340, { tre: i * 70 }) });
-    if (ban.length) C.am('oh', 'Oh!', ban[Math.floor((ban.length - 1) / 2)], { loi: true });
-    await C.cho(120);
-    await di(xa);
-    clearInterval(buoc); chan.remove();
-    // 4. mái nhấc một bên, Polly thò ra: "Triangle! Triangle!"
+    const ve = ban.length && C.rect(ban[0]).x < m.x ? -1 : 1;     // đi về phía các bạn trước
+    const diDau = di(ve * xa);
+    // 3. cả đội mặt rất ngạc nhiên, mỗi bạn "Oh!"
+    await C.cho(450);
+    for (const el of ban) {
+      doiMat(el, 'surprised');
+      C.chay(el, [{ transform: 'translateY(0)' }, { transform: 'translateY(-8%)' }, { transform: 'translateY(0)' }], 340);
+      C.am('oh', 'Oh!', el, { loi: true, ai: tenOf(el), t: 1100 });
+      await C.cho(260)
+    }
+    await diDau;
+    await di(-ve * xa);
+    clearInterval(buoc);
+    // 4. mái nhấc lên một bên, lộ ra Polly: "Triangle! Triangle!"
     mi.style.transformOrigin = '2% 100%';
-    await C.lam(m, [{ transform: 'rotate(0)' }, { transform: 'rotate(-17deg)' }], 300, { giu: true, ez: 'ease-out' });
-    p.firstElementChild.getAnimations().forEach(a => a.cancel());
-    C.quay(p, false); p.tu('noi'); p.style.visibility = '';
-    const ngoai = C.neo(p, 97, 250, m.x + m.w / 2 + 3, dat0.b), trong = { x: ngoai.x - 7, b: ngoai.b };
-    C.dat(p, trong.x, trong.b);
+    const mo = C.lam(m, [{ transform: 'rotate(0)' }, { transform: 'rotate(-20deg)' }], 320, { giu: true, ez: 'ease-out' });
+    C.chay(chan, [{ opacity: 1 }, { opacity: 0 }], 150, { giu: true });
+    C.dat(p, C.neo(p, 97, 250, m.x + m.w * .3, dat0.b).x, dat0.b);
+    p.tu('noi'); p.style.visibility = '';
+    C.chay(p, [{ opacity: 0 }, { opacity: 1 }], 150);
+    await mo;
+    const ngoai = C.neo(p, 97, 250, m.x + m.w / 2 + 3, dat0.b);
     await C.di(p, ngoai, 260, 'cubic-bezier(.3,1.5,.5,1)');
+    chan.remove();
     C.am('triangle', 'Triangle! Triangle!', p, { loi: true, t: 1600 });
     p.firstElementChild.style.transformOrigin = '50% 100%';
     await C.lam(p, [{ transform: 'rotate(0)' }, { transform: 'rotate(8deg)' }, { transform: 'rotate(0)' }, { transform: 'rotate(8deg)' }, { transform: 'rotate(0)' }], 1100);
@@ -610,7 +638,7 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
     C.di(p, ra, 900, 'ease-in').then(() => p.remove(), () => {});
     await C.cho(250);
     mi.getAnimations().forEach(a => a.cancel());
-    await C.lam(m, [{ transform: 'rotate(-17deg)' }, { transform: 'rotate(0)' }], 200, { ez: 'ease-in' });
+    await C.lam(m, [{ transform: 'rotate(-20deg)' }, { transform: 'rotate(0)' }], 200, { ez: 'ease-in' });
     await C.di(m, { b: dat0.b }, 120, 'ease-in');
     C.am('cop', '[cộp]', m);
     C.hat(m.x - m.w * .45, dat0.b + 1, { n: 4, mau: '#D9C7A8', vien: '', co: 1.6, xa: 4 });
@@ -619,7 +647,7 @@ header p{margin:0;color:var(--muted);font-weight:600;font-size:14px}
     await C.cho(600);
     ban.forEach(el => doiMat(el, null));
     m.tra();
-    await C.cho(400)
+    await C.cho(300)
   });
 })();
 
@@ -698,10 +726,10 @@ const APP={"cat":"<svg viewBox=\"-16 -40 32 42\" overflow=\"visible\"><g transfo
 const H=CanhHai.HINH;
 const MAN=[
  {ten:'Công viên',nen:'cong-vien-tron',ta:'Xong trò bong bóng có mặt: Polly mổ vỡ hai quả còn sót, quả to cuối cùng vỡ ngay trên mỏ. Bọt dính đầy, Polly đứng hình, lắc đầu rồi bay đi.',tieng:['[bụp] ×2','[BỤP!]','[phì phì]']},
- {ten:'Vườn đêm',nen:'vuon-nha-na-dem-tron',ta:'Con dơi ngủ treo ngược trên cành. Polly đậu cạnh, thử treo ngược, chóng mặt, lật lại, ngáp "Tired! Tired!" rồi rúc đầu vào cánh ngủ kiểu vẹt.',tieng:['[vụt] ×2','“Tired! Tired!” (có bản ghi)','[khò… khò…]']},
- {ten:'Nhà Na',nen:'phong-na-tron',ta:'Xong trò bắt đồ chơi rơi: mèo con nhảy từ kệ vào rổ, rổ lắc lục cục, mèo thò đầu ra đội con vịt cao su làm mũ.',tieng:['[meo!]','[bịch]','[lục cục]','[chít!]']},
- {ten:'Cửa hàng',nen:'sieu-thi-tron',ta:'Xong trò xe đẩy: Polly tha nải chuối to, vỗ cánh phành phạch, bay lên từng nấc, thả "bịch" vào xe, đậu lên tay đẩy thở hổn hển rồi bay đi.',tieng:['[phành phạch]','[bịch!]','[hộc hộc]']},
- {ten:'Công trường',nen:'cong-truong-xay-tron',ta:'Mở màn, mái tam giác còn dưới đất: Polly chui vào, mái đi lạch bạch, lòi hai chân vẹt. Cả đội "Oh!". Mái nhấc một bên, Polly thò ra "Triangle! Triangle!", bay đi; mái hạ về chỗ cũ.',tieng:['[lạch bạch] ×2','“Oh!” (cần thu)','“Triangle! Triangle!” (có bản ghi)','[cộp]']},
+ {ten:'Vườn đêm',nen:'vuon-nha-na-dem-tron',ta:'Con dơi ngủ treo ngược trên cành mọc ra từ thân cây. Polly đậu cạnh, thử treo ngược, chóng mặt, lật lại, ngáp "Tired! Tired!" rồi rúc đầu vào cánh ngủ kiểu vẹt.',tieng:['[vụt] ×2','“Tired! Tired!” (có bản ghi)','[khò… khò…]']},
+ {ten:'Nhà Na',nen:'phong-na-tron',ta:'Xong trò bắt đồ chơi rơi: mèo con nhảy từ kệ vào rổ, rổ lắc lục cục, kêu "tùng", rồi mèo nhảy hẳn ra, đầu đội cái trống úp ngược như cái xô, đứng nghiêng đầu.',tieng:['[meo!] ×2','[bịch] ×2','[lục cục]','[tùng!] (tiếng trống)']},
+ {ten:'Cửa hàng',nen:'sieu-thi-tron',ta:'Xong trò xe đẩy: Polly tha nải chuối to, vỗ cánh phành phạch, bay lên từng nấc, thả "bịch" vào xe, đậu lên tay đẩy nói "Big bananas! Big bananas!", thở hổn hển rồi bay đi.',tieng:['[phành phạch]','[bịch!]','“Big bananas! Big bananas!” (cần thu)','[hộc hộc]']},
+ {ten:'Công trường',nen:'cong-truong-xay-tron',ta:'Mở màn, mái tam giác nằm dưới đất (Polly trốn sẵn bên dưới). Mái tự đi lạch bạch, lòi hai chân vẹt; Lam, Na, Ben mặt rất ngạc nhiên, mỗi bạn "Oh!". Mái nhấc một bên, lộ Polly "Triangle! Triangle!", bay đi; mái hạ về chỗ cũ. Sau đó trong app cần cẩu mới nhấc mái lên.',tieng:['[lạch bạch] ×2','“Oh!” Lam, Na, Ben (cần thu)','“Triangle! Triangle!” (có bản ghi)','[cộp]']},
  {ten:'Một ngày',nen:'bep-tron',ta:'Bữa sáng: Na ăn chuối xong, Polly nhặt vỏ chuối đội làm mũ "Ba-na-na!", rồi bay tới thùng rác, thả vỏ vào, đóng nắp, bay đi.',tieng:['“Ba-na-na!” (có bản ghi)','[cạch] ×2']},
 ];
 const stage=document.getElementById('stage'), nut=document.getElementById('nut'), st=document.getElementById('status');
@@ -714,7 +742,7 @@ function dung(i){
   const o={};
   if(i===1){ const asp=200/140;
     vat(APP.tree,30,6,24,4,'stk');
-    const c={x:58,b:58,w:40}; o.canh=vat(H['canh-cay'],c.x,c.b,c.w,3,'stk');
+    const c={x:50,b:28,w:40}; o.canh=vat(H['canh-cay'],c.x,c.b,c.w,3,'stk');   // gốc cành nằm sau thân cây: cành mọc ra từ thân
     const ub=c.b+(1-23/40)*c.w*(40/200)*asp, ux=c.x-c.w/2+.58*c.w, bw=6, bh=bw*(146/100)*asp;
     o.doi=vat(H['doi-ngu-treo-nguoc'],ux,ub-(1-5/146)*bh,bw,4,'stk') }
   if(i===2){ vat(APP.shelf,85,52,20,3); o.meo=vat(APP.cat,79.5,54.3,8,4,'stk'); o.ro=vat(APP.basket,50,2,21,4,'stk') }
