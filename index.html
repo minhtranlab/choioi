@@ -7328,7 +7328,23 @@ async function pieceDropAt(field,x,y,n){
   const fr=field.getBoundingClientRect(), dx=fr.width/2-x, dy=fr.height*.45-y;
   const pc=el(`<div class="dropiece stk" style="left:${x}px;top:${y}px">${mapPieceSVG(n)}</div>`); field.append(pc); tone(1100,.8,'sine',.06,0,600);
   await pc.animate([{transform:'translate(-50%,-50%) scale(.6)'},{transform:`translate(calc(-50% + ${dx*.4+40}px),calc(-50% + ${dy*.4-30}px)) rotate(16deg) scale(1.1)`},{transform:`translate(calc(-50% + ${dx}px),calc(-50% + ${dy}px)) rotate(0) scale(1.8)`}],{duration:Math.max(1,1500*SPEED),easing:'ease-in-out',fill:'forwards'}).finished.catch(()=>{});
-  pc.classList.add('glow'); SFX.chime(); burst(center(pc),{n:14}); await sleep(700) }
+  pc.classList.add('glow'); SFX.chime(); burst(center(pc),{n:14}); await sleep(700); return pc }
+/** 28/10 (Minh, after the comedy-scene videos): a found map piece does not stay big and shining in the middle while the page goes on
+   (the comedy scene played on top of it). After it shines (and Chồi says where it was), it flies to Chồi in the corner, shrinks and is gone
+   (about 1 s, a small sound); on a page where Chồi is hidden it flies to the place where Chồi usually stands. Not on the map page at the end
+   of a level (findMapPiece), where the piece flies into its place on the map. hold: a moment more to look at it first (ms) */
+async function pieceToChoi(pc,{hold=0}={}){ if(!pc||!pc.isConnected) return;
+  if(hold) await sleep(hold);
+  const fx=$('#fx'), q=pc.getBoundingClientRect(), ch=$('#dockChoi'), cr=ch&&ch.getBoundingClientRect();
+  if(!fx||!q.width){ pc.remove(); return }
+  const to=cr&&cr.width?{x:cr.left+cr.width/2,y:cr.top+cr.height*.42}:{x:70,y:innerHeight-90};   // Chồi's middle (his place in the dock)
+  const fly=el(`<div class="dropiece stk glow" style="left:${q.left}px;top:${q.top}px;width:${q.width}px;z-index:1">${pc.innerHTML}</div>`); fx.append(fly); pc.remove();
+  const dx=to.x-(q.left+q.width/2), dy=to.y-(q.top+q.height/2);
+  tone(660,.45,'sine',.035,0,1500);   // a small "whoosh" up
+  await fly.animate([{transform:'translate(0,0) scale(1) rotate(0)',opacity:1},{transform:`translate(${dx*.45}px,${dy*.45-q.height*.35}px) scale(.7) rotate(-12deg)`,opacity:1,offset:.45},
+    {transform:`translate(${dx}px,${dy}px) scale(.16) rotate(8deg)`,opacity:.9,offset:.92},{transform:`translate(${dx}px,${dy}px) scale(.05)`,opacity:0}],{duration:Math.max(1,1000*SPEED),easing:'ease-in',fill:'forwards'}).finished.catch(()=>{});
+  fly.remove(); if(RUN&&RUN.aborted) return;
+  SFX.soft(); if(ch&&cr&&cr.width&&getComputedStyle(ch).visibility!=='hidden') ch.animate([{scale:'1'},{scale:'1.12'},{scale:'1'}],{duration:Math.max(1,320*SPEED),easing:'ease-out'}) }
 /** a loop that runs until stop(); dt in seconds */
 function rafLoop(fn){ let on=true, t0=performance.now(); const step=t=>{ if(!on) return; if(PAUSED){ t0=t; requestAnimationFrame(step); return } const dt=Math.min(.05,(t-t0)/1000)/Math.max(.05,SPEED); t0=t; fn(dt); requestAnimationFrame(step) }; requestAnimationFrame(step); const stop=()=>{ on=false }; abortFns.add(stop); return ()=>{ on=false; abortFns.delete(stop) } }
 /** wait for a condition set by the game: returns {done, promise} */
@@ -7471,7 +7487,8 @@ async function flashlightGame({piece=0,mix=false}={}){
     if(AUTO) setTimeout(async()=>{ await shineAt(k).catch(()=>{}); b.click() },kidTapDelay());
     await g.p; b._pe.classList.remove('glint','zoomme');
     if(piece){ dark.classList.add('off'); const fr=box.getBoundingClientRect(), r=b._pe.getBoundingClientRect(); b._pe.style.visibility='hidden'; await pieceDropAt(box,r.left-fr.left+r.width/2,r.top-fr.top+r.height/2,piece);
-      await say(`You found our map piece! It was ${SPOTS[k].en}.`,`Con tìm thấy mảnh bản đồ rồi! Nó ở ${SPOTS[k].vi}.`) }   // 21/10: the piece is what the whole level looks for, so it is named
+      await say(`You found our map piece! It was ${SPOTS[k].en}.`,`Con tìm thấy mảnh bản đồ rồi! Nó ở ${SPOTS[k].vi}.`);   // 21/10: the piece is what the whole level looks for, so it is named
+      await pieceToChoi(box.querySelector('.dropiece')) }   // 28/10: then it flies to Chồi, and the page is clean for what comes next
     else { await reveal1(k); await say(`It’s Polly! Polly is ${SPOTS[k].en}.`,`Là Polly! Polly ở ${SPOTS[k].vi}.`) } }
   turn(null); rec(sk,wrong===0,performance.now()-t0,'pos:all'); dark.classList.add('off'); confetti();
   if(batBranch) await canhHai(2,box,{canh:batBranch,doi:bat,doiTai:BAT_AT,dauTai:POLLY_AT});   // 27/10: Polly tries to sleep upside down like the bat, then sleeps like a parrot
@@ -7532,7 +7549,7 @@ async function toyCatch({piece=0,kitten=false,mix=false}={}){
     await say('Now catch the small toys!','Giờ bắt các đồ chơi nhỏ nhé!',{q:true}); phase='play'; await g2.p;
     { const P=['You caught five small toys!','Con bắt được năm đồ chơi nhỏ!']; await praise(wrong===w1?P:again(P)); await say(...(kitten?['The toys are back in the boxes.','Đồ chơi về lại hộp rồi.']:['The room is tidy.','Phòng gọn gàng rồi.'])) }
     if(piece){ const g3=gate(); g.done=g3.done; await say('Look! Something else is falling. Catch it!','Nhìn kìa! Có gì đang rơi xuống nữa. Con bắt nhé!',{q:true}); phase='piece'; await g3.p; phase=null;
-      const fr=f.getBoundingClientRect(), r=bk.getBoundingClientRect(); await pieceDropAt(f,r.left-fr.left+r.width/2,r.top-fr.top,piece) }
+      const fr=f.getBoundingClientRect(), r=bk.getBoundingClientRect(); await pieceToChoi(await pieceDropAt(f,r.left-fr.left+r.width/2,r.top-fr.top,piece),{hold:500}) }   // 28/10: then to Chồi
   }catch(e){ if(e!=='mixdone') throw e } finally { stop(); ro.disconnect() }
   turn(null); rec(sk,wrong<=1,performance.now()-t0,mix?'size:'+want:'size:all'); confetti();
   if(kitten&&!mix) await canhHai(3,f,{meo:f.querySelector('.kcat'),ro:bk});   // 27/10: the kitten jumps into the basket and comes out wearing the duck
@@ -7583,7 +7600,7 @@ async function shopCart({piece=0,rounds=2,sayRule=false}={}){
     const it=el(`<button class="sitem pbox" style="--dur:9s">${BOX_ART()}<span class="ppc">${mapPieceSVG(piece)}</span></button>`); f.append(it); it.dataset.ok='1';
     it.addEventListener('animationiteration',()=>{}); it.style.animationIterationCount='infinite';
     await tapOnce([it]); it.style.animationPlayState='paused'; beep(); const fr=f.getBoundingClientRect(), r=it.getBoundingClientRect(); $('.ppc',it).style.visibility='hidden'; it.classList.add('opened');
-    await pieceDropAt(f,r.left-fr.left+r.width/2,r.top-fr.top,piece) }
+    await pieceToChoi(await pieceDropAt(f,r.left-fr.left+r.width/2,r.top-fr.top,piece),{hold:500}) }   // 28/10: then to Chồi
   turn(null); rec(sk,wrong<=1,performance.now()-t0,null); confetti();
   if(piece) await canhHai(4,f,{xe:cart});   // 27/10: Polly carries a big bunch of bananas into the cart
 }
@@ -7667,7 +7684,7 @@ async function craneStack({piece=0}={}){
   hpc.classList.remove('glint'); setKidFace(ben,'Ben','excited'); gladOf(ben); SFX.chime();
   await say('Ben takes our map piece off the hook.','Ben gỡ mảnh bản đồ ra khỏi móc.',{q:false});
   const q=hpc.getBoundingClientRect(); hpc.style.visibility='hidden'; hook.animate([{opacity:1},{opacity:0}],{duration:400,fill:'forwards'});
-  await pieceDropAt(f,q.left-R.left+q.width/2,q.top-R.top+q.height/2,piece);
+  await pieceToChoi(await pieceDropAt(f,q.left-R.left+q.width/2,q.top-R.top+q.height/2,piece),{hold:300});   // 28/10: then to Chồi (the page still has a line)
   await say('We helped the crane, and the crane helped us!','Mình giúp cần cẩu, và cần cẩu giúp lại mình!');
 }
 
