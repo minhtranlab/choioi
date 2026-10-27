@@ -90,3 +90,31 @@ Kiểu khối như đảo và cây hình nón: **khối đặc, không nét vi�
 
 Các bạn trên đồ chơi là sticker (tư thế `ngoi` của `nhan-vat/`, viền trắng bằng bộ lọc riêng trong từng file, id `p195-<tên file>-stk`).
 
+
+## Cảnh hài Unit 1 (27/10) · hình mới
+Do chat **[App] Cảnh hài** vẽ cho 6 cảnh hài (`art/canh-hai/`). Cùng nét `#3A1B49`, cùng màu; có `-phai` và `-trai` (bản lật ngang). Vẽ lại được bằng `python3 art/canh-hai/ve_hinh.py` (chỉ ghi đè đúng các file dưới đây).
+
+**Thêm tư thế cho Polly** (`nhan-vat/polly/`, khung 200×260 như các tư thế cũ):
+| Tên | Ghi chú |
+|---|---|
+| `polly-treo-nguoc` | treo ngược dưới cành: cả thân lật dọc, mỏ vẫn quay theo hướng của file. **Chân bám ở trên: (86, 18) và (108, 18)**; đặt sao cho y 20 nằm đúng mặt dưới cành. Đầu ở dưới (tâm đầu khoảng (104, 164)) |
+| `polly-ngu` | rúc đầu vào cánh ngủ kiểu vẹt: thân phồng, đầu quay ra sau, mỏ vùi dưới cánh, mắt nhắm. Chân như `dung` (chân y 252) |
+| `polly-tha-1`, `polly-tha-2` | tha đồ nặng, hai hình vỗ cánh (như `bay-1`/`bay-2`): chân duỗi xuống quặp, mắt nhắm tịt, má đỏ, mồ hôi. **Chỗ chân quặp: (100, 244)**: đặt cuống đồ tha (vd. `nai-chuoi-to`) ở đó |
+| `polly-tho-1`, `polly-tho-2` | thở hổn hển: mỏ há to có lưỡi / há vừa, mí mắt sụp nửa, cánh xệ, mồ hôi. Thay phiên hai hình là thành dáng thở |
+| `polly-chan-1`, `polly-chan-2` | **chỉ có hai chân** đang bước (cùng khung Polly, chân chạm y 252–256), để lòi ra dưới vật (mái nhà Màn 5). Thay phiên hai hình là thành bước |
+
+**Mặt ngạc nhiên** (`nhan-vat/lam/`, `na/`, `ben/`): `<bạn>-ngac-nhien`: thân đứng như `dung`, hai tay giơ lên cạnh má (bàn tay ở (50, 138) và (150, 138)), mặt đúng mặt `surprised` của app (`kidFace`). Trong app chỉ cần đổi mặt thì dùng `setKidFace(k, tên, 'surprised')`.
+
+**Con vật** (`con-vat/`, thư mục mới):
+| Tên | Khung | Ghi chú |
+|---|---|---|
+| `doi-ngu-treo-nguoc` | 100×146 | con dơi ngủ treo ngược, cánh quấn quanh người, đầu ở dưới, tai chĩa xuống, mắt nhắm, má hồng. **Chân bám ở trên (50, 4)**. Cỡ gợi ý: rộng khoảng 0,55 lần Polly |
+
+**Đồ vật** (`do-vat/`; đồ cận, không theo tỉ lệ 12 đơn vị/m):
+| Tên | Khung | Ghi chú |
+|---|---|---|
+| `bot-mo-polly` | 200×260 | bọt xà phòng dính trên mỏ và đầu Polly: **lớp phủ cùng khung Polly**, đặt chồng đúng lên Polly (`dung`, `noi`; khi bay thì dời lên 10) |
+| `canh-cay` | 200×40 | cành cây vươn ngang từ trái (gốc ở mép trái, đặt cắm vào tán cây), vài lá. **Mặt trên y ≈ 14 (chỗ đậu), mặt dưới y ≈ 23 (chỗ treo)** |
+| `nai-chuoi-to` | 126×102 | nải chuối to 6 quả, **cuống ở trên (63, 4)** (chỗ Polly quặp) |
+| `vo-chuoi` | 80×76 | vỏ chuối đứng, bốn vạt rủ xuống, cuống trên (40, 4). Đặt trên quầy, hoặc chồng lên đầu Polly làm mũ |
+| `thung-rac` | 64×92 | thùng rác đạp chân trong bếp (xanh bạc hà, bàn đạp xám). **Nắp là nhóm `<g class="nap">`, bản lề ở (6, 22)**: xoay quanh điểm đó (khoảng −80°) là mở nắp. Đáy ở cạnh dưới |
