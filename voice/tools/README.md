@@ -45,6 +45,17 @@ python3 tao_giong.py page                   # voice/nghe-thu.html: nghe từng c
 - `make --redo '<mẫu>'` tạo lại những câu khớp mẫu (vd. khi đổi cách đọc câu vỗ tay), rồi `pack` thay bản cũ.
 - `pack` chỉ đóng gói clip đang chờ trong `~/.cache/choi-voice/<lang>/`; clip đã đóng gói chuyển sang `…/packed/`.
 
+## Trước mỗi lần đẩy giọng (luật từ 28/10)
+
+Chạy bộ kiểm giọng thật `tools/test/giong_that.py` (hướng dẫn: `tools/test/README.md`), ít nhất cho các màn có câu mới, cả hai thứ tiếng, bé tên **Na**:
+
+```bash
+python3 tools/test/giong_that.py --levels 4-5 --lang en      # bé tên Na (mặc định)
+python3 tools/test/giong_that.py --levels 4-5 --lang vi
+```
+
+Bộ này mở app như máy mới, gõ tên bé, chơi bằng giọng ghi âm thật và bắt từng câu có thật sự phát tiếng không. Nó bắt được lỗi mà các cách kiểm cũ (`vEntry` / `vClip`, máy tự chơi nhanh) không bắt được, ví dụ câu im khi tên bé trùng tên Na / Ben / Lam. Có câu im (thoát mã 1) thì không đẩy. Kết quả ghi vào báo cáo gửi chat chính.
+
 ## Cấu trúc file giọng (đóng gói theo màn, 22/10)
 `voice/en.json`, `voice/vi.json`: `{"n": số file, "c": {hash: [file, vị trí byte, độ dài]}, "p": {nhóm: [các file, theo thứ tự]}, "h": [dấu vân tay từng file]}`. File mp3: `voice/en-00.mp3` … (2 chữ số, quá 99 thì 3 chữ số).
 
