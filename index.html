@@ -3137,7 +3137,20 @@ const vSpeed=()=>VSPEEDS[S.vspeed]?S.vspeed:'m';
 /** the set to read in this language: the chosen speed when its files exist, else the usual one */
 const vSet=lang=>{ const sp=vSpeed(); if(sp==='m') return lang; const k=lang+'-'+sp; return VOICE.ready[k]===null?lang:k };
 const gapNow=()=>{ const sp=vSet(isVi()?'vi':'en').split('-')[1]||'m'; return ({s:800,m:GAP,f:520})[sp] };   // the pause after a line follows the speed
-function vKey(text,slow){ let t=String(text).replace(/\s+/g,' ').trim(); const n=S.child&&S.child.name&&S.child.name.trim(); if(n){ try{ t=t.replace(new RegExp('(^|[^\\p{L}])'+n.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(?![\\p{L}])','gu'),'$1{N}') }catch(e){} } return (slow?'~':'')+t }
+/* 28/10 (Minh played Màn 0 for parents: many lines had only their subtitle, even "Here’s my team: Lam, Na and Ben! Tap each friend.").
+   A line is found in the voice index by its words. The child's name used to become {N} everywhere in every line before the lookup, so a
+   child called Na, Ben, Lam (or Chồi, Polly) changed the key of every line with that word, and none of them was found. Now the words as
+   said come first; the name becomes {N} only when the line with {N} is the one recorded (a line that calls the child by name:
+   "Hi, {N}! Let’s play!"). Lam, Na, Ben, Chồi or any other word are never changed in a line that is recorded as it is. */
+const vNorm=text=>String(text).replace(/\s+/g,' ').trim();
+/** the keys a line can have, in the order to look for them: the words as said, then (when the child's name is in it) with {N} */
+function vKeys(text,slow){ const t=vNorm(text), out=[t]; const n=S.child&&S.child.name&&S.child.name.trim();
+  if(n){ try{ const re=new RegExp('(^|[^\\p{L}])('+n.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')(?![\\p{L}])','gu'), at=[...t.matchAll(re)].map(m=>m.index+m[1].length);
+    if(at.length){ out.push(t.replace(re,'$1{N}'));   // every time the name is there; then (a child called Chồi: "…chơi cùng Chồi, Chồi!") each one alone
+      if(at.length>1) at.slice(0,4).forEach(i=>out.push(t.slice(0,i)+'{N}'+t.slice(i+n.length))) } }catch(e){} }
+  return out.map(k=>(slow?'~':'')+k) }
+/** the key of a line as the voice tools write it (the test child's name as {N}); for messages only */
+function vKey(text,slow){ const ks=vKeys(text,slow); return ks[1]||ks[0] }
 function vHash(s){ let h=2166136261; for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619) } return (h>>>0).toString(36) }
 /** the device's own store of voice files (Cache Storage), or null when this browser can't keep one */
 let _vc=null;
@@ -3192,11 +3205,12 @@ const VCACHE=new Map();
 const rawWait=ms=>new Promise(r=>setTimeout(r,ms));
 /** where a line is: a kid's line (Lam, Na, Ben) in the kid's own voice is keyed "@…" (then it plays as is); else Chồi's recording */
 const VOICE_WHO=['Lam','Na','Ben','Bac'];
-function vEntry(set,text,slow,kid){ const I=VOICE.idx[set]; if(!I) return null; const k=vKey(text,slow), k0=slow?vKey(text,false):null;
+function vEntry(set,text,slow,kid){ const I=VOICE.idx[set]; if(!I) return null; const ks=[...vKeys(text,slow),...(slow?vKeys(text,false):[])];   // slow first, then the usual speed
+  const find=pre=>{ for(const k of ks){ const e=I.c[vHash(pre+k)]; if(e) return e } return null };
   // 22/10: each friend has a voice of their own: '@Lam:…', '@Na:…', '@Ben:…', the crane driver '@Bac:…'; then the shared kids' voice '@…'; then Chồi's (raised a little)
-  if(typeof kid==='string'&&VOICE_WHO.includes(kid)){ const p='@'+kid+':'; const e=I.c[vHash(p+k)]||(k0?I.c[vHash(p+k0)]:null); if(e) return {e,own:true} }
-  if(kid){ const e=I.c[vHash('@'+k)]||(k0?I.c[vHash('@'+k0)]:null); if(e) return {e,own:true} }
-  const e=I.c[vHash(k)]||(k0?I.c[vHash(k0)]:null); return e?{e,own:false}:null }
+  if(typeof kid==='string'&&VOICE_WHO.includes(kid)){ const e=find('@'+kid+':'); if(e) return {e,own:true} }
+  if(kid){ const e=find('@'); if(e) return {e,own:true} }
+  const e=find(''); return e?{e,own:false}:null }
 /** a line's clip: an AudioBuffer, null (never recorded) or 'fail' (its file would not load) */
 async function vClip(set,text,slow,kid){ const f=vEntry(set,text,slow,kid); if(!f) return null; const e=f.e;
   const ck=set+e.join(','); if(VCACHE.has(ck)) return VCACHE.get(ck);
