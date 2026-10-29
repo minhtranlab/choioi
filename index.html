@@ -3682,11 +3682,11 @@ function card(){ const c=$('#card'); if(c.children.length){ GHOST=[...c.childNod
  *    still the SAME place, only a later moment (the bus has come to the park, now the friends get off; another page on the same beach;
  *    a close-up of a thing there) → the old page fades out over the new one, about 0.6 s (crossFade).
  *  The list of every page change of the 8 levels and its kind: claude/bao-cao-u1-man0-ipad-29-10.md. */
-let GHOST=null, GHOST_T=0, XFADE=false;
+let GHOST=null, GHOST_T=0, XFADE=false, XFADE_MS=0;   // XFADE_MS: a slower fade for this page change (the dream in Màn 6: 1 s)
 /** the same place: the new page is there at once, under the old one, which fades out (0.6 s); nothing on the old one answers a tap */
-function crossFade(c){ const old=GHOST; if(!old||!old.length||!c||performance.now()-GHOST_T>250) return;
+function crossFade(c){ const want=XFADE_MS; XFADE_MS=0; const old=GHOST; if(!old||!old.length||!c||performance.now()-GHOST_T>250) return;
   const neu=[...c.children].filter(n=>!n.classList.contains('travelold')); if(!neu.length) return;   // nothing new yet (it comes later): no fade
-  GHOST=null; const ms=Math.max(1,600*SPEED);
+  GHOST=null; const ms=Math.max(1,(want||600)*SPEED);
   neu.forEach(n=>{ if(n.classList.contains('fade')) n.classList.remove('fade') });   // no slide up from below: the same place stays still
   const cs=getComputedStyle(c), g=el(`<div class="travelold fadeold" aria-hidden="true"></div>`); g.style.padding=cs.padding; g.style.gap=cs.gap; old.forEach(n=>g.append(n)); g.querySelectorAll('button').forEach(b=>b.disabled=true); g.inert=true; c.append(g);
   g.animate([{opacity:1},{opacity:0}],{duration:ms,easing:'ease-in-out',fill:'forwards'}).finished.catch(()=>{}).then(()=>g.remove()) }
@@ -7468,7 +7468,7 @@ async function tell(en,vi,opt){ if(inMix()) return; return say(en,vi,opt) }
 /* ---- a picture box with the shape of the background (200 × 140): everything inside is placed in %, so it lines up on every screen ---- */
 /** a picture made by hand (.qbox), put in the same frame as sbox(): as big as the page, with its row of choices on the bottom band (21/10) */
 function qscene(sc,row){ const c=card(); const w=el(`<div class="sboxwrap fade"></div>`); w.append(sc); if(row){ row.classList.add('sbrow','sbunder'); w.append(row) } c.append(w); sc.addEventListener('click',e=>boxTap(e,sc),true); return sc }
-function sbox(cls,bg,{under='',go=false}={}){ const c=card(); const w=el(`<div class="sboxwrap fade"><div class="sbox ${cls}">${bg||''}</div>${under}</div>`); c.append(w); if(go&&!inMix()) travelIn(c,w); const box=$('.sbox',w); box.addEventListener('click',e=>boxTap(e,box),true); return box }   // go: the team has just come to a new place
+function sbox(cls,bg,{under='',go=false,fade=0}={}){ const c=card(); if(fade&&!go) XFADE_MS=fade; const w=el(`<div class="sboxwrap fade"><div class="sbox ${cls}">${bg||''}</div>${under}</div>`); c.append(w); if(go&&!inMix()) travelIn(c,w); const box=$('.sbox',w); box.addEventListener('click',e=>boxTap(e,box),true); return box }   // go: the team has just come to a new place
 /** tapping things in a story picture (20/10): every friend and every big thing answers a tap, with a wiggle and a little sound.
  *  Where the child may tap freely (box._tapSay), a friend also says something about the scene, when Chồi is not talking.
  *  Never a wrong answer; whatever is part of the question right now (data-live) is left alone. */
@@ -10246,7 +10246,7 @@ const sunInWindow=svg=>{ let i=svg.indexOf('<rect x="84" y="22" width="52" heigh
   if(i<0){ i=svg.indexOf('<rect x="84" y="14" width="52" height="36" fill="#BFE6FA"'); at=[128,22] }   // the stage room (phong-na-tron): its window is higher up
   const j=i<0?-1:svg.indexOf('/>',i)+2; return j>1?svg.slice(0,j)+`<g class="w6sunin">${sunG(at[0],at[1],6)}</g>`+svg.slice(j):svg };
 async function dayAsk({wake=false}={}){ const sk=SK['L2.M.POS.02'], mixed=inMix();
-  const box=sbox(wake?'wake6':'sleep6',wake?sunInWindow(BG.home()):BG.sleep6(),{go:wake});   // 29/10: out of the dream (the road) back to Na's room: another place, it slides, as into the dream
+  const box=sbox(wake?'wake6':'sleep6',wake?sunInWindow(BG.home()):BG.sleep6(),{fade:wake&&!mixed?1000:0});   // 29/10 tối (chat chính): out of the dream back to Na's room: a slow fade (1 s), as into the dream
   const bed=el(`<div class="sthing s6bed big" style="left:26%;bottom:8%;width:34%">${bed6SVG(wake?'sleep':'happy')}</div>`); box.append(bed);
   const bk=el(`<button class="b6onbed hit${wake||mixed?'':' held'}" aria-label="Sách">${BOOK6.rect(!mixed)}</button>`); box.append(bk);
   if(wake){ box.append(el(`<div class="w6beam"></div>`)) } else box.append(el(`<div class="n6stars">${STARS6(6,[[44,14,24,30]])}</div>`));
@@ -10301,7 +10301,8 @@ const tripStrip=k=>`<div class="ftrip" aria-hidden="true">${[0,1,2].map(i=>`<i c
 async function frogCross({reward=false,mix=false,game=false,road=0}={}){
   const RD=FROG_ROADS[game?road:0], ST=RD.steps;   // 22/10 tối: My Games crosses three roads (frogTrip); the level and Fun Mix keep the road to school
   // 21/10: the stage road (no light, no crossing, no trees in the middle): the game puts in the walking light and the zebra crossing itself
-  const box=sbox('road6 am',RD.bg(),{go:true}); if(RD.nightBg) box.append(el(`<div class="r6bg night">${BG.road6nightT()}</div>`));
+  const dream=!reward&&!mix&&!game;   // 29/10 tối (chat chính): in Màn 6 the road is Na's dream: it comes in with a slow fade (1 s), not a slide; My Games still slides from road to road
+  const box=sbox('road6 am',RD.bg(),{go:!dream,fade:dream?1000:0}); if(RD.nightBg) box.append(el(`<div class="r6bg night">${BG.road6nightT()}</div>`));
   box.append(el(`<svg class="r6zebra" viewBox="0 0 200 140" preserveAspectRatio="xMidYMax meet" aria-hidden="true">${RD.zebra.map(y=>`<rect x="108" y="${y}" width="26" height="2.4" fill="#fff"/>`).join('')}<path d="M84 ${RD.pole[0]} V${RD.pole[1]}" stroke="#3A1B49" stroke-width="3.4" stroke-linecap="round"/><path d="M84 ${RD.pole[0]} V${RD.pole[1]}" stroke="#6B6380" stroke-width="1.4" stroke-linecap="round"/></svg>`));
   box.append(el(PED6())); const ped=$('.r6ped',box); if(RD.pedTop) ped.style.top=RD.pedTop+'%';
   const frog=el(`<button class="r6frog stk hit" aria-label="Ếch" style="left:-34%;bottom:${ST[0]}%">${ART.frog()}</button>`); box.append(frog);   // starts beyond the card's edge (wide screens show the road past the picture)
