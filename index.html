@@ -3046,8 +3046,8 @@ function planSession(){
 /* ---------------- audio: music, effects ---------------- */
 let AC=null;
 function ac(){ if(!AC){ try{ if(navigator.audioSession) navigator.audioSession.type='playback' }catch(e){} try{ AC=new (window.AudioContext||window.webkitAudioContext)() }catch(e){} } if(AC&&AC.state==='suspended') AC.resume(); if(AC&&!CLAPS) setTimeout(loadClaps,0); return AC }
-function tone(freq,dur,type='sine',vol=.18,when=0,slide,dest){ const a=ac(); if(!a) return; const t=a.currentTime+when; const o=a.createOscillator(), g=a.createGain(); o.type=type; o.frequency.setValueAtTime(freq,t); if(slide) o.frequency.exponentialRampToValueAtTime(slide,t+dur); g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.001,t+dur); o.connect(g).connect(dest||a.destination); o.start(t); o.stop(t+dur+.05) }
-function noise(dur,vol=.4,when=0,freq=1800){ const a=ac(); if(!a) return; const n=Math.floor(a.sampleRate*dur), b=a.createBuffer(1,n,a.sampleRate), d=b.getChannelData(0); for(let i=0;i<n;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/n,3); const s=a.createBufferSource(); s.buffer=b; const f=a.createBiquadFilter(); f.type='bandpass'; f.frequency.value=freq; const g=a.createGain(); g.gain.value=vol; s.connect(f).connect(g).connect(a.destination); s.start(a.currentTime+when) }
+function tone(freq,dur,type='sine',vol=.18,when=0,slide,dest){ const a=ac(); if(!a) return; vol*=tapVol(); const t=a.currentTime+when; const o=a.createOscillator(), g=a.createGain(); o.type=type; o.frequency.setValueAtTime(freq,t); if(slide) o.frequency.exponentialRampToValueAtTime(slide,t+dur); g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.001,t+dur); o.connect(g).connect(dest||a.destination); o.start(t); o.stop(t+dur+.05) }
+function noise(dur,vol=.4,when=0,freq=1800){ const a=ac(); if(!a) return; vol*=tapVol(); const n=Math.floor(a.sampleRate*dur), b=a.createBuffer(1,n,a.sampleRate), d=b.getChannelData(0); for(let i=0;i<n;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/n,3); const s=a.createBufferSource(); s.buffer=b; const f=a.createBiquadFilter(); f.type='bandpass'; f.frequency.value=freq; const g=a.createGain(); g.gain.value=vol; s.connect(f).connect(g).connect(a.destination); s.start(a.currentTime+when) }
 const SFX={ chime(){ tone(784,.25,'sine',.14); tone(1175,.45,'sine',.12,.12) }, pop(){ tone(520,.12,'triangle',.13,0,900) }, soft(){ tone(330,.18,'sine',.08,0,280) }, ding(){ tone(1046,.5,'sine',.12); tone(1568,.6,'sine',.05,.02) } };
 /** one hand clap: a few very short bright noise bursts on top of each other */
 /* real hand claps: CC0 recordings from the Versilian Community Sample Library (VCSL), trimmed and embedded */
@@ -3055,10 +3055,10 @@ const CLAP_SRC=['SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjYwLjE2LjEwMAAAAAAAAAAAAAAA//N
 function loadClaps(){ const a=ac(); if(!a||CLAPS) return; CLAPS=[]; CLAP_SRC.forEach((u,i)=>{ try{ const bin=atob(u.split(',')[1]), buf=new Uint8Array(bin.length); for(let j=0;j<bin.length;j++) buf[j]=bin.charCodeAt(j);
     const p=a.decodeAudioData(buf.buffer,b=>{ CLAPS[i]=b },()=>{}); if(p&&p.catch) p.catch(()=>{}) }catch(e){} }) }
 function clapHit(when=0){ const a=ac(); if(!a) return; loadClaps(); const ready=(CLAPS||[]).filter(Boolean);
-  if(ready.length){ const s=a.createBufferSource(), g=a.createGain(); s.buffer=ready[clapRR++%ready.length]; s.playbackRate.value=.96+Math.random()*.08; g.gain.value=.9; s.connect(g).connect(a.destination); s.start(a.currentTime+when); return }
+  if(ready.length){ const s=a.createBufferSource(), g=a.createGain(); s.buffer=ready[clapRR++%ready.length]; s.playbackRate.value=.96+Math.random()*.08; g.gain.value=.9*tapVol(); s.connect(g).connect(a.destination); s.start(a.currentTime+when); return }
   // fallback before the recordings are decoded: a drum-machine style clap (a few very close bursts + a short tail)
   [0,.011,.022].forEach(d=>noise(.012,.7,when+d,1150)); noise(.12,.35,when+.03,1150) }
-function beep(f1,f2,at,dur,v=.1){ const a=ac(); if(!a) return; const lp=a.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=2200; const g=a.createGain(); g.gain.setValueAtTime(0,at); g.gain.linearRampToValueAtTime(v,at+.02); g.gain.setValueAtTime(v,at+dur-.04); g.gain.linearRampToValueAtTime(0,at+dur); lp.connect(g).connect(a.destination); [f1,f2].forEach(f=>{ const o=a.createOscillator(); o.type='square'; o.frequency.value=f; o.connect(lp); o.start(at); o.stop(at+dur+.02) }) }
+function beep(f1,f2,at,dur,v=.1){ const a=ac(); if(!a) return; v*=tapVol(); const lp=a.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=2200; const g=a.createGain(); g.gain.setValueAtTime(0,at); g.gain.linearRampToValueAtTime(v,at+.02); g.gain.setValueAtTime(v,at+dur-.04); g.gain.linearRampToValueAtTime(0,at+dur); lp.connect(g).connect(a.destination); [f1,f2].forEach(f=>{ const o=a.createOscillator(); o.type='square'; o.frequency.value=f; o.connect(lp); o.start(at); o.stop(at+dur+.02) }) }
 const SOUNDS={
   clap:{en:'It’s clapping!',vi:'Tiếng vỗ tay đấy!',play(){ [0,.3,.6,.9,1.2].forEach(w=>clapHit(w)) }},
   bell:{en:'It’s a bell!',vi:'Tiếng chuông đấy!',play(){ [0,.6].forEach(w=>{ tone(880,1.4,'sine',.16,w); tone(880*2.76,.9,'sine',.06,w); tone(880*5.4,.5,'sine',.03,w) }) }},
@@ -3273,6 +3273,17 @@ function friendLine(en,vi,o){ if(KIDP) return;   // a friend is talking already:
   if(SAYN){ KIDQ={en,vi,o,t:performance.now(),run:RUN}; return }
   let end; KIDP=new Promise(r=>end=r); const done=()=>{ if(!end) return; const e=end; end=null; KIDP=null; e() };
   say(en,vi,{q:false,gap:0,...o,free:true}).then(done,done); setTimeout(done,3000) }
+/* 29/10 (Minh played Màn 0 on the iPad, chat chính): SOUND COMES FIRST. What Chồi tells (the story, the command: "Here comes my school bus!")
+   is never cut off because the child touched something. A line that comes from a touch (TAPNOW: said in answer to a tap, a press, a click)
+   never stops the line playing (PROT):
+     the name of the thing tapped ("A taxi!", "A lion!"; opt.tapName): left out while Chồi talks (not kept for later);
+     a quick answer to a tap (counting "Two.", "Oops…", "Yum!"; opt.react, or gap 0 with q false): waits until Chồi is done, only the latest;
+     anything else said because of a tap (the praise after an answer tapped in the middle of a line): waits until Chồi is done.
+   The sound of the tap (horn, bell, pop) still plays at once, quieter while someone talks (tapVol). Once Chồi is done, a tap works as before.
+   The friends' tapped lines keep their own way (friendLine, 26/10). */
+let TAPNOW=false, PROT=null, REACTQ=null;
+['pointerdown','pointerup','click','keydown'].forEach(t=>addEventListener(t,e=>{ if(!e.isTrusted) return; TAPNOW=true; setTimeout(()=>{ TAPNOW=false },0) },true));
+function tapVol(){ return TAPNOW&&SAYN>0?.35:1 }
 function kidQFlush(){ const q=KIDQ; KIDQ=null; if(q&&!KIDP&&!SAYN&&q.run===RUN&&!(RUN&&RUN.aborted)&&performance.now()-q.t<4000) friendLine(q.en,q.vi,q.o) }
 /* "Watch me first!", "Now it’s your turn!" and a review's "Remember: …" wait for the next question, so they are said
    over the new scene, right before the thing to do (never over an empty card) */
@@ -3289,6 +3300,11 @@ const isBrief=()=>!!(RUN&&!RUN.games&&(RUN.lesson===0||RUN.lesson===7||RUN.mode=
 const briefSkip=(en,opt)=>isBrief()&&!opt.kid&&!opt.polly&&!opt.replay&&!isQline(en,opt)&&((RUN.inDemo&&!opt.one)||(!RUN.gate&&!opt._pre&&!opt.one));
 function say(en,vi,opt={}){
   if(KIDP&&!opt.free){ const r=RUN; return KIDP.then(()=>{ if(r&&r.aborted) throw ABORT; return say(en,vi,opt) }) }   // 26/10: never over a friend's tapped line
+  const tapped=!opt.free&&(opt._tap||TAPNOW), react=!opt.free&&(opt.react||opt.tapName||(tapped&&opt.gap===0&&opt.q===false));
+  if(PROT&&(tapped||react)){   // 29/10: Chồi is telling or asking: a tap never cuts it
+    if(opt.tapName) return Promise.resolve();
+    const r=RUN, me={}; if(react){ if(REACTQ) REACTQ.skip=true; REACTQ=me }
+    return PROT.done.then(()=>{ if(me.skip) return; if(REACTQ===me) REACTQ=null; if(r&&r.aborted) throw ABORT; return say(en,vi,{...opt,_tap:1}) }) }
   if(briefSkip(en,opt)){ (window.__briefSkipped=window.__briefSkipped||[]).push(en); return Promise.resolve() }
   if(RUN&&!opt._pre&&!opt.replay&&!opt.kid&&!opt.polly&&((RUN.preQ&&RUN.preQ.length)||(RUN.remindQ&&!RUN.inDemo))&&isQline(en,opt)){ const pre=pendingPre(); return pre.reduce((p,l)=>p.then(()=>say(l[0],l[1],{_pre:1,gap:200})).then(()=>l[2]?sleep(l[2]):0),Promise.resolve()).then(()=>say(en,vi,{...opt,_pre:1})) }
   if(RUN&&!RUN.gate&&!RUN.inDemo&&!opt.kid&&!opt.polly&&!opt.replay&&isQline(en,opt)) RUN.gate=true;   // 23/10 (vòng 5): after the question, the page talks to the child (counting, praise, what happens)
@@ -3296,9 +3312,10 @@ function say(en,vi,opt={}){
   const V=isVi()&&!!vi; const text=V?vi:en, sub=V?en:vi;
   setCaption((V&&opt.showVi)||opt.show||text,sub===text?(opt.show?'':''):sub);   // show: how to write what is said ("ap-ple" for the voice's "ap-pull"); showVi: the same in the Vietnamese mode
   return new Promise((res,rej)=>{
-    let done=false;
-    SAYN++; const fin=()=>{ if(done) return; done=true; SAYN=Math.max(0,SAYN-1); if(!SAYN&&KIDQ) kidQFlush(); Music.level(1); if(!opt.keepMood) mood('idle'); setTimeout(()=>{ abortFns.delete(ab); if(RUN&&RUN.aborted) rej(ABORT); else res() }, FAST?5:(opt.gap??gapNow())) };
-    const ab=()=>{ try{speechSynthesis.cancel()}catch(e){} voiceStop(); if(!done) SAYN=Math.max(0,SAYN-1); done=true; rej(ABORT) }; abortFns.add(ab);
+    let done=false, prot=null;
+    if(!react&&!opt.free){ let end; prot={done:new Promise(r=>end=r)}; prot.end=()=>{ if(PROT===prot) PROT=null; end() }; PROT=prot }   // the line that taps wait for
+    SAYN++; const fin=()=>{ if(done) return; done=true; if(prot) prot.end(); SAYN=Math.max(0,SAYN-1); if(!SAYN&&KIDQ) kidQFlush(); Music.level(1); if(!opt.keepMood) mood('idle'); setTimeout(()=>{ abortFns.delete(ab); if(RUN&&RUN.aborted) rej(ABORT); else res() }, FAST?5:(opt.gap??gapNow())) };
+    const ab=()=>{ try{speechSynthesis.cancel()}catch(e){} voiceStop(); if(!done) SAYN=Math.max(0,SAYN-1); done=true; if(prot) prot.end(); rej(ABORT) }; abortFns.add(ab);
     const rate=Math.min(2,(V?Math.min(1,(opt.rate||RATE)+.18):(opt.rate||RATE))*(inDev()&&DEV.fast?1.6:1)), est=(700+text.length*85)/rate;
     if(FAST){ setTimeout(fin,10); return }
     if(HASH==='time'){ setTimeout(fin,400+String(text).split(/\s+/).filter(Boolean).length*500); return }   // ~120 words a minute
@@ -3387,7 +3404,7 @@ function releaseMic(){ if(micStream){ try{ micStream.getTracks().forEach(t=>t.st
 const MICSTOP={at:0};   // a game can end the recording early (the counting is finished)
 async function micTurn(mic,ms,{onStart,onLevel}={}){
   MICSTOP.at=0; mic.classList.remove('idle'); mic.classList.add('ready'); mic.dataset.ok='1';
-  const tapped=await Promise.race([tapOnce([mic]).then(()=>true,e=>{ if(e===ABORT) throw e; return false }),rawWait(AUTO?6000:30000).then(()=>false)]);
+  const tapped=await tapOnce([mic],{until:rawWait(AUTO?6000:30000)}).then(i=>i>=0,e=>{ if(e===ABORT) throw e; return false });
   mic.classList.remove('ready');
   if(!tapped){ mic.classList.add('idle'); return {skipped:true} }
   SFX.pop();
@@ -3549,7 +3566,7 @@ const GAME_ART={
 function jingle(){ [523,659,784,1046].forEach((f,i)=>tone(f,.35,'sine',.09,i*.11)) }
 /** title card between activities: the old screen slides away, a round badge pops in */
 async function gameCard(key){
-  const c=$('#card'); if(c.children.length){ c.classList.add('out'); await sleep(380); c.classList.remove('out') }
+  const c=$('#card'); if(c.children.length){ c.classList.add('out'); await sleep(380); c.innerHTML=''; c.classList.remove('out') }   // 29/10: gone already, so no fade again
   const cc=card(); cc.append(el(`<div class="gamecard"><div class="badge">${GAME_ART[key]()}</div></div>`)); jingle(); await sleep(700);
 }
 function confetti(){ const c=$('#card'); if(!c) return; for(let i=0;i<18;i++){ const d=el(`<i class="confetti" style="left:${rand(100)}%;background:${pick(PAL)};animation-delay:${rand(400)}ms"></i>`); c.append(d); setTimeout(()=>d.remove(),2200) } }
@@ -3596,31 +3613,83 @@ const Hand={ el:null, cur:null,
 };
 function center(e){ const r=e.getBoundingClientRect(); return {x:r.left+r.width/2,y:r.top+r.height/2} }
 /* =========================================================
-   THE HINT HAND (19/10): the child does nothing for ~5.5 s → the hand shows what to do (with a little sparkle).
-   Questions that are scored: only on the first turn of each game (RUN.hintArmed, cleared by the first scored answer).
-   The doing parts of a story (hug, clap, breathe, open the map, tap the shaking bush, the microphone): every time.
+   THE HELPING HAND (29/10, Minh played it on the iPad; replaces the hint hand of 19/10 and the demos).
+   No demo first: Chồi says what to do, and the child can touch at once. The hand only comes to a child who does nothing.
+   The clock starts when the command has been said (when the game starts waiting), and starts again at every touch, anywhere (a wrong
+   one too); what the hand does next goes on from where it was:
+     a NEW kind of touch (the first time this child meets it):  4 s → the hand does the move · 6 s more → slower · 8 s more → slower,
+       and Chồi says the command once more · then every 8 s the hand does it WITH the child: it stays and keeps doing it, until it is done
+     a kind of touch the child KNOWS:  5.5 s · 8 s more · 10 s more (the third time with the command again), then every 10 s
+     a question to THINK about (count, choose the answer, choose the face):  8 s → the hand points at where to choose (the options
+       wiggle), never at the right answer; the second time the question again
+   A wrong move (a quick tap on something to press and hold; a tap with no move on a line to draw) shows the hand at once.
+   Kinds of touch: tap · tap3 (three taps) · hold (press and hold) · trace (move a finger along a line, GAMES.trace has its own) ·
+   place (tap a thing, then the place for it). S.seenTouch keeps the kinds this child has done. AUTO runs: no hand.
    ========================================================= */
-function hintHand(targetFn,{kind='tap',always=false,ms=5500,repeat=7000}={}){
+const HELP_MS={new:[4000,6000,8000,8000],known:[5500,8000,10000,10000],think:[8000,10000,12000,12000]};
+const touchKnown=kind=>!!(S.seenTouch&&S.seenTouch[kind]);
+function touchLearned(kind){ if(!kind||!RUN||RUN.aborted) return; S.seenTouch=S.seenTouch||{}; if(!S.seenTouch[kind]){ S.seenTouch[kind]=1; save() } }
+/** the command once more, when Chồi is not talking (never over a line) */
+async function helpAsk(ask,ok){ while(SAYN&&ok()) await sleep(200); if(!ok()) return; try{ if(ask) await ask(); else await askAgain() }catch(e){} }
+/** the hand shows the area to choose from: under the options, which wiggle, it glides from one end to the other and back, and goes;
+ *  its fingertip never rests on one (a choice: never the right answer) */
+async function pointArea(els,ok,slow=1){ els=els.filter(e=>e&&e.isConnected&&e.getClientRects().length); if(!els.length) return;
+  const rs=els.map(e=>e.getBoundingClientRect()), L=Math.min(...rs.map(r=>r.left)), R=Math.max(...rs.map(r=>r.right)), T=Math.min(...rs.map(r=>r.top)), B=Math.max(...rs.map(r=>r.bottom));
+  const y=Math.min(innerHeight-24,B+Math.max(14,Math.min(36,(B-T)*.18))), a={x:L+(R-L)*.08,y}, b={x:R-(R-L)*.08,y}, glide=Math.max(700,(R-L)*2.2)*slow;
+  els.forEach(e=>{ if(e.dataset.used||e.disabled) return; e.classList.remove('nudge'); void e.offsetWidth; e.classList.add('nudge'); setTimeout(()=>e.classList.remove('nudge'),1100) }); tone(1046,.3,'sine',.05);
+  await Hand.moveTo(a,600*slow); if(!ok()) return; await Hand.moveTo(b,glide); if(!ok()) return; await Hand.moveTo(a,glide) }
+function hintHand(targetFn,{kind='tap',think=false,area=null,ask=null,to=null,zones=null}={}){
   if(AUTO||!RUN) return ()=>{};
-  if(!always&&!RUN.hintArmed) return ()=>{};
-  let t=null, stop=false, busy=false;
-  const go=async()=>{ if(stop||!RUN||RUN.aborted) return; let tg=targetFn(); if(HELD&&HELD.item&&(tg===HELD.item||HELD.hint)){ const z=HELD.hint?HELD.hint():HELD.zones&&HELD.zones()[0]; if(z) tg=z } if(!tg||!tg.isConnected) return;
-    busy=true;
-    try{ burst(center(tg),{n:8}); tone(1320,.12,'sine',.05); tone(1760,.16,'sine',.04,.08);
-      await Hand.moveTo(center(tg),550); if(stop) return;
-      if(kind==='hold') await Hand.press(1300); else if(kind==='tap3'){ for(let i=0;i<3&&!stop;i++){ await Hand.tap(); await sleep(180) } } else { await Hand.tap(); await sleep(200); if(!stop) await Hand.tap() }
-      await sleep(450) }catch(e){}
-    if(!stop) Hand.hide(); busy=false; if(!stop) t=setTimeout(go,repeat) };
-  t=setTimeout(go,ms);
-  return ()=>{ if(stop) return; stop=true; clearTimeout(t); if(busy) Hand.hide() } }
+  const run=RUN, fresh=!think&&!touchKnown(kind), plan=think?HELP_MS.think:fresh?HELP_MS.new:HELP_MS.known;
+  let n=0, t=null, stop=false, gen=0, busy=false, together=false;
+  const live=()=>!stop&&RUN===run&&!run.aborted;
+  const arm=()=>{ clearTimeout(t); if(live()) t=setTimeout(()=>show(),plan[Math.min(n,plan.length-1)]*SPEED) };
+  const cancel=()=>{ gen++; together=false; if(busy){ busy=false; Hand.hide() } };
+  const target=()=>{ let tg=targetFn(); if(!zones&&HELD&&HELD.item&&(tg===HELD.item||HELD.hint)){ const z=HELD.hint?HELD.hint():HELD.zones&&HELD.zones()[0]; if(z) tg=z } return tg&&tg.isConnected?tg:(zones&&held()?HELD.item:null) };
+  const held=()=>HELD&&HELD.item&&HELD.item.isConnected;
+  const move=async(tg,slow,ok)=>{
+    if(kind==='place'&&zones&&held()){ await pointArea(zones(),ok,slow); if(ok()) Hand.hide(); return }   // sorting (which cup, which side): the places, never the right one
+    const p=center(tg); burst(p,{n:8}); tone(1320,.12,'sine',.05); tone(1760,.16,'sine',.04,.08);
+    await Hand.moveTo(p,550*slow); if(!ok()) return;
+    if(kind==='hold') await Hand.press(1300*slow);
+    else if(kind==='tap3'){ for(let i=0;i<3&&ok();i++){ await Hand.tap(); await sleep(180*slow) } }
+    else if(kind==='place'&&!held()){ await Hand.tap(); if(!ok()) return; await sleep(250*slow);   // tap the thing, then where it goes
+      if(zones){ await pointArea(zones(),ok,slow); if(ok()) Hand.hide(); return } const z=to&&to(tg); if(z&&z.isConnected&&ok()){ await Hand.moveTo(center(z),750*slow); if(ok()) await Hand.tap() } }
+    else { await Hand.tap(); await sleep(200*slow); if(ok()) await Hand.tap() } };
+  const show=async()=>{ if(!live()||busy) return; const tg=think?null:target(), A=think?(area?area():[target()]).filter(Boolean):null;
+    if(!tg&&!(A&&A.length)){ arm(); return }
+    const step=n++, my=++gen, ok=()=>my===gen&&live(), slow=step>=1?1.6:1; busy=true;
+    try{
+      if(think){ await pointArea(A,ok,slow); if(ok()) Hand.hide(); if(step===1&&ok()) await helpAsk(ask,ok) }
+      else if(fresh&&step>=3){ together=true; while(ok()){ const g=target(); if(!g) break; await move(g,slow,ok); if(ok()) await sleep(500) } }   // with the child, until it is done
+      else { await move(tg,slow,ok); if(step===2&&ok()) await helpAsk(ask,ok) }
+      if(ok()&&!think) await sleep(400) }catch(e){}
+    if(my===gen){ busy=false; together=false; Hand.hide(); arm() } };
+  const onDown=()=>{ if(!live()) return; if(together&&kind==='hold') return; cancel(); arm() };   // a hold: the hand keeps pressing with the child
+  addEventListener('pointerdown',onDown,true); arm();
+  const f=()=>{ if(stop) return; const learned=RUN===run&&!run.aborted; stop=true; clearTimeout(t); removeEventListener('pointerdown',onDown,true); if(busy) Hand.hide(); gen++; busy=false; if(learned&&!think) touchLearned(kind) };
+  f.wrong=()=>{ if(!live()) return; cancel(); clearTimeout(t); show() };   // the wrong move: the hand now
+  return f }
 
 
 /* ---------------- stage helpers ---------------- */
-function card(){ const c=$('#card'); if(c.children.length) GHOST=[...c.childNodes]; c.innerHTML=''; if(RUN) RUN.gate=false; c.classList.remove('citycard'); const w=$('.wrap-kid'); if(w) w.classList.remove('wide','city'); return c }
+function card(){ const c=$('#card'); if(c.children.length){ GHOST=[...c.childNodes]; GHOST_T=performance.now(); if(!XFADE){ XFADE=true; queueMicrotask(()=>{ XFADE=false; crossFade(c) }) } } c.innerHTML=''; if(RUN) RUN.gate=false; c.classList.remove('citycard'); const w=$('.wrap-kid'); if(w) w.classList.remove('wide','city'); return c }
 /** 23/10 (vòng 5, chat chính): when the whole team goes on to a new place (every level), the old picture slides out to the left and the
- *  new one comes in from the right, the whole frame, in about 0.8 s. Pages in the same place keep the soft fade. card() keeps what was
- *  on the card just before (GHOST) so the new page can slide it away. */
-let GHOST=null;
+ *  new one comes in from the right, the whole frame, in about 0.8 s. card() keeps what was on the card just before (GHOST) so the new
+ *  page can slide it away.
+ *  29/10 (Minh played it on the iPad, chat chính): the rule for every page change:
+ *    the whole team goes to ANOTHER place (street → school yard, park → home, outside → inside the new room) → it slides (travelIn, go:true);
+ *    still the SAME place, only a later moment (the bus has come to the park, now the friends get off; another page on the same beach;
+ *    a close-up of a thing there) → the old page fades out over the new one, about 0.6 s (crossFade).
+ *  The list of every page change of the 8 levels and its kind: claude/bao-cao-u1-man0-ipad-29-10.md. */
+let GHOST=null, GHOST_T=0, XFADE=false;
+/** the same place: the new page is there at once, under the old one, which fades out (0.6 s); nothing on the old one answers a tap */
+function crossFade(c){ const old=GHOST; if(!old||!old.length||!c||performance.now()-GHOST_T>250) return;
+  const neu=[...c.children].filter(n=>!n.classList.contains('travelold')); if(!neu.length) return;   // nothing new yet (it comes later): no fade
+  GHOST=null; const ms=Math.max(1,600*SPEED);
+  neu.forEach(n=>{ if(n.classList.contains('fade')) n.classList.remove('fade') });   // no slide up from below: the same place stays still
+  const cs=getComputedStyle(c), g=el(`<div class="travelold fadeold" aria-hidden="true"></div>`); g.style.padding=cs.padding; g.style.gap=cs.gap; old.forEach(n=>g.append(n)); g.querySelectorAll('button').forEach(b=>b.disabled=true); g.inert=true; c.append(g);
+  g.animate([{opacity:1},{opacity:0}],{duration:ms,easing:'ease-in-out',fill:'forwards'}).finished.catch(()=>{}).then(()=>g.remove()) }
 function travelIn(c,neu){ const old=GHOST; GHOST=null; if(!old||!old.length||!c||!neu) return;
   const g=el(`<div class="travelold" aria-hidden="true"></div>`); old.forEach(n=>g.append(n)); g.querySelectorAll('button').forEach(b=>b.disabled=true); c.append(g);
   neu.classList.remove('fade'); const ms=Math.max(1,800*SPEED), ease='cubic-bezier(.45,0,.25,1)';
@@ -3647,18 +3716,21 @@ function tvPads(els){ const bar=padBar(); if(!S.tv||!bar||!RUN||!els.length||els
 function tvTapPad(onTap){ const bar=padBar(); if(!S.tv||!bar||!RUN) return ()=>{}; bar.innerHTML=''; bar.classList.add('live');
   const p=el(`<button class="tvpad one" style="--c:#FFFFFF" aria-label="Chạm">${ICON.hand}</button>`); p.onclick=()=>{ onTap() }; bar.append(p);
   return ()=>{ bar.innerHTML=''; bar.classList.remove('live') } }
-function tapOnce(els,{nudge=true,hint}={}){
+function tapOnce(els,{nudge=true,hint,until=null}={}){   // until: a promise; when it comes first, the tap is no longer waited for (resolves -1, the hand goes)
   if(RUN&&!(els.length===1&&els[0].classList.contains('nextbtn'))) RUN.gate=true;
   return new Promise((res,rej)=>{
     els.forEach(e=>e.dataset.live='1');
-    const unpad=tvPads(els); let stopNudge=nudge?idleNudge(els):()=>{};
-    const isNext=els.length===1&&els[0].classList.contains('nextbtn'), hm=hint===false||isNext?null:(hint==='always'||els.length===1?'always':'armed');
-    if(isNext&&nudge){ stopNudge(); stopNudge=idleNudge(els,()=>true,{ask:()=>say('Tap the yellow arrow to go on!','Con chạm vào mũi tên vàng để đi tiếp nhé!',{replay:true})}) }
-    const stopHint=hm?hintHand(()=>els.find(e=>e.dataset.ok==='1'&&!e.dataset.used),{always:hm==='always'}):()=>{};
+    const unpad=tvPads(els); let stopNudge=()=>{};
+    const isNext=els.length===1&&els[0].classList.contains('nextbtn');
+    if(isNext&&nudge) stopNudge=idleNudge(els,()=>true,{ask:()=>say('Tap the yellow arrow to go on!','Con chạm vào mũi tên vàng để đi tiếp nhé!',{replay:true})});
+    // 29/10: one thing to tap (or every option is right): the hand taps it; a choice (one right answer among others): the hand only shows where to choose
+    const oks=els.filter(e=>e.dataset.ok==='1'), think=els.length>1&&oks.length<els.length;
+    const stopHint=hint===false||isNext?()=>{}:hintHand(()=>els.find(e=>e.dataset.ok==='1'&&!e.dataset.used)||(els.length===1?els[0]:null),{think,area:()=>els.filter(e=>!e.dataset.used)});
     const hs=[]; const cleanup=()=>{ hs.forEach(([e,f])=>e.removeEventListener('click',f)); hs.length=0; els.forEach(e=>delete e.dataset.live); abortFns.delete(ab); unpad(); stopNudge(); stopHint() };
     const ab=()=>{ cleanup(); rej(ABORT) };
     els.forEach((e,i)=>{ const f=ev=>{ ev.stopPropagation(); cleanup(); res(i) }; e.addEventListener('click',f); hs.push([e,f]) });
     abortFns.add(ab); if(RUN&&RUN.aborted) return ab();
+    if(until) until.then(()=>{ if(!hs.length) return; cleanup(); res(-1) });
     if(AUTO) setTimeout(()=>{ if(!hs.length) return; let i=els.findIndex(e=>e.dataset.ok==='1'); if(window.__autoWrong&&Math.random()<window.__autoWrong) i=Math.floor(Math.random()*els.length); cleanup(); res(i<0?0:i) },HASH==='auto'?15:HASH==='time'?2200:900*SPEED);
   });
 }
@@ -3696,7 +3768,7 @@ async function kidRound(sk,R){
 /** a game the child has already been shown: no 'watch me' demo the second time */
 function seenDemo(key){ S.seenDemo=S.seenDemo||{}; const was=!!S.seenDemo[key]; S.seenDemo[key]=1; save(); return was&&!(RUN&&RUN.dev&&RUN.forceDemo) }
 async function choiceActivity(sk,rounds,intro,make,{mixIntro=true,showFirst=false}={}){
-  const noShow=RUN&&RUN.mode?!wantDemo('choice'):(typeSeen('choice'),seenDemo('choice:'+sk.id+':'+intro[0]));
+  const noShow=(seenDemo('choice:'+sk.id+':'+intro[0]),!wantDemo('choice'));   // 29/10: no demo round
   let first=make(noShow?0:-1); if(showFirst&&!inMix()) await reveal(first.opts);   // showFirst: the picture is already there while the intro is said (no blank page)
   if(mixIntro||!inMix()) await say(...intro);
   if(noShow){ turn('kid'); for(let r=0;r<rounds;r++){ const R=r?make(r):first; await kidRound(sk,R); await sleep(500) } turn(null); return }
@@ -3870,9 +3942,9 @@ GAMES.clap=async(sk,rounds)=>{
   const build=(w)=>{ const c=card(); c.append(el(`<div class="pic fade">${clapPic(w)}</div>`)); const beats=el(`<div class="beats"></div>`); const btn=el(`<button class="clapbtn" aria-label="Vỗ tay">${ART.hands()}</button>`); c.append(beats,btn); return {beats,btn} };
   const beat=(U)=>{ U.btn.classList.remove('beat'); void U.btn.offsetWidth; U.btn.classList.add('beat'); U.beats.append(el('<i></i>')); clapHit() };
   await say('Let’s clap out the words!','Mình cùng vỗ tay theo từng tiếng nhé!');
-  await watchMe(); let U=build(D); await sayWord(D); await Hand.moveTo(center(U.btn));
+  let U; if(wantDemo('clapwords')){ await watchMe(); U=build(D); await sayWord(D); await Hand.moveTo(center(U.btn));
   for(const x of D.syl){ await Hand.tap(); beat(U); await syl(x) } await say(`${cap(W[D.syl.length])} claps!`,`${cap(VI_N[D.syl.length])} tiếng!`);
-  await yourTurn();
+  await yourTurn() } else turn('kid');
   const list=shuffle(WORDS.filter(w=>w!==D)).slice(0,rounds);
   for(const w of list){
     U=build(w); await sayWord(w); await say('Let’s clap!','Con vỗ tay theo từng tiếng nhé!'); chk();
@@ -3922,12 +3994,12 @@ GAMES.countTap=async(sk,rounds)=>{
   const numerals=(R)=>{ const ch=shuffle([...new Set([R.n,Math.max(1,R.n-1),R.n+1])]); const [row,opts]=optRow(ch.map(k=>`<span class="num">${k}</span>`)); R.c.append(row); return {opts,correct:ch.indexOf(R.n),ch} };
   const mark=(b,k)=>{ b.classList.remove('jump'); void b.offsetWidth; b.className='thing jump done'; b.append(el(`<span class="tag">${k}</span>`)); SFX.pop() };
   await say('Let’s count!','Mình cùng đếm nhé!');
-  await watchMe(); let R=build(3,'line'); await arrive(R); await say(`Let’s count the ${R.pl}!`,`Mình cùng đếm ${R.vi} nhé!`);
+  let R, N; if(wantDemo('countline')){ await watchMe(); R=build(3,'line'); await arrive(R); await say(`Let’s count the ${R.pl}!`,`Mình cùng đếm ${R.vi} nhé!`);
   for(const [i,b] of R.things.entries()){ await Hand.moveTo(center(b),600); await Hand.tap(); mark(b,i+1); await say(cap(W[i+1])+'.',VI_N[i+1],{gap:150,rate:.8}) }
-  let N=numerals(R); await say(`How many ${R.pl} are there?`,`Có bao nhiêu ${R.vi}?`); await reveal(N.opts); await Hand.moveTo(center(N.opts[N.correct])); await Hand.tap(); N.opts[N.correct].classList.add('right'); SFX.chime(); await say(`There are ${W[R.n]} ${R.pl}!`,`Có ${VI_N[R.n]} ${R.vi}!`);
-  await yourTurn();
+  N=numerals(R); await say(`How many ${R.pl} are there?`,`Có bao nhiêu ${R.vi}?`); await reveal(N.opts); await Hand.moveTo(center(N.opts[N.correct])); await Hand.tap(); N.opts[N.correct].classList.add('right'); SFX.chime(); await say(`There are ${W[R.n]} ${R.pl}!`,`Có ${VI_N[R.n]} ${R.vi}!`);
+  await yourTurn() } else turn('kid');
   for(let r=0;r<rounds;r++){
-    if(r>0){ $('#card').classList.add('out'); await sleep(380); $('#card').classList.remove('out') }
+    if(r>0){ $('#card').classList.add('out'); await sleep(380); $('#card').innerHTML=''; $('#card').classList.remove('out') }
     R=build(ramp[r],r<2?'line':'scattered'); await arrive(R);
     await say(`Now you count the ${R.pl}. Touch each one!`,`Giờ con đếm ${R.vi} nhé. Chạm vào từng cái!`);
     await new Promise((res,rej)=>{ let k=0; const ab=()=>rej(ABORT); abortFns.add(ab);
@@ -3994,26 +4066,43 @@ GAMES.trace=async(sk,rounds,opt={})=>{
   const kidSkins=opt.skins||TRACE_SKINS.slice(1); let K,T;
   const shown=await demoOr('trace',async()=>{ K=opt.demo||(kidSkins[0]&&kidSkins[0].scene?kidSkins[0]:TRACE_SKINS[0]); T=setup(K); await intro(); await say(...(isBrief()&&K.brief?K.brief:[K.en,K.vi]),{q:true});   // 23/10 tối: a brief page: the command, while the hand draws it
     await Hand.moveTo(page(T,T.A)); for(let i=0;i<=40;i++){ const q=T.setProg(T.len*i/40); Hand.set(page(T,q)); await sleep(32) } SFX.chime(); await say('All the way to the end!','Đến nơi rồi!'); Hand.hide(); await (K.scene&&K.scene.done?K.scene.done(T):showFx(T,K)) });
-  if(S.tv) await say('Press and hold the big button to draw the line.','Con nhấn giữ nút to để vẽ đường nhé.',{gap:300}); else if((shown||!RUN.mode)&&!opt.quiet&&!(shown&&isBrief())) await say('Just move your finger along the line.','Con chỉ cần di ngón tay theo đường kẻ.',{gap:300});   // a brief page said it with the hand already
+  // 29/10 (Minh): no demo. A page that had one (Màn 0, the road for the bus) asks with its brief command, which says how ("…Move your finger along the line!")
+  const firstCmd=!shown&&opt.demo&&opt.demo.brief&&isBrief()?opt.demo.brief:null;
+  if(S.tv) await say('Press and hold the big button to draw the line.','Con nhấn giữ nút to để vẽ đường nhé.',{gap:300}); else if((shown||!RUN.mode)&&!opt.quiet&&!(shown&&isBrief())&&!firstCmd) await say('Just move your finger along the line.','Con chỉ cần di ngón tay theo đường kẻ.',{gap:300});   // a brief page said it with the hand already
   for(let r=0;r<rounds;r++){
-    K=kidSkins[r%kidSkins.length]; T=setup(K); await intro(); await say(K.en,K.vi,{q:true});
+    K=kidSkins[r%kidSkins.length]; T=setup(K); await intro(); const cmd=r===0&&firstCmd?firstCmd:[K.en,K.vi]; await say(...cmd,{q:true});
     const t0=performance.now(); let hinted=false;
-    await new Promise((res,rej)=>{ let started=false, prog=0, idle=null; const ab=()=>{ clearTimeout(idle); rej(ABORT) }; abortFns.add(ab); T.onScale=k=>{ prog*=k };
-      let nudges=0;
-      const nudge=()=>{ idle=setTimeout(async()=>{ nudges++; if(nudges>=2||!RUN.hintArmed) hinted=true;
-        if(nudges>=4){ abortFns.delete(ab); T.box.onpointermove=T.box.onpointerdown=null;   // still stuck: draw it together, then move on
-          try{ if(!isBrief()) await say('Let’s draw it together.','Mình cùng vẽ nhé.',{gap:100}); const p0=prog; await Hand.moveTo(page(T,K.v?{x:T.A.x,y:T.A.y+p0}:{x:T.A.x+p0,y:T.A.y}),500); for(let i=0;i<=30;i++){ const q=T.setProg(p0+(T.len-p0)*i/30); Hand.set(page(T,q)); await sleep(40) } Hand.hide() }catch(e){} res(); return }
-        try{ await Hand.moveTo(page(T,started?(K.v?{x:T.A.x,y:T.A.y+Math.min(T.len,prog+70)}:{x:T.A.x+Math.min(T.len,prog+70),y:T.A.y}):T.A),600) }catch(e){} if(!isBrief()) try{ await say(started?'Keep going, follow the line!':'Start at the green circle.',started?'Tiếp tục đi theo đường kẻ nào!':'Bắt đầu từ vòng tròn xanh nhé.') }catch(e){}   /* 23/10 (vòng 5): a review: only the hand */ Hand.hide(); nudge() },(nudges===0&&RUN.hintArmed?5500:8000)*SPEED) };
+    /* 29/10: the helping hand on its clock (hintHand above): it goes along the line from where the child is to the end, without drawing;
+       slower the second time; the third time the command again; then, still stuck, Chồi and the child draw it together. A touch anywhere
+       starts the clock again; a tap that does not move (no finger along the line) brings the hand at once. */
+    await new Promise((res,rej)=>{ let started=false, prog=0, idle=null, n=0, gen=0, dn=null, over=false; const fresh=!touchKnown('trace'), plan=fresh?HELP_MS.new:HELP_MS.known;
+      const anyDown=()=>{ gen++; Hand.hide(); nudge() };
+      const off=()=>{ over=true; clearTimeout(idle); gen++; removeEventListener('pointerdown',anyDown,true); T.box.onpointermove=T.box.onpointerdown=T.box.onpointerup=null };
+      const ab=()=>{ off(); Hand.hide(); rej(ABORT) }; abortFns.add(ab); T.onScale=k=>{ prog*=k };
+      const at=p=>page(T,K.v?{x:T.A.x,y:T.A.y+p}:{x:T.A.x+p,y:T.A.y});
+      const finish=()=>{ if(over) return; off(); abortFns.delete(ab); touchLearned('trace'); res() };
+      function nudge(){ clearTimeout(idle); if(AUTO||over) return; idle=setTimeout(help,plan[Math.min(n,plan.length-1)]*SPEED) }
+      async function help(){ if(over) return; const step=n++, my=++gen, ok=()=>my===gen&&!over&&RUN&&!RUN.aborted, slow=step>=1?1.6:1; if(step>=1) hinted=true;
+        if(step>=3){ const keep=prog; off(); abortFns.delete(ab);   // still stuck: draw it together, then move on
+          try{ if(!isBrief()) await say('Let’s draw it together.','Mình cùng vẽ nhé.',{gap:100}); await Hand.moveTo(at(keep),500); for(let i=0;i<=30;i++){ const q=T.setProg(keep+(T.len-keep)*i/30); Hand.set(page(T,q)); await sleep(40) } Hand.hide() }catch(e){}
+          touchLearned('trace'); res(); return }
+        try{ const p0=started?prog:0; await Hand.moveTo(at(p0),600*slow); if(!ok()) return; burst(at(p0),{n:6}); await sleep(250*slow); if(!ok()) return;
+          await Hand.moveTo(at(T.len),Math.max(900,(T.len-p0)*3)*slow); if(!ok()) return; await sleep(350);
+          if(step===2) await helpAsk(()=>say(...cmd,{replay:true}),ok) }catch(e){}
+        if(my===gen){ Hand.hide(); nudge() } }
       const mv=e=>{ const b=T.box.getBoundingClientRect(); const p={x:e.clientX-b.left,y:e.clientY-b.top};
+        if(e.type==='pointerdown') dn={x:e.clientX,y:e.clientY,prog,started};
         if(!started){ if(Math.hypot(p.x-T.A.x,p.y-T.A.y)<(T.startR||56)){ started=true; SFX.pop() } else return }
         const d=K.v?Math.abs(p.x-T.A.x):Math.abs(p.y-T.A.y), along=K.v?p.y-T.A.y:p.x-T.A.x;
-        if(d<=T.band&&along>prog-40&&along<prog+90){ prog=Math.max(prog,Math.min(T.len,along)); T.setProg(prog); clearTimeout(idle); nudge() }
-        if(prog>=T.len*.94){ T.setProg(T.len); clearTimeout(idle); abortFns.delete(ab); T.box.onpointermove=T.box.onpointerdown=null; res() } };
-      T.box.onpointermove=mv; T.box.onpointerdown=mv; nudge();
+        if(d<=T.band&&along>prog-40&&along<prog+90){ prog=Math.max(prog,Math.min(T.len,along)); T.setProg(prog); nudge() }
+        if(prog>=T.len*.94){ T.setProg(T.len); finish() } };
+      T.box.onpointermove=mv; T.box.onpointerdown=mv;
+      T.box.onpointerup=e=>{ const d=dn; dn=null; if(!d||over||AUTO) return; if(Math.hypot(e.clientX-d.x,e.clientY-d.y)<14&&prog-d.prog<8){ clearTimeout(idle); gen++; help() } };   // a tap, not a move: the hand now
+      addEventListener('pointerdown',anyDown,true); nudge();
       if(S.tv&&padBar()){ const bar=padBar(); bar.innerHTML=''; bar.classList.add('live'); const p=el(`<button class="tvpad one hold" style="--c:#FFFFFF" aria-label="Giữ để vẽ">${ICON.hand}</button>`); bar.append(p); let iv=null;
-        const stop=()=>{ clearInterval(iv); iv=null }; p.onpointerdown=e=>{ e.preventDefault(); started=true; clearTimeout(idle); stop(); iv=setInterval(()=>{ prog=Math.min(T.len,prog+T.len/45); T.setProg(prog); if(prog>=T.len){ stop(); bar.innerHTML=''; bar.classList.remove('live'); abortFns.delete(ab); res() } },40) };
+        const stop=()=>{ clearInterval(iv); iv=null }; p.onpointerdown=e=>{ e.preventDefault(); started=true; clearTimeout(idle); stop(); iv=setInterval(()=>{ prog=Math.min(T.len,prog+T.len/45); T.setProg(prog); if(prog>=T.len){ stop(); bar.innerHTML=''; bar.classList.remove('live'); finish() } },40) };
         ['pointerup','pointerleave','pointercancel'].forEach(ev=>p.addEventListener(ev,stop)); abortFns.add(()=>{ stop(); bar.innerHTML=''; bar.classList.remove('live') }) }
-      if(AUTO){ clearTimeout(idle); abortFns.delete(ab); T.setProg(T.len); setTimeout(res,5) } });
+      if(AUTO){ T.setProg(T.len); setTimeout(finish,5) } });
     SFX.chime(); if(!S.tv) rec(sk,!hinted,performance.now()-t0);
     { const P=K.praise||(K.v?['You drew a line straight down!','Con vẽ được đường thẳng xuống rồi!']:['You drew a line straight across!','Con vẽ được đường thẳng ngang rồi!']);   // 23/10 (vòng 5): a later try: "You tried again, and drew…"
       if(opt.praise!==false) await praise(hinted?(K.praise2||again(P,'try')):P) } await (K.scene&&K.scene.done?K.scene.done(T):showFx(T,K)); await sleep(200);
@@ -4043,14 +4132,14 @@ GAMES.sort=async(sk,rounds)=>{
   const fly=async(e,b)=>{ const a=landAnim(e,b,{w:40,lift:30}); await a.finished.catch(()=>{}); e.classList.remove('sel'); e.disabled=true; e.style.translate=''; setOff(e,0,0); b.append(e); burst(center(e),{n:6}) };
   const what=g=>byShape?[`This one is a ${g?s2:s1}.`,`Đây là hình ${VI_SHAPE[g?s2:s1]}.`]:byColour?[`This one is ${(g?c2:c1)[0]}.`,`Cái này màu ${(g?c2:c1)[1]}.`]:[g?'This one is small.':'This one is big.',g?'Cái này nhỏ.':'Cái này to.'];
   // demo: tap one, then tap its basket
-  await watchMe(); const d=els[0], db=baskets[+d.dataset.g];
+  const shown=wantDemo('sortbaskets'); if(shown){ await watchMe(); const d=els[0], db=baskets[+d.dataset.g];
   await say(`I pick up ${aOf(one)}.`,`Chồi cầm ${avi.toLowerCase()} này lên.`,{gap:200}); d.classList.add('sel'); SFX.pop();
   await say(...what(+d.dataset.g),{gap:200}); await say('So it goes in this basket.','Vậy bỏ vào giỏ này.',{gap:200});
   await demoDrag(d,db); Hand.hide(); await fly(d,db); SFX.pop();
-  await yourTurn(); await say('Tap each one, then tap the right basket!','Con chạm vào từng cái, rồi chạm vào đúng giỏ nhé!');
-  const rest=els.slice(1);
+  await yourTurn() } else turn('kid'); await say('Tap each one, then tap the right basket!','Con chạm vào từng cái, rồi chạm vào đúng giỏ nhé!');
+  const rest=shown?els.slice(1):els.slice();
   await new Promise((res,rej)=>{
-    let left=rest.length, sel=null, t0=performance.now(), busy=false; const stopN=idleNudge(rest); const ab=()=>{ stopN(); rej(ABORT) }; abortFns.add(ab); const tried=new Set();
+    let left=rest.length, sel=null, t0=performance.now(), busy=false; const stopN=hintHand(()=>null,{think:true,area:()=>rest.filter(e=>!e.disabled)}); const ab=()=>{ stopN(); rej(ABORT) }; abortFns.add(ab); const tried=new Set();
     rest.forEach(e=>makeDrag(e,()=>baskets,{onDrop:z=>{ e.click(); z.click() }}));
     rest.forEach(e=>e.onclick=()=>{ if(e.disabled||busy) return; if(sel) sel.classList.remove('sel'); sel=e; e.classList.add('sel'); SFX.pop(); t0=performance.now() });
     baskets.forEach((b,bi)=>b.onclick=async()=>{ if(busy) return; if(!sel){ b.classList.remove('glow'); void b.offsetWidth; rest.find(e=>!e.disabled)?.classList.add('hint'); say(`Tap ${aOf(one)} first.`,`Con chạm vào ${avi.toLowerCase()} trước nhé.`).catch(()=>{}); return }
@@ -4075,7 +4164,7 @@ async function mixActivity(){
   await gameCard('mix'); await say('Mix time! A bit of everything!','Giờ mình chơi mỗi trò một chút nhé!');
   turn('kid');
   for(const sk of picks){ const F=sk.game==='clap'?['count']:choiceFmts(sk.game); const fmt=pick(F); ptip(sk);
-    $('#card').classList.add('out'); await sleep(300); $('#card').classList.remove('out');
+    $('#card').classList.add('out'); await sleep(300); $('#card').innerHTML=''; $('#card').classList.remove('out');
     await kidRound(sk,MAKE[sk.game](sk,1,fmt,{})); await sleep(400) }
   earnDrop();
   ptip(null); turn(null); confetti(); if(RUN) RUN.lastChoice=true;
@@ -4162,8 +4251,9 @@ const kidTapDelay=()=>HASH==='auto'?3:HASH==='time'?700:450*SPEED;
 async function stepPick(sk,opts,correct,{ask,labels,onRight,onWrong,retry=['Let’s look again.','Mình nhìn lại nhé.'],record=true,concept,praise:pr=null}={}){   // pr: [first-try line, later-try line] (23/10, vòng 5)
   if(concept&&RUN) RUN.concept=concept;
   opts.forEach((o,i)=>{ delete o.dataset.ok; o.classList.remove('hint'); if(i===correct) o.dataset.ok='1' });
-  // the child may answer while Chồi is still asking: the options listen straight away
-  const hush=()=>{ voiceStop(); try{ speechSynthesis.cancel() }catch(e){} stopFeelMusic() };
+  // the child may answer while Chồi is still asking: the options listen straight away. 29/10 (sound comes first): Chồi still finishes
+  // the question (never cut by a tap), then the answer is taken; only the music stops at once
+  const hush=()=>{ stopFeelMusic() };
   const race=async(talk,p)=>{ let tapped=false; p.then(()=>{ tapped=true; hush() },()=>{}); try{ await talk() }catch(e){ if(e===ABORT) throw e } return tapped };
   let p=tapOnce(opts); if(ask) await race(ask,p); if(ask&&RUN) RUN.qfn=ask; const t0=performance.now(); let first=true;
   for(;;){ const i=await p;
@@ -4179,7 +4269,7 @@ async function stepPick(sk,opts,correct,{ask,labels,onRight,onWrong,retry=['Let�
 /** count taps on one or more buttons until the child stops for a moment */
 function countTaps(btns,onTap,{idle=2000,auto=0,cap=0,fastAt=0}={}){
   return new Promise((res,rej)=>{ let c=0,timer=null,fin=false; btns.forEach(b=>b.dataset.live='1'); const unlive=()=>btns.forEach(b=>delete b.dataset.live); const unpad=tvTapPad(()=>{ const b=btns.find(x=>!x.dataset.used)||btns[0]; if(b&&b.onclick) b.onclick() });
-    const stopNudge=idleNudge(btns,()=>c===0,{point:true}); const stopHint=hintHand(()=>btns.find(x=>!x.dataset.used&&x.style.visibility!=='hidden')||btns[0]);
+    const stopNudge=()=>{}; const stopHint=hintHand(()=>btns.find(x=>!x.dataset.used&&x.style.visibility!=='hidden')||btns[0],{think:true,area:()=>btns.filter(x=>!x.dataset.used&&x.style.visibility!=='hidden')});   // 29/10: counting is thinking: the hand shows where to tap, not how many
     const ab=()=>{ fin=true; clearTimeout(timer); stopNudge(); stopHint(); unpad(); unlive(); rej(ABORT) }; abortFns.add(ab);
     let waitDrag=0; const done=()=>{ if(fin) return; if(DRAGGING>0&&waitDrag++<6){ timer=setTimeout(done,600); return } fin=true; clearTimeout(timer); stopNudge(); abortFns.delete(ab); unpad(); unlive(); btns.forEach(b=>b.onclick=null); res(c) };
     btns.forEach(b=>b.onclick=()=>{ if(fin||b.dataset.used) return; c++; stopHint(); onTap(c,b); clearTimeout(timer);
@@ -4187,9 +4277,10 @@ function countTaps(btns,onTap,{idle=2000,auto=0,cap=0,fastAt=0}={}){
       timer=setTimeout(done,(fastAt&&c===fastAt?450:idle)*SPEED) });
     if(AUTO) (async()=>{ if(window.__autoWrong&&Math.random()<window.__autoWrong) auto=Math.max(1,auto+(Math.random()<.5?-1:2)); for(let i=0;i<auto;i++){ await new Promise(r=>setTimeout(r,kidTapDelay())); const b=btns.find(x=>!x.dataset.used)||btns[0]; b.click() } })() });
 }
-/** a child who doesn't tap: say the question again after a while, then wiggle what can be tapped */
+/** a child who doesn't tap: say the question again after a while, then wiggle what can be tapped.
+ *  29/10: only for the yellow "next" arrow (with its own words, ask); everything else gets the helping hand (hintHand) */
 function idleNudge(els,still=()=>true,{point=false,ask=null}={}){
-  if(AUTO||!RUN) return ()=>{}; let n=0, t=null, miss=0; const live=()=>RUN&&!RUN.aborted&&els.some(e=>e.isConnected)&&still();
+  if(AUTO||!RUN||!ask) return ()=>{}; let n=0, t=null, miss=0; const live=()=>RUN&&!RUN.aborted&&els.some(e=>e.isConnected)&&still();
   const wig=()=>{ els.forEach(e=>{ if(e.dataset.used||e.disabled) return; e.classList.remove('nudge'); void e.offsetWidth; e.classList.add('nudge'); setTimeout(()=>e.classList.remove('nudge'),1100) }); SFX.ding() };
   const tick=async()=>{ if(!live()) return; n++;
     if(isBrief()){ wig(); const tg=els.find(x=>!x.dataset.used&&!x.disabled&&x.isConnected); if(tg){ try{ await Hand.moveTo(center(tg),500); await Hand.tap(); await sleep(400) }catch(_){} Hand.hide() } }   // 23/10 (vòng 5): a review: only the hand, no words
@@ -4224,7 +4315,12 @@ async function kept(first,{later=false,line=null,line2=null}={}){ await praise(f
    A replayed level keeps its pictures but skips Chồi's demo of any way of playing the child has already seen.
    ========================================================= */
 function typeSeen(key){ S.seenType=S.seenType||{}; const was=!!S.seenType[key]; if(!was){ S.seenType[key]=1; save() } return was }
-function wantDemo(key){ if(RUN&&RUN.games) return false; const seen=typeSeen(key); if(RUN&&RUN.dev&&RUN.forceDemo) return true; const m=RUN&&RUN.mode; if(!m) return true; if(RUN.replay||m!=='teach') return !seen; return true }
+/* 29/10 (Minh played it on the iPad, chat chính): NO DEMO before the child's turn, the first time either: Chồi says the command and the
+   child can touch at once; the helping hand (hintHand) comes only when the child needs it. Only the developer page can still ask for a demo. */
+function wantDemo(key){ typeSeen(key); return !!(RUN&&!RUN.games&&RUN.dev&&RUN.forceDemo) }
+/** 29/10: the words that teach an idea (big and small, on the table, all red, "I just look and I know") stay where a demo used to come, said
+ *  over the picture, without the hand and without doing the child's part */
+function teachWords(key){ if(!RUN||RUN.games) return false; const seen=typeSeen(key), m=RUN.mode; if(RUN.dev&&RUN.forceDemo) return true; if(!m||RUN.replay||m!=='teach') return !seen; return true }
 /** Chồi's demo round, when it is wanted; otherwise straight to the child's turn */
 async function demoOr(key,fn){ if(wantDemo(key)){ turn('choi'); RUN.inDemo=true; RUN.preQ=[];   // 23/10 (vòng 5): no "Watch me first!" 
     try{ await fn() } finally { if(RUN){ RUN.inDemo=false; if(RUN.preQ&&RUN.preQ.length) (window.__lostPre=window.__lostPre||[]).push(key+':watch'); RUN.preQ=[] } }
@@ -4353,7 +4449,7 @@ async function hideSeek(sk){
   if(r&&r.blob) putClip(id,r.blob);
   await say('You counted to ten! Now, where am I? Tap a bush!','Con đếm đến mười rồi! Chồi trốn ở đâu nhỉ? Chạm vào một bụi cây!');
   const hide=rand(3); let tries=0;
-  await new Promise((res,rej)=>{ const stopN=idleNudge(bushes); const ab=()=>{ stopN(); rej(ABORT) }; abortFns.add(ab);
+  await new Promise((res,rej)=>{ const stopN=hintHand(()=>null,{think:true,area:()=>bushes.filter(b=>!b.dataset.used)}); const ab=()=>{ stopN(); rej(ABORT) }; abortFns.add(ab);
     bushes.forEach((b,i)=>b.onclick=async()=>{ if(b.dataset.used) return; b.dataset.used=1; tries++; b.classList.add('peek');
       if(i===hide){ b.insertAdjacentHTML('beforeend',`<div class="peekchoi">${choiSVG('vay-chao')}</div>`); SFX.chime(); confetti(); stopN(); abortFns.delete(ab); await say('You found me!','Con tìm thấy Chồi rồi!').catch(()=>{}); res() }
       else { SFX.soft(); say('Not here! Try another bush.','Không có ở đây! Con thử bụi cây khác nhé.').catch(()=>{}) } });
@@ -4495,7 +4591,7 @@ addFormat('findShape','build',async(sk,rounds)=>{
   await reveal(pieces); pieces.forEach(b=>makeDrag(b,()=>[site]));
   const place=async(hi)=>{ const b=pieces.find(p=>+p.dataset.i===hi); const f=center(b),t=center(slots[hi]); const a=b.animate([{transform:'none'},{transform:`translate(${t.x-f.x}px,${t.y-f.y}px)`}],{duration:Math.max(1,420*SPEED),easing:'ease-in-out'}); await a.finished.catch(()=>{}); b.style.visibility='hidden'; b.style.translate=''; b.disabled=true; slots[hi].innerHTML=pieceSVG(P[hi]); slots[hi].classList.add('done'); SFX.pop(); burst(center(slots[hi]),{n:8}) };
   let first=0;
-  if(demo){ await watchMe(); await say(P[0].en,P[0].vi); await say('I’ll find the circle.','Chồi tìm hình tròn.',{gap:200});
+  if(demo&&wantDemo('puzzle')){ await watchMe(); await say(P[0].en,P[0].vi); await say('I’ll find the circle.','Chồi tìm hình tròn.',{gap:200});
     await Hand.moveTo(center(pieces.find(p=>+p.dataset.i===0))); await Hand.tap(); await place(0); await yourTurn(); first=1 } else turn('kid');
   for(let hi=first;hi<P.length;hi++){
     const live=pieces.filter(p=>!p.disabled); const idx=live.findIndex(p=>+p.dataset.i===hi);
@@ -4694,17 +4790,17 @@ function holdOn(target,ms=1600){
     let t0=0, raf=null, done=false; const total=ms*Math.max(SPEED,.05);
     const step=()=>{ const p=Math.min(1,(performance.now()-t0)/total); circ.style.strokeDashoffset=107*(1-p); target.style.setProperty('--hold',p);
       if(p>=1){ finish(); return } raf=requestAnimationFrame(step) };
-    const down=e=>{ if(e) e.preventDefault(); if(done) return; stopH(); t0=performance.now(); target.classList.add('holding'); cancelAnimationFrame(raf); raf=requestAnimationFrame(step); tone(440,.15,'sine',.05,0,660) };
-    let quick=0; const stopN=idleNudge([target],()=>true,{point:true}); const stopH=hintHand(()=>target,{kind:'hold',always:true});
+    const down=e=>{ if(e) e.preventDefault(); if(done) return; t0=performance.now(); target.classList.add('holding'); cancelAnimationFrame(raf); raf=requestAnimationFrame(step); tone(440,.15,'sine',.05,0,660) };
+    let quick=0; const stopN=()=>{}; const stopH=hintHand(()=>target,{kind:'hold'});
     const up=()=>{ if(done||!target.classList.contains('holding')) return; cancelAnimationFrame(raf); target.classList.remove('holding'); circ.style.strokeDashoffset=107; target.style.setProperty('--hold',0);
-      if(performance.now()-t0<total*.6){ quick++;   // the child taps instead of holding
+      if(performance.now()-t0<total*.6){ quick++; stopH.wrong();   // the child taps instead of holding: the hand shows the press at once (29/10)
         if(quick===2) say('Keep your finger on it. Hold, hold, hold!','Con giữ ngón tay thật lâu nhé. Giữ, giữ, giữ!',{gap:0,q:false}).catch(()=>{});
         if(quick>=5) finish() } };
     const bar=padBar(); let pad=null;
     if(S.tv&&bar){ bar.innerHTML=''; bar.classList.add('live'); pad=el(`<button class="tvpad one hold" style="--c:#FFFFFF" aria-label="Nhấn giữ">${ICON.hand}</button>`); bar.append(pad);
       pad.addEventListener('pointerdown',down); ['pointerup','pointerleave','pointercancel'].forEach(ev=>pad.addEventListener(ev,up)) }
     target.addEventListener('pointerdown',down); ['pointerup','pointerleave','pointercancel'].forEach(ev=>target.addEventListener(ev,up));
-    const cleanup=()=>{ done=true; stopN(); cancelAnimationFrame(raf); ring.remove(); target.classList.remove('holding'); delete target.dataset.live; if(pad){ bar.innerHTML=''; bar.classList.remove('live') } abortFns.delete(ab) };
+    const cleanup=()=>{ done=true; stopN(); stopH(); cancelAnimationFrame(raf); ring.remove(); target.classList.remove('holding'); delete target.dataset.live; if(pad){ bar.innerHTML=''; bar.classList.remove('live') } abortFns.delete(ab) };
     function finish(){ cleanup(); SFX.chime(); res() }
     const ab=()=>{ cleanup(); rej(ABORT) }; abortFns.add(ab);
     if(AUTO) setTimeout(()=>{ if(!done) finish() },HASH==='auto'?10:600*SPEED);
@@ -4728,7 +4824,7 @@ addFormat('countTap','board',async(sk,rounds,opt={})=>{
   const finishLap=async()=>{ if(pos>=N-1){ confetti(); SFX.chime(); await say('We made it to the flag!','Mình về đích rồi!'); if(!opt.toEnd){ pos=0; place(0,false) } } };
   const rollN=()=>{ const room=N-1-pos; return Math.max(1,Math.min(1+rand(top),room||top)) };
   // demo
-  let n; if(!opt.single){ await watchMe(); n=rollN(); await say('I’ll roll the dice.','Chồi tung xúc xắc nhé.'); await Hand.moveTo(center(die)); await Hand.tap(); await roll(n);
+  let n; if(!opt.single&&wantDemo('dice')){ await watchMe(); n=rollN(); await say('I’ll roll the dice.','Chồi tung xúc xắc nhé.'); await Hand.moveTo(center(die)); await Hand.tap(); await roll(n);
   await say(`${cap(W[n])}! I’ll move ${W[n]} ${n>1?'steps':'step'}.`,`${cap(VI_N[n])}! Chồi đi ${VI_N[n]} bước.`);
   await Hand.moveTo(center(token)); for(let k=1;k<=n;k++){ await Hand.tap(); await step(k); Hand.set(center(token)) } Hand.hide(); await finishLap();
   await yourTurn(); } else turn('kid');
@@ -4878,7 +4974,7 @@ addFormat('findFeeling','music',async(sk,rounds,opt={})=>{
     RUN.qfn=async()=>{ await listen(); await ask() };
     await say(`Yes, it sounds ${MUSIC_ADJ[t][0]}!`,`Đúng rồi, nghe ${MUSIC_ADJ[t][1]} quá!`); return ok };
   if(opt.single){ turn('kid'); await round(pick(pool),false); turn(null); return }
-  if(RUN&&RUN.mode?wantDemo('music'):(typeSeen('music'),!again)){ await watchMe(); prev=pool.includes('happy')?'happy':pool[0]; await round(prev,true); await yourTurn() } else turn('kid');
+  if(wantDemo('music')){ await watchMe(); prev=pool.includes('happy')?'happy':pool[0]; await round(prev,true); await yourTurn() } else turn('kid');
   for(let r=0;r<rounds;r++){ const t=nextDifferent(prev,()=>pick(pool)); prev=t; await round(t,false); await sleep(300) }
   turn(null);
 });
@@ -5305,7 +5401,7 @@ function wireCityTaps(api){
   api.w.querySelectorAll('.cit').forEach(g=>g.addEventListener('click',e=>{ if(api.busy) return; if(g._noclick){ g._noclick=false; return } const k=+g.dataset.k, it=C().items[k]; if(!it) return; const D=CITEM[it.t];
     if(api.tool){ e.stopPropagation(); careFor(api,k); return }
     react(api,k);
-    if(api.names&&!(RUN&&RUN.aborted)) say(cap(anOf(D))+'!',cap(D.vi)+'!',{gap:0,q:false}).catch(()=>{}) }));
+    if(api.names&&!(RUN&&RUN.aborted)) say(cap(anOf(D))+'!',cap(D.vi)+'!',{gap:0,q:false,tapName:true}).catch(()=>{}) }));
 }
 async function careFor(api,k){ const it=C().items[k], D=CITEM[it.t], tool=api.tool, g=api.item(k);
   const eats=it.z==='zoo'||it.z==='dino', drinks=it.z==='garden';
@@ -5331,7 +5427,7 @@ async function placeGift(api,t){
     await say(D.sky?`Look up! ${cap(anOf(D))}!`:`Here comes ${anOf(D)}!`,D.sky?`Nhìn lên kìa! ${cap(VI)}!`:`${cap(VI)} đến rồi!`);
     await say(D.sky?'Tap it to wave hello!':'Tap it to say beep beep!',D.sky?'Con chạm vào để vẫy chào nhé!':'Con chạm vào để bấm còi nào!');
     const g=api.item(k); g.dataset.ok='1'; g.classList.add('tapme');
-    await Promise.race([tapOnce([g],{nudge:false}).catch(e=>{ if(e===ABORT) throw e }),sleep(9000)]); g.classList.remove('tapme'); CSND.cars(); bounce(g);
+    await tapOnce([g],{nudge:false,until:sleep(9000)}).catch(e=>{ if(e===ABORT) throw e }); g.classList.remove('tapme'); CSND.cars(); bounce(g);
     await say(D.sky?'Hello up there!':'Beep beep!',D.sky?'Xin chào!':'Bim bim!');
     return k;
   }
@@ -5442,7 +5538,7 @@ async function mixedActivity(sk){
   const {min,max}=sk.p||{}; const ns=min!=null?[Math.round(min+(max-min)*.5),max].map(n=>Math.max(2,n)):[];
   RUN.fmtOverride=seq[0]; await GAMES[sk.game](sk,1); RUN.fmtOverride=null;      // intro + Chồi's demo + the first round
   for(const [i,f] of seq.slice(1).entries()){
-    $('#card').classList.add('out'); await sleep(350); $('#card').classList.remove('out'); card();
+    $('#card').classList.add('out'); await sleep(350); $('#card').innerHTML=''; $('#card').classList.remove('out'); card();
     if(f==='choice'){ await say('Now let’s play it another way!','Giờ mình chơi kiểu khác nhé!'); turn('kid'); await kidRound(sk,MAKE[sk.game](sk,1,pick(choiceFmts(sk.game)),{})); await sleep(400); turn(null) }
     else if(f==='build'){ RUN.fmtOverride='build'; await GAMES[sk.game](sk,1); RUN.fmtOverride=null }
     else await EXTRA[sk.game][f](sk,1,{single:true,n:ns[i]});
@@ -5463,7 +5559,7 @@ async function playSkill(sk,opt={}){
   if(MIXED[sk.game]&&!(inDev()&&DEV.fmt)){ await mixedActivity(sk); RUN.fmtOverride=null; S.plays=S.plays||{}; S.plays[sk.id]=(S.plays[sk.id]||0)+1; save(); confetti(); ptip(null); return }
   const main=FMTS[sk.game]?fmtFor(sk,FMTS[sk.game]):null; const bonus=!(inDev()&&DEV.fmt)?bonusFmt(sk.game,main):null;
   await GAMES[sk.game](sk,bonus?Math.max(1,ROUNDS-1):ROUNDS);
-  if(bonus){ $('#card').classList.add('out'); await sleep(350); $('#card').classList.remove('out'); card();
+  if(bonus){ $('#card').classList.add('out'); await sleep(350); $('#card').innerHTML=''; $('#card').classList.remove('out'); card();
     await say('Now let’s play it another way!','Giờ mình chơi kiểu khác nhé!'); turn('kid');
     await kidRound(sk,MAKE[sk.game](sk,1,bonus,{})); await sleep(400); turn(null) }
   RUN.lastChoice=!!bonus||!(main&&EXTRA[sk.game]&&EXTRA[sk.game][main]); RUN.fmtOverride=null;
@@ -5495,7 +5591,7 @@ async function sticker(){
 async function highFive(){
   const c=card(); const h=el(`<button class="hi5" aria-label="Đập tay">${ART.hands()}</button>`); c.append(h); h.dataset.ok='1';
   await say('Give me a high five!','Đập tay với Chồi nào!');
-  await Promise.race([tapOnce([h],{nudge:false}).catch(()=>{}),new Promise(r=>setTimeout(r,6000*SPEED))]);
+  await tapOnce([h],{nudge:false,until:new Promise(r=>setTimeout(r,6000*SPEED))}).catch(()=>{});
   clapHit(); h.classList.add('beat'); confetti(); await say('Yay! You finished today’s adventure!','Hoan hô! Con đã xong chuyến phiêu lưu hôm nay!');
 }
 /** stopped early: no present; next time the level carries on from where the child stopped */
@@ -5871,7 +5967,7 @@ function renderDev(){
       if(i<LEVELS-1){ const c=card(); const nm=k=>k===0?'Khởi động':k<LESSONS.length?'Bài '+k:'Đảo Kho Báu';
         c.append(el(`<div class="tourcard fade"><div class="eyebrow">Hết ${nm(i)}</div><h2>Tiếp: ${nm(i+1)}</h2><button class="btn" id="tourNext">Màn tiếp theo ▶</button></div>`));
         setCaption('Bấm "Màn tiếp theo" để chơi tiếp.','Dành cho người thử nghiệm'); const btn=$('#tourNext'); btn.dataset.ok='1';
-        await Promise.race([tapOnce([btn],{nudge:false}),new Promise(r=>setTimeout(r,AUTO?1500:600000))]); S.dayOffset++; RUN.start=Date.now() }
+        await tapOnce([btn],{nudge:false,until:new Promise(r=>setTimeout(r,AUTO?1500:600000))}); S.dayOffset++; RUN.start=Date.now() }
     }
     const c=card(); c.append(el(`<div class="tourcard fade"><h2>Hết Chủ đề 1</h2></div>`)); await sleep(2500);
   });
@@ -5979,7 +6075,7 @@ async function popStream(sk,rounds,{intro,target,make,ask,label,answer,answer2=n
           if(finale&&popped===need-1) startFinale();
           else if(popped>=need){ abortFns.delete(ab); setTimeout(res,500*SPEED) } }
         else { wrong++; const inn=$('.in',b); inn.classList.remove('nope'); void inn.offsetWidth; inn.classList.add('nope'); boing(); if(wrong===1||wrong%3===0) say(`Oops, ${label(b.dataset.v)}.`,`Ơ, ${label(b.dataset.v,true)}.`,{gap:0,q:false}).catch(()=>{}) } });
-      const nudge=idleNudge([field],()=>popped===0); abortFns.add(nudge); const hh=hintHand(()=>live.find(x=>x.dataset.ok&&!x.dataset.used&&x.getBoundingClientRect().top>field.getBoundingClientRect().top+30)); abortFns.add(hh); field.addEventListener('pointerdown',hh,{once:true});
+      const nudge=()=>{}; const hh=hintHand(()=>live.find(x=>x.dataset.ok&&!x.dataset.used&&x.getBoundingClientRect().top>field.getBoundingClientRect().top+30),{think:!opt.countAll,area:()=>[field]}); abortFns.add(hh);   // 29/10: choosing a face: the hand shows the field, not a bubble
       if(AUTO) (async()=>{ for(let i=0;i<need;i++){ await new Promise(r=>setTimeout(r,kidTapDelay())); const b=live.find(x=>x.dataset.ok&&!x.dataset.used&&(!x.classList.contains('special')||x.dataset.ready)); if(b) b.click(); else i-- } })() });
     stop(); abortFns.delete(stop); const ok=wrong===0; rec(sk,ok,performance.now()-t0,FEELS.includes(t)?'feel:'+t:null);
     confetti(); live.forEach(b=>{ if(!b.dataset.used){ b.dataset.used='1'; b.classList.add('away') } });
@@ -6378,7 +6474,7 @@ async function peekGame(sk,list,{intro,skipFirst=false,noDemo=false,bg=null}={})
       field.addEventListener('click',e=>{ const p=e.target.closest('.peeker'); if(!p||!p.classList.contains('up')||p.dataset.used) return;
         if(p.dataset.ok){ hit(p); got++; say(cap(W[got])+'!',cap(VI_N[got])+'!',{gap:0,q:false}).catch(()=>{}); if(got>=need){ clearTimeout(tEnd); abortFns.delete(ab); setTimeout(res,600) } }
         else { wrong++; p.classList.remove('nope'); void p.offsetWidth; p.classList.add('nope'); boing(); if(wrong===1||wrong%3===0) say(`Oops, that friend looks ${p.dataset.f}.`,`Ơ, bạn đó đang ${VI_FEEL[p.dataset.f]}.`,{gap:0,q:false}).catch(()=>{}) } });
-      const nudge=idleNudge([field],()=>got===0); abortFns.add(nudge); const hh=hintHand(()=>holes.map(h=>$('.peeker',h)).find(x=>x.classList.contains('up')&&x.dataset.ok&&!x.dataset.used)); abortFns.add(hh); field.addEventListener('pointerdown',hh,{once:true});
+      const nudge=()=>{}; const hh=hintHand(()=>null,{think:true,area:()=>holes}); abortFns.add(hh);   // 29/10: choosing a face: the hand shows the holes, never the right friend
       if(AUTO) (async()=>{ while(got<need){ await new Promise(r=>setTimeout(r,kidTapDelay())); const p=holes.map(h=>$('.peeker',h)).find(x=>x.classList.contains('up')&&x.dataset.ok&&!x.dataset.used); if(p) p.click() } })() });
     stop(); abortFns.delete(stop); rec(sk,wrong===0,performance.now()-t0,'feel:'+R.f); confetti();
     const P=[`You found all the ${R.f} friends!`,`Con tìm ra hết các bạn đang ${VI_FEEL[R.f]}!`];
@@ -6727,10 +6823,10 @@ const TEAM_RIDERS=[['Lam',()=>kidHead('Lam')],['Na',()=>kidHead('Na')],['Ben',()
 /** wait for exactly n taps on one thing (claps): the child can't finish with fewer; a gentle reminder if they stop */
 function tapN(target,n,onTap){
   return new Promise((res,rej)=>{ let c=0,done=false,t=null;
-    const stopN=idleNudge([target],()=>!done&&c===0,{point:true}); const stopH=hintHand(()=>target,{kind:'tap3',always:true});
+    const stopN=()=>{}; const stopH=hintHand(()=>target,{kind:'tap3'});
     const ab=()=>{ done=true; clearTimeout(t); stopN(); stopH(); target.onclick=null; rej(ABORT) }; abortFns.add(ab);
     const remind=()=>{ clearTimeout(t); t=setTimeout(()=>{ if(!done&&c<n&&!isBrief()) say('Keep clapping!','Vỗ tay tiếp nào!',{gap:0,q:false}).catch(()=>{}) },3500) };   // 23/10 (vòng 5): a brief page: the hand only
-    target.onclick=()=>{ if(done) return; c++; stopH(); onTap(c); if(c>=n){ done=true; clearTimeout(t); stopN(); abortFns.delete(ab); target.onclick=null; setTimeout(res,450*SPEED) } else remind() };
+    target.onclick=()=>{ if(done) return; c++; onTap(c); if(c>=n){ done=true; clearTimeout(t); stopN(); stopH(); abortFns.delete(ab); target.onclick=null; setTimeout(res,450*SPEED) } else remind() };
     if(AUTO) (async()=>{ for(let i=0;i<n;i++){ await new Promise(r=>setTimeout(r,kidTapDelay())); if(!done&&target.onclick) target.onclick() } })();
   });
 }
@@ -6988,10 +7084,10 @@ function isoTap(W,o){
     if(D.act==='spray'){ tone(260,.5,'sawtooth',.06,0,520); W.anim(o,'ijump',650); for(let k=0;k<7;k++) setTimeout(()=>W.fx(x+30+k*7,y-o.h*.45-k*4,`<circle r="6" fill="#7FC9EE" stroke="${CK_PL}" stroke-width="2.5"/>`,'ifxdrop',900),k*70) }
     else if(D.act==='roar'){ noise(.5,.25,0,500); tone(120,.5,'sawtooth',.08,0,70); W.anim(o,'ishake',550) }
     else W.anim(o,{slide:'islide',spin:'ispin',stretch:'istretch',roll:'iroll',jump:'ijump',yawn:'iyawn'}[D.act]||'ijump',1000), SFX.pop();
-    say(`${cap(zAn(o.t))}!`,`${cap(D.vi)}!`,{gap:0,q:false}).catch(()=>{}); return }
+    say(`${cap(zAn(o.t))}!`,`${cap(D.vi)}!`,{gap:0,q:false,tapName:true}).catch(()=>{}); return }
   if(o.toy){ toyPlay(W,o); if(W.onToy) W.onToy(o); return }   // 23/10: a friend plays on it
   { const NM={tree:['A tree!','Cái cây!'],rock:['A rock!','Hòn đá!'],pond:['A pond!','Cái ao!'],bush:['A bush!','Bụi cây!']}, k=/^tree\d/.test(o.id)?'tree':NM[o.id]?o.id:null;
-    if(k){ W.anim(o,k==='pond'?'ijump':'ishake',550); W.bubble(o,NM[k][isVi()?1:0]); tone(900,.1,'square',.04,0,1300); say(...NM[k],{polly:true,gap:0,q:false}).catch(()=>{}); return } }   // 22/10: Polly says the name, no right or wrong
+    if(k){ W.anim(o,k==='pond'?'ijump':'ishake',550); W.bubble(o,NM[k][isVi()?1:0]); tone(900,.1,'square',.04,0,1300); say(...NM[k],{polly:true,gap:0,q:false,tapName:true}).catch(()=>{}); return } }   // 22/10: Polly says the name, no right or wrong
   // 26/10 (chat chính, theo chat Giọng): the friends speak for themselves, in their own voices (kid), "tớ" in Vietnamese
   if(o.id==='lam'){ W.anim(o,'ijump',650); W.bubble(o,isVi()?'Chim kìa!':'A bird!'); friendLine('Look! I can see a bird!','Nhìn kìa! Tớ thấy một chú chim!',{kid:'Lam'}); W.fx(x+60,y-150,`<path d="M-14 0 q7 -10 14 0 q7 -10 14 0" stroke="${CK_PL}" stroke-width="4" fill="none" stroke-linecap="round"/>`,'ifxu',1400); return }
   if(o.id==='na'){ W.anim(o,'ijump',650); W.bubble(o,isVi()?'Chào bạn!':'Hi!'); friendLine('Hi! I love the animals!','Chào bạn! Tớ yêu các bạn thú lắm!',{kid:'Na'}); return }
@@ -7193,7 +7289,7 @@ async function keyOpensCity(){
     const toys=['pslide','pswing','pseesaw'].map(k=>W.spr[k]).filter(Boolean);
     if(toys.length){ toys.forEach(o=>o.el.querySelector('.bob').classList.add('zoomme'));
       await say('Tap the slide, the swing or the seesaw!','Con chạm vào cầu trượt, xích đu hoặc bập bênh nhé!',{q:true});
-      const hh=hintHand(()=>toys[0].el.querySelector('svg'),{always:true});
+      const hh=hintHand(()=>toys[0].el.querySelector('svg'));
       const o=await new Promise((res,rej)=>{ const ab=()=>rej(ABORT); abortFns.add(ab); W.busy=false; W.allowTap=true; W.onToy=t=>{ W.onToy=null; abortFns.delete(ab); res(t) };
         if(AUTO) setTimeout(()=>{ if(W.onToy){ const t=toys[0]; toyPlay(W,t); W.onToy(t) } },HASH==='auto'?10:1200*SPEED) });
       hh(); toys.forEach(t=>t.el.querySelector('.bob').classList.remove('zoomme')); W.busy=true; W.allowTap=false;
@@ -7363,7 +7459,7 @@ async function pieceToChoi(pc,{hold=0}={}){ if(!pc||!pc.isConnected) return;
 function rafLoop(fn){ let on=true, t0=performance.now(); const step=t=>{ if(!on) return; if(PAUSED){ t0=t; requestAnimationFrame(step); return } const dt=Math.min(.05,(t-t0)/1000)/Math.max(.05,SPEED); t0=t; fn(dt); requestAnimationFrame(step) }; requestAnimationFrame(step); const stop=()=>{ on=false }; abortFns.add(stop); return ()=>{ on=false; abortFns.delete(stop) } }
 /** wait for a condition set by the game: returns {done, promise} */
 function gate(){ let res,rej; const p=new Promise((a,b)=>{ res=a; rej=b }); const ab=()=>rej(ABORT); abortFns.add(ab); return {p,done:v=>{ abortFns.delete(ab); res(v) }} }
-const sayQ=(en,vi)=>say(en,vi,{gap:0,q:false}).catch(()=>{});
+const sayQ=(en,vi)=>say(en,vi,{gap:0,q:false,react:true}).catch(()=>{});
 /** Fun Mix (20/10): just play. A line of the story (not the question) is said only in the level */
 const inMix=()=>!!(RUN&&RUN.mix);
 async function tell(en,vi,opt){ if(inMix()) return; return say(en,vi,opt) }
@@ -7788,7 +7884,7 @@ const SPLAT_SVG=()=>`<svg viewBox="0 0 100 40" aria-hidden="true"><path d="M6 34
  *  and it flies into the friend's hand and stays there; tap anywhere else and it goes back to the tray. Resolves with the snack given */
 function holdAndGive(box,btns,target,{name='Lam',names=[]}={}){ return new Promise(res=>{
   let over=false;
-  const hh=hintHand(()=>HELD&&btns.includes(HELD.item)?target:btns[1]); abortFns.add(hh);
+  const hh=hintHand(()=>HELD&&btns.includes(HELD.item)?target:btns[1],{kind:'place',to:()=>target}); abortFns.add(hh);
   const finish=()=>{ over=true; hh(); delete target.dataset.live; box.classList.remove('zhold') };
   abortFns.add(()=>{ if(over) return; finish(); if(HELD&&btns.includes(HELD.item)){ const H=HELD; HELD=null; if(H.g) H.g.remove(); H.item.classList.remove('held') } });
   box.addEventListener('click',async e=>{ if(over) return;
@@ -7814,7 +7910,7 @@ async function shareFood(name){
   const tray=el(`<div class="snacks"></div>`); const btns=foods.map(([a])=>{ const b=el(`<button class="snack stk">${ART[a]()}</button>`); tray.append(b); return b }); box.append(tray);
   await say(`${name} dropped the ice cream and feels sad. Let’s share a snack with ${name}!`,`${name} làm rơi kem nên thấy buồn. Mình chia đồ ăn cho ${name} nhé!`);
   const ask=()=>say(`Tap a snack. Then tap ${name} to give it!`,`Con chạm vào một món ăn. Rồi chạm vào ${name} để đưa bạn ấy nhé!`,{q:true});
-  turn('kid'); const pr=holdAndGive(box,btns,k,{name,names:foods.map(([,en,vi])=>[cap(en)+'!',cap(vi)+'!'])}); pr.then(()=>{ voiceStop(); try{ speechSynthesis.cancel() }catch(e){} });   // given while Chồi still talks: stop talking
+  turn('kid'); const pr=holdAndGive(box,btns,k,{name,names:foods.map(([,en,vi])=>[cap(en)+'!',cap(vi)+'!'])}); pr.then(()=>{});   // 29/10: given while Chồi still talks: Chồi finishes (a tap never cuts Chồi)
   await ask(); RUN.qfn=ask; const i=await pr; turn(null);
   SFX.pop(); setKidFace(k,name,'happy'); gladOf(k); confetti();
   for(let j=0;j<3;j++) setTimeout(()=>{ const r=k.getBoundingClientRect(), q=box.getBoundingClientRect(); const h=el(`<i class="fs-heart" style="left:${(r.left-q.left)+r.width*(.2+j*.3)}px;top:${r.top-q.top}px">${ART.heart('#FF5C8A')}</i>`); box.append(h); setTimeout(()=>h.remove(),1400) },j*180);
@@ -7915,9 +8011,9 @@ async function posIntro({mix=false}={}){
     for(;;){ const btns=[...pic.querySelectorAll('.pi-hot')]; btns.forEach(b=>b.dataset.ok=b.dataset.p===p?'1':'0'); const i=await tapOnce(btns); const q=btns[i].dataset.p;
       await put(q); if(q===p) break; first=false; await say(`That’s ${NAME[q][0]}. Let’s put the kitten ${NAME[p][0]}!`,`Đó là ${NAME[q][1]}. Mình đặt mèo ${NAME[p][1]} nhé!`) }
     rec(sk,first,performance.now()-t0,'pos:'+p); turn(null); RUN.qfn=null; SFX.chime(); const P=[`You put the kitten ${NAME[p][0]}!`,`Con đặt mèo ${NAME[p][1]} rồi!`]; await praise(first?P:again(P,'try')); return }
-  if(RUN.mode!=='review'){ await watchMe(); await say('I put the kitten on the table.','Chồi đặt mèo lên trên cái bàn.',{gap:150}); await Hand.moveTo(center(hot('on')),600); await Hand.tap(); Hand.hide(); await put('on');
-    await say('The kitten is on the table.','Mèo ở trên cái bàn.'); await pollyEcho('On the table! On the table!','Trên cái bàn! Trên cái bàn!');
-    await yourTurn() } else turn('kid');
+  if(RUN.mode!=='review'&&teachWords('posintro')){ turn('choi'); await say('I put the kitten on the table.','Chồi đặt mèo lên trên cái bàn.',{gap:150}); await put('on');   // 29/10: the idea "on", said while the kitten jumps up; no hand
+    await say('The kitten is on the table.','Mèo ở trên cái bàn.'); await pollyEcho('On the table! On the table!','Trên cái bàn! Trên cái bàn!') }
+  turn('kid');
   for(const p of ['under','in']){
     const ask=()=>say(`Now put the kitten ${NAME[p][0]}. Tap ${NAME[p][0]}!`,`Giờ con đặt mèo ${NAME[p][1]} nhé. Con chạm vào ${NAME[p][1]}!`,{q:true});
     await ask(); RUN.qfn=ask;
@@ -8095,7 +8191,7 @@ async function streetIntro0(){
   const box=sbox('street0',PLACE['cong-vao-truong'],{go:true});
   let taps=0, talking=false; const seen=new Set();
   const tap=async c=>{ const e=c.e; e.classList.remove('honk'); void e.offsetWidth; e.classList.add('honk'); honk(c.kind); taps++; seen.add(c.kind);
-    if(talking) return; talking=true; try{ await say(...XE_NAME[c.kind],{gap:0,q:false}) }catch(err){} talking=false };
+    if(talking) return; talking=true; try{ await say(...XE_NAME[c.kind],{gap:0,q:false,tapName:true}) }catch(err){} talking=false };   // 29/10: never over Chồi
   // 22/10 (D1): a third of the vehicles are ordinary ones (cars, a motorbike, a mum with her child, a bicycle); a tap on them: "A car!", "A motorbike!", "A bike!"
   const T=traffic(box,[{dir:-1,b:8.6,k:1.05,z:2,start:96,gap:46,cars:['xe-om-vang','o-to-gia-dinh-bac','taxi-xanh-ngoc-suv','xe-buyt-xanh-duong','xe-dap','xe-om-xanh-thung']},
                        {dir:1,b:.6,k:1.25,z:4,start:30,gap:44,cars:['xe-om-xanh','o-to-nho-cam','taxi-xanh-ngoc','xe-may-me-cho-be','xe-om-vang-cho-khach','xe-buyt-dien-xanh-la']}],{speed:6,tap});   // 23/10 (vòng 5, Minh): slower (was 11)
@@ -8107,7 +8203,7 @@ async function streetIntro0(){
   await say('This is my school!','Đây là trường của Chồi!',{q:false,one:true}); await say('Tap a motorbike, a taxi or a bus!','Con chạm vào xe máy, xe taxi hay xe buýt nhé!',{q:true});   // 23/10 tối: the command, always
   RUN.qfn=()=>say('Tap a motorbike, a taxi or a bus!','Con chạm vào xe máy, xe taxi hay xe buýt nhé!',{replay:true});
   turn('kid'); const t0=performance.now();
-  const hh=hintHand(()=>{ const r=box.getBoundingClientRect(); return T.V.filter(c=>c.lane===1&&c.x>15&&c.x<85).map(c=>c.e)[0]||T.V.find(c=>c.x>15&&c.x<85)?.e }); abortFns.add(hh); box.addEventListener('pointerdown',hh,{once:true});
+  const hh=hintHand(()=>{ const r=box.getBoundingClientRect(); return T.V.filter(c=>c.lane===1&&c.x>15&&c.x<85).map(c=>c.e)[0]||T.V.find(c=>c.x>15&&c.x<85)?.e }); abortFns.add(hh);   // 29/10: a touch starts its clock again (it no longer stops)
   if(AUTO) (async()=>{ for(let k=0;k<3;k++){ await new Promise(r=>setTimeout(r,kidTapDelay()+600)); const c=T.V.find(q=>!q.parked&&q.x>20&&q.x<80); if(c) tap(c) } })();
   while(taps<3&&performance.now()-t0<12000*Math.max(.05,SPEED)) await sleep(250);
   hh(); calm(); turn(null); while(talking) await sleep(100);
@@ -8152,8 +8248,8 @@ async function busBoard0(){ const sk=SK['L2.M.NUM.02'];
   kids.forEach(b=>{ b.classList.add('zoomme'); b.style.setProperty('--zs','1.06') });
   // the child puts the rest on; every tap on a friend counts on from where the bus is
   await new Promise((res,rej)=>{ const left=()=>kids.filter(b=>!b.dataset.used); const ab=()=>{ stopH(); rej(ABORT) }; abortFns.add(ab);
-    const stopH=hintHand(()=>left()[0],{always:true});
-    let hops=0; kids.forEach(b=>b.onclick=async()=>{ if(b.dataset.used) return; stopH(); hops++; await board(filled+1,b); if(--hops===0&&!left().length){ abortFns.delete(ab); res() } });   // taps come as fast as the child likes
+    const stopH=hintHand(()=>left()[0]);
+    let hops=0; kids.forEach(b=>b.onclick=async()=>{ if(b.dataset.used) return; hops++; await board(filled+1,b); if(--hops===0&&!left().length){ stopH(); abortFns.delete(ab); res() } });   // taps come as fast as the child likes
     if(AUTO) (async()=>{ for(const b of left()){ await new Promise(r=>setTimeout(r,kidTapDelay()+400)); if(b.onclick) await b.onclick() } })() });
   turn(null); await sleep(400);
   // 22/10 tối (Minh): no "How many friends got on?" cards; the app counts each friend aloud as they get on (One. Two. Three.), then off we go
@@ -8163,7 +8259,7 @@ async function busBoard0(){ const sk=SK['L2.M.NUM.02'];
 const sideBusHTML=(tap=false)=>`${PROP['xe-dua-don-bac-tai-phai']||PROP['xe-dua-don-phai']}${['Choi','Lam','Na','Ben'].map((w,i)=>`<${tap?'button':'span'} class="winhead" data-who="${w}" style="left:${(BUS_WIN[i]/90*100).toFixed(2)}%"${tap?` aria-label="${w==='Choi'?'Chồi':w}"`:''}>${w==='Choi'?choiSVG():kidHead(w,'happy')}</${tap?'button':'span'}>`).join('')}`;
 /** Màn 0, after the child drew the road round the school: the bus is at the garden gate; everyone gets off, one to four */
 async function busArrive0(){ const sk=SK['L2.M.NUM.02'];
-  const b2=sbox('busroad',PLACE['duong-quanh-truong-tron'],{go:true});
+  const b2=sbox('busroad',PLACE['duong-quanh-truong-tron']);   // 29/10: the same road the child just drew; the bus is at the garden gate: it fades
   const bus=el(`<div class="sidebus" style="left:33%;bottom:12.9%;width:45%">${sideBusHTML(true)}</div>`); b2.append(bus);   // parked: left edge x 66, nose x 156 by the gate post
   const pol2=el(`<div class="tpolly hover stk" style="left:-40%;bottom:58%;width:7%">${pollySVG(false)}</div>`); b2.append(pol2);
   parrotFly(pol2,{left:'-40%',bottom:'58%'},{left:'88%',bottom:'50%'},2600);   // Polly flew along with the bus
@@ -8178,7 +8274,7 @@ async function busArrive0(){ const sk=SK['L2.M.NUM.02'];
   RUN.qfn=()=>say('Tap each friend to help them get off!','Con chạm vào từng bạn để giúp các bạn xuống xe nhé!',{replay:true});
   const t0=performance.now();
   await new Promise((res,rej)=>{ const left=()=>heads.filter(h=>!h.dataset.used); const stopH=hintHand(()=>left()[0]); const ab=()=>{ stopH(); rej(ABORT) }; abortFns.add(ab);
-    heads.forEach(h=>h.onclick=async()=>{ if(h.dataset.used) return; stopH(); off++; await getOff(off,h); if(off>=4){ abortFns.delete(ab); res() } });
+    heads.forEach(h=>h.onclick=async()=>{ if(h.dataset.used) return; off++; await getOff(off,h); if(off>=4){ stopH(); abortFns.delete(ab); res() } });
     if(AUTO) (async()=>{ for(const h of left()){ await new Promise(r=>setTimeout(r,kidTapDelay()+300)); if(h.onclick) await h.onclick() } })() });
   rec(sk,true,performance.now()-t0,'count:4'); turn(null); await sleep(1600);
   await praise(['You helped four friends get off! Let’s go into the garden.','Con giúp bốn bạn xuống xe rồi! Mình vào vườn thôi.']);
@@ -8194,7 +8290,7 @@ async function meetTeam(){ const pic=scenePic('school',[{who:'Lam',x:22,b:4,h:52
   const ask=['Here’s my team: Lam, Na and Ben! Tap each friend.','Đây là đội của Chồi: Lam, Na và Ben! Con chạm vào từng bạn nhé.'];
   await sleep(700); turn('choi'); await say(...ask,{one:true,q:true}); RUN.qfn=()=>say(...ask,{replay:true});
   kids.forEach(k=>{ k.style.pointerEvents='auto'; k.style.cursor='pointer'; k.classList.add('zoomme'); k.style.setProperty('--zs','1.06') }); turn('kid');
-  const left=()=>kids.filter(k=>!hi.has(k.dataset.who)); const stopH=hintHand(()=>left()[0],{always:true}); abortFns.add(stopH);
+  const left=()=>kids.filter(k=>!hi.has(k.dataset.who)); const stopH=hintHand(()=>left()[0]); abortFns.add(stopH);
   if(AUTO) (async()=>{ for(const k of kids){ await new Promise(r=>setTimeout(r,kidTapDelay()+300)); if(!hi.has(k.dataset.who)) k.dispatchEvent(new MouseEvent('click',{bubbles:true})) } })();
   const t0=performance.now(); while(left().length&&performance.now()-t0<30000*Math.max(.05,SPEED)) await sleep(200);
   stopH(); turn(null); kids.forEach(k=>k.classList.remove('zoomme')); await sleep(900); while(SAYN) await sleep(100);
@@ -8298,8 +8394,9 @@ const EP0_TRACE_DEMO={v:0,brief:['Let’s draw a road for the bus. Move your fin
     A:[46,92], B:[88,0],
     onProg:(T,q)=>{ T.el.bus.style.left=(q.x/T.Wd*100-23.5)+'%' },
     done:async T=>{ T.clean('line'); const bus=T.el.bus; tone(220,.6,'sawtooth',.03,0,330); bus.style.transition=`left ${1.8*SPEED}s ease-in`; bus.style.left='135%'; await say(...T.K.fx); await sleep(200) }}};
+/* 29/10: the first page (the road round the school) slides in: from the school gate, another place */
 const EP0_TRACE1=[
-  {v:0,en:'Now you draw the road to the garden.',vi:'Giờ con vẽ đường ra khu vườn nhé.',fx:['Vroom! The bus is at the garden!','Brừm! Xe buýt tới khu vườn rồi!'],
+  {v:0,go:true,en:'Now you draw the road to the garden.',vi:'Giờ con vẽ đường ra khu vườn nhé.',fx:['Vroom! The bus is at the garden!','Brừm! Xe buýt tới khu vườn rồi!'],
    scene:{bg:()=>PLACE['duong-quanh-truong-tron'],lane:'dots',col:'#8E99A4',w:ROAD_W,   // 22/10 (A): the asphalt road round the school (the bus never drives on the grass)
     build:T=>{ T.el.bus=sceneThing(sideBusHTML(),22.5,12.9,45,'tbus sidebus'); T.box.append(T.el.bus) },
     A:[46,84], B:[78,0],
@@ -8570,8 +8667,9 @@ async function parkArrive1(){
   await walk; kids.forEach(k=>setKidFace(k,k.dataset.who,'excited'));
   await say('It’s so windy today. Let’s fly our kites!','Hôm nay gió to quá. Mình đi thả diều nào!',{q:false});
   await nextPage(box); T.stop(); P.stop() }
+/* 29/10 (chat chính's example): the team has come to the park (the page before); now in the park, the same place: it fades */
 async function parkKites(){
-  const box=sbox('parkkites',BG.park(),{go:true}); const lam=kidAt('Lam','happy',24,5,12); box.append(lam); let held=null;
+  const box=sbox('parkkites',BG.park()); const lam=kidAt('Lam','happy',24,5,12); box.append(lam); let held=null;
   const kites=KITE_SPOTS.map(([x,b],i)=>{ const k=el(`<div class="pk-sky" style="left:${x}%;bottom:${b}%">${kiteArt(KITE_COLS[i])}</div>`); box.append(k); return k });
   const k0=el(`<button class="pkite hit" style="left:31%;bottom:20%;width:11%">${kiteArt(KITE_COLS[0])}</button>`); box.append(k0);
   const big=el(`<b class="pk-num" style="left:52%;bottom:5%"></b>`); box.append(big); held=k0;
@@ -8835,14 +8933,14 @@ async function campIntro(){
   const groups=G.map((n,i)=>{ const g=el(`<button class="ffly" style="left:${at[i][0]}%;bottom:${at[i][1]}%;animation-delay:${-i*370}ms" aria-label="Đom đóm">${DOTS[n-1].map(([x,y])=>`<i style="left:${x}%;top:${y}%"></i>`).join('')}<b class="fnum">${n}</b></button>`); g.dataset.n=n; box.append(g); return g });
   const light=g=>{ g.classList.remove('lit'); void g.offsetWidth; g.classList.add('lit'); SFX.chime() };
   await say('Fireflies! They fly in little groups.','Đom đóm kìa! Chúng bay thành từng nhóm nhỏ.');
-  if(wantDemo('glance')){ turn('choi'); await say('Watch me. I just look… and I know!','Xem Chồi nhé. Chồi chỉ nhìn một cái… là biết!');
-    await Hand.moveTo(center(groups[0]),600); await Hand.tap(); Hand.hide(); light(groups[0]); groups[0].dataset.seen='1';
+  if(teachWords('glance')){ turn('choi'); await say('Watch me. I just look… and I know!','Xem Chồi nhé. Chồi chỉ nhìn một cái… là biết!');
+    light(groups[0]); groups[0].dataset.seen='1';   // 29/10: Chồi looks (the group lights up), no hand
     await say('Two! I see two fireflies. I don’t need to count!','Hai! Chồi thấy hai con đom đóm. Không cần đếm!'); Hand.hide(); await sleep(500) }
   await say('Now you! Tap a group, and look quickly. How many fireflies?','Giờ đến con! Con chạm vào một nhóm rồi nhìn thật nhanh. Có mấy con đom đóm?',{q:true});
   turn('kid'); box._tapSay=FF_SAY; box._tapFx=k=>{ if(k.dataset.who!=='Ben') return; const f=el(`<i class="fnose"></i>`); k.append(f); setTimeout(()=>f.remove(),2600) };
   // three groups, then the arrow. Every group can be tapped again and again: its number is said each time
   const g3=gate(); let n3=0, first=true, stopH=()=>{};
-  const arm=()=>{ stopH(); stopH=hintHand(()=>groups.find(g=>!g.dataset.seen),{always:true}) }; arm();
+  const arm=()=>{ stopH(); stopH=hintHand(()=>groups.find(g=>!g.dataset.seen)) }; arm();
   groups.forEach(g=>g.addEventListener('click',()=>{ light(g); const n=+g.dataset.n, fresh=!g.dataset.seen; g.dataset.seen='1';
     if(fresh&&n3<3){ n3++; stopH(); if(n3<3) arm(); else g3.done();
       if(first){ first=false; say(`${cap(W[n])}! You knew it with one look!`,`${cap(VI_N[n])}! Con nhìn một cái là biết!`,{gap:0,q:false}).catch(()=>{}) } else say(cap(W[n])+'!',cap(VI_N[n])+'!',{gap:0,q:false}).catch(()=>{}) }
@@ -8891,7 +8989,7 @@ async function lanternMusic({rounds=2}={}){ const sk=SK['L2.W.FEEL.02'];
     const listen=async()=>{ await say('Listen to this lantern…','Nghe đèn lồng này nhé…',{gap:150,q:false}); await play(0); await say('…and this one.','…và đèn này.',{gap:150,q:false}); await play(1) };
     const ask=()=>say('Which lantern’s music sounds excited? Tap that lantern!','Nhạc của đèn lồng nào nghe háo hức? Con chạm vào đèn đó nhé!');
     turn('kid'); await listen();
-    const hh=hintHand(()=>pair[k]); abortFns.add(hh);
+    const hh=hintHand(()=>null,{think:true,area:()=>pair}); abortFns.add(hh);   // 29/10: which music: the hand shows the two lanterns
     const firstX=await stepPick(sk,pair,k,{ask,concept:'feel:excited',retry:null,labels:feels.map(f=>[`that music sounds ${f}`,`nhạc đó nghe ${VI_FEEL[f]}`]),
       onWrong:async i=>{ hh(); await play(i,3.5) },   // hear that one again (and see how the friends feel), then what it sounds like
       onRight:async()=>{ hh(); pair[k].classList.add('lit','bright'); if(mirror) face('excited') }});
@@ -8984,7 +9082,7 @@ async function ladybugDots(sk,rounds=2){ const mixed=inMix(); let prev=null;
     const ask=()=>gone?say('How many spots did the ladybug have? Find the card with the same number of dots!','Bạn bọ rùa có mấy chấm? Con tìm thẻ có số chấm giống vậy nhé!'):say('How many spots does the ladybug have? Find the card with the same number of dots!','Bạn bọ rùa có mấy chấm? Con tìm thẻ có số chấm giống vậy nhé!');
     Q.opts.forEach((o,i)=>{ if(i===Q.n-1) o.dataset.ok='1' }); if(RUN) RUN.concept='flash:'+Q.n;
     await ask(); RUN.qfn=ask; const t0=performance.now(); let first=true, back=0;
-    for(;;){ const stopH=gone?()=>{}:hintHand(()=>Q.opts[Q.n-1]); let i; try{ i=await waitPick(Q.opts,gone?4500:0) } finally { stopH() }
+    for(;;){ const stopH=gone?()=>{}:hintHand(()=>null,{think:true,area:()=>Q.opts}); let i; try{ i=await waitPick(Q.opts,gone?4500:0) } finally { stopH() }
       if(i===Q.n-1){ Q.opts[i].classList.add('right'); SFX.chime(); burst(center(Q.opts[i])); if(first) rec(sk,true,performance.now()-t0);
         if(gone) await Q.land();   // it comes back to show its spots
         await kept(first,{later:true,line:[`You saw ${W[Q.n]} ${Q.n>1?'spots':'spot'}, quick as a wink!`,`Con nhìn ra ${VI_N[Q.n]} chấm thật nhanh!`],line2:[`You looked again, and saw ${W[Q.n]} ${Q.n>1?'spots':'spot'}!`,`Con nhìn lại và thấy ${VI_N[Q.n]} chấm!`]});
@@ -9088,8 +9186,8 @@ async function bearsIntro(){ const sk=SK['L2.M.SORT.02'];
   const tag=(b,t)=>{ const g=$('.btag',b); g.textContent=t; b.classList.remove('hey'); void b.offsetWidth; b.classList.add('hey') };
   await say('The map shows a house. It’s Na’s house! Na shows us her room.','Bản đồ vẽ một ngôi nhà. Đó là nhà của Na! Na cho mình xem phòng của bạn ấy.'); mapA.classList.add('away');
   await say('Na has two teddy bears.','Na có hai chú gấu bông.');
-  if(wantDemo('bigsmall')){ turn('choi'); await Hand.moveTo(center(big),550); await Hand.tap(); tag(big,'big'); await say('This bear is big.','Chú gấu này to.');
-    await Hand.moveTo(center(small),550); await Hand.tap(); tag(small,'small'); await say('This bear is small.','Chú gấu này nhỏ.'); Hand.hide(); await pollyEcho('Big! Small!','To! Nhỏ!') }
+  if(teachWords('bigsmall')){ turn('choi'); big.classList.add('beat'); tag(big,'big'); await say('This bear is big.','Chú gấu này to.'); big.classList.remove('beat');   // 29/10: the words, no hand
+    small.classList.add('beat'); tag(small,'small'); await say('This bear is small.','Chú gấu này nhỏ.'); small.classList.remove('beat'); await pollyEcho('Big! Small!','To! Nhỏ!') }
   turn('kid');
   await stepPick(sk,[big,small],1,{concept:'size:small',ask:()=>say('Tap the small bear!','Con chạm vào chú gấu nhỏ nhé!'),labels:[['that bear is big','chú gấu đó to'],['that bear is small','chú gấu đó nhỏ']],onRight:async()=>tag(small,'small'),
     praise:[['You found the small bear!','Con tìm ra chú gấu nhỏ rồi!'],['You looked again, and found the small bear!','Con nhìn lại và tìm ra chú gấu nhỏ!']]});
@@ -9118,7 +9216,7 @@ async function crayonSort(){ const sk=SK['L2.M.SORT.01'];
   if(RUN.mode==='teach'&&wantDemo('crayons')){ await watchMe(); const t=cr.find(x=>x.dataset.c===A[0]); await Hand.moveTo(center(t),500); await say(`This crayon is ${A[0]}.`,`Bút này màu ${A[1]}.`,{gap:100});
     await HP.demo(t,cups[0]); Hand.hide(); await say(`It goes in the ${A[0]} cup!`,`Nó vào cốc ${A[1]}!`); await yourTurn() }
   turn('kid'); await say('Now you! Put each crayon in the cup of the same colour.','Đến con! Con cho từng cây bút vào cốc cùng màu nhé.',{q:true});
-  const hh=hintHand(()=>cr.find(x=>!x.dataset.used)); abortFns.add(hh); box.addEventListener('pointerdown',hh,{once:true});
+  const hh=hintHand(()=>cr.find(x=>!x.dataset.used),{kind:'place',zones:()=>cups}); abortFns.add(hh);
   if(AUTO) (async()=>{ for(const t of cr){ if(t.dataset.used) continue; await new Promise(r=>setTimeout(r,kidTapDelay())); t.click(); await new Promise(r=>setTimeout(r,200)); want(t).click(); await new Promise(r=>setTimeout(r,700)) } })();
   await g.p; hh(); turn(null); rec(sk,wrong<=1,performance.now()-t0,'colour:all'); confetti(); setKidFace(na,'Na','happy');
   { const P=['You put each crayon in the cup of its colour!','Con cho từng bút màu vào cốc cùng màu!']; await praise(wrong===0?P:again(P)) }
@@ -9297,12 +9395,10 @@ async function shopArrive(){ const sk=SK['L2.M.SORT.03'];
   await say('Oh! The map piece jumped out too. It’s somewhere in the shop now. We’ll find it later!','Ơ! Mảnh bản đồ cũng nhảy ra. Giờ nó ở đâu đó trong cửa hàng. Lát nữa mình tìm nhé!');
   setKidFace(ben,'Ben','happy'); setKidFace(lam,'Lam','happy');
   await say('Look at the things from the box. What is the same?','Nhìn những thứ trong hộp nào. Chúng giống nhau ở đâu?');
-  if(RUN.mode==='teach'&&wantDemo('allred')){ await watchMe();
-    for(let i=0;i<things.length;i++){ await Hand.moveTo(center(things[i]),420); await Hand.tap(); things[i].classList.remove('beat'); void things[i].offsetWidth; things[i].classList.add('beat'); await say(cap(RED_NAMES[pick4[i]][0])+'.',cap(RED_NAMES[pick4[i]][1])+'.',{gap:150}) }
-    Hand.hide() }
+  if(RUN.mode==='teach'&&teachWords('allred')){ turn('choi');   // 29/10: Chồi names them, each one bounces; no hand
+    for(let i=0;i<things.length;i++){ things[i].classList.remove('beat'); void things[i].offsetWidth; things[i].classList.add('beat'); await say(cap(RED_NAMES[pick4[i]][0])+'.',cap(RED_NAMES[pick4[i]][1])+'.',{gap:150}) } }
   things.forEach((t,i)=>setTimeout(()=>{ t.classList.remove('beat'); void t.offsetWidth; t.classList.add('beat') },i*150));
   await say('They are all red!','Tất cả đều màu đỏ!'); await pollyEcho('All red! All red!','Màu đỏ! Màu đỏ!');
-  if(RUN.mode==='teach') await yourTurn();
   turn('kid'); await sayLikeFriend(box,{who:null,ask:['Now you say it! They are all red.','Giờ con nói nhé! Tất cả đều màu đỏ.'],model:'They are all red.',vi:'Tất cả đều màu đỏ.',kws:['red','all'],kwsVi:['đỏ','do'],skill:'L2.M.SORT.03',spot:{x:50,b:58}}); turn(null);
   rec(sk,true,1000,'rule:red'); confetti(); things.forEach((t,i)=>setTimeout(()=>{ placeAt(t,box,23.5+i*3,16.5+(i%2)*1.5,{z:2,ms:560}) },i*170));   // into the cart, the same size
   await say('Into the cart! All the red things together.','Cho vào xe đẩy nào! Mọi thứ màu đỏ ở cùng nhau.'); await nextPage(box) }
@@ -9352,7 +9448,7 @@ async function colourFruit({say2=true}={}){ const sk=SK['L2.M.SORT.01'];
   holdPlace(box,fr,()=>bks,{put,want});
   await tell('Na has two baskets: a red one and a yellow one.','Na có hai cái giỏ: một giỏ đỏ và một giỏ vàng.');
   turn('kid'); await say('Put the red fruit in the red basket, and the yellow fruit in the yellow basket!','Con cho quả màu đỏ vào giỏ đỏ, quả màu vàng vào giỏ vàng nhé!',{q:true});
-  const hh=hintHand(()=>fr.find(x=>!x.dataset.used)); abortFns.add(hh); box.addEventListener('pointerdown',hh,{once:true});
+  const hh=hintHand(()=>fr.find(x=>!x.dataset.used),{kind:'place',zones:()=>bks}); abortFns.add(hh);
   if(AUTO) (async()=>{ for(const t of fr){ if(t.dataset.used) continue; await new Promise(r=>setTimeout(r,kidTapDelay())); t.click(); await new Promise(r=>setTimeout(r,200)); want(t).click(); await new Promise(r=>setTimeout(r,700)) } })();
   await g.p; hh(); turn(null); rec(sk,wrong<=1,performance.now()-t0,'colour:all'); confetti(); setKidFace(na,'Na','happy');
   { const P=['You put each fruit in the basket of its colour!','Con cho từng quả vào giỏ cùng màu!']; await praise(wrong===0?P:again(P)) }
@@ -9548,7 +9644,7 @@ async function doorFrame(){ const sk=SK['L2.M.SHAPE.02'];
   if(wantDemo('doorframe')){ await watchMe(); const t=planks.find(x=>x.dataset.len==='long'); await say('This plank is long.','Tấm gỗ này dài.',{gap:100});
     await HP.demo(t,zones[0]); Hand.hide(); await say('It goes on a long side!','Nó lắp vào cạnh dài!'); await yourTurn() } else turn('kid');
   await say(left===4?'Put the planks on the door frame. Long planks on the long sides, short planks on the short sides!':'Put on the other planks. Long planks on the long sides, short planks on the short sides!',left===4?'Con lắp các tấm gỗ vào khung cửa nhé. Tấm dài vào cạnh dài, tấm ngắn vào cạnh ngắn!':'Con lắp các tấm gỗ còn lại nhé. Tấm dài vào cạnh dài, tấm ngắn vào cạnh ngắn!',{q:true});
-  const hh=hintHand(()=>planks.find(x=>!x.dataset.used)); abortFns.add(hh); box.addEventListener('pointerdown',hh,{once:true});
+  const hh=hintHand(()=>planks.find(x=>!x.dataset.used),{kind:'place',zones:()=>zones.filter(z=>!filled.has(z))}); abortFns.add(hh);
   if(AUTO) (async()=>{ for(const t of planks){ if(t.dataset.used) continue; await new Promise(r=>setTimeout(r,kidTapDelay())); t.click(); await new Promise(r=>setTimeout(r,200)); const z=want(t); if(z) z.click(); await new Promise(r=>setTimeout(r,800)) } })();
   await g.p; hh(); turn(null); rec(sk,wrong<=1,performance.now()-t0,'shape:rectangle');
   // the door goes in
@@ -9720,7 +9816,7 @@ async function garageBuild(){ const sk=SK['L2.M.SHAPE.02'];
   holdPlace(box,pieces,()=>slots.filter(z=>!z.classList.contains('done')),{put,want,onLift:t=>sayQ(`A ${t._P.name[0]}.`,`${cap(t._P.name[1])}.`)});
   await tell('The walls are done! Now the garage needs a door, two windows and a roof.','Tường xong rồi! Giờ nhà để xe cần cửa, hai cửa sổ và mái.');
   turn('kid'); await say('Put each shape in its place: the rectangle, the square, the circle and the triangle!','Con đặt từng hình vào đúng chỗ nhé: hình chữ nhật, hình vuông, hình tròn và hình tam giác!',{q:true});
-  const hh=hintHand(()=>pieces.find(x=>!x.dataset.used)); abortFns.add(hh); box.addEventListener('pointerdown',hh,{once:true});
+  const hh=hintHand(()=>pieces.find(x=>!x.dataset.used),{kind:'place',zones:()=>slots.filter(z=>!z.classList.contains('done'))}); abortFns.add(hh);
   if(AUTO) (async()=>{ for(const t of pieces){ if(t.dataset.used) continue; await new Promise(r=>setTimeout(r,kidTapDelay())); t.click(); await new Promise(r=>setTimeout(r,200)); want(t).click(); await new Promise(r=>setTimeout(r,800)) } })();
   await g.p; hh(); turn(null); rec(sk,wrong<=1,performance.now()-t0,'shape:rectangle'); confetti();
   { const P=['You put each shape in its place, and built the garage!','Con đặt từng hình vào đúng chỗ, và xây xong nhà để xe!']; await praise(wrong===0?P:again(P)) } await nextPage(box) }
@@ -10150,7 +10246,7 @@ const sunInWindow=svg=>{ let i=svg.indexOf('<rect x="84" y="22" width="52" heigh
   if(i<0){ i=svg.indexOf('<rect x="84" y="14" width="52" height="36" fill="#BFE6FA"'); at=[128,22] }   // the stage room (phong-na-tron): its window is higher up
   const j=i<0?-1:svg.indexOf('/>',i)+2; return j>1?svg.slice(0,j)+`<g class="w6sunin">${sunG(at[0],at[1],6)}</g>`+svg.slice(j):svg };
 async function dayAsk({wake=false}={}){ const sk=SK['L2.M.POS.02'], mixed=inMix();
-  const box=sbox(wake?'wake6':'sleep6',wake?sunInWindow(BG.home()):BG.sleep6());
+  const box=sbox(wake?'wake6':'sleep6',wake?sunInWindow(BG.home()):BG.sleep6(),{go:wake});   // 29/10: out of the dream (the road) back to Na's room: another place, it slides, as into the dream
   const bed=el(`<div class="sthing s6bed big" style="left:26%;bottom:8%;width:34%">${bed6SVG(wake?'sleep':'happy')}</div>`); box.append(bed);
   const bk=el(`<button class="b6onbed hit${wake||mixed?'':' held'}" aria-label="Sách">${BOOK6.rect(!mixed)}</button>`); box.append(bk);
   if(wake){ box.append(el(`<div class="w6beam"></div>`)) } else box.append(el(`<div class="n6stars">${STARS6(6,[[44,14,24,30]])}</div>`));
@@ -10593,8 +10689,9 @@ async function dock7(){ RUN.m7=plan7();
   await say('Off we go! Goodbye, river!','Xuất phát! Tạm biệt dòng sông!'); await go;   // 22/10: "the river", never a place name
   await nextPage(box) }
 
-/* ---- 2. at sea: Treasure Island is ahead. One game here (dolphins, rowing, or the sounds of the sea) ---- */
-async function seaPage7({mix=false,first=true,last=true}={}){ const box=sbox('sea7'+(first||mix?'':' mid'),BG.sea7(),{go:true}); const B=boat7(box,{x:mix?34:-30,b:0,w:50});
+/* ---- 2. at sea: Treasure Island is ahead. One game here (dolphins, rowing, or the sounds of the sea).
+   29/10: the first sea page slides in (from the river); the second is the same sea, a later moment: it fades ---- */
+async function seaPage7({mix=false,first=true,last=true}={}){ const box=sbox('sea7'+(first||mix?'':' mid'),BG.sea7(),{go:first}); const B=boat7(box,{x:mix?34:-30,b:0,w:50});
   if(!mix){ const go=B.go(34,2600,'ease-out');   // 23/10 (vòng 4): on both sea pages the boat sails in from the left
     if(first) await tell('We’re out at sea! Look, there’s Treasure Island!','Mình ra biển rồi! Nhìn kìa, Đảo Kho Báu kia rồi!');
     else await tell('We sail on. Treasure Island is getting closer!','Thuyền đi tiếp. Đảo Kho Báu gần hơn rồi!'); await go }
@@ -10834,7 +10931,7 @@ async function beachOn7(box){ let sign=box.querySelector('.b7sign.way');
   await sleep(500);   // 23/10 (vòng 4, Minh: fewer words in the review level): the sign waves, and the team walks on
   const ks=[...box.querySelectorAll('.skid')]; await Promise.all(ks.map((k,i)=>sleep(i*250).then(()=>walkPath(k,[[84,parseFloat(k.style.bottom)||3],[124,parseFloat(k.style.bottom)||3]],26)))) }
 /** the last station: the crab walks sideways to the big rock; the child draws its line, all the way to the X */
-const CRAB_X7={v:0,go:true,praise:['You helped the crab walk all the way to the X!','Con giúp bạn cua đi tới tận dấu X!'],praise2:['You tried again, and helped the crab walk to the X!','Con thử lại và giúp bạn cua đi tới dấu X!'],en:'Help the crab walk to the X! Draw a line across.',vi:'Giúp bạn cua đi tới dấu X nhé! Con vẽ một đường ngang.',
+const CRAB_X7={v:0,praise:['You helped the crab walk all the way to the X!','Con giúp bạn cua đi tới tận dấu X!'],praise2:['You tried again, and helped the crab walk to the X!','Con thử lại và giúp bạn cua đi tới dấu X!'],en:'Help the crab walk to the X! Draw a line across.',vi:'Giúp bạn cua đi tới dấu X nhé! Con vẽ một đường ngang.',
   fx:null,   // 23/10 (vòng 4): one line at the end, said by crabX7 (two lines in all)
   scene:{bg:()=>BG.beach7(),cls:'beach7 t7b',lane:'dots',col:'#C98A52',w:H=>Math.max(6,H*.02),
     build:T=>{ const b=T.box; const st=el(`<div class="sthing t7stone" style="left:80%;bottom:16.8%;width:30%">${KIT('da-to-dau-x')}</div>`); b.append(st); T.el.st=st;   // 23/10 tối (vòng 6, 9c93ba8): 64×40, the rock moved up behind, the X apart on the sand at (12, 33); the left edge at 65 % (.sthing is placed by its centre: 65 + 15)
@@ -10893,7 +10990,7 @@ async function caveDoor7(){ const box=sbox('cavedoor7',PLACE['cua-hang'],{go:tru
 /* ---- 4. the beach (two pages): two games here; then Polly finds the cave behind the rocks ---- */
 async function beachPage7({first=false,last=false,mix=false,cls=''}={}){   // 23/10: the arrival is its own page
   if(first&&!mix){ const rq=RUN&&RUN.remindQ; if(RUN) RUN.remindQ=null; await beachWho7(); if(RUN) RUN.remindQ=rq }   // vòng 4: the game's reminder ("Remember: in, on, under!") waits for the game's own question
-  const box=sbox('beach7 '+cls,BG.beach7(),{go:true});   // 23/10 (vòng 5): the team walked on along the beach (after the arrival, or after a station)
+  const box=sbox('beach7 '+cls,BG.beach7());   // 23/10 (vòng 5): the team walked on along the beach (after the arrival, or after a station). 29/10: the same beach: it fades
   // 22/10 tối (Minh): a journey along the beach: the wooden arrow stands at the right from the start; the friends start at the left, and each
   // page ends with them walking to the sign and on past it
   if(!mix) box.append(el(`<div class="sthing b7sign way stk" style="left:91%;bottom:3%;width:7%">${KIT('bang-go-mui-ten')}</div>`));
@@ -10962,7 +11059,7 @@ async function crab7(o={}){ const sk=SK['L2.M.POS.01'], mix=!!o.mix; const P=awa
   const H=holdPlace(box,[crab],()=>Object.values(Z),{put,want:()=>Z[want]});
   const ask=p=>say(...({in:['The crab wants to hide. Put the crab in the bucket!','Bạn cua muốn trốn. Con đặt cua vào trong cái xô nhé!'],on:['The crab wants to sit up high. Put the crab on the rock!','Bạn cua muốn ngồi trên cao. Con đặt cua lên trên tảng đá nhé!'],under:['The sun is hot! Put the crab under the umbrella!','Nắng nóng quá! Con đặt cua xuống dưới cái ô nhé!']})[p],{q:true});
   const turn1=async p=>{ want=p; wrong=0; g=gate(); delete crab.dataset.used; if(RUN) RUN.concept='pos:'+p; await ask(p); RUN.qfn=()=>ask(p);
-    const hh=hintHand(()=>HELD?Z[want]:crab); abortFns.add(hh);
+    const hh=hintHand(()=>crab,{kind:'place',zones:()=>Object.values(Z)}); abortFns.add(hh);
     if(AUTO) (async()=>{ await new Promise(r=>setTimeout(r,kidTapDelay())); crab.click(); await new Promise(r=>setTimeout(r,250)); const zz=window.__autoWrong&&Math.random()<window.__autoWrong?Z[pick(Object.keys(Z).filter(k=>k!==p))]:Z[p]; zz.click(); if(zz!==Z[p]){ await new Promise(r=>setTimeout(r,900)); crab.click(); await new Promise(r=>setTimeout(r,250)); Z[p].click() } })();
     const t0=performance.now(); turn('kid'); await g.p; hh(); turn(null); rec(sk,wrong===0,performance.now()-t0,'pos:'+p); crab.dataset.used='';
     await kept(wrong===0,{later:true,line:[`You put the crab ${WD[p][0]}!`,`Con đặt cua ${WD[p][1]} rồi!`],line2:[`You tried again, and put the crab ${WD[p][0]}!`,`Con thử lại và đặt cua ${WD[p][1]} rồi!`]}); if(!mix) await pollyEcho(...EC[p]); await reteachPending() };
@@ -10989,7 +11086,7 @@ async function shells7(o={}){ const sk=SK['L2.M.SORT.01'], mix=!!o.mix; const P=
   await tell('Na finds pretty shells on the sand. She has a pink bucket and a yellow bucket.','Na nhặt được mấy vỏ sò thật đẹp trên cát. Bạn ấy có một cái xô hồng và một cái xô vàng.');
   if(RUN) RUN.concept='colour:all';
   turn('kid'); await say('Put the pink shells in the pink bucket, and the yellow shells in the yellow bucket!','Con cho vỏ sò màu hồng vào xô hồng, vỏ sò màu vàng vào xô vàng nhé!',{q:true});
-  const hh=hintHand(()=>sh.find(x=>!x.dataset.used)); abortFns.add(hh);
+  const hh=hintHand(()=>sh.find(x=>!x.dataset.used),{kind:'place',zones:()=>bks}); abortFns.add(hh);
   if(AUTO) (async()=>{ for(const t of sh){ if(t.dataset.used) continue; await new Promise(r=>setTimeout(r,kidTapDelay())); t.click(); await new Promise(r=>setTimeout(r,200)); want(t).click(); await new Promise(r=>setTimeout(r,700)) } })();
   await g.p; hh(); turn(null); rec(sk,wrong<=1,performance.now()-t0,'colour:all'); confetti(); setKidFace(na,'Na','excited'); gladOf(na);
   await kept(wrong===0,{later:true,line:['You put each shell in the bucket of its colour!','Con cho từng vỏ sò vào xô cùng màu!'],line2:['You looked again, and put each shell in the bucket of its colour!','Con nhìn lại và cho từng vỏ sò vào xô cùng màu!']}); await reteachPending(); await P.end() }
@@ -11083,7 +11180,7 @@ async function cave7({reward=false}={}){ const sk=SK['L2.W.FEEL.02'], light=rewa
   const cards=deck.map(f=>{ const b=el(`<button class="mcard c7card"><span class="back stk"><svg viewBox="0 0 60 60"><path d="${starPath(30,30,18)}" fill="#FFD21F" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/></svg></span><span class="front">${faceSVG(f)}</span></button>`); b.dataset.f=f; grid.append(b); return b });
   await sleep(200); await say('Turn two cards. Find two faces that feel the same!','Con lật hai thẻ. Tìm hai khuôn mặt có cùng cảm xúc nhé!',{q:true});
   turn('kid'); let open=[], matched=0, tries=0, lock=false; const t0=performance.now(), g=gate();
-  const stopN=idleNudge(cards,()=>matched<3); const hh=hintHand(()=>cards.find(b=>!b.classList.contains('done')&&!b.classList.contains('up'))); abortFns.add(hh); abortFns.add(stopN);
+  const stopN=()=>{}; const hh=hintHand(()=>cards.find(b=>!b.classList.contains('done')&&!b.classList.contains('up'))); abortFns.add(hh); abortFns.add(stopN);
   const flip=async b=>{ if(lock||b.classList.contains('up')) return; hh(); b.classList.add('up'); tone(700,.06,'sine',.05); open.push(b); sayQ(cap(b.dataset.f)+'!',cap(VI_FEEL[b.dataset.f])+'!');
     if(open.length<2) return; lock=true; tries++; const [a,d]=open; open=[];
     if(a.dataset.f===d.dataset.f){ matched++; await sleep(700); a.classList.add('done'); d.classList.add('done'); SFX.chime(); burst(center(d),{n:8}); sayQ(`${cap(a.dataset.f)} and ${a.dataset.f}!`,`${cap(VI_FEEL[a.dataset.f])} và ${VI_FEEL[a.dataset.f]}!`); lock=false; if(matched>=3) setTimeout(()=>g.done(),800) }
@@ -11666,7 +11763,7 @@ async function viewMix(opt={}){
   try{ Music.start();
     await gameCard('mix'); await say('Fun Mix! A little bit of everything!','Giờ mình chơi mỗi trò một chút nhé!');
     let n=0, last=null;
-    const play=async m=>{ ptip(m.sk); turn('kid'); const c=$('#card'); if(c){ c.classList.add('out'); await sleep(250); c.classList.remove('out') }
+    const play=async m=>{ ptip(m.sk); turn('kid'); const c=$('#card'); if(c){ c.classList.add('out'); await sleep(250); c.innerHTML=''; c.classList.remove('out') }
       const a0=S.attempts.length; await m.run(); await sleep(350); n++;
       last={m,wrong:S.attempts.slice(a0).some(a=>a.s===m.sk.id&&!a.ok)}; if(n===2||n===5){ confetti(); await say('Let’s keep going!','Mình chơi tiếp nhé!') } };
     if(M) for(const slot0 of MIX_SLOTS){ const slot=last&&last.wrong&&last.m.slot==='P'?'E':slot0;   // a hard one missed: the next one is easy

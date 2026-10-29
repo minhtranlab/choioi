@@ -37,3 +37,31 @@ python3 tools/test/giong_that.py --speed 1 --vrate 1 --levels 0    # tốc độ
 **Câu nào thật sự chưa có bản ghi** thì đưa vào `voice/pending-unit1.json` cho chat Giọng.
 
 **Cần:** `pip install playwright` và `python3 -m playwright install chromium webkit`.
+
+## Bé chạm liên tục: `be_cham_lien_tuc.py` (29/10)
+
+Chơi Màn 0 ở **tốc độ thật**, giọng ghi âm thật, với một bé chạm suốt (bấm chuột thật, như ngón tay). Báo câu nào của Chồi bị cắt vì bé chạm.
+
+Luật (mục 131 tài liệu thiết kế): câu dẫn chuyện và câu lệnh của Chồi không bao giờ bị cắt vì bé chạm. Bé chạm đồ vật khi Chồi đang nói thì vẫn có tiếng động nhưng nhỏ hơn. Câu Chồi gọi tên đồ vật ("A taxi!") thì bỏ qua.
+
+```bash
+python3 tools/test/be_cham_lien_tuc.py                       # Màn 0, Chromium, bé tên Na (~10 phút)
+python3 tools/test/be_cham_lien_tuc.py --browser webkit      # WebKit (bộ máy của Safari, iPad)
+python3 tools/test/be_cham_lien_tuc.py --levels 0,1
+```
+
+**Cách chạy:**
+- Mở app như máy mới, gõ tên bé, bấm **Chơi ngay**, qua màn chờ tải giọng.
+- App tự trả lời để màn đi tiếp.
+- "Bé" bấm thật:
+  - ở trang phố: bấm xe mỗi ~0,45 giây, cả lúc Chồi nói "Here comes my school bus!";
+  - ở các trang khác: bấm các bạn, đồ vật trong tranh mỗi ~1,3 giây.
+
+**Kết quả:**
+- Số câu của Chồi bị cắt ngay sau cú chạm của bé (phải là 0).
+- Số tên đồ vật bị bỏ qua lúc Chồi đang nói.
+- Độ to tiếng còi lúc Chồi nói.
+- Thoát mã 1 khi có câu của Chồi bị cắt vì bé chạm.
+
+**Chạy khi** sửa phần tiếng (`say`), phần chạm, hoặc trang phố.
+
